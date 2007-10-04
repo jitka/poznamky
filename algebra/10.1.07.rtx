@@ -1,0 +1,36 @@
+\section{Kontakt}
+→•
+• www.karlin.mff.cuni.cz/~zemlicka
+• malto:zelicka@karlin.mff.cuni.cz
+←•
+
+\section{Cíl přednášky}
+Objekt algebry je množina opatřená operacemi. Všechny objekty jednoduché.
+
+Není praktická informatická přednáška, přednáška je strukturní.
+
+→•
+• Množiny
+• Operace
+• Relace
+←•
+
+\section{Obecné pojmy}
+Buď $A$ množina a $n∈\N_0$. \name{Operací} (parity $n$) rozumíme každé zobrazení $A^n→A$.
+
+\note{$n$ může být i $0$}
+
+Buď $α_i; i∈I$ operace na množině $A$. Pak \name{algebrou} nazveme každou takovou uspořádonou dvojici $A@(α_i|i∈I@)$.
+
+\example{$\Z@(+,-,0@)$ - celá čísla se sčítáním, odčítáním (binární) a nulou ($0$-ární operace).}
+
+\name{Těleso} je algebra s $+,*,-,0,1$ a inverzní prvek pro vše kromě $0$. $T@(+,*@)$ s nějakými dalšími vlastnostmi. Nebo také $T@(+,*,-,0,1@)$ a ještě inverzní prvek---Možnost více zápisů.
+
+Buď $A$ množina, $B⊂A$. Je-li $α$ $n$-ární operace na $A$, řekneme že $B$ je \name{uzavřená} na $α$ platí, že $∀b_1,b_2,…,b_n∈B;α@(b_1,…,b_n@)∈B$.
+
+Je-li $A@(α_i|i∈I@)$ algebra, potom $B@(α_i|i∈I@)$ nazveme \name{podalgebrou} algebry $A$, pokud $∀α_i|i∈I$ jsou uzavřené na $B$.
+
+Buď $A@(α_i|i∈I@)$ algebra a $B$ je podalgebra. $β_i:B^{n_i}→B$ je $n$-ární operace, $β_i@(b_1,b_2,…,b_n@)=α_i@(b_1,b_2,…,b_n@)$. Podalgebra tvoří algebru.
+
+\note{Buď $A@(α_i|i∈I@)$ algebra a $B_j,j∈J$ nechť jsou podalgebry algebry $A$. Pak $\cap_{j∈J}B_j$ je opět podalgebry.
+ Důkaz z definice - vzit $n$-tici, co leži všude, výsledek musí ležet všude.}

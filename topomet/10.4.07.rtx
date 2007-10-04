@@ -1,0 +1,83 @@
+\section{Úvod}
+Topologie je spojitá věda, dokáže řešit i diskrétní otázky.
+
+Např. mějme $N$-prvkovou množinu $1,2,…,N$ a všechny $k$-prvkové podmnožiny $@(@[m@]\atop k@)$
+Obarvit tak, aby každé disjunktní množiny měly různé barvy.
+Doměnka: $m≥n-2k+2$. (pokud $n≥2k$).
+Dokázáno pomocí topologie.
+
+Postaveno na algebraické topologii.
+
+Topologie se dělí na obecnou/množinovou a algebraické topologii.
+
+\subsection{Literatura}
+→•
+• Matoušek: Using the Boesvik-Ulam theorem
+• Munkers: Elements of alg. topology
+• Hatcher: Algebrak topology (elektronická verze)
+• Vassilev: Introduction to topology (zjednodušená)
+• Günter M. Ziegberg: Topologie (elektronické, německy)
+←•
+
+\subsection{Cvičení}
+Martin Tancer, poprvé 11.10., 8 hodin ráno.
+
+\section{Topologie}
+,,Geometrie gumové blány''. Povolují se spojité bijekce jako ekvivalence objektů.
+
+\name{Topologický prostor} je uspořádaná dvojice $@(X,o@)$, $X$ je nějaká množina, většinou nekonečná, $o$ je systém otevřených podmnožin $X$ splňující tyto axiomy:
+→•
+• $\emptyset, X$ jsou otevřené
+• $o$ je uzavřené na sjednocení množin
+• $o$ je uzavřená na konečné průniky
+←•
+
+Například $X=\R^d$, obvyklá otevřená okolí pomocí obsahu okolí každého bodu.
+Obdobná definice tvoří topologii pro každý metrický prostor.
+
+Samozřejmě existují i jiné topologie, ne všechny lze získat z nějaké metriky.
+Např. topologie spočetných doplňků---množina otevřená, když je její doplněk spočetný.
+
+\name{Topologický podprostor} je $@(Y⊂X,@{U\cap Y:U∈o@}@)$.
+
+\name{Součin} topologických podprostorů $\Π@(X_i, o_i@);X=\Π X_i$.
+Otevřené množiny vezmu součin otevřených množin a uzavřu na sjednocení a spočetné průniky.
+
+\subsection{Konvence}
+Obvykle budeme psát jen topologický prostor $X$, kde $X$ je ona nosná množina.
+
+Předpokládejme, že všechny topologické prostory jsou hausdorffovské, tedy $$∀x,y∈X;x\neq y→→ ∃U,V\hbox{ otevřené };x∈U,y∈V,U\cap V =\emptyset$$
+
+\subsection{Spojité zobrazení}
+
+Zobrazení $f:X→Y$ je \name{spojité}, pokud vzor otevřené množiny je otevřená množina.
+
+V metrických prostorech je to ekvivalentní s $ε-δ$ definicí.
+
+Většina probíraných zobrazení bude spojitých.
+
+$X,Y$ jsou \name{stejné}, pokud mezi nimi existuje homeomorfizmus.
+\name{Homeomorfizmus} je bijekce spojitá oběma směry.
+
+\name{Uzavřená množina} je taková, jejíž doplněk je otevřený.
+
+\name{Uzávěr} množiny $Y$ je průnik všech uzavřených množin obsahujících $Y$.
+
+\name{Hranice} je průnik uzávěru a uzávěru doplňku.
+
+\subsection{Kompaktnost}
+
+Topologický prostor $X$ je \name{kompaktní}, $←→∀U$ otevřené pokrytí $X∃U_0⊂U$ konečné.
+Otevřené pokrytí je množina otevřených množin taková, že jejich sjednocení dá právě $X$.
+
+Lze zobecnit pro množiny.
+
+\statement{Vlastnosti kompaktnosti}
+→•
+• $X$ je kompaktní, $F⊂X$ uzavřená, $→→ F$ je kompaktní.
+• $∀$ kompaktní podmnožina hausdorffovského topol. prostoru je uzavřená.
+• $f:X→Y$ spojité, $X$ kompaktní $→→f@(X@)$ kompaktní.
+• Spojitá funkce $f:X→\R$ na kompaktním prostoru nabývá maxima a minima.
+• $A⊂\R^d$ kompaktní ←→ omezená a uzavřená.
+←•
+

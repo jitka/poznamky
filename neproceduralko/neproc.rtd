@@ -1,0 +1,13 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[latin2]{inputenc}
+\usepackage{czech}
+\usepackage{amsfonts}
+
+\input{defs.tex}
+
+\begin{document}
+\title{Neprocedurální programování}
+\author{Michal Vaner}
+\maketitle
+\input{10.2.07.tex}
+\end{document}

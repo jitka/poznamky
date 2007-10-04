@@ -1,0 +1,51 @@
+\section{Paralelní algoritmy}
+
+\subsection{Hradlové sítě}
+Hradlová síť je matematický model elektroniky. Dělí se na boolovské obvody (jedničky a nuly) a na kombinační obvody (nad libovolnou konečnou abecedou).
+
+Skládá se to z hradel, sestavuje se z nich graf (orientovaný). Obecně lze považovat za funkce nebo algebraické operace.
+Dále zde máme vstupní a výstupní porty (lze považovat za hradla bez vstupů nebo výstupů).
+
+→•
+• Musí to být acyklické.
+• Na žádný vstup nevede více příchozích hran.
+• Vše musí být zapojené.
+←•
+
+\name{Boolovský obvod} je acyklický orientovaný graf s vrcholy $V = I \cup O\cup H$ a hranami $E$, takových:
+→•
+• $$∀i∈I: deg^+@(i@) = 0$$
+• $$∀o∈O: deg^-@(o@) = 0; deg^+@(o@) = 1$$
+• $$∀h∈H∃f(h):@{0,1@}^{a@(h@)}→@{0,1@}$$
+$$deg@(h@) ^+ = a(h)$$ vstupní hrany jsou očíslované $1…a@(h@)$
+←•
+
+Nechť $a@(h@)≤2$.
+
+\name{Výpočet sítě} probíhá po taktech, v $0$-tém taktu jsou definované právě všechny vstupy.
+V $i$-tém taktu vydají výstup hradla, která měla definované vstupy v $i-1$-tém taktu.
+Když jsou definovány hodnoty všech hradel i portů, síť se zastaví a vydá výsledek.
+
+\name{$i$-tá vrstva} jsou takové vrcholy $@{v|v∈H\cup I\cup O, max@(@{\left|v,i\right||∀i∈I@}@) = i@}$
+
+\name{Časová složitost sítě} je počet vrstev (tedy nejdelší cesta ze vstupu do výstupu).
+
+\name{Prostorová složitost sítě} je počet hradel (dalo by se použít počet hradel v největší vrstvě).
+
+Síť budeme vybírat dle velikosti vstupu (tedy, máme posloupnost sítí $S_1, S_2, …, S_\infty$.
+Zavedeme podmínku, že daná síť musí být vygenerovatelná polynominálním algoritmem z velikosti vstupu (kvůli omezení příliš silného modelu---umělo by to jinak řešit problémy neřešitelné obvyklými algoritmy).
+
+\subsubsection{Multi-or}
+
+Zjištění, jestli je mezi nimi alespoň jedna jednička.
+
+Možno spárovat sousedy (dvojice), totéž s výsledky, nakonec zbyde jeden výstup.
+
+Lineární prostorová složitost, logaritmická časová.
+
+\subsubsection{Sčítání $n$-bitových čísel}
+
+Pomocí ,,sčítání pod sebe`` lze udělat v lineárním čase.
+
+Blok může buď generovat přenos vždy, nebo nikdy, nebo ho zachovávat. Tyto bloky se dají skládat.
+Lze poskládat výhybkové stanice.

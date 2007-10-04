@@ -1,0 +1,73 @@
+\section{Metrické prostory}
+
+Často se používá metrický $N$-rozměrný euklidovský prostor.
+
+$P$ je neprázdná množina, $ρ:P\times P→\left<0,\infty@)$
+→•
+• $$∀x,y∈P;ρ@(x,y@)≥0, ρ@(x,y@) = 0 →→ x = y$$
+• $$∀x,y∈P;ρ@(x,y@) = ρ@(y,x@)$$
+• $$∀x,y,z∈P;ρ@(x,z@) ≤ ρ@(x,y@) + ρ@(y,z@)$$
+←•
+
+$ρ$ se poté nazývá \name{metrika} a uspořádané dvojici $@(P, ρ@)$ \name{metrický prostor}.
+
+\subsection{Příklady}
+→•
+• $$P = \R, ρ@(x,y@) = \left|x-y\right|$$
+• $$P = \R^N$$
+ →•
+ • Euklidovský prostor $$ρ@(x,y@) = \sqrt{\Σ_{i=1}^N @(x_i - y_i@)^2}$$
+ • Maximová $$ρ@(x,y@) = max_{i=1}^N( \left|x_i - y_i\right|)$$
+ • Manhatonská $$ρ@(x,y@) = \Σ_{i=1}^N \left|x_i - y_i\right|$$
+ • Pařížská metrika - na stejné přímce do počátku - přímo vzdálenost, jinak vzdálenost do počátku a z něj zase tam.
+ ←•
+• $$P, ∀x,y∈P;ρ@(x,y@) = 1 ←→ x \neq y; ρ@(x,y@) = 0 ←→ x = y$$
+• $$P = C@(@<a,b@>@)$$ spojité funkce
+ →•
+ • Supremální $$\sup_{@<a,b@>}\left|f: x-y\right|$$
+ • $$\int_a^b \left|f@(t@) - g@(t@)\right|$$
+ ←•
+←•
+
+\subsection{Otevřené a uzavřené}
+
+\name{Otevřená koule} se středem v bodu $x∈P$ o poloměru $ε<\R^+$ je množina $B@(x,ε@) = @{y∈P;ρ@(x,y@)<ε@}$
+\name{Uzavřena koule} je totéž, jen je tam $≤ε$.
+
+\name{Otevřená množina $G$} je taková, kde $∀g∈G; ∃ε∈\R^+; B@(g, ε@) ⊂ G$.
+\name{Uzavřená množina} je taková, jejíž doplněk je otevřená množina.
+
+Otevřené a uzavřené intervaly pasují na oboje.
+
+\statement{Vlastnosti otevřených a uzavřených množin}
+→•
+• $\emptyset, P$ je zároveň otevřená i uzavřená.
+• $α_a;a∈I$ je otevřená $→→ \cup_{a∈I} α_a$ je otevřená.
+• Obdobně průnik a uzavřené.
+• Průnik konečné množiny množin otevřených je otevřená.
+• Obdobně sjednocení a uzavřené.
+←•
+
+Důkaz z definice a toho, jak funguje sjednocení/průnik.
+
+Otevřená koule je kdekoliv otevřená množina.
+
+\subsection{Konvergence posloupností v metrickém prostoru}
+
+Nechť $@{A_i ∈ P@}$. Pokud $∀ε∈\R^+∃i∈\N ∀A_{j, j≥i}; ρ@(L, A_j@)<ε$, pak posloupnost \name{konverguje k $L$}.
+
+$M⊂P$. \name{Vnitřek množiny $M$}, značeno $M°$, je sjednocením všech otevřených podmnožin $M$.
+\name{Uzávér množiny $M$}, značeno $\overline{M}$, je průnik všech uzavřených nadmnožin $M$.
+
+$F⊂P$ je uzavřená, ←→ $∀@{A_i@}⊂F; \lim@{A_i@} = x∈P →→ x∈F$.
+
+\statement{Důkaz}
+→•
+• Množina je uzavřená - doplněk je otevřený. Kdyby $x∉F$, tedy leží v doplňku a proto v doplňku musí ležet i nějaká koule - spor s limitou.
+• $G$ je doplněk $F$. Předpokládejme\\ $∃x∈G ∀{1\over n}∈\R^+ B@(x,{1\over n}@)⊄F\cap B@(x,{1\over n}@) →→ @{x_n@}→x, x_n ∈ F→→ x∈F$.
+←•
+
+$@(P,ρ@), @(Q,σ@)$ jsou metrické prostory a $f:P→Q$ je \name{spojité}, pokud $∀X=B@(x∈P,ε∈\R^+@)∃Y=B@(f@(x@)∈Q,δ∈\R^+@);a∈X→f@(a@)∈Y$.
+$x$ je \name{hromadný bodem} množiny $M$, jestliže $∀δ∈\R^+$ je množina $B@(x,δ@)-@{x@}\cup M \neq \emptyset$
+
+Limita lze odvodit ze spojitosti a prstencového okolí.

@@ -1,0 +1,12 @@
+\newcommand{\statement}[1]{\vspace{1ex}\noindent\textbf{#1}:\\}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\name}[1]{\textit{\textbf{#1}}}
+\newcommand{\note}[1]{\textit{Poznámka: #1}}
+\newcommand{\example}[1]{\textit{Příklad: #1}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\combnum}[2]{\left(\begin{array}{c}#1\\#2\end{array}\right)}
+\newenvironment{dummy}{}{}
+\newcommand{\inv}[1]{\frac{1}{#1}}
