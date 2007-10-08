@@ -1,0 +1,15 @@
+$α$ je $n$-ární operace na množinách $A$ a $B$ a $f:A→B$ zobrazení.
+$f$ je \name{slučitelné} s operací $α$, jestliže $∀a_1, …, a_n∈Af@(α@(a_1, …, a_n@)@) = α@(f@(a_1@), …, f@(a_n@)@)$.
+
+Nechť $A@(α_i,i∈I@), B@(α_i,i∈I@)$ jsou \name{stejného typu}, pokud je $α_i$ $n_i$-ární operace na $A$ i na $B$.
+Zobrazení $f:A→B$ nazýváme \name{homomorfizmus} (na algebrách $A$ a $B$), je-li slučitelné se všemi operacemi $α_i$.
+
+Mějme algebry $A$, $B$, $C$ a homomorfizmy $f:A→B$, $g:B→C$. Pak $g·f:A→C$ je také homomorfizmus.
+Důkaz vypadal bez nápadu.
+
+Buď $A,B$ algebry stejného typu a $f:A→B$ homomorfizmus a $C$ podalgebra algebry $A$, $D$ podalgebra algebry $B$.
+$f@(C@)$ je podalgebra algebry $B$ a $f^{-1}@(D@)$ je podalgebra algebry $A$.
+
+Buď $ρ$ ekvivalence na množině $A$, pak \name{faktorovou množinou} $A$ podle $ρ$ rozumíme $A/ρ = @{@[a@]_ρ|a∈A@}, @[a@]_ρ = @{b|b∈A, @(a,b@)∈ρ@}$.
+
+Nechť $ρ$ je ekvivalence na množině $A$. Pak $A/ρ$ tvoří rozklad $A$. (Je-li $@{B_i|I∈J@}$ rozklad $A$, pak relace $ρ$ daná vztahem $@(a,b@)∈ρ←→ ∃i∈I;a,b∈B$ je ekvivalence.

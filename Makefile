@@ -1,5 +1,5 @@
 
-SUBDIRS:=ADS2 algebra analyza neproceduralko topomet
+SUBDIRS:=ADS2 algebra analyza-3 neproceduralko topomet
 ALL_DEPS:=$(patsubst %,%-all,$(SUBDIRS))
 CLEAN_DEPS:=$(patsubst %,%-clean,$(SUBDIRS))
 
