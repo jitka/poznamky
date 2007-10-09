@@ -1,0 +1,47 @@
+\section{Toky v sítích}
+\name{Síť} je čtveřice Orientovaný graf $G$, \name{Zdroj} $Z∈V_G$, \name{Stok} $S∈V_G$ a funkce $c@(E_G@)→\R^+$ udávající kapacitu hran.
+
+→•
+• Hledáme maximální tok.
+• Ve zdroji se ,,objevuje``, v stoku ,,mizí``.
+• Tok na každé hraně je omezen její kapacitou.
+• Nikde se to neztrácí a neobjevuje, s výjimkou zdroje a stoku.
+←•
+
+\statement{O maximu}
+Pro každou síť existuje maximální tok.
+
+\name{Řez} v grafu je množina hran, taková, že neexistuje cesta ze zdroje do stoku, která nepoužije alespoň jednu z těch hran.
+
+\statement{Hlavní věta o tocích}
+Když $S$ je síť, pak maximální tok je roven kapacitě minimálnímu řezu.
+
+\statement{Lemma}
+$A⊂V_G,Z∈A,S∉A$.
+$f$ je tok.
+$f=f(A, V_G-A) - f(V_G-A,A)$.
+\statement{Důkaz}
+Z definice velikosti toku a z toho, že ,,potrubí nikde neteče``.
+
+Důsledek:\\
+Když $f$ je tok a $R$ řez, pak velikost toku je vždy shora omezená kapacitou libovolného řezu.
+
+Redefinice:\\
+Cesta od teď může využívat hrany i v protisměru, součet všech po směru mínus rozdíl proti směru musí být mezi nulou a kapacitou.
+
+\name{Nasycená cesta}
+je cesta, kde existuje plně využitá hrana.
+
+\name{Nasycený tok}
+je takový tok, kde je každá jeho cesta nasycená.
+
+Každý maximální tok je nasycený.
+Pro maximální tok existuje řez, který má stejnou kapacitu.
+
+Důkaz sporem:\\
+Tok je maximální, ale není nasycený.
+Nějaká cesta se dá zvětšit, čímž se zvětší tok.
+
+\subsection{Algoritmus}
+Dokud to jde, najde nenasycenou cestu ze zdroje do cíle a nasytit ji, když doběhne, tak je to dobře.
+Problém---může se zacyklit.
