@@ -11,3 +11,8 @@
 \newenvironment{dummy}{}{}
 \newcommand{\inv}[1]{\frac{1}{#1}}
 \newcommand{\TODO}[1]{\textit{\texttt{\textbf{TODO: #1}}}}
+\newcommand{\auth}[1]{
+
+	\textit{#1}
+
+}
