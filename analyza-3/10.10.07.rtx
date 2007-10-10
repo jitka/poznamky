@@ -1,0 +1,67 @@
+$M⊂P$. Bod množiny $x∈M$ je \name{izolovaný}, pokud $∃ε∈\R^+B@(x,ε@)\cap M = @{x@}$.
+
+$x∈P$ je \name{hromadný bod} $M$ pokud $∀ε∈\R^+@(B@(x,ε@)-@{x@}@)\cap \neq \emptyset$.
+
+$x∈M$ je \name{vnitřní bod}, jestliže $∃ε∈\R^+;B(x,ε)⊂M$
+
+$x∈P$ je \name{hraniční bod} množiny $M$, jestliže leží v rozdílu uzávěru a vnitřku množiny $M$.
+
+\TODO{spojitost a limita}
+
+\statement{Haineho věta}
+$@(P,ρ@), @(Q,σ@)$ metrické prostory, zobrazení $f:P→Q$.
+Následující tvrzení jsou ekvivalentní.
+→•
+• $f$ je spojitá.
+• $∀@{x_n@}∈P;x_n→x→→f(x_n)→f(x)$
+←•
+
+\TODO{Důkaz utlouct z definice.}
+
+\statement{Charakterizace spojitých zobrazení}
+$@(P,ρ@), @(Q,σ@)$ metrické prostory, $f:P→Q$ spojité na množině $P$.
+Následující tvrzení jsou ekvivalentní:
+→•
+• $f$ je spojité na prostoru $P$.
+• Pro každé otevřené $G⊂Q$ je $f^{-1}@(G@)$ otevřená nad $P$.
+• Pro kazdé uzavřené $G⊂Q$ je $f^{-1}@(G@)$ uzavřená nad $P$.
+←•
+
+Důkaz:\\
+Druhé a třetí se na sebe dá bez problémů převádět.
+
+Mějme otevřené $G$, $x∈G$, $f^{-1}(x)∈G^{-1}$.
+Máme tedy nějaké okolí $B(x,ε)$ a dle spojitosti k tomu nějaké okolí $B(f^{-1}(x), δ)$, to se ale zobrazí do tamté.
+
+Když opačně, tak to platí skoro přímo.
+
+\statement{Spojitost spojitého zobrazení}
+$@(P,ρ@), @(Q,σ@), @(T,τ@)$ metrické prostory, $f:P→Q, g:Q→T$ spojitá zobrazení.
+$g·f$ je spojité.
+
+\TODO{Sestavit důkaz - od prava, pro každou kouli vpravo existuje nějaká uprostřed a pro každou uprostřed existuje nějaká vlevo}
+
+\section{Funkce více proměnných}
+Použijeme $\R^n$ a metriky buď euklidovskou, maximovou nebo manhatonskou, jsou navzájem ekvivalentní.
+
+\statement{Obvyklé limity a spojitosti}
+Součet, násobek, rozdíl funkce se vůči limitě a spojitosti chová normálně.
+Pokud obor hodnot je $\R$, pak i násobek a podíl.
+
+\subsection{Projekce}
+\subsubsection{$Π_i$}
+$Π_i:= @[x_1, x_2, …, x_n@] → x_i$.
+
+\TODO{Důkal limity a spojitosti - z definice}
+
+\subsubsection{Lineární zobrazení}
+Přenásobením vektoru maticí.
+
+\subsection{Parciální derivace a totální diferenciál}
+$f:\R^n→\R;x∈\R^n;\overrightarrow{v}∈\R^n$. Říkáme, že $f$ má \name{derivaci v bodě $x$ a směru $v$}, pokud existuje $$\lim_{t→0}\frac{f(x)-f(x+tv)}{t}$$ a pak je její hodnota právě toto číslo.
+
+Pokud budeme za $v$ vezmeme $j$-tý kanonický vektor. Pak to nazýváme \name{$j$-tou parciální derivaci}.
+
+$f:\R^n→\R, a∈\R^n$. $f$ má v bodě $a$ \name{totální diferenciál $df(a)$}, jestliže existuje lineární zobrazení $fl:\R^n→\R$ takové:
+$f(a+h) = f(a)+fl(h) + ω(h)$, kde $\lim_{h→0} ω(h) = 0$.
+Totální diferenciál je potom takovéto lineární zobrazení.

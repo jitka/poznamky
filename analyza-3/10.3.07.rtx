@@ -67,6 +67,8 @@ $F⊂P$ je uzavřená, ←→ $∀@{A_i@}⊂F; \lim@{A_i@} = x∈P →→ x∈F$
 • $G$ je doplněk $F$. Předpokládejme\\ $∃x∈G ∀{1\over n}∈\R^+ B@(x,{1\over n}@)⊄F\cap B@(x,{1\over n}@) →→ @{x_n@}→x, x_n ∈ F→→ x∈F$.
 ←•
 
+\TODO{zpracovat}
+
 $@(P,ρ@), @(Q,σ@)$ jsou metrické prostory a $f:P→Q$ je \name{spojité}, pokud $∀X=B@(x∈P,ε∈\R^+@)∃Y=B@(f@(x@)∈Q,δ∈\R^+@);a∈X→f@(a@)∈Y$.
 $x$ je \name{hromadný bodem} množiny $M$, jestliže $∀δ∈\R^+$ je množina $B@(x,δ@)-@{x@}\cup M \neq \emptyset$
 
