@@ -1,0 +1,76 @@
+Důkaz:\\
+→•
+• \textbf{Uzavřená podmnožina kompaktního prostoru je kompaktní.}
+Mějme kompaktní prostor $X$ a $Y⊂X$ uzavřený.
+Každé dělení $Y$ je jen podsystém toho $X$---když přidáme doplněk $Y$, dostaneme celé pokrytí $X$ a z něho to jde vybrat.
+Doplnit to lze díky uzavřenosti
+• \textbf{Kompaktní množina hausdorfovského topologického prostoru je uzavřená.}
+Vezmeme $z$ z doplňku $Y$. $∀x∈Y$ z hausdorfovosti plyne, že $∃U_x$, že jsou s tím $z$ jsou v oddělených vícebodových množinách.
+Tímto lze vytvořit pokrytí toho $Y, ∃$ konečné podpokrytí, pro každou existje nějaké okolí $z$ otevřené.
+Průnikem tohoto dostáváme otevřenou množinu ($z$ mohlo být libovolně blízko).
+• \textbf{Obraz kompaktního prostoru při spojitém zobrazení je kompaktní.}
+Máme $V$ otevřené pokrytí $f(X)$.
+$f^{-1}(V)$ také pokrytí, tentokrát na $X$, které je kompaktní, vezmeme konečné podpokrytí.
+Obrazem toho je konečné podpokrytí je opět konečné pokrytí, proto je obraz konečný.
+• \textbf{Spojitá funkce $X→\R$ na komptní neprázdné množině $X$ nabývá minima.}
+$∃x_0∈X,∀x∈X;f(x_0)≤f(x)$.
+$Y:= f(x)$, dle předchozího bodu je kompaktní, podle 2 je uzavřená, je také omezená (protože by nebyla kompaktní, lze vzít intervaly od délky $2,4,…$ okolo nuly, nelze najít konečný podsystém).
+$∃y∈Y, y =\inf Y, Y$ je uzavřený, proto ho obsahuje a je omezený, proto je konečný.
+• \textbf{$Y∈\R^d$ je kompaktní $←→$ uzavřená a omezená.}
+$→→$ je obdobné jako v minulém bodě.
+$←←$ stačí si všimnout, že každá uzavřená krychle je kompaktní.
+Uzavřený interval je kompaktní, nechť pro spor předpokládejme, že nejde.
+Vezměme začátek, který pokrýt jde (tedy, $\sup$ toho, co pokrýt jde), dokáže se, že to není $\sup$.
+Rozšíření na kryche viz tychonovova věta.
+←•
+
+\statement{Tichonovova věta}
+Součin libovolně mnoha kompaktních prostorů je kompaktní.
+Bez důkazu.
+
+\subsection{Souvislý prostor}
+
+Mezi $∀$ body ∃ cesta.
+
+Nejde rozdělit na dva různé kusy.
+
+Topologický prostor je \name{nesouvislý}, pokud $X = A\cup B, A\cup B = \emptyset, A,B$ otevřené množiny, $A\neq \emptyset, B\neq\emptyset$.
+
+Topologický prostor $X$ je \name{obloukově souvislý}, pokud $∀a,b∈X∃f:@<0,@> → X$ souvislé, $f(0) = a, f(0) = b$.
+
+Topologický prostor nedefinuje pojem \name{dimenze}, existuje mnoho definic, které se mohou lišit.
+Základní předpoklad je, že je to invariant.
+
+\section{Homotopická ekvivalence a homotopie}
+$X$ je topologický prostor, $Y$ je podprostor. \name{Deformační retrakce} $X$ na $Y$ je systém spojitých zobrazení, $f:@(@<0,1@>,X@)→X$, takové že:
+→•
+• $f(0, ?)$ je identita.
+• $f(?,y)$ je identita pro libovolné $y∈Y$ je identita.
+• Je spojité pro ten argument $@<0,1@>$.
+• $f(1,?)∈Y$.
+←•
+
+Pokud existuje deformační retrakce z $X$ do $Y$, pak $Y$ je \name{deformační retrakt}. $X$ a $Y$ jsou pak \name{homotopicky ekvivalentní}.
+
+$X$ je homotopicky ekvivalentní s $Y$, pokud existuje nějaké $Z$, který je obsahuje oba obsahuje jako deformační retrakty.
+
+$f,g:X→Y$ spojitá, $f$ a $g$ jsou homotopická ($f~g$), pokud $∃@{h_t@},t∈@<0,1@>$ takové, že
+→•
+• $h_0 = f$
+• $h_1 = g$
+• $h_?:X→Y$ je spojité.
+• Je to spojité podle $t$.
+←•
+
+$X, Y$ jsou \name{homotopicky ekvivalentní}, pokud existují:
+→•
+• $$f:X→Y$$
+• $$f:Y→X$$
+• $$g·f$$ je homotopické s identitou.
+←•
+
+Zobrazení $f:X→Y$ je \name{nulhomotopické}, pokud je homotopické konstantnímu zobrazení (posílá celé $X$ do jednoho bodu).
+
+Prostor je \name{kontrahovatelný}, pokud je homotopicky ekvivalentní bodu.
+
+
