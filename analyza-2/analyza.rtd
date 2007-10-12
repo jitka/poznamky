@@ -1,0 +1,20 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[latin2]{inputenc}
+\usepackage{czech}
+\usepackage{amsfonts}
+
+\input{../defs.tex}
+
+\begin{document}
+\title{Analýza II}
+\author{Michal Vaner}
+\maketitle
+\input{2-22.tex}
+\input{3-1.tex}
+\input{3-15.tex}
+\input{3-29.tex}
+\input{4-5.tex}
+\input{4-26.tex}
+\input{5-3.tex}
+\input{5-24.tex}
+\end{document}

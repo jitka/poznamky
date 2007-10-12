@@ -1,0 +1,23 @@
+\begin{dummy}\end{dummy}
+\statement{DÚ}
+→•
+• Dolní a horní riemanovu sumu.
+$$\left<0,1\right>, f(0)=1, f\left(x∈\left(0,1\right>\right)\frac{1}{x}$$
+• Pokud se liší jen v konečně mnoha bodech -→ s integrovatelností a hodnotou integrálu jsou na tom stejně.
+←•
+
+\statement{Triviální nerovnosti}
+$∀D$ - dělení, dolní suma je ≤ $\int$ ≤ horní suma.
+
+…
+
+\statement{Věta o kritériu riemanovské integrovatelnosti}
+Mějme $f$ na $\left<a, b\right>$.
+Je riemanovsky integrovatelná $←→ ∀ε∈\R^+∃D(\left<a, b\right>)$ horní suma - dolní suma $< ε$.
+Obdobně, $∃δ∈\R^+∀D(\left<a, b\right>, δ)$ platí.
+
+To první je jasné z nerovností (stačí domyslet).
+
+Pokud $∀ε∈\R^+∃δ∈\R^+∀x_1,x_2;\left|x_1-x_2\right|<δ-→\left|f(x_1)-f(x_2)\right|<ε$, pak se nazývá \name{Stejnoměrně spojitá}. Tato definice je stejná jako spojitost na uzavřeném intervalu.
+
+$f$ na $\left<a,b\right>$ je riemanovsky integrovatelná právě když je omezená a její množina bodů nespojitosti má míru $0$ - $∀y∃$ systém intervalů takový, že součet délek těch intervalů a jejich sjednocení dává dohromady celý interval.

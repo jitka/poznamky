@@ -1,0 +1,23 @@
+\begin{dummy}\end{dummy}
+\subsection{Fourierova řada}
+\name{Trigonometrická řada} je řada vyjádřená jako:
+$$
+\frac{a_0}{2}\Σ_{n=1}^{\infty}\left(a_n\cos\left(nx\right)+b_n\sin\left(nx\right)\right)
+$$
+
+Aby se funkce $f$ dala vyjádřit jako Fourierova řada, musí být periodická s periodou $2π$.
+$$
+f:\left<-π, π\right)→\R
+$$
+
+Trigonometrické řady umožňují vyjadřovat i složitější a ošklivější funkce než mocninné řady.
+
+Definujme symbol:
+$$
+f,g∈\mathcal{R}\left<-π,π\right>\\
+\left<f,g\right>::= \int_{-π}^{π}fg
+$$
+Je to symetrické a bilineární a pozitivně semidefinitní.
+$$
+∀f∈\mathcal{R}\left<-π,π\right>;\left<f,f\right> ≥ 0
+$$

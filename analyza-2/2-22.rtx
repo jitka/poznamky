@@ -1,0 +1,22 @@
+\begin{dummy}\end{dummy}
+\section{Riemanův integrál}
+Mějme funkci $f$. Číslo $I\R$ je \name{Riemanův integrál} když $$∀ ε∈\R^+∃δ∈\R^+;\left|I-R(δ,C,D)\right|<ε$$, kde $R(δ, C, D)$ je dělení intervalu na obdélníky o ,,šířce'' maximálně δ ($\Σ$ jejich ploch). Lze chápat jako limitu když ε jde k $0$. Pokud limita existuje, je \name{Riemanovsky integrovatelná}. Množina takových funkcí se bude značit$\mathcal{R}[a,b]$, $\left<a, b\right>$ je interval.
+
+Lze chápat jako definici plochy pod křivkou.
+
+\name{Dolní riemanovská $\Σ$} je součet největších čtverců co se vejdou "pod", \name{Horní je podobně}.
+\name{Dolní riemanovský integrál} $\underline{\int} = sup(∀$ dolních riemanovských $\Σ$.
+
+Tyhle veličiny jsou vždy definované, ale mohou být $∈\R^*$.
+
+Riemanův integrál existuje, pokud dolní i horní riemanův integrál je stejný a vlastní a pak má jejich hodnotu také.
+
+\statement{Neomezená fce $f∉\mathcal{R}$}
+Jako cvičení
+
+Důkaz, že $$\underline{\int} ≤ \overline{\int}$$
+\statement{Pozorování}
+Dolní riemanovská $\Σ$ ≤ dorní riemanovský $\int$, což je vidět.
+Když $D$ a $D'$ jsou dělení intervalu $\left<a, b\right>$. $D'$ je \name{zjemnění} $D$ ←→ $D⊂D'$.
+
+Mějme $f$ definovanou na $\left<a,b\right>$. Při zjemnění dolní se nezmenší a horní se nezvětší.

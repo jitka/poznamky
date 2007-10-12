@@ -1,0 +1,36 @@
+\begin{dummy}\end{dummy}
+\section{Posloupnosti a řady funkcí}
+→•
+• Limita posloupnosti funkcí
+• Nekonečná řada funkcí
+←•
+
+\name{Bodová konvergence} $$∀x \lim_{x→a} \left\{f_n(x)\right\} = \lim_{x→a} →→ f_n→ f$$
+$n_0$ může záviset na $x$.
+
+\name{Stejnoměrná konvergence} je podobná, jen $n_0$ nezávisí na $x$. $$f_n {→\atop→} f$$
+
+\name{Lokální konvergence} pro každý bod lze najít okolí, kde kde konverguje stejnoměrně $$f_n{{loc\atop→}\atop→}f$$
+
+\subsection{Záměna pořadí operací}
+
+\statement{Bolzano-Cauchyova podmínka}
+$$f_n:M→\R ; f_n{→\atop→}f ←→ ∀ε∈\R^+∃n_0∈\N∀m,n>n_0∀x∈M;\left|f_n(x) - f_m(x)\right|<ε$$.
+
+\statement{O situacích kde slabší konvergence implikují silnější}
+→•
+•
+Mějme nějaký (možno neomezený) interval $(a,b)$.
+$$∀\left<c,d\right>⊂(a,b);f_n{{loc\atop→}\atop→}f ←→ f_n{→\atop→}f_n$$
+• Uzavřený interval, všechny funkce spojité, všechny monotónní.
+Pokud je zde všude bodově konvergentní, pak je zde stejnoměrná konvergence.
+←•
+
+\statement{Moorova-Ostugova věta (o prohození limit)}
+$$f_n, f:M→\R,x_0∈\R^*,P(x_0,δ∈\R^+);f_n{→\atop→}f→→\lim_{n→\infty}\lim_{x→x_0}f_n(x) = \lim_{x→x_0}\lim_{n→\infty}f_n(x)$$
+
+\statement{Důkaz}
+Rozepsat, proházet.
+
+\statement{Důsledek}
+Stejnoměrná konvergence zachovává spojitost.

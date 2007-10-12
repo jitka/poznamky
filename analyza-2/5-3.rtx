@@ -1,0 +1,16 @@
+\begin{dummy}\end{dummy}
+
+Tvoří ortogonální systém.
+
+$f∈\mathcal{R}\left<-π,π\right>$ fourierovy koeficienty jsou $A_n = \frac{1}{π}\left<f, \cos nx\right> = \frac{1}{a}\int_{-π}^{π}f(x)sin nx dx$.
+
+Ne vždy ta trigonometrická řada konverguje k té funkci.
+
+\statement{Věta 2.16}
+
+\begin{eqnarray*}
+&&f∈\mathcal{R}\left<-π,π\right>,\\
+&&A_n = \frac{1}{π}\left<f,\cos nx\right>,\\
+&&B_n = \frac{1}{π}\left<f,\sin nx\right>\\
+&&→→\frac{{A_1}^2}{2}+\Σ_{n=1}^{\infty}(A_n^2+B_n^2)≤\frac{1}{π}\left<f,f\right> = \frac{1}{π}\int_{-π}^{π}f^2(x)dx\\
+&&→ \lim_{n→\infty} A_n=\lim_{n→\infty}B_n = 0\end{eqnarray*}

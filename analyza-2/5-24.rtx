@@ -1,0 +1,39 @@
+\section{Metrické prostory}
+$$@(M,d@), d:M\times M→\R^+_0$$
+Musí splňovat axiomy:
+\begin{itemize}
+• $$d@(x, y@) = d@(y,x@)$$
+• $$d@(x,y@) = 0 ←→ x = y$$
+• $$d@(x,y@) ≤ d@(x,z@) + d@(z,y@)$$
+\end{itemize}
+
+Příklady:
+\begin{itemize}
+• Euklidovský prostor, zobecnění pro libovolnou mocninu
+• $M=\{f,g:X→\R$, omezené$\}$
+$$d@(f,g@)=sup_{x∈X}\left|f@(x@) - g@(x@)\right|$$
+• Vzdálenost mezi vrcholy souvislého grafu.
+\end{itemize}
+
+Dva metrické prostory jsou isomorfní, právě když existuju bijekce mezi $M_1$ a $M_2$, která zachovává vzdálenosti.
+
+\subsection{Otevřené a uzavřené množiny}
+Mějme metrický prostor $@(M, d@)$.
+Otevřená koule $B(a,r) = @{x∈M|d(a,x)<r@}$
+$$A⊂M\hbox{ otevřená } ←→ ∀a∈A∃r≥0;B@(a,r@)⊂A$$.
+$$A⊂M\hbox{ uzavřená } ←→ M\backslash A \hbox{ otevřená }$$.
+
+\subsubsection{Vlastnosti}
+\begin{itemize}
+• $\emptyset, M$ otevřená.
+• $S⊂2^M$ systém otevřených (konečně mnoha) $→→ \cup S = \cup_{A∈S}$ je také otevřené.
+• Průnik otevřených množin je otevřená.
+
+• $\emptyset, M$ uzavřená.
+• Průnik uzavřených je uzavřený.
+• Sjednocení uzavřených množin je uzavřená.
+\end{itemize}
+
+Mějme metrický prostor $(M,d)$, potom $A_n→b∈M,\lim_{n->\infty}A_n = b←→ \lim_{n→\infty} d(A_n, b) = 0$.
+
+Množina $A$ je uzavřená, pokud $∀@{A_n,A_n∈A@},\lim_{n→\infty} A_n = b →→ b∈A$.

@@ -1,0 +1,49 @@
+\begin{dummy}\end{dummy}
+
+$$
+||f||_{\infty} := {sup|f(x)|}_{x∈M}
+$$
+
+\statement{Věta 2.4 o záměně integrálu a limity}
+$$f_n {→\atop →}f\hbox{ na }\left<a,b\right>, f_n∈R\left<a,b\right>→→ f∈R\left<a,b\right>, \int_a^b f = \lim_{n→\infty}\int_a^bf_n$$
+
+Důkaz přez rozepsání Riemanova integrálu a limity.
+
+Lze se dostat k
+
+$$
+s(f_n, D) - ε∈(0, b-a) ≤ s(f, D) ≤ S(f, D) ≤ S(f_n, D) + ε∈(0, b-a)
+$$
+
+\statement{Věta 2.5 o derivaci a limitě}
+$$
+-\infty < a < b < \infty,f_n((a,b))→\R
+$$
+$f_n$ má na $(a,b)$ vlastní $f'_n$.
+
+$$f'n{{loc \atop →}\atop →}g\hbox{ na }(a,b)\land ∃x∈(a,b);f_n(x_0)\hbox{ konverguje.}\\
+→→ ∃f_n{{loc\atop →}\atop →}f\hbox{ na }(a,b)
+$$
+
+\statement{Poznámka}
+$$
+f'n{→\atop →}g→→f_n{→\atop →}f
+$$
+
+\statement{Důkaz}
+Vezměme $\left<c,d\right>, x_0∈\left<c,d\right>$ kde konverguje stejnoměrně.
+Pomocí souměrné bolzanovy-cauchyovy podmínky, Lagrangeova věta o střední hodnotě.
+
+Nyní je třeba dokázat, že je to derivace.
+
+\statement{Věta 2.6 Weierstrassova}
+Každá spojitá funkce může být aproximovaná polynomy na uzavřeném intervalu.
+$$
+f(\left<a,b\right>)→\R\hbox{ spojitá } →→ ∀ε∈\R^+∃P(x)∀x∈\left<a,b\right>;\left|f(x)-p(x)\right|<ε
+$$
+
+\statement{Věta 2.7 Weierstrassův test}
+→•
+• $$f_n(M)→\R,\Σ_{n=1}^\infty sup_{x∈M}|f_n{x}|→→\Σ_{n=1}^\infty f_n{→\atop →}$$
+• $$\Σ_{n=1}^\infty f_n→f\hbox{ spojitá }→→ \Σ_{n=1}^\infty{→\atop →}f$$
+←•
