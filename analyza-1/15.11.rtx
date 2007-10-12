@@ -1,0 +1,56 @@
+
+
+\statement{Druhá část Heineovy věty}
+$a\in\R$ a $f$ je definovaná na~$B(a,\delta)$. Následující je ekvivalentní:
+\begin{itemize}
+\item Funkce $f$ je spojitá.
+\item $\forall \{x_n\}_{n=1}^{\infty} x_n\in D(f),\lim x_n = a; \lim( x_n) = f(a)$.
+\end{itemize}
+
+Lze dokázat z~minulého a ono $f(a)$ to nebude ničit.
+
+\statement{Věta 3}
+Každá funkce $f$ má v~bodě $a\in\R^*$ nejvýše jednu limitu.
+Nechť $A,B\in\R^*,A=\lim f, B=\lim f, A<B$.
+Potom je mezi nimi kousek místa a pro~poloměr okolí pod~polovinu místa a hodnota se nemůže trefit do~obou.
+
+\note{Věty 2 a 3 lze použít k~důkazu neexistence limity - ze~2 vypadnou dvě různá čísla.}
+
+\note{Lze použít k~výpočtu limity posloupnosti za~pomoci funkce.}
+
+Funkce $f$ je \name{(shora/zdola) omezená} na~množině $M$, jestliže $f(M)$ je (shora/zdola) omezená.
+
+\statement{Věta 4}
+Nechť $f$ má v~bodě $a\in\R^*$ vlastní limitu. $\longrightarrow\exists\delta$ $f(x)$ je omezená na~$P(a,\delta)$.
+
+$\lim_{x\to a}f(x) = A\longrightarrow\exists \delta\in\R^+\forall x \in P(a,\delta); f(x)\in B(A, 1) \longrightarrow$ je omezená na~tomto okolí.
+
+\statement{Důsledek}
+U~funkce spojité v~$a$ to platí i pro~$B(a,\delta)$.
+
+\subsection{Počítání s limitami}
+
+\statement{Věta 5 - aritmetika limit}
+Pokud mají dvě funkce v~bodě $a\in\R^*$ limity $A, B$, pak je lze jednoduše sčítat násobit a dělit, je-li taková operace definovaná.
+
+Viz papírek z~přednášky.
+\\
+
+Máme-li funkce $f, g$. \name{Složenou funkcí} nazveme $f(g(x))$ a značí se $f\circ g$.
+
+\statement{Věta 9}
+\begin{eqnarray*}
+&&\lim_{x\to c} g(x) = A \land \lim_{y\to A} f(y) = B \land\\
+&&( f\hbox{ je spojitá } \lor \exists \eta\in\R^+\forall x\in P(c,\eta);g(x) \neq A)\\
+&&\Rightarrow \lim_{x\to c}f\left(g\left(x\right)\right) = B
+\end{eqnarray*}
+
+\begin{eqnarray*}
+&&\epsilon\in\R^+\hbox{ libovolné }\exists\eta\in\R^+\forall y\in P(A,\eta);f(y)\in B(B,\epsilon)\longrightarrow\\
+&&\exists\theta;x\in P(c,\theta);g(x) \in N(A,\eta)
+\end{eqnarray*}
+
+Pro sloučení by bylo potřeba prstencové okolí.
+Pokud je $f$ spojitá, pak jí vyhovuje i obvykle okolí.
+
+Pokud $g$ nevrací $A$, pak tam lze dát prstencové okolí.

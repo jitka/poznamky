@@ -1,0 +1,77 @@
+\begin{dummy}\end{dummy}
+\statement{Větička 14}
+Následující tvrzení jsou ekvivalentní, pokud je definovaná na $I$.
+\begin{itemize}
+\item $f$ je na $I$ konvexní.
+\item $$\forall x_1, x_2, x_3 \in I, x_1 < x_2 < x_3; \frac{f(x_2)-f(x_1)}{x2 - x1} \leq \frac{f(x_3) - f(x_1)}{x_3 - x_1}$$
+\item $$\forall x_1, x_2, x_3 \in I, x_1 < x_2 < x_3; \frac{f(x_2)-f(x_1)}{x2 - x1} \leq \frac{f(x_3) - f(x_2)}{x_3 - x_2}$$
+\end{itemize}
+
+Nejdříve, že druhé je ekvivalentní s třetí.
+Ty dvě nerovnosti jseu přímo ekvivalentní.
+
+Z jedničky plyne trojka:\\
+$f$ je konvexní, vezmeme ta 3 $x$.
+$x_2 = \frac{x_3-x_2}{x_3-x_1}x_1 + \frac{x_2 - x_1}{x_3 - x_1}x_3$. $\frac{x_3-x_2}{x_3-x_1}$ označíme $\lambda$.
+Podle definice: $f(x_2) \leq \frac{x_2 - x_1}{x_3 - x_1}f(x_3)+ \frac{x_3-x_2}{x_3-x_1}f(x_1)$
+To se po úpravách z toho dostane.
+
+Nechť platí 2.
+Vezmu $x_1, X_2 \in I, \lambda\in\left<0,1\right>$.
+BÚNO $x_1 \leq x_2$.
+Pokud $x_1 = x_2 \lor \lambda \in \{0,1\}$ pak platí rovnost.
+Nechť je to tedy něco rozumného mezi.
+$x_1 <\lambda x_1 + (1 -\lambda) x_2 < x_2$.
+Použiji tyhle čísla do nerovnosti v dvojce.
+Stačí několik úprav a vyjde to.
+
+U konkávních, ryze konkávní/konvexní to platí analogicky.
+
+\statement{Důsledek}
+Nechť $f$ je konvexní na $(a, b)$ a $x\in(a,b)$. Pak $\frac{f(y) - f(x)}{y - x}$ je na $(x, b)$ neklesající, plyne z bodu 2.
+
+Navíc $\forall y \in (x, b); \frac{f(y) - f(x)}{y - x} \geq \frac{f(x) - f(x_1)}{x - x_1}$ - viz bod 3.
+Protože je neklesající a omezená ;dola. Tudíž má limitu zprava.
+Tudíž ta původní má derivaci zprava v bodě $x$.
+
+Analogicky zleva.
+
+Tudíž pro každé $x\in(a,b) \exists f'_-(x), f'(x)_+$, tudíž je spojitá.
+
+\statement{Důsledek}
+Jednostrané derivace jsou neklesající na $(a, b)$.
+$\forall x \in (a,b); f'_-(x)\leq f'_+(x)$.
+
+\statement{Věta 15}
+$I$ je otevřený interval a $f$ má v každém bodě $x\in I$ vlastní derivaci.
+Pak $f$ je konvexní na $I$ právě když $f'(I)$ je neklesající.
+Je ryze konvexní, právě když $f'(I)$ je rostoucí.
+
+Důkaz zprava doleva:\\
+$f'(I)$ neklesající.
+Vezmu $x_1, x_2, x_3\in I, x_1 <x_2 < x_3$.
+$f$ splňuje předpoklady lagrangeovy věty na intervalu $\left<x_1, x_2\right>, \left<x_2, x_3\right>$.
+$\exists \xi_1 \in\left<x_1, x_2\right> f(\xi_1) = \frac{f(x_2)-f(x_1)}{x_2-x_1}\land \exists \xi_2 \in\left<x_2, x_3\right> f(\xi_2) = \frac{f(x_3)-f(x_2)}{x_3-x_2}$.
+$\xi_1 <\xi_2\Rightarrow f'(\xi_1) \leq f'(\xi_2)\Rightarrow \frac{f(x_2)-f(x_1)}{x_2-x_1} \leq \frac{f(x_3) - f(x_2)}{x_3-x_2}$. Tedy dekázáno, viz věta 14.
+
+Důkaz zleva:\\
+$x_1 < x_2\Rightarrow f'(x_1) \leq \frac{f(x_2) - f(x_1)}{x_2 - x_1}\leq f'(x_2)$. Viz důsledek věty 14.
+
+Protože derivace přiřadí kadému bodu nějaké číslo, lze na ni nahlížet také jako na funkci.
+Proto ji lze opét zderivovat.
+Takto vzniká \name{druhá derivace}, případně \name{$n$-tá derivace}.
+
+\statement{Věta 16}
+$I$ je otevřený interval a druhá druhá derivace vlastní existuje v každém bodě intervalu.
+Pak $f$ je konvexní na $I \Leftrightarrow f''(I) \geq 0$.
+Plyne ze zkombinování předchozích vět.
+
+Pokud je $f''(I) > 0\Rightarrow f$ je ryze konvexní.
+
+\name{Inflexní bod} je bod, kde v tom bodě existuje vlastní derivace a $\exists \delta \in \R^+; \forall x\in(a-\delta, a)$ je funkce pod tečnou a $\forall x \in (a, a+\delta)$ je nad tečnou, nebo naopak.
+
+\statement{Věta 17}
+$\exists f''(x) \neq 0 \Rightarrow x$ není inflexní bod.
+
+\statement{Věta 18}
+$f'$ je spojitá na $(a, b), z\in(a,b), f''(x\in(a,z)) > 0, f''(x\in(z,b))<0$ pak $z$ je inflexní bod.

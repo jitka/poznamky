@@ -1,0 +1,51 @@
+\begin{dummy}\end{dummy}
+\statement{Věta 23}
+Taylerův polynom $k$-tého řádu v bodě $0$ je roven:
+\begin{itemize}
+\item $e^x$
+$$
+1 + x + \frac{x^2}{2!} + \ldots + \frac{x^k}{k!}
+$$
+
+\item $\sin x$ ($2k$-tého řádu).
+$$1 - \frac{x^3}{2!} + \frac{x^5}{5!}+\ldots+\frac{(-1)^kx^{2k-1}}{(2k-1)!}$$
+
+\item $\cos x$ ($(2k + 1)$-tého řádu).
+$$1 - \frac{x^2}{2!} + \frac{x^4}{4!}+\ldots+\frac{(-1)^kx^{2k}}{(2k)!}$$
+
+\item $\log (1+x)$.
+$$x - \frac{x^2}{2} + \frac{x^3}{3} + \ldots + \frac{(-1)^{k-1}x^k}{k}$$
+
+\item $(1+x)^α, α\in \R$.
+$$\combnum{α}{0} + \combnum{α}{1}x + \ldots + \combnum{α}{k}x^k$$
+
+\end{itemize}
+
+Místo důkazu stačí spočítat.
+
+Obdobně pro řady - rovnají se té řadě na celém $\R$.
+
+$$\forall x \in\left(-1, 1\right>; \log(1+x) = \sum_{k=1}^{\infty}\frac{(-1)^{k-1}x^k}{k}$$
+
+$$\forall x \in(-1, 1); (1+x)^=α\sum_{k=1}^{\infty}\combnum{α}{k}x^k$$
+
+Důkaz 1. 3 podle věty 22.
+
+Lze použít pro výpočty limit.
+
+\section{Primitivní funkce}
+Neboli neurčitý integrál.
+
+Funkce $f$ je definovaná na otevřeném intervalu $I$. Řekneme, že $F$ je \name{primitivní funkcí k $f$ na $I$}, jestliže $\forall x\in I;\exists F'(x) \land F'(x) = f(x)$.
+
+\statement{Věta 1}
+Nechť $F$ a $G$ jsou primitivní funkce k funkci $f$. $\exists c\in\R F(x)=G(x) + c$.
+
+\begin{eqnarray*}H(x) &=& G(x) - F(x)\\
+H'(x) &=& G'(x) - F'(x)\\
+      &=& f(x) - f(x)\\
+      &=& 0\end{eqnarray*}
+
+Tedy $H$ je konstantní.
+
+Množina všech primitivních funkcí se značí $$\int f(x) dx = F(X) + C, x\in I, C=\left\{y = c, c\in \R\right\}$$ a říká se tomu \name{neurčitý integrál}.

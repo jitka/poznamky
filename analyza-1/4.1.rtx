@@ -1,0 +1,82 @@
+\begin{dummy}\end{dummy}
+\subsection{Taylarův polynom}
+Mám funkci $f$. Když $f$ má v $a$ vlastní $n$-tou derivaci. Pak polynom $T^a_n(x) = f(a) + f'(a) (x-a) + \frac{f''(a)}{2!}(x-a)^2+\cdots+\frac{f^{\left(n\right)}(a)}{n!}(x-a)^n$ se nazývá \name{Taylerův polynom $n$-tého řádu $f$ v bodě $a$}.
+
+$T^a_n$ je polynom stupně nejvýše $n$.
+
+\begin{eqnarray*}
+T^a_n(a) &=& f(a)\\
+(T^a_n)'(a) &=&f'(a)\\
+(T^a_n)''(a) &=& f''(a)\\
+&\vdots&
+\end{eqnarray*}
+
+$T^a_1$ je tečnou funkce $f$ v bodě $(a, f(a))$.
+
+Taylarův polynom je zobecnění tečny, nahrazení jednodušším výrazem s malou chybou.
+
+\statement{Věta 20}
+Nechť $f$ má v bodě $a$ vlastní $n$-tou derivaci a $P$ je polynom nejvýše $n$-tého stupně.
+Pak $P$ je Taylerův polynom $\Leftrightarrow$
+$$
+\lim_{x\to a}\frac{f(x) - P(x)}{\left(x-a\right)^n} = 0
+$$
+\\
+Důkaz:\\
+$f$ má na nějakém okolí bodu $a$ vlastní derivace až řádu $n$.
+Derivace až do $f^{\left(n-1\right)}$ je spojitá v $a$.
+L'hospitalovo pravidlo (tolikrát, aby to zabralo, je to $\frac{0}{0}$).
+Tedy to je $$\lim_{x\to n}\frac{f^{\left(n-1\right)(x)-(T^a_n)^{(n-1)}}}{n!(x-a)}$$
+Dále již nemůžu, v bodě $x$ nemusí existovat $n$-tá derivace.
+$$\lim_{x\to n}\frac{f^{\left(n-1\right)}(x)-\left(f^{\left(n-1\right)}(a)-f^{\left(n\right)}(a)\right)}
+{n!(x-a)}$$
+Po přerovnání jsou tam dvě $n$-té derivace co se odečtou, tudíž je to nula.
+
+Nechť $P$ je polynom nejvýše stupně $n$ a ona $\lim$ je $0$.
+
+Derivace až do $n-1$-té jsou spojité.
+Tedy
+\begin{eqnarray*}
+&&P(x) = a_0 + a_1 x + \ldots\\
+&&\hbox{Podle věty aritmetiky limit}\\
+&&\lim_{x\to a} \frac{f(x)-T^a_n(x)}{(x-a)^n} = 0 \Rightarrow
+\lim_{x\to a}\frac{P(x)-T^a_n(x)}{x-a)^n} = 0
+\end{eqnarray*}
+
+Čitatel musí jít k nule, postupným krácením se to vyjádří.
+\\
+Důsledek:\\
+Když $\exists$ vlastní $n$-thá derivace v $a\Rightarrow \exists \delta \in \R^+$, funkce $\omega$ devarfinovaná na $B(a, \delta)$ splňující:
+\begin{itemize}
+• $ω$ je spojitá v bodě $w(a) = 0$
+• $f(x) = T^a_n(x) + ω(x)(x-a)^n$ na $B(a, δ)$
+\end{itemize}
+
+Nazývá se \name{Peanův tvar zbytku}.
+
+\statement{Věta 21}
+$a<x$ a $f$ má vlastní $(n+1)$-tou derivaci v každém bodě intervalu $\left<a, k\right>$ a $\varphi$ je spojitá funkce na $\left<a, x\right>$ a má vlastní derivaci na $(a, x)$. $\Rightarrow \exists \xi\in(a, x)$
+$$
+f(x) -T^a_n(x) = \frac{\left(x-\xi\right)^n}{n!}* \frac{φ(x) - φ(a)}{\varphi'(\xi)}f^{\left(n+1\right)}(\xi)
+$$
+\\
+Důkaz:\\
+První až $n$-tá derivace jsou spojité.
+Položme \begin{eqnarray*}&&F(t) = T^t_n(x) = f(t) + f'(t)(x-t)\ldots\\
+&&F(a) = T^a_n(t)\\
+&&F(x) = f(x)\\
+&&F'(t) = f'(t) + f''(t)(x - t) + \cdots + \frac{f^{\left(n+1\right)}(t)}{n!}(x-t)^n - \\
+&&\left(f'(t) + f''(t)(x-t)\cdots + f^{\left(n\right)}(t){x-t}(x-t)^{n-1}\right)\\
+&& = \frac{f^{\left(n+1\right)}(t)}{n!}(x-t)^n
+\end{eqnarray*}
+
+Tedy je splněna Caychyova věta$\Rightarrow \frac{F'(\xi)}{\varphi'(\xi)} = \frac{F(x) - F(a)}{\varphi(x) - \varphi(x)}\Rightarrow $ ten vzoreček.
+
+Důsledek:\\
+Pro speciální volby $\varphi$ Cauchyův tvar zbytku $f(x) - T^a_n(x) = \frac{(x-\xi)^n(x-a)}{n!}f^{\left(n+1\right)}(\xi)$ --- podobné dalšímu členu toho polynomu.
+
+Pokud má $f$ v bodě $a$ derivace všech řádů, pak \name{Taylerova řada} je $$\sum_{n=0}^{\infty}\frac{f^{\left(n\right)}(x)}{n!}(x-a)^n$$.
+
+\statement{Větička 22}
+Necť $x > a$ a $f$ má v každém bodě intervalu $(a, x)$ derivace všech řádů. Navíc existuje $c\in \R$ že pro každé $t\in(a, x)$ a každé $n\in N$ je $\left|f^{\left(n\right)}(t)\right|\leq c$.
+Potom $f$ je v bodě x rovna součtu Taylorovy řady o středu $a$.

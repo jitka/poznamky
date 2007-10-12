@@ -1,0 +1,61 @@
+\section{Reálné funkce reálné proměnné}
+
+Obvykle se jí říká funkce.
+Myslí se jí $f: M \to \R, M \subset \R$.
+
+\subsection{Spojitost a limity}
+Funkce $f$ je spojitá v bodě $a \Leftrightarrow \forall \epsilon \in \R^+\exists \delta \in \R^+\forall B(a,b): f(x) \in B( f( a ), \epsilon )$.
+Je spojitá zleva, právě když $\forall\epsilon\in\R^+ \exists \delta\in \R^+\forall \left(a-\delta,a\right>: f(x) \in B( f( a ), \epsilon )$.
+Obdobně zprava.
+
+\note{$B(x\in\R^*, \epsilon\in\R^+)$ je myšleno $\epsilon$-ové okolí bodu $x$.}
+
+Funkce $f$ má v bodě $a\in \R^*$ limitu v $A\in \R^*\Leftrightarrow \forall \epsilon \in\R^+\exists \delta \in\R^+\forall x\in P(a,\delta):f(x)\in B(A,\epsilon)$.
+Obdobně zleva a zprava, jen prstencová okolí jsou jen ,,poloviční``.
+Pokud $A\in\R$, pak je limita vlastní, jinak je nevlastní.
+
+\note{$P(x\in\R^*, \epsilon\in\R^+)$ je myšleno $\epsilon$-ové prstencové okolí bodu $x$ - bez vlastního bodu $x$.}
+
+\statement{Větička 1}
+	Nechť $f$ je funkce.
+	\begin{itemize}
+	\item Funkce $f$ je spojitá v bodě $a \Leftrightarrow $ je spojitá zleva i zprava.
+	\item $\lim_{x\to a}f(x) = A\in \R \Leftrightarrow \lim_{x\to a^+}f(x) = A \land \lim_{x\to a^-}f(x) = A$.\\
+	Zleva doprava triviální---je to podmnožina---stačí, aby to platilo pro půlku.\\
+	Opačně:\\
+	$\exists \delta_1, \delta_2$ definující půlky okolí, pro která to platí.
+	Pak vezmu to menší a prohlásím ho za $\delta$, čímž získám celé prstencové okolí, pro které to také platí.
+	\item $f$ je spojitá v $a \Leftrightarrow \lim_{x\to a}f(x) = f(a)$.
+	\item Stejně tak zprava a zleva pro poslední.
+	\end{itemize}
+
+\statement{Věta 2 - Heine}
+	$a, A\in \R^*$ a $f$ je definovaná na okolí $P(a, \delta)$, následující je ekvivalentní:
+	\begin{itemize}
+	\item $\lim_{x\to a} f(x) = A$
+	\item $\forall \{{x_n\}}_{n=1}^{\infty}, x_n \neq a, x_n \in D(f), \lim_{n \to \infty} x_n = a ; \lim_{n\to\infty}f(x_n)=A$
+	\end{itemize}
+
+\begin{itemize}
+\item Nejdříve část, že když $\lim_{x\to a}f(x) = A$, tak ať si vymyslím jakoukoliv posloupnost, pro kterou platí, že $\forall x_n \neq a \land \lim x_n = a \land \forall x_n$. Rozepsáno:\\
+\begin{eqnarray*}
+&&\forall \epsilon \in \R^+\exists \delta\in\R^+\forall x\in P(a,\delta);f(x)\in B(A, \epsilon\\
+&&\forall \gamma \in\R^+\exists n_0\forall n>n_0, n\in \N; x_n \in B(a,\gamma)\land x_n\neq a\longrightarrow x_n\in P(a, \gamma)
+\end{eqnarray*}
+Nyní se toto spojí dohromady (když pro všechny, tak pro to $\delta$ existuje taky - to $n_0$):\\
+\begin{eqnarray*}
+&&\forall\epsilon\in\R^+\exists\delta\exists n_0\forall n>n_0,n\in \N;x_n\in P(a, \delta)\longrightarrow f(x_n) \in B(A, \epsilon)\\
+&&\forall\epsilon\in\R^+\exists n_0\forall n>n_0,n\in \N;f(x_n)\in B(A,\epsilon)\longrightarrow \lim f(x_n) = A
+\end{eqnarray*}
+\item Obráceně, tedy když to platí pro všechny posloupnosti a tak dále.
+Použije se obměna, tedy že neplatí první tvrzení.
+$$
+\exists \epsilon \in\R^+\forall \eta \in\R^+\exists x\in P(a,\eta);\overline{f(x)\in B(A,\epsilon)}
+$$
+\note{$f(x)$ nemusí být definované. Ale v případě, že $\eta < \delta$, ve kterém je definovaná, pak ale lze psát, že $f(x)\not\in B(A, \epsilon)$.}
+
+Dokážeme, že neplatí druhé tvrzení tak, že najdeme posloupnost $\{x_n\}$, že $\lim x_n = a \land \lim f(x_n) \neq A$.
+Vezmeme tudíž ono "špatné" $\epsilon$. Pak si vezmeme posloupnost $\eta$ a z každého nějaké $x$.
+Tedy vezmeme $k\in\N,\frac{1}{k}<\delta$. $\forall n\in N \exists x_n\in P(a,\frac{1}{k+n});f(x_n)\not\in B(A, \epsilon)$.
+Takové $x_n$ určitě existuje (viz zápis negace na začátku) a ona posloupnost vše splňuje.
+\end{itemize}

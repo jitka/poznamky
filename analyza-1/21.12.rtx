@@ -1,0 +1,20 @@
+\begin{dummy}\end{dummy}
+
+$h(x) = f(x) - f(z) - f'(z) * (x-z)$ (Funkce - tečna).
+$h(z) = 0$.
+Na nějakém okolí je $h'(z) = f'(x) - f'(z)$.
+
+Ve větě 17: existuje druhá derivace, takže musí existovat spojitá první derivace. Ve větě 18 je to přímo předpoklad.
+
+Nechť druhá derivace v $z$ je BÚNO kladná. $\exists \eta \in\R^+\forall x\in (z-\eta, z); f'(x) < f'(z)\land\forall x (z, z+\eta); f'(x) > f'(z)$. Tedy nalevo je $h'(x)>0$, napravo$h'(x)<0$. $h$ je tedy klesající na levo a rostoucí napravo. Tedy $h(x) > 0, x\in(z-\eta, z+\eta)\backslash x$. Tedy na obou stranách je nad tečnou, tedy z definice není inflexní bod.
+
+Ve větě 18 se použije stejná funkce.
+$f''((a, z)) > 0, f''((z, b)) < 0$.
+První derivace je spojitá na $(a, b)$.
+První derivace je rostoucí na $(a, z)$ a klesající na $(z, b)$.
+
+$f'(z)$ je ostré maximum.
+$h$ je klesající nalevo i napravo.
+$h((a,z)) < 0, h((z,b)) > 0, h(z) = 0$.
+Tedy $z$ je inflexní bod.
+

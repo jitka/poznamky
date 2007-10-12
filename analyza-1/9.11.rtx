@@ -1,0 +1,63 @@
+\subsection{Řady, jejichž členy mění znaménko}
+\subsubsection{Dirichetovo a abelovo kritérium}
+Máme $\{a_n\}, \{b_n\}$, $\{b_n\}$ je monotónní.
+Dále pak $\sum_{n=1}^{\infty} a_n$ je omezená a $\lim b_n = 0$.
+
+Pak $\sum_{n=1}^{\infty} a_n*b_n$ konverguje.
+
+$\forall j\in\{1,\ldots,n\}; a_1+a_2+\ldots+a_j\geq B\Rightarrow a_1b_1+a_2b_2+\ldots \geq B*b_1$. (Vyplývá z abelova lemma).
+
+BÚNO $b_n \geq 0$ a nerostoucí.
+$\exists M > 0\forall m\in \mathbb{N} \left|\sum_{n=1}^m a_n\right| \leq M$.
+
+Z toho plyne:
+$n, p\in \mathbb{N} \Rightarrow \left|\sum_{k=n+1}^{n+p} a_k\right| \leq 2M$ (Viz trojúhelníková nerovnost a odečtení těch dvou částí).
+
+$-2M*b_{k+1} \leq \sum_{k=n+1}^{n+p} a_kb_k \leq 2M*B_{k+1}$. (Viz abelovo lemma).\\
+$\left|\sum_{k=n+1}^{n+p} a_kb_k\right| \leq 2Mb_n+1$.
+
+Podle Bolzanovo-kosheovy podmínky:
+$\forall \epsilon > 0\exists n_0\in \mathbb{N}; n\geq n_0 b_n < \frac{\epsilon}{2M}$.
+$\left|\sum_{k=n+1}^{n+p}\right|\leq 2Mb_{n+1} < 2M*\frac{\epsilon}{2M} = \epsilon$.
+Tedy řada konverguje.
+
+Nebo $\sum_{n=1}^{\infty} b_n$ je omezená.
+
+BÚNO $\{b_n\}$ nerostoucí.
+Je omezená $\Rightarrow$ má limitu $b \in \mathbb{R}$
+$\sum_{n=1}^{\infty} a_n*\left(b_n - b\right)$ konverguje dle předchozího ($\lim \{b_n-b\} = 0$).\\
+$\sum_{n=1}^{\infty} a)n*b$ konverguje.\\
+Tedy i $\sum_{n=1}^{\infty} \left(a_n\left(b_n - b\right) + a_nb\right)$ také konverguje.
+Tato je ale ta původní.
+
+Inverzně:
+$\{a_n\},\{b_n\}$, $\{b_n\}$ monotónní a $\lim b_n \not = 0$, pak $\sum_{n+1}^{\infty}a_nb_n$ konverguje právě když $\sum_{n+1}^{\infty} a_n$ konverguje.
+
+$\Leftarrow$ platí přímo z druhé verze předchozího.
+
+Opačně: $b:= \lim b_n$. BÚNO $b>0$ $\Rightarrow \exists n_n\in \mathbb{N}; n\geq n_0 b_n > 0$.
+$\{\frac{1}{b_n}\}$ je monotónní a omezená. $b_n$ se může zkrátit.
+
+\subsection{Přerovnávání řad}
+Když $\sum_{n=1}^{\infty}a_n$ je řada a $\{k_n\}$ je permutace přirozených čísel (každé číslo v tom je právě jednou).
+Pak $\sum_{n=1}^{\infty}a_{k_n}$ je přerovnání řady.
+
+\subsubsection{Přerovnání absolutně konvergentní řady}
+Pokud je $\sum_{n=1}^{\infty} a_n$ je absolutně konvergentní, pak přerovnání této řady je také absolutně konvergentní.
+
+Pro nezáporné:\\
+$\forall n\in\mathbb{N}; a_n\geq 0$.
+Řada je konvergentní.
+$S_m$ je částečný součet původní řady a $t_m$ té přerovnané.
+$\lim S_m = S \in \mathbb{R} \land \forall m \in \mathbb{N} S_m \leq S$.\\
+$l:= \max\{k_1,\ldots,k_m\}\Rightarrow t_m \leq S_l$. (Kvůli tomu, že je to nezáporné)\\
+$\Rightarrow \{t_m\}$ je shora omezená číslem $\{S\}$ a je neklesající.
+Tedy existuje limita a je vlastní, která je $\leq S$, tedy $\sum_{n=1}^{\infty}a_{k_n} \leq\sum_{n=1}^{\infty}a_n$.
+Protože původní řada je přerovnáním té přerovnané řady, platí to i opačně. Tedy se součty rovnají.
+
+Pro libovolné:\\
+$\sum_{n=1}^{\infty}\left|a_n\right|\in \mathbb{R} \Rightarrow \sum_{n=1}^{\infty}\left|a_{k_n}\right|\in \mathbb{R}$
+Tedy konverguje absolutně.
+
+Pokud není konvergentní absolutně, pak $\forall A\in\mathbb{R}^*\exists \{k_n\};\sum_{n=1}^{\infty} a_{k_n} = A$, navíc existuje přerovnání, které nemá součet.
+

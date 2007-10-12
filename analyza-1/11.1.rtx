@@ -1,0 +1,44 @@
+\begin{dummy}\end{dummy}
+
+\statement{Věta 3}
+$F$ je primitivní k $f$ a $G$ je primitivní k $g$ na $I$, pak $αF+βG$ je primitivní k $αf+βg$.
+Důkaz přes aritmetiku derivací.
+
+\statement{Věta 4}
+$f$ je spojitá na otevřeném $I$ →→ má na $I$ primitivní funkci.
+Důkaz bude v budoucnu.
+
+\statement{Věta o zavedení logaritmu}
+$\frac{1}{x}$ je spojitá na $(0, \infty)$.
+Podle věty 4 k ní existuje primitivní funkce $F$ na $(0,\infty)$.
+Označme $L(X)=F(X) - F(1), x\in (0,\infty)$.
+\begin{itemize}
+• Definovaná na $(0,\infty)$ - očividné
+• Rostoucí - derivace je všude kladná
+• $$\lim_{x→1} \frac{L(x)}{x-1} = F'(1) = 1$$
+• $$\forall x,y\in (0,\infty); L(x*y) = L(x) + L(y)$$ Vezmu $y$ pevné a $φ(x) = L(x*y) - L(x) - L(y), x\in (0, \infty)$.
+Pak platí, že $φ(1) = L(y) - L(1) -L(y) = 0$.
+$$φ'(x)=L'(xy)*y-L'(x) = \frac{1}{xy}y - \frac{1}{x} = 0$$ Tedy je konstantní a v $1$ je rovna $0$, tedy $φ=0$.
+\end{itemize}
+
+\statement{Věty o substituci}
+\begin{itemize}
+• $F$ je primitivní  k$f$ na $(a, b)$ a $φ((α, β))→ (a,b)$ a má na $(α,β)$ má všude vlastní derivaci.
+Pak $\int(f(φ(t))φ'(d)dt = F(φ(t))+C, t\in (α, β)$. Důkaz z věty o derivaci složené funkce.
+
+• $φ'(t)\in \R\backslash\{0\}, t\in (α,β), φ((α,β)) = (a,b)$ a $f$ je definovaná na $(a,b)$ a platí $\int f'(φ(t))φ'(t)dt = G(t)+C$ na $(α,β)$ →→ $\int f(x)dx = G(φ^{-1}(x))+C$ na $(a,b)$. Opět ověřit zderivováním. (Lze si všimnout že φ je prostá i na, z Rollovy věty)
+\end{itemize}
+
+\noindent Poznámka:\\
+Nechť $f$ má primitivní funkci na $(a,b)$ a $φ'(t)\in\R , t \in (α,β)$, φ je prostá na $(α,β)$ a zobrazuje ho na $(a,b)$.
+Pak platí to samé jako v druhém bodě výše.
+
+\statement{Integrace per partes}
+$f, g$ jsou spojité na $I$, $F$ je primitivní k $f$ a $G$ primitivní k $g$. Pak
+$$\int g(x)F(x) dx = G(x)F(x) - \int G(x)f(x)dx, x \in I$$
+Plyne z věty o derivaci součinu.
+$$(G*F)'(x) = g(x)F(x) +G(x)F(x)$$
+$H$ je primitiví k $G(x)f(x)$, pak $G(x)F(X) - H(X)$ je primitivní k $g(x)F(x)$.
+
+\noindent Poznámka:\\
+Platí i bez spojitosti, počítá-li se jako rovnost množin.

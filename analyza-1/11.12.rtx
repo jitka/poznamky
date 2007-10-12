@@ -1,0 +1,82 @@
+\begin{dummy}\end{dummy}
+
+\statement{Causiova věta o střední hodnotě}
+Předpoklady:
+\begin{itemize}
+\item $a<b$
+\item $f, \varphi$ jsoe spojité na $\left<a, b\right>$
+\item $f$ má derivaci v každém bodě $(a, b)$
+\item $\varphi$ má vlastní nenulovou derivaci v $(a, b)$
+\end{itemize}
+Pak existuje bod $\xi\in (a,b); \frac{f(\xi)}{\varphi(\xi)} = \frac{f(b)-f(a)}{\varphi(b)-\varphi(a)}$.
+
+Z rollovy věty plyne, že $\varphi(b) \neq \varphi(a)$ - byla by spojitá, měla by někde derivaci nulu (zlomek má smysl).
+Definujumu se pomocnou funkci $g(k) = f(x) - \frac{f(b)-f(a)}{\varphi(b) - \varphi(a)}(\varphi(x) - \varphi(a))$.
+$g'(x) = f'(x) - \frac{f(b) - f(a) }{\varphi(b)} - \varphi(b) \varphi(x)$.
+$g(a) = f(a), g(b) = f(a)$.
+$g$ splňujo předpoklady rollovy věty, $\longrightarrow \exists \xi f'(\xi) - \frac{f(b)-f(a)}{\varphi(b)-\varphi(a)} \varphi(x) = 0$.
+
+\statement{Vztah znaménka derivace a monotonie na intervalu}
+$J$ je interval, $f$ spojitá na $J$, $f'$ vlastní či nevlastní pro každý vnitřní bod intervalu.
+\begin{itemize}
+\item $f'(x) > 0 \forall k \in J\Rightarrow$ rostoucí
+\item $f'(x) \geq 0 \forall k \in J\Leftrightarrow$ neklesající
+\item $f'(x) \leq 0 \forall k \in J\Leftrightarrow$ nenerostoucí
+\item $f'(x) < 0 \forall k \in J\Rightarrow$ klesající
+\end{itemize}
+
+Nechť $f'(x)>0\forall x\in J$.
+Vezměme $a,b\in J, a<b$.
+$f$ splňuje předpoklady L'Grangeovy věty pro $(a, b)\longrightarrow\exists \xi \in (a,b); f(b)-f(a) = f'(\xi)(b-a)$
+$\longrightarrow f'(\xi)>0, b-a>0\longrightarrow f(b)-f(a) > 0 \longrightarrow f(b)>f(a)$. Tedy je rostoucí.
+
+Opačně: neklesající na intervalu $(a,b), f'(x)$ existuje všude $\longrightarrow$ derivace je nezáporná.
+$f$ neklesající, $f'(x) = \lim_{y\to x}\frac{f(y)-f(x)}{y-x}$ - podle toho, jestli je $x>y$ oboje nekladné, nebo oboje nezáporné, $x\neq y$ - prstencové okolí.
+
+Poznámka:\\
+Rostoucí funkce může mít občas derivaci rovnou nule (např $x^3$ v $0$).
+
+Poznámka:\\
+Na otevřeném intervalu není třeba spojitost, ale je těžší ji dokázat.
+
+Důsledek:\\
+$f'(x)=0 \forall x\in (a,b)\Rightarrow f(x)$ konstantní na $(a,b)$.
+Je spojitá - v každém bodě má derivaci (vlastní).
+Je neklesající a nerostoucí zároveň.
+
+\statement{Věta 12}
+$f$ je spojitá zprava v bodě $a$ a existuje $\lim{x\to a} f'$ zprava.
+Potom existuje $f'(a)$ a rovná se té limitě.
+
+Označme $L$ tu limitu.
+Existuje nějaké pravé okolí $\delta$ bodu $a$ a kde je limita vlastní.
+Pak $f$ je spojitá na $(a, a+\delta)$.
+Tedy je spojitá na $\left<a, a+\delta\right)$.
+Vezměme $x\in\left<a, a+\delta\right)$.
+Pak $f$ splňuje předpoklady L'Grangeovy věty na intervalu $\left<a, x\right>\longrightarrow \exists \xi_x \in \left<a, x\right>; f'(\xi_x) = \frac{f(a-x)}{x-a}$. Použije se věta o limitě složené funkce.
+$\forall x\in(a, a+\delta);\xi_x \in(a, a+\delta)$.
+$\xi_x$ je funkce, $\lim_{x\to a} \xi_x = a$ - věta o policajtech.
+$\forall x\in (a, a+\delta), \xi_x>a$.
+$\lim_{x\to a} f(x) = L$.
+Tedy složením bude také $L$.
+
+Obdobně zleva, složením se získá oboustraná.
+
+Důsledek:\\
+$\arcsin$ má zleva v $1$ a zprava v $-1$ limitu $\infty$.
+$\arcsin' x=\frac{1}{\sqrt{1-x^2}}$, proto funguje na celém intervalu $\left<-1, 1\right>$.
+
+Poznámka:\\
+Neplatí např. pro signum - není spojitá.
+
+\statement{L'Hospitalovo pravidlo}
+Nechť $f, g$ mají na prstencovém okolí $a$ vlastní derivace a $\lim_{x\to a}\frac{f'(x)}{g'(x)}$ existuje.
+$\lim_{x\to a} f(x) = \lim_{x \to a} g(x) = 0\lor \lim_{x\to a} |g(x)| = \infty$.
+Pak limita je rovna podílu derivací.
+
+Nechť platí obě nuly a $a$ je reálné, limita zprava $L=\lim \frac{f(x)}{g(x)}$.
+BÚNO $f(a) = g(a) = 0$
+Dále máme derivace a nejsou nuly.
+Když $x\in \left<a, a+\delta\right)$, pak $f, g$ splňují předpoklady cauchiovy věty.
+$\exists \xi_x\in\left<a, a+\delta\right); \frac{f'(\xi_x) }{g'(\xi_x)} = \frac{f(x) - f(\xi_x)}{g(x) - g(\xi_x)} = \frac{f(x)}{g(x)}$.
+

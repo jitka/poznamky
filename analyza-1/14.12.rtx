@@ -1,0 +1,30 @@
+\begin{dummy}\end{dummy}
+
+Podobně pro limitu zleva, tedy i pro oboustrannou limitu.
+Tím je dokázán případ 1 pro $a\in \R$.
+
+Pro $a = \infty$.
+$\lim_{x\to \infty} = \lim_{x\to \infty} = 0$. Převedeme na 0, použije se $\tilde{f}(x) = f(\frac{1}{x}$, obdobně pro g.
+Protože jseou definované kolem okolí, jsou definované pro okolí $0$ zprava.
+Za použití složené funkce, vyhýbá se limitě, převede se na minulý případ.
+Po zderivování se všechna $\frac{1}{x^2}$ zkrátí.
+
+$\lim_{x\to a+} |g(x)| = \infty, \lim{x\to a+}\frac{f'(x)}{g'(x)} = k, a\in\R$.
+Nelze použít větu o střední hodnotě (neboť není spojitá).
+$\exists \Delta\in\R^+, x\in(a,a+\Delta)\exists $ vlastní $f'(x), g'(x), g'(x) \neq 0, g(x) \neq 0$.
+Budu se pohybovat v takovém intervalu, vezmu si v něm dva body $x, x1$ a na intervalu $\left<x, x_1\right>$ už se dá použít caychionva věta.
+Upraví se a dostane $\frac{f(x)}{g(x)} = \frac{f'(\xi)}{g'(\xi)} \left(1-\frac{g(x_1)}{g(x)}\right) + \frac{f(x_1)}{g(x)}$.
+Když $\epsilon>0$, pak existuje $\eta > 0$, že pro $t\in(a, a+\eta)$ je $\frac{f'(t)}{g'(t)}\in B(k, \eta)$ a zvolím $x_1 \in (a, a+\eta)$. Pak $\forall x\in(a, x1); \frac{f'(\xi)}{g'(\xi)}\in B(k, \eta)$
+Pak když $g(x)$ jde k nekonečnu, $x_1$ je fixované a pak ty podíly jsou skoro $0$, takže se dají zanedbat.
+
+\subsubsection{Konvexní a konkávní funkce}
+$I$ je interval a $f$ definovaná na $I$. $f$ je na $I$ \name{konkávní}, jestliže $\forall x_1, x_2\in I\forall \lambda \in\left<0,1\right> ;f(\lambda x_1 + (1-\lambda)x_2) \geq \lambda f(x_1)+(1-\lambda)f(x_2)$.
+Je \name{ryze konkávní} pokud s $(0, 1)$ a $<$ a různé $x_1, X_2$.
+
+\name{Konvexní} a \name{ryze konvexní} obdobně, jen naopak.
+
+V podstatě to říká, jestli je funkce ``propadlá'' a nebo ``vypouklá''.
+Říká, jestli množina nad grafem je konvexní nebo konkávní.
+
+\statement{Poznámka}
+$f$ je konvexní právě když $-f$ je konkávní, s ryze též.

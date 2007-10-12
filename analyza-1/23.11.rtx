@@ -1,0 +1,91 @@
+\begin{dummy}\end{dummy}
+
+\statement{Věta 10 - o limitě monotónní funkce}
+Budiž $f$ monotónní na $(a, b), a, b \in \R^*$. Potom existují $\lim_{x\to a+} f(x)$ a $\lim{x\to b-} f(x)$.
+
+BÚNO $f$ je neklesající. Tedy,
+\begin{eqnarray*}
+&&\forall x_1, y_1 \in (a, b); x_1 < x_2 \Rightarrow f(x_1) \leq f(x_2)\\
+&&d = b - a \longrightarrow \forall n\in\N; f\left(b-\frac{d}{n}\right) \leq f\left(b-\frac{d}{n-1}\right)
+\end{eqnarray*}
+
+Funkce je buď omezená shora, pak má suprememum $S\in\R$.
+Toto supremum bude limita zleva v bodě $b$.
+Pokud toto supremum je maximum, pak od bodu, kde je funkce rovna tomuto supremu nemůže klesnout a tudíž je stále rovná tomuto supremu.
+Pokud není, pak $\forall x\in(a, b)\exists x_+\in(a,b); f(x_+)\in\left(f\left(x\right), S\right)$ - jinak by to supremum bylo menší. A od tohoto $x_+$ všechny funkční hodnoty budou větší nebo rovny. Tudíž, $\forall \epsilon\in\R^+\exists\delta\forall x\in(b-\delta,b); f(x)\geq S-\epsilon\land f(x)< S$.
+
+Pokud funkce není omezená, pak je její limita $\infty$, protože $\forall x\exists x_+, f(x)<f(x_+)$ a protože je rostoucí, tak $x_+>x$.
+
+\statement{Věta 11 Bolzano-Caucheova podmínka}
+\begin{eqnarray*}&&\lim_{x\to a} f(x) \in\R \Leftrightarrow\\
+&&\forall \epsilon \in \R^+\exists\delta\in\R^+\forall x_1, x_2\in P(a, \delta); \left|f\left(x_1\right) - f\left(x_2\right)\right| < \epsilon\\
+&&\longrightarrow y = \frac{ f\left(x_1\right), f\left(x_2\right)}{2}\\
+&&\longrightarrow f(x_1)\in B(y, \frac{\epsilon}{2})
+\end{eqnarray*}
+
+\subsection{Funkce spojité na intervalu}
+Nechť $J$ je nedegenerovaný interval. Funkce $f : J\to R$ je spojitá, je-li spojitá zprava v každém bodě, který není koncovým bodem intervalu $J$ a spojitá zleva v každém bodě kromě počátečního bodu intervalu $J$.
+
+\statement{Věta 12 Heineho věta pro pro spojitost na intervalu}
+Obdobné jako u funkcí.
+
+\statement{Věta 14 Darbouxova o nabývání mezihodnot}
+$f$ je spojitá na $\left<a,b\right>\land f(a)<f(b)\Rightarrow \forall  c\in\left(f\left(a\right), \left(b\right)\right)\exists x\in(a,b); f(x) = c$.
+
+$x = \inf \left\{y\in\left<a, b\right>, f(y) > c\right\}, f(x) = c$
+
+$\left<a, b\right>$ obsahuje své infimum (je to $a$), tudíž neprázdná podmnožina musí mít infimum také v tomto intervalu.
+
+Pokud to neplatí, pak buď $f(x) < c$ a funkce není spojitá zprava v bodě $x$, nebo $f(x) > c$ - je v té množině, pak ale existuje $\epsilon=\frac{f(x) - c}{2}>0$ a funkce není spojitá zleva v bodě $x$.
+
+\statement{Věta 16}
+$f$ spojitá na $\left<a, b\right>\Rightarrow f(x)$ omezená na $\left<a, b\right>$.
+
+%TODO důkaz sporem pro shora, zdola pomocí spojité $-f(x)$
+
+\statement{Věta 17}
+$f$ spojitá nabývá na $\left<a, b\right>$ svého maxima i minima.
+Viz minimum je omezená shora $\longrightarrow$ má supremum.
+$\forall n\in\N \exists x_n, f(x_n)>S(f(x_n)) - \frac{1}{n}\longrightarrow\\
+S-\frac{1}{n}<f(x_n)\leq S$.
+Z věty o policajtech $f(x_n)$ konverguje k $S$.
+Z bolsano-straserovy věty existuje vybraná posloupnost $\left\{x_{n_k}\right\}$, žé je v intervalu.
+Když $x_n$ jde k nějakému $x\in \left<a, b\right>$, pak
+$\lim f(x_{n_k}) = f(x), \lim f(x_n) = S\Rightarrow f(x) = S$.
+$S$ je tudíž maximum.
+
+\statement{Věta 18, spojitost inverzní funkce}
+$J$ je interval a $f$ je spojitá a rostoucí na $J$.
+Pak $f^{-1}$ je spojitá a rostoucí na na intervalu $f(J)$.
+
+Obdobně s klesající.
+
+Je rostoucí $\longrightarrow$ je prostá, tudíž $f^{-1}$ je definovaná.
+
+Je spojitá $\longrightarrow$ $f(J)$ je také interval (viz věta 15).
+
+Když je spojitá a prostá, pak musí být buď rostoucí nebo klesající.
+
+Inverzní je také prostá.
+
+%TODO Že je rostoucí - sporem - viz f^{-1}(f^{-1}(x))
+
+Spojitá - vezmu $x$ není koncový bod $f(J)$.
+Pak dokážu, že je spojitá zprava.
+
+%TODO
+
+\section{Elementární funkce}
+\subsection{Logaritmus}
+\begin{itemize}
+\item $D( f ) = \R^+$
+\item Je rostoucí
+\item $\ln a*b = \ln a + \ln b$
+\item $\lim_{x\to1} \frac{\ln x}{x-1} = 1$
+\end{itemize}
+
+\statement{Věta 19}
+Existuje jediná funkce, která splňuje tyto vlastnosti a nazývá se přirozeným logaritmem.
+Bude dokázáno na konci semestru.
+
+\note{To, že je rostoucí plyne z ostatních vlastností, je ale třeba mít derivace.}

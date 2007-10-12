@@ -1,0 +1,24 @@
+\begin{dummy}\end{dummy}
+\statement{Vlastnost 9: $\ln$ je spojitá na $\R^+$}
+Je spojitá v bodě $1$ - z vlastnosti 4.
+(Limita v $1$ se rovná logaritmu v $1$).
+
+$x_0$ libovolné.
+$\lim_{x\to x_0} \ln x$ - převedu na předchozí příklad tím, že rozšířím $x_0$.
+
+\statement{Vlastnost 10: Obor hodnot je celé $\R$}
+Z 9 plyne, že je spojitá $\longrightarrow$ obor hodnot je interval.
+Obor hodnot je neomezený shora i zdola.
+Proto je interval celé $\R$.
+
+\statement{Vlastnost 11: Existuje vždy právě $1$ číslo $x$ pro které se zobrazí samo na sebe}
+Obor hodnot je celé $\R$ a je to prosté (je rostoucí).
+A toto číslo se nazývá $e$.
+
+\subsection{Exponenciální funkce}
+\name{Exponenciální funkce} $\exp$ je funkce inverzní k $\ln$.
+
+Definiční hodnot je $\R$ a obor hodnot je interval $\left(0, \infty\right)$.
+
+Když $a>0\land b\in\R$, pak $\ln b * a^b = $.
+Když $a, b>0, a\neq 1 \log_b a = {\ln b\over \ln a}$.
