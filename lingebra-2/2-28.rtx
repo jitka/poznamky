@@ -1,0 +1,61 @@
+\begin{dummy}\end{dummy}
+
+\statement{Pozorování}
+Je-li $W$ podprostor $V$ dimenze $n$, pak každou ortonormální bázi $V$ lze rozšířit na ortonormální bázi $W$.
+
+Určitě lze doplnit na bázi, ty původní prohlásit za již začátek algoritmu a dozpracovat ty nové.
+
+Vše co je kolmé na vše v $V$ se nazývá \name{Ortogonální doplněk} - ($V^\perp$).
+
+Pozn:\\
+Řešení soustavy je ortogonální doplněk řádkového prostoru matice k celému prostoru.
+
+\statement{Věta}
+$V$ je podprostor $W$ konečné dimenze.
+→•
+• Ortogonální doplněk $V$ je podprostor $W$.
+• Součet dimenzí $V$ a $V^\perp$ je dimenze $W$.
+• $(V^\perp)^\perp = V$.
+• $V \cap V^\perp = \left\{0\right\}$.
+←•
+
+\statement{Důkaz}
+\begin{eqnarray*}
+&&u+v∈W^\perp\\
+&&u, v\perp x ,∀x∈W.\\
+&&\left<u+v|x\right> = \left<u|x\right>+\left<v|x\right> = 0
+\end{eqnarray*}
+Podobně pro násobek.
+
+Označme $X$ nějakou ortonormální bázi $V$.
+Rozšiřme $X$ na ortonormální bázi $W$.
+Chceme nahlédnout, že $V$ je lineární obal toho, o co se rozšířila ta báze.
+\begin{eqnarray*}
+&&v∈V^\perp⊂V\\
+&&v = \Σ…\\
+\end{eqnarray*}
+
+Čtvercová matice $A$ se nazývá \name{ortogonální}, pokud $A·A^T = I$ - tedy, každé dva řádky jsou na sebe kolmé a navíc má každý velikost 1.
+
+Matice je ortogonální ←→ $A^{-1} = A^T$.
+
+\section{Determinanty}
+\subsection{Permutace}
+\name{Permutace} množiny $X$ je vzájemně jednoznačné zobrazení $P$ množiny $X$ na sebe sama.
+$S_n$ budeme označovat množinu všech permutací množiny $\{1, …, n\}$.
+\name{Inverze} permutace je dvojice $(i, j), i > j, P(i) < P(j)$.
+$I(P)$ je množina všech inverzí permutace $P$.
+\name{Znaménko permutace} je $(-1)^{\left|I(P)\right|}$.
+
+\statement{Tvrzení}
+$sig(P\circ Q) = sig(P) · sig(Q)$
+
+Nechť $A$ je čtvercová matice nad tělesem $T$.
+Pak $$Det(A) = \Σ_{P∈S_n}sig(P)·\Pi_{i=1}^n a_{i, P(i)}$$ nazveme \name{determinant} matice A.
+
+\statement{Věta}
+$Det(A) = Det(A^T)$.
+Mějme $\Σ_{P∈S_n}sig(P)·\Pi_{i=1}^n a_{P(i), i}$ determinant $A^T$. Vezměme obdobně, ale s inverzními permutacemi. Pak ale je to ten samý součet jako u $A$.
+
+\statement{Věta}
+Přerovnáním řádků matice se nezmění, je-li znaménko permutace řádků rovno $1$ a změní, když je rovno $-1$.

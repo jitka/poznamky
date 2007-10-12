@@ -1,0 +1,27 @@
+\begin{dummy}\end{dummy}
+\section{Skalární součin}
+Viz zimní…
+
+V jednom vektorovém prostoru může být více skalárních součinů.
+
+\subsection{Norma}
+Viz zimní…
+
+\name{Ortogonální báze} je složená z kolmých vektorů.
+
+Nechť $V$ je konečně dimenzionální vektorový prostor nad $K$ a $(v_1, …, v_n)$ tak, že $v_i$ je kolmý na $v_j ∀i,j$ a $||v_i|| = 1∀i$. Pak se nazývá \name{Ortonormální}.
+
+Pozorování: Každý systém navzájem kolmých nenulových vektorů je lineárně nezávislý.
+
+Tvrzení: Nechť $(v_1, …, v_n)$ je ortonormální báze nad $V$. Potom $x=\sum_{i=1}^n\left<x|v_i\right>v_i-→$ pak se nazývá fourierovy koeficienty (ty věci co se sumí).
+
+Nechť $V$ je podprostor $W$ a $(v_1, …, v_n)$ je ortonormální báze. Potom zobrazení $P_v:W→V,  P_v(u) = \sum_{i = 1}^n\left<u, v_i\right> v_i$. Pak se zobrazení $P_v$ nazývá \name{Ortogonální projekce}.
+
+\statement{Trzení} $∀u∈W∀i∈1…n; (u-P_v(u)) \perp v_i$.\\
+\statement{Důkaz} je přes dosazení do sumy a rozepsání.
+
+\statement{Tvrzení} $∀u, z∈W;(a=||P_v(u)-u||) ≤ ||z-u||$.\\
+\statement{Důkaz} $b =||P_v(u)-z|| $ Stačí že $||a+b||^2 > ||a||^2$. Pak stačí rozepsat a nahlédnout, že $a\perp b$ jsou na sebe kolmé.
+
+\statement{Věta}V každém konečně dimenzionálním vektorovém prostoru se skalárním součinem existuje ortonormální báze.\\
+\statement{Důkaz} Gram-Smidtova ortonormalizace, z libovolní báze udělá ortonormální. Vezme se vektor, další se nahradí vektorem kolmým na všechny předchozích, za pomocí Ortogonální projekce.

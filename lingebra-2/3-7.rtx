@@ -1,0 +1,35 @@
+\begin{dummy}\end{dummy}
+$$
+det(A') = sig(P(A→A'))·det(A)
+$$
+
+\begin{eqnarray*}
+&& det(A) = \Σ_{i=1}^nsig(p)Π_{j=1}^na_{i,P(i)}
+\end{eqnarray*}
+
+Co se může stát je, že se přehází pořadí čísel - a to se proháže v každém řádku.
+Poté se buď otočí nebo neotočí znaménko té permutace.
+Lze povytýkat znaménko ze sumy a ty permutace zůstanou stejné.
+
+\statement{Pro řádky}
+to platí také. Lze dokázat za použití předchozích dvou.
+
+\statement{Lemma o rozvoji determinantů}
+
+Matice $A_i,j$ budeme nazývat \name{podmatici} matice $A$, vznikne-li vynecháním $i$-tého řádku a $j$-tého sloupce.
+Pak platí, že:
+
+$$
+det(A) = \Σ_{i=1}^n\Σ{j=1}^n (-1) ^{i+j}·det(A_{i, j})
+$$
+
+Vezmněme matici co je o $1$. řádek a $1$. sloupek větší, má tam samé nuly, jen v levém horním rohu jedničku. Lze si všimnout, že determinant zůstane stejný. Poté prohazováním řádků, sloupců lze každý řádek nastěhovat tam.
+
+\statement{Důsledek 1}
+Násobením řádku $i$ číslem $t$ nám násobí determinant číslem $t$.
+
+\statement{Důsledek 2}
+Přičtení $t$ násobku řádku $j$ k řádku $i$ nám nezmění determinant.
+
+\statement{Tvrzení o lineárním zobrazení}
+Při zobrazení z $R^n$ do $R^n$ odpovídající matici $A$. Pak zobrazení jednodkové $n$-dimenzionální krychle bude mít objem stejný jako je determinant matice $A$.
