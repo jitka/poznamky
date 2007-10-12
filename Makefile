@@ -16,4 +16,4 @@ $(patsubst %,%/Makefile,$(SUBDIRS)): %: build/Makefile.dir
 	cp $< $@
 
 clean-makes:
-	rm -f $(patsubst %,%/Makefile,$(SUBDIRS))
+	rm -f $(patsubst %,%/Makefile,$(SUBDIRS)) $(patsubst %,%/Makefile.rtx.deps,$(SUBDIRS))
