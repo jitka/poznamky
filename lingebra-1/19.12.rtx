@@ -1,0 +1,57 @@
+\begin{dummy}\end{dummy}
+
+Matici přechodu pro identitu z jedné báze na druhou spočítám jako $B^{-1}A$. Lze spočítat elementárními úpravami $(B|A) \sim (I|B^{-1}A)$.
+
+Převod lze provést pomocí přechodu přes kanonickau bázi.
+
+Nechť $V$ a $W$ jsou vektorové prostory nad stejným tělesem $K$. Potom lineární zobrazení $f:V\to W$ které je bijektivní nazýváme \name{izomorfizmem} prostorů $V$ a $W$.
+
+Pozorování:\\
+Inverzní zobrazení je také izomorfizmem.
+Je určitě bijekcí.
+Sčítání funguje správně.
+$f^{-1}(w+w')=f^{-1}(f(u)+f(u'))=f^{-1}(f(u+u'))=u+u' =f^{-1}(w) + f^{-1}(w')$.
+Násobení obdobně.
+
+\statement{Věta o určení izomorfizmu}
+$V$ a $W$ jsou vektorové prostory nad stejným $K$ s konečnými bázemi.
+Potom platí, že $f:V\to W$ je izomorfizmus právě když je matice zobrazení toho zobrazení regulární.
+Navíc také platí, matice inverzního zobrazení je inverzí matice zobrazení.
+
+Předpokládám, že matice zobrazení $[f]_{xy}$ je regulární.
+Vezmněme zobrazení $[g]_{yx} = ([f]_{xy})^{-1}$.
+Složení těchto zobrazení:\\
+$[g \circ f]_{xx} = [g]_{yx} [f]_{xy} = I_n = [id]_{xx}$.
+Tudíž musí být $f$ prosté, kdyby se něco slilo, nemůžu se vrátit.
+Musí být také na, totéž jde udělat opačně.
+Tudíž je to izomorfizmus.
+
+Opačně: Vezmeme zobrazení $f$ a $f^{-1}$ (izomorfizmus).
+Tam a zpět musí být identita, tudíž $[f]_{xy}[f^{-1}]_{yx}=[id]_{xx} = I_n$.
+Opačně také.
+Protože součinem nevzroste hodnost, takže musí být čtvercová a obě musí být stejné.
+Obě matice jsou tedy regulární a vzájemně inverzní.
+
+Důsledek:\\
+Každý vektorový prostor dimenze $n$ nad $K$ je izemerfní s $K^n$.
+Zvolme si bázi $X$ a zobrazení $f: u\to [u]_x$ je izomorfizmem --- určení souřadnic, z nich se dá rekonstruovat.
+
+Poznámka:\\
+$\dim(\mathcal{L}(A)) = \dim(\mathcal{L}(R A))$ pro regulární $R$ je izomorfizmem $f: u\to Ru$ mezi $\mathcal{L}(a)$ a $\mathcal{L}(RA)$.
+
+\statement{Tvrzení}
+Nechť $V$ a $W$ jsou vektorové prostory nad $K$ a množina $Z$ všech lineárních zobrazení z $V$ do $W$.
+Pak $Z$ je vektorovým prostorem, definujeme-li součet a násobek následovně:
+$(f+g)(x) = f(x) + g(x)$ a $(af) = a f(x)$.
+
+Jednak to oboje je zobrazení (očividně).
+Je třeba ověřit, že toto zobrazení je lineární.
+Stačí jednoduše rozepsat.
+
+Také je třeba ověřit všechny axiomy vektorového prostoru.
+
+\subsubsection{Řešení rovnic s lineárním zobrazením}
+$f:Ax=b$ lze chápat jako lineární zobrazení.
+\statement{Tvrzení}
+Nechť $f:V\to W$ lineární zobrazení. Potom platí $Ker(f) = \{x\in V; f(x) = 0\}$ (\name{jádro zobrazení}) je podprostorem $V$.
+Pokud rovnice $f(x) = b$ má alespoň jedno řešení $x_0$, potom každé řešení lze vyjádřit jako $x = x_0 + x', x' \in Ker(f)$.

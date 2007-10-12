@@ -1,0 +1,63 @@
+\begin{dummy}\end{dummy}
+\subsection{Skalární součin}
+Nechť $V$ je vektorový prostor nad $\C$. Zobrazení $\left<u|v\right>u, v \in V \to c\in C$ se nazve \name{skalární součin}, jestliže splňuje:\begin{itemize}
+• $\forall u\in V; \left<u|u\right> = 0 \Leftrightarrow u = 0$
+• $\forall u, v, w \in V; \left<u+v|w\right> = \left<u|w\right> + \left<v|w\right>$
+• $\forall u, v\in V, a\in\C; \left<au|v\right> = a\left<u|v\right>$
+• $\forall u, v\in V; \left<v|u\right> = \overline{\left<u|v\right>}$
+• $\forall u\in V; \left<u|u\right> ≥ 0$
+\end{itemize}
+
+Součin pro prostory nad $\R$ se definuje stejně, jen se všechna $\C$ zamění za $\R$.
+
+Nechť $V$ je prostor se skalárním součinem, potom \name{norma} definovaná skalárním součinem je dána předpisem $||u|| = \sqrt{\left<u|u\right>}$.
+
+\statement{Geometrická interpretace}
+Norma říká, jak je vektor dlouhý.
+Lze určit vzdálenost vektorů ($||u-v||$).
+$\left<u|v\right>$ odpovídá úhlu.
+
+Pro standardní skalární součin na $\R^n$ a z něj odvozenou normu platí, $\left<u,v\right> = ||u||*||v||*\cos φ$, kde φ je úhel mezi nimi sevřený.
+
+Důkaz z obrázku a kosinovy věty.
+
+\statement{Cauchy-Swartzova nerovnost}
+$V$ je prostor se skalárním součinem a z něj odvozenou normou.
+Potom platí, $\forall u,v\in V; \left|\left<u|v\right>\right| ≤ ||u||*||v||$
+$$u=0\leq v=0→→ 0≤0$$\\
+$$0≤||u+av||^2≤\left<u+av|u+av\right>=\left<u|u\right>+a\left<v|u\right>+\overline{a}\left<u|v\right>+a\overline{a}\left<v|v\right>$$
+Dosadím $a=-\frac{\left<u|v\right>}{\left<v|v\right>}$, tedy:
+$$\left<u|v\right>\left<v|u\right> ≤ \left<u|u\right>\left<v|v\right>$$
+To vlevo je násobení $c\in \C$ s $\overline{c}$. Tedy po odmocnění to vyjde.
+
+\noindent Důsledek:\\
+Nerovnost mezi aritmetickým a geometrickým průměrem. Plyne z $\vec{v} = (1, 1, …, 1)$ samých jedniček.
+
+\noindent Důsledek:\\
+Norma odvozená ze skalárního součinu splňuje trojúhelníkovou nerovnost.
+$$||u+v|| ≤ ||u|| + ||v||$$\\
+$$||u+v|| = \sqrt{\left<u|u\right> + \left<u|v\right> + \left<v|u\right> + \left<v|v\right>}$$
+$\left<u|v\right> + \left<v|u\right> ≤ 2\left|\left<u|v\right>\right|$
+Dosadím a použiju větu:
+$$≤\sqrt{||u||^2+2||u||*||v||+||v||^2} = ||u||+||v||$$
+
+\noindent Poznámka:\\
+Normu lze definovat obecněji, axiomaticky.
+Prostory s normou jsou to samé co metrické prostory (lze používat k měření vzdáleností).
+
+Vektory $u, v\in V$ se skalárním součinem nazveme \name{Kolmé/Ortogonální}, $←→ \left<u|v\right> = 0$.
+
+\noindent Pozorování:\\
+Systém kolmých vektorů je lineárně nezávislá.
+Důkaz sporem.
+
+Nechť $V$ je vektorový prostor se skalárním součinem a $Z=(v_1, …, v_n)$ je jeho báze, $\forall v\in Z; ||v|| = 1, \forall v_i, v_j \in Z; v_i \neq v_j →→ \left<v_i|v_j\right>$, pak ji nazvu \name{Ortonormální}.
+
+\statement{Věta}
+Nechť $(v_1, …, v_n)$ je ortonormální báze.
+Pak platí $\forall u\in V; u=\sum_{i=1}^{n} \left<u|v_i\right>v_i$.
+
+\noindent Důkaz:\\
+$$\left<u|v_i\right> = \left<\sum_{j=1}^na_jv_j\Bigg{|}v_i\right>= \sum_{j=1}^n a_j\left<v_j|v_i\right> = a_i$$
+
+Koeficienty $\left<u|v_i\right>$ se nazývají \name{Fourierovy koeficienty} vektoru $u$ vůči ortonormální bázi $(v_1, …, v_n)$.

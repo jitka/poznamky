@@ -1,0 +1,17 @@
+\begin{dummy}\end{dummy}
+\statement{Složení 2 lineárních zobrazení je opět lineární zobrazení}
+$$
+g\left(f\left(u+v\right)\right) = g\left(f\left(u\right)+f\left(v\right)\right) = g\left(f\left(u\right)\right) + g\left(f\left(v\right)\right)
+$$
+
+Pro násobek obdobně.
+
+\statement{Pro popis zobrazení stačí znát zobrazení báze}
+Vezmeme libovolné $u$, zjistím souřadnice, aplikuji na obraz báze.
+Vůči sumě i násobkům se chová rozumě.
+
+\statement{Důsledek}
+Množina všech obrazů je podprostor a jeho dimenze je nejvýše dimenze původního prostoru.
+
+\subsubsection{Vyjádření bází}
+$V, W$ vektorové prostory nad $K$. $X=(v_1, \ldots v_n), Y=(w_1, \ldots w_m)$ Potom lineární zobrazení $f:V\to W$ nazveme matici $[f]_{XY} \in K^{m\times N}$ sestavenou z vektorů obrazu báze $X$ vůči bázi $Y$.

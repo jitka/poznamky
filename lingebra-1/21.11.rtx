@@ -1,0 +1,53 @@
+\subsection{Prostory určené maticí}
+
+Nechť $A_{m\times n}$ je matice nad tělesem $\K$.
+\name{Sloupcový prostor} $\mathcal{S}(A)$ je podprostor $\K^m$ generovaný sloupci $A$. $\mathcal{S}(A) = \left\{u,u\in \K^n, u = Ax \forall x\right\}$.
+\name{Řádkový prostor} $\mathcal{R}(A)$ je podprostor $\K^n$ generovaný řádky.
+\name{Jádro} matice $A$ je podprostor $\K^n$ tvořený všemi řešeními homogenní soustavy $Ax = 0$.
+Značí se $Ker(A)$.
+
+\statement{Důkaz, že $Ker(A)$ je podprostor $K^n$}
+Určitě je to podmnožina $\K^n$ - je to aritmetický vektor o $n$ prvcích.
+A prostor to je také - obsahuje součet dvou prvků tohoto ($0+0=0$) a násobky tohoto ($a*0=0$).
+
+\note{Elementární úpravy nemění jádro matice ani $\mathcal{R}(A)$.}
+
+\statement{Závislost jádra a řádkového prostoru}
+Nechť $v\in\mathcal{R}(A), x\in Ker(A)\Rightarrow v^Tx = 0$, $v^Tx$ je maticový součin (takže se smí násobit).
+$v^Tx=\left(A^Ty\right)^Tx = y^T\left(Ax\right) = y^T0 = 0, y\in \K^n$
+
+\subsection{Lineární nezávislost}
+Nechť $V$ je vektorový prostor nad $\K$.
+Daná $n$-tice vektorů $v_1, v_2, \ldots , v_n \in V$. Nazvu ji \name{lineárně nezávislou} $\Leftrightarrow a_1v_1 + a_2v_2 + \ldots + a_nv_n= 0, a_1 = a_2 = a_3 = 0$. (Má jen triviální řešení).
+
+\note{Nezáleží na pořadí vektorů.}
+
+\note{Je-li $v_1=v_j, i\neq j\Rightarrow$ je lineárně závislé (např. $a_i = 1, a_j = -1$). Tudíž se stačí omezit na množiny.}
+
+\note{$v_i = 0\Rightarrow$ je lineárně závislá.}
+
+Nekonečná množina je lineárně nezávislá $\Leftrightarrow$ všechny její konečné podmnožiny jsou lineárně nezávislé.
+
+Množina $\left\{v_1, v_2\ldots v_n\right\}$ je lineárně závislá.
+Tudíž $\exists a_1, a_2, \ldots a_n\exists i; a_i \neq 0 \land a_1v_1 + a_2v_2 + \ldots + a_nv_n = 0$. $v_i = \frac{a_1v_1 + \ldots + a_{i-1}v_{i-1} + a_{i+1}v_{+1} + \ldots + a_nv_n}{a_n}$. Tudíž lze vyjádřit ostatními vektory a je zbytečný.
+
+$X\subseteq Y\land X$ závislá $\Rightarrow Y$ je závislá.
+
+$X\subseteq Y\land Y$ nezávislá $\Rightarrow X$ je nezávislá.
+
+$X$ je nezávislá $\Leftrightarrow \forall u\in X; u\not \in L(X\backslash u)$.
+
+\subsubsection{Postup ověřování}
+$X=\left\{v_1, v_2, \ldots , v_n\right\} \subseteq \K^n$.
+\begin{itemize}
+\item Zkusit vyřešit a najít tu kombinaci, co ,,dělá problémy``.
+Řekne i kombinaci, při které se najde ten navíc.
+Pokud jsou tam volné proměnné, pak má více řešení a je závislá.
+\item Sestaví se matice $B$ vektorů $v_1, \ldots , v_n$ po řádcích. $B$ se převede do odstupňovaného tvaru. $X$ je lineárně nezávislá, $B'$ v odstupňovaném tvaru neobsahuje nulový řádek.
+\end{itemize}
+
+\name{Báze} vektorového prostoru $V$ nazveme každé $X\subseteq V$, která je lineárně nezávislá a zároveň generuje celý prostor $V$. Složení každého prvku ve $V$ z prvků $X$ je jednoznačné.
+
+Nechť $X=(x_1, x_2, \ldots , x_n)$ je složené uspořádání báze $V$ nad $K$. Pro každý vektor $u\in V$ nazveme \name{souřadnice} vzhledem k $X$ ony koeficienty, které jsou potřeba pro získání tohoto vektoru. Značíme $[u]_X$.
+
+\name{Kanonická báze $K$} prostoru $V=\K^n$ obsahuje samé vektory s právě jednou $1$ a zbytkem $0$.

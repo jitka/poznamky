@@ -1,0 +1,73 @@
+\begin{dummy}\end{dummy}
+
+\statement{Tvrzení}
+Nechť $X$ je tělesová báze taková, že $\mathcal{L}(X)=V$ a $\forall Y\subset X; \mathcal{L}(Y)\neq V$.
+Potom $X$ je báze prostoru $V$.
+
+Důkaz:\\
+Generuje celý prostor (již z předpokladu).
+A při odebrání nějakého $u$ do toho vektorového prostoru nebude toto $u$ patřit.
+
+Důsledek:\\
+Z každého konečného počtu generátorů (těch co generuje prostor) lze vybrat bázi.
+
+Důsledek:\\
+Každý vektorový prostor má bázi.
+Buď má konečný počet generátorů (pak viz výše).
+
+\statement{Lemma o výměně}
+Nechť $u_1, u_2, \ldots u_n$ je systém generátorů $V$ a $u$ je libovolný vektor z $V$.
+Potom $\forall i, u = \sum_{k=1}^n a_ku_k \land a_i\neq 0; u_1, u_2,\ldots u_{i-1}, u, u_{i+1}, \ldots u_n$ je také systém generátorů. Tedy, pokud $u \neq 0$, pak můžu některý z oněch vektorů nahradit za něj.
+
+Důkaz:\\
+\begin{eqnarray*}
+&&u = a_1u_1 + a_2u_2+\ldots a_nu_n, a_i \neq 0\\
+&&v_i=\left(\frac{a_1}{a_i}u_1+\ldots \frac{a_n}{a_i}u_n\right) + \frac{1}{a_i}u\\
+&&\forall w\in V, w=\sum{k=1}^nb_kv_k, \vbox{dosadím $v_1$ }\\
+&&w=\left(b_1-{b_i\over a_i}a_1\right)u_1 + \ldots
+\end{eqnarray*}
+
+Tedy generuje celý prostor.
+
+\statement{Steinitzova věta o výměně}
+Nechť $V$ je vektorový prostor, $X\subseteq V$ lineárně nezávislá a $Y$ konečný systém generátorů.
+Potom $\left|X\right|\leq\left|Y\right|$ a dále $\exists Z\subseteq V$ platí, že:
+\begin{itemize}
+\item $\mathcal{L}(Z) = V$
+\item $\left|Z\right|=\left|Y\right|$
+\item $X\subseteq Z$
+\item $Z\backslash X\subseteq Y$
+\end{itemize}
+
+Důkaz:\\
+Označím $\left\{u_1, u_2, \ldots u_n\right\} = X\backslash Y$, potom $Z_0 = Y$.
+Dále indukcí pro $i = 1\ldots n$.
+$Z_{i-1}$ generuje $V$. Vyberu něco, co se dá vyměnit s $u_i$ dle předchozího lemma (musí existovat, jinak je $X$ závislá) a nedalo se to tam v předchozím kroku.
+Tudíž to pak generuje $V$.
+
+To nakonec odpovídá všemu.
+
+Důsledek:\\
+Pokud má prostor $V$ konečnou bázi, pak všechny jeho báze mají stejnou velikost.
+Vezmu báze $X$ a $Y$, pak jedna je nezávislá a druhá generuje a naopak, každá je menší nebo rovna té druhé.
+
+Důsledek 2:\\
+Pokud má vektor $V$ konečný systém generátorů, pak lze každou lineárně nezávislou množinu doplnit na bázi.
+
+Nechť prostor $V$ má konečnou bázi. Potom mohutnost libovolné jeho báze nazveme \name{dimenzí prostoru $V$ a značíme $\dim(V)$}. Dále řekneme, že $V$ je konečně generovaný.
+
+\statement{Pozorování}
+Je-li $W$ podprostor $V$, pak $\dim(W) \leq \dim(V)$.
+Báze $W$ je nezávislá v $V$.
+
+Dimenze aritmetických vektorových prostorů $\dim(K^n)=n$ - kanonická báze má $n$ prvků.
+
+\statement{Pozorování}
+Je-li matice $A$ v odstupňovaném tvaru, pak nenulové řádky $A$ jsou lineárně nezávislé, tudíž dimenze řádkového prostoru $\dim(\mathcal{R}(A)) = rank(A)$. Platí i v případě, že není v odstupňovaném tvaru.
+
+Lze použít k výpočtu dimenze lineárního obalu něčeho.
+$X = \left\{u_1, u_2, \ldots u_m\right\}$ a z těchto vektorů sestavíme matici.
+Převedeme na odstupňovaný tvar a spočítáme nenulové řádky.
+
+\statement{Věta}
+Nechť $A\in \mathbb{K}^{m\times n}$, potom $\dim(\mathcal{R}(A)) = \dim(\mathcal{S}(A))$.

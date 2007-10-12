@@ -1,0 +1,19 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[latin2]{inputenc}
+\usepackage{czech}
+\usepackage{amsfonts}
+
+\input{../defs.tex}
+
+\begin{document}
+\title{Lineární algebra a optimalizace}
+\author{Michal Vaner}
+\maketitle
+\input{14.11.rtx}
+\input{21.11.rtx}
+\input{28.11.rtx}
+\input{5.12.rtx}
+\input{12.12.rtx}
+\input{19.12.rtx}
+\input{9.1.rtx}
+\end{document}

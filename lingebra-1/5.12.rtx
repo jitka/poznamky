@@ -1,0 +1,57 @@
+\begin{dummy}\end{dummy}
+\begin{itemize}
+\item Násobení zleva regulární maticí nezmění dimenzi sloupcového prostoru.
+Vezmeme bázi $\mathcal{S}(A)$.
+Vynásobíme to maticí $R$ a dokážeme, že je to báze $\mathcal{S}(A')$.
+Libovolný vektor z $\mathcal{S}(A')$ vyjádříme jako lineární kombinaci vektorů toho prvního.
+
+Dále se dokáže, že je lineárně nezávislá. (řešení regulární matice je jen triviální, vektory té původní jsou báze, takže nezávislé).
+
+\item U odstupňované matice se dimenze sloupcového i řádkového prostoru je stejný.
+Když se na ně podíváme - hodnost je nejvýše počet pivotů.
+Navíc generují celý svůj prostor (nejsou tam nuly).
+Je to tedy báze.
+\end{itemize}
+
+Důsledek:\\
+Hodnost matice a hodnost transponované matice je stejný.
+
+Důsledek:\\
+Při násobení regulární maticí se mi hodnost matice nezmění.
+
+Důsledek:\\
+Při násobení neregulární maticí se dimenze sloupcového prostoru může zmenšit.
+
+\name{Součet podprostorů} $U$ a $V$ je $\mathcal{L}(U\cap V)$.
+Říká se mu \name{Spojení}
+
+\statement{Věta o dimenzích průniku a spojení}
+$$\dim(U) + \dim(V) = \dim(U\cap V) + \dim(U + V)$$
+
+Vezmeme si bázi průniku $\{w_1,\ldots w_k\}$.
+Doplníme na bázi vektoru $U$ $\{u_1,\ldots u_k, u_1,\ldots u_n\}$ a obdobně pro $V$.
+Chceme dokázat, že $\{w_1,\ldots w_k, u_1,\ldots u_n, v_1,\ldots v_m\}$ je bazí.
+Jednak je systém generátorů, $z = a+b, a\in U, b\in V$ - určitě lze cokoliv vyjádřit.
+
+Nyní že je nezávislé. Vezme se nulový vektor a zkusí se vyjádřit.
+Převede se třeba $V$ napravo. Levo patří do $U$, pravo do $V$.
+Je stejný, tudíž je v průniku.
+$$\sum d_i w_i + \sum c_i v_i = 0$$
+Toto je lineárně nezávislé (je z báze $V$), všechny koeficienty musí být nula. Ale tudíž je to nulový vektora to vlevo na začátku je také nezávislé (z báze $U$).
+
+Dimenze jádra je rovna počtu volných proměnných.
+Řešení jsou zapsaná jako lineární kombinace $k$ vektorů ($k$ je počet volných proměnných).
+Navíc jsoe lineárně nezávislé (ve volných proměnných je schovaná v podstatě jedničková proměnná---po vynechání některých řádků).
+
+Pro matici o $A^{m\times n}$ součet hodnosti jádra a hodnosti matice je dohromady $n$.
+Převedeme si ji do odstupňovaného tvaru.
+$U= R A$.
+$rank(U)$ je počet bázových proměnných, což je $n-k$. A $k$ je dimenze jádra.
+Při převádění se nemění ani hodnost ani dimenze.
+
+Zobrazení $f: U\to V, U, V$ jsou vektorové prostory nad tělesem $\K$.
+Řekneme že zobrazení je \name{lineární}, pokud:
+\begin{itemize}
+\item $\forall u, v\in U; f(u+v) = f(u) + f(v)$
+\item $\forall u\in U, \forall c \in \K; f(cu) = cf(u)$
+\end{itemize}

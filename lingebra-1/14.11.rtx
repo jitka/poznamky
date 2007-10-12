@@ -1,0 +1,80 @@
+\section{Vektorový prostor}
+
+Nechť $(\K,+,\cdot)$ je těleso. Množina $V$ spolu s operací $+$ na $V$, a zobrazením $\cdot: \K\times V\to V$ se nazývá \name{vektorový prostor} $(V,+,*)$, splňuje-li následující axiomy:
+\begin{itemize}
+\item $\forall u,v,w\in V; u+(v+w) = (u + v) + w$
+\item $\forall u,v\in V; u + v = v + u$
+\item $\exists 0 \forall u\in V; 0 + u = u$, kde $0$ je nulový vektor.
+\item $\forall u\in V; u + ( -u ) = 0$
+
+\item $\forall a,b\in \K\forall u\in V; a\cdot(b*u) = (a\cdot b)\cdot u$
+\item $\exists 1 \in \K\forall u\in V;\in \K ;1 \cdot u = u$, 1 je jednotkový prvek $\K$
+\item $\forall a\in \K; \forall u,v\in V; (a + b) \cdot u = a \cdot u + b \cdot u$
+\item $\forall a,b\in \K; \forall u\in V; a \cdot (u + v)= a \cdot u + a \cdot v$
+\end{itemize}
+
+Prvky tělesa $\K$ se nazývají skaláry.
+\\
+
+\textit{Příklady:}
+\begin{itemize}
+\item \name{Triviální vektorový prostor}, $V={0}$, funguje nad libovolným tělesem.
+\item Prostor $\K^n, n\in N$ - \name{aritmetický vektorový prostor}, obsahuje uspořádané $n$-tice prvků z $\K$.
+Součet je po složkách a násobení také.
+Každé těleso lze vnímat jako vektorový prostor nad sebou samým ($\K^1$).
+\item Matice řádu $m\times n \Leftrightarrow \K^{m \cdot n}$. Operace jsou stejně jako u předchozí.
+\item Polynomy nad $\K$ přirozeného stupně.
+\item Spojité funkce nebo diferencovatelné funkce nebo funkce na $R$, na intervalu.
+\item Systém podmnožin $A\subseteq S$. Součet je symetrická diference (to co nemají společné), $0 = \emptyset, -A=\overline{A}$. Lze chápat jako aritmetický vektorový prostor $\mathbb{Z}_2^{\left|S\right|}$.
+\item Přímka v prostoru, ale jen někdy (např, když obsahuje nulu).
+\end{itemize}
+
+\noindent Prvky $0$ a $-u$ jsou určeny jednoznačně. Stejně jako u skalárů.
+\\
+
+\noindent$\forall u\in V\forall a\in \K; 0\cdot u = a\cdot 0 = 0$.\\
+$0\cdot u = 0\cdot u + 0 = 0\cdot u + 0\cdot u - 0\cdot u = (0 + 0\cdot u - 0\cdot u = 0$.\\
+$a\cdot 0 = a\cdot 0 + 0 = a\cdot 0 + a\cdot 0 - a\cdot 0 = a\cdot( 0 + 0) - a\cdot 0 = a\cdot 0 - a\cdot 0 = 0$.
+\\
+
+\noindent$a\cdot u = 0 \Rightarrow a= 0 \lor u = 0$\\
+Sporem:\\
+$a \neq 0, u\neq 0$\\
+$0\neq u = 1\cdot u = (a\cdot a^{-1})\cdot u = a^{-1}(a\cdot u) = a^{-1} \cdot 0 = 0 \Rightarrow 0 \neq 0$.
+
+\subsection{Podprostor}
+Nechť $V$ je vektorový prostor nad tělesem $\K$ a $U \subset V$ taková:
+\begin{itemize}
+\item $\forall u,v\in U; u+v \in U$
+\item $\forall a\in \K, u \in U; a\cdot u\in U$
+\end{itemize}
+potom $(U, +, \cdot)$ je \name{podprostor} $V$.
+
+Každý podprostor je též vektorovým prostorem. (Stačí ověřit axiomy)
+
+\statement{Tvrzení} $(U_i, i \in I)$ je systém podprostorů vektorového systému $V$, pak průnik všech těchto je také podprostor vektorového prostoru $V$.\\
+$U$ je průnik toho systému.
+$\forall u,v\in U\Rightarrow \forall i\in I; u\in U_i \land v\in U_i\Rightarrow\forall i\in I u+v \in U_i\Rightarrow u+v\in U$.
+Pro násobek stejně.
+\\
+
+Nechť $V$ je vektorový prostor nad tělesem $\K$ a $X\subseteq V$.
+Potom \name{podprostor generovaný $X$} je průnik všech $U$ podprostorů $V$ takových, že $X\subseteq U$.
+Značíme jej $\mathcal{L}(X)$ a nazýváme ho též \name{lineárním obalem} $X$.
+
+Nechť $V$ je vektorový prostor nad $\K$ a $X \subset V$.
+Potom lineární obal obsahuje právě všechny \name{lineární kombinace} vektorů z $X$.\\
+$\mathcal{L}(X) \left\{u; u=\sum_{i=1}^n a_i\cdot x_i; n \geq 0, \forall a \in \K,\forall x_i \in X\right\}$.
+
+\statement{Důkaz}
+\begin{itemize}
+\item Druhým způsobem je to podprostor obsahující $X$.
+Jednak, obsahuje to $X$ (protože každý prvek lze v tom součtu s $n = 1, a_1 = 1$ vytvořit).
+Jednak, určitě to obsahuje součet dvou prvků tohoto (pro $n$ součtu jednotlivých $n$ sčítaných prvků a jednoduše součty dát za sebe, jsou komutativní, asociativní, takže se to může provést).
+A nakonec, násobek prvku tam je také, protože můžu znásobit každé $a_i$ a vyjde mi násobek (což můžu, na $\K$ je definované násobení a násobení je asociativní).
+Z toho důvodu to první je podmnožina toho druhého (toto je jedna z věcí, se kterou se dělá ten průnik).
+\item Není tam nic navíc.
+Pokud by tam některý prvek vygenerovaný tímto způsobem nebyl, pak jde postupným sčítáním a násobením vytvořit.
+Tudíž taková věc by nebyla podprostorem (nebyla by prostorem) a nedostane se mezi ony věci mezi kterými se dělá průnik.
+Tudíž to druhé je podmnožinou toho prvního.
+\end{itemize}
