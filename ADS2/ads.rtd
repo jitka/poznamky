@@ -3,12 +3,12 @@
 \usepackage{czech}
 \usepackage{amsfonts}
 
-\input{defs.tex}
+\input{../defs.rtx}
 
 \begin{document}
 \title{ADS II}
 \author{Michal Vaner}
 \maketitle
-\input{10.2.07.tex}
-\input{10.9.07.tex}
+\input{10.2.07.rtx}
+\input{10.9.07.rtx}
 \end{document}

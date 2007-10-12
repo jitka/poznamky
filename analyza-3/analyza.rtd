@@ -3,7 +3,7 @@
 \usepackage{czech}
 \usepackage{amsfonts}
 
-\input{defs.tex}
+\input{../defs.tex}
 
 \begin{document}
 \title{Analýza}

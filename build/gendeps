@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+
+foreach $arg ( @ARGV ) {
+	open INP, $arg or next;
+	( $dir ) = ( $arg =~ /(.*\/)[^\/]+/ );
+	foreach( <INP> ) {
+		next unless( /\\in(put|clude){[^{}]*}/ );
+		s/\\in(put|clude){([^{}]*)}/$arg.dep: $dir$2.dep/g;
+		s/([-_a-z0-9A-Z.]+)\.rt[dx]\.dep/$1.tex.dep/g;
+		s#(/|: )[^/: ]*/\.\./#$1#g;
+		print;
+	}
+}

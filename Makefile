@@ -1,14 +1,19 @@
-SUBDIRS:=ADS2 algebra analyza-3 neproceduralko topomet komsem
-ALL_DEPS:=$(patsubst %,%-all,$(SUBDIRS))
-CLEAN_DEPS:=$(patsubst %,%-clean,$(SUBDIRS))
+D:=$(shell pwd)
+RTDS:=$(wildcard */*.rtd) $(wildcard *.rtd)
+RTXS:=$(wildcard */*.rtx) $(wildcard *.rtx)
 
-all: $(ALL_DEPS)
-clean: $(CLEAN_DEPS)
+include build/Makefile.bottom
 
-.PHONY: all clean $(ALL_DEPS) $(CLEAN_DEPS)
+.PHONY: gen-makes clean-makes
 
-$(ALL_DEPS): %-all:
-	$(MAKE) -C $(patsubst %-all,%,$@)
+distclean: clean-makes
 
-$(CLEAN_DEPS): %-clean:
-	$(MAKE) -C $(patsubst %-clean,%,$@) clean
+SUBDIRS:=ADS2 algebra analyza-3 komsem neproceduralko topomet
+
+gen-makes: $(patsubst %,%/Makefile,$(SUBDIRS))
+
+$(patsubst %,%/Makefile,$(SUBDIRS)): %: build/Makefile.dir
+	cp $< $@
+
+clean-makes:
+	rm -f $(patsubst %,%/Makefile,$(SUBDIRS))
