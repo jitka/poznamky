@@ -42,9 +42,10 @@ $(patsubst %,test-%,$(RTXS)): test-%.rtx: _test-%.dvi
 	kdvi $<
 
 $(patsubst %,_test-%,$(RTXS)): _test-%: %
-	cat localhead > $@ || echo '\documentclass{article}\usepackage[latin2]{inputenc}\begin{document}' > $@
+	echo $(D)/localhead
+	cat $(D)/localhead > $@ || echo '\documentclass{article}\usepackage[latin2]{inputenc}\begin{document}' > $@
 	cat $< >> $@
-	cat localtail >> $@ || echo '\end{document}' >> $@
+	cat $(D)/localtail >> $@ || echo '\end{document}' >> $@
 
 $(patsubst %,print-%,$(RTDS)): print-%.rtd: %.dvi
 	dvips $<
