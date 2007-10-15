@@ -1,0 +1,24 @@
+Buď $f:A→B$ zobrazení a $ρ$ ekvivalence. Pak \name{jádro} je $\ker f = @{@(a,b@)∈A;f@(a@) = f@(b@)@}$.
+$π_ρ:A→A/ρ$ je \name{přirozená projekce}, které prvku $a$ přiřadí rozkladovou třídu obsuhující $a$.
+
+Nechť $f:A→B$ je zobrazení a $ρ$ je ekvivalence na $A$. Potom platí:
+→•
+• Jádro zobrazení je ekvivalence.
+• $f$ je prosté $←→ \ker f = $ identita.
+• $\ker π_ρ = ρ$
+• Zobrazení $g:A/ρ→B$ takové, že $∃gπ_ρ = f←→ ρ⊂\ker f$
+←•
+
+Buď $ρ$ ekvivalence na $A$, $α$ je $n$-ární operace na $A$. Řekněme, že $ρ$ je \name{slučitelná} s $α$, platí-li $∀a_1,…,a_n, b_1,…,b_n ∈A;@(a_i,b_i@)∈ρ→→ @(α@(a_1,…,a_n@), α@(b_1,…,b_n@)@)∈ρ$. Řekneme, že ekvivalence $ρ$ na algebře $A@(α_i@)$ je \name{kongurence}, jestliže $ρ$ je slučitelná se všemi $α_i$.
+
+Buď $f:A→B$ homomorfizmus dvou algeber stejného typu (jiné homomorfizmy ani neuvažujeme). Potom $\ker f$ je kongurence na $A$.
+
+Nechť $A@(α_i@)$ je algebra a $ρ$ je kongurence na $A$. Potom na $A/ρ$ definujeme strukturu algebry tak, že vyberu z každé rozkladové třídy reprezentanta a vezmu to skrz ty $α_i$.
+
+Definice struktury na $A/ρ$ je korektní a je stejného typu jako na $A$.
+
+Algebra $G(·)$ nazveme \name{grupoid} je-li $·$ binární operace. Prvek $e∈G$ nazveme \name{neutrální prvek}, pokud $∀g∈G;g·e=e·g=g$. Řekneme, že $G(·,e)$ je \name{monoid}, jestliže $·$ je asociativní a $e$ je neutrální prvek.
+
+\name{Podgrupoid} (\name{podmonoid}) je podalgebra grupoidu (monoidu).
+
+Každý grupoid obsahuje nejvýše jeden neutrální prvek.

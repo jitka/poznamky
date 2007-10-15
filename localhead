@@ -4,6 +4,6 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 
-\input{defs.tex}
+\input{../defs.tex}
 
 \begin{document}
