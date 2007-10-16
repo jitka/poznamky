@@ -1,4 +1,4 @@
-RTXPDFS=$(patsubst %.rtd,%.pdf,$(RTDS))
+RTXPDFS:=$(patsubst %.rtd,%.pdf,$(RTDS))
 
 all: $(RTXPDFS)
 
@@ -10,16 +10,16 @@ include Makefile.rtx.deps
 $(RTXPDFS): %.pdf: %.dvi
 	dvipdf $< $@
 
-RTXDVIS=$(patsubst %.rtd,%.dvi,$(RTDS))
+RTXDVIS:=$(patsubst %.rtd,%.dvi,$(RTDS))
 
-$(RTXDVIS) $(patsubst %.rtx,_test-%.dvi,$(RTXS)): %.dvi: %.tex $(shell echo %.tex.dep) $(patsubst %,%.dep,$(wildcard $(D)/localhead) $(wildcard $(D)/localtail))
+$(RTXDVIS) $(patsubst %.rtx,%._test.dvi,$(RTXS)): %.dvi: %.tex $(shell echo %.tex.dep) $(patsubst %,%.dep,$(wildcard $(D)/localhead) $(wildcard $(D)/localtail))
 	cd $(shell echo $< | sed -e 's/\(.*\/\|\)[^/]*/\1/') . && cslatex $(shell echo $< | sed -e 's/.*\///')
 
 $(patsubst %.rtd,%.tex,$(RTDS)): %.tex: %.rtd
 
-$(patsubst %.rtx,%.tex,$(RTXS))  $(patsubst %.rtx,_test-%.tex,$(RTXS)): %.tex: %.rtx
+$(patsubst %.rtx,%.tex,$(RTXS))  $(patsubst %.rtx,%._test.tex,$(RTXS)): %.tex: %.rtx
 
-$(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtx,_test-%.tex,$(RTXS)): %.tex:
+$(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtx,%._test.tex,$(RTXS)): %.tex:
 	$(D)/build/rtx2tex < $< | recode utf8..latin2 | sed -e 's/\\\(input\|include\){\([^{}]*\)\.rtx}/\\\1{\2.tex}/g;s/\\include{\([^{}]*\)\.tex}/\\include{\1}/g' > $@ || ( rm $@; false )
 
 %.dep: %
@@ -28,7 +28,7 @@ $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtx
 clean: clean-rtx clean-rtx-depfile
 
 clean-rtx:
-	rm -f $(RTXDVIS) $(RTXPDFS) $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtd,%.log,$(RTDS)) $(patsubst %.rtd,%.aux,$(RTDS)) $(patsubst %,%.dep,$(RTXS) $(RTDS)) $(patsubst %.rtx,_test-%.*,$(RTXS)) $(patsubst %.rtx,%.log,$(RTXS))
+	rm -f $(RTXDVIS) $(RTXPDFS) $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtd,%.log,$(RTDS)) $(patsubst %.rtd,%.aux,$(RTDS)) $(patsubst %,%.dep,$(RTXS) $(RTDS)) $(patsubst %.rtx,%._test.*,$(RTXS)) $(patsubst %.rtx,%.log,$(RTXS))
 
 distclean: clean
 
@@ -38,10 +38,10 @@ clean-rtx-depfile:
 $(patsubst %,test-%,$(RTDS)): test-%.rtd: %.dvi
 	kdvi $<
 
-$(patsubst %,test-%,$(RTXS)): test-%.rtx: _test-%.dvi
+$(patsubst %,test-%,$(RTXS)): test-%.rtx: %._test.dvi
 	kdvi $<
 
-$(patsubst %,_test-%,$(RTXS)): _test-%: %
+$(patsubst %.rtx,%._test.rtx,$(RTXS)): %._test.rtx: %.rtx
 	echo $(D)/localhead
 	cat $(D)/localhead > $@ || echo '\documentclass{article}\usepackage[latin2]{inputenc}\begin{document}' > $@
 	cat $< >> $@
@@ -50,4 +50,4 @@ $(patsubst %,_test-%,$(RTXS)): _test-%: %
 $(patsubst %,print-%,$(RTDS)): print-%.rtd: %.dvi
 	dvips $<
 
-.PHONY: all distclean clean-rtx-depfile clean clean-rtx $(patsubst %,test-%,$(RTDS) $(RTXS)) $(patsubst %,print-%,$(RTDS))
+.PHONY: all distclean clean-rtx-depfile clean clean-rtx $(patsubst %._test.rtx,%._test.rtx,$(RTXS)) $(patsubst %,print-%,$(RTDS))
