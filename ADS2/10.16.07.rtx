@@ -1,0 +1,40 @@
+Mějme síť, ve které již něco teče. \name{Síť rezerv} je síť popisující zbylé kapacity hran (tedy, ty samé vrcholy, hrany tam a zpět a kapacity kolik zbývá a kolik už teče). Může to být multigraf ale násobnosti max. $2$ (tedy, mohou být až 2 paralelní hrany).
+
+Lze předefinovat Ford-Falkosnův algoritmus tak, že vždy najde nenulovou cestu v síti rezerv a podle té to zvýší.
+
+Lze však zlepšit i podle toky v síti rezerv.
+
+\subsection{Dinicův algoritmus}
+→•
+• Začne s nulovým tokem.
+• Sestrojí síť rezerv, bez hran o kapacitě $0$.
+• Změří nejkratší vzdálenost ze zdroje do spotřebiče (pokud nekonečno, tak je již nejlepší).
+• Sestrojí \name{pročištěnou síť}---ponechá jen vrcholy a hrany ležící na nejkratších cestách.
+• Sestrojíme \name{blokující tok} $G$.
+• Zlepšíme $F$ podle $G$.
+• Opakuje (,,otrhané`` hrany a vrcholy zase vrátí).
+←•
+
+\subsubsection{Pročištěná síť}
+Obsahuje vrstvy, zdroj je ve vrstvě $0$, další vrstva je ve vzdálenosti $1$, spotřebič je ve vrstvě $l$.
+Hrany vždy jdou z vrstvy $k$ do $k+1$.
+
+Hrany lze podle nějakých pravidel vyházet (vracející se, nevedoucí do spotřebiče, v rámci jedné vrstvy, ty které mají vstupní nebo výstupní hranu nula).
+
+\subsubsection{Blokující tok}
+Je tok, kde po každé orientované cestě ze zdroje do spotřebiče existuje alespoň jedna plná hrana.
+
+Vyrazím libovolnou cestou k spotřebiči a takovou cestu naplním, kolik se vejde.
+
+Takové ,,plné`` hrany rovnou vyhazuji (a updatnu mazání slepých uliček).
+
+Jedna fáze lze zhora odhadnout na $O(M*N)$.
+
+V každé fázi se $l$ zvětší alespoň o $1$, $l_max = N$---zastaví se, celková složitost je $O(M*N^2)$.
+Nelze dokázat tím, že cesty délky $l$ zablokuju---přibývají jiné (opačné) hrany---ale vznikají tím jen hrany z $k$ do $k-1$ vrstvy.
+
+Lze upravit tak, že celou dobu jen snižujeme rezervy, až to bude celé hotové, tak se ty rozdíly odečtou a máme správný tok.
+Obě čištění mohou být průběžné.
+Lze také prohledáváním do hloubky i v ne zcela pročištěné sítě a mazat při vracení ze slepých uliček a z neslepých updatovat rezervy hran.
+
+Toky v sítích lze použít např. pro hledání maximálního párování.

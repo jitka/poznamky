@@ -44,4 +44,4 @@ Nějaká cesta se dá zvětšit, čímž se zvětší tok.
 
 \subsection{Algoritmus}
 Dokud to jde, najde nenasycenou cestu ze zdroje do cíle a nasytit ji, když doběhne, tak je to dobře.
-Problém---může se zacyklit.
+Problém---může se zacyklit, ale pokud je síť trochu rozumná, tak se zastaví.
