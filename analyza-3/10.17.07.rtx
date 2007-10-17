@@ -1,0 +1,52 @@
+Poznámka:\\
+Jestliže existuje totální diferenciál v $x → B@(x, ε@) ⊂ Df$.
+
+Přeformulování: $∃L=df( x ), μ: B@(0@)→\R, μ(0) = 0,∀h∈B(0),h\neq 0, μ(h) = \frac{f@(x+h@)-f@(x@)-L@(h@)}{\left|h\right|}$ a je spojitá v počátku.
+
+\statement{Spojitost}
+Nechť $∃ df@(x@)$. Pak $f$ je v bodě $x$ spojitá.
+Převedeme na derivaci v libovolném směru.
+
+\statement{Totální diferenciál a derivace ve směru}
+Když si vyberu směr, tak derivaci dostanu jako to, co vypadne z říznutého diferenciálu tímto směrem, tedy $df(x)(v)$.
+(Pozn.---nemusí existovat diferenciál, aby existovala derivace v nějakém směru).
+
+Zvolme tedy nějaký (nenulový) směr $v∈\R^n$.
+\TODO{Důkaz se utluče dosazením definice derivace ve směru a totálního diferenciálu}.
+
+Důsledek:\\
+Po určení derivací ve směru pro kanonické vektory získáváme totální diferenciál.
+
+Vektoru parciálních derivací říkáme \name{gradient} a značíme jej $\nabla f(x) = @[\frac{df}{d_{x_1}}(x), …, \frac{df}{d_{x_n}}@]$ a pokud existují všechny, pak máme kandidáta na totalní diferenciál (ještě nemusí existovat).
+
+\statement{Věta o střední hodnotě}
+Předpokládejme, že funkce $f$ má na $B(a)$ parciální derivace. Zvolme $x∈B@(a@)$ Pak $∃ξ_1, ξ_2, …, ξ_n∈B@(a@);f@(x@)-f(a) = \Σ_{i=1}^n \frac{d_f}{d_{x_i}}@(ξ_i@)(x_i-a_i)$.
+Důkaz:\\
+$$∀i=1,…,n;g@(t@)=f@(a_1, …, a_{i-1}, t, x_{i+1}, …, x_n@)$$
+Tedy, nasekám ty body tak, že vždy měním jen jednu souřadnici a pak použiji lagrangovu větu o střední hodnotě pro funkci jedné proměnné (na každém tom zubu se mění jen jedna souřadnice → funkce jedné proměnné).
+
+\statement{Existence diferenciálu a spojitost parciálních derivací}
+\TODO{Není tahle věda špatně? Nějak mi nesedí…}
+Nechť $f$ má v $x$ spojité parciální derivace. Pak existuje $D_f(x)$.
+
+Vezmeme $f(x+h)$.
+Rozepíše se to pomocí věty o střední hodnotě, odečte se diferenciál a dokáže se, že se limití k nule.
+
+\name{Tečná nadrovina} ke grafu funkce $f$ v bodě $@[x,f@(x@)@]$.
+Vektor kolmý k této rovině se nazývá \name{normála}.
+
+\name{Parciální derivace} vyšších řádů se dělají derivováním těch parciálních derivací nižších řádů (může být podle jiných proměnných, než ta minulá).
+
+\statement{Věta o záměnosti parciálních derivací}
+Předpokládáme, že $f$ má na $B(a)$ parciální derivace $\frac{d_f}{d_{x_i}}, \frac{d_f}{d_{x_j}}$. Nechť dále existuje $\frac{{d_f}^2}{d_{x_j}d_{x_i}}$ je spojitá, pak $∃\frac{{d_f}^2}{d_{x_i}d_{x_j}}$ a má hodnotu té minulé.
+
+\statement{Věta totálního diferenciálu složeného zobrazení}
+$$f:\R^n→\R^m, g:\R^m→\R^k$$
+Poznámka:\\
+Zobrazení do $\R^n$ lze chápat jako $n$-tici funkcí.
+
+Nechť má $f$ na $x∈\R^n$ totální diferenciál reprezentován maticí $A^{m\times n}$.
+$g$ má v $y:=f(x)$ totální diferenciál reprezentován maticí $B^{k\times m}$
+Složené zobrazení $g·f$ má v bodě $x$ totální diferenciál reprezentován maticí $C^{k\times n} = B · A$.
+Poznámka:\\
+Plyne z toho věta o derivaci složené funkce.

@@ -65,3 +65,4 @@ Pokud budeme za $v$ vezmeme $j$-tý kanonický vektor. Pak to nazýváme \name{$
 $f:\R^n→\R, a∈\R^n$. $f$ má v bodě $a$ \name{totální diferenciál $df(a)$}, jestliže existuje lineární zobrazení $fl:\R^n→\R$ takové:
 $f(a+h) = f(a)+fl(h) + ω(h)$, kde $\lim_{h→0} ω(h) = 0$.
 Totální diferenciál je potom takovéto lineární zobrazení.
+(Tedy, ať to říznu směrem jakkoliv, vždycky dostanu jako derivaci tu přímku, kterou dostanu říznutím toho diferenciálu).

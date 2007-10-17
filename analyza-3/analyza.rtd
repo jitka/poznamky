@@ -9,6 +9,7 @@
 \title{Analýza}
 \author{Michal Vaner}
 \maketitle
-\input{10.3.07.tex}
-\input{10.10.07.tex}
+\input{10.3.07.rtx}
+\input{10.10.07.rtx}
+\input{10.17.07.rtx}
 \end{document}
