@@ -1,0 +1,71 @@
+$$B^n:=@{x∈\R^n;\left|x\right|≤1@}$$
+$$S^{n-1} = \partial B^n = @{x∈\R^n\left|x\right| = 1@}$$
+
+\section{Simpliciální komplexy}
+Máme body $v_1, v_2, …, v_n∈\R^n$ jsou \name{afinně nezávislé}, když vektory $@(v_1,1@), @(v_2, 1@), …, @(v_n,1@)$ jsou lineárně nezávislé. (přilepíme ke každému jedničku)
+
+\name{Simplex} je komplexní obal bodů $v_0, v_1, v_2, …, v_n$, které jsou afinně nezávislé. Poté říkáme, že má tento simplex dimenzi $n$ - je to objekt v $n$-dimenzionálním prostoru a má $n+1$ vrcholů.
+
+$σ:=conv(V)$ je simplex. Vezměme $σ_w:=conv(W), W⊂V$ tvoří stěnu (je to taky simplex).
+
+\name{(Geometrický) simpliciální komplex} $Δ$ je množina simplexů v $\R^n$, která splňuje následující axiomy:
+→•
+• $$\emptyset ∈ Δ$$
+• $$σ∈Δ, τ\hbox{ stěna } σ→→τ∈Δ$$
+Je dědičný.
+• $$σ_1, δ_2 ∈Δσ_1\cap σ_2\hbox{ je stěna }σ_1\hbox{ i }σ_2$$
+←•
+Smějí být slepeny jen stěnou.
+
+$σ$ je simplex. Množina všech jeho stěn tvoří simpliciální komplex.
+Třeba ověřit třetí axiom, ostatní jsou zřejmé.
+
+Mám simpliciální komplex $Δ$ a $Δ'⊂Δ$ dědičné, pak nazýváme $Δ'$ \name{podkomplex} (a je také koplexem).
+
+\name{$k$-skelet} $Δ:=@{σ∈Δ;\dim σ≤k@}$.
+$1$-skelet je graf.
+
+$$\dim(Δ) := \max(\dim σ;σ∈Δ)$$
+
+$$\left|Δ\right|\hbox{ \name{polyedr} } := \hbox{ topologický prostor } \cup_{σ∈Δ} σ$$
+$$U⊂\left|Δ\right|\hbox{ otevřená }←→ U=\cap σ\hbox{ otevřená }∀σ∈Δ \hbox{ na } σ \hbox{ bereme topologii podprostoru } \R^n$$.
+
+Menší problémy při nekonečném množství simplexů, jinak ale dodržuje topologii podprostoru $\R^n$.
+
+Poznámka:\\
+Od teď budeme brát všechny simpliciální komplexy konečné.
+Δ je konečný, $\left|Δ\right|$ je kompaktní.
+
+Ne všechny prostory lze reprezentovat jako simpliciální komplexy.
+
+Mějme $X$ topologický prostor a $Δ$ je simpliciální komplex. $Δ$ se nazývá \name{triangulace} pokud je jeho polyedr homeomorfní s $X$. ($\left|Δ\right| \cong X$)
+
+\name{Abstraktní simpliciální komplex} je dvojice $@(V, K@)$. $V$ je množina, $K⊂2^V$ je dědičný systém podmnožin V $@(F∈K, G⊂F→→G∈K@)$.
+
+$F∈K$ simplex nebo stěna.
+$\dim(K):= max@{\left|F\right|-1:F∈K@}$.
+
+Z geometrického lze udělat abstraktní:
+→•
+• $$V:= v@(Δ@)$$
+• $$K:=@{v@(σ@),σ∈Δ@}$$
+←•
+
+Nechť $K$ je abstraktní simpliciální komplex a $Δ$ je jeho geometrická realizace. Potom $\left|Δ\right|$ je také \name{polyedr} $K$.
+
+$K$ je konečný simpliciální komplex. Pak má (alespoň jednu) geometrickou realizaci. $K$ realizujeme jako podkomplex simplexu s touto množinou vrcholů. (očísluju vrcholy a spojuju)
+
+$K, L$ jsou abstraktní simpliciální komplexy. \name{Simpliciální zobrazení} z $K$ do $L$ je zobrazení $f:V(K)→V(L)$, které zobrazuje simplexy na simplexy ($∀F∈K;f(F)∈L$, můžou se stěny ,,splácnout`` - ubýt jim vrcholy)
+Simpliciální zobrazení je vlastně kombinatorický protějšek spojitého zobrazení.
+
+Mám $Δ_1, Δ_2$ geometrické simpliciální komplexy, $K_1, K2$ jsou příslušné abstraktní simpliciální komplexy a $f:V(K_1)→V(K_2)$. Potom mohu definovat $\left|f\right|: Δ_1→Δ_2$ spojité zobrazení polyedrů.
+
+Pokud je $f$ bijekce, pak se nazývá \name{homeomorfizmus}.
+
+Tvrzení:\\
+$\left|f\right|$ je dobře definované, spojité.
+Když je $f$ prosté nebo isomorfizmus, pak $\left|f\right|$ je také prosté nebo homeomorfizmus.
+
+Isomorfizmus znamená, že to je stejné až na přejmenování vrcholů.
+
+Z toho plyne, že geometrická reprezentace abstraktního simplexu je jednoznačná až na isomorfizmus.

@@ -9,6 +9,7 @@
 \title{Topologické metody v kombinatorice a geometrii}
 \author{Michal Vaner}
 \maketitle
-\input{10.4.07.tex}
-\input{10.11.07.tex}
+\input{10.4.07.rtx}
+\input{10.11.07.rtx}
+\input{10.18.07.rtx}
 \end{document}
