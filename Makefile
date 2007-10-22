@@ -8,7 +8,7 @@ include build/Makefile.bottom
 
 distclean: clean-makes
 
-SUBDIRS:=ADS2 algebra analyza-3 komsem neproceduralko topomet analyza-2 lingebra-2 analyza-1 lingebra-1
+SUBDIRS:=ADS2 algebra analyza-3 komsem neproceduralko topomet analyza-2 lingebra-2 analyza-1 lingebra-1 graforitmy
 
 gen-makes: $(patsubst %,%/Makefile,$(SUBDIRS))
 

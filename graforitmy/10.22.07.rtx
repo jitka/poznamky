@@ -1,0 +1,30 @@
+\section{Maximální toky v grafu}
+Ford-Falkonson, Dinice - viz \texttt{ADS-II}.
+
+Maximálně $O(n)$ fází, každá maximálně $O(m\times n)$. Celková složitost je tedy $O(m\times n^2)$.
+
+\statement{Menger's theorem}
+Pro každý graf (buď orientovaný nebo neorientovaný). a $s,t∈V$, maximální počet (hranově/vrcholově) oddělených cest z $s$ do $t$ odpovídá minimálnímu řezu/oddělovači $s-t$. Redukce na maximální tok je možný vždy v $O@(n@)$.
+
+\subsection{Speciální případy}
+\subsubsection{Všechny hrany rovny $1$}
+Všechny hodnoty rezerv jsou buď $0$ nebo $1$, po pročištění mají všechny hodnotu $1$.
+Všechny se po nalezení blokujícího toku zaplní a tudíž se odeberou.
+Tedy, každá fáze trvá maximálně $O(m)$ - můžu odebrat maximálně $m$ hran.
+Fází může být maximálně $O(n)$.
+
+Po $k$ fázích, $l$ musí být alespoň $k+1$. Buď $h$ rozdíl maximálního a aktuálního toku.
+Každá fáze zlepší tok alespoň o $1$, tedy počet fází bude maximálně tolik, kolik je maximální tok.
+Musí existovat 2 vrstvy, které jsou spojené nejvýše $\frac{m}{k}$.
+Tedy, počet zbývajících fází je také maximálně tak velký.
+Tedy, počet fází je maximálně $2\sqrt{m}$.
+
+\subsubsection{Všechny hrany rovny $1$ a maximální stupeň (vstupní nebo výstupní) je nejvýše $1$}
+Použije se stejný důkaz, ale můžeme použít vrstvy, ne spojení mezi nimi. Potom lze nastavit $k:=\sqrt{n}$.
+
+\subsubsection{Ještě jednou hrany rovny $1$}
+Budu brát $b_i = |L_i|+|L_{i+1}|$, což může být maximálně $\frac{2n}{k}$. Hran mezi nimi je maximálně $|L_i|\times |L_{i+1}$, což je maximálně $@({n\atop k}@)^2$. Když zvolíme $k:=n^{2\over 3}$ a výsledek bude $O@(n^{2\over 3}m@)$.
+
+\subsubsection{Celočíselné kapacity}
+Kdybychom začali na nějakém libovolném toku, tak složitost je $O@(nm+nΔf@)$, kde $Δf$ je rozdíl maximálního a původního toku.
+Každé hledání blokujícího toku trvá $O(n)$ a zlepší to alespoň o $1$. Ten zbytek trvá v každé fázi maximálně $O(m)$ a fází je maximálně $O(m)$.
