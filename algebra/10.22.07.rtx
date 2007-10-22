@@ -1,0 +1,25 @@
+Je-li $S(·,1)$ monoid, potom platí $a^{-1}∈S$ pro nějaké $a∈S$ nazveme \name{inverzním}, pokud $a·a^{-1}=1=a^{-1}·a$.
+
+Prvek, pro který existuje inverzní prvek nazveme \name{invertibilní}.
+
+Poznámka:\\
+Nechť $S(·,1)$ je monoid a označíme $S^*$ množinu všech invertibilních prvků tohoto monoidu. Pak $S^*$ je podmonoid monoidu $S(·,1)$.
+Navíc každý jeho prvek je invertibilní.
+
+Algebru $G(·, ^{-1}, 1)$ nazveme \name{grupou}, je-li $(·,1)$ monoid a $^{-1}$ je unární operace $^{-1}:G→G$, která každému prvku přiřadí inverzní prvek (tedy všechny prvky jsou invertibilní).
+
+\name{Komutativní (Abelova) grupa} je taková grupa, jejíž $·$ je komutativní.
+
+\name{Podgrupa} je grupa, jejíž nosná množina je podmnožina jiné algebry.
+
+Poznámka:\\
+Nechť $S(·,1)$ je monoid a $S^*$ je množina všech invertibilních prvků.
+Nechť $\odot$ je restrikce $·$ na $S^*$ a $^{-1}$ budiž operace inverzního prvku.
+$S^*(\odot, ^{-1}, 1)$ je grupa.
+
+Všechny tyto operace jsou dobře definovány.
+
+\name{Normální podgrupa} bude podgrupa splňující $∃g,h∈G;g·h·g^{-1}∈G$.
+
+Poznámka:\\
+Nechť $G(·,^{-1}, 1)$ je grupa a $ρ$ je relace na $G$. Pak je $ρ$ kongurence na $G$ právě tehdy, když $@[1@]_ρ$ je te normální podgrupa $G$ a $@(g,h@)∈ρ←→g^{-1}h∈@[1@]_ρ$.
