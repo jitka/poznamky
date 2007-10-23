@@ -1,0 +1,59 @@
+\subsection{Goldbergův algoritmus}
+Funkce $f:E→\R^+$ je \name{vlna} v síti, pokud nejsou překročeny kapacity a ve vrcholech se může něco ztrácet, ale nesmí se objevovat.
+
+Vrcholům přiřadíme výštky $h:V→\N$.
+Umíme 2 operace:
+→•
+• Převedení toku. Když mám vrchol, který má kladný přebytek a sousední vrchol, který má menší výšku a rezerva hrany do toho vrcholu je nenulová, tak část přebytku převedeme (minimum z přebytku a rezervy).
+• Když už žádná hrana z kopce nevede a stále je přebytek, tak vrchol o $1$.
+←•
+
+Nastavíme všechny výšky na $0$, až na zdroj, který nastavíme na $N$. Počáteční vlna je všude $0$, jen ze zdroje má vlna hodnotu kapacitě hran.
+Pak opakujeme výše zmíněné operace, dokud to jde, resp. dokud někde něco přebývá.
+
+\subsubsection{Invariant $A$}
+$f$ je vlna a $h$ nikdy neklesá.
+$f$ je na začátku vlna a žádným krokem to nezničíme - nevyrobíme záporný přebytek.
+To že výšky neklesají, je zřejmé.
+Zdroj má celou dobu výšku $N$ a spotřebič $0$.
+
+\subsubsection{Invariant $S$ (o spádu)}
+Každá nenasycená hrana má spád (rozdíl výšek) maximálně $1$.
+Na začátku zřejmě platí (jediný spád je $N$, ale ty hrany jsou nasycené).
+A rozbít to nemůžeme---nikdy neklesáme a zvednout to, co už má spád $1$, nesmíme, napřed musíme nasytit, nebo vyprázdnit vrchol, ale prázdný vrchol nezvedáme.
+Taktéž neodnasytíme hranu, která má vyšší spád, protože bychom museli strkat vodu do kopce.
+
+\subsubsection{Lemma $K$ (korektnost)}
+Když se algoritmus zastaví, $f$ je maximální tok.
+Určitě je to vlna a zastaví se ve chvíli, kdy není žádný přebytek →→ je to tok.
+Kdyby nebyl maximální, existuje nenasycená cesta $P$ ze zdroje do spotřebiče. Zdroj má výšku $N$ a spotřebič výšku $0$. Ta má maximálně $N-1$ hran. Na ní je určitě hrana, která má spád alespoň $2$, tedy nemůže být nenasycená.
+
+\subsubsection{Invariant o cestě do zdroje}
+Je-li $v$ vrchol na cestě ze zdroje do spotřebiče, pak existuje nenasycená cesta z $v$ do zdroje.
+
+$A:= @{u|∃\hbox{ nenasycená cesta }v→u@}$. Pokud máme nějakou hranu z $b∉A$ do $a∈A$, tak po ní nic neteče, jinak by rezerva opačně nebyla nulová, a tedy by tam musela být.
+
+To co teče do $A$ je $0$, to co teče z $A$ může být nezáporné. Tedy, ten přebytek musí pocházet zevnitř a může pocházet jen od zdroje.
+
+\subsubsection{Invariant $H$ (o výšce)}
+$∀v∈V;h(v)≤2N$. Předpokládejme opak. Museli jsme někdy zvednout vrchol, který má výšku alespoň $2N$. Zvedali jsme ho, proto měl kladný přebytek. Ale podle invariantu o cestě do zdroje existuje cesta do zdroje, která není nasycená a ta cesta má spád alespoň $N$, tedy každý úsek je z kopce. Tedy ji nemáme důvod zvedat, protože z tohoto vrcholu musí téct.
+
+\subsubsection{Lemma o zvedání}
+Každý vrchol tedy zvedneme maximálně $2N$-krát. Tedy počet zvednutí jsou maximálně $O(N^2)$.
+
+Převedení se nazývá \name{nasycené}, pokud se nasytí hrana. Převedení, které není \name{nenasycené}, ,,vyprázdní`` vrchol.
+
+\subsubsection{Lemma $S$---sytých převedení}
+Sytých převedení je maximálně $MN$.
+Převedení může nastat jen, když je to z kopce. Pokaždé se musí hrana překlopit na druhou stranu, překlopení vyžaduje minimálně jedno zvednutí.
+
+\subsubsection{Lemma $N$---nenasycených převedení}
+Součet výšek vrcholů s přebytkem (kromě zdroje a spotřebičem) nazveme \name{potenciál}. Určitě neklesne pod nulu, na počátku je potenciál roven $0$. Zvednutí vrcholu zvýší potenciál o $1$. Nenasycené převedení ho sníží buď o $1$ nebo o $h(u)$. Nasycené se zvýší maximálně o $2N$.
+
+Potenciál lze zvýšit (dohromady) maximálně o $2N^2+2N^2M$, pokaždé ho snížíme alespoň o $1$, tedy nenasycených převedení je maximálně $O(N^2M)$.
+
+Tedy, celý algoritmus běží v $O(N^2M)$.
+
+Můžu vždy vybrat z těch, které mají přebytek, ten nejvýš.
+\subsubsection{Lemma $N'$}
+Tentokrát lze dosáhnout $O(N^2\sqrt{M})$.
