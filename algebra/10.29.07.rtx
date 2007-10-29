@@ -1,0 +1,81 @@
+\section{Uzávěrové systémy}
+
+Buď $A$ množina. Řekneme, že $C⊂\mathcal{P}(A)$ (podmnožina systému podmnožin) je \name{uzávěrový systém na $A$}, platí li:
+→•
+• $$A∈\mathcal{C}$$
+• $$\mathcal{B}∈\mathcal{C} →→ \bigcap_{B∈\mathcal{B}} ∈ \mathcal{C}$$
+←•
+
+\name{Uzávěrem} v uzávěrovém systému budeme rozumět $d_\mathcal{C}\mathcal{P}(A)→\mathcal{P}(A) : cl(x) = @{x∈\mathcal{C};x⊂\mathcal{C}@}$.
+
+Uzávěrovým operátorem na $A$ budeme rozumět $α:\mathcal{P}(A)→\mathcal{P}$ splňující:
+→•
+• $∀B@⊂ A: B@⊂ α(B)$ (Smí ale nemusí to zvětšit).
+• $∀B@⊂ A: α(α(B)) = α(b)$
+• $∀B@⊂ C@⊂ A→→ α(B)@⊂ α(C)$
+←•
+
+\statement{Věta}
+Je-li $\mathcal{C}$ uzávěrový systém, pak $cl_\mathcal{C}$ je uzávěrovým operátorem.
+Je-li $α$ uzávěrový operátor na množině $A$, pak množina $\mathcal{C}$, která obsahuje právě všechny pevné body ($\mathcal{C} := @{C∈\mathcal{P}(A);α(C) = C@}$) je uzávěr. Navíc, když z uzávěrového systému udělám uzávěrový operátor a z něj zase uzávěrový systém, dostanu ten samý.
+
+Důkaz:\\
+Mějme uzávěrový systém. První podmínka je triviální.
+Druhou dokážu dvěma inkluzemi:
+→•
+• $cl_\mathcal{C}(x)@⊂ cl_\mathcal{C}(cl_\mathcal{C}(x))$ dle první podmínky.
+• Opačně: obsahuje $cl_\mathcal{C}$, dělá se přes všechno průnik, nemůže to být větší než toto.
+←•
+
+Třetí podmínku: uvážím ty dvě množiny $A$ a $B$. Zase přes průniky.
+
+Nyní mějme uzávěrový operátor $α$. Chci dokázat, že $\mathcal{C}:= @{C∈\mathcal{P}(A);α(C)=C@}$ je uzávěrový systém.
+$A$ tam zřejmě leží ($A@⊂α(A)@⊂A$).
+Dále, nechť $\mathcal{B}@⊂\mathcal{C}$. $\bigcap \mathcal{B} @⊂ B∀B∈\mathcal{B}$, $α(B)=B$, $α(\bigcap\mathcal{B})@⊂α(B) = B →→ α(B)@⊂\bigcap \mathcal{B}$. \TODO{Ještě opačným směrem.}
+
+Nakonec, to že $∀x⊂A;cl(x)=α(x)$.
+\begin{eqnarray*}
+&&\bigcap@{c∈\mathcal{C}; x⊂C@} @⊂ α(x)→→α(α(x)) = α(x)\\
+&&x@⊂C, C∈\mathcal{C}, α(x)@⊂α(c) = C →→ \bigcap@{C∈\mathcal{C};x@⊂ C@} = @(\bigcap @{C∈\mathcal{C};α(x)@⊂C@}\supseteq α(x)@)
+\end{eqnarray*}
+
+Poznámka:\\
+Systém všech uzávěrových systému na množině $A$ tvoří uzávěrový systém na množině $\mathcal{P}(A)$.
+
+Důkaz:\\
+$\mathcal{C}$ jsou všechny uzávěrové systémy na $A$.
+$\mathcal{P}(A)$ je uzávěrový systém (zřejmé) -- $\mathcal{P}(A)∈\mathcal{C}$.
+\begin{eqnarray*}
+\mathcal{B}@⊂\mathcal{C} &?& \bigcap\mathcal{B} \hbox{ je uzávěrový systém }\\
+∀Γ∈\mathcal{B}&;& Γ\hbox{ je uzávěrový systém na } A →→ A∈Γ\\
+&→→& A∈\bigcap\mathcal{B} = \bigcap_{Γ∈\mathcal{B}} Γ
+\end{eqnarray*}
+\begin{eqnarray*}
+Γ_i ∈\mathcal{B}, \mathcal{B} &=& @{Γ_i;∀i@}\\
+B_j ∈\bigcap \mathcal{B} &→& B_j∈Γ_i ;∀i,j\\
+\bigcap B_j ∈Γ_i&&\hbox{ protože $Γ_i$ je uzávěrový systém }\\
+\bigcap B_j ∈\bigcap Γ_i &=& \bigcap\mathcal{B}
+\end{eqnarray*}
+
+Pozorování:\\
+Jsou-li $\mathcal{A} @⊂ \mathcal{B}$ dva uzávěrové systémy na množině $A$ a $C@⊂D$, pak $cl_\mathcal{B}(C) @⊂cl_\mathcal{A}(D)$.
+
+Důkaz:\\
+\begin{eqnarray*}
+cl_\mathcal{B}(C)&@⊂&cl_\mathcal{B}(D)\\
+cl_\mathcal{B}(D)&@⊂&cl_\mathcal{A}(D)
+\end{eqnarray*}
+
+Poznámka:\\
+Množina všech reflexivních (symetrických, tranzitivních) relací na množině $A$, stejně jako ekvivalence na $A$ tvoří uzávěrový systém na $A\times A$.
+
+Důkaz:\\
+$\mathcal{R}$ je množina všech reflexivních relací, $\mathcal{S}$ symetrických a $\mathcal{T}$ tranzitivních.
+→•
+• $A\times A ∈\mathcal{R,S,T}$
+• Průnik nějakých reflexivných (obsahují identitu) také obsahuje identitu, tedy je také reflexivní.
+• Pokud byly všechny symetrické, i jejich průnik je symetrický (pokud tam leželo nějaké $(a,b)$, pak tam leží i $(b,a)$).
+• Obdobně s tranzitivními.
+←•
+
+Sloučením tohoto to získáme pro ekvivalence.

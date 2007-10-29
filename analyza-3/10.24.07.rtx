@@ -1,0 +1,30 @@
+\TODO{Důkaz přes dosazení těch zbytkových funkcí, musejí jít k nule}
+
+\statement{Parciální derivace složeného zobrazení}
+$f:\R^n→\R^m$ má parciální derivace $\frac{df}{dx_i}(x)$, $g:\R^m→\R^k$ má parciální derivace $\frac{dg}{dx_i}(f(x))$.
+Pak existuje parciální derivace $\frac{dg·f}{dx_i}(x)$.
+
+Jednoduše se z toho uděláme funkci jediné proměnné (v tom jednom směru) a z toho je to triviální.
+
+Poznámka:\\
+Předpokládejme, že $f:\R^n→\R$ má spojité parciální derivace druhého řádu na otevřené množině $G⊂\R^n$. Pak diferenciál druhého řádu je zobrazení $d^2f(a):\sum_{j=1}^n \frac{d^2f}{dx_j}(a) h_ih_j, a∈G$.
+
+Lze provést totéž, jako s Taylorem---přesnější odhady pomocí vyšších řádů derivací.
+
+\statement{La-Grangeův tvar zbytku}
+$G⊂\R^n$ otevřená množina, $a∈G$, $k∈\N$, $f$ má spojité derivace $k+1$-ho řádu na $G$.
+
+Úsečka $@<a, a+h@>$ = $@{x∈\R^n;x=a+th;t∈@<0,1@>@}$ je součást G. Pak $ξ∈@<0,1@>$ tak, že $f(a+h) = f(a)+\Σ_{i=1}^n\frac{df}{dx_1}(a)h_1 +  \frac{1}{2!}\Σ_{i,j=1}^n \frac{df}{dx_idx_j} + … + \frac{1}{@(k+1@)!}\Σ_{k_1,k_{k+1}}^n\frac{d^{k+1}f}{dx_1dx_2…dx_{k+1}}(a+ξh)h_1…h_{k+1}$
+
+\section{Implicitní funkce}
+\statement{O implicitní funkci}
+$F:\R^2→\R$ splňující následující:
+→•
+• $F(a,b)\neq \emptyset$.
+• $F$ má spojité parciální derivace až do nějaké hodnoty $k∈\N$.
+• $\frac{dF}{dy}(a,b)\neq 0$.
+←•
+
+Pak  $∃δ>0;Δ>0;∀x∈B@(a,δ@)∃!y∈B(y,Δ)$ tak, že $F(x,y) = 0$.
+(Říká, že když mám nějakou implicitní formuli, třeba $x^2+y^2 = 0$, tak na každém bodu najdu nějaké okolí, kde to jde popsat jako $y=$ cosi).
+Označíme-li $y=f(x)$, má $f$ spojité derivace na okolí $a$ až do $k$-tého řádu.
