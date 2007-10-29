@@ -17,6 +17,8 @@ exec sed -e 's/α/{\\ensuremath{\\alpha}}/g;
 	s/δ/{\\ensuremath{\\delta}}/g;
 	s/Δ/{\\ensuremath{\\Delta}}/g;
 	s/ρ/{\\ensuremath{\\rho}}/g;
+	s/κ/{\\ensuremath{\\kappa}}/g;
+	s/Κ/{\\ensuremath{\\Kappa}}/g;
 	s/\\Σ/\\sum/g;
 	s/σ/{\\ensuremath{\\sigma}}/g;
 	s/Σ/{\\ensuremath{\\Sigma}}/g;
