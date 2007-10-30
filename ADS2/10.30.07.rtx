@@ -1,0 +1,58 @@
+\statement{Lemma $N'$}
+V algoritmu $G'$ (Goldbergův algoritmus se zvedáním nejvyššího vrcholu s přebytkem) je počet převedení $O(N^3)$.
+Označme $H$ maximální výšku vrcholu s přebytkem.
+
+Rozdělíme si běh algoritmu na fáze, každá fáze končí změnou $H$.
+Počet nenasycených převedení je maximálně tolik, s kolika vrcholy na nižší hladině ta fáze začala (každé převedení je jen o jednu hladinu dolů).
+
+Fáze může skončit buď zvýšením nebo snížením $H$.
+Zvýšení může být nejvíce $O(N^2)$, snižovat se dá jen to, co se předtím narostlo, takže také.
+
+Tedy všech fází dohromady je $O(N^2)$, tedy všech nenasycených převedení je maximálně $O(N^3)$.
+
+\statement{Lemma $N''$}
+Stejný algoritmus, lepší odhad.
+Rozdělme si fáze na laciné a drahé, tedy ty, které udělají nejvíce $k$ převedení a více než $k$.
+Přévedení v laciných fázích je $O(k·N^2)$.
+
+Pro odhad drahých fází definujme potenciál $Ψ:=\frac{\Σ_{V-@{z,s@}}p(v)}{k}$, kde $p(v)$ je počet vrcholů s přebytkem na stejné a nižších hladinách.
+
+Na začátku je $Ψ≤\frac{N^2}{k}$.
+
+Zvednutí může způsobit, že se až $N$ vrcholů dostane pod něj, tedy $Ψ$ může vzrůst až o $\frac{N}{k}$, na ostatních se sníží o něco, tedy celkem se může zvýšit až o $\frac{N}{k}$.
+
+Nasycené převedení může způsobit nový vrchol s přebytkem, tedy se to mohlo zvýšit až o $\frac{N}{k}$.
+
+Nenasycené převedení způsobí vynulování jednoho vrcholu, tedy z něj vypadne $\frac{p(u)}{k}$ a může přibýt $\frac{p(v)}{k}$, ale $v$ je v nižší hladině. Tedy, klesne to o $\frac{p}{k}$, kde $p$ je počet vrcholů na nejvyšší hladině. Ale je to drahá fáze, takže $p≥k$, tedy to klesne alespoň o $1$. V levných fázích to určitě nezvýší.
+
+Dohromady potenciál naroste na $\frac{N^2}{k}+\frac{N·2N^2}{k}+\frac{N·NM}{k} = \frac{N}{K}@(N+2N^2+NM@) = O@(\frac{N^2M}{k}@)$.
+Tedy, počet nenasycených převedení v drahých fází je maximálně tolik.
+
+Nyní již stačí vybrat $k = \sqrt{M}$.
+
+\section{Paralelní třídění}
+Definujme \name{komparátorovou síť} jako kombinační obvod (pracující ne s dvojkovými, ale s obecnými hodnotami) a hradla budou pouze komparátory.
+
+\name{Komparátor} je něco, co dostane dva vstupy $A$ a $B$ a na výstupu vydá $\min$ a $\max$.
+
+Nechť se výstupy komparátorů nikde nevětví.
+
+Při přepsání bublinek to jde udělat na $O(N)$ hladin a $O(N^2)$ komparátorů.
+
+\name{Čistě bitonická posloupnost} je taková, která napřed roste a potom klesá.
+\name{Bitonická posloupnost} je taková, která lze zrotovat o nějaké $k$, abychom dostali čistě bitonickou.
+
+\name{Separátor} budeme říkat komparátorové síti, která vždy porovnává $x_{0+k}$ s $x_{\frac{n}{2}+k}$, kde $k:= 0, …, \frac{n}{2}-1$.
+
+\statement{Lemma}
+Pokud vstupem komparátoru $S_n$ je bitonická posloupnost, tak na výstupu dostaneme $2$ bitonické posloupnosti, kde všechny prvky v levé jsou menší než ty v té pravé.
+
+Na čistě bitonickém vstupu je to vidět jednoduše. Stačí najít dělící bod.
+Pro ostatní lze nahlédnout, že separátory lze rotovat.
+
+Pomocí separátorů lze setřídit libovolná bitonická posloupnost, používáme menší a menší separátory, až dojdeme k posloupnostem délky $1$.
+Na to stačí $O(\log N)$ hladin a $O(N·\log N)$ komparátorů.
+
+Pomocí bitonické třídičky lze slévat setříděné posloupnosti.
+Pomocí tohoto lze sestavit něco jako mergesort.
+Celková hloubka je tedy $1+2+3+…+\log N = O(\log^2 N)$, celkově má $O(N·\log^2 N)$.
