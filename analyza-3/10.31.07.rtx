@@ -1,0 +1,29 @@
+\subsection{Extrémy funkcí více proměnných}
+Poznámka:\\
+Protože potřebujeme uspořádání, budou to reálné funkce.
+
+Řekneme, že funkce $f$ nabývá v nějakém bodě $a∈M@⊂D_f$ svého \name{maxima} na množině $M@$, pokud $∀x∈M;f(x)≤f(a)$
+Řekneme, že funkce $f$ nabývá v nějakém bodě $a∈M$ \name{ostrého maxima} na množině $M$, pokud $∀x∈M-@{a@};f(x)<f(a)$.
+
+Obdobně pro minima.
+Minimum nebo maximum nazýváme extrém.
+
+$f$ má v bodě $a∈M$ \name{lokální maximum}, pokud $∃ε∈\R^+∀x∈M\cap B(a,ε);f(x)≤f(a)$.
+Obdobně ostrá maxima, minima,….
+
+\statement{Nutná podmínka prvního řádu}
+Předpokládejme, že funkce $f$ nabývá v $a$ lokální extrém.
+Dále předpokládejme, že existuje nějaká derivace ve směru.
+Ta je poté rovná nule.
+
+Důkaz přes to, že je to jen derivace funkce jedné proměnné.
+
+\statement{Nutná podmínka druhého řádu}
+Dále, druhá derivace je nenulová.
+Opět z funkcí jedné proměnné.
+
+Mějme $B^{n\times n}$ matici.
+Matice je pozitivně definitní, jestliže pro každé $h\neq 0$ je její kvadratická forma kladná.
+Je pozitivně semidefinitní, jestliže pro každé $h$ je její kvadratická forma nezáporná.
+Je negativně definitní, jestliže … je záporná, obdobně negativně semidefinitní.
+Je indefinitní, jestliže není ani jedno z předchozího.
