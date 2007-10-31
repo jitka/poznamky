@@ -1,0 +1,34 @@
+\section{Randomizovaný algoritmus na hledání minimální kostry}
+\author{D. Carger, F. Klein, R. Tarjan}
+Předpokládejme, že neexistují osamocené vrcholy.
+Dále, váhy hran jsou všechny různé.
+
+\statement{Cyklové pravidlo}
+Nejdražší hrana cyklu v minimální kostře určité není.
+
+\statement{Řezové pravidlo}
+Nejlevnější hrana řezu v minimální kostře určitě je.
+
+\statement{Vzorkovací lemma}
+Označme $F(x,y)$ cestu z $x$ do $y$.
+$w_F(x,y)$ -- váha nejtěžší hrany v $F(x,y)$, nebo $\infty$, pokud taková cesta neexistuje.
+Hrana $@{x,y@}$ je \name{$F$-těžká}, pokud je její váha větší než nejtěžší hrana dosud nalezené cesty z $x$ do $y$.
+Naopak, hrana je \name{$F$-lehká}, pokud není $F$-těžká.
+
+Mějme graf $H⊂G$, který získáme vkládáním každé hrany $e∈E(G)$ nezávisle na ostatních s pravděpodobností $p$.
+Nechť $F$ je minimální les $H$, potom pravděpodobný předpokládaný počet $F$-lehkých hran je $\frac{n}{p}$, kde $n$ je počet vrcholů $G$.
+
+Začneme s $H$ i $F$ prázdnými. Vezmeme nejlehčí hranu. Zkontrolujeme, jestli leží ve stejné komponentě $F$ ($F$ je zatím prázdné, proto neleží). S pravděpodobností $p$ ji tam dáme, jinak ji zahodíme. Pokud už spojuje stejné komponenty, tak ji nevkládáme, protože je $F$-těžká (to přijde jen do $H$).
+
+Můžeme shora odhadnout počet hran v $F$ velikostí kostry $G$.
+Počet hodů, jestli se hrana vloží do $F$ lze odhadnout na $n\over p$ a počet vložených hran je určitě nejvýše tolik.
+
+Definujme \name{Borůvkův krok} jako jedno spuštění Borůvkova algoritmu na nějaký graf.
+Ten zkontrahuje počet vrcholů na nejvýše polovinu původních vrcholů grafu a zvládne to v lineárním čase.
+
+\subsection{Popis algoritmu}
+Je-li graf prázdný, vrať prázdný strom.
+Pokud je graf jediný vrchol, vrať jej jako jeho minimální kostru, jinak spusť $2\times$ Borůvkův krok na vstupní graf.
+Ve vzniklém grafu vyber podgraf $H$ tak, že z něj odstraň s pravděpodobností $0.5$ každou hranu a spusť se na $H$, čímž dostanu $F$, najdu $F$-těžké hrany a odstraním. Poté se spustím rekurzivně na zbytek a jeho minimální strom složím s kontrahovanými hranami z Borůvkova kroku, což vrátím.
+
+Tedy vždy vezmu graf, zhruba polovinu ho zahodím, na zbytku najdu minimální kostru a zcela zruším hrany, které jsou $F$-těžké oproti této nalezené kostře.
