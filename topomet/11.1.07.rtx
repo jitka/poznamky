@@ -1,0 +1,32 @@
+\statement{Brouwerova věta o pevném bodě}
+Mějme kouli $B^n$ a funkci $f:B^n→B^n$ spojité.
+Potom $∃x; f(x) = x$.
+
+Důkaz:\\
+Kdyby $f:B^n→B^n$ nemělo pevný bod, pak definujeme zobrazení $g:B^n→S^{n-1}$. Vezměme přímku z $f(x)$ do $x$. Toto je spojité zobrazení té koule na její hranici (neexistuje pevný bod, proto je to dobře definované). Toto zobrazení ale protiřečí minulé větě.
+
+\statement{Tuckerovo lemma}
+$T$ je simpliciální komplex, který je triangulací $B^n$.
+Triangulace antipodání je symetrická na hranici.
+
+Přiřaďme zobrazení $λ:V(T)→@{+1, -1, +2, -2, …, +n, -n@}$ takové, že je antipodání na hranici.
+Pak existuje komplementární hrana (tedy označená jako $a, -a$).
+
+Lze z toho dokázat Borsukovo-Olamovu větu.
+(Plyne to i opačně)
+
+Nechť $∃f:B^n→S^{n-1}$ spojité antipodání na hranici.
+Vytvořím triangulaci $T$, které je antipodání na hranici, které má simplexy menší než nějaké $δ$.
+Definujme zobrazení $k(v):=\min@{i;\left|f(v)_i\right| ≥ {1\over\sqrt{m}}@}$.
+$λ(v) := \pm k(v)$ podle toho, jaká je první nenulová souřadnice toho zobrazení.
+(Tedy, vezmu si index první dostatečně nenulové souřadnice a dle její hodnoty vyberu znaménko toho indexu).
+Toto splňuje předpoklady Tuckerova lemmatu.
+
+Protilehlé souřadnice se musí lišit v $i$-té souřadnici alespoň o $2\over\sqrt{m}$. Když ale zvolím $δ$ dostatečně malé, tak to nepůjde splnit.
+
+Tuckerovo lemma lze říci i jinak:\\
+$T$ je triangulace $B^n$, která je antipodání symetrická na hranici.
+$\lozenge$ je simpliciální komplex.
+$v(\lozenge^{n-1}) = @{\pm 1, \pm 2, …, \pm n@}$
+$F@⊂v(\lozenge^{n-1})$ je simpliciální komplex $←→ \not∃i;i-i⊂F$.
+Neexistuje simpliciální zobrazení z $T$ do $\lozenge^{n-1}$ antipodání na hranici.
