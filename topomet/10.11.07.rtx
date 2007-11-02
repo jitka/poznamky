@@ -34,9 +34,9 @@ Mezi $∀$ body ∃ cesta.
 
 Nejde rozdělit na dva různé kusy.
 
-Topologický prostor je \name{nesouvislý}, pokud $X = A\cup B, A\cup B = \emptyset, A,B$ otevřené množiny, $A\neq \emptyset, B\neq\emptyset$.
+Topologický prostor je \name{nesouvislý}, pokud $X = A\cup B, A\cap B = \emptyset, A,B$ otevřené množiny, $A\neq \emptyset, B\neq\emptyset$.
 
-Topologický prostor $X$ je \name{obloukově souvislý}, pokud $∀a,b∈X∃f:@<0,@> → X$ souvislé, $f(0) = a, f(0) = b$.
+Topologický prostor $X$ je \name{obloukově souvislý}, pokud $∀a,b∈X∃f:@<0,1@> → X$ spojité, $f(0) = a, f(1) = b$.
 
 Topologický prostor nedefinuje pojem \name{dimenze}, existuje mnoho definic, které se mohou lišit.
 Základní předpoklad je, že je to invariant.
@@ -45,7 +45,7 @@ Základní předpoklad je, že je to invariant.
 $X$ je topologický prostor, $Y$ je podprostor. \name{Deformační retrakce} $X$ na $Y$ je systém spojitých zobrazení, $f:@(@<0,1@>,X@)→X$, takové že:
 →•
 • $f(0, ?)$ je identita.
-• $f(?,y)$ je identita pro libovolné $y∈Y$ je identita.
+• $f(?,y)$ je identita pro libovolné $y∈Y$.
 • Je spojité pro ten argument $@<0,1@>$.
 • $f(1,?)∈Y$.
 ←•

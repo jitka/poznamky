@@ -1,14 +1,14 @@
 \section{Úvod}
 Topologie je spojitá věda, dokáže řešit i diskrétní otázky.
 
-Např. mějme $N$-prvkovou množinu $1,2,…,N$ a všechny $k$-prvkové podmnožiny $@(@[m@]\atop k@)$
-Obarvit tak, aby každé disjunktní množiny měly různé barvy.
+Např. mějme $N$-prvkovou množinu $1,2,…,N$ a všechny $k$-prvkové podmnožiny $@(@[m@]\atop k@)$ máme
+obarvit tak, aby každé disjunktní množiny měly různé barvy.
 Doměnka: $m≥n-2k+2$. (pokud $n≥2k$).
 Dokázáno pomocí topologie.
 
 Postaveno na algebraické topologii.
 
-Topologie se dělí na obecnou/množinovou a algebraické topologii.
+Topologie se dělí na obecnou/množinovou a algebraickou topologii.
 
 \subsection{Literatura}
 →•

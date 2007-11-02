@@ -3,7 +3,7 @@
 Buď $A$ množina. Řekneme, že $C⊂\mathcal{P}(A)$ (podmnožina systému podmnožin) je \name{uzávěrový systém na $A$}, platí li:
 →•
 • $$A∈\mathcal{C}$$
-• $$\mathcal{B}∈\mathcal{C} →→ \bigcap_{B∈\mathcal{B}} ∈ \mathcal{C}$$
+• $$\mathcal{B}@⊂\mathcal{C} →→ \bigcap_{B∈\mathcal{B}} ∈ \mathcal{C}$$
 ←•
 
 \name{Uzávěrem} v uzávěrovém systému budeme rozumět $d_\mathcal{C}\mathcal{P}(A)→\mathcal{P}(A) : cl(x) = @{x∈\mathcal{C};x⊂\mathcal{C}@}$.
