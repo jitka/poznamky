@@ -1,0 +1,17 @@
+Poznámka:\\
+Množina všech kongurencí na algebře tvoří uzávěrový systém.
+
+Důkaz:\\
+$α$ je nějaká operace na $A$. $φ_α$ jsou všechny ekvivalence slučitelné s $α$.
+Z toho to skoro přímočaře plyne.
+
+Poznámka:\\
+$\mathcal{C}$ uzávěrový systém na $A$. $\mathcal{cl_C}(X)$ je nejmenší (vzhledem k inkluzi) v $\mathcal{C}$
+
+Nechť $A(α_i)$ je algebra a $X@⊂A/ρ@⊂A\times A$, potom množina $X$ \name{generuje} podalgebru $\mathcal{cl_A}(x)$ (budu-li uvažovat relaci, pak generuje kongurenci $\mathcal{cl_C}(ρ)$), kde $\mathcal{A}$ jsou všechny podalgebry a $\mathcal{C}$ všechny kongurence na algebře $A$.
+
+Nechť $f,g$ jsou dva homomorfizmy algeber $A→B$ stejného typu a nechť $X$ generuje $A$. $∀x∈X;f(x) = g(x)→→f=g$.
+
+Každý bijektivní homomorfizmus se nazývá \name{izomorfizmus}.
+
+Buď $ρ$ a $σ$ nějaké operace. Operaci $σ\over ρ$ na $A\over ρ$ následující $([a]_ρ,[b]_ρ)∈{σ\over σ} \equiv (a,b)∈σ$. Této ekvivalenci říkáme \name{faktorová ekvivalence}.
