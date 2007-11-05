@@ -1,0 +1,62 @@
+\statement{Nalezení legálního uspořádání}
+Stačí hladově, začnu s libovolným vrcholem, poté přistrkuji na správné místo.
+Lze udělat za pomoci haldy, např. fibonacciho, která umí mazat v $O(\log N)$ a zbytek $O(1)$ (amortizovaně).
+
+V případě, že chceme nevážené grafy, stačí mnohem jednoduššeji v seřazeném spojáku.
+V takovém případě se to dá celé stihnout v $O(M)$.
+
+\statement{Nalezení minimálního řezu pro celý graf}
+→•
+• Utvoříme legální uspořádání
+• Najdeme některý minimální řez
+• Spojíme nalezené vrcholy a zapamatujeme hodnotu
+• Opakujeme
+←•
+
+\subsection{Maximální tok pro přirozené kapacity}
+$$∀e;c(e)∈\N,c(e)≤C$$.
+
+Myšlenka je taková, že vezmeme napřed nejvyšší bit kapacit, spočítáme maximální tok, přidáme další bit a upravíme tok, atd.
+
+Ten první tok je jednotkový, proto ho lze spočítat rychle.
+
+$c_i(e)$ je kapacita $e$ v $i$-tém kroku. $c_{i+1}(e) = 2c_i(e) (+1)?$
+
+Při updatu vezmu napřed dvojnásobek původního (to určitě můžu), zlepším to během Dinicova algoritmu.
+Lze dokázat, že update je jen hledání jednotkového toku. Každý takový tedy proběhne v $O(M·N)$, celé to tedy zběhne v $O(M·N·\log C)$.
+
+\section{Minimální kostra}
+Mějme neorientovaný ohodnocený multigraf.
+Chceme najít kostru, která má nejmenší možné ohodnocení.
+
+Pokud je $T$ kostra, pak $T[x,y]$ pro nějaké $x,y∈V$ je jediná cesta mezi $x$ a $y$.
+Pokud $e=(x,y)∈E→→T[e]:=T[x,y]$ (může zcela neobsahovat $e$ a vést okolo, když $e$ není v kostře).
+Pak $T[e]$ nazýváme \name{cesta pokrytá $e$}.
+
+$e∈E$ je \name{$T$-lehká}, pokud $∃e'∈T[e];w(e')>w(e)$ a $e$ je \name{$T$-těžká}, pokud není $T$-lehká.
+
+Pozorování:\\
+$T$ je kostra a $e∉T$ je $T$-lehká, pak $T$ není minimální kostra.
+Lze to vyměnit a dostat menší kostru.
+
+\statement{Podmínka minimální kostry}
+$T$ je minimální kostra $←→\not\exists T$-lehká hrana.
+
+\statement{Lemma}
+$∀T,T'$ kostry $∃$ sekvence výměn hran, která transformuje $T$ na $T'$.
+
+Důkaz:\\
+Vyjdeme z toho, že každá kostra má stejný počet hran.
+Pokud $T\neq T'→→∃e'∈(T'-T), ∃e∈(T[e']-T)$.
+
+Provedením takto naznačené výměny se zmenší ta množina $(T'-T)$.
+
+\statement{Lemma monotónních výměn}
+$T, T'$ kostry a $T'$ neobsahuje žádnou $T$-lehkou hranu.
+Pak $∃$ sekvence výměn transformující $T$ na $T'$ takových, že se ohodnocení nesníží.
+
+Pro každé $e,e'$, které vyměňujeme, $w(e')≥w(e)$.
+Stačí vybrat nejmenší možnou $e'$, čímž nikdy nevytvořím $T$-lehkou hranu.
+
+Poznámka:\\
+Pokud jsou všechny váhy různé, pak existuje jen jedna minimální kostra.
