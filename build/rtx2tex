@@ -30,6 +30,8 @@ exec sed -e 's/α/{\\ensuremath{\\alpha}}/g;
 	s/Λ/{\\ensuremath{\\Lambda}}/g;
 	s/τ/{\\ensuremath{\\tau}}/g;
 	s/μ/{\\ensuremath{\\mu}}/g;
+	s/ι/{\\ensuremath{\\iota}}/g;
+	s/Ι/{\\ensuremath{\\Iota}}/g;
 	s/°/{\\ensuremath{^\\circ}}/g;
 
 	s/@</\\left</g;

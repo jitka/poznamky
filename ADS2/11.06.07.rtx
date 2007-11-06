@@ -1,0 +1,79 @@
+\section{Hledání podřetězců}
+Mějme $Σ$ nějakou abecedu (např. a…z).
+Označme $Σ^*$ množinu všech slov nad touto abecedou.
+Slovo bude nějaká konečná posloupnost písmen z abecedy.
+Prázdné slovo označíme $λ$.
+Délka slova $α$ je počet písmen tohoto slova, značené $\len{α}$.
+Zřetězení slov α a β budeme značit $αβ$.
+
+Pozorování:\\
+→•
+• $λα = αλ = α$
+• $\len{αβ} = \len{α}+\len{β}$
+• Prázdné slovo je podslovem libovolného slovo.
+• Každé slovo je podslovo sebe sama, pokud to chceme vyloučit, říkáme \name{vlastní podslovo}.
+←•
+
+Budeme indexovat jako v pythonu.
+
+\subsection{Definice problému}
+Mějme dvě slova, $ι$ je hledané slovo ($\len{ι}=J$) a $σ$ slovo prohledávané ($\len{σ} = S$).
+Chceme $@{i;σ@[i:i+J@]=ι@}$.
+
+\subsection{Vyhledávací automat}
+(Knut, Moris, Pratt, neboli KMP).
+
+Máme graf, každý vrchol je nějaký prefix hledaného slova a přechody mezi nimi jsou hrany.
+Počáteční stav odpovídá λ.
+Hrany, které zvětšují prefix (o $1$ písmeno) nazýváme \name{dopředné hrany}. Takové hrany jsou $d(α,x)$ a to je buď $d(α,x):= αx$, pokud $αx$ je stav, nebo není definovaná.
+Dále jsou zde \name{zpětné hrany}, odpovídají návratům v textu, když se to nenalezne.
+Zpětná hrana je funkce $z(α)$ a je definovaná pro všechny stavy kromě λ.
+
+Vždy chceme, aby aktuální stav byl nejdelší možný prefix končící na aktuální pozici v textu.
+Pokud se vracíme, tak se snažíme vrátit co nejméně tak, aby se opět dostal do nějakého stavu i po přidání aktuálního písmene.
+
+\subsubsection{Algoritmus}
+→•
+• Vždy vezmu písmeno.
+• Dokud nelze jít dopředu nebo nejsem na začátku, vracím se po zpětných hranách.
+• Pokud jde dopředu, jdu dopředu.
+• Pokud jsem ve stavu $ι$, započítám to.
+←•
+
+\subsubsection{Implementace}
+Není potřeba si pamatovat celé stavy.
+Místo stavu si mohu pamatovat jen číslo, jak dlouhý prefix už mám.
+Dopředná hrana je reprezentovaná jen písmenkem, které ji podmiňuje, přičítá jedničku.
+Zpětné hrany jsou čísla, kam se vracíme.
+
+\subsubsection{Důkaz správnosti}
+Stav po přečtení po vstupu označme $α(β)$.
+Tento stav je nejdelší sufix β takový, že je prefixem α.
+Pokud se podaří dokázat tento invariant, je správnost jasná.
+
+Invariant dokážeme indukcí.
+Na začátku zřejmě platí, tedy čtení znaku $c$.
+Mějme stav $α(β)$, o kterém platí, a chceme z něj dokázat, že platí i pro $α(βc)$.
+Potřebujeme najít takový stav, ke kterému lze přidat $c$. Když to nejde, tak ho co nejméně zkrátíme a zkusíme to znovu. A tak dále, dokud se to nepovede.
+
+\subsubsection{Časová složitost}
+Vyhledávání doběhne v čase $O(S)$.
+Každé písmeno přečte právě jednou. Sice se můžeme vícekrát vracet, ale to musí vždy alespoň o jedna a kolikrát jdeme dozadu, tolikrát jsme museli předtím museli jít dopředu a k tomu jsme vždy potřebovali písmeno.
+Všech kroků zpět je tedy maximálně tolik, kolik je kroků dopředu a tedy je jich maximálně $S$.
+
+Paměť je také lineární.
+
+\subsubsection{Konstrukce zpětných hran}
+Zpětná hrana ze stavu $α(β)$ musí vést do stavu, do kterého se musí automat dostat bez prvního znaku, tedy do $α(β[1:])$.
+(Potřebujeme alespoň o znak kratší, tak ho jednoduše usekneme)
+Protože $α(β)$ je prefix $ι$, tedy $β=ι[:i]$ a tedy $α(β[1:]) = α(ι[1:\len{β}])$.
+
+Toho lze využít při tvorbě automatu, jednoduše proto, že když děláme $k$-tou zpětnou hranu, tak ho krmíme vstupem $ι[1:k]$, jehož délka je $k-1$, tedy tuto zpětnou hranu ještě nebude určitě potřebovat a ty předtím už máme z minule.
+
+Z toho je zřejmé, že i časová složitost je také lineární.
+
+\subsection{Rabin \& Kasp}
+Když si vezmeme nějakou hashovací funkci, tak můžeme začít porovnávat, až když souhlasí hash.
+Kdyby šel přepočítat (posunout o $1$ doprava) v konstantním čase, pak by to šlo přibližně lineárně s délkou vstupu.
+Mohla by to být například lineární kombinace s váhami mocninami nějakého prvočísla.
+

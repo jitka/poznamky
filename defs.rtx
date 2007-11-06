@@ -16,3 +16,4 @@
 	\textit{#1}
 
 }
+\newcommand{\len}[1]{{\left|{#1}\right|}}
