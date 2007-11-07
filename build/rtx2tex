@@ -64,6 +64,7 @@ exec sed -e 's/α/{\\ensuremath{\\alpha}}/g;
 	s/•/\\item /g;
 	s/◦/\\item[$\\circ$] /g;
 	s/→→/{\\ensuremath{\\Rightarrow}}/g;
+	s/←←/{\\ensuremath{\\Leftarrow}}/g;
 	s/←→/{\\ensuremath{\\Leftrightarrow}}/g;
 	s/-→/{\\ensuremath{\\longrightarrow}}/g
 	s/→/{\\ensuremath{\\to}}/g
