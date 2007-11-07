@@ -1,0 +1,34 @@
+$c$ je stacionární bod funkce $f$, jestliže všechny parciální derivace jsou rovny nule.
+
+\statement{Nutná podmínka pro lokální extrém druhého řádu}
+Předpokládejme, že $f$ má v bodě $a$ lokální minimum a předpokládáme, že má na nějakém okolí druhé spojité derivace.
+Matice je pozitivně semidefinitní.
+
+\statement{Lemma}
+$A$ je pozitivně definitní $←→∃α∈\R^+∀h∈\R^n; h^{-1}·A·h ≥ \len{h}^2$
+Důkaz:\\
+$←←$ zřejmě platí.
+Opačně dokážeme sporem.
+
+\statement{Postačující podmínka lokálního extrému}
+Má spojité derivace druhého řádu, gradient je roven $0$ a Hasselova matice je pozitivně definitní →→ $f$ má ostré lokální minimum.
+
+Když je Hasselova matice negativně definitní →→ ostré lokální maximum.
+
+\subsection{Vázané extrémy}
+Hledáme extrém, který splňuje nějakou podmínku (tedy vazbu).
+Rozlišíme na dva případy:
+→•
+• Ty co leží uvnitř takové množiny. Pak je to i lokální extrém.
+• Leží na okraji.
+←•
+
+Pokud leží na okraji, tak lze převést na funkci o méně proměnných.
+
+\statement{O Lagrangerových multiplikátorech pro jednu vazbu}
+Mám funkce $f,g:\R^n→\R$.
+$M$ je množina nulových bodů funkce $g$.
+$c∈M$.
+$f,g$ mají spojité parciální derivace v okolí $c$ a $f$ má v $c$ lokální extrém vzhledem k množině $M$.
+Gradient $g$ v $c$ není roven nule.
+Existuje jediné $λ$, že gradient $f$ je násobkem gradientu $g$.
