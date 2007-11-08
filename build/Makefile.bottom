@@ -29,8 +29,8 @@ $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtx
 %.1: %.mp
 	mpost $<
 
-#%-mp-1.mp: %
-#	$(D)/build/extractmp $<
+%.mp: %.xmp
+	recode utf8..latin2 < $< > $@ || ( rm $@; false )
 
 %.dep: %
 	touch $@

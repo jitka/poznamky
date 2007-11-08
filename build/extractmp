@@ -8,7 +8,7 @@ foreach( <STDIN> ) {
 		print FILE "endfig;\nend;\n";
 		close FILE;
 	} elsif( /^\\MPOST$/ ) {
-		open FILE, ">$ARGV[0]-mp-$act.mp" or die "Could not output file";
+		open FILE, ">$ARGV[0]-mp-$act.xmp" or die "Could not output file";
 		print FILE "beginfig(1);\n";
 		$act ++;
 		$run = 1;

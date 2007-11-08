@@ -13,7 +13,7 @@ SUBDIRS:=ADS2 algebra analyza-3 komsem neproceduralko topomet analyza-2 lingebra
 gen-makes: $(patsubst %,%/Makefile,$(SUBDIRS))
 
 $(patsubst %,%/Makefile,$(SUBDIRS)): %: build/Makefile.dir
-	cp $< $@
+	ln $< $@
 
 clean-makes:
 	rm -f $(patsubst %,%/Makefile,$(SUBDIRS)) $(patsubst %,%/Makefile.rtx.deps,$(SUBDIRS))
