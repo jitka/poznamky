@@ -2,11 +2,13 @@
 
 $run = 1;
 $act = 1;
+$FN = $ARGV[0];
+$FN =~ s#.*/##;
 foreach( <STDIN> ) {
 	if( /^\\ENDMPOST$/ ) {
 		$run = 1;
 	} elsif( /^\\MPOST$/ ) {
-		print "\\includegraphics{$ARGV[0]-mp-$act.1}\n";
+		print "\\includegraphics{$FN-mp-$act.1}\n";
 		$act ++;
 		$run = 0;
 	} else {

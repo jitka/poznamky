@@ -12,7 +12,7 @@ include Makefile.rtx.deps
 include Makefile.mp.deps
 
 $(RTXPDFS): %.pdf: %.dvi
-	dvipdf $< $@
+	cd $(shell echo $< | sed -e 's/\(.*\/\|\)[^/]*/\1/') . && dvipdf $(shell echo $< | sed -e 's/.*\///') $(shell echo $@ | sed -e 's/.*\///')
 
 RTXDVIS:=$(patsubst %.rtd,%.dvi,$(RTDS))
 
@@ -27,7 +27,7 @@ $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtx
 	$(D)/build/rtx2tex < $< | recode utf8..latin2 | $(D)/build/cutmp $< | sed -e 's/\\\(input\|include\){\([^{}]*\)\.rtx}/\\\1{\2.tex}/g;s/\\include{\([^{}]*\)\.tex}/\\include{\1}/g' > $@ || ( rm $@; false )
 
 %.1: %.mp
-	mpost $<
+	cd $(shell echo $< | sed -e 's/\(.*\/\|\)[^/]*/\1/') . && mpost $(shell echo $< | sed -e 's/.*\///')
 
 %.mp: %.xmp
 	recode utf8..latin2 < $< > $@ || ( rm $@; false )
@@ -61,6 +61,6 @@ $(patsubst %.rtx,%._test.rtx,$(RTXS)): %._test.rtx: %.rtx
 	cat $(D)/localtail >> $@ || echo '\end{document}' >> $@
 
 $(patsubst %,print-%,$(RTDS)): print-%.rtd: %.dvi
-	dvips $<
+	cd $(shell echo $< | sed -e 's/\(.*\/\|\)[^/]*/\1/') . && dvips $(shell echo $< | sed -e 's/.*\///')
 
 .PHONY: all distclean clean-depfiles clean clean-rtx $(patsubst %.rtx,%._test.rtx,$(RTXS)) $(patsubst %,print-%,$(RTDS)) clean-mp
