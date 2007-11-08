@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+$run = 1;
+$act = 1;
+foreach( <STDIN> ) {
+	if( /^\\ENDMPOST$/ ) {
+		$run = 1;
+	} elsif( /^\\MPOST$/ ) {
+		print "\\includegraphics{$ARGV[0]-mp-$act.1}\n";
+		$act ++;
+		$run = 0;
+	} else {
+		print if( $run );
+	}
+}

@@ -5,7 +5,11 @@ all: $(RTXPDFS)
 Makefile.rtx.deps: $(RTXS) $(RTDS)
 	$(D)/build/gendeps $^ localhead localtail > $@ || ( rm -f $@ ; false )
 
+Makefile.mp.deps: $(RTXS) $(RTDS)
+	$(D)/build/genmpdeps $^ > $@ || ( rm -f $@ ; false )
+
 include Makefile.rtx.deps
+include Makefile.mp.deps
 
 $(RTXPDFS): %.pdf: %.dvi
 	dvipdf $< $@
@@ -17,23 +21,32 @@ $(RTXDVIS) $(patsubst %.rtx,%._test.dvi,$(RTXS)): %.dvi: %.tex $(shell echo %.te
 
 $(patsubst %.rtd,%.tex,$(RTDS)): %.tex: %.rtd
 
-$(patsubst %.rtx,%.tex,$(RTXS))  $(patsubst %.rtx,%._test.tex,$(RTXS)): %.tex: %.rtx
+$(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtx,%._test.tex,$(RTXS)): %.tex: %.rtx
 
 $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtx,%._test.tex,$(RTXS)): %.tex:
-	$(D)/build/rtx2tex < $< | recode utf8..latin2 | sed -e 's/\\\(input\|include\){\([^{}]*\)\.rtx}/\\\1{\2.tex}/g;s/\\include{\([^{}]*\)\.tex}/\\include{\1}/g' > $@ || ( rm $@; false )
+	$(D)/build/rtx2tex < $< | recode utf8..latin2 | $(D)/build/cutmp $< | sed -e 's/\\\(input\|include\){\([^{}]*\)\.rtx}/\\\1{\2.tex}/g;s/\\include{\([^{}]*\)\.tex}/\\include{\1}/g' > $@ || ( rm $@; false )
+
+%.1: %.mp
+	mpost $<
+
+#%-mp-1.mp: %
+#	$(D)/build/extractmp $<
 
 %.dep: %
 	touch $@
 
-clean: clean-rtx clean-rtx-depfile
+clean: clean-rtx clean-depfiles clean-mp
+
+clean-mp:
+	rm *-mp-*.* */*-mp-*.* -f
 
 clean-rtx:
 	rm -f $(RTXDVIS) $(RTXPDFS) $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtd,%.log,$(RTDS)) $(patsubst %.rtd,%.aux,$(RTDS)) $(patsubst %,%.dep,$(RTXS) $(RTDS)) $(patsubst %.rtx,%._test.*,$(RTXS)) $(patsubst %.rtx,%.log,$(RTXS))
 
 distclean: clean
 
-clean-rtx-depfile:
-	rm -f Makefile.rtx.deps *.dep */*.dep
+clean-depfiles:
+	rm -f Makefile.rtx.deps Makefile.mp.deps *.dep */*.dep
 
 $(patsubst %,test-%,$(RTDS)): test-%.rtd: %.dvi
 	kdvi $<
@@ -50,4 +63,4 @@ $(patsubst %.rtx,%._test.rtx,$(RTXS)): %._test.rtx: %.rtx
 $(patsubst %,print-%,$(RTDS)): print-%.rtd: %.dvi
 	dvips $<
 
-.PHONY: all distclean clean-rtx-depfile clean clean-rtx $(patsubst %._test.rtx,%._test.rtx,$(RTXS)) $(patsubst %,print-%,$(RTDS))
+.PHONY: all distclean clean-depfiles clean clean-rtx $(patsubst %.rtx,%._test.rtx,$(RTXS)) $(patsubst %,print-%,$(RTDS)) clean-mp

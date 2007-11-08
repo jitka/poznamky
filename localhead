@@ -3,6 +3,7 @@
 \usepackage{czech}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage[dvips]{graphicx}
 
 \input{../defs.tex}
 

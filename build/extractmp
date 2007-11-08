@@ -1,0 +1,19 @@
+#!/usr/bin/perl
+
+$run = 0;
+$act = 1;
+foreach( <STDIN> ) {
+	if( /^\\ENDMPOST$/ ) {
+		$run = 0;
+		print FILE "endfig;\nend;\n";
+		close FILE;
+	} elsif( /^\\MPOST$/ ) {
+		open FILE, ">$ARGV[0]-mp-$act.mp" or die "Could not output file";
+		print FILE "beginfig(1);\n";
+		$act ++;
+		$run = 1;
+	} else {
+		print FILE if( $run );
+	}
+}
+close INPUT;
