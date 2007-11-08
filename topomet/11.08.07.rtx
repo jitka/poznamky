@@ -1,0 +1,16 @@
+\subsubsection{Řetězce}
+\name{$k$-řetězcem} ($C_k$) nazýváme množinu $k$-dimenzionálních simplexů se \uv{značkami} $0$ a $1$.
+Bereme to jako algebraický vektor nad $\Z_2$ a sčítání funguje jako sčítání $\pmod 2$.
+
+Mějme $f:K→L$ simpliciální zobrazení. $∀k=0,1,…$ dostaneme zobrazení $f_{\sharp k}: C_k→D_k$ -- buď $k$-řetězec stávající z obrazu, pokud má stejné dimenze, nebo $0$, pokud má menší dimenzi.
+
+\lemma{}
+$K, L$ jsou dvě triangulace sféry, $f:K→L$ simpliciální zobrazení.
+$A_{n-1}$ je $k$-řetězec udělaný ze všech simplexů $K$.
+Jeho obraz jsou buď všechny $(n-1)$-simplexy $L$ a nebo $0$.
+
+\lemma{}
+$K,L$ jsou antipodálně simetrické triangulace $S^{n-1}$, $K$ respektuje strukturu $H_k^\pm$.
+$$H_k^+ := @{x∈S^{n-1};x_{k+1}≥0, x_{k+2} = x_{k+3} = … = x_n = 0@}$$
+S $H_k^-$ obdobně, jen je tam $≤$.
+$f:K→L$ antipodální simpliciální zobrazení. Stupeň $f$ je potom sudý.
