@@ -1,0 +1,38 @@
+\note{
+Buď $ρ$ z kongurence na algebře $A$ a $σ$ je nějaká ekvivalence na $A$.
+Pak $σ$ je kongurence na $A$, pokud $σ\over ρ$ je kongurence na algebře $A/ρ$.
+}
+
+\statement{Věta o izomorfizmu}
+Nechť $f:A→B$ je homomorfizmus.
+Pak $f(A)$ je algebrou stejného typu jako algebry $A,B$, tedy $f(A)@⊂B$ a
+${A\over \ker f} \cong f(A)$.
+\prove
+$f$ je homomorfizmus na $f(A)$.
+Použijeme $ρ:= \ker f$.
+Tedy existuje homomorfizmus $g:{A\over \ker f}→f(A)$, který je izomorfizmus.
+
+\statement{Druhá věta o izomorfizmu}
+Nechť $ρ$ a $σ$ jsou kongurence na algebře $A$.
+Potom ${{A\over ρ}\over σ} \cong {A\over σ}$.
+Tedy, faktory lze krátit.
+
+\section{Svazy}
+Relaci $≤$ na množině $S$ nazveme \name{uspořádáním}, je-li:
+→•
+• Reflexivní.
+• Tranzitivní.
+• Slabě antisymetrická:
+  $$∀a,b∈S;a≤b\land b≤a→→a = b$$
+←•
+
+\note{Dovoluje i částečné uspořádání, tedy např. inkluze.}
+
+$s∈S$ je \name{nejmenší prvek}, pokud $$∀a∈S;s≤a$$
+$s∈S$ je \name{největší prvek}, pokud $$∀a∈S;a≤s$$
+\name{Infimem} množiny $A@⊂S$ je největší prvek množiny $@{s∈S|∀a∈A;s≤A@}$.
+\name{Supremum} je přesně naopak.
+
+Množinu $S$ nazveme \name{svazem}, existuje-li infimum a supremum $∀@{a,b@}, a,b∈S$.
+
+\name{Úplným svazem} budeme rozumět svaz, kde existuje infimum a supremum $∀A@⊂S$.
