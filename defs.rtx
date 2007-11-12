@@ -14,7 +14,7 @@
 	\textit{Poznámka:\\}#1
 }
 \newcommand{\example}[1]{\textit{Příklad:\\}#1}
-\newcommand{\prove}{
+\newcommand{\proof}{
 
 	\textit{Důkaz:\\}}
 \newcommand{\K}{\mathbb{K}}

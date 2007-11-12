@@ -7,7 +7,7 @@ Pak $σ$ je kongurence na $A$, pokud $σ\over ρ$ je kongurence na algebře $A/�
 Nechť $f:A→B$ je homomorfizmus.
 Pak $f(A)$ je algebrou stejného typu jako algebry $A,B$, tedy $f(A)@⊂B$ a
 ${A\over \ker f} \cong f(A)$.
-\prove
+\proof
 $f$ je homomorfizmus na $f(A)$.
 Použijeme $ρ:= \ker f$.
 Tedy existuje homomorfizmus $g:{A\over \ker f}→f(A)$, který je izomorfizmus.
