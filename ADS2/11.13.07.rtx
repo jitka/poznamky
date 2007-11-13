@@ -1,0 +1,65 @@
+\subsection{Vyhledávání množiny řetězců}
+Máme $σ$ seno a $ι_1, …, ι_k$ a chceme najít všechny dvojice takové, že $(i,j) : ι_i = σ@[j:j+\len{ι_i}@]$.
+Opět provedeme pomocí vyhledávacího automatu.
+
+Automat nebude cestička, bude to složitější.
+Např. pro slova:
+→•
+• ARA
+• BAR
+• ARAB
+• BARABA
+• BARBARA
+←•
+
+Prohledávání probíhá stejně. Problém je ale s výpisy (výpis jen každý vrchol, kde něco končí, nestačí).
+Přidáme ještě zkratkové hrany -- zpětná hrana vedoucí do nejbližšího konce slova. V každém kroku prohledám a vypíšu sebe, pokud jsem označen a všechny, kam se dá postupně dostat po zkratkách.
+
+\subsubsection{Časová složitost}
+Vlastní procházení funguje stejně rychle, jako s jedním slovem.
+
+Druhá část je lineární s počtem výskytů (každý vypíše právě jednou a při každém kroku právě jeden vypíše).
+
+\subsubsection{Konstrukce automatu}
+\author{Aho \& Corasicková}
+
+\begin{enumerate}
+• Postavíme strom -- viz trie.
+• Označíme, kde končí slova -- lze společně se stavbou stromu.
+• Spočítáme zpětné hrany.
+Stejným způsobem jako minule, jen musíme dělat všechny slova zároveň -- jednoduše po hladinách.
+(Lze udělat průchodem do šířky, čímž hledáme více slov najednou.)
+• Dopočítají se zkratky.
+\end{enumerate}
+
+Lze jednoduše dokázat, že toto funguje v $O(\Σ_i ι_i)$.
+
+\note{
+Předpokládáme, že operace se stromy jsou konstantní.
+Toho lze dosáhnout buď malou abecedou, nebo vhodným použitím hashovacích tabulek.
+}
+
+\section{Práce s polynomy}
+\name{Polynom} je nějaká $P(x)=\Σ_{j=0}^{n-1}B·x^j$.
+
+Mějme polynomy $P(x)$ a $Q(x)$ (stejného stupně).
+Sčítání je bez problémů.
+Součin je $R(x) = P(x) · Q(x)$, tedy $r_l = \Σ_{j=0}^l p_j·q_{l-j}$.
+Toto se dá stihnout v $O(N^2)$.
+
+\subsection{Násobení}
+
+Můžeme si všimnout, že $∀x R(x)=P(x)·Q(x)$ a polynom je určen jeho hodnotou v $n+1$ bodech.
+
+Vezmu body $x_0, … , x_{2n-1}$ ($n$ je stupeň původních polynomů).
+Spočítám a vynásobím hodnoty zdrojových polynomů.
+Tím získám body, kterými $R$ prochází, z čehož spočítám $R$.
+
+\subsubsection{Vyhodnocení polynomu v $n$ bodech}
+BÚNO $n=2^m$.
+
+Rozdělíme na sudé a liché koeficienty, z těch lichých vytkneme $k$, čímž získáme sudé mocniny $x$ v obou polovinách.
+Čímž se to zredukuje na vyhodnocení $2$ polynomy v bodě $x^2$.
+Lze využít toho, že můžeme použít $x$ kladné a záporné (tedy získáme tím $2$ výsledky na $1$ vyhodnocování).
+
+Pokud použijeme komplexní čísla, tak dokážeme, aby i $x^2$ mohlo být záporné, atd.
