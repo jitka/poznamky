@@ -1,0 +1,52 @@
+\subsection{Kompaktní množiny v metrickém prostoru}
+
+Mějme metrický prostor $P$ a podmnožinu $K@⊂P$.
+$K$ je \name{kompaktní}, pokud pro každou posloupnost $@{k_n∈K@}$ existuje vybraná podposloupnost $@{k_{n_o}@}$, která konverguje k nějakému $k∈K$.
+
+\note{
+Každá kompaktní množina je uzavřená. Zřejmé.
+}
+
+\note{
+Pro každou konvergentní posloupnost z $K$, která konverguje k nějakému $k$, $k∈K$.
+}
+
+\note{
+Pokud mám kompaktní $K$ a uzavřenou $U@⊂K$. Pak $U$ je také kompaktní.
+Lze dokázat z definice -- protože $U$ je podmnožina kompaktní, musí existovat vybraná konvergentní podposloupnost.
+A každá posloupnost z $U$, která konverguje musí konvergovat k něčemu z $U$, protože je uzavřená.
+}
+
+Mějme množinu $M$. Říkáme, že $M$ je \name{omezená}, pokud $∃c∈P, ∃ε∈\R^+;M@⊂B@(c,ε@)$.
+
+\note{
+Na výběru středu koule nezáleží, pokud existuje nějaký, na libovolný jiný se to dá převést zvětšením poloměru.
+}
+
+\statement{Omezená kompaktní množina}
+Mějme $K$ kompaktní. Potom je $K$ omezená.
+
+\proof
+Sporem.
+Vezmu nějaký střed a postupně beru body ve vzdálenosti $1, 2, 3, 4, …$.
+Z této posloupnosti vezmu limitu, což je nějaké $X$. Jeho vzdálenost je určitě konečné, ale posloupnost vzdáleností limití k $\infty$, což je ve sporu se spojitosti vzdálenosti.
+
+\statement{Uzavřená a omezená}
+Každá uzavřená a omezená množina je kompaktní.
+
+\proof
+Pokud je omezená, pak ji zavřeme do krychle o hraně $2a$ se středem v počátku (pro nějaké $a$).
+
+Taková krychle je kartézský součin intervalů $@<-a,a@>$.
+Takový interval je kompaktní, když beru postupně každý index zvlášť, tak lze dokázat, že i ta krychle je kompaktní, indukce podle počtu indexů.
+
+Tato množina je uzavřená a je podmnožina kompaktní množiny, proto na ni aplikujeme minulou větu.
+
+\statement{O kompaktním obrazu}
+$f:(P,ρ)→(Q,σ);K@⊂P$ kompaktní, $f$ spojité na $K$.
+$f(K)$ je kompaktní.
+
+\proof
+Z každé posloupnost i z $K$ vybereme konvergentní posloupnost, která má limitu $k∈K$.
+Když vezmu obrazy této posloupnosti, tak dle hayneho věty konvergují k obrazu $k$.
+

@@ -26,7 +26,7 @@ Rozlišíme na dva případy:
 Pokud leží na okraji, tak lze převést na funkci o méně proměnných.
 
 \statement{O Lagrangerových multiplikátorech pro jednu vazbu}
-Mám funkce $f,g:\R^n→\R$.
+Mám funkce $f,g:\R^n→\R^k$.
 $M$ je množina nulových bodů funkce $g$.
 $c∈M$.
 $f,g$ mají spojité parciální derivace v okolí $c$ a $f$ má v $c$ lokální extrém vzhledem k množině $M$.
