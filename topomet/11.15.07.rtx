@@ -1,0 +1,56 @@
+\subsection{Aplikace  Borsukovy\& Ulamovy věty}
+
+\statement{Přímá věta o sendwiči}
+
+Mějme $A_1, …, A_d$ kompaktní množiny v $\R^d$. Pak existuje nadrovina dimenze $d-1$ taková,
+že všechny ty množiny rozpůlí.
+
+\proof
+Uděláme přiřazení $μ:$nadrovina$→(μ_1(h^+),…,μ_d(h^+))$ -- tedy do vektoru velikostí jedněch dílů množin.
+
+\statement{Diskrétní věta o sendwiči}
+Pro $A_1, …, A_d$ konečné bodové množiny, pak to platí také.
+
+Rozdělení $A$ na polovinu je takové rozdělení, že v každé otevřené polonadrovině je $≤\len{A}$.
+
+\begin{figure}[!h]
+\begin{center}
+\MPOST
+draw (0,0)--(200,0);
+pickup pencircle scaled 5;
+drawdot (50,0);
+drawdot (100,0);
+drawdot (40,50);
+drawdot (30,30);
+drawdot (150,0);
+drawdot (30,-20);
+drawdot (120,17);
+\ENDMPOST
+\caption{Ukázka rozpůlení množiny}
+\end{center}
+\end{figure}
+
+\statement{Dělení množin}
+\author{Akyana, Alon}
+$A_1,…,A_d$ jsou konečné bodové množiny v $R^d$, každá má $n$ bodů, v obecné podobě.
+$A_1,…,A_d$ lze rozložit na duhové $d$-tice (když každá množina má svoji barvu), jejichž konvexní obaly jsou disjunktní.
+
+\begin{figure}[!h]
+\begin{center}
+\MPOST
+draw (10,10)--(30,30)--(20,15)--(10,10);
+draw (-15,20)--(-12,3)--(-25,15)--(-15,20);
+pickup pencircle scaled 5;
+drawdot (10,10) withcolor red;
+drawdot (30,30) withcolor blue;
+drawdot (20,15) withcolor green;
+drawdot (-15,20) withcolor red;
+drawdot (-12,3) withcolor blue;
+drawdot (-25,15) withcolor green;
+\ENDMPOST
+\caption{Ukázka duhového rozdělení}
+\end{center}
+\end{figure}
+
+\proof
+Když $n=1$, tak je to jasné, když víc, tak použiji větu o sendwiči.

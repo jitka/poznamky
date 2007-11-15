@@ -2,6 +2,7 @@
 \usepackage[latin2]{inputenc}
 \usepackage{czech}
 \usepackage{amsfonts}
+\usepackage{graphicx}
 
 \input{../defs.tex}
 
@@ -15,4 +16,5 @@
 \input{10.25.07.rtx}
 \input{11.1.07.rtx}
 \input{11.08.07.rtx}
+\input{11.15.07.rtx}
 \end{document}
