@@ -1,5 +1,5 @@
 \documentclass[a4paper,11pt]{article}
-\usepackage[latin2]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[czech]{babel}
 \usepackage{amsfonts}
 \usepackage{graphicx}
