@@ -25,7 +25,7 @@ Taktéž neodnasytíme hranu, která má vyšší spád, protože bychom museli 
 
 \subsubsection{Lemma $K$ (korektnost)}
 Když se algoritmus zastaví, $f$ je maximální tok.
-Určitě je to vlna a zastaví se ve chvíli, kdy není žádný přebytek →→ je to tok.
+Určitě je to vlna a zastaví se ve chvíli, kdy není žádný přebytek $→→$ je to tok.
 Kdyby nebyl maximální, existuje nenasycená cesta $P$ ze zdroje do spotřebiče. Zdroj má výšku $N$ a spotřebič výšku $0$. Ta má maximálně $N-1$ hran. Na ní je určitě hrana, která má spád alespoň $2$, tedy nemůže být nenasycená.
 
 \subsubsection{Invariant o cestě do zdroje}

@@ -17,7 +17,7 @@ Norma říká, jak je vektor dlouhý.
 Lze určit vzdálenost vektorů ($||u-v||$).
 $\left<u|v\right>$ odpovídá úhlu.
 
-Pro standardní skalární součin na $\R^n$ a z něj odvozenou normu platí, $\left<u,v\right> = ||u||*||v||*\cos φ$, kde φ je úhel mezi nimi sevřený.
+Pro standardní skalární součin na $\R^n$ a z něj odvozenou normu platí, $\left<u,v\right> = ||u||*||v||*\cos φ$, kde $φ$ je úhel mezi nimi sevřený.
 
 Důkaz z obrázku a kosinovy věty.
 

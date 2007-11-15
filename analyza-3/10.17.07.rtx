@@ -23,7 +23,7 @@ Vektoru parciálních derivací říkáme \name{gradient} a značíme jej $\nabl
 Předpokládejme, že funkce $f$ má na $B(a)$ parciální derivace. Zvolme $x∈B@(a@)$ Pak $∃ξ_1, ξ_2, …, ξ_n∈B@(a@);f@(x@)-f(a) = \Σ_{i=1}^n \frac{d_f}{d_{x_i}}@(ξ_i@)(x_i-a_i)$.
 Důkaz:\\
 $$∀i=1,…,n;g@(t@)=f@(a_1, …, a_{i-1}, t, x_{i+1}, …, x_n@)$$
-Tedy, nasekám ty body tak, že vždy měním jen jednu souřadnici a pak použiji lagrangovu větu o střední hodnotě pro funkci jedné proměnné (na každém tom zubu se mění jen jedna souřadnice → funkce jedné proměnné).
+Tedy, nasekám ty body tak, že vždy měním jen jednu souřadnici a pak použiji lagrangovu větu o střední hodnotě pro funkci jedné proměnné (na každém tom zubu se mění jen jedna souřadnice $→$ funkce jedné proměnné).
 
 \statement{Existence diferenciálu a spojitost parciálních derivací}
 \TODO{Není tahle věda špatně? Nějak mi nesedí…}

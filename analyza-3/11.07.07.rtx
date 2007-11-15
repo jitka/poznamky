@@ -11,9 +11,9 @@ $←←$ zřejmě platí.
 Opačně dokážeme sporem.
 
 \statement{Postačující podmínka lokálního extrému}
-Má spojité derivace druhého řádu, gradient je roven $0$ a Hasselova matice je pozitivně definitní →→ $f$ má ostré lokální minimum.
+Má spojité derivace druhého řádu, gradient je roven $0$ a Hasselova matice je pozitivně definitní $→→ f$ má ostré lokální minimum.
 
-Když je Hasselova matice negativně definitní →→ ostré lokální maximum.
+Když je Hasselova matice negativně definitní $→→$ ostré lokální maximum.
 
 \subsection{Vázané extrémy}
 Hledáme extrém, který splňuje nějakou podmínku (tedy vazbu).

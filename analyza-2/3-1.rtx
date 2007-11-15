@@ -3,11 +3,11 @@
 →•
 • Dolní a horní riemanovu sumu.
 $$\left<0,1\right>, f(0)=1, f\left(x∈\left(0,1\right>\right)\frac{1}{x}$$
-• Pokud se liší jen v konečně mnoha bodech -→ s integrovatelností a hodnotou integrálu jsou na tom stejně.
+• Pokud se liší jen v konečně mnoha bodech $-→$ s integrovatelností a hodnotou integrálu jsou na tom stejně.
 ←•
 
 \statement{Triviální nerovnosti}
-$∀D$ - dělení, dolní suma je ≤ $\int$ ≤ horní suma.
+$∀D$ - dělení, dolní suma je $≤ \int ≤$ horní suma.
 
 …
 

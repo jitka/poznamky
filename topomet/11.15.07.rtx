@@ -13,7 +13,7 @@ Pro $A_1, …, A_d$ konečné bodové množiny, pak to platí také.
 
 Rozdělení $A$ na polovinu je takové rozdělení, že v každé otevřené polonadrovině je $≤\len{A}$.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \begin{center}
 \MPOST
 draw (0,0)--(200,0);
@@ -35,7 +35,7 @@ drawdot (120,17);
 $A_1,…,A_d$ jsou konečné bodové množiny v $R^d$, každá má $n$ bodů, v obecné podobě.
 $A_1,…,A_d$ lze rozložit na duhové $d$-tice (když každá množina má svoji barvu), jejichž konvexní obaly jsou disjunktní.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \begin{center}
 \MPOST
 draw (10,10)--(30,30)--(20,15)--(10,10);

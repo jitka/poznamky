@@ -37,7 +37,7 @@ Chceme nahlédnout, že $V$ je lineární obal toho, o co se rozšířila ta bá
 
 Čtvercová matice $A$ se nazývá \name{ortogonální}, pokud $A·A^T = I$ - tedy, každé dva řádky jsou na sebe kolmé a navíc má každý velikost 1.
 
-Matice je ortogonální ←→ $A^{-1} = A^T$.
+Matice je ortogonální $←→ A^{-1} = A^T$.
 
 \section{Determinanty}
 \subsection{Permutace}

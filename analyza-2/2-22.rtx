@@ -1,6 +1,6 @@
 \begin{dummy}\end{dummy}
 \section{Riemanův integrál}
-Mějme funkci $f$. Číslo $I\R$ je \name{Riemanův integrál} když $$∀ ε∈\R^+∃δ∈\R^+;\left|I-R(δ,C,D)\right|<ε$$, kde $R(δ, C, D)$ je dělení intervalu na obdélníky o ,,šířce'' maximálně δ ($\Σ$ jejich ploch). Lze chápat jako limitu když ε jde k $0$. Pokud limita existuje, je \name{Riemanovsky integrovatelná}. Množina takových funkcí se bude značit$\mathcal{R}[a,b]$, $\left<a, b\right>$ je interval.
+Mějme funkci $f$. Číslo $I\R$ je \name{Riemanův integrál} když $$∀ ε∈\R^+∃δ∈\R^+;\left|I-R(δ,C,D)\right|<ε$$, kde $R(δ, C, D)$ je dělení intervalu na obdélníky o ,,šířce'' maximálně $δ$ ($\Σ$ jejich ploch). Lze chápat jako limitu když $ε$ jde k $0$. Pokud limita existuje, je \name{Riemanovsky integrovatelná}. Množina takových funkcí se bude značit$\mathcal{R}[a,b]$, $\left<a, b\right>$ je interval.
 
 Lze chápat jako definici plochy pod křivkou.
 
@@ -16,7 +16,7 @@ Jako cvičení
 
 Důkaz, že $$\underline{\int} ≤ \overline{\int}$$
 \statement{Pozorování}
-Dolní riemanovská $\Σ$ ≤ dorní riemanovský $\int$, což je vidět.
-Když $D$ a $D'$ jsou dělení intervalu $\left<a, b\right>$. $D'$ je \name{zjemnění} $D$ ←→ $D⊂D'$.
+Dolní riemanovská $\Σ ≤$ dorní riemanovský $\int$, což je vidět.
+Když $D$ a $D'$ jsou dělení intervalu $\left<a, b\right>$. $D'$ je \name{zjemnění} $D ←→ D⊂D'$.
 
 Mějme $f$ definovanou na $\left<a,b\right>$. Při zjemnění dolní se nezmenší a horní se nezvětší.

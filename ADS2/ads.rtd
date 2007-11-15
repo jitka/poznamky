@@ -2,6 +2,7 @@
 \usepackage[latin2]{inputenc}
 \usepackage{czech}
 \usepackage{amsfonts}
+\usepackage{graphicx}
 
 \input{../defs.rtx}
 

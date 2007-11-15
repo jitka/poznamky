@@ -3,7 +3,7 @@ Máme $σ$ seno a $ι_1, …, ι_k$ a chceme najít všechny dvojice takové, ž
 Opět provedeme pomocí vyhledávacího automatu.
 
 Automat nebude cestička, bude to složitější.
-Např. pro slova:
+Např. pro tato slova bude vypadat dle obrázku (se všemi informacemi, viz. níže).
 →•
 • ARA
 • BAR
@@ -12,13 +12,79 @@ Např. pro slova:
 • BARBARA
 ←•
 
+\begin{figure}[!ht]
+\begin{center}
+\MPOST
+def pismeno(expr p, x, y, col) =
+	pickup pencircle scaled 5mm;
+	drawdot (x,y) withcolor white;
+	pickup pencircle scaled 2;
+	draw fullcircle scaled 5mm shifted (x,y) withcolor col;
+	label(p, (x,y));
+enddef;
+pickup pencircle scaled 2;
+ahlength := 15;
+drawarrow (-30,-30){dir 90}..(0,0){dir 0} withcolor red;
+drawarrow (-30,-60){dir 125}..(0,0){dir -45} withcolor red;
+drawarrow (-30,-90){dir 180}..(-30,-30){dir 0} withcolor red;
+drawarrow (-30,-120)--(30,-30) withcolor red;
+drawarrow (30,-30){dir 90}..(0,0){dir 180} withcolor red;
+drawarrow (30,-60)--(-30,-30) withcolor red;
+drawarrow (30,-90)--(-30,-60) withcolor red;
+drawarrow (10,-120)--(-30,-90) withcolor red;
+drawarrow (10,-150)--(-30,-120) withcolor red;
+drawarrow (10,-180)..(-60,-120)..(-60,0)..(30,0)..(30,-30) withcolor red;
+drawarrow (50,-120){dir 60}..(30,-30) withcolor red;
+drawarrow (50,-150){dir 60}..(30,-60) withcolor red;
+drawarrow (50,-180){dir 60}..(30,-90){dir 180} withcolor red;
+drawarrow (50,-210)--(10,-120) withcolor red;
+for i = 1 upto 3:
+	drawarrow (-30, -30*i)--(-30,-30*(i+1));
+endfor
+drawarrow (0,0)--(-30,-30);
+drawarrow (0,0)--(30,-30);
+drawarrow (30,-30)--(30,-60);
+drawarrow (30,-60)--(30,-90);
+for i = 0 upto 1:
+	drawarrow (30,-90)--(10+40*i,-120);
+	for j = 0 upto 1:
+		drawarrow (10+40*i,-120-30*j)--(10+40*i,-150-30*j);
+	endfor;
+endfor;
+drawarrow (50,-180)--(50,-210);
+pickup pencircle;
+ahlength := 10;
+drawarrow (50,-210){dir 180}..(-30,-90){dir 0} withcolor blue;
+drawarrow (50,-180){dir 60}..(30,-90){dir 180} withcolor blue;
+drawarrow (10,-150)--(-30,-120) withcolor blue;
+drawarrow (10,-120)--(-30,-90) withcolor blue;
+pismeno(btex $λ$ etex, 0, 0, black);
+pismeno("A", -30, -30, black);
+pismeno("R", -30, -60, black);
+pismeno("A", -30, -90, .6green);
+pismeno("B", -30, -120, .6green);
+pismeno("B", 30, -30, black);
+pismeno("A", 30, -60, black);
+pismeno("R", 30, -90, .6green);
+pismeno("A", 10, -120, black);
+pismeno("B", 10, -150, black);
+pismeno("A", 10, -180, .6green);
+pismeno("B", 50, -120, black);
+pismeno("A", 50, -150, black);
+pismeno("R", 50, -180, black);
+pismeno("A", 50, -210, .6green);
+\ENDMPOST
+\caption{Příklad vyhledávacího automatu}
+\end{center}
+\end{figure}
+
 Prohledávání probíhá stejně. Problém je ale s výpisy (výpis jen každý vrchol, kde něco končí, nestačí).
 Přidáme ještě zkratkové hrany -- zpětná hrana vedoucí do nejbližšího konce slova. V každém kroku prohledám a vypíšu sebe, pokud jsem označen a všechny, kam se dá postupně dostat po zkratkách.
 
 \subsubsection{Časová složitost}
 Vlastní procházení funguje stejně rychle, jako s jedním slovem.
 
-Druhá část je lineární s počtem výskytů (každý vypíše právě jednou a při každém kroku právě jeden vypíše).
+Druhá část je lineární s počtem výskytů (každý vypíše právě jednou a při každém kroku po zkratkové hraně právě jeden vypíše).
 
 \subsubsection{Konstrukce automatu}
 \author{Aho \& Corasicková}

@@ -4,7 +4,7 @@ Označme $Σ^*$ množinu všech slov nad touto abecedou.
 Slovo bude nějaká konečná posloupnost písmen z abecedy.
 Prázdné slovo označíme $λ$.
 Délka slova $α$ je počet písmen tohoto slova, značené $\len{α}$.
-Zřetězení slov α a β budeme značit $αβ$.
+Zřetězení slov $α$ a $β$ budeme značit $αβ$.
 
 Pozorování:\\
 →•
@@ -24,10 +24,10 @@ Chceme $@{i;σ@[i:i+J@]=ι@}$.
 (Knut, Moris, Pratt, neboli KMP).
 
 Máme graf, každý vrchol je nějaký prefix hledaného slova a přechody mezi nimi jsou hrany.
-Počáteční stav odpovídá λ.
+Počáteční stav odpovídá $λ$.
 Hrany, které zvětšují prefix (o $1$ písmeno) nazýváme \name{dopředné hrany}. Takové hrany jsou $d(α,x)$ a to je buď $d(α,x):= αx$, pokud $αx$ je stav, nebo není definovaná.
 Dále jsou zde \name{zpětné hrany}, odpovídají návratům v textu, když se to nenalezne.
-Zpětná hrana je funkce $z(α)$ a je definovaná pro všechny stavy kromě λ.
+Zpětná hrana je funkce $z(α)$ a je definovaná pro všechny stavy kromě $λ$.
 
 Vždy chceme, aby aktuální stav byl nejdelší možný prefix končící na aktuální pozici v textu.
 Pokud se vracíme, tak se snažíme vrátit co nejméně tak, aby se opět dostal do nějakého stavu i po přidání aktuálního písmene.
@@ -48,7 +48,7 @@ Zpětné hrany jsou čísla, kam se vracíme.
 
 \subsubsection{Důkaz správnosti}
 Stav po přečtení po vstupu označme $α(β)$.
-Tento stav je nejdelší sufix β takový, že je prefixem α.
+Tento stav je nejdelší sufix $β$ takový, že je prefixem $α$.
 Pokud se podaří dokázat tento invariant, je správnost jasná.
 
 Invariant dokážeme indukcí.

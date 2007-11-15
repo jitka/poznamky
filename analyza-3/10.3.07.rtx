@@ -59,7 +59,7 @@ Nechť $@{A_i ∈ P@}$. Pokud $∀ε∈\R^+∃i∈\N ∀A_{j, j≥i}; ρ@(L, A_j
 $M⊂P$. \name{Vnitřek množiny $M$}, značeno $M°$, je sjednocením všech otevřených podmnožin $M$.
 \name{Uzávér množiny $M$}, značeno $\overline{M}$, je průnik všech uzavřených nadmnožin $M$.
 
-$F⊂P$ je uzavřená, ←→ $∀@{A_i@}⊂F; \lim@{A_i@} = x∈P →→ x∈F$.
+$F⊂P$ je uzavřená, $←→ ∀@{A_i@}⊂F; \lim@{A_i@} = x∈P →→ x∈F$.
 
 \statement{Důkaz}
 →•

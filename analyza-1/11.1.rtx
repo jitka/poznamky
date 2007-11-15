@@ -5,7 +5,7 @@ $F$ je primitivní k $f$ a $G$ je primitivní k $g$ na $I$, pak $αF+βG$ je pri
 Důkaz přes aritmetiku derivací.
 
 \statement{Věta 4}
-$f$ je spojitá na otevřeném $I$ →→ má na $I$ primitivní funkci.
+$f$ je spojitá na otevřeném $I→→$ má na $I$ primitivní funkci.
 Důkaz bude v budoucnu.
 
 \statement{Věta o zavedení logaritmu}
@@ -26,11 +26,11 @@ $$φ'(x)=L'(xy)*y-L'(x) = \frac{1}{xy}y - \frac{1}{x} = 0$$ Tedy je konstantní 
 • $F$ je primitivní  k$f$ na $(a, b)$ a $φ((α, β))→ (a,b)$ a má na $(α,β)$ má všude vlastní derivaci.
 Pak $\int(f(φ(t))φ'(d)dt = F(φ(t))+C, t\in (α, β)$. Důkaz z věty o derivaci složené funkce.
 
-• $φ'(t)\in \R\backslash\{0\}, t\in (α,β), φ((α,β)) = (a,b)$ a $f$ je definovaná na $(a,b)$ a platí $\int f'(φ(t))φ'(t)dt = G(t)+C$ na $(α,β)$ →→ $\int f(x)dx = G(φ^{-1}(x))+C$ na $(a,b)$. Opět ověřit zderivováním. (Lze si všimnout že φ je prostá i na, z Rollovy věty)
+• $φ'(t)\in \R\backslash\{0\}, t\in (α,β), φ((α,β)) = (a,b)$ a $f$ je definovaná na $(a,b)$ a platí $\int f'(φ(t))φ'(t)dt = G(t)+C$ na $(α,β) →→ \int f(x)dx = G(φ^{-1}(x))+C$ na $(a,b)$. Opět ověřit zderivováním. (Lze si všimnout že $φ$ je prostá i na, z Rollovy věty)
 \end{itemize}
 
 \noindent Poznámka:\\
-Nechť $f$ má primitivní funkci na $(a,b)$ a $φ'(t)\in\R , t \in (α,β)$, φ je prostá na $(α,β)$ a zobrazuje ho na $(a,b)$.
+Nechť $f$ má primitivní funkci na $(a,b)$ a $φ'(t)\in\R , t \in (α,β)$, $φ$ je prostá na $(α,β)$ a zobrazuje ho na $(a,b)$.
 Pak platí to samé jako v druhém bodě výše.
 
 \statement{Integrace per partes}

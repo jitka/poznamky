@@ -30,7 +30,7 @@ $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtx
 	cd $(shell echo $< | sed -e 's/\(.*\/\|\)[^/]*/\1/') . && mpost $(shell echo $< | sed -e 's/.*\///')
 
 %.mp: %.xmp
-	recode utf8..latin2 < $< > $@ || ( rm $@; false )
+	rtx2tex < $< | recode utf8..latin2 > $@ || ( rm $@; false )
 
 %.dep: %
 	touch $@
