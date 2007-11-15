@@ -17,7 +17,7 @@ $(RTXPDFS): %.pdf: %.dvi
 RTXDVIS:=$(patsubst %.rtd,%.dvi,$(RTDS))
 
 $(RTXDVIS) $(patsubst %.rtx,%._test.dvi,$(RTXS)): %.dvi: %.tex $(shell echo %.tex.dep) $(patsubst %,%.dep,$(wildcard $(D)/localhead) $(wildcard $(D)/localtail))
-	cd $(shell echo $< | sed -e 's/\(.*\/\|\)[^/]*/\1/') . && cslatex $(shell echo $< | sed -e 's/.*\///')
+	cd $(shell echo $< | sed -e 's/\(.*\/\|\)[^/]*/\1/') . && latex $(shell echo $< | sed -e 's/.*\///')
 
 $(patsubst %.rtd,%.tex,$(RTDS)): %.tex: %.rtd
 
