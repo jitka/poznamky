@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[czech]{babel}
 \usepackage{amsfonts}
+\usepackage{amssymb}
 
 \input{../defs.tex}
 
@@ -16,4 +17,5 @@
 \input{10.29.07.rtx}
 \input{11.05.07.rtx}
 \input{11.12.07.rtx}
+\input{11.19.07.rtx}
 \end{document}

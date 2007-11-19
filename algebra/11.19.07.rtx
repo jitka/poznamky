@@ -1,0 +1,61 @@
+\note{Konečné svazy lze reprezentovat nejen pomocí algeber, ale také pomocí grafů.}
+
+\note{Je-li $M$ množina s uspořádáním $≤$, pak infimum a supremum jednoprvkové množiny je ten jeden prvek sám.}
+
+\statement{Vlastnosti}
+Nechť $(M,≤,\land,\lor)$ je svaz.
+($a \land b = \inf@{a,b@}, a \lor b = \sup @{a,b@}$.)
+Potom každé $∀a,b,c∈M$ platí:
+\begin{enumerate}
+• $$a \land b = b \land a, a\lor b = b \lor a$$
+• $$a = a\land a = a\lor a$$
+• $$a \land (b \land c) = (a \land b) \land c, a\lor (b\lor c) = (a\lor b) \lor c$$
+• $$a\lor(b\land a) = a, a\land(b\lor a) = a$$
+\end{enumerate}
+
+\proof
+\begin{enumerate}
+• $$@{a,b@} = @{b,a@}$$
+• Triviální.
+• Z vlastností infima -- dokážu, že $a \land(b\land c)$ je infimum trojice $@{a,b,c@}$ (a že existuje).
+• Z vlastností infima a suprema. Dokázat, že ta závorka je větší než infimum/menší než supremum.
+\end{enumerate}
+
+\statement{Postačující podmínka}
+Nechť $M(\land,\lor)$ je algebra s binárními operacemi $\land$ a $\lor$ splňující výše zmíněné podmínky ($∀a,b,c∈M$).
+
+Definujeme-li na $M$ relaci $≤$ předpisem $a≤b ←→ b = a\lor b$, pak $(M,≤)$ je svazem, pro který platí, že $a\land b = \inf@{a,b@}$ a $a\lor b = \inf@{a,b@}$.
+
+\proof
+Nejprve dokažme, že $b = a\lor b ←→ a = a \land b$.
+Předpokládejme, že $b = a \lor b$ a chci zjistit, kolik je $a\land b$.
+Dosadím za $b$, tedy $a\land (a \lor b)$, na což vezmu vlastnosti a dostanu $a$.
+Opačně to lze dokázat stejně.
+
+Dále dokážeme, že je to uspořádání.
+→•
+• $$a\lor a = a -→ a≤a$$
+• $$a≤b, b≤c; a\lor c = a\lor(b\lor c) = (a\lor b) \lor c = b\lor c = c -→ a≤c$$
+• $$a≤b, b≤a; b = a\lor b = b\lor a = a -→ a = b$$
+←•
+
+Nakonec dokážeme, že $a\lor b = \sup@{a,b@}$.
+
+\statement{}
+Je-li $C$ uzávěrový systém, pak $(\mathcal{C},@⊂)$ tvoří úplný svaz, kde $\inf_{@⊂}\mathcal{B}=\bigcap \mathcal{B}$ a $\sup_{@⊂}\mathcal{B}=d_\mathcal{C}@(\bigcup \mathcal{B}@)$
+
+\proof
+$@⊂$ je zjevně uspořádání.\\
+$\bigcap\mathcal{B}@⊂B∀B∈\mathcal{B}-→\bigcap\mathcal{B}∈\mathcal{C}$.
+Nic většího už tam nacpat nejde $→→$ je to infimum.
+Obdobně lze dokázat pro supremum.
+
+\note{Je-li algebra $M(\land,\lor)$ svaz, pak i $M(\lor, \land)$ je svaz (a uspořádání je naopak).}
+
+Buď $(M,≤)$ svaz. Řekneme, že \name{$a$ pokrývá $b$} ($a\lessdot b$), jestliže $a≤b, a\neq b, a≤c≤b →→ (a = c)\lor (b=c)$.
+Tedy, jsou sousedé.
+\TODO{Zkontrolovat, jestli to pokrývání není naopak - $b$ pokrývá $a$}
+
+Nechť $e$ je nejmenší prvek svazu a $f$ nevětší prvek svazu, poté \name{atomem (koatomem)} nazvu každý prvek $a∈M$ ($c∈M$), který splňuje, že $e\lessdot a$ ($c\lessdot f$).
+
+\name{Hasseovým diagramem} konečného svazu rozumím orientovaný graf, kde vrcholy odpovídají prvkům a hrana $a→b$ je přítomná $←→a\lessdot b$.
