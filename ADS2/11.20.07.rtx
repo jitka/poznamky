@@ -1,0 +1,19 @@
+
+Komplexní čísla lze zapsat také jako $x(\cos φ+i\sin φ)$.
+Dále lze použít formuli, že $e^{iφ}=\cos φ + i\sin φ$, což lze hezky použít při umocňování a odmocňování.
+Odmocnin může být více (např. $n$-tých odmocnin z $1$ je právě $n$).
+
+Komplexní číslo $x$ je \name{primitivní $n$-tou odmocninou z $1$} $←→ x^n = 1, x^1, x^2, …, x^{n-1} \neq 1$.
+\observation{Dá se zjistit, že existuje vždy alespoň jedna pro každé $n$ a to ta s nejmenší $φ$, její číslo komplexně združené je také takové.
+Budeme mu říkat $ω$ a $\overline{ω}$}
+
+\observation{Pro různá $k,j$, $ω^k\neq ω^j$}
+
+Toto lze použít v algoritmu, stačí používat jako $x$ vhodnou primitivní odmocninu z $1$.
+Celková časová složitost je tedy $O(N·\log N)$.
+
+\TODO{Fourierova transformace}
+
+Pomocí FFT lze z bodů dostat opět polynom.
+
+Lze použít také k zpracování signálů či kompresi dat.
