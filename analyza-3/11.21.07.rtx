@@ -1,0 +1,31 @@
+
+\statement{Spojitá reálná funkce na kompaktní množině}
+Mějme metrický prostor $(P,ρ)$, $K$ kompaktní množinu a $f:K→\R$ spojité na $K$.
+Potom je $f$ na $K$ omezené a pro $K\neq \emptyset$ nabývá maxima a minima.
+
+\proof
+Obraz je kompaktní množina, proto je omezená.
+
+Obraz je neprázdná a omezená, proto má supremum.
+Vezmu posloupnost bodů čím dál tím blíže k supremu, což můžu -- ta funkce je spojitá --
+musí jít k supremu. A protože je kompaktní, tak musí to supremum obsahovat.
+
+Mějme metrický prostor $(P,ρ)$ a $(Q,σ)$, $M⊂P$, $f:M→Q$ je \name{stejnoměrně spojitá}, pokud platí, že: $$∀ε∈\R^+∃δ∈\R^+∀x,y∈M;ρ(x,y)<δ→→σ(f(x),f(y))<ε$$.
+
+\statement{O spojitých a stejnoměrně spojitých zobrazeních na kompaktních množinách}
+$(P,ρ),(Q,σ)$ metrické prostory, $K⊂P$ kompaktní, $f:K→Q$ je spojité na $K$.
+Pak je také stejnoměrně spojité.
+
+\proof
+Sporem.
+
+Mějme metrický prostor $(P,ρ)$. Řekneme, že je \name{úplný}, pokud každá Cauchyovská posloupnost tohoto prostoru má limitu.
+
+\TODO{Doplnit, nějak to dnes nedávám}
+
+\section{Obyčejné diferenciální rovnice}
+Funkcionální rovnice, kde je nejen rovnice ale i její derivace.
+
+Pokud tam je nejvýše $k$-tá derivace té funkce, říkáme, že taková rovnice je $k$-tého řádu.
+
+Nemusí mít jednoznačné řešení.
