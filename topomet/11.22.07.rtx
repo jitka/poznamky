@@ -1,0 +1,15 @@
+
+\statement{O náhrdelníku}
+
+Mějme posloupnost prvků z $d$ množin, z každé sudý počet.
+Když chceme rozdělit posloupnost na 2 skupinky podřetězců tak, aby každá skupina měla stejný počet z každé množiny.
+
+Stačí k tomu $d$ řezů posloupnosti.
+
+\proof
+Položíme na momentovou křivku v $\R^d$ a to podle věty o sandwichi lze přeříznout.
+
+\statement{Kneserovy grafy}
+Mějme $\left( @[m@] \atop k\right)$ (tedy všechny $k$-prvkové podmnožiny množiny $1,2,…,m$, chceme rozdělit na části aby žádné neobsahovaly žádné disjunktní množiny.
+
+Stačí $n-2k+2$, nejlepší možné řešení.
