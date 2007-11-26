@@ -157,3 +157,5 @@ h_k &=& 1 + h_0 + h_0 + h_1 + h_2 + … + h_{k-3}
 Dostaneme sečtením podstromů a $V$ samotného.
 Tato funkce roste podobně jako fibonacciho čísla, jen jsou o jedničku větší.
 Toto lze dokázat indukcí a dosazením.
+
+\TODO{Tadyten důkaz není kompletní, doplnit a pochopit}
