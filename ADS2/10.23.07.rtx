@@ -5,10 +5,10 @@ Vrcholům přiřadíme výštky $h:V→\N$.
 Umíme 2 operace:
 →•
 • Převedení toku. Když mám vrchol, který má kladný přebytek a sousední vrchol, který má menší výšku a rezerva hrany do toho vrcholu je nenulová, tak část přebytku převedeme (minimum z přebytku a rezervy).
-• Když už žádná hrana z kopce nevede a stále je přebytek, tak vrchol o $1$.
+• Když už žádná hrana z kopce nevede a stále je přebytek, tak vrchol o $1$ zvýšíme.
 ←•
 
-Nastavíme všechny výšky na $0$, až na zdroj, který nastavíme na $N$. Počáteční vlna je všude $0$, jen ze zdroje má vlna hodnotu kapacitě hran.
+Nastavíme všechny výšky na $0$, až na zdroj, který nastavíme na $N$. Počáteční vlna je všude $0$, jen ze zdroje má vlna hodnotu rovnou kapacitě hran.
 Pak opakujeme výše zmíněné operace, dokud to jde, resp. dokud někde něco přebývá.
 
 \subsubsection{Invariant $A$}

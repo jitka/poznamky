@@ -1,0 +1,25 @@
+\note{Buď $S$ svaz a $a,b,c∈S$.
+$$a≤c→→a\lor (b\land c) ≤ (a\lor b) \land c$$
+Lze jednoduše odvodit z odhadů.
+}
+
+O svazu $S$ řekneme, že je \name{modulární}, jestliže $∀a,b,c$
+platí stejná podmínka jako výše, ale s rovností, tedy:
+$$a≤→→a\lor(b\land c) = (a\lor b) \land c$$
+
+Buď $(A,≤), (B,≤)$ svazy a $f:A→B$.
+$f$ je \name{monotónní}, platí-li implikace $$a_1,a_2∈A, a_1≤a_2→→f(a_1)≤f(a_2)$$
+(Mohli bychom nadefinovat i opačnou monotonii, která by byla nerostoucí místo neklesající.)
+
+\note{Homomorfizmus svazů je monotónní. Je zřejmé z definice homomorfizmu.}
+
+\statement{O bijekci svazů}
+Bijekce svazů $f$ je izomorfizmus $←→f,f^{-1}$ jsou monotónní zobrazení.
+
+\proof
+Je-li $f$ homomorfizmus, pak i $f^{-1}$ je homomorfizmus, pak jsou oba monotónní.
+
+Opačným směrem předpokládáme, že $f$ i $f^{-1}$ jsou monotónní.
+Stačí dokázat, že se chová hezky k jedné z operací.
+$a,b≤a\lor b$.
+Když to proženu skrz $f$ a $f^{-1}$ a vyjde, že musí být stejné.
