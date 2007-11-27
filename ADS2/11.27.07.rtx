@@ -1,0 +1,71 @@
+\section{Geometrie v rovině}
+
+\subsection{Hledání konvexního obalu}
+$M@⊂\R^2$ je \name{konvexní} $←→∀a,b∈M;\overline{ab}@⊂M$ ($\overline{ab}$ je úsečka z $a$ do $b$).
+
+\subsubsection{Zametání roviny}
+Jede přímka v nějakém směru, sbírá body a to, co už je zametené je konvexní obal a vždy když se potká nový se to jen rozšíří.
+
+Vezmeme první $3$ body, ty tvoří trojúhelník.
+Když potkáme další bod, tak ho buď připojíme rovnou, nebo napřed některé starší odebereme.
+To lze zjednodušit nalezením horní a dolní obálky, ta horní stále zatáčí doprava, dolní doleva.
+Při přidávání odebíráme staré body tak dlouho, dokud by přidání nového porušilo tuto podmínku a pak jej tam přidáme.
+
+Každý bod je přidán maximálně $N$-krát, odebíráme také tak, proto po setřídění to stihneme v $O(N)$.
+Setřídění ale trvá (v obecném případu) $O(N·\log N)$.
+
+\subsection{Rozdělení roviny na oblasti, které mají někam nejblíže}
+Konečnou množinu $M@⊂\R^2, M=@{M_1,…,M_n@}$ míst v rovině.
+Systém množin $M_1, …, M_n$ takový, že $∀i∀j∀x∈M_i;d(x,m_i)≤d(x,mj) \land \bigcup_i M_i=\R^2$ nazveme \name{voroneho diagram}.
+
+\observation{$∀i;M_i$ je ohraničena lomenou čarou a je konvexní.
+
+\proof
+Každá dvojice vrcholů si rozdělí rovinu na poloroviny, takováto oblast je jen průnikem takových polorovin, vždy směrem k tomu bodu.
+}
+
+Každý segment lomené čáry nazveme \name{hranou}.
+
+\observation{Všechny body na nějaké hraně jsou stejně daleko od nějakých dvou míst.}
+
+Křižovatky těchto hran nazveme \name{vrcholy}.
+
+\observation{Každý vrchol je stejně vzdálen alespoň od $3$ různých míst.}
+
+\observation{Pokud se žádné $4$ body neleží na kružnici, tak každý vrchol má stupeň $3$.}
+
+\observation{Počet vrcholů $+$ počet hran $=O(N)$.
+
+\proof
+Přes konstrukci rovinného grafu.}
+
+\subsubsection{Zametání}
+Nejde vzít přímku a jednoduše zamést, je třeba pamatovat si bezpečné paraboly okolo oscanovaných vrcholů.
+
+Potřebujeme tyto datové struktury:
+→•
+• Máme haldu událostí
+• Pobřežní linii (z těch parabol, stromečkem)
+• Výsledek
+←•
+
+\subsubsection{Algorinmus}
+\begin{enumerate}
+• Připravíme haldu událostí, vložíme všechny místní události.
+• Připravíme pobřežní linii $P$, zatím prázdná (žádné paraboly).
+• Připravíme reprezentaci diagramu.
+• Pro každou událost z haldy:
+\begin{enumerate}
+	• Je-li na řadě místní událost, najdeme průsečík s pobřežím $P$, vložíme další parabolu a přidáme vznik hran a přepočítáme, kdy zanikají paraboly.
+	• Je-li událost zániku paraboly, smažeme parabolu, zapíšeme hrany a přepočítáme zániky parabol.
+\end{enumerate}
+\end{enumerate}
+
+\TODO{nějak to pochopit a doplnit, tady jsem usnul :-(}
+
+\subsubsection{Složitost}
+Místních událostí je $N$. Parabola vznikne jen při místní události, proto počet zániků je také lineární.
+
+Velikost pobřeží i haldy je maximálně lineární, výsledek také.
+
+Celé to tedy běží v $O(N·\log N)$.
