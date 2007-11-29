@@ -30,6 +30,8 @@ exec sed -e 's/α/\\alpha /g;
 	s/Λ/\\Lambda /g;
 	s/τ/\\tau /g;
 	s/μ/\\mu /g;
+	s/ν/\\nu /g;
+	s/Ν/\\Nu /g;
 	s/ι/\\iota /g;
 	s/Ι/\\Iota /g;
 	s/°/^\\circ /g;

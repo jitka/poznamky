@@ -1,0 +1,60 @@
+
+\lemma{Galeovo}
+$∀d,k∃X⊂S^d, \len{X}=d+2k$, každá otevřená polokoule obsahuje alespoň $k$ bodů z nich.
+
+$\overline{g}:= @{@(1,t,t^2,…,t^d@);t∈\R@}@⊂\R^{d+1}$ momentová křivka.
+Tyto body lze promítnout na kouli.
+Vybereme body $w_1,w_2,…,w_{d+2k}∈\overline{g}$ a body $v_i:=(-1)^iw_i, X=@{v_i@}$.
+
+Pro každou nadrovinu $h$ procházející $0$, pak otevřený poloprostor $H^\oplus$ obsahuje alespoň $k$ bodů.
+Počet lichých v $h^\ominus$ a sudých v $h^\oplus$ musí být alespoň $k$.
+
+\subsubsection{Schrijverovy grafy}
+Vrcholově kritický podgraf Knasserova grafu -- když se mu libovolný vrchol sebere, tak se sníží barevnost.
+
+Vezmu pouze stabilní $k$-tice.
+Vezmeme vrcholy na kružnici, vezmeme je tak, aby byly nezávislé.
+
+Barevnost je stejná jako Knasserova grafu $@({@[n@]\atop k}@)$, navíc je vrcholově kritický.
+
+\lemma{Zesílené Galeovo}
+$∀d,k∃X⊂S^d,\len{x}=d+2k$, každá otevřená polokoule obsahuje stabilní $k$-tici.
+
+\section{$Z_2$ prostory}
+\name{$Z_2$ prostor} je uspořádaná dvojice $(X,ν)$, $X$ je topologický prostor, $ν:X→X$ homeomorfizmus, $ν\circ ν=id_x$.
+
+Základní příklad je sféra se zobrazením $ν(x)=-x$.
+
+$Z_2$ je \name{volný} $Z_2$ prostor, pokud $∀x;ν(x)\neq x$.
+
+$Z_2$-zobrazení je zobrazení mezi dvěma $Z_2$ prostory.
+Tedy máme $(X,ν)$, $(Y,ω)$, $f:X→Y$ spojité a $f\circ ν = ω\circ f$.
+
+\subsubsection{Simpliciální $Z_2$ komplex}
+Např. tak, že udělá baricentrické dělení, zobrazí vrchol vždy na doplněk (ten na protější stěně).
+\begin{figure}[!ht]
+\begin{center}
+\MPOST
+draw (0,0)--(-20,-30)--(20,-30)--(0,0);
+drawarrow (0,0)--(0,-30) withcolor red;
+drawarrow (-20,-30)--(10,-15) withcolor red;
+drawarrow (20,-30)--(-10,-15) withcolor red;
+pickup pencircle scaled 4;
+drawdot (0,0);
+drawdot (-20,-30);
+drawdot (20,-30);
+drawdot (-10,-15) withcolor blue;
+drawdot (10,-15) withcolor blue;
+drawdot (0,-30) withcolor blue;
+\ENDMPOST
+\caption{Jak to vypadá pro trojúhelník}
+\end{center}
+\end{figure}
+
+\subsection{Homeomorfizmus grafů}
+Je možné dokázat, že mezi grafy není homeomorfizmus, pokud pro každý z grafů sestrojíme simpliciální komplex tak, že vytvoříme $2$ kopie jeho vrcholů a simplexy vzniknou tak, že spojíme $A\uplus B$, právě když tvoří úplný bipartitní graf v $G$ a vše z $A$ i z $B$ má nějakého společného souseda.
+
+Zobrazení $ν$ bude takové, že se vždy vrchol vymění se svojí kopií. Dokonce je volné, protože všechny simplexy se zobrazí na simplexy s jinými vrcholy.
+
+Pak stačí dokázat, že mezi těmi komplexy neexistuje $Z_2$ zobrazení.
+Naopak, pokud existuje, pak se z něj dá zkonstruovat homeomorfizmus původního grafu.

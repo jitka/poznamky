@@ -1,0 +1,24 @@
+
+Mějme otevřenou množinu $Ω@⊂\R^{n+1}, f:Ω→\R^{n+1}, f$ je spojitá.
+\name{Diferenciální rovnice prvního řádu} je $y'=f(t,y)$.
+
+Dále máme \name{počáteční podmínku} úlohy, tedy nějaký bod z $Ω$.
+Pak hledáme takové řešení (takovou funkci), které splňuje tuto podmínku.
+
+Funkce $y$ řeší tuto rovnici na nějakém intervalu $(α, β)$, jestli:
+→•
+• $$∀t∈(α,β):@[t,y(t)@]∈Ω$$
+• $$∀t∈(α,β)∃y'(t)∈\R$$
+• $$∀t∈(α,β);f'(t) = f(t,y(t))$$
+←•
+
+$y$ je \name{maximální} řešení, jestliže $y$ je řešení na $I$ a $∀\widetilde{y}$ na $J$ takové, že $∃t_0∈I\cap J\land y(t_0)=\widetilde{y}(t_0)→→J⊂I$.
+
+\statement{Peanova věta}
+$f:Ω→\R^n$ spojitá, bod $@[t_0,y^0@]∈Ω,∃δ∈\R^+$ a rovnice $y:@<t_0-δ,t_0+δ@>→\R^n$, která řeší tu rovnici na tomto intervalu, pak $y(t_0)=y^0$.
+
+$f:Ω→\R^n$. $f$ splňuje lokálně Lipschitzovu podmínku na množině $Ω$ vzhledem k proměnné $y$, jestliže platí, $∀@[t_0,y^0@]∈Ω∃B(@[t_0,y^0@])⊂Ω$ a $∃L∈\R^+∀@[t,y@],@[t,\widetilde{y}@]∈B(@[t_0,y^0@]);\len{f(t,y)-f(t,\widetilde{y})}≤L·\len{y-\widetilde{y}}$.
+
+\note{
+$f$ má spojité parciální derivace vzhledem k $y$ na $Ω→→f$ splňuje lokální Lipschitzovu podmínku.
+}
