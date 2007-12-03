@@ -1,0 +1,57 @@
+\section{Datové struktury pro integery}
+
+\subsection{Van Emde-Boas Tree}
+Vyhledávací strom, pamatuje si integery z $X@⊂@{0,1,2,…,u-1@}$ a pracuje v $O(\log\log u)$.
+
+$VEBT(u)$: min, max, přihrádky $B_0,…,B_{\sqrt{u}-1}$ uložené také jako $VEBT(\sqrt{u}-1)$ a shrnující strom $S$ jako $VEBT(\sqrt{u})$ udržující seznam neprázdných přihrádek.
+
+Minimum a maximum není uložené v žádné přihrádce.
+
+Nechť $u=2^{2^k}$.
+
+\subsubsection{Vložení}
+
+Pokud je tam jeden nebo žádný prvek (min je max a nebo je zcela prázdný).
+
+Jinak, zkontroluji, jestli nenahrazuji minimum nebo maximum a případně pokračuji s tím, co bylo minimum/maximum.
+Pokud je přihrádka, kam strkám, prázdná, vytvořím novou a zapíšu si to a vložím do ní, jinak jen vyberu a vložím do již existujícího.
+
+\subsubsection{Získání}
+
+Obdobně.
+
+\subsubsection{Následník}
+
+(Pro něco, co tam nemusí být -- tedy něco většího než co tomu dáme).
+
+→•
+• Napřed zkontrolujeme triviální věci.
+• $<min -→ $ vrátí minimum.
+• $≥max -→$ není tu.
+• Zkusím se podívat do příslušné přihrádky, když se to nepovede, pomocí shrnujícího stromu najdu následující neprázdný strom a najdu v něm minimum.
+• Pokud nenajdeme následující přihrádku, vrátí lokální maximum.
+←•
+
+\subsubsection{Mazání}
+
+Obdobně, křížené přidání a hledání následníka.
+
+\subsection{Užitečné funkce}
+
+\subsubsection{Zjištění, že $x$ je mocnina $2$}
+
+Porovnám $x$ a $x-1$. Když na tom udělám bitové $\land$, pak dostanu $0$ pro mocninu $2$ (s výjimkou $x=0$).
+
+\subsubsection{Práce s vektory}
+
+Máme nějakou posloupnost vektorů, každý má $b$ bitů a každý má zleva 1 bit zarážku.
+
+→•
+• Replikace (dostat nějakou hodnotu do všech hodnot) -- vynásobením $x$ vektorem samých jedniček.
+• Součet prvků -- např. $x \bmod 2^{b+1}-1$, nebo vynásobením vektorem se samými jedničkami a použitím správného kusu.
+• Vektorové porovnání (jednička vyjde, pokud složka prvního je menší než složka druhého).
+Paddingy nastavím v jednom na jedničky, odečtu druhý, zbude nebo nezbude tato jednička (pak stačí jen správně posunout a vy-andit).
+• Počet prvků menších než $α$ -- zreplikujeme $α$, vektorově porovnáme a sečteme je.
+• Rozbalení $α$ -- vypsat bity každý zvlášť -- replikace $α$, vy-andovat to šikovnou konstantou, porovnáme s nulovým vektorem.
+• Zabalení -- opačně -- představíme si, že to má $b-1$ bitové složky a sečteme (problém je jen ten, že tam nejsou zarážky).
+←•
