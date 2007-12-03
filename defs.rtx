@@ -31,5 +31,9 @@
 
 	Pozorování:\\
 #1}
+\newcommand{\follows}[1]{
+
+	Důsledek:\\
+#1}
 \newcommand{\len}[1]{{\left|{#1}\right|}}
 \newcommand{\uv}[1]{\quotedblbase{}#1\textquotedblleft}%

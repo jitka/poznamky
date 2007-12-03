@@ -1,0 +1,47 @@
+\section{Grupy}
+
+\note{Buď $f:G→H$, kde $G(·,^{-1},1), H(·,-1,1)$ jsou grupy slučitelné s $·$. Pak je $f$ homomorfizmus.
+
+\proof
+$f(1) = f(1·1) = f(1)·f(1)$ To jde vynásobit $1^{-1}$ z obou stran a musí to fungovat. Proto je to slučitelné na $1$.
+
+Také $f(1) = f(g·g^{-1})$ a z toho ještě odvodíme slučitelnost pro $^{-1}$.
+}
+
+$G$ je grupa, $H,K@⊂G$ a $g∈G$.
+$HK=@{hk|h∈H,k∈K@}$, $gH=@{g@}H$, $Hg=H@{g@}$.
+
+Relace na $G$ pro každou podgrupu $H$:
+→•
+• $rmod H: @(a,b@)∈rmod H\equiv a·b^{-1}∈H$
+• $lmod H: @(a,b@)∈lmod H\equiv a^{-1}·b∈H$
+←•
+
+\note{Buď $G$ grupa a $H$ její podgrupa.
+Pak platí:
+→•
+• $rmod H$ a $lmod H$ jsou ekvivalence. (nemusí být kongurence)
+• $$∀a,b∈H;(a,b)∈rmod H←→(a^{-1},b^{-1})∈lmod H$$
+• $$\len{G\over rmod H}=\len{G\over lmod H}$$
+• $$@[a@]_{rmod H}=Ha,@[a@]_{lmod H}=aH$$
+• $$\len{H}=\len{@[a@]_{rmod H}} = \len{@[a@]_{lmod H}}$$
+←•
+}
+
+\name{Řádem grupy} nazveme počet jejích prvků.
+
+\statement{La-Grangeova}
+Je-li $G$ grupa a $H$ její podgrupa, pak řád grupy $\len{G} = @[G:H@]·\len{H}$.
+
+\proof
+$$\len{G} = \len{\bigcup^\circ_{A∈rmod H}A} = \Σ_{A∈{G\over rmod H}}\len{A}=\Σ_{A∈{G\over rmod H}}\len{H}$$
+
+\follows{Je-li $G$ konečná grupa a $H$ její podgrupa, pak $\len{H}/\len{G}$.}
+
+O grupě $G$ řeknu, že je \name{cyklická}, existuje-li $g∈G$, takové $@<@{g@}@> = G$.
+
+\note{Buď $G$ grupa, $φ:\Z→G$ takové, že $φ(z)= g^z$.
+Potom $φ$ je homomorfizmus grup, $φ(\Z)=@<g@>$.
+}
+
+\follows{Je-li $G$ grupa, $g∈G$ a $m,n∈\Z$, pak $@(g^{-1}@)^n=@(g^n@)^{-1}$ a $@(g^n@)^m= g^n·m$.}
