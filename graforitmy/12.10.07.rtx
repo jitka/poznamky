@@ -1,0 +1,51 @@
+
+\subsection{Stromy}
+
+$(a,b)$-strom.
+Každý vrchol kromě kořenu a listů má alespoň $a$ a nejvýše $b$ synů, kořen má alespoň $2$ a maximálně $b$ synů.
+Obsahuje $K(v)$ -- vektor klíčů, seřazené a $P(v)$ -- seznam ukazatelů na data.
+Operaci na jedné úrovni dokážeme dělat konstantně.
+
+Celkově tedy můžeme udělat logaritmicky s počtem vrcholů.
+
+Hodilo by se mít výšku konstantní, pak můžeme upravovat jiné parametry, ale máme omezený maximální počet hodnot uložených.
+
+Pokud velikost slova je alespoň $O(\log m)$ -- aby šel přečíst vstup -- tak to na kostry bude stačit.
+
+\subsection{Q-Heap}
+Zadefinujme parametry:
+\begin{description}
+\item[$w$] Velikost slova
+\item[$n$] Velikost vstupu
+\item[$k$] Velikost haldy, $k:=w^{1\over 4}$
+\item[$r$] Aktuální počet prvků, $r≤k$
+\item[$X=@{x_1,…,x_r@}$] Prvky
+\item[$c_i$] Nejvyšší bit rozdílu $x_i$ a $x_{i+1}$
+\end{description}
+
+Inicializace bude trvat $O(2^{x^4})$, ale operace pak bude konstantní.
+Při malé velikosti se stihne v $O(n)$.
+
+Můžeme si předpočítat tabulky výsledků pro funkci se vstupem $O(x^3)$ a polynomiálním čase pro vyhodnocení tak, že vyhledání trvá konstantně dlouho.
+
+\subsubsection{První nástřel}
+Kdybychom chtěli spočítat $rank_X(y)$, tak budeme mít radix strom na $X$ a zkomprimujeme jej (přeskočíme \uv{cestičky}).
+Můžeme tedy testovat jen v bitech, které se liší.
+
+Pak, když podle toho najdeme list (a ten ani nemusí být stejný), pak rank je specifikován:
+→•
+• Tímto strome
+• Indexem listu
+• Porovnání listu s hodnotou
+• $MSB(y\oplus x_i)$
+←•
+
+Můžeme si je předpočítat, indexování stromem se bude provádět pomocí reprezentace stromu pomocí $c_1,…,c_{r-1}$.
+
+Celé rank tedy půjde (po preprocesingu) vyhodnotit v $O(1)$.
+
+Problém je s úpravami -- nemohu si udržovat hodnoty seřazené, tak je budeme mít neseřazené a vektor, který obsahuje permutaci a říká, jak jsou správně seřazené.
+
+\subsubsection{Insert}
+Spočítáme rank, přidáme do hodnot a přepočítáme permutaci.
+Nakonec musíme změnit hodnoty v $C$.
