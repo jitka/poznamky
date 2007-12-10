@@ -1,0 +1,12 @@
+\note{Nechť $A@⊂\Z$. Pak $A$ je podgrupa $\Z(+,-,0)←→∃k≥0,k∈\Z:A=k·\Z$.}
+
+\note{Nechť $A@⊂\Z_n$. Pak je podgrupa grupy $\Z_n(+,-,0)←→∃x∈\Z_n;k=0\lor( k|n\land A=k·\Z_n$.}
+
+\proof
+Vezmeme nejmenší kladný prvek, to už lze dokázat.
+
+\statement{}
+Nechť $G(·,^{-1},1)$ je cyklická grupa.
+Je-li nekonečná, pak je izomorfní $G(·,^{-1},1)\cong\Z(+,-,0)$.
+Pokud $n=\len{G}$ konečné, pak $G(·,^{-1},1)\cong\Z_n(+,-,0)$.
+
