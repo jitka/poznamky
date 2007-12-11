@@ -1,0 +1,30 @@
+\name{$P$} je třída (rozhodovacích) problémů, které jsou řešitelné v polynomiálním čase.
+\name{$NP$} je třída (rozhodovacích) problémů, které jsou řešitelné s lineárně velkou nápovědou (tedy, umíme to zkontrolovat v polynomiálním čase).
+
+\name{$NP$-těžký problém} je takový, na který lze převést všechny $NP$ problémy.
+\name{$NP$-úplný problém} je takový, který je v $NP$ a je $NP$-těžký.
+
+\subsection{$NP$-úplné úlohy}
+\subsubsection{Logické}
+→•
+• SAT
+• $3$-SAT
+• $3,3$-SAT
+• Obvodový SAT
+←•
+\subsubsection{Grafové}
+→•
+• Klika
+• Nezávislá množina
+• $3D$-párování
+• $3$-obarvení
+• Hamiltnovská cesta/kružnice.
+• Nejdelší cesta
+←•
+\subsubsection{Číselné}
+→•
+• Problém batohu
+• Problém $2$ loupežníků
+• $Ax=b$, $x=@{0,1@}^n$, na celých číslech
+• Celočíselné lineární programování
+←•
