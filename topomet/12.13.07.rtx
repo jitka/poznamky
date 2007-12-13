@@ -1,0 +1,30 @@
+\subsection{Indexy}
+
+\name{index} $Z_2$ zobrazení je rozměr nejmenší sféry, do které existuje $Z_2$ zobrazení.
+
+\name{coindex} je nejmenší sféra, ze které existuje $Z_2$ zobrazení.
+
+Obvykle index a coindex bývají stejné, ale být to nemusí.
+
+\subsubsection{Jednoduché vlastnosti}
+→•
+• Index sféry je totéž co její coindex.
+• Jestli $idx(X)>idx(Y)$, tak $X{Z_2\atop\not→}Y$.
+• $∀x;coidx(X)≤idx(X)$.
+• $K$ je volný simpliciální $Z_2$-komplex. Pak jeho komplex je nejvýše jeho dimenze.
+• $X$ k-souvislý $→→ coidx( X ) ≥ k+1$
+←•
+
+\subsubsection{$k$-souvislost}
+$X$ je topologický prostor, $k≥-1$.
+
+$X$ je $k$-souvislý, pokud $∀l=-1,0,1,…,k$ platí, že $∀$spojité $f:S^l→X$ lze rozšířit na $\overline{f}:B^{l+1}→X$.
+\uv{$X$ nemá $l$-dimenzionální díru}.
+
+$-1$-souvislý znamená neprázdný.
+$0$-souvislý je neprázdný a obloukově souvislý.
+$1$-souvislý je neprázdný, obloukově neprázdný a každá uzavřená křivka se dá smrštit do bodu.
+
+\subsubsection{Aplikace na grafy}
+\statement{}
+Chromatické číslo každého grafu je alespoň $idx_{z_2}(B(G))+2$ -- viz zobrazení grafu na simplex.
