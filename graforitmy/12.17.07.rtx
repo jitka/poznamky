@@ -1,0 +1,57 @@
+
+\section{Sufixové stromy}
+
+\subsection{Značení}
+
+→•
+• $Σ$ -- konečná abeceda
+• $Σ^*$ množina konečných řetězců nad $Σ$
+• $\len{α}$ je délka $α$
+• $ε$ je prázdný řetězec ($\len{ε} = 0$)
+• $αβ$ je zřetězení $α$ a $β$
+• $α[i]$ je $i$-tý znak (začínáme od nuly)
+• $α[i:j]$ je $α[i]α[i+1]…α[j-1]$, $j≤i →→ α[i:j] = ε$
+• $α[i:]$ je sufix začínající v $i$
+• $α[:j]$ je prefix končící před $j$
+• $α[:] = α$
+←•
+
+$α$ je \name{podřetězec} $β$ ($α⊂β$) $←→∃γ,δ;β=γαδ$.
+Podřetězec se nazývá \name{prefix}, pokud $δ=ε$ a \name{sufix}, pokud $γ=ε$.
+
+Každý podřetězec je prefix nějakého sufixu (nebo naopak).
+
+Mějme $X⊂Σ^*$, $X$ konečné. \name{Trie} je graf, kde každý vrchol je nějaký prefix nějakého řetězce z $X$ a hrana mezi nimi vede $←→$ $β=αx,x∈Σ$.
+
+Můžeme je zkomprimovat a cesty zkrátit na jednu hranu.
+
+\name{Suffixový strom} je komprimovaná trie pro všechny sufixy nějakého $σ$.
+
+Pokud přidáme nějaký \uv{ukončovací} znak, pak nejsou žádné skryté sufixy v hranách.
+
+\statement{Velikost}
+Lze reprezentovat v $O(\len{σ})$.
+
+\proof
+Listů je nejvýše $\len{σ}+1$ a protože každý vnitřní vrchol má výstupní stupeň alespoň $2$, pak je jich také lineárně mnoho.
+Cedulky hran jsou podřetězce, můžeme si pamatovat jen konce.
+
+\statement{Rychlost}
+Lze vytvořit v $O(\len{σ})$. (Pro nějaké pevné $Σ$)
+
+\subsection{Aplikace}
+→•
+• Obrácené podřetězcové dotazy -- seno si připravíme a odpovídáme, kde všude se daná jehla vyskytuje.
+• Nejdelší opakující se podřetězec -- nejnižší dělící se vrchol.
+• Histogramy řetězců délky $k$ -- uříznu si vršek, na listech vidím, kolik toho tam původně viselo.
+• Nejdelší společný podřetězec -- sestavím to na obou řetězcích spojených nějakým oddělovačem.
+←•
+
+Permutace na číslech $1,2,…,\len{σ}+1$, které setřídí sufixy lexikograficky, nazveme \name{sufixové pole}.
+
+Dále, \name{pole nejdelších společných prefixů} je pole, kde každý prvek je nejdelší společný prvek mezi dvěma následujícími sufixy v sufixovém poli.
+
+\lemma{Sufixové pole a pole nejdelších společných prefixů je lineárně ekvivalentní se sufixovým stromem.
+Ze stromu na ně je to jednoduché.
+
+Opačně přes výběry minim v poli nejdelších společných prefixů. (Pokaždé, když potkám $ε$, dostanu se do kořene atp.)}
