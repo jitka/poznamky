@@ -1,0 +1,16 @@
+
+\name{Deleted join}: $$K_\triangle^{\star 2}=@{F{+\atop\bigcup}G:F,G∈K,F\cap G=\emptyset@}$$
+
+\lemma{$X,Y$ jsou simpliciální $Z_2$-komplexy, pak $ind(X\star Y)≤ind(X)+ind(Y)+1$.
+Dokáže se přes skládání koulí z $S^0$.}
+
+\statement{}
+$$ind_{z_2}(K_\triangle^{\star 2})≥d+1→→∀f:\len{K}→R^d\hbox{ spojité }∃x,y∈\len{K}\hbox{ s oddělenými nosiči };f(x)=f(y)$$
+
+\subsubsection{Aplikace}
+\statement{Topologická Radonova věta}
+$$K:=σ^n;∀K→\R^{n-1}\hbox{ sloučí body s oddělenými nosiči.}$$
+
+Kombinatorický dolní odhad na $ind(K_\triangle^{\star 2})$
+
+Mějme dědičný systém $@⊂2^V$.
