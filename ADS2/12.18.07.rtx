@@ -1,0 +1,15 @@
+\section{Řešení $NP$-úplných problémů}
+
+\subsection{Stačí speciální případ}
+
+Například nezávislá množina na stromech -- stačí trhat od listů po vrstvách.
+
+Problém batohu pro malá přirozená čísla -- začneme $0$ předměty, budeme zlepšovat o jeden další předmět a pamatujeme si všechny součty, které se tím dají získat.
+
+\subsection{Přibližné řešení}
+
+Problém obchodního cestujícího -- pokud nám platí trojúhelníková nerovnost a graf je úplný -- najdeme minimální kostru a objede ji, když bysme někudy procházeli, tak to obejdeme.
+
+Když není trojúhelníková nerovnost. Pokud by existoval nějaký aproximační algoritmus, pak $P=NP$. Doplníme na úplný graf tak, že staré hrany mají $1$, nové mají $\infty$. Z toho lze potom poznat, jestli má hamiltnovskou kružnici, což je $NP$-úplný problém.
+
+Problém batohu -- zaokrouhlíme.
