@@ -1,0 +1,61 @@
+\subsubsection{Značení}
+→•
+• $R@(+,·,-,0,1@)$ okruh
+• $I$ ideál
+• $ρ_I$ kongurence ideálu $I$
+• Místo $R/ρ_I$ budeme psát $R/I$
+←•
+
+\name{Invertibilní prvek} okruhu $R(+,·,-,0,1)$ rozumíme invertibilní prvek monoidu $R(,·,1)$.
+
+Okruh nazveme \name{tělesem}, jestliže je každý jeho nenulový prvek invertibilní.
+
+Ideál $I$ je \name{maximální}, jestliže $I$ je koatom v množině všech ideálů.
+
+\statement{}
+Následující je pro okruh ekvivalentní
+→•
+• $R(+,·,-,0,1)$ je těleso
+• ${0},R$ jsou jediné pravé ideály okruhu
+• ${0},R$ jsou jediné levé ideály okruhu
+←•
+
+\proof
+Nechť $R$ je těleso.
+Pro nulu lze dokázat snadno, že je pravý ideál.
+Nyní si vezmeme nějaké $I$ ideál $\neq @{0@}$. Proto je roven $0+i$, $i∈I$.
+Dokážu, že jedna v tom ideálu leží, proto tam musí ležet všechny prvky toho $R$.
+
+Pro levý ideál podobně.
+
+Vezmu pravý i levý ideál jako $R$. Nyní dokážu, že každý jeho prvek je invertibilní kromě $0$.
+
+\statement{}
+Je-li $R(+,·,-,0,1)$ komutativní okruh, $I$ nechť je ideál. Pak faktorový okruh $R/I$. $R/I(+,·,-,0,1)$ je těleso $←→$ $I$ je maximální okruh.
+\proof
+$J$-ideál je koatom $←→ρ_j$ je koatom.
+
+Stačí dokázat, že $R/I$ je těleso $←→ ρ_i$ je koatom ve svazu kongurencí na $R(+,·,-,01,)$.
+
+\note{Definujme zobrazení $φ:\Z→R$ předpisem $φ(n) = n\times 1$. Pak $φ$ je okruhový koeficient $\Z(+,·,-,0,1)$ a $R(+,·,-,0,1)$. $φ(\Z)$ je nejmenší podokruh $R$ okruhu $1$ a definuje právě jedno $p∈\N_0$ takové, že $@{n∈\R|φ(n) = 0@} = p·\Z$.}
+
+\name{Charakteristikou okruhu} $R(+,·,-,0,-)$ rozumíme $p$ z minulé poznámky.
+
+\note{Nechť $R$ je komutativní okruh.
+$a,b∈R, n∈\N$.
+
+Pak $(a+b)^n = \Σ_{i=0}^n@(n\atop k@) \times a^n·b^{n-k}$.
+\proof
+Stejně jako obyčejná binomická věta na reálných číslech -- indukcí.
+}
+
+\follows{$R$ je komutativní okruh prvočíselné charakteristiky $p$.
+Pak zobrazení $R→R:a→a^p$ je okruhový homomorfizmus.
+
+\proof
+Přes binomickou větu.
+}
+
+\note{Nechť $R(+,·,-,0,1)$ je komutativní těleso a $G$ je konečná podgrupa grupy $R-@{0@}$. Pak $G$ je cyklická.}
+
+\TODO{Tady něco chybí}
