@@ -51,7 +51,7 @@ Permutace na číslech $1,2,…,\len{σ}+1$, které setřídí sufixy lexikograf
 
 Dále, \name{pole nejdelších společných prefixů} je pole, kde každý prvek je nejdelší společný prvek mezi dvěma následujícími sufixy v sufixovém poli.
 
-\lemma{Sufixové pole a pole nejdelších společných prefixů je lineárně ekvivalentní se sufixovým stromem.
+\lemma{}Sufixové pole a pole nejdelších společných prefixů je lineárně ekvivalentní se sufixovým stromem.
 Ze stromu na ně je to jednoduché.
 
-Opačně přes výběry minim v poli nejdelších společných prefixů. (Pokaždé, když potkám $ε$, dostanu se do kořene atp.)}
+Opačně přes výběry minim v poli nejdelších společných prefixů. (Pokaždé, když potkám $ε$, dostanu se do kořene atp.)

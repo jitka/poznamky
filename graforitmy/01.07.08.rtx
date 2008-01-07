@@ -1,0 +1,31 @@
+
+LCA je možné převést na RMQ. Postavím RMQ tak, že projdu do hloubky a pamatuji si hloubku každého vrcholu, pak dotaz je nalezení minima mezi vrcholy. Jediný problém je, že vrchol tam může být víckrát, ale je jedno, který z nich použiji.
+
+Tento RMQ, který vyjde, je takový, že se sousední liší pouze o $1$.
+To lze vyřešit buď hloupě, předpočítáním v $O(n^2)$ všech možností, nebo předpočítáním všech intervalů délek $2^k$, předpočítání v $O(n·\log n)$ a dotaz v $O(1)$.
+
+Můžeme rozdělit vstup na bloky délky $b$, dostaneme $n/b$ bloků. Pak můžu nahradit každý blok jeho minimem, dotaz provést tak, že se podívám do okrajových bloků a minimum z toho vnitřku přes bloky. Pokud $b$ je dostatečně malé, pak je spoustu bloků stejných, dají se popsat klikaticí a posunem, klikatic je jen $2^b$.
+
+Pro každý z bloků můžu použít hloupou verzi, na předpočítání je potřeba $O(n+2^bb^2)$.
+
+Na zbytek použijeme to s logaritmem, tedy $O({n\over b}·\log {n\over b})$.
+Když zvolím $b$ jako ${1\over 2}·\log_2 n$, tak celý preprocesing bude trvat $O(n)$.
+
+Normální RMQ je možné převést na LCA.
+
+\subsubsection{Algoritmus na tvorbu těchto dvou polí}
+
+Algoritmus je rekurzivní.
+
+\begin{enumerate}
+• Zmenšit abecedu na $1,…,n$.
+• Definujeme tři pomocné řetězce:
+  Každý z nich bude sestaven ze znaků sloučených vždy z trojice znaků původních, na pozicích dělitelných třemi, o $1$ doprava a o $2$ doprava.
+• Zrekurzit na první a druhý řetězec spojené za sebe.
+• Oddělit jednotlivá pole suffixů.
+• Spočítá se pole suffixů pro třetí řetězec. Porovnávat lze podle prvního znaku a pole pro první řetězec.
+  Tohle jde udělat přihrádkovým tříděním.
+• Spojit tyto pole dohromady pomocí jednoho kroku mergesortu, podobný trik na porovnávání.
+• Podobně spočítat pole nejdelších společných prefixů,
+  pomocí RMQ (každý prvek je prefix dvou sousedních sufixů) pro výsledek rekurzivního volání.
+\end{enumerate}
