@@ -1,0 +1,92 @@
+\section{Celá čísla}
+
+\subsection{Značení}
+
+Libovolná čísla jsou vždy celá.
+
+→•
+• $a\backslash b ←→ ∃c:b=ac$
+• $\gcd(a,b)$ -- největší společný dělitel $a$ a $b$
+• $a \equiv_n b ←→ n\backslash a-b$
+• $a\perp b←→ \gcd(a,b) = 1$
+←•
+
+\subsection{Časové složitosti}
+\begin{center}
+\begin{tabular}{|lr|l|}
+\hline
+$\bullet$&$+,-$&$O(N)$\\
+\hline
+$\bullet$&$*,/,\bmod$&$O(N^2)$\\
+\hline
+$\bullet$&$\gcd(N^3)$&$O(N^3)$\\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Algebraické struktury}
+
+Viz algebra
+
+→•
+• Grupa $G(·,1,^{-1})$
+• Podgrupa
+• Generátor grupy
+←•
+
+\statement{La-Grangerova věta o grupách}
+Když $H@⊂G$ pro $G$ konečnou grupy, pak $\len{H}\backslash \len{G}$.
+
+\name{Multiplikativní grupa}: $\Z_n^*=@{x;1≤x<n;∃y:xy=1@}@(*\bmod n,1,^{-1}@)$.
+
+\subsection{Řešení rovnic}
+
+\statement{}
+Rovnice $ax \equiv_nb$ pro $a,b,n∈\Z$ má řešení $←→\gcd(a,n)b$ a existuje program s časovou složitostí $O(N^3)$, které to řešení najde.
+\proof
+Rovnice je ekvivalentní $ax-ny=b$.
+
+Označme si $g:=\gcd(a,n)$.
+$g\backslash ax, g\backslash ny$.
+Pokud $g\perp b$, pak levá strana je a pravá není dělitelná $g$, takže to nemá řešení.
+
+Vyřeší se to Euklidovým algoritmem.
+Každý mezivýsledek je lineární kombinace typu $αx+βy$.
+I výsledek musí být zapsatelný tímto způsobem.
+Zapamatujeme si $α$ a $β$ a to použijeme pro obnovení výsledku, tyto $α$ a $β$ vynásobíme $g$ a vypadne výsledek.
+
+\name{Eulerova funkce} je $φ(n) = \len{@{x;1≤x<n\land x\perp n@}}$.
+
+Pro všechna $n$ je to $n-1$.
+Mocnina prvočísla $n=p^k$. Pak to vyjde $(p-1)·p^{k-1}$.
+Pro $a,b∈\Z, a\perp b;φ(ab)=φ(a)φ(b)$.
+
+\statement{Eulerova věta}
+$∀n,a∈\Z,a\perp n; a^{φ(n)}\equiv_n 1$.
+\proof
+Buď $m>0$ nejmenší takové, že $a^m\equiv_n 1$. Vezmeme posloupnost $A:=@{a^0,a^1,a^2,…,a^{m-1}@}$.
+Určitě se ta posloupnost začne někdy opakovat (řekněme, že pro $i,j$ jsou stejné výsledky). Pak $a^{j-i}\equiv_n 1$.
+$A@⊂\Z_N^*$. Použijeme La-Grangerovu větu, proto $m\backslash φ(n)$. Mohu rozepsat jako $@(a^m@)^{φ@(n@)\over m} \equiv_n 1^{φ@(n@)\over m}$.
+
+\subsection{Fermatův test}
+Vezme se vzorec $a^{n-1}\pmod n = 1$.
+Vezmu náhodné číslo, zkusím, jestli je to nesoudělné (pokud není nesoudělné, tak to není prvočíslo), pokud to nevyjde jedna, tak je také složené a jinak se neví.
+
+Bohužel existují Carmichaelova čísla, která takové číslo (fermatova svědka) nemají.
+
+\statement{}
+Pokud to číslo není carmichaelovo ani prvočíslo, pak existuje alespoň $n-1\over 2$ fermatových svědků.
+
+\proof
+Mějme $H:=@{a∈@{1,…,n-1@};a^{n-1}\pmod n = 1@, a\perp n@}$.
+$H$ je podgrupa $\Z_n^*$.
+Každé z nich je invertibilní.
+Je tam jednička, je tam součin dvou takových čísel.
+
+Protože to číslo není carmichaelovo, musí existovat jeden svědek, velikost $H$ dělí velikost $\Z_n^*$, tedy je nejvýše polovina tohoto.
+
+\subsubsection{Vylepšení}
+Můžeme přeskočit kontrolu soudělnosti -- soudělné číslo stejně hodí $0$, takže neprojde potom.
+
+\subsection{Rabin-Mullerův test}
+Vylepšený Fermatův, potom ještě pro všechna $i;2^i\backslash{n-1}$. Pokud najdu takové, že nevychází jednička po použití exponentu $n-1\over 2^i$, našel jsem carmichaelovo číslo.
