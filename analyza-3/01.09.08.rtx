@@ -1,0 +1,10 @@
+\section{Vícerozměrný integrál}
+
+\subsection{Velikost množiny}
+
+Uděláme funkci, co je nad množinou $1$ a jinde $0$.
+Riemanův integrál se při tom chová špatně.
+
+Zadefinujeme \name{vnější míru}.
+$$λ^*(M) := \inf@{\Σ_{i∈I} vol i,M⊂\bigcup_i@}$$
+$I$ je nějaká množina kvádrů.
