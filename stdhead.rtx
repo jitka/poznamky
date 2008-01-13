@@ -1,0 +1,7 @@
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}

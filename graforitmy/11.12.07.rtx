@@ -1,5 +1,6 @@
 \subsection{Červeno-modrý meta-algoritmus}
-Přiřadíme každé hraně barvy, každá může být buď bezbarvá, nebo červená, nebo modrá.
+
+Přiřadíme každé hraně barvy, každá může být buď bezbarvá, červená, nebo modrá.
 Na začátku necháme všechny nenabarvené.
 V každém kroku použijeme buď červené nebo modré pravidlo.
 
@@ -13,19 +14,21 @@ Opakuje, dokud to jde (tedy, již není co barvit).
 
 \subsubsection{Důkaz správnosti}
 
-\lemma{Modré}
+\lemma{modré}
 Kdykoliv je hrana $e$ natřená na modro, pak je v minimální kostře.
+
 \proof
 Sporem. Mějme hranu, která je nejlevnější a není v kostře.
 To, co je řezem oddělené, musí být něčím spojené, ale protože to není tato hrana, musí to být nějaká těžší.
 Což je ale ve sporu s minimální kostrou.
 
-\lemma{Červené}
+\lemma{červené}
 Kdykoliv je hrana $e$ natřená na červeno, pak není v minimální kostře.
+
 \proof
 Opět sporem. Tu nejtěžší hranu můžeme vyměnit a obejít to po tom cyklu.
 
-\lemma{Nebarevné}
+\lemma{nebarevné}
 Pokud existuje nebarevná hrana, pak lze aplikovat buď modré nebo červené pravidlo.
 Vezmu všechny modře dosažitelné vrcholy ($B$) z prvního vrcholu té hrany ($x$).
 Pokud druhý $y∈B$, pak lze sestavit cyklus tak, aby tato hrana byla očerveněná.
@@ -39,44 +42,49 @@ Pokud $y∉B$, pak lze najít řez, který neobsahuje modrou hranu, proto lze po
 ←•
 
 \subsubsection{Kruskalův algoritmus}
-Seřadí hrany.
+
+Seřadí hrany vzestupně.
 Poté začne s prázdným modrým lesem a zkouší jednotlivé hrany.
 
 Při každé hraně se podívá, jestli spojuje $2$ různé komponenty modrého lesa, pak ji obarví modře (určitě existuje nebarevný řez, tato z nich je nejmenší).
-Pokud nespojuje, pak určitě lze vytvořit cyklus, kde zbytek je modrý a obarvit na červeno.
+Pokud nespojuje, pak určitě lze vytvořit cyklus, kde zbytek je modrý, a obarvit na červeno.
 
-Hodí se na to union-find struktura. Pro setřídění potřebujeme čas $O(f_S)$, tedy celková se dá stihnout za $O(f_S + M·α(N))$, kde $α$ je inverzní akrmanofa funkce.
+Hodí se na to union-find struktura. Setřídíme v čase $O(f_S)$, tedy celková složitost je $O(f_S + m·α(n))$, $α$ je inverzní ackermanova funkce.
 
 \subsubsection{Primův/Jarníkův algoritmus}
-Vezme jeden vrchol, prohlásí ho za základ modrého stromu a postupně roste.
-Vždy vezme nejlehčí hranu, co vede ven a tu tam přidá (určitě existuje řez, kde je nejlehčí).
-Zbytek musí zbýt na červenou.
 
-Triviální v čase $O(M·N)$.
+Vezme jeden vrchol, prohlásí ho za základ modrého stromu a postupně roste.
+Vždy vezme nejlehčí hranu, co vede ven a tu tam přidá (určitě existuje řez, kde je nejlehčí -- ten mezi modrým lesem a zbytkem).
+Až proroste celým grafem, ostatní hrany zbudou a lze je prohlásit za červené.
+
+Triviální v čase $O(m·n)$.
 
 Lze si ale držet haldu hran, které mají alespoň jeden vrchol v modrém stromu.
 Pak při vybírání hrany buď spojuje dva modré vrcholy, pak je k ničemu a zahodíme ji.
 Když vede ven, použijeme ji a přidáme všechny nové hrany.
-Každá hrana se přidá maximálně jednou, tedy celá složitost je $O(M·\log N)$ ($N^2$ se schová do $2$ v logaritmu a to do $O$).
+Každá hrana se přidá maximálně jednou, tedy celá složitost je $O(m·\log n)$ ($m = O(n^2),n^2$ se schová do $2$ v logaritmu a to do $O$).
 
 \subsubsection{Borůvkův algoritmus}
+
 Jako Jarníkův, ale rostou paralelně.
 Stačí dokázat, že nevytvoří cyklus.
 
 V každém kroku se sníží počet stromů sníží alespoň na polovinu (každý strom se spojí alespoň s jedním).
-Počet kroků je tedy $O(\log N)$.
+Počet kroků je tedy $O(\log n)$.
 
-Každý lze provést na lineární čas s počtem hran, tedy celková složitost je $O(M·\log N)$.
+Každý lze provést na lineární čas s počtem hran, tedy celková složitost je $O(m·\log n)$.
 
 \subsection{Rovinné grafy}
+
 Můžeme použít Borůvkův algoritmus, ale vrcholy kontrahovat, když se dostanou do stejné komponenty.
 (Smyčky se dají vyhazovat.)
 
 Pro rovinný graf běží v lineárním čase.
 
 \subsubsection{Implementace}
+
 U každého vrcholu si pamatuji nejlevnější hranu vedoucí z něj.
-Spočítat toto mi bude trvat $O(M)$.
+Spočítat toto mi bude trvat $O(m)$.
 
 Spustíme BFS na graf se všemi vrcholy, ale jen těmito nejlevnějšími hranami.
 To vytvoří komponenty a ty zkontrahujeme.
@@ -84,19 +92,21 @@ Stačí nadefinovat překladovou tabulku a vyházet paralelní hrany a cykly.
 Pomocí bucket-sortu (podle dvojic čísel vrcholů) se mi dostanou k sobě a tím je najdu.
 
 \subsubsection{Složitost}
+
 Každý krok je lineární.
 Každá kontrakce zachová rovinnost a sníží počet vrcholů alespoň $2\times$.
 Proto celková složitost je lineární.
 
-\subsubsection{Jiné grafy, kde funguje}
+\subsubsection{Jiné grafy, kde funguje lineárně}
+
 Graf $H$ je \name{minor} grafu $G$, pokud ho lze získat pomocí mazání hran či vrcholů a hranových kontrakcí.
 
 \name{Minorově uzavřená třída} grafů je taková množina grafů, že kdykoliv vezmu libovolný graf, všechny jeho minory jsou v té třídě také.
 
-\statement{Robertson, Seymowr}
+\statement{Robersonova a Seymowrova věta}
 Libovolná minorově uzavřená třída se dá charakterizovat konečnou množinou zakázaných minorů.
 
-\statement{R \& S}
+\statement{R \& S věta 2}
 $C$ je minorově uzavřená třída.
 Potom $C$ má omezenou hustotu.
 

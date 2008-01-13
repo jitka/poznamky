@@ -2,7 +2,7 @@
 \subsection{Binominální}
 Les binominálních stromů $B_n$.
 $B_0$ je jeden vrchol.
-$B_k$ je strom $B_{k-1}$ spojený kořenem s druhým $B_{k-1}$
+$B_k$ je strom $B_{k-1}$ spojený s druhým $B_{k-1}$ za kořeny.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -46,48 +46,62 @@ To zaručuje, že halda velikosti $n$ má pevně danou velikost.
 Každá hrana zachovává uspořádání, že nahoře jsou menší.
 
 \subsubsection{Slití hald}
+
 Podobně jako binární sčítání. Když se potkají $2$ stromy se stejnou úrovní, tak se spojí (tak, aby ten s lehčím kořenem byl nahoře) a vznikne jeden větší strom, který pokračuje jako přenos do další úrovně.
 
-Toto lze stihnout $O(R)$, kde $R$ je maximální úroveň stromu. $R$ lze shora odhadnout logaritmem.
+Toto lze stihnout $O(r)$, kde $r$ je maximální úroveň stromu. $r$ lze shora odhadnout logaritmem.
 
 \subsubsection{Vkládání}
-Vytvoříme haldu o $1$ prvku, poté je slijeme.
+
+Vytvoříme haldu o $1$ prvku, poté ji slijeme s původní.
 
 \subsubsection{Nalezení minima}
+
 Mohli bychom projít všechny kořeny najít ho, ale budeme si udržovat ukazatel na strom s nejmenším kořenem.
 
 \subsubsection{Odebrání minima}
+
 Odebráním kořene z některého stromu se rozpadne na menší podstromečky.
 Ty tvoří také binomickou haldu, tak ji slijeme.
 
 \subsubsection{Snížení}
+
 Obvyklým bubláním.
 
 \subsubsection{Odebrání libovolného}
+
 Stejné, jako snížení \uv{až do kořene} a odebrání.
 
 \subsection{Líná binominální halda}
+
 Již nebudeme požadovat, aby každé úrovně stromu byl maximálně jeden exemplář.
 
 \subsubsection{Merge}
+
 Můžeme seznamy pouze spojit, což lze udělat konstantně.
 
 \subsubsection{Odebrání minima}
-Napřed odebereme, poté haldy slijeme a nakonec haldu vyčistí a udělá z toho normální binominální haldu.
+
+Napřed odebereme, poté haldy slijeme a nakonec haldu vyčistíme a uděláme z toho normální binominální haldu.
 
 \begin{enumerate}
-• Setřídíme stromy podle úrovně (stále platí, že $R∈\log N$, takže to můžeme udělat přihrádkově).
+• Setřídíme stromy podle úrovně (stále platí, že $r≤\log n$, takže to můžeme udělat přihrádkově).
 • Projdeme to od nejmenších a spojujeme po dvojicích, přestrkujeme o $1$ úroveň výš a ten max. jeden co zbude tu necháme.
 \end{enumerate}
 
-Setřídění trvá $O(T+\log N)$, slívání trvá $O(\log N + T)$ (každé spojení jednu ubere, máme jich $T$).
+Nechť $t$ je počet stromů.
+Setřídění trvá $O(t+\log n)$, slívání trvá $O(t+\log n)$ (každé spojení jeden ubere, máme jich $t$).
 
 Definujeme potenciál $Φ:= \#$stromů.
-Slití sečte oba $Φ$ dohromady, vyčištění bude odebírat.
-Odebrání bude trvat $O(\log N)$ a vytvoří $O(\log N)$ nových stromečků.
-Slitím dvou stromečků se spotřebuje $1$ z $Φ$, celkem \uv{Neslití} může být jen $O(\log N)$, protože maximální $R$ je stále $O(\log N)$.
+Slití sečte oba $Φ$ dohromady,
+přidání jednoho jeden vytvoří.
+Vyčištění bude odebírat.
+Odebrání bude trvat $O(\log n)$ a vytvoří $O(\log n)$ nových stromečků, tedy přidá $O(\log n)$ do $Φ$.
+Slitím dvou stromečků se spotřebuje $1$ z $Φ$, celkem \uv{Neslití} může být jen $O(\log n)$, protože maximální $r$ je stále $O(\log n)$.
+Tedy, na každý slitý stromeček si předem \uv{našetří}
 
 \subsection{Fibonacciho halda}
+
 Je to les zakořeněných stromů, jeho tvar se ukáže dále.
 Každý vrchol obsahuje:
 →•
@@ -104,48 +118,54 @@ Každý kořen je bílý.
 Většina operací je stejná jako u líné binominální haldy.
 
 \subsubsection{Řez}
+
 Pokud vrchol $V$ není kořen, tak ho odpojí od otce a uděláme ho kořenem (s přebarvením na bílo).
 Nesmíme řezat $2$ syny stejného vrcholu, proto si budeme pomocí barvy pamatovat otce, kteří již ztratili syna, jako černé.
 
 Pokud sebereme syna černému vrcholu, tak ho uřízneme také.
 
-Kořen nikdy nepřebarvíme načerno.
+Kořen nikdy nepřebarvíme načerno, i kdyby mu byl brán syn (ten lze virtuálně uříznout a zařadit mezi kořeny kdykoliv bez práce).
 
 \subsubsection{Odebrání minima}
+
 →•
-• Rozebrat -- Zabere $O(D)$, kde $D:=\max@{°@(V@)|∀V@}$.
+• Rozebrat -- Zabere $O(d)$, kde $d:=\max@{°@(v@)|∀v∈V@}$.
 • Přebarvit všechny nabílo (budou kořeny)
 • Slít
 • Uklidit
 ←•
 
+\TODO{Tady něco chybí, doplnit}
+
 \subsubsection{Snížení}
-Pokud je $V$ kořen nebo není po zvýšení dost malý, neděje se nic.
+
+Pokud je $v$ kořen nebo není po zvýšení dost malý, neděje se nic.
 Pokud by se snížil pod kořen, tak ho řízneme.
 
 \subsubsection{Časová složitost}
-$$Φ:=\#\hbox{stromů}+2·\#\hbox{černých vrcholů}$$.
 
-\name{Úroveň} vrcholu $V$ u kořene bereme jako jeho stupeň, pokud přestane být kořenem, pak se mu již nemění.
+$$Φ:=\#\hbox{stromů}+2·\#\hbox{černých vrcholů}$$
+
+\name{Úroveň} vrcholu $v$ u kořene bereme jako jeho stupeň, pokud přestane být kořenem, pak se mu již nemění.
 
 \observation{Stupeň vrcholu může být maximálně o $1$ větší než jeho úroveň.}
 
-Uklízení probíhá stejně, jako u líných binominálních hald, tedy trvá amortizovaně $O(D)$.
+Uklízení probíhá stejně, jako u líných binominálních hald, tedy trvá amortizovaně $O(d)$.
 
 Při každém řezu (kde se něco děje, zanedbáme triviální řezy) se spotřebuje konstantní čas na zpracování řezaného vrcholu a vznikne jeden strom, tedy můžeme přidat do potenciálu.
 Pokud bubláme nahoru, spotřebováváme \uv{černý} potenciál, jeden za nový strom a jeden za zpracování vrcholu.
 
-\lemma{Invariant $1$}
+\invariant{$1$}
 Pokud máme vrchol se stupněm $r$ a $k$ synů se stupni $r_0≤r_1≤…≤r_{k-1}$, potom $r-1≤k≤r$ a $r_0≥0$.
 
 \proof
 Při vytvoření nového stromu, potom vznikne spojením dvou $r-1$ stromů, proto tento dostane úroveň $r$.
-V horním stromu to indukce platí. Přidáním nového syna pod ten kořen se to tím nezhorší, protože má úroveň $r-1$.
+V horním stromu indukce platí. Přidáním nového syna pod ten kořen se to tím nezhorší, protože má úroveň $r-1$.
 
 Nezničí to ani řez, pokud je to otec, tak se úroveň správně upraví, jinak může ztratit maximálně jednoho syna.
 
-\lemma{Invariant $2$}
-Pokud $V$ má úroveň $k$, potom $\len{T_V} ≥ h_k$ ($T_V$ je strom zakořeněný v $V$).
+\invariant{$2$}
+Pokud $v$ má úroveň $k$, potom $\len{T_v} ≥ h_k$ ($T_v$ je strom zakořeněný v $v$).
 \begin{eqnarray*}
 h_0 &=& 1\\
 h_1 &=& 1\\
@@ -154,7 +174,7 @@ h_2 &=& 2\\
 h_k &=& 1 + h_0 + h_0 + h_1 + h_2 + … + h_{k-3}
 \end{eqnarray*}
 
-Dostaneme sečtením podstromů a $V$ samotného.
+Dostaneme sečtením podstromů a $v$ samotného.
 Tato funkce roste podobně jako fibonacciho čísla, jen jsou o jedničku větší.
 Toto lze dokázat indukcí a dosazením.
 

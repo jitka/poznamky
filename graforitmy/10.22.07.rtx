@@ -23,8 +23,8 @@ Tedy, počet fází je maximálně $2\sqrt{m}$.
 Použije se stejný důkaz, ale můžeme použít vrstvy, ne spojení mezi nimi. Potom lze nastavit $k:=\sqrt{n}$.
 
 \subsubsection{Ještě jednou hrany rovny $1$}
-Budu brát $b_i = |L_i|+|L_{i+1}|$, což může být maximálně $\frac{2n}{k}$. Hran mezi nimi je maximálně $|L_i|\times |L_{i+1}$, což je maximálně $@({n\atop k}@)^2$. Když zvolíme $k:=n^{2\over 3}$ a výsledek bude $O@(n^{2\over 3}m@)$.
+Budu brát $b_i = |L_i|+|L_{i+1}|$, což může být maximálně $\frac{2n}{k}$. Hran mezi nimi je maximálně $|L_i|\times \len{L_{i+1}}$, což je maximálně $@({n\atop k}@)^2$. Když zvolíme $k:=n^{2\over 3}$ a výsledek bude $O@(n^{2\over 3}m@)$.
 
 \subsubsection{Celočíselné kapacity}
 Kdybychom začali na nějakém libovolném toku, tak složitost je $O@(nm+nΔf@)$, kde $Δf$ je rozdíl maximálního a původního toku.
-Každé hledání blokujícího toku trvá $O(n)$ a zlepší to alespoň o $1$. Ten zbytek trvá v každé fázi maximálně $O(m)$ a fází je maximálně $O(m)$.
+Každé hledání blokujícího toku trvá $O(n)$ a zlepší to alespoň o $1$. Ten zbytek trvá v každé fázi maximálně $O(m)$ a fází je maximálně $O(n)$.

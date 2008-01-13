@@ -1,7 +1,8 @@
 \subsubsection{Použití}
+
 →•
-• Zrychlení Dijkstry
-• Jarníkův algoritmus (Fredman \& Tarjan)
+• Zrychlení Dijkstry.
+• Jarníkův algoritmus (Fredman \& Tarjan).
 Pamatujeme si, jak nejlevněji se dostaneme do některého vnějšího bodu.
 To děláme v této haldě.
 • Lze ještě zrychlit tak, že napřed pustíme $\log \log n$ kroků Borůvkova algoritmu.
@@ -11,20 +12,23 @@ Celé to tedy běží v $O(m\log \log n)$.
 ←•
 
 \section{Výpočetní modely}
+
 \subsection{Ukazatelový stroj}
-Existují dva typy
+
+Existují dva datové typy:
 →•
 • Malé celočíselné typy (existuje horní hranice na počet hodnot, které může nabývat)
 • Ukazatele
 ←•
 
-Při výpočtu je k dispozici omezené množství registrů pro ukazatele a integery a neomezené množství krabiček.
+Při výpočtu je k dispozici omezené množství registrů pro ukazatele a integery a neomezené množství paměti, kam se dá ukazovat.
 
 Jediné operace běžící v konstantním čase jsou operace na konstantně velkých datech a dereference ukazatelů.
 
 \subsection{RAM}
+
 \uv{Random Access Machine}.
 
 Umí pracovat s libovolně velkými integery, má paměť indexovanou těmito integery a jsou v ní zase tyto integery.
 
-Z ukazatelového stroje na RAM lze přecházet přímo. Opačně se musí ukládat paměť někam do stromu, takže je alespoň $\log N$ pomalejší.
+Z ukazatelového stroje na RAM lze přecházet přímo. Opačně se musí ukládat paměť někam do stromu, takže je $\log n$ pomalejší (při přímém převodu).

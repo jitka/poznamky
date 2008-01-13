@@ -17,17 +17,18 @@
 ←•
 
 $α$ je \name{podřetězec} $β$ ($α⊂β$) $←→∃γ,δ;β=γαδ$.
-Podřetězec se nazývá \name{prefix}, pokud $δ=ε$ a \name{sufix}, pokud $γ=ε$.
+Podřetězec se nazývá \name{prefix}, pokud $γ=ε$ a \name{sufix}, pokud $δ=ε$.
 
 Každý podřetězec je prefix nějakého sufixu (nebo naopak).
 
-Mějme $X⊂Σ^*$, $X$ konečné. \name{Trie} je graf, kde každý vrchol je nějaký prefix nějakého řetězce z $X$ a hrana mezi nimi vede $←→$ $β=αx,x∈Σ$.
+Mějme $X⊂Σ^*$, $X$ konečné. \name{Trie} je graf, kde každý vrchol je nějaký prefix nějakého řetězce z $X$ a hrana mezi $α$ a $β$ vede $←→β=αx,x∈Σ$.
 
-Můžeme je zkomprimovat a cesty zkrátit na jednu hranu.
+Můžeme je zkomprimovat a cesty, které se nevětví, zkrátit na jednu hranu.
+Pak se to nazývá \name{komprimovaná trie}.
 
-\name{Suffixový strom} je komprimovaná trie pro všechny sufixy nějakého $σ$.
+\name{Sufixový strom} je komprimovaná trie pro všechny sufixy nějakého $σ$.
 
-Pokud přidáme nějaký \uv{ukončovací} znak, pak nejsou žádné skryté sufixy v hranách.
+Pokud přidáme nějaký \uv{ukončovací} znak (značme ho $\$$, nějaký, který se nikde ve slovech nevyskytuje), pak nejsou žádné skryté sufixy v hranách.
 
 \statement{Velikost}
 Lze reprezentovat v $O(\len{σ})$.
@@ -48,10 +49,13 @@ Lze vytvořit v $O(\len{σ})$. (Pro nějaké pevné $Σ$)
 ←•
 
 Permutace na číslech $1,2,…,\len{σ}+1$, které setřídí sufixy lexikograficky, nazveme \name{sufixové pole}.
+Budeme jej značit $SA_{X}$
 
 Dále, \name{pole nejdelších společných prefixů} je pole, kde každý prvek je nejdelší společný prvek mezi dvěma následujícími sufixy v sufixovém poli.
+Značíme $LCP_{X}$.
 
-\lemma{}Sufixové pole a pole nejdelších společných prefixů je lineárně ekvivalentní se sufixovým stromem.
+\lemma{}
+Sufixové pole a pole nejdelších společných prefixů je lineárně ekvivalentní se sufixovým stromem.
 Ze stromu na ně je to jednoduché.
 
 Opačně přes výběry minim v poli nejdelších společných prefixů. (Pokaždé, když potkám $ε$, dostanu se do kořene atp.)

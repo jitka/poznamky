@@ -1,4 +1,5 @@
 \subsection{Aplikace toků v síti}
+
 \subsubsection{Maximální párováni v grafu}
 
 Mějme $G$ bipartitní.
@@ -7,25 +8,25 @@ Definujeme kapacitu každé hrany na $1$ a jednu polovinu grafu připojíme ke z
 \subsubsection{Maximální párování v grafu bez toků}
 
 Mějme $G$ bipartitní $k$-regulární graf.
-Na $k$-regulárním bipartitním grafu lze nají perfektního párování.
+Na $k$-regulárním bipartitním grafu lze najít perfektního párování.
 Po odebrání takového párování dostáváme $(k-1)$-regulární graf a udělat znovu totéž, čímž získáváme $1$-faktorizaci grafu.
 
-Odbočka:\\
-Máme $G$, které má všechny stupně sudé a má sudý počet vrcholů v každé komponentě. Chceme jeho hrany rozdělit na $E_1, E_2 @⊂ E, E_1\cap E_2$ tak, že každý vrchol má stejný počet hran z obou množin. Lze udělat pomocí Eulerova tahu a ten rozdělit na sudé a liché hrany.
+\notehead{Odbočka}{}
+Máme $G$, které má všechny stupně sudé a má sudý počet vrcholů v každé komponentě. Chceme jeho hrany rozdělit na $E_1, E_2 @⊂ E, E_1\cap E_2 = \emptyset, E_1 \cup E_2 = E$ tak, že každý vrchol má stejný počet hran z obou množin. Lze udělat pomocí Eulerova tahu a ten rozdělit na sudé a liché hrany.
 
 Předpokládejme, že $k = 2^t$.
 Pokaždé vezmu graf, rozdělím na $E_1, E_2$, jedno z toho vyhodím a dostanu $\frac{k}{2}$-requlární graf.
-Toto opakuji s vzniklým grafem, dokud mi nezbude $1$-regulární graf, tedy mám perfektní párování.
+Toto opakuji se vzniklým grafem, dokud mi nezbude $1$-regulární graf, tehdy mám perfektní párování.
 Toto lze zvládnout v $O(m)$ - počet hran klesá geometrickou řadou, dělám to $t$-krát.
 
 Pokud grafy nezahazuji, ale provádím vše, dostanu $1$-faktorizaci v $O(t·m)$.
 
 Když $k$ není $2^t$, musím ho nějak zvětšit, aby byl.
-Pokud do udělám ,,normálně``, tak mi zbytečně naroste.
+Pokud do udělám \uv{normálně}, tak mi zbytečně naroste.
 Můžu ale přidat k hranám jejich násobnost (viz níže) a s těmi už to jde zvládnout.
 Jen u rozdělování si dám do každé výsledné množiny polovinu z násobnosti hrany (pokud jedna zbude, tak ji zpracuji normálně), což stále sběhne v $O(m)$.
 
-Při nastavování násobnosti hran vyberu $α:=\lfloor \frac{2^t}{k} \rfloor$.
+Při nastavování násobnosti hran vyberu $α:=\left\lfloor \frac{2^t}{k} \right\rfloor$.
 $β:= 2^t \bmod k$.
 Přidám do grafu $M_0 := @{v_i,w_i;i = 1, …, n@}$ umělé hrany.
 Pak při hledání vybírám graf, který obsahuje nejméně umělých hran.
@@ -39,12 +40,15 @@ Každý krok trvá $O(m)$, $t$ je maximálně $2\log n$, tedy výsledek je $O(m�
 Máme graf $G$ a chceme najít maximální $k$ takové, že $G$ je hranově $k$-souvislý.
 Lze zredukovat na nalezení minimálního řezu v grafu, k čemuž dokáží pomoci toky.
 
-Nastavíme všechny kapacity na $1$. Když se vyzkouší všechny dvojice zdroje a spotřebiče a z toho se vezme minimum, pak získáme složitost $O(n^{8\over 3}·m)$. Lze dokázat, že stačí vzít jen jeden jako zdroj a vyzkoušet všechny spotřebiče, čímž se dostaneme na $O(n^{5\over 3}·m)$.
+Nastavíme všechny kapacity na $1$. Když se vyzkouší všechny dvojice zdroje a spotřebiče a z toho se vezme minimum, pak získáme složitost $O(n^{8\over 3}·m)$.
+Lze dokázat, že stačí vzít jen jeden jako zdroj a vyzkoušet všechny spotřebiče, čímž se dostaneme na $O(n^{5\over 3}·m)$.
 
-Pokud bychom se zajímali o vrcholovou $k$-souvislost, hledáme nejmenší oddělovač, tedy vkládáme ,,doprostřed`` vrcholu hranu o kapacitě $1$.
-Lze použít specializovanější dinicův algoritmus a vyzkoušíme všechny dvojice spotřebiče a zdroje, pak získáme složitost $O(n^{5\over 2}·m$. Trik s fixací zdroje neprojde -- může být v oddělovači. Musíme vyzkoušet alespoň o jeden víc, než je velikost minimálního oddělovače, čímž se dostaneme na složitost $O(κ·n^{3\over 2}·m), κ$ je výsledek.
+Pokud bychom se zajímali o vrcholovou $k$-souvislost, hledáme nejmenší oddělovač, tedy vkládáme \uv{doprostřed} vrcholu hranu o kapacitě $1$.
+Lze použít specializovanější dinicův algoritmus (se vstupním nebo výstupním stupněm nejvýše jedna) a vyzkoušíme všechny dvojice spotřebiče a zdroje, pak získáme složitost $O(n^{5\over 2}·m$.
+Trik s fixací zdroje neprojde -- může být v oddělovači. Musíme vyzkoušet alespoň o jeden víc, než je velikost minimálního oddělovače, čímž se dostaneme na složitost $O(κ·n^{3\over 2}·m), κ$ je výsledek.
 
 \subsubsection{Minimální vážený řez}
+
 \author{Nagamochi \& Ibaraki}
 →•
 • $w(e)$ - váha hrany.
@@ -56,18 +60,19 @@ Lze použít specializovanější dinicův algoritmus a vyzkoušíme všechny dv
 
 \name{Legální uspořádání na $G$} je $v_i, …, v_n; ∀i∀j>i;d(@{v_i, …, v_{i-1}@}, v_i) ≥ d(@{v1, …, v_{i-1}@}, v_j)$.
 
-\statement{Lemma}
+\lemma{}
 Když $v_1, …, v_n$ je legální uspořádání na $G$, pak $r(v_{n-1}, v_1 = d(v_n)$.
 
-Důkaz:\\
+\proof
 Mějme libovolný řez mezi $C$ $v_{n-1}, v_n$.
-Chceme dokázat, že $\left|C\right|≥d(v_n)$.
+Chceme dokázat, že $\len{C}≥d(v_n)$.
 
 Řez dělí $G$ na několik komponent. Definujme $u_i$ jako nejbližší (v legálním uspořádání) vrchol, který je v jiné komponentě. (Určitě funguje, dokud $i<n$)
 
 $∀i, d(@{v_1,…, v_{i-1}@}, u_i) ≤ d( @{v_1, …, v_{i-1}@}, u_{i-1})$. V případě, že $i$ i $i-1$ jsou ve stejné komponentě, tak $u_i = u_{i-1}$, tedy platí rovnost. Pokud ne, pak $u_{i-1} = v_i$ a $u_i$ je nějaké $v_{i+ε}$. Pak to platí z definice legálního uspořádání.
 
-$\left|C\right|≥\Σ_{i = 1}^{n-1}d(v_i, u_i)$. Jde to z jedné komponenty do druhé, proto to musí být v řezu a ty hrany jsou různé (jdou jen doprava).
+$\len{C}≥\Σ_{i = 1}^{n-1}d(v_i, u_i)$. Jde to z jedné komponenty do druhé, proto to musí být v řezu a ty hrany jsou různé (jdou jen doprava).
 To jde přepsat jako $\Σ_i d(@{v_1, …, v_i@}, u_i) - d(@{v_1, …, v_{i-1}@}, u_{i-1})$.
 Použití minulého pozorování lze odhadnout: $≥\Σ_i d(@{v_1, …, v_i@}, u_i) - d(@{v_1, …, v_{i-1}@}, u_{i-1})$.
 Přepíšeme jako $d(@{v_1, …, v_{n-1}@}, u_{n_1}) - d( \emptyset, u_{n-2})$, což je $d(@{v_1, …, v_{n-1}@}, v_n)$.
+
