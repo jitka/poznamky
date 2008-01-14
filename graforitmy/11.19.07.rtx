@@ -46,42 +46,33 @@ To zaručuje, že halda velikosti $n$ má pevně danou velikost.
 Každá hrana zachovává uspořádání, že nahoře jsou menší.
 
 \subsubsection{Slití hald}
-
 Podobně jako binární sčítání. Když se potkají $2$ stromy se stejnou úrovní, tak se spojí (tak, aby ten s lehčím kořenem byl nahoře) a vznikne jeden větší strom, který pokračuje jako přenos do další úrovně.
 
 Toto lze stihnout $O(r)$, kde $r$ je maximální úroveň stromu. $r$ lze shora odhadnout logaritmem.
 
 \subsubsection{Vkládání}
-
 Vytvoříme haldu o $1$ prvku, poté ji slijeme s původní.
 
 \subsubsection{Nalezení minima}
-
 Mohli bychom projít všechny kořeny najít ho, ale budeme si udržovat ukazatel na strom s nejmenším kořenem.
 
 \subsubsection{Odebrání minima}
-
 Odebráním kořene z některého stromu se rozpadne na menší podstromečky.
 Ty tvoří také binomickou haldu, tak ji slijeme.
 
 \subsubsection{Snížení}
-
 Obvyklým bubláním.
 
 \subsubsection{Odebrání libovolného}
-
 Stejné, jako snížení \uv{až do kořene} a odebrání.
 
 \subsection{Líná binominální halda}
-
 Již nebudeme požadovat, aby každé úrovně stromu byl maximálně jeden exemplář.
 
 \subsubsection{Merge}
-
 Můžeme seznamy pouze spojit, což lze udělat konstantně.
 
 \subsubsection{Odebrání minima}
-
 Napřed odebereme, poté haldy slijeme a nakonec haldu vyčistíme a uděláme z toho normální binominální haldu.
 
 \begin{enumerate}
@@ -101,7 +92,6 @@ Slitím dvou stromečků se spotřebuje $1$ z $Φ$, celkem \uv{Neslití} může 
 Tedy, na každý slitý stromeček si předem \uv{našetří}
 
 \subsection{Fibonacciho halda}
-
 Je to les zakořeněných stromů, jeho tvar se ukáže dále.
 Každý vrchol obsahuje:
 →•
@@ -117,38 +107,34 @@ Každý kořen je bílý.
 
 Většina operací je stejná jako u líné binominální haldy.
 
-\subsubsection{Řez}
+\subsubsection{Slití, přidání}
+Jako u binominální haldy -- jednoduše se seznamy spojí k sobě.
 
+\subsubsection{Řez}
 Pokud vrchol $V$ není kořen, tak ho odpojí od otce a uděláme ho kořenem (s přebarvením na bílo).
 Nesmíme řezat $2$ syny stejného vrcholu, proto si budeme pomocí barvy pamatovat otce, kteří již ztratili syna, jako černé.
 
-Pokud sebereme syna černému vrcholu, tak ho uřízneme také.
+Pokud sebereme syna černému vrcholu, tak ho uřízneme také, takto postupujeme směrem nahoru ke kořeni.
 
 Kořen nikdy nepřebarvíme načerno, i kdyby mu byl brán syn (ten lze virtuálně uříznout a zařadit mezi kořeny kdykoliv bez práce).
 
 \subsubsection{Odebrání minima}
+Halda obsahuje ukazatel na strom s nejmenším prvkem.
+Tomuto stromu se vezme vrchol, čímž se rozpadne na $O(d)$ stromů ($d:=\max{°(v)|∀v∈V}$).
+Kořeny těchto stromů se přebarví na bílo a stanou se z nich kořeny.
 
-→•
-• Rozebrat -- Zabere $O(d)$, kde $d:=\max@{°@(v@)|∀v∈V@}$.
-• Přebarvit všechny nabílo (budou kořeny)
-• Slít
-• Uklidit
-←•
-
-\TODO{Tady něco chybí, doplnit}
+Pak se pustí uklizení. Vrcholy se stejným stupněm se vždy spojí dohromady, podobně jako u binominální haldy, poté budu mít maximálně $d$ stromů.
 
 \subsubsection{Snížení}
-
 Pokud je $v$ kořen nebo není po zvýšení dost malý, neděje se nic.
-Pokud by se snížil pod kořen, tak ho řízneme.
+Pokud by se snížil pod otce, tak ho řízneme.
 
 \subsubsection{Časová složitost}
-
 $$Φ:=\#\hbox{stromů}+2·\#\hbox{černých vrcholů}$$
 
 \name{Úroveň} vrcholu $v$ u kořene bereme jako jeho stupeň, pokud přestane být kořenem, pak se mu již nemění.
 
-\observation{Stupeň vrcholu může být maximálně o $1$ větší než jeho úroveň.}
+\observation{Stupeň vrcholu může být maximálně o $1$ menší než jeho úroveň.}
 
 Uklízení probíhá stejně, jako u líných binominálních hald, tedy trvá amortizovaně $O(d)$.
 
@@ -162,7 +148,7 @@ Pokud máme vrchol se stupněm $r$ a $k$ synů se stupni $r_0≤r_1≤…≤r_{k
 Při vytvoření nového stromu, potom vznikne spojením dvou $r-1$ stromů, proto tento dostane úroveň $r$.
 V horním stromu indukce platí. Přidáním nového syna pod ten kořen se to tím nezhorší, protože má úroveň $r-1$.
 
-Nezničí to ani řez, pokud je to otec, tak se úroveň správně upraví, jinak může ztratit maximálně jednoho syna.
+Nezničí to ani řez, pokud je to kořen, tak se úroveň správně upraví, jinak může ztratit maximálně jednoho syna.
 
 \invariant{$2$}
 Pokud $v$ má úroveň $k$, potom $\len{T_v} ≥ h_k$ ($T_v$ je strom zakořeněný v $v$).
