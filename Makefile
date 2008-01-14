@@ -21,7 +21,7 @@ clean-makes:
 DIST_RTDS:=$(wildcard $(patsubst %,%/*.rtd,$(SUBDIRS)))
 DIST_PDFS:=$(patsubst %.rtd,%.pdf,$(DIST_RTDS))
 pdfs.tar.bz2: $(DIST_PDFS)
-	tar cjf $@ $^
+	tar c $^ | bzip2 -9 > $@
 
 clean-tars:
 	rm -f pdfs.tar.bz2
