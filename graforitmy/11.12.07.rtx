@@ -1,5 +1,4 @@
 \subsection{Červeno-modrý meta-algoritmus}
-
 Přiřadíme každé hraně barvy, každá může být buď bezbarvá, červená, nebo modrá.
 Na začátku necháme všechny nenabarvené.
 V každém kroku použijeme buď červené nebo modré pravidlo.
@@ -13,7 +12,6 @@ Pokud není červená, obarvím ji na červeno.
 Opakuje, dokud to jde (tedy, již není co barvit).
 
 \subsubsection{Důkaz správnosti}
-
 \lemma{modré}
 Kdykoliv je hrana $e$ natřená na modro, pak je v minimální kostře.
 
@@ -42,7 +40,6 @@ Pokud $y∉B$, pak lze najít řez, který neobsahuje modrou hranu, proto lze po
 ←•
 
 \subsubsection{Kruskalův algoritmus}
-
 Seřadí hrany vzestupně.
 Poté začne s prázdným modrým lesem a zkouší jednotlivé hrany.
 
@@ -52,7 +49,6 @@ Pokud nespojuje, pak určitě lze vytvořit cyklus, kde zbytek je modrý, a obar
 Hodí se na to union-find struktura. Setřídíme v čase $O(f_S)$, tedy celková složitost je $O(f_S + m·α(n))$, $α$ je inverzní ackermanova funkce.
 
 \subsubsection{Primův/Jarníkův algoritmus}
-
 Vezme jeden vrchol, prohlásí ho za základ modrého stromu a postupně roste.
 Vždy vezme nejlehčí hranu, co vede ven a tu tam přidá (určitě existuje řez, kde je nejlehčí -- ten mezi modrým lesem a zbytkem).
 Až proroste celým grafem, ostatní hrany zbudou a lze je prohlásit za červené.
@@ -65,24 +61,21 @@ Když vede ven, použijeme ji a přidáme všechny nové hrany.
 Každá hrana se přidá maximálně jednou, tedy celá složitost je $O(m·\log n)$ ($m = O(n^2),n^2$ se schová do $2$ v logaritmu a to do $O$).
 
 \subsubsection{Borůvkův algoritmus}
-
 Jako Jarníkův, ale rostou paralelně.
 Stačí dokázat, že nevytvoří cyklus.
 
-V každém kroku se sníží počet stromů sníží alespoň na polovinu (každý strom se spojí alespoň s jedním).
+V každém kroku se sníží počet stromů alespoň o polovinu (každý strom se spojí alespoň s jedním).
 Počet kroků je tedy $O(\log n)$.
 
 Každý lze provést na lineární čas s počtem hran, tedy celková složitost je $O(m·\log n)$.
 
 \subsection{Rovinné grafy}
-
 Můžeme použít Borůvkův algoritmus, ale vrcholy kontrahovat, když se dostanou do stejné komponenty.
 (Smyčky se dají vyhazovat.)
 
 Pro rovinný graf běží v lineárním čase.
 
 \subsubsection{Implementace}
-
 U každého vrcholu si pamatuji nejlevnější hranu vedoucí z něj.
 Spočítat toto mi bude trvat $O(m)$.
 
@@ -92,13 +85,11 @@ Stačí nadefinovat překladovou tabulku a vyházet paralelní hrany a cykly.
 Pomocí bucket-sortu (podle dvojic čísel vrcholů) se mi dostanou k sobě a tím je najdu.
 
 \subsubsection{Složitost}
-
 Každý krok je lineární.
 Každá kontrakce zachová rovinnost a sníží počet vrcholů alespoň $2\times$.
 Proto celková složitost je lineární.
 
 \subsubsection{Jiné grafy, kde funguje lineárně}
-
 Graf $H$ je \name{minor} grafu $G$, pokud ho lze získat pomocí mazání hran či vrcholů a hranových kontrakcí.
 
 \name{Minorově uzavřená třída} grafů je taková množina grafů, že kdykoliv vezmu libovolný graf, všechny jeho minory jsou v té třídě také.
