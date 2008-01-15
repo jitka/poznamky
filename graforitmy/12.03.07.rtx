@@ -1,7 +1,6 @@
 \section{Datové struktury pro integery}
 
 \subsection{Van Emde-Boas Tree}
-
 Vyhledávací strom, pamatuje si integery z $X@⊂@{0,1,2,…,u-1@}$ a pracuje v $O(\log\log u)$.
 
 $VEBT(u)$:
@@ -17,19 +16,17 @@ Minimum a maximum není uložené v žádné přihrádce.
 Nechť $u=2^{2^k}$ (jinak lze konec vynechat).
 
 \subsubsection{Vložení}
-
 Pokud je tam jeden nebo žádný prvek (min je max a nebo je zcela prázdný), pak jen upravuji minimum a maximum.
 
 Jinak, zkontroluji, jestli nenahrazuji minimum nebo maximum a případně pokračuji s tím, co bylo minimum/maximum.
-Pokud je přihrádka, kam strkám, prázdná, vytvořím novou, zapíšu si ji do $S$ a vložím do ní.
+Pokud je přihrádka, kam strkám, prázdná, vytvořím novou, zapíšu si ji do $S$.
 V každém případě nakonec vložím do té přihrádky rekurzivně.
+(Jedno z toho bude triviální případ, proto se to nerozdělí na 2 větve.)
 
 \subsubsection{Získání}
-
 Obdobně.
 
 \subsubsection{Následník}
-
 (Vstupem může být i číslo, které tam není, prostě vrátí něco většího.)
 
 →•
@@ -41,22 +38,19 @@ Obdobně.
 ←•
 
 \subsubsection{Mazání}
-
 Obdobně, křížené přidání a hledání následníka (pro nahrazování minima apod.).
 
 \subsection{Užitečné funkce}
 
 \subsubsection{Zjištění, že $x$ je mocnina $2$}
-
 Porovnám $x$ a $x-1$. Když na tom udělám bitové $\land$, pak dostanu $0$ pro mocninu $2$ (s výjimkou $x=0$).
 
 \subsubsection{Práce s vektory}
-
 Máme nějakou posloupnost vektorů, každý má $b$ bitů a každý má zleva 1 bit zarážku.
 
 →•
 • Replikace (dostat nějakou hodnotu do všech hodnot) -- vynásobením $x$ vektorem samých jedniček.
-• Součet prvků -- např. $x \bmod 2^{b+1}-1$, nebo vynásobením vektorem se samými jedničkami a použitím správného kusu.
+• Součet prvků -- např. $x \bmod 2^{b+1}-1$, nebo vynásobením vektorem se samými jedničkami a použitím správného kusu (viz násobení pod sebe).
 • Vektorové porovnání (jednička vyjde, pokud složka prvního je menší než složka druhého).
 Paddingy nastavím v jednom na jedničky, odečtu druhý, zbude nebo nezbude tato jednička (pak stačí jen správně posunout a vy-andit).
 • Počet prvků menších než $α$ -- zreplikujeme $α$, vektorově porovnáme a sečteme je.

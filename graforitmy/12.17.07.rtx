@@ -1,8 +1,6 @@
 
 \section{Sufixové stromy}
-
 \subsection{Značení}
-
 →•
 • $Σ$ -- konečná abeceda
 • $Σ^*$ množina konečných řetězců nad $Σ$
@@ -51,7 +49,7 @@ Lze vytvořit v $O(\len{σ})$. (Pro nějaké pevné $Σ$)
 Permutace na číslech $1,2,…,\len{σ}+1$, které setřídí sufixy lexikograficky, nazveme \name{sufixové pole}.
 Budeme jej značit $SA_{X}$
 
-Dále, \name{pole nejdelších společných prefixů} je pole, kde každý prvek je nejdelší společný prvek mezi dvěma následujícími sufixy v sufixovém poli.
+Dále, \name{pole nejdelších společných prefixů} je pole, kde každý prvek je nejdelší společný prefix dvou po sobě jdoucích sufixů v $SA_X$.
 Značíme $LCP_{X}$.
 
 \lemma{}

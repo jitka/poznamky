@@ -1,5 +1,4 @@
 \subsubsection{Problémy $LCA$ a $RMQ$}
-
 (Least Common Prefix, Range Minimum Request.)
 
 RMQ lze převést na LCA.
