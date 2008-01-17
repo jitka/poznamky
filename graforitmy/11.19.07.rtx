@@ -1,6 +1,6 @@
 \section{Haldy}
-\subsection{Binominální}
-Les binominálních stromů $B_n$.
+\subsection{Binomiální}
+Les binomiálních stromů $B_n$.
 $B_0$ je jeden vrchol.
 $B_k$ je strom $B_{k-1}$ spojený s druhým $B_{k-1}$ za kořeny.
 
@@ -58,7 +58,7 @@ Mohli bychom projít všechny kořeny najít ho, ale budeme si udržovat ukazate
 
 \subsubsection{Odebrání minima}
 Odebráním kořene z některého stromu se rozpadne na menší podstromečky.
-Ty tvoří také binomickou haldu, tak ji slijeme.
+Ty tvoří také binomiální haldu, tak ji slijeme.
 
 \subsubsection{Snížení}
 Obvyklým bubláním.
@@ -66,14 +66,14 @@ Obvyklým bubláním.
 \subsubsection{Odebrání libovolného}
 Stejné, jako snížení \uv{až do kořene} a odebrání.
 
-\subsection{Líná binominální halda}
+\subsection{Líná binomiální halda}
 Již nebudeme požadovat, aby každé úrovně stromu byl maximálně jeden exemplář.
 
 \subsubsection{Merge}
 Můžeme seznamy pouze spojit, což lze udělat konstantně.
 
 \subsubsection{Odebrání minima}
-Napřed odebereme, poté haldy slijeme a nakonec haldu vyčistíme a uděláme z toho normální binominální haldu.
+Napřed odebereme, poté haldy slijeme a nakonec haldu vyčistíme a uděláme z toho normální binomiální haldu.
 
 \begin{enumerate}
 • Setřídíme stromy podle úrovně (stále platí, že $r≤\log n$, takže to můžeme udělat přihrádkově).
@@ -105,10 +105,10 @@ Každý vrchol obsahuje:
 Uspořádání na vrcholech je obvyklé.
 Každý kořen je bílý.
 
-Většina operací je stejná jako u líné binominální haldy.
+Většina operací je stejná jako u líné binomiální haldy.
 
 \subsubsection{Slití, přidání}
-Jako u binominální haldy -- jednoduše se seznamy spojí k sobě.
+Jako u binomiální haldy -- jednoduše se seznamy spojí k sobě.
 
 \subsubsection{Řez}
 Pokud vrchol $V$ není kořen, tak ho odpojí od otce a uděláme ho kořenem (s přebarvením na bílo).
@@ -123,7 +123,7 @@ Halda obsahuje ukazatel na strom s nejmenším prvkem.
 Tomuto stromu se vezme vrchol, čímž se rozpadne na $O(d)$ stromů ($d:=\max{°(v)|∀v∈V}$).
 Kořeny těchto stromů se přebarví na bílo a stanou se z nich kořeny.
 
-Pak se pustí uklizení. Vrcholy se stejným stupněm se vždy spojí dohromady, podobně jako u binominální haldy, poté budu mít maximálně $d$ stromů.
+Pak se pustí uklizení. Vrcholy se stejným stupněm se vždy spojí dohromady, podobně jako u binomiální haldy, poté budu mít maximálně $d$ stromů.
 
 \subsubsection{Snížení}
 Pokud je $v$ kořen nebo není po zvýšení dost malý, neděje se nic.
@@ -136,7 +136,7 @@ $$Φ:=\#\hbox{stromů}+2·\#\hbox{černých vrcholů}$$
 
 \observation{Stupeň vrcholu může být maximálně o $1$ menší než jeho úroveň.}
 
-Uklízení probíhá stejně, jako u líných binominálních hald, tedy trvá amortizovaně $O(d)$.
+Uklízení probíhá stejně, jako u líných binomiálních hald, tedy trvá amortizovaně $O(d)$.
 
 Při každém řezu (kde se něco děje, zanedbáme triviální řezy) se spotřebuje konstantní čas na zpracování řezaného vrcholu a vznikne jeden strom, tedy můžeme přidat do potenciálu.
 Pokud bubláme nahoru, spotřebováváme \uv{černý} potenciál, jeden za nový strom a jeden za zpracování vrcholu.
