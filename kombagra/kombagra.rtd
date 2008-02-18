@@ -1,0 +1,14 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\input{../defs.tex}
+
+\begin{document}
+\title{Kombinatorika a grafy}
+\author{Michal Vaner}
+\maketitle
+\input{02.18.08.rtx}
+\end{document}
