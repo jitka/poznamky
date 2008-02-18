@@ -1,0 +1,65 @@
+\section{Relace}
+
+Cokoliv se dá reprezentovat pomocí relací.
+
+\name{Složená relace}
+Obě relace musí být na stejné množině.
+$R\circ S := @{(x,z), (x,y)∈R, (y,z)∈S@}$.
+
+\name{Inverzní relace}
+$R^{-1}:=@{(x,y), (y,x)∈R@}$.
+
+\subsection{Specializované typy}
+→•
+• Diagonála -- $Δ:=@{(x,x)@}$
+• Reflexivní -- $Δ@⊂R$
+• Symetrická -- $R=R^{-1}$
+• Tranzitivní -- $R\circ R@⊂R$
+• Interpolativní -- $R@⊂R\circ R$
+• Antisymetrická -- $R\cup R^{-1}@⊂ Δ$
+• Ekvivalence -- reflexivní, symetrické a tranzitivní
+• Předuspořádání -- reflexivní a tranzitivní
+• Částečné uspořádání -- reflexivní, antisymetrická a tranzitivní
+←•
+
+\observation
+\begin{eqnarray*}
+&&R@⊂S→→R^{-1}@⊂S^{-1}\\
+&&R_1@⊂R_2\land S_1@⊂S_2 →→ (R_1\circ S_1) @⊂ (R_2\circ S_2)\\
+&&(R\circ S)\circ = R\circ(S\circ T)\\
+&&(R\circ S)^{-1} = S^{-1}\circ R^{-1}
+\end{eqnarray*}
+
+\subsection{Generovnání}
+Nejmenší relace splňující podmínku, co obsahuje $R$.
+→•
+• Reflexivní -- $R\cup Δ$
+• Symetrická -- $R\cup R^{-1}$
+• Tranzitivní -- $R\cup (R\circ R) \cup (R\circ R\circ R) \cup …$
+←•
+
+\section{Zobrazení}
+Zobrazení $f$ z $X$ do $Y$ je relace $∀x∈X∃!y∈Y;(x,y)∈f$.
+Značí se také jako $f:X→Y$ či $f(x) = y$.
+Pro reprezentaci potřebuji trojici $(f,X,Y)$.
+
+\name{Složené zobrazení}
+Obdobná definice, jako u relací.
+
+\name{Zobrazení prosté}
+Injektivní.
+$$x\neq y →→ f(x) \neq f(y)$$
+
+\name{Zobrazení na}
+Surjektivní.
+$$∀y∈Y∃x∈X;f(x)=y$$
+
+\name{Zobrazení je vzájemně jednoznačné}
+Bijektivní, zároveň prosté a zároveň na.
+
+Poté lze definovat \name{inverzní zobrazení} $f^{-1}$ je takové, že $f^{-1}(f(x)) = x\land f(f^{-1}(y)) = y$.
+
+Pokud existuje inverzní zobrazení, pak je to bijekce.
+
+\subsection{Alternativní definice}
+$f$ je prosté $←→ (f\circ g = f\circ h →→ g = h)$, $f$ je na $←→ (g\circ f = g\circ h →→ g=h)$.
