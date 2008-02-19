@@ -1,0 +1,28 @@
+\name{Konečný automat} je pětice $A=(Q,X,δ,q_0,F)$.
+→•
+• $Q$ -- konečná neprázdná množina stavů -- stavový prostor.
+• $X$ -- konečná neprázdná množina symbolů -- vstupní abeceda.
+• $δ$ -- zobrazení $Q\times X→Q$ -- přechodová funkce.
+• $q_0∈Q$ -- počáteční stav.
+• $F@⊂Q$ -- množina přijímacích stavů.
+←•
+
+Možné zápisy např.:
+→•
+• Graf -- stavový diagram (z každého vrcholu vede $\len{X}$ hran).
+• Tabulka -- přechodová funkce.
+• Stavový strom, pouze dosažitelné stavy, přibývají, rozvíjí se pouze neduplicitní možnosti.
+←•
+
+\name{Abeceda} $Σ$ je neprázdná konečná množina.
+\name{Slova} jsou konečné posloupnosti z $Σ$. Množina všech slov se značí $Σ^*$, dále $Σ^+:=Σ^*-@{λ@}$, $λ$ je prázdné slovo.
+\name{Jazyk} $L@⊂Σ^*$.
+
+Lze slova zřetězit, obvykle se značí tečkou, nebo se vynechává.
+Mocnina $a^n$ je $n$-krát zřetězené $a$ za sebou.
+Délka je $\len{a}$.
+
+Rozšířená přechodová funkce $δ^*(q,w), q∈Q, w∈Σ^*$, definováno \uv{postupně}.
+Jazyk rozpoznávaný automatem $A=(Q,X,δ,q_0,F)$ je množina $@{w∈Σ^*;d^*(q_0, w)∈F@}$.
+
+Třída jazyků rozpoznatelných konečnými automaty nazýváme \name{regulární}.
