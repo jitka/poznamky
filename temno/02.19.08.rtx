@@ -1,0 +1,61 @@
+\name{Množinou} rozumíme každé shrnutí určitých navzájem různých předmětů $m$ našeho myšlení (které se nazývají prvky) do jednoho celku $M$.
+
+Russelův paradox: Mějme množinu $L$ všech množin.
+Dále máme $K$ množinu takovou, že $m∉m$.
+Je $K$ prvkem $K$?
+Tedy takto postavená teorie množin obsahuje spor.
+
+Cantor pak zakázal strkání množin do množin.
+
+Richardsův paradox: Buď $m$ přírozené číslo, které nelze definovat méně než třiceti českými slovy.
+Zakázalo se, aby se výrok vyjadřoval o sobě, postavení matematického jazyka.
+
+→•
+• Písmena malé abecedy pro množiny
+• Binární predikáty $∈, =$
+• Logické spojky $\land, \lor, →→, ←→, \not$
+• Symboly pro kvantifikátory $∀,∃$
+• Pomocné symboly (závorky)
+←•
+
+Používají se zkratky.
+
+\name{Formule}
+→•
+• $(x∈y), (x=y)$ jsou atomické formule.
+• Jsou-li výrazy $φ$ a $ψ$, pak i $(φ\land ψ)$, $(φ\lor ψ)$, $(φ→→ψ)$, $(φ←→ψ)$ a $\not φ$ jsou formule.
+• Je-li $x$ proměnná pro množiny a $φ$ formule, pak výrazy $(∀x)φ$ a $(∃x)φ$.
+• Každá formule vzniká konečnou aplikací těchto pravidel.
+←•
+
+Říkáme, že výskyt proměnné $x$ ve formuli $φ$ je \name{vázaný}, je-li součástí nějaké podformule tvaru $(∀x)φ$ či $(∃x)φ$.
+Není-li vázaný, pak se nazývá \name{volný}.
+
+Proměnná $x$ je \name{vázaná} ve formuli $φ$, má-li v ní vázaný výskyt.
+Proměnná $x$ je ve formuli $φ$ volná, má-li v ní volný výskyt.
+
+Je-li formule $φ$ a $x_1, x_2, …, x_m$ jsou v ní volné, pak tuto skutečnost zapisujeme jako $φ(x_1, x_2, …, x_m)$.
+
+\name{Substituce} -- mějme formuli $φ(x_1, x_2, …, x_m)$. Pak značí formuli, která vznikne z $φ$ takto:
+→•
+• Každý volný výskyt nahradíme příslušnou proměnnou.
+• Každý vázaný výskyt nahradíme jiným, nepoužitým písmenem.
+←•
+
+Formule, kde jsou všechny výskyty všech proměnných vázané se nazývá uzavřená.
+
+\section{Axiomy teorie množin}
+→•
+• Axiom existence: $(∃x)(x=x)$ -- existuje alespoň jedna množina.
+• Axiom extensibility: $(∀u)((u∈x)←→(u∈y)) →→ x = y$ -- množiny, které mají stejné prvky, jsou stejné.
+• Schéma axiomů vydělení: Je-li $φ(x)$ formule, která neobsahuje volnou proměnnou $z$, potom formule
+$(∀a)(∃z)(∀x)((x∈z)←→((x∈a)\land φ(x)))$ -- je axiom teorie množin, který nazýváme axiomem vydělení pro $φ$.
+(Filtrování)
+• Axiom dvojice: $(∀a)(∀b)(∃z)(∀x)((x∈z)←→((x=a)\lor (x=b)))$ -- Libovolné dvě množiny tvoří dvouprvkovou množinu.
+• Axiom sumy: $(∀a)(∃z)(∀x)((x∈z)←→(∃y)((x∈y)\land(y∈a)))$ -- Ke každé množině existuje množina všech prvků, náležející nějakému prvku množiny $a$.
+• Axiom potence: $(∀a)(∃z)(∀x)((x∈z)←→(x@⊂a))$ -- Ke každé množině existuje množina všech podmnožin.
+• Schéma axiomů: Je-li $φ(u,v)$ formule, která neobsahuje volné proměnné $w$ a $z$, potom formule $(∀a)(∀v)(∀w)((φ(u,v)\landφ(u,w))→→(v = w))→→(∀a)(∃z)(∀v)((v∈z)←→(∃u)((u∈a)\landφ(u,v)))$ je axiomem teorie množin.
+Zobrazení na množinu.
+• Axiom nekonečna: $(∃z)(\emptyset∈z)\land (∀x)((x∈z)→→(x\cup @{x@}∈z))$ -- existuje nekonečná množina.
+• Axiom frustrovanosti: $(∀a)((a\neq \emptyset)→→(∃x)((x∈a)\land( x\cup a = \emptyset)))$.
+←•
