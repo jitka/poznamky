@@ -7,7 +7,7 @@
 \input{../defs.tex}
 
 \begin{document}
-\title{Kombinatorika a grafy}
+\title{Teorie množin}
 \author{Michal Vaner}
 \maketitle
 \input{02.19.08.rtx}
