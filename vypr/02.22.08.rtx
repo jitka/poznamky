@@ -1,0 +1,77 @@
+\section{Jazyk logiky prvního řádu}
+→•
+• Proměnné $x,y,…$ -- neomezeně mnoho, jen jeden druh.
+• Funkční symboly -- neomezeně mnoho, každý má svou četnost/počet argumentů.
+• Predikátové symboly -- každý má svou četnoust
+• Logické spojky
+• Kvantifikátory
+←•
+
+Výroková logika se zabývá pouze logickými spojkami, kvantifikátory až v predikátové.
+
+\section{Výroková logika}
+Obsahuje logické spojky, spojují formule.
+Ne vše lze definovat spojkami, může proto obsahovat složitější tvrzení.
+
+Místa, kam je možné vkládat tato složitější tvrzení nazýváme výrokové proměnné, více se s nimi zde nezabýváme.
+
+Jazyk obsahuje výrokové proměnné, logické spojky a závorky.
+
+\name{Formule} je buď proměnná, spojky aplikované na jiné formule.
+Každá formule vznikne konečnou aplikací těchto pravidel.
+
+Odpovídá na otázku, jestli je daná formule pravdivá.
+
+Proměnné mají hodnoty $@{0,1@}$. Pokud jsou tyto proměnné dané, pak lze celou pravdivostní hodnotu určit jednoznačně.
+
+\subsection{Pravdivost formule}
+Říkáme, že $v(A)$ je \name{pravdivostní hodnota} formule $A$ při ohodnocení $v$.
+
+Formule je \name{pravdivá} při ohodnocení $v$, pokud $v(A)=1$.
+
+Můžeme nazvat ohodnocení $v$ \name{modelem}, pak zapisujeme
+$$v|=A$$
+
+Pravdivostní hodnota $A$ závisí pouze na pravdivostním ohodnocení proměnných v $A$ obsazených.
+
+$A$ se nazývá \name{tautologie}, jestliže je pravdivá při všech možných ohodnocení.
+
+Formule je \name{splnitelná}, pokud existuje ohodnocení, při kterém je pravdivá.
+
+$A$ je důsledkem množiny $T$, pokud je pravdivá pro všechna ohodnocení z $T$.
+
+Pokud je $T$ nesplnitelná, pak $A$ nemá žádný model, ale je splněná vždy.
+$T$ je potom sporná.
+
+Pokud $A→B$, pak také $A|=B$.
+Taktéž plyne, že pokud $T|=A$ a $T|=A→B$, pak $T|=B$.
+
+Odvozovací pravidlo (modus ponens):
+$A \land A→B →→ B$
+
+Další otázka, tedy, jestli se něco dá dokázat.
+K tomu slouží formální systém výrokové logiky.
+
+\subsection{Formální systém výrokové logiky}
+→•
+• Jazyk
+• Axiomy
+• Odvozovací pravidlo
+• Důkazy
+• Důkazy z předpokladů
+• Věta o dedukci
+←•
+
+Pro redukci počtu axiomů se používají jen některé logické spojky, např. negaci a implikaci.
+
+\subsection{Axiomy}
+→•
+• $(A→(B→A))$
+• $(A→(B→C))→((A→B)→(A→C))$
+• $(\overline{B} → \overline{A}) → (A → B)$
+←•
+
+Protože pro každou formuli $A,B,C$ vznikne nový axiom, toto jsou jen \name{schémata axiomů}.
+Jednotlivé odvozené axiomy nazýváme \name{instance}.
+
+Pokud jsou všechny formule tautologie, cokoliv odvozené pomocí axiomů a odvozovacího pravidla je také tautologie.
