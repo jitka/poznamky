@@ -1,0 +1,29 @@
+\name{Databáze} je logicky uspořádaná kolekce navzájem souvisejících dat.
+
+Je sebevysvětlující, data jsou uchovávána i s popisy/metadaty.
+
+\subsection{Důvody}
+→•
+• Sdílení dat
+• Unifikované rozhraní
+• Znovuvyužitelnost
+• Bezespornost
+• Zamezení redundance
+←•
+
+Je třeba udělat datovou analýzu -- jaká data, jak se strukturují…
+
+\subsection{E-R modelování}
+Pro \uv{plochá} data, tabulky.
+Entity-relationship.
+
+Entita -- obdélníček, představuje nějaký druh dat.
+Čudlíky na šťopkách -- jednotlivé vlastnosti entity.
+Každá entita musí být identifikovatelná.
+
+Vztah -- kosočtverec.
+Může mít taky atributy.
+
+Slabý entitní typ -- identifikátor je více prvků.
+
+Možná dědičnost.
