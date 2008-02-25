@@ -1,0 +1,8 @@
+\name{Elementární kružnice} vzhledem ke kostře $(V,K)$ je kružnice v grafu $(V,K\cup@{e@})$, kde $e∈E-K$.
+
+$C(G)$ je vektorový prostor kružnic nad $GF(2)$ dimenze $\len{E}-\len{V}+k$, $k$ je počet komponent.
+Elementární kružnice k libovolné kostře tvoří bázi $C(G)$.
+
+\proof
+Elementární kružnice jsou lineárně nezávislé.
+Generují celý prostor $C(G)$.
