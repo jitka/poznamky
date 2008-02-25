@@ -1,5 +1,5 @@
 D:=..
-RTXS:=$(wildcard *.rtx) ../defs.rtx
+RTXS:=$(wildcard *.rtx) $D/defs.rtx
 RTDS:=$(wildcard *.rtd)
 
-include ../build/Makefile.bottom
+include $D/build/Makefile.bottom
