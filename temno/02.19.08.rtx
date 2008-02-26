@@ -54,7 +54,7 @@ $(∀a)(∃z)(∀x)((x∈z)←→((x∈a)\land φ(x)))$ -- je axiom teorie množ
 • Axiom dvojice: $(∀a)(∀b)(∃z)(∀x)((x∈z)←→((x=a)\lor (x=b)))$ -- Libovolné dvě množiny tvoří dvouprvkovou množinu.
 • Axiom sumy: $(∀a)(∃z)(∀x)((x∈z)←→(∃y)((x∈y)\land(y∈a)))$ -- Ke každé množině existuje množina všech prvků, náležející nějakému prvku množiny $a$.
 • Axiom potence: $(∀a)(∃z)(∀x)((x∈z)←→(x@⊂a))$ -- Ke každé množině existuje množina všech podmnožin.
-• Schéma axiomů: Je-li $φ(u,v)$ formule, která neobsahuje volné proměnné $w$ a $z$, potom formule $(∀a)(∀v)(∀w)((φ(u,v)\landφ(u,w))→→(v = w))→→(∀a)(∃z)(∀v)((v∈z)←→(∃u)((u∈a)\landφ(u,v)))$ je axiomem teorie množin.
+• Schéma axiomů nahrazení: Je-li $φ(u,v)$ formule, která neobsahuje volné proměnné $w$ a $z$, potom formule $(∀u)(∀v)(∀w)((φ(u,v)\landφ(u,w))→→(v = w))→→(∀a)(∃z)(∀v)((v∈z)←→(∃u)((u∈a)\landφ(u,v)))$ je axiomem teorie množin.
 Zobrazení na množinu.
 • Axiom nekonečna: $(∃z)(\emptyset∈z)\land (∀x)((x∈z)→→(x\cup @{x@}∈z))$ -- existuje nekonečná množina.
 • Axiom frustrovanosti: $(∀a)((a\neq \emptyset)→→(∃x)((x∈a)\land( x\cup a = \emptyset)))$.
