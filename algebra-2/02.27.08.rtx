@@ -1,0 +1,42 @@
+$S(·,1)$ je komutotivní monoid s krácením.
+
+\note{}
+Každý prvočinitel je ireducibilní.
+Pokud $∀a,b ∃ NSD(a,b) →→$ každý ireducibilní prvek je prvočinitel.
+
+\proof
+Nechť $p$ je prvočinitel.
+$p=a·b, a,b∈S$.
+$a\backslash p, b\backslash p$.
+$p\backslash a·b→→p\backslash a (p||a) \lor p\backslash b(p||b)$.
+
+$p$ ireducibilní.
+$p\backslash a·b$, nechť $p\not\backslash a$.
+Existuje $n$ je $NSD(p,a)$.
+$p=n·x$, je ireducibilní, pak $p||n \lor p||x$.
+Dle předpokladu $p\not\backslash a$, tedy $p||x$.
+$n$ je invertibilní, tedy $1$.
+
+Existuje největší společný dělitel $NSD(p·b, a·b)$.
+Tedy $p\backslash b$.
+
+\statement{}
+Nechť každý ireducibilní prvek $S(·,1)$ je prvočinitelem. Nechť $p_1, …, p_n$ a $q_1, …, q_m∈S$ posloupnosti ireducibilních prvků, pro něž platí, že součuin $\Π_{i=1}^n || \Π_{i=1}^m$. Potom $n = m$ a existuje bijekce $σ$ mezi posloupnostmi takové, že $p_i||q_{σ(i)}$.
+
+\proof
+Indukcí dle $n$.
+$n=1$ je zřejmý.
+
+Je-li $R(+,·,-,0,1)$ obor integrity, pak jeho $NSD$, ireducibilní prvky, prvočinitele, invertibilní prvky jsou definovány jako totéž na $R-@{0@}(·,1)$.
+
+Obor integrity $R(+,·,-,0,1)$, v němž jsou všechny ideály hlavní, tj. tvaru $aR=@{a·r;r∈R@}$.
+Pak mu říkáme \name{Obor integrity hlavních ideálů}.
+
+\note{}
+Je-li $R$ obor integrity hlavních ideálů a $a_1,…,a_n∈R$, pak existují $u_1,…,u_n∈R$ takový, že $\Σ_{i=1}^n a_i·u_i$ je $NSD(a_1,…,a_n)$.
+
+\statement{}
+Nechť $R$ je obor integrity hlavních ideálů.
+Každý ireducibilní prvek je prvočinitelem.
+Pro každý nenulový neinvertibilní prvek $a∈R$ existuje posloupnost ireducibilních prvků $p_1,…,p_n$ takové, že $a= Π_{i=1}^n$.
+Jestliže $a=Π_{i=1}^m q_i$, pak $m=n$ a $∃$ bijekce $σ; p_i || r_{σ(i)}$.

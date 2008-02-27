@@ -2,12 +2,12 @@
 Řekneme, že $S(·, 1)$ je \name{komutativní monoid s krácením}, je-li $·$ komutativní a asociativní a funguje tam krácení:
 $∀a,b,c∈S;a·b=a·c → b= c$.
 
-V $S(·,1)$ řekneme, že \name{$a$ dělí $b$} ($a/b$), $a,b∈S$, jestliže $∃c∈S;b=a·c$.
+V $S(·,1)$ řekneme, že \name{$a$ dělí $b$} ($a\backslash b$), $a,b∈S$, jestliže $∃c∈S;b=a·c$.
 
-$a$ je \name{asociováno} s $b$ ($a||b$), pokud $a/b\land b/a$.
+$a$ je \name{asociováno} s $b$ ($a||b$), pokud $a\backslash b\land b\backslash a$.
 
 \note{
-	Je-li $R(+,·,-,0,1)$ obor integrity a $a,b∈\R-@{0@}$, pak $a/b$ (v $R-@{0@}(·,1)$) $←→b·\R@⊂a·\R$.
+	Je-li $R(+,·,-,0,1)$ obor integrity a $a,b∈\R-@{0@}$, pak $a\backslash b$ (v $R-@{0@}(·,1)$) $←→b·\R@⊂a·\R$.
 	$a||b←→ a·\R=b·\R$.
 
 	\proof
@@ -26,9 +26,9 @@ $a$ je \name{asociováno} s $b$ ($a||b$), pokud $a/b\land b/a$.
 }
 
 $a,b,c,d,a_1,…,a_n∈S$. Řekneme, že $c$ je \name{největší společný dělitel} prvků $a_1, …, a_n$ ($c$ je $NSD(a_1, …, a_n)$),
-$c/a_i\land ( d/a_i→→d/c )$.
+$c\backslash a_i\land ( d\backslash a_i→→d\backslash c )$.
 
-O prvku $c$ řekneme, že je \name{prvočinitel}, jestliže není invertibilní a platí $c/(a·b)→→c/a\lor c/b$.
+O prvku $c$ řekneme, že je \name{prvočinitel}, jestliže není invertibilní a platí $c\backslash (a·b)→→c\backslash a\lor c\backslash b$.
 
 Řekneme, že $c$ je \name{nerozložitelný} (ireducibilní), jestliže není invertibilní a platí $c=a·b→→ c || a \lor c || b$.
 
@@ -36,6 +36,6 @@ O prvku $c$ řekneme, že je \name{prvočinitel}, jestliže není invertibilní 
 	$a,b,c,d,e∈S$.
 	→•
 	• Nechť $d$ je $NSD(a,b)$ a $e$ je $NSD(a·c, b·c) →→ d·c || e$ (pokud oba dělitelé existují).
-	• Nechť $1$ je $NSD(a,b)$ a nechť $a/b·c$. Pokud existuje $NSD(a·c, b·c)→→a/c$.
+	• Nechť $1$ je $NSD(a,b)$ a nechť $a\backslash b·c$. Pokud existuje $NSD(a·c, b·c)→→a\backslash c$.
 	←•
 }
