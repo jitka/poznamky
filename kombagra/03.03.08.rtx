@@ -1,0 +1,40 @@
+\name{Laplacova matice} grafu $G$ je matice $L_G$. Na diagonále jsou stupně vrcholů, jiné jsou buď $0$, pokud tam nevede hrana a $-1$, pokud hrana vede.
+
+\statement{}
+Pokud vezmu laplacovu matici, škrtnu libovolný řádek a odpovídající sloupec a vezmu determinant, tak dostanu počet koster grafu $G$.
+
+\name{Matice incidence} $I_G$ je matice, řádky indexované vrcholy, sloupečky hranami a $1$ je tam, když vrchol patří do odpovídající hrany.
+
+Když vynásobím $I_G \times I_G^T$, tak dostávám matici sousednosti $+$ matice mající na diagonále stupně.
+
+Laplacova matice je $Deg_G -A$ ‒ tedy stupně na diagonále mínus matice sousednosti.
+
+\name{Matice sousednosti orientovaného grafu} ‒ všechny hrany zorientuji a dám jim tudíž znaménko jedním směrem.
+Když tuto vynásobím, tak dostanu laplacovu matici.
+
+\lemma{}
+Když $\vec{E}$ je libovolná orientace grafu $G$, pak $D_G\times D_G^T=L_G$.
+
+\proof
+Kdekoliv začíná nebo končí nebo začíná hrana, tak se na diagonálu přičte $1$.
+U ostatních musí vycházet $-1$, protože jeden konec je kladný a jeden záporný.
+Když tam není hrana, tak mi vyjde $0$.
+
+$L_G^* = D_G^*\times @(D_G^*@)^T$.
+(S vyškrtnutými řádky).
+
+Determinant součinu dvou nečtvercových matic se dělá tak, že se vezmou všechny „největší“ podmatice a příslušným způsobem se vydeterminantí, to všechno se nakonec sečte.
+
+Když si to rozmyslíme, jak je to s tím sčítáním, vyškrtnutým řádkem a výběrem sloupečků, vždy bereme $n-1$ hran.
+Determinantek je buď $0$ (pokud to není kostra) a nebo $\pm 1$, ale protože se násobí sám sebou, vždy se přičte jednička.
+
+Pokud není kostra, pak není souvislý a je tam nulový sloupek.
+Opačně dokážu indukcí trháním vrcholů ‒ dokážu, že můžu přeuspořádat na jedničky na diagonále a samé nuly nad diagonálou.
+
+\name{Multigraf} je trojice $G=(V,E,φ)$, kde $φ:E→V^2$.
+
+\name{Kontrakce hrany} je sloučení dvou vrcholů dohromady na koncích jedné hrany.
+Značí se tečkou (v případě jednografů) nebo dvojtečkou (u multigrafů).
+
+\statement{}
+Počet koster grafu $G$ je $1$, pokud $V=1$, pokud je nesouvislý, tak nemá žádnou kostru, smyčky neovlivňují počet koster a když $t$ je hrana, pak je počet koster v $G$ roven počtu koster v $G$ bez $t$ a počet koster v $G$ s $t$ skontrahovaným.

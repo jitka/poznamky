@@ -35,6 +35,9 @@ exec sed -e 's/α/\\alpha /g;
 	s/ι/\\iota /g;
 	s/Ι/\\Iota /g;
 	s/°/^\\circ /g;
+	s/‒/{--}/g;
+	s/„/{\\quotedblbase}/g;
+	s/“/{\\textquotedblleft}/g;
 
 	s/@</\\left< /g;
 	s/@>/\\right> /g;
