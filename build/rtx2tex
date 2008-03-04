@@ -73,5 +73,6 @@ exec sed -e 's/α/\\alpha /g;
 	s/←-→/\\leftrightarrow /g;
 	s/←→/\\Leftrightarrow /g;
 	s/-→/\\longrightarrow /g;
-	s/→/\\to /g
+	s/→/\\to /g;
+	s/←/\\leftarrow /g;
 	'
