@@ -1,0 +1,39 @@
+\section{Okruhy polynomů}
+
+Mějme $R(+,·,-,0,1)$ okruh, $M(·,e)$ monoid.
+$R@[M@] = @{p:M→R;\len{@{m∈M;p(m)\neq 0@}} < \infty@}$ ‒ všechna zobrazení z monoidu do okruhu a jen konečně mnoho jich je nenulových.
+
+$$p=\Σ_{m∈M}p(m)·m$$
+
+Členy, kde $p(m) = 0$ můžeme vynechat.
+
+Nulární prvek je $p(?) = 0$.
+Jednička $1(e) = 1, 1(?\neq e) = 0$.
+
+$p,q∈R@[M@]$.
+
+\begin{eqnarray*}
+-p &=& \Σ_{m∈M}-p(m)·m\\
+p+q &=& \Σ_{m∈M}@(p@(m@)+q@(m@)@)·m\\
+p·q &=& \Σ_{m∈M}@(\Σ_{a,b∈M\atop a·b = m} p@(a@)·q@(b@)@)·m
+\end{eqnarray*}
+
+\note{}
+Nechť $R(+,·,-,0,1)$ a $M(·,e)$ monoid.
+→•
+ • Množina $R@[M@]@(+,·,-,0,1@)$ je okruh, jsou-li $R$ a $M$ komutativní, je i $R@[M@]$ komutativní.
+ • Zobrazení $i:R→R@[M@]$, kde $i(r) = r·e$ je prostý okruhový homomorfizmus.
+ • Zobrazení $v:M→R@[M@]$, kde $v(m) = 1·m$ je prostý monoidový homomorfizmus.
+←•
+
+\proof
+$R@[M@]@(+,-,0@)$ je komutativní grupa.
+Jde přímo z definice.
+Také $R@[M@]@(·,1@)$ musí být monoid.
+Násobení je podezřelé, je třeba dokázat korektnost ‒ ty sumy musí být konečné, stačí vynechat nulové prvky.
+Nakonec distributivitu.
+
+Obě zobrazení jsou zřejmě prostá, stačí ověřit homomorfizmy.
+
+$R@[M@]$ nazýváme \name{monoidový okruh}.
+Uvážíme-li monoid $\N_0(+,0)$, pak $R@[\N_0@]$ budeme nazývat okruhem \name{polynomů jedné neurčité} a budeme často psát $R@[x@]$.
