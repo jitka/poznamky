@@ -1,0 +1,51 @@
+\section{Latinské čtverce a konečné projektivní roviny}
+\name{Latinský čtverec} je čtvercová matice je $L∈A^{n\times n}$, $\len{A} = n$, v každém řádku a každém sloupci se nachází permutace prvků z $A$.
+
+Latinské čtverce $L$ a $L'$ jsou \name{ortogonální} ($L\perp L'$), pokud $∀a,b∈A∃i,j;L_{i,j} = a \land L'{i,j} = b$.
+Jako důsledek plyne, že je tam každá dvojice právě jednou.
+
+\statement{}
+Nechť $L_1,L_2,…,L_t$ jsou navzájem ortogonální latinské čtverce velikosti $n$, pak $t≤n-1$.
+
+\proof
+Předpokládejme, že $A=@{1,2,…,n@}$
+
+\lemma{}
+$L,L'∈A^{n\times n}, π:A→A$ permutace.
+Pak $π(L)$ je čtverec po přejmenování symbolů.
+Potom $L\perp L' ←→ π(L) \perp L'$.
+
+\proof
+První a druhý čtverec nemusí mít stejnou abecedu, tedy přejmenování abecedy nehraje žádnou roli.
+
+Můžu přerovnat první řádky tak, aby byly stejné.
+Tedy, v prvním sloupečku už nemůže být další jednička.
+A musí se lišit v těchto místech, protože stejné už jsou v minulém řádku.
+
+\name{Konečná projektivní rovina} je množinový systém $(B,\mathcal{P}), \mathcal{P}@⊂\mathcal{P}(B)$.
+Prvky množiny $B$ se nazývají body a $B$ je konečné.
+Prvky $\mathcal{P}$ se nazývají přímky.
+Musí splňovat následující podmínky:
+→•
+ • Každé dva body jsou obsaženy v některé přímce.
+ • $∀P\neq Q∈\mathcal{P}:\len{P\cap Q} = 1$.
+ • Existují takové $4$ body takové, že žádné $3$ z nich neleží na jedné přímce.
+←•
+
+\lemma{}
+$∀$ konečnou projektivní rovinu $(B,\mathcal{P})$ existuje nějaké číslo $n;∀P∈\mathcal{P};\len{P} = n+1, ∀x∈B;\len{@{P|x∈P@}} = n + 1;\len{B}= \len{\mathcal{P}} = n^2+n+1$.
+
+\proof
+Každé dvě přímky mají stejný počet bodů.
+Mějme dvě přímky, ty se protínají v nějakém bodě, existuje nějaký další bod, který není ani v jedné.
+Z něj vedeme přímku bodem jedné přímky a dostaneme jiný bod na druhé přímce, který tomu odpovídá.
+
+Nyní si vezmu jednu „základní“ přímku a z ní dva body, z každé pustím $n$ přímek, musí se poprotínat na dalších $n^2$ bodů, dokáže se, že to je všechno.
+
+Toto $n$ nazývám \name{řád}.
+
+\statement{}
+$∃$ konečná projektivní rovina řádu $n$, pokud $∃n-1$ navzájem ortogonálních latinských čtverců.
+
+Představím si „šachovnici“ z minulého důkazu, každý čtverec popisuje jeden takový svazek ze zbylého vrcholu.
+Tímto udělám vzájemné mapování.
