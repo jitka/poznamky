@@ -2,6 +2,7 @@
 \usepackage[czech]{babel}
 \usepackage{graphicx}
 \usepackage{amsfonts}
+\usepackage{amssymb}
 
 \setlength{\parskip}{0.45em}
 \setlength{\parindent}{0pt}
