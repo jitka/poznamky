@@ -1,0 +1,101 @@
+\section{Ordinály}
+Množina $x$ se nazývá \name{tranzitivní}, jestliže platí $(∀y)(y∈x→→ y@⊂x)$.
+
+Množina $x$ se nazývá \name{ordinál}, je-li tranzitivní, dobře uspořádaná pomocí $∈$.
+
+\statement{O ordinálech}
+→•
+ • Je-li $x$ ordinál a je-li $y∈x$, pak $y$ je ordinál a $y=@<@(←,y@),∈@>$.
+ • Jsou-li $x, y$ ordinály a $x\cong y$, pak $x=y$
+ • Jsou-li $x, y$ ordinály, pak platí právě jedna z následujících možností:
+ →•
+  • $x∈y$
+  • $y∈x$
+  • $x = y$
+ ←•
+ • Jsou-li $x,y,z$ ordinály, $x∈y\land y∈z→→ x∈z$
+ • Je-li $C\neq \emptyset$ množina ordinálů, pak $(∃x∈C)(∀y∈C)(x∈y\lor x = y)$.
+←•
+
+\proof
+$x$ je ordinál, dokážeme, že $y$ je tranzitivní. Zvolme libovolně $t∈y,z∈t$, víme, že $x$ je tranzitivní.
+$t∈x\land y∈x$. Protože $x$ je tranzitivní, $t∈x$. $x$ je tranzitivní, proto $z∈x$.
+
+Tedy $y,z,t∈x, t∈y,z∈t$. $∈$ je uspořádání na $x$, tedy $z∈y$.
+
+Na množině $y$ je relace $∈$ uspořádání. Nechť tedy $u,v,w∈y$. Předpokládejme, že $u∈v,v∈w$.
+$x$ je tranzitivní množina a $y∈x$, pak i $u,v,w∈x$.
+Množina $x$ je relací $∈$ uspořádaná, pak $u∈w$.
+
+$@<y,∈@>$ je dobře uspořádaná. Buď $C@⊂y$, $C\neq \emptyset$.
+$y∈x,(∀t∈C);t∈y,x$ tranzitivní, $C@⊂x, C\neq \emptyset\land @<x,∈@>$ dobře uspořádaná, existuje $u∈C$ nejmenší prvek množiny $C$, tedy má nejmenší prvek v $C@⊂y$.
+
+$x$ ordinál, $y∈x$. $t∈@<@(←,y@),∈@>←→t∈y$.
+
+Nechť $x,y$ ordinály a existuje izomorfizmus $h$ mezi nimi.
+Kdybychom měli, že $x=@{z;z∈y@}$, pak to jen znamená, že $x=y$.
+
+Ale $y=@{h(z);z∈x@}$.
+Vezměme si $m=@{z∈x;h(z)\neq z@}$.
+Chtěli bychom, aby byla prázdná.
+
+Nechť tedy $m\neq \emptyset$. Protože $x$ je dobře uspořádaná, tak množina $m$ má nejmenší prvek $t$.
+Kdykoliv $z∈t$, pak $h(z)=z$.
+$h(t) = @{h(z);z∈t@}$. Tedy, neliší se v žádné své podmnožině.
+Spor s tím, že se liší.
+
+Mějme $x,y$ dva ordinály.
+Podle věty o dobře uspořádaných množinách buď $x\cong y→→x=y$. Nebo je izomorfní s počátečním úsekem (buď jedním nebo druhým směrem), tedy se s ním opět rovná.
+
+$z$ je ordinál, tedy tranzitivní množina, $y∈z$ a $x∈y$, tedy $x∈z$.
+
+Mějme $C\neq\emptyset$ množinu ordinálů.
+Existuje $t∈C$, vybereme libovolně.
+Pokud platí, že $(∀y∈C)(y=t\lor t∈y)$. Potom je $t$ nejmenší prvek množiny $t$.
+Pokud platí, že $(∃y)(y∈C\land y∈t)$. Pak vezmu $m=@{y∈C;y∈t@}\neq \emptyset$.
+$t$ je ordinál, tedy existuje $x$ nejmenší prvek množiny $m$ a $x$ je nejmenší prvek množiny $C$.
+
+\statement{}
+$$(\not\exists z )(∀x)(x\hbox{ je ordinál } →→ x∈z)$$.
+
+\proof
+Sporem. Kdyby existovalo, tak $z$ je tranzitivní, dobře uspořádaná, tedy $z$ je ordinál a tedy obsahuje sám sebe.
+Pro žádný ordinál neplatí, že $x∈x$.
+
+\lemma{}
+Je-li $a$ množina ordinálů a platí-li $(∀x∈a)(∀y∈x)y∈a$, pak $a$ je ordinál.
+
+\proof
+$a$ je tranzitivní. Každé dva ordinály lze porovnat dle věty o ordinálech.
+
+\statement{}
+Věta o izomorfizmu dobře uspořádané množiny a ordinálu.
+
+Je-li $@<a,r@>$ jakákoliv dobře uspořádaná množina, pak existuje právě jeden ordinál $c$ tak, že $@<a,r@>\cong @<c,∈@>$.
+
+\proof
+Buď $c,d$ ordinály, předpokládejme, že $@<a,r@> \cong @<c,∈@>\land @<a,r@>\cong @<d,∈@>$. Složíme a dostáváme, že $@<c,∈@>\cong @<d,∈@>$. Podle věty o ordinálech jsou si rovny.
+
+Položme $b=@{e∈a;(∃x);(x\hbox{ je ordinál }\land @<x,∈@>\cong @<@(←,c@),r@>)@}$.
+
+Nechť $f$ je funkce definovaná izomorfizmem s počátečními úseky.
+
+\TODO{WTF??}
+
+Je-li $@<a,r@>$ dobře uspořádaná množina, \name{typ} $@<a,r@>$ je jediný ordinál $c$, že $@<a,r@>\cong c$.
+
+Ordinály budeme značit malými řeckými písmeny.
+$$α<β ←→ α∈β, α≤β ←→ (α∈β\lor α=β)$$.
+
+Je-li $X$ množina ordinálů, označme $\sup X = \bigcup X$.
+Pokud $X\neq \emptyset$, označme $\min X = \bigcap X$.
+
+\lemma{}
+→•
+ • Pro ordinály $α,β, α≤β←→ α@⊂β$.
+ • Je-li $X$ množina ordinálů, pak $\sup X$ je nejmenší ordinál, který větší nebo roven všem prvkům množiny $X$.
+ • Je-li $X$ neprázdná množina ordinálů, pak $\min X$ je nejmenší prvek množiny $X$.
+←•
+
+
+
