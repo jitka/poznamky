@@ -1,0 +1,64 @@
+
+\note{}
+Nechť $S(+,·,-,0,1)$ je okruh.
+$R$ nějaký jeho podokruh, $α∈S$. Potom zobrazení $γα:R@[x@]→S$ daná přepisem $$γα(\Σ_{n∈\N_0}a_n\times x^n) = \Σ_{n∈\N_0}a_n·α^n$$ je homomorfizmus. (Toto znamená dosazení)
+
+\proof
+Přímočaré ověření slučitelností s $(+,-,0,·,1)$.
+Buď $R(+,·,-,0,1)$ okruh a $p∈R@[x@]$. Je-li $p\neq 0$, nazvu číslo $p°:=\max@{n;p@(n@)\neq 0@}$ \name{stupeň polynomu $p$}.
+
+Stupeň $0° = -1$.
+
+\note{}
+Buď $R(+,·,-,0,1)$ (komutativní) okruh a $p,q∈R@[x@]$. Pak platí:
+↑•
+ • $$p° = (-p)°$$
+ • $$(p+q)°≤\max@{p°,q°@}$$
+ • je-li $p,q\neq 0$, pak
+   $$(p·q)°≤ p°+q°$$
+ • Jestliže $R$ je obor integrity, pak
+   $$(p·q)°= p°+q°$$
+ • $R$ je obor integrity $←→R@[x@]$ je obor integrity.
+ • $p$ je invertibilní prvek a $R$ je obor integrity $←→p°=0\land p(0)$ je invertibilní v $R$.
+↓•
+
+\proof
+↑•
+ • Zřejmé.
+ • Sčítáme po složkách, ze dvou nulových nikdy nemůže vyjít nenula.
+ • Nechť jsou oba stupně nenulové a $n>$ součet stupňů.
+   Je zřejmé, že koeficient vyjde nulový.
+ • Je-li $R$ obor integrity, pak nejvyšší koeficient je nenulový, je to jen jeden součin, který je nenulový (součin dvou nenulových).
+ • Obě implikace. Když $R$ je obor integrity, tak $p,q\neq 0$, součet jejich stupňů je větší než $-1$.
+   Opačně. Vezmu všechny polynomy stupně $0$, ty zobrazím na prvky $R$. Pokud jsou nenulové, jejich součin není $0$ v polynomech, tedy ani v $R$.
+ • Nechť $p$ je invertibilní. Tedy $∃q∈R@[x@];p·q=1$. $1°=0,p,q\neq 0$, tedy stupně obou musí být $0$.
+   (Vynecháváme triviální případy, kdy $0=1$)
+   Zbytek plyne z homomorfizmem všech polynumů stupně $0$ s $R$.
+
+   Na druhou stranu je zřejmé.
+↓•
+
+\statement{O dělení se zbytkem}
+Buď $R(+,·,-,0,1)$ obor integrity.
+$a,b∈R@[x@], b\neq 0$ a všechny $b_n$ jsou invertibilní v $R$.
+
+Potom existují polynomy $q,r∈R@[x@]$ atkové, že $a=q·b+r\land r°<b°$.
+
+\proof
+Pokud stupeň $a$ je menší, než stupeň $b$, pak položím $q=0$ a $r=a$.
+Ostatní indukcí postupným dělením.
+
+Buď $R(+,·,-,0,1)$ obor integrity a necť existuje $μ:R→\N\cup@{0,-1@}$ tak, že platí $∀a,b∈R,b\neq 0$:
+↑•
+ • $$bR@⊂aR:μ(a)≤μ(b)$$
+ • $$∃q,r:a=q·b+r;μ(r)<μ(b)$$
+↓•
+
+Pak $R$ nazvu \name{euklidovským oborem integrity} a funkce $μ$ je \name{euklidovská funkce}.
+
+\note{}
+Každý euklidovský obor integrity je obor integrity hlavních ideálů.
+
+\proof
+Buď $R(+,·,-,0,1)$ euklidovský obor integrity a $μ$ je příslušná euklidovská funkce.
+$I=@{0@}:I=0R$. Když $I$ je nenulový, tak si vezmu nejmenší takové $I$.

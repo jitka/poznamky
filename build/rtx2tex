@@ -66,6 +66,8 @@ exec sed -e 's/α/\\alpha /g;
 	s/·/\\cdot /g;
 	s/→•/\\begin{itemize} /g;
 	s/←•/\\end{itemize} /g;
+	s/↑•/\\begin{enumerate} /g;
+	s/↓•/\\end{enumerate} /g;
 	s/•/\\item  /g;
 	s/◦/\\item[$\\circ$]  /g;
 	s/→→/\\Rightarrow /g;
