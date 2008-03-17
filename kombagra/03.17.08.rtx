@@ -1,0 +1,12 @@
+\section{Vytvořující funkce}
+
+\name{Mocninná řada} je $a_0+a_1·x+a_2·x^2…$, kde $a_0,a_1,…∈\R$ jsou koeficienty.
+
+\statement{}
+Nechť $(a_0,a_1,…)$ je posloupnost reálných čísel.
+Nechť $∃K∈\R^+;\len{a_n}≤K^n$.
+Potom pro každé $x∈@(-\frac{1}{K},\frac{1}{K}@)$ řada $a(x)=\Σ_{i=0}^\infty a_ix^i$ konverguje a $a(x)$ můžeme považovat za funkci proměnné $x$.
+
+Tato funkce se nazývá \name{vytvořující funkce}.
+
+Potom $n$-tý koeficient této řady je $a_n=\frac{a^{(n)}(0)}{n!}$.
