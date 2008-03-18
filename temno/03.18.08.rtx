@@ -1,0 +1,110 @@
+
+Pro ordinál $α$ je \name{ordinální následník} ordinál $S(α) = α\cup@{α@}$.
+
+\lemma{}
+→•
+ • Je-li $α$ ordinál, pak $S(α)$ je ordinál.
+ • $α<S(α)$
+ • $(∀β)β<S(α)←→ β≤α$
+←•
+
+Ordinál $α$ se nazývá \name{izolovaný}, pokud $∃β$, že $α=S(β)$ nebo $α=\emptyset$.
+
+Pokud $α$ není izolovaný, pak se nazývá limitní.
+
+Ordinál $α$ je \name{přirozené číslo}, jestliže $(∀β)(β≤α→→β\hbox{ je izolovaný})$.
+
+\subsection{Axiom nekonečna}
+$$(∃x)(\emptyset∈x \land (∀y)(y∈x→→S(y)∈x))$$
+
+Tato množina určitě obsahuje všechna přirozená čísla.
+
+\proof
+Sporem. Postupně se takové přirozené číslo rozbalí až k nule.
+
+Tedy, můžeme vydělit množinu všech přirozených čísel. Označme ji $ω$.
+
+$ω$ je ordinál, neboť je tranzitivní množinou ordinálů.
+
+Všechny ordinály menší než $ω$ jsou izolované, zatímco $ω$ limitní ordinál (Kdyby ne, pak by $ω∈ω$. Tedy, $ω$ je nejmenší limitní ordinál.
+
+\statement{Peanovy axiomy teorie přirozených čísel}
+↑•
+ • $$0∈ω$$
+ • $$(∀n∈ω)(S(n)∈ω)$$
+ • $$(∀n,m∈ω)(n\neq m→→S(n)\neq S(m))$$
+ • Axiom indukce
+   $$(∀x)(X@⊂ω→→(0∈X\land (∀n)(n∈X→→S(n)∈X))→→X=ω$$
+↓•
+
+\proof
+První až třetí plyne z věty o ordinálech.
+
+Čtyřka sporem.
+$X\neq ω$, tedy $ω-X\neq \emptyset$, $ω$ je ordinál, tedy existuje $n∈ω-X$, n je nejmenší prvek množiny $ω-X$. Nastávají tyto možnosti:
+→•
+ • $n=0$ ‒ spor s jedničkou
+ • $n=S(m)$ pro nějaké $m$, $m∈X$, spor s dvojkou.
+←•
+
+Buď $α,β$ ordinály. \name{Ordinální součet} $α+β$ je typ $@<α\times@{0@} \cup β\times @{1@},R@>$, $R$ je lexikografické uspořádání zprava.
+
+\lemma{}
+Pro libovolné ordinály $α,β,γ$ platí:
+→•
+ • $α+(β+γ)=(α+β)+γ$
+ • $α+0=α$
+ • $α+1=S(α)$
+ • $α+S(β)=S(α+β)$
+ • Je-li $β$ limitní ordinál, pak $α+β=\sup @{α+ξ;ξ<β@}$
+←•
+
+\proof
+Z definice.
+
+Nemusí obecně platit, že je sčítání komutativní.
+
+Buď $α,β$ ordinály. \name{Ordinální součin} $α·β=@<β\times α,<_{LEX}@>$.
+
+\lemma{}
+Pro libovolné ordinály $α,β,γ$ platí:
+→•
+ • $α·(β·γ)$
+ • $α·0 = 0$
+ • $α·1 = α$
+ • $α·S(β) = α·β+α$
+ • Je-li $β$ limitní ordinál, pak $α·β=\sup@{α·ξ;ξ<β@}$
+←•
+
+Není obecně komutativní.
+
+\subsection{Kardinály}
+Buďte $a,b$ množiny.
+Řekněme, že mohutnost množiny $a$ menší nebo rovno mohutnosti množiny $b$, pokud existuje prosté zobrazení $a→b$.
+$a\preccurlyeq b$.
+
+Řekněme, že mohutnost množiny $a$ je rovna mohutnosti množiny $b$, pokud mezi nimi existuje bijekce.
+$a\approx b$.
+
+Říkáme, že mohutnost množiny $a$ je ostře menší než množiny $b$, pokud $a\preccurlyeq b \land a\not\approx b$, značíme $a\prec b$.
+
+\lemma{}
+↑•
+ • $x\approx x$
+ • $x\approx y →→ y\approx x$
+ • $(x\approx y \land y \approx z) →→ x\approx z$
+ • $x\preccurlyeq x$
+ • $(x\preccurlyeq y \land y\preccurlyeq z)→→x\preccurlyeq z$
+↓•
+
+\statement{Cantor-Bernstein}
+$$(a\preccurlyeq b \land b\preccurlyeq a) →→ a\approx b$$
+
+\proof
+$f$ je prosté $a→b$, $g$ je prosté $b→a$.
+
+Pokud je jedno z nich na, tak je hotovo.
+Tedy předpokládejme, že tomu tak není.
+
+Udělám inverzní zobrazení pro co jde a ziteruji pro zbytek „v menším“, iteruji donekonečna.
+\TODO{Tady je to dost neúplné}
