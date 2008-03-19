@@ -1,0 +1,53 @@
+
+\statement{Euklidův algoritmus}
+Nechť $R(+,·,-,0,1)$ je Euklidův obor integrity s euklidovskou normou $μ$ a $a_0,a_1\neq 0$.
+
+Definujme posloupnost $@{a_i@}$ a $@{q_i@}$.
+Jestliže $a_i\not|a_{i-1}$, pak vezmu $q_i$ a $a_{i+1}:a_{i-1}= a_i·q_i + a_{i+1}$, kde $μ(a_{i+1})<μ(a_i)$.
+
+Jestliže $a_i|a_{i-1}$, posléze $n=a_i$ a proces končí.
+
+\proof
+Proces končí po konečně mnoha krocích a $a_n$ je $NSD(a_0,a_1)$.
+
+Definujme dvojici posloupností $@{x_i@}$ a $@{y_i@}$, $x_0=y_1=1,x_1=y_0=0$, $x_{i+1} = x_{i-1} - x_i, y_{i+1}= y_{i-1}-y_i·q_i$.
+Potom $x_n·a_0 +y_n·a_1$ je $NSD(a_0,a_1)$.
+
+\proof
+$NSD$ existuje, neboť je to obor integrity hlavních ideálů.
+
+$NSD(a_i,a_i+1)$ je $NSD(a_{i-1}, a_i)$.
+
+Dále indukcí.
+
+Buď $S$ okruh, $R$ podokruh $S$ a $α∈S$. Řekneme, že $α$ je \name{kořenem polynomu} $p∈R@[x@]$, jestliže $jα(P)=0$.
+
+\name{Kořenovým činitelem} nazveme polynom $x-α:=(-α·x^0+1·x^1)$.
+
+Řekneme, že polynom $p∈R@[x@]$ se \name{rozkládá} na kořenové činitele, jestliže $∃a,α_1,…α_n∈R$
+a platí, že $p=a·(x-α_1)·(x-α_2)·…·(x-a_n)$.
+
+\note{}
+$α$ je kořenem polynomu $p←→(x-α)|p$.
+
+Buď $R(+,·,-,0,1)$ komutativní okruh, $\Σ_{n∈\N_0}p_nx^n∈R@[x@]$.
+Definujme \name{formální derivaci}:
+$$('):R@[x@]→R@[x@]$$
+$$(\Σ p_nx^n)':= \Σ(n+1)p_{n+1}x^n$$
+
+Řekneme, že $α∈R$ je \name{vícenásobný kořen} polynomu $p$, jestliže $(x-α)^2|p$.
+
+\note{}
+Buď $R$ komutativní okruh a $p,q∈R@[x@]$ a $c∈R$. Pak platí:
+→•
+ • $(p+q)' = p'+q'$
+ • $(c·p)' = c·p'$
+ • $(p·q)' = p'·q + p·q'$
+←•
+
+\proof
+Viz analýza.
+
+\note{}
+Buď $p$ polynom nad $R$.
+$α$ je vícenásobný kořen $←→α$ je kořen $p'$.
