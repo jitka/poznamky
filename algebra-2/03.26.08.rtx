@@ -1,0 +1,51 @@
+\follows{}
+Nechť $R(+,·,-,0,1)$ je obor integrity, $p∈R@[x@]$. Jestliže $1$ je $NSD(p,p')$, potom $p$ nemá vícenásobný kořen.
+
+\follows{}
+Nechť $R(+,·,-,0,1)$ je obor integrity, jehož charakteristika nedělí číslo $n∈\N$.
+Potom polynom $x^n-1$ a $x^{n+1}-x$ nemají vícenásobný kořen.
+
+(Nesmí to být triviální okruh.)
+
+\proof
+Zkusí se zderivovat.
+
+\statement{}
+Každá konečná podgrupa grupy $T-@{0@}(·,-1,1)$ tělesa $T(+,·,-,0,1)$ je cyklická.
+
+\proof
+$G$ buď nějaká konečná podgrupa této grupy. $n:=\len{G}$.
+
+(viz minulý semestr)
+$∀k|n∃!$ podgrupa $K$ grupy $\Z_n$.
+
+$K$ je také cyklická, tedy izomorfní s $\Z_k$.
+
+v $\Z_n∃$ právě $φ(k)$ prvků, které generují.
+
+$$∀g∈G;@<g@>/n$$
+$∀k/n$ označíme $t_n:=\len{@{g∈G;\len{@<g@>}=k@}}$.
+
+\TODO{?}
+
+\section{Pořadová a rozkladová tělesa}
+
+Mějme okruhy $R(+,·,-,0,1)$ a $S(+,·,-,0,1)$ a $f:R→S$ jejich homomorfizmus.
+Definujme zobrazení $f_x:R@[x@]→S@[x@]$ přepisem $f_x@(\Σa_ix^i@)=\Σf@(a_i@) x^i$.
+
+\note{}
+Buď $R$, $S$ a $T$ okruhy a $f:R→S, g:S→T$ okruhové homomorfizmy.
+Pak platí:
+↑•
+ • $f_x$ je homomorfizmus okruhů $R@[x@]$ a $S@[x@]$.
+ • $(g.f)_x=g_x.f_x$
+ • $f_x$ je izomorfizmus $←→f$ je izomorfizmus.
+ • Pokud napřed provedu zobrazení a pak dosadím je totéž, jako když dosadím a pak převedu.
+↓•
+
+\note{}
+Nechť $T(+,·,-,0,1)$ je komutativní těleso a $u∈T$ je polynom stupně alespoň $1$.
+Pak faktor $T@[x@]/uT@[x@]$ je komutativní těleso $←→u$ je ireducibilní polynom.
+
+\note{}
+Buď $T(+,·,-,0,1)$ těleso a $u∈T@[x@]$. Pak zobrazení $μ:T→T@[x@]/uT@[x@]$ dané předpisem $t=@[tx^0@]$ je prostý okruhový homomorfizmus.
