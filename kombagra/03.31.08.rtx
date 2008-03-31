@@ -1,0 +1,34 @@
+\section{Hamiltonovská kružnice}
+
+Sled, který navštíví každý vrchol právě jednou, kromě jednoho, kde začne a skončí, se nazývá \name{hamiltonovská kružnice}.
+Graf, který obsahuje hamiltonovskou kružnici se nazývá \name{hamiltonovský}.
+
+Nalezení (či jen ověření, že existuje) hamiltonovské kružnice je $NP$ úplný problém.
+
+\statement{}
+Jestliže pro každý jeho vrchol platí, že jeho stupeň $≥\frac{n}{2}$, pak obsahu hamiltonovskou kružnici.
+
+\statement{}
+Pokud pro každé dva vrcholy platí, že součet jejich stupňů je $≥n$, pak má hamiltonovskou kružnici.
+
+\statement{}
+Pokud pro každé dva vrcholy, které nejsou spojeny hranou platí, že součet jejich stupňů je alespoň $n$, pak má hamiltonovskou kružnici.
+
+\proof
+Pro graf $G$ zkonstruujeme chvátalův uzávěr $@[G@]$ takto:
+Jestli existují dva vrcholy, jejichž součet stupňů je větší roven než $n$ a nejsou spojeny hranou.
+Pak takovou hranu přidám. Iteruji, dokud to jde.
+
+Toto nezávisí na pořadí přidávání.
+
+Graf $G$ je hamiltonovský $←→@[G@]$ je hamiltonovský. Přímá implikace je zřejmá.
+
+Nechť $G+@{u,v@}$ má hamiltonovskou kružnici.
+Buď $@{u,v@}$ do kružnice nepatří, pak není co řešit. Tedy tam patří.
+
+Protože součet jejich stupňů je alespoň $n$, pak musí existovat dva sousední vrcholy, z nichž jeden je dosažitelný z $u$ a druhý z $v$. Tedy přepojíme ‒ začneme v $u$, dojdeme po původní kružnici do druhého vrcholu, z něj do $v$, do prvního vrcholu a do $u$.
+
+Uzávěr tohoto grafu je úplný graf. Takový zjevně má hamiltonovskou kružnici.
+
+Úloha obchodního cestujícího: to je nejkratší hamiltonovská kružnice.
+
