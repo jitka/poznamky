@@ -1,0 +1,87 @@
+
+Značení: $T(+,·,-,0,1)$ komutativní těleso, $u∈T@[x@]$ ireducibilní polynom.
+$T@[x@]/u·T@[x@] = T@[x@]/\sim_u=(T@[x@])_u$. $a\sim_u b \equiv b-a∈T@[x@]\equiv u|b-a$.
+
+$T→(T@[x@])_u$, $t→t·x^]+u·T@[x@] = @[t·x^0@]_{\sim_u}$.
+
+\statement{}
+Nechť $T$ je komutativní těleso, $u∈T@[y@], u = \Σa_iy^i$ je ireducibilní, potom má polynom $\Σa_ix^i∈T@[x@]$ má kořen v tělese $(T@[y@])_u$.
+
+\proof
+$1·y^1+u·T@[y@]$ je kořen polynomu.
+Dokáže se rozepsáním a dosazením.
+
+Nechť $U(+,·,-,0,1)$ je komutativní těleso. Řekneme, že $T@⊂U$ je \name{podtěleso}, je-li to podokruh $U(+,·,-,0,1)$ a $T-@{0@}$ je podgrupa $U-@{0@}(·,^{-1},1)$. Naopak, $U$ je \name{nadtěleso} $T$.
+
+\follows{}
+Nechť $T(+,·,-,0,1)$ je komutativní těleso a $a∈T@[x@]$ stupně alespoň $1$.
+→•
+ • $∃U$ nadtěleso $U$, nad nímž má $u$ kořen.
+ • $∃V$ nadtěleso $T$, nad nímž se $u$ rozkládá na kořenové činitele, tedy mohu ho napsat jako součin polynomů stupně $1$.
+←•
+
+\proof
+$T@[x@]$ je obor integrity hlavních ideálů.
+Vezmu libovolný ireducibilní polynom (dle nějakého tvrzení existuje) na něj pustím předchozí větu.
+
+Druhou část vezmeme indukcí podle stupně $u$. Najdeme kořen (nad $U$) a vydělíme, oba polynomy jsou z $U$, $v$ má o $1$ menší stupeň.
+Rozšíříme pro $U@⊂V$, takže můžeme pokračovat.
+
+\note{}
+Všechna komutativní podtělesa libovolného komutativního tělesa tvoří uzávěrový systém.
+Což znamená, že je to úplný svaz a průsek je průnik, tedy průnik dvou podtěles je opět podtěleso.
+
+\proof
+Podokruhy tvoří uzávěrový systém.
+Stejně tak i podgrupy.
+
+Následně uvažujme tělesa $U(+,·,-,0,1)$ a jeho podtěleso $T@⊂U$, případně $V\supseteq U$ je nadtěleso $U$.
+
+Nechť $S@⊂$.
+$T@[S@]$ bude nejmenší podokruh obsahující množinu $T\cup S$. Obdobně $T(S)$ je nejmenší podtěleso obsahující $T\cup S$.
+
+Jestliže $S=@{α_1,…,α_n@}$, pak $T@[α_1,…,α_n@]:=T@[S@], T@(α_1,…,α_n@):=T@(S@)$.
+
+\note{}
+$T@⊂U$ podtěleso. $α∈U$. Potom $T@[α@] = @{p(α)|p∈T@[x@]@}$ ‒ dosadím $α$ do všech polynomů.
+$T@[S@]@⊂T@(S@)$.
+
+\proof
+Podtěleso ‒ podokruh je zřejmý z definice.
+
+To první je okruhový homomorfizmus. Homomorfní zobrazení podalgebry je zase podalgebry.
+
+$T@⊂U, p∈T@[x@]$.
+$U$ je \name{kořenové (rozkladové) nadtěleso} polynomu $p$, existuje-li kořen $α∈U$ (kořeny $α_1,…,α_n$)tak, že $p=a·(x-α_1)·…·(x-α_n)$ a pro žádné menší $U$ to neplatí.
+
+\statement{}
+→•
+ • $∃$ kartézké nadtěleso $p$ nad $T$.
+ • $∃$ rozkaldové nadtěleso $p$ nad $T$.
+←•
+
+\proof
+Najít nějaké těleso, nad kterým to lze rozložit, je možné.
+Pak vezmeme nejmenší podtěleso obsahující všechny kořeny.
+
+$T@⊂U, α∈U$. Řekneme, že $α$ je \name{algebraický nad $T$}, existuje-li polynom $p∈T@[x@]$ tak, že $p(α) = 0$.
+V opačném případě nazveme $α$ \name{transcendentní}.
+
+Buď $m∈T@[x@], °(m)≥0$. Řekneme, že $m$ je \name{monický}, jestliže $a_{°(m)}=1$.
+
+\statement{}
+$T@∈U, α∈U$ je algebraický nad $T$. Potom $∃!$ monický polynom $m∈T@[x@]$ takový, že $p∈T@[x@]-@{0@}·p(α) = 0 ←→ m/p$.
+
+Nechť $m$ je ireducibilní. Potom $T@[α@] = T@(α@)$ a $(T@[x@])_m\cong T@(α@)$.
+
+\proof
+Vezmu všechny polynomy $I$, kterých je $α$ kořenem.
+$I$ je uzavřené na součty, rozdíly, nulu obsahuje, je to tedy podgrupa.
+Stejně tak je uzavřené na součiny, tedy je ideálem.
+Je neprázdný, protože $α$ je algebraický.
+
+$T@[x@]$ je obor integrity hlavních ideálů, $∃m;m·T@[x@] = I$, existuje právě jeden monický (všechny generátory jsou asociovány).
+
+Pokud je $m$ ireducibilní, pak pokud $m=a·b$, pak $m|a \lor m|b$.
+
+Dosazení je homomorfizmus okruhů.
