@@ -10,7 +10,7 @@
 \newcommand{\notebase}[3]{
 
 	\vspace{1ex}\noindent{}#1{#2:}\\
-#3}
+##3}
 
 \newcommand{\notetype}[2]{\notebase{}{#1}{#2}}
 \newcommand{\notehead}[2]{\notebase{\textit}{#1}{#2}}
