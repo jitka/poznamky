@@ -37,3 +37,4 @@
 \newcommand{\inv}[1]{\frac{1}{#1}}
 \newcommand{\len}[1]{{\left|{#1}\right|}}
 \newcommand{\uv}[1]{\quotedblbase{}#1\textquotedblleft}%
+\newcommand{\isnt}{\urcorner}
