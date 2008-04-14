@@ -1,0 +1,11 @@
+\section{Ramseovy věty}
+
+$∀k∃n$ takové, že graf $G$ na $n$ vrcholech obsahuje buď $K_k$ nebo nezávislou množinu vrcholů na $k$ vrcholech.
+
+Ekvivalentní znění má jen $k,l$ různé velikosti.
+
+\proof
+Indukcí, rozkládání na o jedna menší v každém čísle.
+
+\statement{Erdös-Szekezerova}
+$∀k∃n$ že pro $n$ bodů v obecné rovině, pak $k$ z nich tvoří konvexní mnohoúhelník.
