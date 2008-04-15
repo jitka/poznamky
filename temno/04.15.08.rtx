@@ -1,0 +1,49 @@
+\follows{}
+Pokud předpokládám axiom výběru:
+→•
+ • Pro libovolnou množinu $A$, $\len{A}$ existuje. (Axiom výběru říká, že ji lze dobře uspořádat, proto může mít svoji mohutnost.)
+ • Je-li $A$ nekonečná, pak $A\approx A\times A \approx A\times@{0,1@}$.
+ • Každou nekonečnou množinu lze rozložit na nekonečně mnoho nekonečných částí.
+ • Pokud $A,B$ jsou množiny a existuje surjektivní $f:A→B$, pak $B\preccurlyeq A$.
+   Toto zobrazení definuje rozklad množiny $A$.
+←•
+
+Jsou li $A,B$ množiny, budeme značit $^AB=@{f:f\hbox{ je funkce }, f:A→B@}$.
+
+Pro kardinály $κ,λ$ mocnina $κ^λ=\len{^λκ}$.
+
+\observation{}
+Nechť $κ≥ω$, potom pro všechna $n∈ω, n\neq 0; κ^n = κ$.
+
+\statement{}
+Buď $κ,λ$ kardinály, $κ≥2,λ≥ω,κ≤λ$. Potom $κ^λ=λ^λ=2^λ$.
+
+\proof
+$^λ2 = @{f:f:λ→2@}@⊂@{f:f:λ→κ@}=^λκ$.
+
+\TODO{Hop}
+Pro $M@⊂λ$ definuji $χ(M):λ→2$ předpisem $χ(M)(ξ) = 0$ pokud $ξ∉M$, jinak $1$. Zřejmě je $χ:\mathcal{P}(M)→^λ2$.
+
+\observation{}
+Buď $A,B,C$ množiny, neprázdné.
+
+$$^C@(^BA@) \approx ^{C\times B}A$$
+
+Jsou-li $B,C$ disjunktní, pak:
+
+$$^BA\times ^CA \approx ^{B\cup C}A$$
+
+\follows{}
+$κ,λ,μ$ kardinály, pak:
+$$@(κ^λ@)^μ = K^{λ\otimes μ}$$
+$$κ^{λ\oplus μ} = κ^λ\otimes κ^μ$$
+
+\proof
+Je-li $f∈^C@(^BA@)$, pro každé $c∈C$ je $f(c)∈^BA$.
+Tedy $f(c)$ je funkce, pro každé $b∈B; f(c)(b)∈A$.
+
+Je-li $g∈^{C\times B}A; g$ je funkcne, kdykoliv $@<c,b@>∈C\times B; g(c,b)∈A$.
+
+Položíme $ψ;^C@(^BA@)→^{C\times B}A, ψ(y)=g$. Toto zobrazení je bijekce.
+
+Druhé tvrzení je zřejmé, přes definici.
