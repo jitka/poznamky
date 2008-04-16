@@ -1,0 +1,73 @@
+
+\note{
+Nechť $T_1@⊂U_1, T_2@⊂U_2$ jsou tělesa, $α∈U_1, β∈U_2$ algebraické prvky nad $T_1,T_2$.
+$f:T_1→T_2$ je izomorfizmus.
+
+Potom $∃$ také izomorfizmus $g:T_1(α)→T_2(β)$, že $∀t∈T_1,f(t) = g(t)$ a $g(α)=β$ $←→f_x(m_α)=m_β$.
+
+\proof
+$f_x:T_1@[x@] → T_2@[x@]$ je také izomorfizmus.
+$f_x(m_α)$ je ireducibilní, protože $m_α$ je ireducibilní (minimální polynom).
+$f_x(m_α)$ je monický ($g:T_1(α)→T_2(β)$).
+$f=g$ na $T_1$.
+$g(0)=0$, $β$ je kořenem $f_x(m_α), m_β|f_x(m_α)$.
+
+Je ireducibilní, tedy jsou asociované.
+
+A zpátky:
+\begin{eqnarray*}
+&&T_1(α)=T_1@[x@]\cong T@[x@]/m_αT@[x@]\\
+&&p(α)←→ p+mT@[x@]\\
+&&T_1(a)\cong @(T_1@[x@]@)_{m_α}\cong @(T_2@[x@]@)_{m_β}\cong T_2(β)\\
+&&p(α)→p+m_αT_1@[x@]→f_x(p)→m_αT_2@[x@]→jβ@(f_x@(p@)@)\\
+&&hbox{To je izomorfizmus}\\
+&&tx^0∈T_1@[x@]\\
+&&g(t)=f(t)\\
+&&f_x(tx^0)=f(t)x^0\\
+\end{eqnarray*}
+}
+
+\statement{}
+Nechť $T_1@⊂U_1, T_2@⊂U_2$ jsou komutativní tělesa,
+$p∈T_1@[x@], U_1$ buď rozkladové těleso polynomu $p$ nad $T_1$ a $U_2$ rozkladové těleso $f_x(p)$ nad $T_2$, kde $f:T_1→T_2$ je izomorfizmus.
+Jsou-li $α_1, …, α_n∈U_1, β_1, …, β_m∈U_2$ všechny kořeny $p$, resp $f_x(p)$ (násobně),
+pak $n=m$ a existuje izomorfizmus $g:U_1→U_2$ takový,
+že $∃σ$ permutace, $g\upharpoonright T_1 = f$ a $∀i∈1..n;g(α_i) = β_{σ_i}$.
+
+\proof
+Indukcí dle $n$.
+
+$n=1$ je triviální, $p=ax-b$, $f_x(p) = f(a)x-f(b)$, oba stupně $1$ a mají zjevně jeden kořen a $g=f$.
+
+Předpoklad platí pro všechna tělesa a polynomy stupně až $n-1$.
+Mám polynom $p$ stupně $n$.
+Vezmu $m_{α_1}∈T_1@[x@]$, ten dělí $p$, tedy $f_x(m_{α_1})$ dělí $f_x(p)$.
+$f_x(p)$ je nad $U_2$ rozložitelný na dva polynomy, protože v $U_2@[x@]$ máme jednoznačný rozklad na ireducibilní prvky.
+Tedy v rozkladu $f_x(m_{α_1})$, tak se v rozkladu se mohou vyskytovat pouze $β_1, …, β_n$ (až na asociovanost).
+BÚNO $β_1$ je kořenem monický ireducibilního (nad $T_2@[x@]$) polynomu $f_x(m_{α_1})$.
+Dle minulého tvrzení $∃h:T_1(α_1)→T_2(β_1)$ izomorfizmus.
+$p=(x-α_1)·u$, stupeň $u<n$, použiji indukční předpoklad.
+
+$∃g:U_1→U_2, g\upharpoonright T_1(α_1) = h, g(α_i) = β_{σ_i}$.
+
+Nechť $T(+,·,-,0,1)$ je komutativní těleso. Řekneme, že $T$ je \name{algebraicky uzavřené}, jestliže každý neinvertibilní polynom $p∈T@[x@]$ má v $T$ kořen. (Ekvivalentní, že ho lze rozložit)
+
+Nechť  $U$ je nadtěleso tělesa $T$. Nazvu jej \name{algebraickým uzávěrem}, jestliže je algebraicky uzavřené a žádné $V, T@⊂V@⊂U$, pro které to platí, $U=V$.
+
+\statement{}
+Každé těleso má algebraický uzávěr.
+
+\proof
+Potřebuji axiom výběru (pro transfinitní indukci).
+$T$ je komutativní těleso.
+Konstruujeme posloupnost nadtěles $T_1@⊂T_2@⊂T_3…$ takových, že všechny polynomy z $T_i@[x@]$ stupně nejvýše $i$ jsou rozložitelné v $T_{i+1}@[x@]$.
+
+Nechť $T_1=T$.
+Dále vyrábíme těleso o jedna větší. Vezmu si všechny polynomy nad $T_1$.
+Seřadím si je (pomocí nějakého ordinálu a axiomu výběru).
+$T_{i,α}$ je rozkladové nadtěleso polynomu $p_α$.
+Tyto pak sjednotím.
+
+$U=\bigcup_{i∈\N}T_i$.
+Nyní je třeba dokázat, že je algebraicky uzavřené.
+Vezmu si polynom, ten má nějaké koeficienty z některého tělesa $T_i$. Proto je rozložitelný v $T_{i+1}$, který ve sjednocení je.
