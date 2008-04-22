@@ -1,5 +1,5 @@
 
-Buďte $α,β$ ordinály, $f:α→β$. Řekneme, že $f$ zobrazuje $α$ do $β$ \name{kofinální} ($f$ je \name{kofinální zobrazení}), jestliže $(∀\eta∈β)(∃ξ∈α)\eta≤y(ξ)$. Zřejmě pro $α=β$ a $f=id$ platí, takže množina takových zobrazení je neprázdná.
+Buďte $α,β$ ordinály, $f:α→β$. Řekneme, že $f$ zobrazuje $α$ do $β$ \name{kofinální} ($f$ je \name{kofinální zobrazení}), jestliže $(∀η∈β)(∃ξ∈α)η≤y(ξ)$. Zřejmě pro $α=β$ a $f=id$ platí, takže množina takových zobrazení je neprázdná.
 
 Je-li $β$ ordinál, pak \name{kofinalita $β$} ($cf(β)$) je nejmenší ordinál $α$ takový, že existuje kofinální zobrazení $f:α→β$.
 
@@ -12,11 +12,11 @@ Existuje kofinální zobrazení $f:cf(β)→β$, které je ostře rostoucí.
 Pokud $β$ je ordinální následník, pak je to nezajímavé.
 
 Nechť je tedy $β$ limitní ordinál. Zvolme $g:cf(β)→β$ libovolné kofinální zobrazení.
-Definujme transfinitní indukcí $f(0) = g(0), ξ<cf(β)$ známe $f(\eta)$ pro všechny $\eta<ξ$,
-$f(ξ) = \sup@(@{f(\eta),g(\eta);\eta<ξ@}\cup @{g(ξ)@}@)+1$.
+Definujme transfinitní indukcí $f(0) = g(0), ξ<cf(β)$ známe $f(η)$ pro všechny $η<ξ$,
+$f(ξ) = \sup@(@{f(η),g(η);η<ξ@}\cup @{g(ξ)@}@)+1$.
 $f(ξ)<β$.
 
-Je-li $\eta<ξ<cf(β), f(\eta)<f(ξ)$. $f$ je tedy ostře rostoucí.
+Je-li $η<ξ<cf(β), f(η)<f(ξ)$. $f$ je tedy ostře rostoucí.
 Kdykoliv $ζ<β∃ξ; ξ≤g(ξ)$ protože je kofinální, $ζ≤g(ξ)<f(ξ)$.
 
 \lemma{$17$}
@@ -127,3 +127,17 @@ Definujme:
 
 \statement{Königova nerovnost}
 Předpokládám axiom výběru. Je-li $I\neq \emptyset$ a pro každé $i∈I$ jsou $κ_i,λ_i$ kardinální čísla a $κ_i<λ_i$, pak $\Σ_{i∈I}κ_i <\Π_{i∈I}λ_i$.
+
+\statement{Hausdorfova formule}
+Předpokládám axiom výběru. Jsou li $κ,λ$ nekonečné kardinály, pak $@(κ^+@)^λ = κ^+\otimes κ^λ$.
+
+\proof
+$$κ^+\otimes κ^λ≤@(κ^+@)^λ\otimes @(κ^+@)^λ=@(κ^+@)^λ$$
+
+K důkazu opačné nerovnosti:
+Dva případy.
+→•
+ • $λ≥κ^+$. Potom $@(κ^+@)^λ≤λ^λ=2^λ=κ^λ≤@(κ^+@)\otimes κ^λ$.
+ • $λ<κ^+$. Víme, že $κ^+$ je regulární kardinál, $f:λ→κ^+$, pak existuje $α<κ^+; f:λ→α$ ($f$ není kofinální).
+   $$\len{^λκ^+} = \len{\bigcup_{α∈κ^λ} ^λα} ≤ κ^+\otimes κ^λ$$.
+←•

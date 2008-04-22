@@ -3,6 +3,7 @@
 exec sed -e 's/α/\\alpha /g;
 	s/β/\\beta /g;
 	s/ζ/\\zeta /g;
+	s/η/\\eta /g;
 	s/ε/\\epsilon /g;
 	s/\\Π/\\prod /g;
 	s/π/\\pi /g;
