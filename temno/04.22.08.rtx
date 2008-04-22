@@ -1,0 +1,129 @@
+
+Buďte $α,β$ ordinály, $f:α→β$. Řekneme, že $f$ zobrazuje $α$ do $β$ \name{kofinální} ($f$ je \name{kofinální zobrazení}), jestliže $(∀\eta∈β)(∃ξ∈α)\eta≤y(ξ)$. Zřejmě pro $α=β$ a $f=id$ platí, takže množina takových zobrazení je neprázdná.
+
+Je-li $β$ ordinál, pak \name{kofinalita $β$} ($cf(β)$) je nejmenší ordinál $α$ takový, že existuje kofinální zobrazení $f:α→β$.
+
+$cf(β)≤β$, $β$ je ordinální následník $β=γ+1$ a zobrazení $1→β, f(0) = γ, cf(β)=1$.
+
+\lemma{$16$}
+Existuje kofinální zobrazení $f:cf(β)→β$, které je ostře rostoucí.
+
+\proof
+Pokud $β$ je ordinální následník, pak je to nezajímavé.
+
+Nechť je tedy $β$ limitní ordinál. Zvolme $g:cf(β)→β$ libovolné kofinální zobrazení.
+Definujme transfinitní indukcí $f(0) = g(0), ξ<cf(β)$ známe $f(\eta)$ pro všechny $\eta<ξ$,
+$f(ξ) = \sup@(@{f(\eta),g(\eta);\eta<ξ@}\cup @{g(ξ)@}@)+1$.
+$f(ξ)<β$.
+
+Je-li $\eta<ξ<cf(β), f(\eta)<f(ξ)$. $f$ je tedy ostře rostoucí.
+Kdykoliv $ζ<β∃ξ; ξ≤g(ξ)$ protože je kofinální, $ζ≤g(ξ)<f(ξ)$.
+
+\lemma{$17$}
+Buďte $α,β$ ordinály, nechť existuje kofinální ostře rostoucí zobrazení $f:α→β$.
+
+Potom $cf(α) = cf(β)$.
+
+\proof
+Podle předpokladu existuje ostře rostoucí kofinální zobrazení $g:cf(α)→α$.
+Zobrazení $f\circ g:cf(α)→β$ je ostře rostoucí kofinální zobrazení z $cf(α)→β$, tedy $cf(β)≤cf(α)$.
+
+Existuje $h:cf(β)→β$ ostře rostoucí kofinální zobrazení.
+Definujme zobrazení $i:cf(β)→α$ následujícím způsobem.
+$i(ξ)$ budiž vzor zobrazení $f(\min@{f(ι);f(ι)>g(ξ)@})$.
+$i$ je zobrazení z $cf(β)→α$, je kofinální, $cf(α)≤cf(β)$, tedy se musejí rovnat.
+
+\follows{
+	$$∀β;cf(cf(β)) = cf(β)$$
+}
+
+\lemma{$18$}
+Pro každý limitní ordinál $β$, $cf(β)$ je kardinál.
+
+\proof
+Sporem. Nechť $\len{cf(β}≤cf(β)$.
+Máme bijekci $f:\len{cf(β)}→cf(β)$. Mějme $g:cf(β)→β$ kofinální zobrazení.
+$g\circ f:\len{cf(β)}→β$ je kofinální zobrazení. Spor s kofinalitou (menší ordinál, ze kterého to jde).
+
+\Def{
+	Kardinál $κ$ je \name{regulární}, je-li $cf(κ) = κ$.
+	Pokud $cf(κ)<κ$, říkáme, že $κ$ je \name{singulární}.
+}
+
+\lemma{$19$}
+$ω$ je regulární kardinál.
+
+\lemma{$20$}
+Je-li $κ≥ω$ kardinál, pak $κ^+$ je regulární.
+
+\proof
+Sporem.
+Nechť $cf(κ^+)<κ^+$.
+$cf(κ^+)≤κ$.
+Máme $f:cf(κ^+)→κ^+$ ostře rostoucí kofinální zobrazení.
+$f(ξ)$ je nějaký ordinál menší než $κ^+$, $\len{f(ξ)}≤κ$, neboť $f(ξ)<κ^ (ξ<cf(κ^+))$.
+$$κ^+=\bigcup_{ξ<cf(κ^+)}f(ξ),\len{\bigcup_{ξ<cf(κ^+)}f(ξ)}≤κ\otimes κ=κ$$
+(Potřebuji axiom výběru.)
+
+\lemma{$21$}
+Je-li $α$ limitní ordinál, pak $cf(ω_α)=cf(α)$. (Plyne z lemma $17$)
+
+\lemma{$22$ - Königovo}
+Předpokládáme axiom výběru.
+Nechť $κ,λ$ jsou kardinály, $κ≥ω, λ≥cf(κ)$. Potom $κ^λ>κ$.
+
+\proof
+Stačí dokázat pro $λ=cf(κ)$, neboť $λ≤λ' →→ κ^λ≤κ^{λ'}$.
+Buď $f:κ→^λκ$, stačí dokázat, že $f$ nemůže být na.
+
+Protože $λ=cf(κ)$, můžeme vzít ostře rostoucí kofinální zobrazení $h:λ→κ$.
+Pro $g∈rug(f)$ označme $g=g_α$, pokud $g=f(α)$.
+Je-li $ξ<λ$. Potom $h(ξ)<κ$. Uvažujme množinu $@{g_α(ξ):α<h(ξ)@}$.
+$$F(ξ)=\min @(κ\backslash @{g_α(ξ):α<h(ξ)@}@)$$
+$F$ je zobrazení z $λ$ do $κ$, $F∉rug(f)$.
+
+Zvolme libovolně $α<κ$, existuje $ξ∈λ$ tak, že $h(ξ)>α$. Podle definice $F$:
+$$F(ξ)∉@{g_β(ξ):β<h(ξ)@}→→F(ξ)\neq g_α(ξ),F\neq g_α$$
+
+\follows{
+	Předpokládáme axiom výběru. Je-li $λ≥ω$ kardinál, potom $cf(2^λ)>λ$.
+
+	\proof
+	Položme $κ=2^λ$.
+	$κ^λ=(2^λ)^λ=2^{λ\otimes λ}=2^λ=κ$.
+	Kdyby platilo, že $cf(2^λ)≤λ$, pak $cf(κ)≤λ$, podle lemmatu $22$ pak je $κ^λ>κ$, což je spor.
+}
+
+\name{Hypotéza kontinua} je tvrzení $2^ω=ω_1$.
+\name{Zobecněná hypotéza kontinua} je tvrzení $(∀α)2^{ω_α} = ω_{α+1}$.
+
+Ani tato tvrzení, ani jejich negace nejsou ve sporu s teorií množin.
+
+\lemma{$23$}
+Předpokládáme axiom výběru a zobecněnou hypotézu kontinu, $κ,λ≥2$ kardinály, alespoň jeden z nich nekonečný.
+Pak platí:
+↑•
+ • Je-li $κ≤λ$, pak $k^λ=λ^+$
+ • Je-li $cf(κ)≤λ≤κ$, pak $κ^λ=κ^+$.
+ • Je-li $λ<cf(κ)$, pak $κ^λ=κ$
+↓•
+
+\proof
+$1.$ $κ≤λ,κ≥2,κ^λ=2^λ=λ^+$.
+
+$2.$ Je-li $cf(κ)≤λ≤κ$, podle lemmatu $22$ $κ<κ^λ$, tedy $κ^κ=2^κ=κ^+≥κ^λ≥κ^+$.
+
+$3.$ $λ<cf(κ), ^λκ$. Je-li $f∈^λκ$, pak $f$ není kofinální, tedy existuje $α<κ, f∈^λα$.
+$$^λκ=\bigcup_{a∈κ}^λκ$$
+$$κ≤κ^λ=\len{^λκ}≤κ\otimes\len{^{\max@{λ,α@}}\max@{λ,α@}}≤κ\otimes 2^\len{\max@{λ,α@}}=κ\otimes \len{\max@{λ,α@}}^+≤κ$$
+
+\Def
+Předpokládám axiom výběru. Buď $I\neq \emptyset$ indexová množina. Prokazdé $i∈I$ buď $κ_i$ kardinální číslo.
+Definujme:
+\begin{eqnarray*}
+Σ_{i∈I} κ_i&=&\len{\bigcup_{i∈I}κ_i\times @{i@}}\\
+\Π_{i∈I} κ_i &=& \len{\Π_{i∈I}κ_i}
+\end{eqnarray*}
+
+\statement{Königova nerovnost}
+Předpokládám axiom výběru. Je-li $I\neq \emptyset$ a pro každé $i∈I$ jsou $κ_i,λ_i$ kardinální čísla a $κ_i<λ_i$, pak $\Σ_{i∈I}κ_i <\Π_{i∈I}λ_i$.
