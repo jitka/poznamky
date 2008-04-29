@@ -1,0 +1,59 @@
+\section{Konečná komutativní tělesa}
+
+\note{
+  Žádné konečné komutativní těleso není algebraicky uzavřené.
+
+  \proof
+  Vezmeme polynom $p=\Π_{t∈T} (x-t)+1$, v libovolném bodě je roven $1$.
+}
+
+\note{
+  Algebraický uzávěr konečného komutativního tělesa je (nekonečný) spočetný.
+
+  \proof
+  Konstrukce viz minulou kapitolu.
+  Každé těleso je větší, ale konečné, takže celkem dají spočetné číslo.
+}
+
+\note{
+  Nechť $T$ je komutativní těleso prvočíselné charakteristiky a $n∈\N$.
+  Pak $Q=@{t∈T|t^{p^n}=t@}$ je podtěleso $T$.
+
+  \proof
+  $φ_p:T→T, φ_p(t) = t^p$ je okruhový homomorfizmus.
+  Složením $n$ kopií tohoto homomorfizmu je opět homomorfizmus.
+
+  Stačí dokázat, že obsahuje $0,1$ a z homomorfizmu uzavřenost operací.
+}
+
+\note{
+  $$P=@{k\times 1|k∈\N@}@⊂T$$
+  Potom $P$ podtěleso $T$ izomorfní s $\Z_p$ pro nějaké prvočíselné $p$ a $\len{T}=\len{P}^n=p^n$.
+
+  \proof
+  $φ:\Z→T$ je okruhový homomorfizmus.
+}
+
+\statement{}
+$q∈\N$, existuje konečné komutativní těleso $T$ o $q$ prvcích $←→∃n∈\N$ a prvočíslo $p$, že $q=p^n$. Toto těleso je izomorfní rozkladovému nadtělesu polynomu $x^{p^n}-x$ nad tělesem $\Z_p$.
+
+\proof
+Jedním směrem minulá poznámka.
+
+Opačně: $T$ buď rozkladové nadtěleso, $x^{p^n}-x$ nad $Z_p$.
+Dle předchozí poznámky je jeho charakteristika $p$.
+$Q=@{t∈T|t^{p^n}=t @}$, což jsou právě všechny kořeny polynomu $x^{p^n}-x$.
+$Z_p@⊂Q=T$.
+
+\follows{
+  V $T$ existuje podtěleso o $q$ prvcích $←→q\backslash \len{T}\land (q-1)\backslash( \len{T}-1)$.
+  Takové podtěleso je určeno jednoznačně.
+}
+
+\note{
+  Nechť $k,n∈\N$ a $p$ je prvočíslo. Pak $k\backslash n←→ p^k-1\backslash p^n-1$.
+}
+
+\note{
+  Je-li $u$ ireducibilní polynom stupně $k$ nad $T$, pak $u\backslash x^{\len{T}^k}-x$.
+}

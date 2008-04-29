@@ -19,6 +19,7 @@
 \newcommand{\observation}[1]{\notehead{Pozorování}{#1}}
 \newcommand{\follows}[1]{\notehead{Důsledek}{#1}}
 \newcommand{\note}[1]{\notehead{Poznámka}{#1}}
+\newcommand{\tvrz}[1]{\notehead{Tvrzení}{#1}}
 
 \newcommand{\proof}{\notetype{Důkaz}{}}
 \newcommand{\example}[1]{\notetype{Příklad}{#1}}

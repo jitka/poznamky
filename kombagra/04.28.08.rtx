@@ -1,0 +1,26 @@
+
+\section{Souvislost}
+\name{Hranový řez} je množina hran, kterou když odebereme z grafu, tak se stane nesouvislý.
+
+Obdobně funguje \name{vrcholový řez}.
+
+\name{Hranová souvislost} je minimum velikostí všech hranových řezů.
+
+\name{Vrcholová souvislost} je minimum velikostí všech vrcholových řezů, případně $\len{V}-1$ pro úplné grafy.
+
+\observation{
+  Odebrání hrany buď nechá hranovou souvislost stejnou nebo sníží o $1$.
+}
+
+\tvrz{
+  Odebráni hrany může jen snížit vrcholovou souvislost.
+}
+
+\tvrz{
+  Graf je (vrcholově) dvousouvislý, pokud ho lze získat postupným přidáváním uší na kružnici.
+
+  \proof
+  Zprava doleva jasné.
+
+  Zleva doprava, vše musí být na nějaké kružnici a tu lze odebrat až k nejbližší společné části.
+}

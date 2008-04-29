@@ -1,0 +1,85 @@
+
+\section{Nekonečná kombinatorika}
+
+Všude předpokládáme axiom výběru (i když to nebude explicitně uvedeno).
+
+Mějme soubor množin $A=@<A_i;i∈I@>$.
+
+\name{Částečný selektor} je definovaná na některých $i$ a vybírá si vždy některou hodnotu z příslušného $A_i$ ($f,dom(f)@⊂I, f(i)∈A_i$).
+
+Buď $S$ množina částečných selektorů souboru $A$.
+Říkáme, že $S$ \name{pokrývá konečné podmnožiny množiny $I$}, jestliže pro každou konečnou $u@⊂I$ existuje $f∈S$, že $u@⊂dom(f)$.
+
+Zobrazení $g$ se nazývá \name{filtrovaným prodloužením} množiny částečných selektorů $S$, je-li $dom(g)=I$ a pro $(∀u@⊂I,u \hbox{ konečná })(∃f∈S)f\upharpoonright u = g\upharpoonright u$.
+
+\statement{Princip kompaktnosti}
+Je-li $A=@<A_i;i∈I@>$ soubor konečných množin, pak každý systém částečných selektorů, který pokrývá konečné podmnožiny množiny $I$, má filtrované prodloužení.
+
+\proof
+Mějme $S$ soubor částečných selektorů, který pokrývá všechny konečné podmnožiny množiny $I$.
+
+Bez újmy na obecnosti můžeme předpokládat, že pro každý částečný selektor $f∈S$ je $dom(f)$ konečná množina.
+
+\begin{eqnarray*}
+Z=\{g;dom(g)@⊂I; i∈dom(g) →→ g(i)∈A_i; (∀u@⊂dom (g); u\hbox{ konečná})\\
+@{f∈S;f\upharpoonright u = g\upharpoonright u @} \hbox{ pokrývá konečné podmnožiny množiny } I@\}
+\end{eqnarray*}
+
+A poté vezmeme $@(Z,@⊂@)$.
+
+Buď $L@⊂Z$ řetězec v $@(Z,@⊂@), \tilde{g} = \bigcup L$. $\tilde{g}$ je funkce ‒ kdykoliv $i∈dom(\tilde{g})$, pak $∃g∈L,i∈dom(g), \tilde{g}(i) = g(i)$. Na volbě $g$ nezáleží, protože $L$ je lineárně uspořádané, tak $g@⊂g'\lor g'@⊂g$, proto jsou v $i$ stejné.
+
+Zřejmě pro $g∈L$ je $\tilde{g}$ horní mezí $L$.
+
+Zbývá ověřit, že $\tilde{g}∈Z$. Buď $u$ konečná, $u@⊂dom(\tilde{g})$. Pro každé $i∈u$ existuje $g_i∈L$, že $i∈dom(g_i)$. Když $i\neq j, i,j∈u$, pak $g_i@⊂g_j\lor g_j@⊂g_i$, tedy v jednom z nich jsou oba.
+
+Lze rozšířit na další počty indexů.
+
+Existuje $g∈L$, že $u@⊂dom(g)$. Máme $g∈Z$, tedy $@{f∈S;f\upharpoonright u = g\upharpoonright u@}$ pokrývá všechny konečné podmnožiny $I$, $\tilde{g}\upharpoonright u = g\upharpoonright u$, dostáváme $\tilde{g} ∈Z$.
+
+Podle principu maximality $Z$ obsahuje maximální prvek $h$. Kdykoliv $u@⊂dom(h)$, $u$ konečná $@{f∈S;f\upharpoonright u = h\upharpoonright u@}$ pokrývá všechny konečné podmnožiny množiny $I$, tedy je neprázdná, tedy $∃f∈S;f\upharpoonright u = h\upharpoonright u$. Zbývá ověřit, že $dom(h) = I$.
+
+$dom(h) = I$. Sporem. Buď $i_0∈I$ takové, že $i_0∉dom(h)$.
+$A_{i_0}$ je konečná, tedy $A_{i_0}=@{a_0, a_1, a_2, …, a_k@}$. Protože $h$ je maximální prvek množiny $Z$, $h$ nelze prodloužit na $I\cup @{i_0@}$.
+Tedy pro každou funkci $h_j=h\cup @{@<i_0,a_j@>@}$ máme $h_j∉Z$.
+$∀j; ∃u_i\hbox{ konečná }@⊂dom(h_j)$, pro kterou platí, že $@{f∈S;f\upharpoonright u_j = h_j\upharpoonright u_j@}$ nepokrývá konečné podmnožiny $I$.
+Tedy pro každé $j$ existuje konečná množina $v_j@⊂I$, která splňuje: Kdykoliv $f∈S$ taková, $f\upharpoonright u_j=g\upharpoonright u_j$, pak $v_j@⊄dom(f)$.
+
+Protože $h∈Z$, $h_j∉Z$, musí platit, že $i_0∈u_j$.
+$$w:= \bigcup_{j=0}^k u_j \cup \bigcup_{j=0}^kv_j \backslash @{i_0@}@⊂dom(h)$$
+Tato stále pokrývá všechny konečné podmnožiny množiny $I$.
+
+$@{f∈S;f\upharpoonright w = h\upharpoonright w@}$ pokrývá všechny konečné podmnožiny $I$. Tedy tato množina také obsahuje $f$, pro kterou $dom(f)=w\cup @{i_0@}$, tedy máme $∃y∈S;w\cup @{i_0@}@⊂dom(f),f\upharpoonright w = h\upharpoonright w, f(i_0) = a_j$ pro vhodné $j$, což je spor.
+
+\lemma{O třech množinách}
+Nechť $f:M→M$ je takové, že pro všechna $x∈M$ je $f(x)\neq x$.
+Pak $M=M_0\cup M_1\cup M_2$, $M_i\cap M_j = \emptyset$ pro $i\neq j$, pro všechny $i∈@{0,1,2@};f@[M_i@]\cap M_i = 0$.
+
+\proof
+Vezmeme $g:M→@{0,1,2@}$.
+Buď $S$ soubor částečných selektorů, které splňují, že pro každé $∀x∈dom(g); g(f(x)) \neq g(x)$.
+
+Pokud $S$ pokrývá konečné podmnožiny množiny $M$, aplikujeme princip kompaktnosti, máme filtrované prodloužení $h$.
+Použiji tyto selektory.
+
+Buď $u@⊂M$ konečná, potřebujeme najít $g∈S$, že $u@⊂dom(g)$. Indukcí podle $\len{u}$. Když je $\len{u}≤2$ je zřejmé.
+Nechť existuje $g∈S$ pro $u@⊂M, \len{u}=n$.
+Mějme $u∈S, \len{u} = u+1$.
+
+Dvě možnosti: $f@[u@] \neq u$. V tom případě existuje $a∈u\backslash f@[u@]$.
+Z indukčního předpokladu máme $g∈S$, že $dom(g) = u\backslash@{a@}$.
+Známe $g(f(a))∈@{0,1,2@}$. Zvolme $j∈@{0,1,2@}\backslash g(f(a))$ a položme $g'\cup @{@<a, j@>@}, g'∈S$.
+
+Protože $u$ je konečná, pak $f$ musí být prosté. Zvolme $a∈u$ libovolně, z indukčního předpokladu máme $g∈S, dom(g) = u\backslash@{a@}$. Jeden bod $x$ se zobrazuje na $a$ a $a$ se zobrazuje na jeden bod $y$.
+
+Definujme $g':u→@{0,1,2@}$ přepisem $g'=g\cup @{a,j@}$ pro $j∈@{0,1,2@}\backslash @{g(x), g(y)@}$.
+
+\lemma{O disjunktním zjemnění}
+Buď $κ$ nekonečný kardinál, buďte $@<A_α,α∈κ@>$ množiny, pro každé $α∈κ; \len{A_α}=κ$.
+Pak existuje soubor $@{B_α;α∈κ@}$ tak, že:
+↑•
+ • $(∀α∈κ)\len{B_α} = κ$
+ • $α\neq β;B_α\cap B_β = \emptyset$
+ • $(∀α∈κ)B_α@⊂A_α$
+↓•
+
