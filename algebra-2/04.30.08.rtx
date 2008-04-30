@@ -1,0 +1,43 @@
+
+\statement{$10.11$}
+Nechť $T$ konečné komutativní těleso, $d∈\N$, $u∈T@[x@]$ je ireducibilní polynom stupně $k∈\N$, $q=\len{T}$.
+Pak je následující ekvivalentní:
+↑•
+ • $x^{q^k} - x/ x^{q^d} - x$ v $T@[x@]$
+ • $u/x^{q^d} - x$ v $T@[x@]$
+ • $q^k - 1/q^d-1$ v $\Z$
+ • $k/d$
+↓•
+
+\proof
+$(3)←→(4)$ ‒ $q=p^n$, $p$ je prvočíslo, $n∈\N$. $q^k-1 = p^{nk}-1/p^{nd} - 1 = p^d-1←→ nk/kd ←→ k/d$
+
+$(1)→→(2)$ ‒ $u/x^{q^x} - x$ dle předchozí poznámky, $x^{q^k}-x/x^{q^d} - x →→ u/x^{q^d}-x$.
+
+$(2)→→(3)$ ‒ $U$ je těleso o $q^d = p^{n·d}$ prvcích. $n/n·d→→∃!$ (až na izomorfizmus) těleso $T@⊂U, \len{T} = p^n$.
+Mohu ho ztotožnit s původním tělesem.
+$∀α∈U$ jsou kořenem $x^{q^d} - x = \Π_{α∈U}(x-α)$.
+$u/x^{q^d} - x$ v $T@[x@]$, $u$ lze chápat $∈U@[x@]$.
+\TODO{}
+
+$(3)→→(1)$ ‒ $∃$ tělesa $T@⊂U@⊂V$, $\len{T} = q, \len{U} = q^d, \len{V} = q^k$.
+$x^{q^d} - x = (x^{q^k}-x)·r + w$, $w°<q^k$.
+
+\follows{
+  Každý polynom $x^{q^d} - x$ je nad konečným tělesem o $q$ prvcích součinem právě všech monických ireducibilních polynomů stupně $k$ pro $∀k/d$.
+
+  \proof
+  $(2)←→(4)$ z minulé věty dokazuje, že jsou všechny dělitele.
+
+  Rozkladovým nadtělesem $x^{q^d}-x$ jsou všechny kořeny jednonásobné.
+}
+
+$f∈T@[x@]$, $T$ je komutativní těleso. Řekneme, že $f$ je \name{bez čtverců}, jestliže $g^2/f$ pro $g∈T@[x@]→→g°=0$. Rozklad $f=\Π_{i∈\N} f_i^i$ nazveme \name{bezčtvercový rozklad}>, jestliže $f_i$ jsou bezčtvercové polynomy.
+
+\note{
+  Každý polynom $f∈T@[x@]$, kde $T$ je komutativní těleso, má bezčtvercový rozklad.
+}
+
+\note{
+  Polynom $f∈T@[x@]$ je bez čtverců právě tehdy, když $f,f'$ jsou nesoudělné.
+}
