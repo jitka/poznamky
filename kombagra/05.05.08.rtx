@@ -1,0 +1,13 @@
+\statement{Ford-fülkersonova}
+Pro graf $G$ a $t∈\N$ platí, že je hranově $t$ souvislý, právě když pro každou dvojici vrcholů existuje $t$ hranově disjunktních cest, které je spojují.
+
+\proof
+Zprava doleva: Sporem.
+
+Zleva doprava: Pomocí toků.
+
+\statement{Mengerova}
+Pro graf $G$ a $t∈\N$ platí, že je vrcholově $t$ souvislý, právě když mezi každými dvěma různými vrcholy vede $t$ vrcholově disjunktních cest (s výjimkou konců).
+
+\proof
+Podobně, jako minulý.
