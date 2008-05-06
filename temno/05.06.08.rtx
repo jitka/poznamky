@@ -1,0 +1,72 @@
+
+\proof
+Transfinitní indukcí do $κ$. Zvolme bod $x(0,0)∈A_0$. Indukční krok: mějme $γ<κ$ a předpokládejme, že pro každé $α<β<κ$ známe body $x(α,β)$, přičemž platí, že $x(α,β)∈A_α$, $@<α,β@>\neq @<α',β'@> →→x(α,β) \neq x(α',β')$.
+
+$x(α,γ)=?$. $A_0, \len{A_0} = κ, \len{@{x(α,β:α<β<γ@}} ≤ \len{γ}·\len{γ}<κ$. Zvolme $x(0,γ)∈A\backslash@{x(α,β:α<β<γ@}$.
+
+Dále $xα,β∈A_α\backslash@(@{x(α',β)α'<β<γ@}\cup @{x(α',γ):α'∈α@}@)$. Buď $β_α=@{x(x,β):α≤β<κ@}$.
+
+\lemma{O $Δ$-systému}
+
+\newcommand{\Ac}{\mathcal{A}}
+
+Systém množin $\Ac$ se nazývá \name{$Δ$-systém}, jestliže $∃$ množina $K$ taková, že $∀A_0, A_1∈\Ac, A_0\neq A_1 →→ A_0\cup A_1 = K$. $K$ se nazývá \name{jádro} $Δ$-systému $\Ac$.
+
+Nechť $\Ac$ je nespočetný systém konečných množin, $\len{\Ac}$ je regulární kardinál.
+
+Pak existuje $Δ$-systém $\mathcal{B}@⊂\Ac$, $\len{\mathcal{B}}=\len{\Ac}$.
+
+\note{
+  Kdyby spočetná: tak $A_n=n$, to nejde.
+}
+
+\proof
+Indukcí podle $n$.
+$n=1\→→Ac$ sestává jen ze samých jednobodových množin, nemusím nic vybírat.
+
+Indukční krok. Pro každé $A∈\Ac$ zvol $x(A)∈A$. Nechť $\Ac'=@{A∈@{x(A)@}:A∈\Ac@}$.
+Podle indukčního předpokladu existuje $\mathcal{B}'@⊂\Ac',\len{\mathcal{B}'}=\len{\Ac'}$ a $\mathcal{B}'$ je $Δ$-systém s jádrem $K$.
+
+Dvě možnosti:
+→•
+ • $∃y$ tak, že $\len{@{A∈\Ac:x(A)=y\land A\backslash@{x(A)@}∈\mathcal{B}'@}} = \len{\Ac}$. Položme $K'=K\cup @{y@}$.
+ • $∀y\len{@{A∈\Ac:A\backslash@{x(A)@}∈\mathcal{B}' \land x(A) = y@}}<\len{\Ac}$
+   Existuje množina $@{y_α:α<\len{\Ac}@}$ tak, že $@{A∈\Ac :A\backslash @{x(A)@}∈\mathcal{B'}\land x(A)=y_a@}, \len{\Ac_α}<\len{\Ac}$.
+   Pro každé $α$ zvolíme jednu množinu $A_α∈\Ac_α$, tedy $@{A_α:α<\len{\Ac}@}=\mathcal{B}$ je $Δ$-systém s jádrem $K$.
+←•
+
+\section{Stacionární množiny}
+
+Buď $δ$ limitní ordilán. Říkáme, že $A@⊂δ$ je \name{neomezená}, jestliže $∀α<δ∃β∈A:α<β$.
+Říkáme, že množina $A@⊂δ$ je \name{uzavřená} $δ$, jestliže pro každé $α<δ, α$ limitní platí $\sup@(A\cap α@) →→ α∈A$.
+Říkáme, že množina $A@⊂δ$ je \name{uzavřená, neomezená}, jestliže je současně uzavřená a neomezená.
+
+\lemma{}
+Nechť $δ$ je limitní ordinál, $cf(δ)>ω$. Je-li $τ<cf(δ)$ a $@{C_ξ:ξ<τ@}$ soubor uzavřených neomezených množin v $δ$, pak $C:=\bigcap @{C_ξ:ξ<τ@}$ je uzavřená neomezená v $δ$.
+
+\proof
+
+Mějme $α$ limitní, $α<δ$, nechť $α=\sup@(C\cap α@)$. Je-li $ξ<τ$ libovolné, $C@⊂C_ξ$, tedy $C\cap α@⊂C_ξ\cap α$.
+$C_ξ$ uzavřená, tedy $α∈C_ξ$. $α∈\bigcap_{ξ∈τ}C_ξ=C$.
+
+Buď $α<δ$ libovolné. Každá množina $C_ξ$ je neomezené, tedy existuje $α^0_ξ$, že $α<α_0$.
+$\len{@{α^0_ξ:ξ<τ@}} ≤ τ<cf(δ)$. Tedy, množina $@{α^0_ξ:ξ<τ@}$ není kofinální v $δ$, existuje $α_1<δ;α^0_ξ<α_1$.
+
+Dál indukcí najdeme $α^n_ξ∈C_ξ,α_n<α^n_ξ<α_{n+1}$. $cf(δ)>ω$, tedy $\sup@{α_n:n∈ω@}=γ<δ$.
+Kdykoliv je $ξ∈τ$, kdykoliv $β<γ:∃n:β<α_n<α^n_ξ∈C_ξ$. Tedy $γ=sup@(C_ξ\cap γ@)$. $C_ξ$ je uzavřená, tedy $γ∈C_ξ$ pro všechna $ξ$, proto je i v $C$, $γ>α$, množina $C$ je neomezená v $δ$.
+
+Buď $δ$ kardinál, $cf(δ)>ω,S@⊂δ$. Řekneme, že že množina $S$ je \name{stacionární v $δ$}, jestliže pro každou $C@⊂δ$, $C$ uzavřená neomezená v $δ$ platí, že $S\cap C\neq \emptyset$.
+
+Buď $κ$ kardinál, $@<A_α:α<κ@>$ soubor podmnožin kardinálu $κ$. Množina $ΔA_α=@{γ<κ:(∀α<γ)γ∈A_α@}$.
+Tato množina se nazývá \name{diagonálním průnikem} tohoto souboru.
+
+\lemma{}
+$$ΔA_α=\bigcap@{A_α\cup@(α+1@):α∈κ@}$$
+
+\proof
+Buď $γ∈ΔA_α$. Kdykoliv $α<γ$, pak $γ∈A_α@⊂A_α\cup@(α+1@)$. Je-li $α≥γ$, pak $γ∈a+1@⊂A_α\cup (α+1)$, tedy $γ∈\bigcap_{α<κ}A_α\cup@(α+1@)$.
+
+Buď $γ∈\bigcap_{α∈κ}A_α\cup@(α+1@)$. Je-li $α<γ$, pak $γ∈A_α\cup@(α+1@)$, protože $γ>α, γ∉α+1$ máme $γ∈A_α:γ∈ΔA_α$.
+
+\lemma{}
+Nechť $κ>ω$ regulání kardinál, $@<C_α,α∈κ@>$ soubor množin uzavřených neomezených v $κ$. Pak $ΔC_α$ je uzavřená neomezená v $κ$.
