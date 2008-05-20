@@ -1,0 +1,36 @@
+
+\statement{Ramseova}
+Pro každé přirozené $n, k$, $ω→(ω)^n_k$. Tedy, kdykoliv $f:@[ω@]^n→k$, pak existuje nějaká $H@⊂ω, \len{H}=ω$, tak, že $f\upharpoonright @[H@]^n$ je konstantní.
+
+\proof
+Indukcí dle $n$.
+$n=1$, tedy $f:@[w@]^1→k$, triviální.
+
+\statement{}
+Pro každé přirozené $r,n,k$ existuje přirozené $N$, že $N→(r)^n_k$.
+
+\section{Axiom regularity}
+$$(∀a)(a \neq \emptyset →→ (∃x)(x∈a \land a\cap x = 0 ))$$
+
+Pro každý ordinál $α$ definujme množinu $V_α$ transfinitní rekurzí takto: $V_0 = 0$, $V_{α+1} = \mathcal{P}(V_α)$, $V_α = \bigcup @{V_β;β<α@}$ pro limitní $α$.
+
+\lemma{}
+Pro každý ordinál platí:
+→•
+ • $V_α$ je transitivní množina.
+ • Je-li $β<α$, pak $V_β@⊂V_α$.
+←•
+
+$V_0$ je tranzitivní, dále transfinitní indukcí.
+
+\statement{}
+Následující tvrzení jsou ekvivalentní:
+→•
+ • Axiom fundovanosti
+ • $V=\bigcup @{V_α;α∈On@}$
+←•
+
+\proof
+Zleva doprava zřejmě platí, že universum to obsahuje.
+Sporem. Nechť $x$ je množina a není v $\bigcup @{V_α@}$.
+Pro tuto množinu $x$ nemůže platit implikace $x\neq 0→(∀y∈x)∈\bigcup@{V_α@}$.

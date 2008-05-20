@@ -1,0 +1,9 @@
+
+\statement{$10v16$}
+Nechť $f∈T@[x@]$ je bezčtvercový monický polynom, kde $T$ je nějaké konečné těleso.
+$V=T@[x@]/f·T@[x@]$ a $W=@{@[u@]_f∈V|@[u@]_f^{\len{T}}=@[u@]@}$.
+
+$V$ je vektorový prostor nad $T$, $W$ je jeho podprostor.
+Je-li $f$ součinem právě $k$ ireducibilních polynomů.
+Je-li $@[u@]_f∈W,1∈u°<f°$, pak $f=Π_{t∈T} nsd(u-s, f)$.
+Jsou-li $@[u_1@]_f,…,@[u_k@]_f$ báze $W$ a $f_1, f_2$ dva neasociované ireducibilní faktory $f$, $(f_1,f_2|f)$, pak $∃i≤k$ a $t∈T:f_1|w_i-t, f_2\not|(w_i-t)$.
