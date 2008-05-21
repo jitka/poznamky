@@ -1,0 +1,47 @@
+\section{Booleovy algebry}
+
+Nechť $S(\land, \lor)$ je svaz. Řekneme, že je \name{distributivní}, platí-li $∀a,b,c∈S;a\lor(b\land c) = (a\lor b)\land(a \lor b)$.
+
+\note{
+  Je-li $S(\land, \lor)$ distributivní svaz $←→$ i druhá distributivita ($∀a,b,c;a\land(b\lor c) = (a\land b)\lor(a \land c)$).
+
+  \proof
+  Stačí jedna implikace, pro druhé stačí vzít opačný svaz.
+
+  Nechť je tedy svaz distributivní.
+
+  $(a\land b)\lor(a\land c) = ((a\land b)\lor a)\land((a\land b)\lor c) = a\land((a\lor c)\land(b\lor c)) = a\land(b\lor c)$.
+}
+
+\note{
+  Každý distributivní svaz je modulární.
+}
+
+Nechť $S(\land, \lor)$ je svaz, $0$ jeho nejmenší, $1$ jeho největší prvek. Pak řekneme, že $a'∈S$ je \name{doplněk (komplement)} prvku $a$, jestliže $a\land a' = 0, a \lor a' = 1$.
+
+\note{
+  V distributivním svazu existuje pro každý prvek nejvýše jeden komplement.
+}
+
+$S(\lor, \land, 0,1,')$ nazveme Booleovou algebrou, je-li $S(\land, \lor)$ distributivní svaz, $0$ je nejmenší prvek, $1$ je největší prvek a $':S→S$ komplement.
+
+\note{
+  Je-li $S(\lor, \land, 0, 1,')$ Booleova algebra, pak $∀a,b∈S$ platí:
+  →•
+   • $(a')' = a$
+   • $(a\land b)' = a'\lor b'$
+   • $(a\lor b)' = a'\land b'$
+   • $0' = 1, 1' = 0$.
+  ←•
+}
+
+\statement{$11.5$}
+Nechť $S(\lor, \land, 0,1,')$ je konečná Booleova algebra, $A$ buď množina všech atomů $S(\land, \lor)$. Potom $a∈A \equiv a\neq 0, b≤a, b\neq 0 →→ b=a$.
+
+Okruhu $R(+,·,-,0,1)$ budeme říkat \name{Booleův okruh}, jestliže je komutativní, je charakteristiky $2$ ($r+r= 0$) a $r·r = r$.
+
+\note{
+  Nechť $S(\lor, \land, 0, 1, ')$ je Booleova algebra. Definujeme-li operaci $+: a+b = (a\land b')\lor(a'\land b)$, pak $S(+,\land, Id_S, 0, 1)$ je Booleův okruh. Navíc kongruence obou algeber splývají.
+
+  Vezmeme-li $S(+,·,-,0,1)$ Booleův okruh. Definujeme operaci $\lor: a\lor b = a+b+a·b$ a operaci $':a'=1+a$. Potom $S(\lor, ·,0,1,')$ je Booleova algebra. Navíc kongruence obou algeber splývají.
+}
