@@ -20,7 +20,7 @@ A zpátky:
 &&p(α)←→ p+mT@[x@]\\
 &&T_1(a)\cong @(T_1@[x@]@)_{m_α}\cong @(T_2@[x@]@)_{m_β}\cong T_2(β)\\
 &&p(α)→p+m_αT_1@[x@]→f_x(p)→m_αT_2@[x@]→jβ@(f_x@(p@)@)\\
-&&hbox{To je izomorfizmus}\\
+&&\hbox{To je izomorfizmus}\\
 &&tx^0∈T_1@[x@]\\
 &&g(t)=f(t)\\
 &&f_x(tx^0)=f(t)x^0\\

@@ -32,7 +32,7 @@ $x^{q^d} - x = (x^{q^k}-x)·r + w$, $w°<q^k$.
   Rozkladovým nadtělesem $x^{q^d}-x$ jsou všechny kořeny jednonásobné.
 }
 
-$f∈T@[x@]$, $T$ je komutativní těleso. Řekneme, že $f$ je \name{bez čtverců}, jestliže $g^2/f$ pro $g∈T@[x@]→→g°=0$. Rozklad $f=\Π_{i∈\N} f_i^i$ nazveme \name{bezčtvercový rozklad}>, jestliže $f_i$ jsou bezčtvercové polynomy.
+$f∈T@[x@]$, $T$ je komutativní těleso. Řekneme, že $f$ je \name{bez čtverců}, jestliže $g^2/f$ pro $g∈T@[x@]→→g°=0$. Rozklad $f=\Π_{i∈\N} f_i^i$ nazveme \name{bezčtvercový rozklad}, jestliže $f_i$ jsou bezčtvercové polynomy.
 
 \note{
   Každý polynom $f∈T@[x@]$, kde $T$ je komutativní těleso, má bezčtvercový rozklad.

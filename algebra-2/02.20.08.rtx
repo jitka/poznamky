@@ -7,13 +7,13 @@ V $S(·,1)$ řekneme, že \name{$a$ dělí $b$} ($a\backslash b$), $a,b∈S$, je
 $a$ je \name{asociováno} s $b$ ($a||b$), pokud $a\backslash b\land b\backslash a$.
 
 \note{
-	Je-li $R(+,·,-,0,1)$ obor integrity a $a,b∈\R-@{0@}$, pak $a\backslash b$ (v $R-@{0@}(·,1)$) $←→b·\R@⊂a·\R$.
-	$a||b←→ a·\R=b·\R$.
+	Je-li $R(+,·,-,0,1)$ obor integrity a $a,b∈R-@{0@}$, pak $a\backslash b$ (v $R-@{0@}(·,1)$) $←→b·R@⊂a·R$.
+	$a||b←→ a·R=b·R$.
 
 	\proof
-	$b=a·c$, což znamená $b·1 ∈a·\R$, $b·r = a·c·r$.
+	$b=a·c$, což znamená $b·1 ∈a·R$, $b·r = a·c·r$.
 
-	$b·1∈b·\R→→∃c∈\R;b=a·c$. Zřejmě $c\neq 0$.
+	$b·1∈b·R→→∃c∈R;b=a·c$. Zřejmě $c\neq 0$.
 }
 
 \note{

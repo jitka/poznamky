@@ -67,10 +67,10 @@ Pak vezmeme nejmenší podtěleso obsahující všechny kořeny.
 $T@⊂U, α∈U$. Řekneme, že $α$ je \name{algebraický nad $T$}, existuje-li polynom $p∈T@[x@]$ tak, že $p(α) = 0$.
 V opačném případě nazveme $α$ \name{transcendentní}.
 
-Buď $m∈T@[x@], °(m)≥0$. Řekneme, že $m$ je \name{monický}, jestliže $a_{°(m)}=1$.
+Buď $m∈T@[x@], m°≥0$. Řekneme, že $m$ je \name{monický}, jestliže $a_{m°}=1$.
 
 \statement{}
-$T@∈U, α∈U$ je algebraický nad $T$. Potom $∃!$ monický polynom $m∈T@[x@]$ takový, že $p∈T@[x@]-@{0@}·p(α) = 0 ←→ m/p$.
+$T@⊂U, α∈U$ je algebraický nad $T$. Potom $∃!$ monický polynom $m∈T@[x@]$ takový, že $∀p∈T@[x@]-@{0@};p(α) = 0 ←→ m/p$.
 
 Nechť $m$ je ireducibilní. Potom $T@[α@] = T@(α@)$ a $(T@[x@])_m\cong T@(α@)$.
 

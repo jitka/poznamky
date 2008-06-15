@@ -1,5 +1,5 @@
 
-\statement{$10v16$}
+\statement{$10.16$}
 Nechť $f∈T@[x@]$ je bezčtvercový monický polynom, kde $T$ je nějaké konečné těleso.
 $V=T@[x@]/f·T@[x@]$ a $W=@{@[u@]_f∈V|@[u@]_f^{\len{T}}=@[u@]@}$.
 
