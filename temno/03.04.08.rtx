@@ -32,7 +32,7 @@ $f:A→B$ se nazývá \name{bijekce}, je-li současně prostá a surjektivní.
 \name{Ostře uspořádaná množina} je dvojice $@<a,r@>$, kde $a$ je množina, $r@⊂a\times a$ a $r$ splňuje následující pro $∀x,y,z$.
 →•
  • $@(@<x,y@>∈r\land @<y,z@>∈r@)→→@<x,z@>∈r$
- • $@<x,x@>∈r$.
+ • $@<x,x@>∉r$.
 ←•
 
 Ostré uspořádání nazveme \name{lineární}, jestliže $(∀x,y∈a);@<x,y@>∈r\lor @<y,x@>∈r\lor x=y$.
