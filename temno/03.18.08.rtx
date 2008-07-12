@@ -10,7 +10,7 @@ Pro ordinál $α$ je \name{ordinální následník} ordinál $S(α) = α\cup@{α
 
 Ordinál $α$ se nazývá \name{izolovaný}, pokud $∃β$, že $α=S(β)$ nebo $α=\emptyset$.
 
-Pokud $α$ není izolovaný, pak se nazývá limitní.
+Pokud $α$ není izolovaný, pak se nazývá \name{limitní}.
 
 Ordinál $α$ je \name{přirozené číslo}, jestliže $(∀β)(β≤α→→β\hbox{ je izolovaný})$.
 
@@ -26,25 +26,26 @@ Tedy, můžeme vydělit množinu všech přirozených čísel. Označme ji $ω$.
 
 $ω$ je ordinál, neboť je tranzitivní množinou ordinálů.
 
+\note{}
 Všechny ordinály menší než $ω$ jsou izolované, zatímco $ω$ limitní ordinál (Kdyby ne, pak by $ω∈ω$. Tedy, $ω$ je nejmenší limitní ordinál.
 
 \statement{Peanovy axiomy teorie přirozených čísel}
 ↑•
- • $$0∈ω$$
- • $$(∀n∈ω)(S(n)∈ω)$$
- • $$(∀n,m∈ω)(n\neq m→→S(n)\neq S(m))$$
- • Axiom indukce
-   $$(∀x)(X@⊂ω→→(0∈X\land (∀n)(n∈X→→S(n)∈X))→→X=ω$$
+ • $0∈ω$
+ • $(∀n∈ω)(S(n)∈ω)$
+ • $(∀n,m∈ω)(n\neq m→→S(n)\neq S(m))$
+ • Axiom indukce:\\
+   $(∀x)(x@⊂ω→→(0∈x\land (∀n)(n∈x→→S(n)∈x))→→x=ω$
 ↓•
 
 \proof
 První až třetí plyne z věty o ordinálech.
 
 Čtyřka sporem.
-$X\neq ω$, tedy $ω-X\neq \emptyset$, $ω$ je ordinál, tedy existuje $n∈ω-X$, n je nejmenší prvek množiny $ω-X$. Nastávají tyto možnosti:
+$x\neq ω$, tedy $ω\backslash x\neq \emptyset$, $ω$ je ordinál, tedy existuje $n∈ω\backslash x$, n je nejmenší prvek množiny $ω\backslash x$. Nastávají tyto možnosti:
 →•
  • $n=0$ ‒ spor s jedničkou
- • $n=S(m)$ pro nějaké $m$, $m∈X$, spor s dvojkou.
+ • $n=S(m)$ pro nějaké $m$, $m∈x$, spor s dvojkou.
 ←•
 
 Buď $α,β$ ordinály. \name{Ordinální součet} $α+β$ je typ $@<α\times@{0@} \cup β\times @{1@},R@>$, $R$ je lexikografické uspořádání zprava.
@@ -56,7 +57,7 @@ Pro libovolné ordinály $α,β,γ$ platí:
  • $α+0=α$
  • $α+1=S(α)$
  • $α+S(β)=S(α+β)$
- • Je-li $β$ limitní ordinál, pak $α+β=\sup @{α+ξ;ξ<β@}$
+ • Je-li $β$ limitní ordinál, pak $α+β=\sup @{α+ξ|ξ<β@}$
 ←•
 
 \proof
@@ -108,3 +109,4 @@ Tedy předpokládejme, že tomu tak není.
 
 Udělám inverzní zobrazení pro co jde a ziteruji pro zbytek „v menším“, iteruji donekonečna.
 \TODO{Tady je to dost neúplné}
+

@@ -15,7 +15,7 @@
 \newcommand{\notetype}[2]{\notebase{}{#1}{#2}}
 \newcommand{\notehead}[2]{\notebase{\textit}{#1}{#2}}
 
-\newcommand{\Def}[1]{\notehead{Definice}}
+\newcommand{\Def}[1]{\notehead{Definice}#1}
 \newcommand{\observation}[1]{\notehead{Pozorování}{#1}}
 \newcommand{\follows}[1]{\notehead{Důsledek}{#1}}
 \newcommand{\note}[1]{\notehead{Poznámka}{#1}}
@@ -39,4 +39,3 @@
 \newcommand{\inv}[1]{\frac{1}{#1}}
 \newcommand{\len}[1]{{\left|{#1}\right|}}
 \newcommand{\uv}[1]{\quotedblbase{}#1\textquotedblleft}%
-\newcommand{\isnt}{\urcorner}

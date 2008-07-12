@@ -1,7 +1,7 @@
 \section{Ordinály}
 Množina $x$ se nazývá \name{tranzitivní}, jestliže platí $(∀y)(y∈x→→ y@⊂x)$.
 
-Množina $x$ se nazývá \name{ordinál}, je-li tranzitivní, dobře uspořádaná pomocí $∈$.
+Množina $x$ se nazývá \name{ordinál}, je-li tranzitivní a dobře uspořádaná pomocí $∈$.
 
 \statement{O ordinálech}
 →•
@@ -19,7 +19,7 @@ Množina $x$ se nazývá \name{ordinál}, je-li tranzitivní, dobře uspořádan
 
 \proof
 $x$ je ordinál, dokážeme, že $y$ je tranzitivní. Zvolme libovolně $t∈y,z∈t$, víme, že $x$ je tranzitivní.
-$t∈x\land y∈x$. Protože $x$ je tranzitivní, $t∈x$. $x$ je tranzitivní, proto $z∈x$.
+$t∈y\land y∈x$. Protože $x$ je tranzitivní, $t∈x$. $x$ je tranzitivní, proto $z∈x$.
 
 Tedy $y,z,t∈x, t∈y,z∈t$. $∈$ je uspořádání na $x$, tedy $z∈y$.
 
@@ -28,15 +28,15 @@ $x$ je tranzitivní množina a $y∈x$, pak i $u,v,w∈x$.
 Množina $x$ je relací $∈$ uspořádaná, pak $u∈w$.
 
 $@<y,∈@>$ je dobře uspořádaná. Buď $C@⊂y$, $C\neq \emptyset$.
-$y∈x,(∀t∈C);t∈y,x$ tranzitivní, $C@⊂x, C\neq \emptyset\land @<x,∈@>$ dobře uspořádaná, existuje $u∈C$ nejmenší prvek množiny $C$, tedy má nejmenší prvek v $C@⊂y$.
+$y∈x$, $(∀t∈C)(t∈y)$, $x$ tranzitivní, $C@⊂x, C\neq \emptyset\land @<x,∈@>$ dobře uspořádaná, existuje $u∈C$ nejmenší prvek množiny $C$, tedy má nejmenší prvek v $C@⊂y$.
 
 $x$ ordinál, $y∈x$. $t∈@<@(←,y@),∈@>←→t∈y$.
 
 Nechť $x,y$ ordinály a existuje izomorfizmus $h$ mezi nimi.
-Kdybychom měli, že $x=@{z;z∈y@}$, pak to jen znamená, že $x=y$.
+Kdybychom měli, že $x=@{z|z∈y@}$, pak to jen znamená, že $x=y$.
 
-Ale $y=@{h(z);z∈x@}$.
-Vezměme si $m=@{z∈x;h(z)\neq z@}$.
+Ale $y=@{h(z)|z∈x@}$.
+Vezměme si $m=@{z|z∈x⋀h(z)\neq z@}$.
 Chtěli bychom, aby byla prázdná.
 
 Nechť tedy $m\neq \emptyset$. Protože $x$ je dobře uspořádaná, tak množina $m$ má nejmenší prvek $t$.
@@ -56,14 +56,16 @@ Pokud platí, že $(∃y)(y∈C\land y∈t)$. Pak vezmu $m=@{y∈C;y∈t@}\neq \
 $t$ je ordinál, tedy existuje $x$ nejmenší prvek množiny $m$ a $x$ je nejmenší prvek množiny $C$.
 
 \statement{}
-$$(\not\exists z )(∀x)(x\hbox{ je ordinál } →→ x∈z)$$.
+$$\lnot(\exists z )(∀x)(x\hbox{ je ordinál } →→ x∈z)$$.
+
+Tedy, neexistuje množina všech ordinálů.
 
 \proof
 Sporem. Kdyby existovalo, tak $z$ je tranzitivní, dobře uspořádaná, tedy $z$ je ordinál a tedy obsahuje sám sebe.
 Pro žádný ordinál neplatí, že $x∈x$.
 
 \lemma{}
-Je-li $a$ množina ordinálů a platí-li $(∀x∈a)(∀y∈x)y∈a$, pak $a$ je ordinál.
+Je-li $a$ množina ordinálů a platí-li $(∀x∈a)(∀y∈x)(y∈a)$, pak $a$ je ordinál.
 
 \proof
 $a$ je tranzitivní. Každé dva ordinály lze porovnat dle věty o ordinálech.
@@ -76,7 +78,7 @@ Je-li $@<a,r@>$ jakákoliv dobře uspořádaná množina, pak existuje právě j
 \proof
 Buď $c,d$ ordinály, předpokládejme, že $@<a,r@> \cong @<c,∈@>\land @<a,r@>\cong @<d,∈@>$. Složíme a dostáváme, že $@<c,∈@>\cong @<d,∈@>$. Podle věty o ordinálech jsou si rovny.
 
-Položme $b=@{e∈a;(∃x);(x\hbox{ je ordinál }\land @<x,∈@>\cong @<@(←,c@),r@>)@}$.
+Položme $b=@{e|e∈a⋀(∃x)(x\hbox{ je ordinál }\land @<x,∈@>\cong @<@(←,c@),r@>)@}$.
 
 Nechť $f$ je funkce definovaná izomorfizmem s počátečními úseky.
 

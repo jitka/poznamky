@@ -5,7 +5,7 @@ Všude předpokládáme axiom výběru (i když to nebude explicitně uvedeno).
 
 Mějme soubor množin $A=@<A_i;i∈I@>$.
 
-\name{Částečný selektor} je definovaná na některých $i$ a vybírá si vždy některou hodnotu z příslušného $A_i$ ($f,dom(f)@⊂I, f(i)∈A_i$).
+\name{Částečný selektor} je funkce definovaná na některých $i$ a vybírá si vždy některou hodnotu z příslušného $A_i$ ($f,dom(f)@⊂I, f(i)∈A_i$).
 
 Buď $S$ množina částečných selektorů souboru $A$.
 Říkáme, že $S$ \name{pokrývá konečné podmnožiny množiny $I$}, jestliže pro každou konečnou $u@⊂I$ existuje $f∈S$, že $u@⊂dom(f)$.
@@ -13,7 +13,7 @@ Buď $S$ množina částečných selektorů souboru $A$.
 Zobrazení $g$ se nazývá \name{filtrovaným prodloužením} množiny částečných selektorů $S$, je-li $dom(g)=I$ a pro $(∀u@⊂I,u \hbox{ konečná })(∃f∈S)f\upharpoonright u = g\upharpoonright u$.
 
 \statement{Princip kompaktnosti}
-Je-li $A=@<A_i;i∈I@>$ soubor konečných množin, pak každý systém částečných selektorů, který pokrývá konečné podmnožiny množiny $I$, má filtrované prodloužení.
+Je-li $A=@<A_i|i∈I@>$ soubor konečných množin, pak každý systém částečných selektorů, který pokrývá konečné podmnožiny množiny $I$, má filtrované prodloužení.
 
 \proof
 Mějme $S$ soubor částečných selektorů, který pokrývá všechny konečné podmnožiny množiny $I$.
@@ -21,8 +21,8 @@ Mějme $S$ soubor částečných selektorů, který pokrývá všechny konečné
 Bez újmy na obecnosti můžeme předpokládat, že pro každý částečný selektor $f∈S$ je $dom(f)$ konečná množina.
 
 \begin{eqnarray*}
-Z=\{g;dom(g)@⊂I; i∈dom(g) →→ g(i)∈A_i; (∀u@⊂dom (g); u\hbox{ konečná})\\
-@{f∈S;f\upharpoonright u = g\upharpoonright u @} \hbox{ pokrývá konečné podmnožiny množiny } I@\}
+Z=\{g|dom(g)@⊂I⋀ i∈dom(g) →→ g(i)∈A_i⋀ (∀u@⊂dom (g)); (u\hbox{ konečná}))\\
+@{f∈S|f\upharpoonright u = g\upharpoonright u @} \hbox{ pokrývá konečné podmnožiny množiny } I\}
 \end{eqnarray*}
 
 A poté vezmeme $@(Z,@⊂@)$.
@@ -37,19 +37,19 @@ Lze rozšířit na další počty indexů.
 
 Existuje $g∈L$, že $u@⊂dom(g)$. Máme $g∈Z$, tedy $@{f∈S;f\upharpoonright u = g\upharpoonright u@}$ pokrývá všechny konečné podmnožiny $I$, $\tilde{g}\upharpoonright u = g\upharpoonright u$, dostáváme $\tilde{g} ∈Z$.
 
-Podle principu maximality $Z$ obsahuje maximální prvek $h$. Kdykoliv $u@⊂dom(h)$, $u$ konečná $@{f∈S;f\upharpoonright u = h\upharpoonright u@}$ pokrývá všechny konečné podmnožiny množiny $I$, tedy je neprázdná, tedy $∃f∈S;f\upharpoonright u = h\upharpoonright u$. Zbývá ověřit, že $dom(h) = I$.
+Podle principu maximality $Z$ obsahuje maximální prvek $h$. Kdykoliv $u@⊂dom(h)$, $u$ konečná $@{f∈S|f\upharpoonright u = h\upharpoonright u@}$ pokrývá všechny konečné podmnožiny množiny $I$, tedy je neprázdná, tedy $(∃f∈S)(f\upharpoonright u = h\upharpoonright u)$. Zbývá ověřit, že $dom(h) = I$.
 
 $dom(h) = I$. Sporem. Buď $i_0∈I$ takové, že $i_0∉dom(h)$.
 $A_{i_0}$ je konečná, tedy $A_{i_0}=@{a_0, a_1, a_2, …, a_k@}$. Protože $h$ je maximální prvek množiny $Z$, $h$ nelze prodloužit na $I\cup @{i_0@}$.
 Tedy pro každou funkci $h_j=h\cup @{@<i_0,a_j@>@}$ máme $h_j∉Z$.
-$∀j; ∃u_i\hbox{ konečná }@⊂dom(h_j)$, pro kterou platí, že $@{f∈S;f\upharpoonright u_j = h_j\upharpoonright u_j@}$ nepokrývá konečné podmnožiny $I$.
+$(∀j)(∃u_i\hbox{ konečná })(u_i@⊂dom(h_j)$, pro kterou platí, že $@{f∈S|f\upharpoonright u_j = h_j\upharpoonright u_j@}$ nepokrývá konečné podmnožiny $I$.
 Tedy pro každé $j$ existuje konečná množina $v_j@⊂I$, která splňuje: Kdykoliv $f∈S$ taková, $f\upharpoonright u_j=g\upharpoonright u_j$, pak $v_j@⊄dom(f)$.
 
 Protože $h∈Z$, $h_j∉Z$, musí platit, že $i_0∈u_j$.
 $$w:= \bigcup_{j=0}^k u_j \cup \bigcup_{j=0}^kv_j \backslash @{i_0@}@⊂dom(h)$$
 Tato stále pokrývá všechny konečné podmnožiny množiny $I$.
 
-$@{f∈S;f\upharpoonright w = h\upharpoonright w@}$ pokrývá všechny konečné podmnožiny $I$. Tedy tato množina také obsahuje $f$, pro kterou $dom(f)=w\cup @{i_0@}$, tedy máme $∃y∈S;w\cup @{i_0@}@⊂dom(f),f\upharpoonright w = h\upharpoonright w, f(i_0) = a_j$ pro vhodné $j$, což je spor.
+$@{f∈S|f\upharpoonright w = h\upharpoonright w@}$ pokrývá všechny konečné podmnožiny $I$. Tedy tato množina také obsahuje $f$, pro kterou $dom(f)=w\cup @{i_0@}$, tedy máme $∃y∈S;w\cup @{i_0@}@⊂dom(f),f\upharpoonright w = h\upharpoonright w, f(i_0) = a_j$ pro vhodné $j$, což je spor.
 
 \lemma{O třech množinách}
 Nechť $f:M→M$ je takové, že pro všechna $x∈M$ je $f(x)\neq x$.
@@ -79,7 +79,7 @@ Buď $κ$ nekonečný kardinál, buďte $@<A_α,α∈κ@>$ množiny, pro každé
 Pak existuje soubor $@{B_α;α∈κ@}$ tak, že:
 ↑•
  • $(∀α∈κ)\len{B_α} = κ$
- • $α\neq β;B_α\cap B_β = \emptyset$
+ • $α\neq β→→B_α\cap B_β = \emptyset$
  • $(∀α∈κ)B_α@⊂A_α$
 ↓•
 

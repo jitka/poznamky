@@ -13,7 +13,7 @@ Stačí implikace, druhý směr platí z logiky.
 Vždy platí, že
 →•
  • $x@⊂x$
- • $\overline{x⊂x}$
+ • $\lnot@(x⊂x@)$
  • $(x@⊂y \land y@⊂z)→→(x@⊂z)$
  • $(x⊂y \land y⊂z) →→ (x⊂z)$
  • $(x@⊂y \land y⊂z) →→ (x⊂z)$
@@ -32,20 +32,20 @@ Množina $z$ je axiomem vydělení pro $φ$ určená jednoznačně.
  • $φ(x):= x∉b$ -- $z$ je \name{rozdíl}, značí se $a\backslash b$.
  • $φ(x):= x\neq x$ -- $z$ je \name{prázdná množina}, $\emptyset$.
    Její existence dokázána z axiomů.
-   $$(∀x)(x∈\emptyset)$$
+   $$(∀x)(x∉\emptyset)$$
 ←•
 
 Řekneme, že množiny $a, b$ jsou \name{disjunktní}, pokud $a\cap b = \emptyset$.
 
 \lemma{}
 →•
- • $\overline{(∃y)(y∈0)}$
+ • $\lnot(∃y)(y∈0)$
  • $(∀x)(\emptyset@⊂x)$
  • $x@⊂\emptyset ←→ x = 0$
 ←•
 
 \statement{}
-$$\overline{(∃z)(∃x)(x∈z)}$$
+$$\lnot(∃z)(∀x)(x∈z)$$
 
 \proof
 Sporem. Nechť tedy existuje.
@@ -78,12 +78,16 @@ $@<a_1@> = a_1$, $@<a_1,a_2,a_3,…,a_k@> = @<@<a_1,a_2,a_3,…,a_{k-1}@>, a_k@>
 Zplošťuje jako v perlu. Značí se $\bigcup a$.
 
 \lemma{}
-Buď $a=@{b,c@}$. Pak $\bigcup a = @{x,x∈b \lor x∈c@}$.
+Buď $a=@{b,c@}$. Pak $\bigcup a = @{x|x∈b \lor x∈c@}$.
 Značíme to $b\cup c$ a říkáme tomu \name{sjednocení}.
 
-\name{Neuspořádaná $k$-tice} je $@{a,b,c@} = @{a,b@} \cup @{c@}$ a $@{a_1,a_2, …, a_k@} = @{a_1,a_2, …, a_{k-1}@}\cap @{a_k@}$.
+\name{Neuspořádaná $k$-tice} je
+\begin{eqnarray*}
+@{a,b,c@} &=& @{a,b@} \cup @{c@}\\
+@{a_1,a_2, …, a_k@} &=& @{a_1,a_2, …, a_{k-1}@}⋃ @{a_k@}
+\end{eqnarray*}
 
-Pro neprázdnou množinu $a$ máme průnik $\bigcap a = @{x:(∀b)(b∈a→→x∈b)@}$.
+Pro neprázdnou množinu $a$ máme průnik $\bigcap a = @{x|(∀b)(b∈a→→x∈b)@}$.
 
 \subsection{Schéma axiomů nahrazení}
 $ψ$ je funkce (to je ta první podmínka). Tento axiom potom říká, že existuje obraz množiny.
@@ -91,5 +95,5 @@ $ψ$ je funkce (to je ta první podmínka). Tento axiom potom říká, že exist
 $w$ je zakázané, aby nebyl problém při substituci, $z$ dělá problémy jako u axiomu nahrazení.
 
 $a,b$ jsou množiny.
-Kartézský součin $a\times b$ množin $a, b$ je množina $a\times b := @{@<u,v@>;u∈a\land v∈b@}$.
+Kartézský součin $a\times b$ množin $a, b$ je množina $a\times b := @{@<u,v@>|u∈a\land v∈b@}$.
 Existence se dokáže postupným \uv{poskládáním} třeba z řádků.

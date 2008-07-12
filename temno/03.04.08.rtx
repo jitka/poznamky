@@ -1,27 +1,28 @@
 
 \name{Binární relace} je množina $R$, jejímiž prvky jsou uspořádané dvojice.
 
-\name{Definiční obor relace $R$} $@{x;(∃y)@<x,y@>∈R@}$.
-\name{Obor hodnot} $@{y;(∃x)@<x,y@>∈R@}$.
+\name{Definiční obor relace $R$} $@{x|(∃y)@(@<x,y@>∈R@)@}$.
+
+\name{Obor hodnot} $@{y|(∃x)@(@<x,y@>∈R@)@}$.
 
 Oboje z toho je množina a $R@⊂df(R)\times sug(R)$.
 
-Inverzní relace $R^{-1}@{@<y,x@>;@<x,y@>∈R@}$.
+Inverzní relace $R^{-1}@{@<y,x@>|@<x,y@>∈R@}$.
 
-Jsou-li $R,S$ relace, pak složení relací $S\circ R$ je relace $@{@<x,z@>:@(∃y@)@<x,y@>∈R\land @<y,z@>∈S@}$.
+Jsou-li $R,S$ relace, pak složení relací $S\circ R$ je relace $@{@<x,z@>|@(∃y@)@(@<x,y@>∈R\land @<y,z@>∈S@)@}$.
 
 Skládání relací je asociativní a $@(S\circ R@)^{-1} = R^{-1}\circ S^{-1}$.
 
-Množina $f$ se nazývá \name{funkce}, je-li $f$ relace, pro které platí\\
-$∀x∈df(f))@(y∈sug(f)\land y'∈sug(f)\land @<x,y@>∈f\land @<x,y'@>∈f@)→→y=y'$.
+Množina $f$ se nazývá \name{funkce}, je-li $f$ relace, pro kterou platí\\
+$@(∀x∈df(f)@)@(y∈sug(f)\land y'∈sug(f)\land @<x,y@>∈f\land @<x,y'@>∈f@)→→y=y'$.
 
 Značení $f:A→B$ označuje, že $f$ je funkce, $A=df(f), sug(f)@⊂B$.
 Je-li $f:A→B$ funkce, $x∈a$, pak $f(x)$ označuje jediné $y∈B, @<x,y@>∈f$.
 
-$f:A→B, C@⊂A$ potom zůžení $f^\upharpoonright C = f\cap (C\times B)$.
+$f:A→B, C@⊂A$ potom zůžení $f\upharpoonright C = f\cap (C\times B)$.
 
 Obor množiny $C$ je obor hodnot tohoto zůžení.
-Někdy se zapisuje předpisem jako $f=@<f(x):x∈A@>$.
+Někdy se zapisuje předpisem jako $f=@<f(x)|x∈C@>$.
 
 Funkce $f:A→B$ se nazývá \name{prostá}, je-li $f^{-1}$ funkce.
 
@@ -31,11 +32,11 @@ $f:A→B$ se nazývá \name{bijekce}, je-li současně prostá a surjektivní.
 
 \name{Ostře uspořádaná množina} je dvojice $@<a,r@>$, kde $a$ je množina, $r@⊂a\times a$ a $r$ splňuje následující pro $∀x,y,z$.
 →•
- • $@(@<x,y@>∈r\land @<y,z@>∈r@)→→@<x,z@>∈r$
- • $@<x,x@>∉r$.
+ • $@(@<x,y@>∈r\land @<y,z@>∈r@)→→@<x,z@>∈r$ (Tranzitivita)
+ • $@<x,x@>∉r$ (Nereflexivita)
 ←•
 
-Ostré uspořádání nazveme \name{lineární}, jestliže $(∀x,y∈a);@<x,y@>∈r\lor @<y,x@>∈r\lor x=y$.
+Ostré uspořádání nazveme \name{lineární}, jestliže $(∀x,y∈a)@(@<x,y@>∈r\lor @<y,x@>∈r\lor x=y@)$.
 Jestliže není lineární, pak existují $r$-neporovnatelné prvky.
 
 Jestliže $R,S$ jsou relace, $R@⊂a\times a, S@⊂b\times b$, pak řekneme, že dvojice $@<a,R@>$ je \name{izomorfní} s dvojicí $@<b,S@>$, pokud existuje bijekce $f:a→b$ taková, že $(∀x,y∈a);@<x,y@>∈R←→ @<f(x),f(y)@>∈S$.
@@ -59,28 +60,29 @@ a nazývá se \name{počáteční úsek určený prvkem $x$}.
 $@(←,x@)$ budeme uvažovat s uspořádáním $r$.
 
 \lemma{}
-Je-li $@<a,r@>$ dobře uspořádaná množina a $x∈a$, potom $@<a,r@>$ není isomorfní s $@<@(←,x@),r@>$.
+Je-li $@<a,r@>$ dobře uspořádaná množina a $x∈a$, potom $@<a,r@>$ není izomorfní s $@<@(←,x@),r@>$.
 
 \proof
 Sporem. Nechť máme izomorfizmus $f:a→@(←,x@)$.
-Označme $m=@{y∈a;f(y)\neq y@}$.
+Označme $m=@{y∈a|f(y)\neq y@}$.
 $m\neq \emptyset$, protože se někam musí zobrazit $x$.
 Množina $a$ je dobře uspořádaná, tedy $(∃t∈m)$, že $t$ je $r$-nejmenší prvek množiny $m$.
-Tedy, $f(t)\neq t$ a $∀v∈a;v r t→→f(v)=v$.
+Tedy, $f(t)\neq t$ a $@(∀v∈a@)@(v r t→→f(v)=v@)$.
 
 Tedy, máme dvě možnosti: $f(t) r t$. Položíme $v=f(t)$, máme $vrt$, tedy $v\neq t$.
 Protože $vrt$, pak $f(v)=v$, tedy, není to prosté.
 Druhá možnost je, že $t r f(t)$.
 $t∈@(←,x@)$. Kdykoliv $v∈a, vrt,f(v)=v\neq t$.
+\TODO{Co to je?}
 Kdykoliv $v∈a, trv$, zachovává uspořádání, $f(t)rf(v), f(v)\neq t$.
 $f(t)\neq t$, tedy $f$ není surjektivní.
 
 \lemma{}
-Jsou-li $@<a,r@>, @<b,s@>$ dvě izomorfní, dobře uspořádané množiny, pak mezi nimi existuje \name{jediný izomorfizmus}.
+Jsou-li $@<a,r@>, @<b,s@>$ dvě izomorfní, dobře uspořádané množiny, pak mezi nimi existuje jediný izomorfizmus.
 
 \proof
 Sporem. Předpokládejme, že $f,g$ jsou dva různé izomorfizmy.
-Množina $m=@{y∈a;f(y)\neq g(y)@}$ je neprázdná.
+Množina $m=@{y|y∈a⋀f(y)\neq g(y)@}$ je neprázdná.
 $a$ je dobře uspořádaná, potom $m$ má nejmenší prvek $t$.
 Kdykoliv $yrt$, je $f(y)=g(y)$, ale $f(t)\neq g(t)$.
 
@@ -94,15 +96,16 @@ Buď $@<a,r@>, @<b,s@>$ dvě dobře uspořádané množiny.
 Pak nastává právě jedna z následujících možností:
 →•
  • $@<a,r@>$ je izomorfní s $@<b,s@>$
- • $∃x∈a$, že $@<@(←,b@),r@>$ je izomorfní s $@<b,s@>$
+ • $∃x∈a$, že $@<@(←,x@),r@>$ je izomorfní s $@<b,s@>$
  • Naopak
 ←•
 
 \proof
 Indukcí dle počtu prvků a bereme od nejmenšího prvku.
+\TODO{Kde se tu vzala indukce? Nemůže těch prvků být moc?}
 
 Značme $a$ je izomorfní s $b$ jako $a\cong b$.
-Položíme $f=@{@<v,w@>;v∈a,w∈b\land @<@(←,v@),r@>\cong @<@(←,w@),s@>@}$.
+$$f:=@{@<v,w@>|v∈a,w∈b\land @<@(←,v@),r@>\cong @<@(←,w@),s@>@}$$
 
 Máme $f@⊂a\times b$.
 $f$ je tedy dle vydělení množina, $f$ je zobrazení.

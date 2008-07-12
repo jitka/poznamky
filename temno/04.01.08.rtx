@@ -1,10 +1,11 @@
+
 Je-li $α$ ordinál, $α^+$ je nejmenší kardinál větší než $α$. Kardinál $κ$ je \name{následník}, pokud existuje $α$, pro které je $κ=α^+$. V opačném případě nazýváme $κ$ \name{limitní kardinál}.
 
 \section{Třídy a rekurze}
 
-Je-li $φ(x)$ formule jazyka teorie množin, pak $@{x:φ(x)@}$, pokud vzniklo za pomoci axiomu vydělení pro $φ$ je množina.
+Je-li $φ(x)$ formule jazyka teorie množin, pak $@{x|φ(x)@}$, pokud vzniklo za pomoci axiomu vydělení pro $φ$ je množina.
 
-Ale ne vždy tento zápis vede k množině (např. $@{x:x=x@}$).
+Ale ne vždy tento zápis vede k množině (např. $@{x|x=x@}$).
 
 Neformálně: Je-li $φ$ formule jazyka teorie množin, pak každý soubor tvaru $@{x;φ(x)@}$ budeme nazývat \name{třídou}.
 Třída, která není množinou je \name{vlastní třída}.
@@ -27,7 +28,7 @@ Je-li $C@⊂O_n$, $C\neq 0$, pak $C$ má nejmenší prvek.
 Lze použít pro tvorbu indukce ‒ pokud by někdy neplatilo, pak to, co neplatí má nejmenší prvek a na něm se dá utvořit spor.
 
 \statement{O transfinitní rekurzi}
-Je-li $F:V→V$, jestli existuje jediné $G:O_n→V$, pak $(∀α)(G(α)=F(G(\upharpoonright α))$.
+Je-li $F:V→V$, jestli existuje jediné $G:O_n→V$, pak $(∀α)(G(α)=F(G\upharpoonright α)$.
 
 \proof
 Nechť $G_1, G_2$ obě splňují tvrzení věty.
@@ -36,7 +37,7 @@ Pak dokážeme, že $G_1(α)=G_2(α)$.
 \TODO{Tady něco chybí ‒ včetně pochopení}
 
 Pro ordinály $α$ je formule $\aleph_α (=ω_α)$ definováno transfinitní rekurzí takto:
-$\aleph_0=ω_0=ω, \aleph_{α+1}=ω_{α+1}=(ω_α)^+$. Pro $γ∈O_n$ je limitní, $\aleph_γ=ω_γ=\sup@{ω_β;β<γ@}$.
+$\aleph_0=ω_0=ω, \aleph_{α+1}=ω_{α+1}=(ω_α)^+$. Pro $γ∈O_n$ je limitní, $\aleph_γ=ω_γ=\sup@{ω_β|β<γ@}$.
 
 \lemma{}
 ↑•

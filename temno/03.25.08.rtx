@@ -2,7 +2,7 @@ Buď $A$ množina. Pokud lze $A$ dobře uspořádat, buď $\len{A}$ nejmenší o
 
 Ordinál $α$ se nazývá \name{kardinál}, pokud $α = \len{α}$.
 
-Ordinál $α$ je kardinál $←→∀β;β<α→→β\not\approx α$.
+Ordinál $α$ je kardinál $←→@(∀β@)@(β<α→→β\not\approx α@)$.
 
 \lemma{}
 Buďte $α,β$ ordinály. Je-li $\len{α}≤β≤α→→\len{β}=\len{α}$.
@@ -39,7 +39,7 @@ Pro přirozená čísla to funguje stejně, jako ordinální sčítání a náso
 \proof{}
 Stačí si uvědomit, že $n\oplus m<ω, n\otimes w<ω$, $\len{n}\neq \len{n+1}$.
 
-Obdobně $n·0=0<ω,n·1= n<ω, n·S(m) n·m + m<ω$.
+Obdobně $n·0=0<ω$, $n·1= n<ω$, $n·S(m)$, $n·m + m<ω$.
 
 \lemma{}
 Každý nekonečný kardinál je limitní ordinál.
@@ -61,7 +61,7 @@ Zobrazení $g:κ→κ\times κ$ definované předpisem $g(α)=@<α,0@>$ je prost
 
 Množinu $κ\times κ$ uspořádáme \name{maximo-lexikograficky}:
 $α,β,γ,δ∈κ$
-$@<α,β@><@<γ,δ@>$ jestliže $\max@{α,β@} < \max{γ,δ}$ nebo $\max{α,β} = \max{γ,δ}$ a $@<α,β@>$ je menší lexikograficky než $@<γ,δ@>$.
+$@<α,β@><@<γ,δ@>$ jestliže $\max@{α,β@} < \max@{γ,δ@}$ nebo $\max@{α,β@} = \max@{γ,δ@}$ a $@<α,β@>$ je menší lexikograficky než $@<γ,δ@>$.
 
 Na množině $κ\times κ$ je dobré uspořádání.
 Typ takové množiny je $≤κ$. Důkaz sporem.
@@ -70,7 +70,7 @@ Pak musí být nějaký počáteční úsek určený $κ$ a tedy dvojicí $@<γ,
 
 \TODO{uff?}
 
-Ještě důkaz předpokladu. Sporem, tedy $∃λ;ω≤λ<κ,\len{λ\times λ}≥κ$. Z první části je jasné, že $λ\neq ω$.
+Ještě důkaz předpokladu. Sporem, tedy $@(∃λ@)@(ω≤λ<κ⋀\len{λ\times λ}≥κ@)$. Z první části je jasné, že $λ\neq ω$.
 Tedy mějme nejmenší $λ_0$ pro které toto platí.
 
 Dle důkazu věty ale $\len{λ_0\times λ_0}=\len{λ_0}$, což je spor.
@@ -82,13 +82,13 @@ Buď $κ,λ$ nekonečné kardinály. Pak $κ\oplus λ=κ\otimes λ = \max @{κ,�
 
 $$(∀a)(∃z)(∀x)(x@⊂a→→x∈z)$$
 
-\name{Potenční množina} množiny $a:$ $\mathcal{P}(a) = @{x:x@⊂a@}$.
+\name{Potenční množina} množiny $a:$ $\mathcal{P}(a) = @{x|x@⊂a@}$.
 
 \statement{Cantorova}
-$$(∀x)(x\prec \mathcal{P}(x)$$
+$(∀x)(x\prec \mathcal{P}(x)$
 
 \proof
-$$x\preccurlyeq \mathcal{P}(x)$$ ‒ zobrazení na potenční množinu je zjevně prosté.
+$x\preccurlyeq \mathcal{P}(x)$ ‒ zobrazení na potenční množinu je zjevně prosté.
 
 Že není bijekce ‒ diagonalizací.
 
@@ -98,9 +98,9 @@ $$(∀α)(α \hbox{ je ordinál }→→(∃κ)(κ\hbox{ kardinál }\land κ>α))
 \proof
 $α<ω$, položíme $κ:=ω$.
 
-Je-li $α≥ω:W:=@{R@⊂α\times α;@<α,R@>\hbox{ je dobře uspořádaná }@}$.
+Je-li $α≥ω:W:=@{R|R@⊂α\times α⋀@<α,R@>\hbox{ je dobře uspořádaná }@}$.
 
-Položme $S:=@{\hbox{ typ }@<α,R@>:R∈W@}$.
+Položme $S:=@{\hbox{ typ }@<α,R@>|R∈W@}$.
 
 $S$ je množina ordinálů, $\sup S$ je ordinál. $γ=\sup S + 1$. Kdyby $κ=\len{\sup S}≤α$, pak $\len{γ}=\len{α}$.
 

@@ -9,7 +9,7 @@ $n=1$, tedy $f:@[w@]^1→k$, triviální.
 \statement{}
 Pro každé přirozené $r,n,k$ existuje přirozené $N$, že $N→(r)^n_k$.
 
-\section{Axiom regularity}
+\section{Axiom regularity/fundovanosti}
 $$(∀a)(a \neq \emptyset →→ (∃x)(x∈a \land a\cap x = 0 ))$$
 
 Pro každý ordinál $α$ definujme množinu $V_α$ transfinitní rekurzí takto: $V_0 = 0$, $V_{α+1} = \mathcal{P}(V_α)$, $V_α = \bigcup @{V_β;β<α@}$ pro limitní $α$.
@@ -27,7 +27,7 @@ $V_0$ je tranzitivní, dále transfinitní indukcí.
 Následující tvrzení jsou ekvivalentní:
 →•
  • Axiom fundovanosti
- • $V=\bigcup @{V_α;α∈On@}$
+ • $V=\bigcup @{V_α|α∈On@}$
 ←•
 
 \proof

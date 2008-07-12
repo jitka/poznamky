@@ -1,11 +1,11 @@
 
 \section{Axiom výběru}
-Nechť $a$ je množina, $@<x_t;t∈a@>$ je soubor množin (všechny funkční hodnoty funkce pro $t$).
-\name{Kartézským součinem} nazveme množinu $\Π_{t∈a}x_t = @{f;f\hbox{ je funkce }, dom(f) = a\land@(∀t@)t∈a→→f(t)∈x_t@}$.
+Nechť $a$ je množina, $@<x_t|t∈a@>$ je soubor množin (všechny funkční hodnoty funkce pro $t$).
+\name{Kartézským součinem} nazveme množinu $\Π_{t∈a}x_t = @{f|f\hbox{ je funkce }, dom(f) = a\land@(∀t@)t∈a→→f(t)∈x_t@}$.
 
-Množina $r$ je \name{rozkladem} množiny $x$, jestliže $x=\bigcup r, \emptyset ∉r,(∀u,v)(u∈r\land v∈r→→u\cap v = \emptyset)$.
+Množina $r$ je \name{rozkladem} množiny $x$, jestliže $x=\bigcup r, \emptyset ∉r,(∀u,v)(u∈r\land v∈r→→u\cap v = \emptyset⋁u = v)$.
 
-\notehead{Princip výběru}{Pro každý rozklad $r$ množiny $x$ existuje množina $y@⊂x$, pro které platí $(∀u∈r)(∃t∈x)y\cap u = @{t@}$.
+\notehead{Princip výběru}{Pro každý rozklad $r$ množiny $x$ existuje množina $y@⊂x$, pro které platí $(∀u∈r)(∃t∈x)(y\cap u = @{t@})$.
 Tedy z každé množiny rozkladu lze vybrat prvek a složit z nich množinu.}
 
 Funkce $f$ definovaná na množině $x$, která splňuje $(y∈x\land y\neq \emptyset ) →→ f(y)∈y$, se nazývá \name{selektor} na množině $x$.
@@ -26,11 +26,13 @@ $1.→2.$: Buď $r$ rozklad množiny $a$. Podle $1.$ existuje selektor.
 Z toho se dá odvodit výběrová množina rozkladu $r$.
 
 $2.→3.$: Mějme relaci $s$ a předpokládejme, že je neprázdná.
-Položme $r=@{@{@<u,v@>;@<u,v@>∈s@};u∈dom(s)@}$. Zřejmě platí, že $r$ je rozkladem množiny $s$.
-Dle principu výběru existuje výběrová množina. Kdykoliv je $u$ v definičním oboru $s$, pak $y\cup @{@<u,v@>;@<u,v@>∈s@}$ v jediném bodě, $f$ je tedy funkce, $f@⊂s$, $dom(s)=dom(f)$.
+Položme $r=@{@{@<u,v@>|@<u,v@>∈s@}|u∈dom(s)@}$. Zřejmě platí, že $r$ je rozkladem množiny $s$.
+Dle principu výběru existuje výběrová množina. Kdykoliv je $u$ v definičním oboru $s$, pak $y\cup @{@<u,v@>|@<u,v@>∈s@}$ v jediném bodě, $f$ je tedy funkce, $f@⊂s$, $dom(s)=dom(f)$.
 
 $3.→4.$: Mějme kartézský součin. Nechť $x\neq \emptyset$ a nechť $(∀t∈x)$ je $y\neq \emptyset$.
-$\bigcup @{y_t;t∈x@}$
+$\bigcup @{y_t|t∈x@}$
+
+\TODO{Nechybí tu index}
 
 Definujme relaci $s@⊂x\times\bigcup @{y_t;t∈x@}$ předpisem $s=@{@<t,v@>;t∈x,v∈y_t@}$.
 Podle $3.$ existuje $f@⊂s$, $f$ je funkce, $dom(y)=dom(s) = x$.
@@ -41,15 +43,16 @@ Kartézský součin $\Π_{z∈x} z$ je podle $4.$ neprázdný. Nechť $f$ je prv
 
 Buď $@<a,≤@>$ uspořádaná množina, $c@⊂a$. Množina $c$ nazveme \name{řetězcem}, pokud je $c$ uspořádané dle $≤$ uspořádáno lineárně.
 
-Nechť $@<a,≤@>$ je uspořádaná množina, $d@⊂a$. Pak prvek $x∈a$ se nazývá \name{horní mezí} množiny $d$, jestliže $(∀y∈d)(y≤x)$. Prvek $x$ se nazývá \name{maximálním prvkem} množiny $d$, jestliže $x∈d$ a současně $(∀y∈d)(y\neq x)\isnt (y>x)$.
+Nechť $@<a,≤@>$ je uspořádaná množina, $d@⊂a$. Pak prvek $x∈a$ se nazývá \name{horní mezí} množiny $d$, jestliže $(∀y∈d)(y≤x)$. Prvek $x$ se nazývá \name{maximálním prvkem} množiny $d$, jestliže $x∈d$ a současně $(∀y∈d)(y\neq x)\lnot (y>x)$.
 
-\notehead{Princip maximality (Zornovo lemma, Zornovo-Kuratovského lemma)}
+\lemma{Princip maximality (Zornovo lemma, Zornovo-Kuratovského lemma)}
 {Nechť $@<a,≤@>$ je uspořádaná množina taková, že každý řetězec v $a$ má horní mez.
 Pak $(∀x∈a)(∃m∈a)(m\hbox{ je maximální prvek množiny } x\land≤m$.
+\TODO{Tohle vypadá divně.}
 Lze dokázat, že je ekvivalentní s axiomem výběru.
 }
 
-\notehead{Princip dobrého uspořádání (Zermelova věta)}
+\statement{Princip dobrého uspořádání (Zermelova věta)}
 {Na každé množině $m$ existuje relace $r$, že $@<m,r@>$ je dobře uspořádaná.
 }
 
@@ -62,12 +65,12 @@ Následující tvrzení jsou ekvivalentní:
 ↓•
 
 \proof
-$1.-3.$ Mám množinu $m=\emptyset$, položíme $r=0$.
-Nadále $m\neq \emptyset$, uvažujme $b:=\mathcal{P}(m)-@{\emptyset@}$.
-Podle $1.$ musí existovat selektor na $b$, to znamená, ze $∀z@⊂m,z\neq 0$ pak $f(z) = z$.
+$1.-3.$ Mám množinu $m=\emptyset$, položíme $r=\emptyset$.
+Nadále $m\neq \emptyset$, uvažujme $b:=\mathcal{P}(m)\backslash@{\emptyset@}$.
+Podle $1.$ musí existovat selektor na $b$, to znamená, že $(∀z)(@⊂m,z\neq 0)$ pak $f(z) = z$.
 Budeme hledat prosté zobrazení z nějakého ordinálu $α$ na množinu $m$.
 
 Transfinitní indukcí.
 $g(0) = f(m)$.
-Mějme $γ$ ordinál a známe $g\upharpoonright γ$. $m-@{g(β);β<γ)@}$. Pokud je tato množina prázdná, pak $γ$ je hledané $α$.
-Pokud je neprázdná, pak definujme $g(γ)=f(m-@{g(β);β<γ@})$ (najdeme další bod z množiny). Protože $m$ je množina, musí existovat $α$, tedy indukce musí skončit.
+Mějme $γ$ ordinál a známe $g\upharpoonright γ$. $m\backslash@{g(β)|β<γ)@}$. Pokud je tato množina prázdná, pak $γ$ je hledané $α$.
+Pokud je neprázdná, pak definujme $g(γ)=f(m\backslash@{g(β)|β<γ@})$ (najdeme další bod z množiny). Protože $m$ je množina, musí existovat $α$, tedy indukce musí skončit.
