@@ -36,7 +36,7 @@ Nechť $x,y$ ordinály a existuje izomorfizmus $h$ mezi nimi.
 Kdybychom měli, že $x=@{z|z∈y@}$, pak to jen znamená, že $x=y$.
 
 Ale $y=@{h(z)|z∈x@}$.
-Vezměme si $m=@{z|z∈x⋀h(z)\neq z@}$.
+Vezměme si $m=@{z|z∈x∧h(z)\neq z@}$.
 Chtěli bychom, aby byla prázdná.
 
 Nechť tedy $m\neq \emptyset$. Protože $x$ je dobře uspořádaná, tak množina $m$ má nejmenší prvek $t$.
@@ -78,7 +78,7 @@ Je-li $@<a,r@>$ jakákoliv dobře uspořádaná množina, pak existuje právě j
 \proof
 Buď $c,d$ ordinály, předpokládejme, že $@<a,r@> \cong @<c,∈@>\land @<a,r@>\cong @<d,∈@>$. Složíme a dostáváme, že $@<c,∈@>\cong @<d,∈@>$. Podle věty o ordinálech jsou si rovny.
 
-Položme $b=@{e|e∈a⋀(∃x)(x\hbox{ je ordinál }\land @<x,∈@>\cong @<@(←,c@),r@>)@}$.
+Položme $b=@{e|e∈a∧(∃x)(x\hbox{ je ordinál }\land @<x,∈@>\cong @<@(←,c@),r@>)@}$.
 
 Nechť $f$ je funkce definovaná izomorfizmem s počátečními úseky.
 

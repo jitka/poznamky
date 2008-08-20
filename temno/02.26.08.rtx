@@ -84,7 +84,7 @@ Značíme to $b\cup c$ a říkáme tomu \name{sjednocení}.
 \name{Neuspořádaná $k$-tice} je
 \begin{eqnarray*}
 @{a,b,c@} &=& @{a,b@} \cup @{c@}\\
-@{a_1,a_2, …, a_k@} &=& @{a_1,a_2, …, a_{k-1}@}⋃ @{a_k@}
+@{a_1,a_2, …, a_k@} &=& @{a_1,a_2, …, a_{k-1}@}∪ @{a_k@}
 \end{eqnarray*}
 
 Pro neprázdnou množinu $a$ máme průnik $\bigcap a = @{x|(∀b)(b∈a→→x∈b)@}$.

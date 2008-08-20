@@ -3,7 +3,7 @@
 Nechť $a$ je množina, $@<x_t|t∈a@>$ je soubor množin (všechny funkční hodnoty funkce pro $t$).
 \name{Kartézským součinem} nazveme množinu $\Π_{t∈a}x_t = @{f|f\hbox{ je funkce }, dom(f) = a\land@(∀t@)t∈a→→f(t)∈x_t@}$.
 
-Množina $r$ je \name{rozkladem} množiny $x$, jestliže $x=\bigcup r, \emptyset ∉r,(∀u,v)(u∈r\land v∈r→→u\cap v = \emptyset⋁u = v)$.
+Množina $r$ je \name{rozkladem} množiny $x$, jestliže $x=\bigcup r, \emptyset ∉r,(∀u,v)(u∈r\land v∈r→→u\cap v = \emptyset∨u = v)$.
 
 \notehead{Princip výběru}{Pro každý rozklad $r$ množiny $x$ existuje množina $y@⊂x$, pro které platí $(∀u∈r)(∃t∈x)(y\cap u = @{t@})$.
 Tedy z každé množiny rozkladu lze vybrat prvek a složit z nich množinu.}

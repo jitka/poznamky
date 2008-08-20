@@ -21,7 +21,7 @@ Mějme $S$ soubor částečných selektorů, který pokrývá všechny konečné
 Bez újmy na obecnosti můžeme předpokládat, že pro každý částečný selektor $f∈S$ je $dom(f)$ konečná množina.
 
 \begin{eqnarray*}
-Z=\{g|dom(g)@⊂I⋀ i∈dom(g) →→ g(i)∈A_i⋀ (∀u@⊂dom (g)); (u\hbox{ konečná}))\\
+Z=\{g|dom(g)@⊂I∧ i∈dom(g) →→ g(i)∈A_i∧ (∀u@⊂dom (g)); (u\hbox{ konečná}))\\
 @{f∈S|f\upharpoonright u = g\upharpoonright u @} \hbox{ pokrývá konečné podmnožiny množiny } I\}
 \end{eqnarray*}
 

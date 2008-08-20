@@ -10,7 +10,7 @@ Dále $x(α,β)∈A_α\backslash@(@{x(α',β)|α'<β<γ@}\cup @{x(α',γ)|α'∈
 
 \newcommand{\Ac}{\mathcal{A}}
 
-Systém množin $\Ac$ se nazývá \name{$Δ$-systém}, jestliže $∃$ množina $K$ taková, že $∀A_0, A_1∈\Ac, A_0\neq A_1 →→ A_0⋂ A_1 = K$. $K$ se nazývá \name{jádro} $Δ$-systému $\Ac$.
+Systém množin $\Ac$ se nazývá \name{$Δ$-systém}, jestliže $∃$ množina $K$ taková, že $∀A_0, A_1∈\Ac, A_0\neq A_1 →→ A_0∩ A_1 = K$. $K$ se nazývá \name{jádro} $Δ$-systému $\Ac$.
 
 Nechť $\Ac$ je nespočetný systém konečných množin, $\len{\Ac}$ je regulární kardinál.
 
@@ -30,7 +30,7 @@ Podle indukčního předpokladu existuje $\mathcal{B}'@⊂\Ac',\len{\mathcal{B}'
 Dvě možnosti:
 →•
  • $∃y$ tak, že $\len{@{A∈\Ac|x(A)=y\land A\backslash@{x(A)@}∈\mathcal{B}'@}} = \len{\Ac}$. Položme $K'=K\cup @{y@}$.
- • $(∀y)(\len{@{A|A∈\Ac⋀A\backslash@{x(A)@}∈\mathcal{B}' \land x(A) = y@}}<\len{\Ac})$
+ • $(∀y)(\len{@{A|A∈\Ac∧A\backslash@{x(A)@}∈\mathcal{B}' \land x(A) = y@}}<\len{\Ac})$
    Existuje množina $@{y_α|α<\len{\Ac}@}$ tak, že $@{A∈\Ac :A\backslash @{x(A)@}∈\mathcal{B'}\land x(A)=y_a@}, \len{\Ac_α}<\len{\Ac}$.
    Pro každé $α$ zvolíme jednu množinu $A_α∈\Ac_α$, tedy $@{A_α:α<\len{\Ac}@}=\mathcal{B}$ je $Δ$-systém s jádrem $K$.
 ←•

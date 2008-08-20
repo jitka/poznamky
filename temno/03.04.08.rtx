@@ -82,7 +82,7 @@ Jsou-li $@<a,r@>, @<b,s@>$ dvě izomorfní, dobře uspořádané množiny, pak m
 
 \proof
 Sporem. Předpokládejme, že $f,g$ jsou dva různé izomorfizmy.
-Množina $m=@{y|y∈a⋀f(y)\neq g(y)@}$ je neprázdná.
+Množina $m=@{y|y∈a∧f(y)\neq g(y)@}$ je neprázdná.
 $a$ je dobře uspořádaná, potom $m$ má nejmenší prvek $t$.
 Kdykoliv $yrt$, je $f(y)=g(y)$, ale $f(t)\neq g(t)$.
 

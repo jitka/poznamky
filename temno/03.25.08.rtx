@@ -70,7 +70,7 @@ Pak musí být nějaký počáteční úsek určený $κ$ a tedy dvojicí $@<γ,
 
 \TODO{uff?}
 
-Ještě důkaz předpokladu. Sporem, tedy $@(∃λ@)@(ω≤λ<κ⋀\len{λ\times λ}≥κ@)$. Z první části je jasné, že $λ\neq ω$.
+Ještě důkaz předpokladu. Sporem, tedy $@(∃λ@)@(ω≤λ<κ∧\len{λ\times λ}≥κ@)$. Z první části je jasné, že $λ\neq ω$.
 Tedy mějme nejmenší $λ_0$ pro které toto platí.
 
 Dle důkazu věty ale $\len{λ_0\times λ_0}=\len{λ_0}$, což je spor.
@@ -98,7 +98,7 @@ $$(∀α)(α \hbox{ je ordinál }→→(∃κ)(κ\hbox{ kardinál }\land κ>α))
 \proof
 $α<ω$, položíme $κ:=ω$.
 
-Je-li $α≥ω:W:=@{R|R@⊂α\times α⋀@<α,R@>\hbox{ je dobře uspořádaná }@}$.
+Je-li $α≥ω:W:=@{R|R@⊂α\times α∧@<α,R@>\hbox{ je dobře uspořádaná }@}$.
 
 Položme $S:=@{\hbox{ typ }@<α,R@>|R∈W@}$.
 

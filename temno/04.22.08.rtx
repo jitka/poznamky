@@ -83,7 +83,7 @@ $$F(ξ)=\min @(κ\backslash @{g_α(ξ)|α<h(ξ)@}@)$$
 $F$ je zobrazení z $λ$ do $κ$, $F∉sug(f)$.
 
 Zvolme libovolně $α<κ$, existuje $ξ∈λ$ tak, že $h(ξ)>α$. Podle definice $F$:
-$$F(ξ)∉@{g_β(ξ)|β<h(ξ)@}→→F(ξ)\neq g_α(ξ)⋀F\neq g_α$$
+$$F(ξ)∉@{g_β(ξ)|β<h(ξ)@}→→F(ξ)\neq g_α(ξ)∧F\neq g_α$$
 
 \follows{
 	Předpokládáme axiom výběru. Je-li $λ≥ω$ kardinál, potom $cf(2^λ)>λ$.
