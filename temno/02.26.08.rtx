@@ -15,8 +15,9 @@ Vždy platí, že
  • $x@⊂x$
  • $\lnot@(x⊂x@)$
  • $(x@⊂y \land y@⊂z)→→(x@⊂z)$
- • $(x⊂y \land y⊂z) →→ (x⊂z)$
+ • $(x⊂y \land y@⊂z) →→ (x⊂z)$
  • $(x@⊂y \land y⊂z) →→ (x⊂z)$
+ • $(x⊂y \land f⊂z) →→ (x⊂z)$
  • $(x@⊂y \land y@⊂x) →→ (x = y)$
 ←•
 
@@ -41,7 +42,7 @@ Množina $z$ je axiomem vydělení pro $φ$ určená jednoznačně.
 →•
  • $\lnot(∃y)(y∈0)$
  • $(∀x)(\emptyset@⊂x)$
- • $x@⊂\emptyset ←→ x = 0$
+ • $x@⊂\emptyset ←→ x = ∅$
 ←•
 
 \statement{}
@@ -53,6 +54,8 @@ Uvažujme formuli $φ(x):= x∉x$.
 Máme podle axiomu vydělení pro $φ$ množinu $z_φ$.
 Podle předpokladu $z_φ∈z_φ$.
 Z toho vyjde spor, tedy původní předpoklad neplatí.
+
+(Paradox původní teorie množin, zde jen zabraňuje existenci některých množin.)
 
 \subsection{Axiom dvojice}
 Jsou-li $a,b$ množiny, pak množinu sestávající z prvků $a,b$ nazveme \name{neuspořádanou dvojicí} množin $a,b$ a značíme ji jako $@{a,b@}$.

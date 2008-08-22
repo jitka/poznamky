@@ -56,7 +56,7 @@ Pokud platí, že $(∃y)(y∈C\land y∈t)$. Pak vezmu $m=@{y∈C;y∈t@}\neq \
 $t$ je ordinál, tedy existuje $x$ nejmenší prvek množiny $m$ a $x$ je nejmenší prvek množiny $C$.
 
 \statement{}
-$$\lnot(\exists z )(∀x)(x\hbox{ je ordinál } →→ x∈z)$$.
+$$\lnot(\exists z )(∀x)(x\hbox{ je ordinál } →→ x∈z)$$
 
 Tedy, neexistuje množina všech ordinálů.
 

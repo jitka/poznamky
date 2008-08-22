@@ -85,7 +85,7 @@ $$(∀a)(∃z)(∀x)(x@⊂a→→x∈z)$$
 \name{Potenční množina} množiny $a:$ $\mathcal{P}(a) = @{x|x@⊂a@}$.
 
 \statement{Cantorova}
-$(∀x)(x\prec \mathcal{P}(x)$
+$(∀x)(x\prec \mathcal{P}(x))$
 
 \proof
 $x\preccurlyeq \mathcal{P}(x)$ ‒ zobrazení na potenční množinu je zjevně prosté.

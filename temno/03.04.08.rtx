@@ -1,9 +1,9 @@
 
 \name{Binární relace} je množina $R$, jejímiž prvky jsou uspořádané dvojice.
 
-\name{Definiční obor relace $R$} $@{x|(∃y)@(@<x,y@>∈R@)@}$.
+\name{Definiční obor relace $df(R)$} $@{x|(∃y)@(@<x,y@>∈R@)@}$.
 
-\name{Obor hodnot} $@{y|(∃x)@(@<x,y@>∈R@)@}$.
+\name{Obor hodnot $sug(R)$} $@{y|(∃x)@(@<x,y@>∈R@)@}$.
 
 Oboje z toho je množina a $R@⊂df(R)\times sug(R)$.
 
@@ -89,7 +89,7 @@ Kdykoliv $yrt$, je $f(y)=g(y)$, ale $f(t)\neq g(t)$.
 Máme $2$ případy.
 $f(t) s g(t)$ a naopak, oba jsou převoditelné přeznačením.
 Předpokládejme tedy, že $f(t) s g(t)$.
-Musí ale existovat něco, co se v $g$ zobrazí na $f(t)$, tedy $g(y_0) = f(t)$, ale dle izomorfizmu $y_0 s t$, ale pak $f(y_0) = g(y_0)$, tedy $g$ není surjektivní.
+Musí ale existovat něco, co se v $g$ zobrazí na $f(t)$, tedy $g(y_0) = f(t)$, ale dle izomorfizmu $y_0 s t$, ale pak $f(y_0) = g(y_0)$, tedy $g$ není prosté.
 
 \statement{}
 Buď $@<a,r@>, @<b,s@>$ dvě dobře uspořádané množiny.

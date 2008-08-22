@@ -27,7 +27,7 @@ Tedy, můžeme vydělit množinu všech přirozených čísel. Označme ji $ω$.
 $ω$ je ordinál, neboť je tranzitivní množinou ordinálů.
 
 \note{}
-Všechny ordinály menší než $ω$ jsou izolované, zatímco $ω$ limitní ordinál (Kdyby ne, pak by $ω∈ω$. Tedy, $ω$ je nejmenší limitní ordinál.
+Všechny ordinály menší než $ω$ jsou izolované, zatímco $ω$ je limitní ordinál (Kdyby ne, pak by $ω∈ω$. Tedy, $ω$ je nejmenší limitní ordinál.
 
 \statement{Peanovy axiomy teorie přirozených čísel}
 ↑•
@@ -70,7 +70,7 @@ Buď $α,β$ ordinály. \name{Ordinální součin} $α·β=@<β\times α,<_{LEX}
 \lemma{}
 Pro libovolné ordinály $α,β,γ$ platí:
 →•
- • $α·(β·γ)$
+ • $α·(β·γ) = (α·β)·γ$
  • $α·0 = 0$
  • $α·1 = α$
  • $α·S(β) = α·β+α$
