@@ -1,0 +1,14 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+\input{../defs.rtx}
+
+\begin{document}
+\title{OZD}
+\author{Michal Vaner}
+\maketitle
+\input{10.03.08.rtx}
+\end{document}

@@ -1,0 +1,50 @@
+\section{Paměti}
+
+Hierarchie:
+→•
+ • Registry
+ • Cache (nejsou viditelné)
+ • Primární paměť (RAM)
+ • Paměť druhé úrovně (Disky, trvalá úložiště), pomalá
+ • Paměť třetí úrovně (CD, pásky)
+←•
+
+\subsection{Paměti druhé úrovně}
+
+Pracují po blocích, nelze operovat s jednotlivými byty.
+Sekvenční čtení bývá rychlejší, než náhodné.
+
+\subsection{Pohled}
+→•
+ • Logický (Objekty, atributy, …) ‒ objekty stejného typu.
+ • Fyzický (Oddělovače, navigační značky)
+←•
+
+\subsection{Poměr mezi záznamy a bloky}
+Pokud jsou stejně velké, vše je jednoduché, ale málokdy to nastává.
+Toto se nazývá \name{neblokované}.
+Když jsou záznamy malé, pak se jich do jednoho bloku dá uložit více
+Pokud by byly ztráty místa malé, může být (pro náhodný přístup) výhodné, aby jich tam byl celočíselný počet.
+Říkáme tomu \name{blokované}.
+Pokud jsou záznamy větší než bloky, říkáme, že záznamy jsou \name{přerostlé} a musí obsadit více než jeden blok.
+
+\section{Média (paměti druhé a třetí úrovně)}
+
+\subsection{Magnetické pásky}
+Kotouč, na tom páska, převíjení z jednoho kotouče na druhé, jede přes hlavu.
+Umí převíjet, najít si začátek, pohyb oběma směry.
+
+Značky začátku a konce, jednostranná, devět stop (8 bitů a parita), další parita byla na konci bloku.
+Bloky byly značkované (konce, začátky), mezi bloky byly mezery. Jednak pro získání času při zpracování, jednak kvůli vůli při přepisování (ne vždy se trefí přesně).
+
+Velikost bloku někdy šla nastavit, tím se měnila i kapacita (když jsou méně často mezery, vejde se toho víc).
+
+Obvykle bylo potřeba více páskových stojanů (např. pro třídění je potřeba alespoň 3).
+
+Použití: Zálohy, sekvenčně přicházející data (měření).
+
+\subsection{Magnetické disky}
+Kotouče, čtecí hlavy. Několik hlav nad sebou, max. jedna aktivní, pohybují se spolu. Je třeba velmi přesně polohovat hlavy, problémy s zahříváním, namáháním.
+
+Dnes kapacity mezi desítkami gigabajtů a terabajtů.
+Liší se rychlostí otáček (obvykle mezi 5000-15000 otáček za minutu).
