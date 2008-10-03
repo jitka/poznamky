@@ -1,0 +1,27 @@
+\section{Cíl}
+
+Zabývá se výsledky náhodných pokusů (házení různě-stranou kostkou, tahání barevných objektů z klobouku).
+Při velkých počtech opakování se výsledky stabilizují (např. při házení 2-strannou kostkou/mincí se to ustálí někde kolem 0.5:0.5).
+Některé pokusy se nestabilizují.
+Mluvíme o \name{statistické stabilitě}.
+
+Budeme zkoumat především diskrétní svět (množství možností je nejvýše spočetná), avšak v některé teorii se bude počítat spojitě (integrály a pod.).
+
+\name{Pravděpodobnostní prostor} je dvojice $@(Ω, P@)$, kde $Ω$ je libovolná konečná nebo spočetná množina. Prvky $ω_i∈Ω$ jsou \name{elementární jevy}. $P:Ω→@<0,1@>$, $\Σ_i P(ω_i) = P(Ω) = 1$ je \name{jistý jev}.
+
+Můžeme použít jinou strukturu, $@(Ω, a, P@), Ω∈\R_1$. $a∈\mathcal{P}(Ω)$ a $a_1, a_2, …, a_n$ jsou disjunktní podmnožiny $Ω$.
+Potom $P(a_i)∈@<0,1@>, P(Ω) = 1, P(∅) = 0$. Dále platí, že $P(a_i ∪ a_q) = P(a_i) + P(a_j) - P(a_i ∩ a_j)$. Při sjednocení více jevů lze použít princip inkluze a exkluze.
+
+\section{Podmiňování a nezávislost jevů}
+
+\name{Podmíněná pravděpodobnost} je nějaké $p(A|B) = \frac{P(A∩B)}{P(B)}$, $P(B)>0$.
+(Zajímá se jen o jevů, které skončily $B$.)
+
+\statement{}
+$$P(A∩B) = P(A|B)·P(B)$$
+
+\statement{Základní věta jak si zjednodušit život}
+\TODO{Prý rozmyslet, jak přepsat $P(A∩B∩…∩N)$.}
+
+$A,B⊂Ω$. Potom $A$ \name{nezávisí} na $B$, pokud $P(A|B) = P(A)$.
+$A$ a $B$ jsou \name{nezávislé}, pokud $P(A∩B) = P(A)·P(B)$.
