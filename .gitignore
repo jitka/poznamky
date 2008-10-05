@@ -1,0 +1,12 @@
+*.tex
+*.dep
+*.log
+*.aux
+*.pdf
+*.dvi
+*/Makefile
+*.deps
+*.rtx-mp-*.*
+rozvrh/
+pokus/
+cvika/
