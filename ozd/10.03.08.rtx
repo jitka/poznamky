@@ -31,7 +31,7 @@ Pokud jsou záznamy větší než bloky, říkáme, že záznamy jsou \name{pře
 \section{Média (paměti druhé a třetí úrovně)}
 
 \subsection{Magnetické pásky}
-Kotouč, na tom páska, převíjení z jednoho kotouče na druhé, jede přes hlavu.
+Kotouč, na tom páska, převíjení z jednoho kotouče na druhý, jede přes hlavu.
 Umí převíjet, najít si začátek, pohyb oběma směry.
 
 Značky začátku a konce, jednostranná, devět stop (8 bitů a parita), další parita byla na konci bloku.
@@ -41,10 +41,12 @@ Velikost bloku někdy šla nastavit, tím se měnila i kapacita (když jsou mén
 
 Obvykle bylo potřeba více páskových stojanů (např. pro třídění je potřeba alespoň 3).
 
-Použití: Zálohy, sekvenčně přicházející data (měření).
+Dnešní použití: Zálohy, sekvenčně přicházející data (měření).
+
+Dříve: Ukládání všech běžně používaných dat.
 
 \subsection{Magnetické disky}
-Kotouče, čtecí hlavy. Několik hlav nad sebou, max. jedna aktivní, pohybují se spolu. Je třeba velmi přesně polohovat hlavy, problémy s zahříváním, namáháním.
+Kotouče, čtecí hlavy. Několik hlav nad sebou, max. jedna aktivní, pohybují se spolu. Je třeba velmi přesně polohovat hlavy, problémy se zahříváním, namáháním.
 
-Dnes kapacity mezi desítkami gigabajtů a terabajtů.
-Liší se rychlostí otáček (obvykle mezi 5000-15000 otáček za minutu).
+Dnes kapacity mezi desítkami gigabajtů a terabajty.
+Liší se rychlostí otáček (obvykle mezi 5000-15000 otáček za minutu), ovlivňuje čekací doby při vyhledávání záznamu.
