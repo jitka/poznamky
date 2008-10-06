@@ -1,0 +1,62 @@
+\section{Info k kombakra II}
+
+\textit{http://atrey.karlin.mff.cuni.cz/\~kral/dm012.html}
+
+Učí Daniel Král'.
+
+\section{Párování v grafech}
+
+\name{Perfektní párování} je množina hran taková, že z každého vrcholu vede právě jedna hrana této množiny.
+\name{Párování} je množina taková, že z každého vrcholu vede nejvýše jedna hrana.
+
+\tvrz{
+Pokud mohu najít takovou množinu $S@⊂V(G)$ takovou, že když ji odeberu, počet komponent s lichým počtem vrcholů (liché komponenty) je větší než $\len{S}$, potom $G$ nemá perfektní párování.
+
+\proof
+Ten zbylý z každé liché komponenty musí být spárován s něčím z $S$.
+Když jich je více, nezbudou vrcholy.
+}
+
+\statement{Tatteova}
+Pokud taková množina $S$ neexistuje, potom $G$ má perfektní párování.
+
+\proof
+Sporem. Nechť existuje graf, který nemá perfektní párování, ale žádná taková komponenta neexistuje.
+Přidávání hran nemůže takové $S$ vytvořit, nechť tedy $G$ je maximální graf, který nemá perfektní párování, ale nemá žádnou takovou množinu $S$ (vytvořené přidáváním).
+Nechť $U$ jsou vrcholy, jejichž stupeň je roven $n-1$.
+Všechny komponenty zbylé po odebrání $U$ (komponenty grafu $G\backslash U$) jsou úplné.
+Předpokládejme, že existuje nějaký, který není úplný graf.
+Potom obsahuje nesousední vrcholy, ale existuje mezi nimi cesta, můžeme vybrat nejkratší.
+
+Nechť $y$ je druhý vrchol od jednoho konce $x$. Tyto nejsou propojené (kdyby byly, toto není nejkratší cesta), ale přidaní hrany $xy$ již vytvoří úplné párování.
+
+\TODO{Nějaké cykly a přes vybírání hran do párování řekneme, že párování je už teď.}
+
+\name{Deficit} je maximum přes všechny $S@⊂V$ z počet lichých komponent $-\len{S}$.
+$def(G)≥0$.
+
+\follows
+Maximální párování grafu $G$ pokrývá $n-def(G)$ vrcholů.
+
+\proof
+Určitě nepokryji alespoň $n-def(G)$ vrcholů, v případě toho $S$, které vytvořilo ono maximum.
+
+Tedy potřebuji ukázat, že mi nezbude výše než tolik vrcholů.
+Vytvořím graf $G'$, přidám $n-def(G)$ nových vrcholů a spojím je se všemi.
+$G'$ má perfektní párování. Poté stačí oříznout zpět na $G$.
+
+Pokud je $S=∅$, potom $\len{V@(G'@)}$.
+Pokud odebírám jen z původního grafu, pak mi to doplněné vrcholy zachrání.
+Pokud odebírám z nových vrcholů, pak zvýším nové $\len{S}$ dostatečně, aby nerovnost platila.
+Tedy  $G'$ má perfektní párování.
+
+\statement{Petersonova}
+Každý kubický graf bez mostů má perfektní párování.
+\name{Kubický graf} je takový, který má každý stupeň $3$.
+
+\proof
+Dokazuji pro $G$ souvislý, kdyby nebyl, beru každou komponentu zvlášť.
+
+Má sudý počet vrcholů (všechny mají lichý stupeň, součet stupňů je vždy sudý).
+Nechť je tedy $S≠∅$. Počet hran vedoucích z $S$ je maximálně $3·\len{S}$.
+Pokud mám lichou komponentu, z ní určitě nevede žádná hrana. Kdyby byla jedna, tak to byl most, kdyby víc, tak nevychází součet stupňů v nové komponentě (vznikne lichý).
