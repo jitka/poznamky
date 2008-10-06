@@ -30,7 +30,7 @@ Potom obsahuje nesousední vrcholy, ale existuje mezi nimi cesta, můžeme vybra
 
 Nechť $y$ je druhý vrchol od jednoho konce $x$. Tyto nejsou propojené (kdyby byly, toto není nejkratší cesta), ale přidaní hrany $xy$ již vytvoří úplné párování.
 
-\TODO{Nějaké cykly a přes vybírání hran do párování řekneme, že párování je už teď.}
+\TODO{Nějaké cykly a přes vybírání hran do párování řekneme, že párování je už teď. Najít ve skriptech TomVally}
 
 \name{Deficit} je maximum přes všechny $S@⊂V$ z počet lichých komponent $-\len{S}$.
 $def(G)≥0$.
