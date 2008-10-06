@@ -59,4 +59,4 @@ Dokazuji pro $G$ souvislý, kdyby nebyl, beru každou komponentu zvlášť.
 
 Má sudý počet vrcholů (všechny mají lichý stupeň, součet stupňů je vždy sudý).
 Nechť je tedy $S≠∅$. Počet hran vedoucích z $S$ je maximálně $3·\len{S}$.
-Pokud mám lichou komponentu, z ní určitě nevede žádná hrana. Kdyby byla jedna, tak to byl most, kdyby víc, tak nevychází součet stupňů v nové komponentě (vznikne lichý).
+Pokud mám lichou komponentu, z ní určitě vedou alespoň 3 hrany. Kdyby byla jedna, tak to byl most, kdyby sudý počet, tak nevychází součet stupňů v nové komponentě (vznikne lichý).
