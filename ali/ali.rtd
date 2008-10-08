@@ -4,7 +4,6 @@
 
 \begin{document}
 \title{Algoritmy a jejich implementace}
-\author{Michal Vaner}
 \maketitle
 \input{10.08.08.rtx}
 \end{document}
