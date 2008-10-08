@@ -38,4 +38,4 @@
 \newcommand{\combnum}[2]{\left(\begin{array}{c}#1\\#2\end{array}\right)}
 \newcommand{\inv}[1]{\frac{1}{#1}}
 \newcommand{\len}[1]{{\left|{#1}\right|}}
-\newcommand{\uv}[1]{\quotedblbase{}#1\textquotedblleft}%
+\providecommand{\uv}[1]{\quotedblbase{}#1\textquotedblleft}%
