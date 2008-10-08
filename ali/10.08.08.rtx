@@ -1,0 +1,57 @@
+\section{Účel přednášky}
+
+Jak převést efektivní algoritmus do praxe tak, aby opravdu běžel rychle.
+
+\subsection{Příklad ‒ sčítání matice}
+
+Paměť je pomalejší než cache. Vyplatí se po řádcích, aby nenačítal tak často nové stránky.
+
+Kopírování paměti je rychlejší, než forcyklové vyplňování. Lze použít i mmap (je spožděný).
+
+\section{Jazyk C}
+
+Používáme normu \texttt{C99}.
+
+\texttt{switch} je jen \texttt{goto} na proměnlivé návěští.
+Lze prokládat jinými věcmi, tedy např. \texttt{while} cyklus.
+
+\subsection{Typy}
+
+Základní:
+→•
+ • Celočíselné typy, jako \texttt{int}, \texttt{char}, různě velké, znaménkóvé či neznaménkové, \texttt{\_{}Bool}.
+   \texttt{C99} už říká i požadované velikosti (\texttt{char} $≥ 8$, \texttt{short, int} $≥ 16$, \texttt{long} $≥ 32$, \texttt{long long} $≥64$).
+   Dále \texttt{unsigned char} je nejmenší adresovatelná buňka paměti.
+
+   Na \texttt{unsigned} typech funguje aritmetika modulo nějaké číslo. Existují tam bity, které jsou součástí binárního zápisu, smí tam být i něco navíc, mohou mít libovolné permutace bitů.
+
+ • Typy na plovoucí čárky (\texttt{float}, \texttt{double}, \texttt{long double}).
+   Mimo to zavádí klíčové slovo \texttt{\_Complex}, které když se napíše za jméno typu, tak se stane komplexním.
+
+ • Divný typ \texttt{void} ‒ neobsahuje žádnou hodnotu, např. když funkce nic nevrací, ukazatel do nikam.
+
+ • Výčtové typy se tváří také být základní, je to celočíselný typ.
+←•
+
+Odvozené:
+→•
+ • Ukazatel. Nelze přetypovávat libovolně. Smí se přetypovávat na \texttt{unsigned char}y.
+
+   Je zde speciální \texttt{void *}, je typově kompatibilní s libovolným ukazatelem.
+
+ • Pole, v paměti jsou naskládané souvisle za sebou.
+   Chová se k nim skoro stejně, jako k ukazateli na jeho začátek.
+
+ • Struktury a uniony. Jsou to nějaké různé položky, struktura je má za sebou, union přes sebe.
+   Může mít paddingy mezi prvky.
+   Dodržuje pořadí a padding závisí pouze na věcech nad tím a nikdy nesmí být před prvním prvkem.
+   Lze použít při dědičnosti.
+←•
+
+Typy mohou být kompletní a nekompletní. U nekompletních lze vytvářet ukazatele, nesmí se deklarovat proměnná toho typu, nesmí se \texttt{sizeof}.
+
+Typ lze upřesňovat, i postupně (např. velikosti polí).
+
+\subsubsection{Jména typů}
+
+Jsou výrazy. \texttt{int *f(void *x[])} ‒ když vezmu f, zavolám ho s parametrem x (který, když vezmu, zaindexuji a zdereferencuji, dostanu void), to zdereferencuju, tak dostanu int. Tedy to musí být funkce, která bere pole ukazatelů na void a vrací ukazatel na int.

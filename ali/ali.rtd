@@ -1,0 +1,10 @@
+\documentclass[a4paper,11pt]{article}
+\input{../stdhead.rtx}
+\input{../defs.rtx}
+
+\begin{document}
+\title{Algoritmy a jejich implementace}
+\author{Michal Vaner}
+\maketitle
+\input{10.08.08.rtx}
+\end{document}
