@@ -1,0 +1,18 @@
+\section{Více jevů}
+
+Nechť $A_1, A_2, …, A_n$ jsou jevy v $Ω$. Potom řekneme, že jsou \name{vzájemně nezávislé}, jestliže:
+$$∀k∈2..n;P(A_{i_1}∩…∩A_{i_k})=\Π_{j=1}^kP(A_{i_j})$$
+
+Jevy jsou \name{nezávislé po $k∈2..n$}, jestliže:
+$$∀k\hbox{-tice }P(A_{i_1}∩…∩A_{i_k})=\Π_{j=1}^kP(A_{i_j})$$
+
+\statement{Bayesova věta}
+Mějme prostor, $Ω=\∪_i H_i, i≠j→→ H_i ∩ H_j = ∅$.
+$$P(H_i|A) = \frac{P(A∩H_i)}{P(A)}=\frac{P(A|H_i)·P(H_i)}{\Σ_j P(A|H_j)·P(H_j)}$$
+
+\section{Náhodné procházky}
+
+Opakované, nezávislé pokusy. Každý končí buď $-1$ nebo $+1$.
+Když jsem provedl pevný počet pokusů $n$, jaká je pravděpodobnost, že jsem alespoň jednou měl $+k$.
+Když jsem provedl neomezeně pokusů, jaká je pravděpodobnost, že dosáhnu alespoň $+k$ v $n$-té hře.
+Jak dlouho mi to průměrně bude trvat.
