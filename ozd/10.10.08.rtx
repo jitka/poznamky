@@ -1,0 +1,43 @@
+Průměrné nastavení hlav/seek ‒ 3-15 ms.
+
+Několik rozhraní (SATA, PATA, SCSI, SAS).
+
+Parametry disku: seek, přejetí z jednoho konce na druhý, sousední stopa, rotation delay/latency, block transfer time.
+
+\subsubsection{Disková pole ‒ RAID}
+Redundant Array of Inexpensive Disks. Zvyšuje kapacitu, rychlost, bezpečnost.
+Navenek se chová jako jedna disková jednotka s pozměněnými parametry.
+Různá uspořádání. Stále má nevýhodu, že je v jednom místě, stále nebezpečné.
+
+→•
+ • Raid 0: Strip. Snižuje BTT. Problém se spolehlivostí (ztráta jednoho disku znamená ztrátu všech dat).
+   Rozšířená podpora v řadičích.
+ • Raid 1: Zrcadlení. Zápis je omezen na pomalejší z nich, při čtení může zrychlit.
+   Zvyšuje spolehlivost.
+ • Kombinace (Raid 0+1, 1+0).
+ • Raid 3: Pracuje po bitech, jeden z disků je parita. V případě potřeby umí dopočítat jeden z trojice disků.
+ • Raid 4: Podobně jako 3, ale po blocích.
+ • Raid 5: Data se zapisují na různé disky, počítá se parita, parita ale není na jednom daném disku, ale střídá se to.
+   Zápis je na různých discích, může jich někdy proběhnout více naráz, nebo provádět čtení.
+   Trochu složitější logika.
+ • Raid 6: Počítají se dvě parity, jedna svislá, jedna vodorovná. Odolné proti selhání dvou disků. Potřebuje složité výpočty.
+←•
+
+\subsection{Optické disky}
+
+CD, DVD, blue-ray. Nejsou náchylné na magnetická či elektrická pole.
+
+Vypalovaná mají špatnou trvanlivost, lisovaná vydrží déle.
+
+Lze na ně pořídit jukeboxy.
+
+\subsection{Flash paměti}
+Výrazně pomalejší zápis než čtení, má v podstatě nulové seeky, nevydrží tolik přepsání.
+Podobné také SSD disky.
+
+\subsection{Propojování}
+Lze sdílet mezi počítači, např. DAS (Direct Attached Storage), NAS (Network Attached Storage), SAN (Storage Area Network).
+
+\subsection{Bezpečnost dat}
+Je potřeba zálohovat, RAID obvykle nestačí.
+Vhodné mít různé druhy médií, někde jinde.
