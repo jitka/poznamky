@@ -1,0 +1,72 @@
+\subsection{Maximální párování}
+
+\name{Střídavá cesta} je cesta, která začíná v nespárovaném vrcholu, poté přejde do spárovaného vrcholu, poté střídám hrany z párování a mimo něj a končí stejně, jako začíná, v nespárovaném vrcholu.
+Pokud najdu takovou cestu, lze párování zvětšit prohozením párovacích a nepárovacích hran.
+
+\lemma{Kritérium střídavé cesty}
+Párování je maximální právě když neobsahuje střídavou cestu.
+
+\proof
+Když obsahuje, pak je zřejmé, že není maximální.
+
+Předpokládejme, že není $M₁$ není maximální. Tedy, $∃M₂,\len{M₁}<\len{M₂}$.
+Vezmu symetrickou diferenci $M₁\triangle M₂$.
+Když vezmu komponenty, tak to jsou buď samostatné vrcholy (vymlátily se stejné hrany), nebo jsou kružnice, které se střídají, poté mají stejně.
+Nebo to může být cesta, kde se střídají hrany prvního a druhého párování.
+Pokud jsou na obou stranách hrany z druhého, pak je v prvním střídavá cesta.
+Pokud mají různé konce, pak jich je stejně, pokud je na obou hrana z prvního, pak je více hran z prvního.
+Tedy, musí tam být alespoň jedna střídavá cesta.
+
+\name{Svědek maximality} je množina $S$, jejíž velikost je stejná, jako počet lichých komponent $G\backslash S-$ počet nepokrytých vrcholů.
+
+\subsubsection{Perfektní párování}
+
+Pro bipartitní grafy:
+
+Svědek neexistence bude množina $A';\len{N(A')}<\len{A'}$.
+
+Začnu v některém nepokrytém vrcholu v partitě $A$.
+Pokud má nepokrytého souseda, pak jsem našel střídavou cestu délky $1$.
+Pokud ne, pak jsou všechny pokryté. Podívám se na všechny jejich sousedy, které jsem ještě neviděl.
+Pokud je některý nepokrytý, mám střídavý cyklus.
+Když dojdou všichni sousedi, pak střídavá cesta neexistuje.
+
+Když dojdou vrcholy, vezmu ty na lichých hladinách (ty, které jsou ve vzdálenosti $1, 3, …$ od původního vrcholu).
+Ty musí být z partity $B$, tedy tvoří nějakou množinu $B'$.
+Ty sudé (včetně původního) tvoří $A'$.
+Když se podívám na počty, potom dojdu k názoru, že $\len{A'} = \len{B'} + 1$.
+Prohlásím ho za svědka.
+
+Kružnice bude \name{skorostřídavá}, pokud je lichá, má jeden nepokrytý vrcholy a jinak se střídají párovací a nepárovací hrany.
+\name{Květinka} je skorostřídavá kuržnice, která má ale onen jeden vrchol připojený k střídavé cestě, která končí nepokrytým vrcholem.
+Z květinky lze prohozením „stonku“ udělat skorostřídavou kružnici.
+
+Nechť $C$ je skorostřídavá kružnice. Potom graf $G$ má střídavou cestu právě když, pokud graf $G/C$, který vznikne kontrakcí $C$, má střídavou cestu.
+
+Při kontrakci byla kružnice $C$ nahrazena vrcholem $w$.
+Pokud po kontrakci máme střídavou cestu, pak je zajímavý jen případ, že obsahuje $w$.
+V tom původním to můžu obejít kolem dokola až dojdu k nepokrytému vrcholu.
+
+Při kontrakci mohla jít nějaká cesta přes kružnici.
+Na té kružnici určitě může končit, což je případ jako minulý odstavec.
+
+Pro obecné grafy:
+
+Začnu v nepokrytých hranách, postupuji stejně, jako u bipartitních.
+Pokud nenajdu střídavou cestu, prohlásím za $S$ liché hladiny.
+
+Mohou nastat některé problémy:
+→•
+ • \textbf{Hrana v sudé hladině} ‒ vznikne květinka nebo skoropokrytá kružnice.
+ • \textbf{Párovací hrana na liché hladině} ‒ také květinka.
+←•
+
+Květinky převedu na skoropokryté kružnice, zkontrahuji, zkusím v menším.
+
+Kroků, k nalezení alespoň jedné střídavé cesty je maximálně $O(n²)$, protože při každém hledání můžu muset kontrahovat.
+Celkem můžu najít až $n$ střídavých cest, tedy $O(n³)$.
+
+\subsubsection{Největší párování}
+
+Na nultou hladinu musím dát všechny nepokryté vrcholy.
+Může se mi stát, že by místo květinky vznikla střídavá cesta, což mi nevadí.
