@@ -6,4 +6,5 @@
 \title{Algoritmy a jejich implementace}
 \maketitle
 \input{10.08.08.rtx}
+\input{10.15.08.rtx}
 \end{document}

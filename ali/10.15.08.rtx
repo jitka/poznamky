@@ -1,0 +1,71 @@
+\subsubsection{Obskurdnosti}
+
+→•
+ • \textbf{Bitová pole} ‒ intové typy, které mají danou velikost v bitech, slučují se dohromady.
+\begin{verbatim}
+struct {
+  int x:5;
+  int y:3;
+};
+\end{verbatim}
+ • \textbf{Flexibilní pole} ‒ na konci struktury může být pole neznámé délky.
+←•
+
+\subsubsection{Kvalifikátory}
+
+→•
+ • \textbf{\texttt{const}} ‒ Objekt, o kterém se mluví, je kontstantní.
+   Záleží na jeho poloze, čímž určuje, co je konstantní.
+ • \textbf{\texttt{volatile}} ‒ Zakazuje optimalizace na objektu.
+ • \textbf{\texttt{restrict}} ‒ Říká o něčem, že je to jediný ukazatel na daný objekt (nebo, jediný aktivní), aby překladač mohl optimalizovat.
+←•
+
+\subsubsection{Storage class}
+Určují, jak je to uložené.
+
+→•
+ • \textbf{\texttt{auto}} ‒ Žijí lokálně a vidět jsou také lokálně. Tak se chovají lokální proměnné, když nic nemají. Nesmí se použít na globální.
+ • \textbf{\texttt{extern}} ‒ Nežije to tady, je to viditelné globálně, žije stále.
+ • \textbf{\texttt{static}} ‒ Je lokální pro daný blok/modul a žije celou dobu.
+ • \textbf{\texttt{register}} ‒ Doporučuje žít v registru. Nejde na to vzít ukazatel a podobně, jinak je stejná jako auto.
+ • \textbf{\texttt{typedef}} ‒ Je to typ.
+←•
+
+Na parametrech smí být pouze \texttt{register}.
+
+U funkce, \texttt{static} znamená, že žije jen lokálně. Pokud se definuje, tak je to globálně viditelné, jen při deklaraci se chová jako \texttt{extern}.
+Smí se použít explicitně.
+
+O funkci lze říct ještě \texttt{inline}, doporučuje nevolání, ale vkládání.
+
+\subsubsection{Inicializátory}
+Kompletuje datové typy (např. určuje délku pole, u kterého se to zatím nevědělo).
+
+Umí být pojmenované, jsou neúplné výrazy.
+
+\begin{verbatim}
+struct i item = {
+  .a.i = 0,
+  .x = 2
+};
+\end{verbatim}
+
+Co je neinicializované, tak se defaultuje na nulu, což je rozdíl oproti bez inicializované, kde to nula být nemusí.
+
+\subsection{Výrazy}
+Většina věcí jsou výrazy. Kromě výsledky mohou mít i vedlejší účinky.
+
+Při pořadí počítání je to definované, tedy \texttt{a+b+c}, uzávorkuje se zleva a např. u floatů nemusí být asociativní.
+
+Ale side effecty nemají dané pořadí, jen říká, že vše proběhne do nejbližšího sequence pointu.
+
+Sequence pointy jsou:
+→•
+ • Konec příkazu
+ • Čárka jako operátor (ne parametry!)
+ • Booleovské \texttt{\&\&}, \texttt{||}
+ • \texttt{?}
+ • Vstup a výstup z funkce
+←•
+
+U některých slibuje, že se něco nevyhodnotí (u booleovských podmínek, otazníku).
