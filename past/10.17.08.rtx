@@ -1,0 +1,26 @@
+\section{Náhodná veličina}
+\name{Náhodná veličina} je náhodné zobrazení z $X:@(Ω,A,P@) → @(R₁,B₁@)$.
+Poté se zajímám o jevy „$X$ nabývá hodnot $x₁, x₂, …$ (max. spočetná množina).
+Jev „nabývá $x_i$ znamená, že jsem se trefil do $@{ω,X(ω) = x_i@}$.
+Tedy z toho vyplývá pravděpodobnost $p_i = P@{…@}$.
+
+Určitě platí, že $\Σ_ip_i = 1$.
+
+\name{Rozdělení pravděpodobnosti v $X$} rozumíme $@{x_i\atop p_i@}$ kde $x_i$ jsou hodnoty, jenž mohou nabýt a $p_i$ jsou odpovídající pravděpodobnosti.
+
+Mějme rozdělení pravděpodobnosti $X$. \name{Distribuční funkcí} budeme rozumět reálnou funkci $F(x) = P(X≤x)$.
+
+→•
+ • Tato funkce je neklesající.
+ • $$\lim_{x→-∞} F(x) = 0$$
+ • $$\lim_{x→∞} = 0$$
+ • $F(x)$ je zprava spojitá.
+←•
+
+\name{Střední hodnotou} v $X$ rozumíme
+
+$$EX = \Σ_ωX(ω)·P(ω) = \Σ_i x_i·p_i$$
+
+Říká, k čemu se bude blížit průměrný výsledek pokusu při mnoha pokusech.
+
+Náhodnou veličinu popisující čekání na první zdar nazveme \name{geometrickou}.
