@@ -1,0 +1,102 @@
+\section{Záznam}
+
+\name{Logický} je kolekce souvisejících položek/hodnot atributů.
+
+\name{Fyzický} je logický záznam doplněný o oddělovače, definice délek, zarážky.
+Má svoji délku ‒ $R$.
+
+Typ záznamu je určen jménem a svými atributy.
+Každý atribut je z nějaké domény.
+
+Fyzický záznam je fyzická reprezentace logického záznamu na médiu.
+Uplatňuje se blokovací faktor (jestli zabere celý blok, něco zbývá, etc.).
+
+\name{Soubor} je identifikovaná kolekce logicky souvisejících záznamů. Jsou-li záznamy stejného typu a velikosti,
+pak se soubor nazývá \name{homogenní}.
+
+\name{Klíč souboru} je nějaká množina atributů, podle kterých lze záznamy jednoznačně identifikovat.
+
+\name{Vyhledávací klíč} je jako klíč, ale nemusí být jednoznačný.
+
+Typy vyhledávacích klíčů:
+→•
+ • \textbf{Hodnotové} ‒ přímo hodnoty.
+ • \textbf{Hashované} ‒ podle transformace.
+ • \textbf{Relativní} ‒ dle pozice.
+←•
+
+Mohu dělat operace:
+→•
+ • Insert
+ • Delete
+ • Update
+←•
+
+\subsection{Schéma organizace souboru}
+Popis logické paměťové struktury.
+
+Může popisovat více logických souborů svázaných dohromady.
+
+\name{Primární soubor} je soubor obsahující uživatelská data.
+
+\subsubsection{Fyzická úroveň}
+Jak velké jsou bloky, jak velké jsou záznamy v souboru, etc.
+
+Potřebujeme operace jako vytvoření struktury, reorganizace (uvedení do nového výchozího stavu), uzavření.
+
+\subsubsection{Souborový systém}
+Stará se o soubory, spoustu věcí zjednoduší, ale vytváří i některá omezení.
+
+\subsubsection{Dotazy}
+
+\name{hit} ‒ prvky odpovědi na dotaz.
+
+→•
+ • \textbf{Na úplnou shodu} ‒ ptám se na všechny atributy.
+ • \textbf{Na částečnou shodu} ‒ ptám se na některé atributy.
+ • \textbf{Úplnou intervalovou shodu} ‒ interval pro každý atribut.
+ • \textbf{Částečnou intervalovou shodu} ‒ interval pro některé atributy.
+←•
+
+Občas se hodí zpracovat celý soubor najednou.
+
+\subsubsection{Vyváženost struktury}
+→•
+ • Omezení délky cesty ve struktuře.
+ • Rovnoměrná naplněnost stránek.
+←•
+
+Struktura splňující obojí je \name{dynamická}, jinak je \name{statická}.
+
+\subsubsection{Druhy organizace}
+→•
+ • \textbf{Sekvenční soubor} ‒ přistupujeme postupně.
+ • \textbf{Index-sekvenční soubor} ‒ můžeme přistupovat postupně a nebo podle jednoho klíče.
+ • \textbf{Indexovaný soubor} ‒ vyhledávání podle různých atributů.
+ • \textbf{S přímým přístupem} ‒ vezmu rovnou správná data.
+←•
+
+\textbf{Hromada}\\
+Nehomogenní soubor, mohou se uvádět i jména či kódy atributů.
+Vyhledávání v $O(N)$.
+
+\textbf{Sekvenční soubor}\\
+Velmi častý v dávkových systémech. Homogenní soubor.
+Pokud chci všechno, tak je to velmi rychlé.
+
+Můžu mít již uspořádané podle některého atributu.
+Lze poté hledat pomocí půlení intervalu.
+
+Můžu mít ještě soubor aktualizací, abych změny nemusel přepisovat.
+Při reorganizaci se provede merge změn.
+
+\textbf{Index-sekvenční soubor}\\
+V primárním souboru bydlí data. Dále mám index, který mi pomáhá vyhledávat.
+Dále máme oblast přetečení, které se využívá, pokud v potřebném bloku není místo.
+
+Index ukazuje na každý první prvek bloku, je tedy mnohem menší.
+Můžu postavit víceúrovňově.
+
+Oblast přetečení lze nahradit kapsou ‒ odkaz na další blok, který je logicky součást toho aktuálního.
+
+Zachovává dobré vlastnosti sekvenčního souboru, umožňuje rychlý přístup dle jednoho klíče.
