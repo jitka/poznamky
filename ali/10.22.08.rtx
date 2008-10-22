@@ -1,0 +1,105 @@
+\subsubsection{Literály}
+
+Např. integerové (čísla v různých soustavách, mohou mít datové typy).
+
+Znakové konstanty jsou typu \texttt{int}.
+Stringové se dají spojovat, např. \texttt{"str" "ing"}.
+Široké znaky (\texttt{wchar\_t}), např. \texttt{L'ž'} či \texttt{L"kůň"}.
+Unicodové escapy (\texttt{L'\\u2302'}) se mohou vyskytovat i v identifikátorech.
+
+Literál daného typu se dá udělat syntakticky přetypováním iniciátorů (\texttt{(const char [])\{ 1, 2, 3 \}}).
+
+\subsubsection{Operátory}
+
+Pár poznámek:
+→•
+ • \texttt{\~} je definován jen na unsigned.
+ • \texttt{\&*} je identita, i kdyby ten ukazatel nechtěl fungovat (byl by \texttt{NULL} či podobně).
+ • Pointerová aritmetika funguje po velikosti toho, na co se ukazuje. Smí se ukazovat na prvky pole a jeden za.
+ • \texttt{a[b]} je totéž jako \texttt{*(a+b)}.
+ • Bitové posuny se smí dělat jen do velikosti typu (např. o 31 na 32 bitovém integeru).
+ • Přiřazovací operátory se závorkují zprava.
+←•
+
+Chytáky:
+→•
+ • \texttt{x\&1 == y\&1} je totéž jako \texttt{x\&(1 == y)\&1}.
+ • \texttt{1 << 4 + 1 << 5} je totéž jako \texttt{1 << (4 + 1) << 5}.
+←•
+
+\subsubsection{Konverze}
+→•
+ • Pole $→$ ukazatel (mimo \texttt{sizeof} a \texttt{\&}).
+ • Funkce $→$ ukazatel na fci (mimo \texttt{sizeof} a \texttt{\&}).
+ • $0$ a \texttt{NULL} jsou zaměnitelné.
+ • Integery menší než \texttt{int} na \texttt{int} (pro \texttt{unsigned} obdobně).
+←•
+
+Konverze podle počítání, z integeru na float, když je alespoň jeden float a tak podobně.
+
+Konverze při přetypování nebo při přiřazení.
+
+\subsubsection{Deklarace funkcí}
+Vynechané parametry ‒ neříkám o parametrech nic.
+\texttt{...} ‒ dále kolik chce libovolných parametrů.
+
+Pozor, pole se předávají odkazem, i když se zadají velikosti a nedá se vracet.
+
+Pokud mám vícerozměrné pole, pak jde i toto:\\
+\texttt{void sum(int n, int matice[n][n]);}, aby bylo vědět, jak velký je řádek toho pole.
+
+Kvalifikátory mohou být uvedeny v hranatých závorkách:\\
+\texttt{int cmp(int x[restrict], int y[restrict]);}
+
+\subsection{Preprocesor}
+Pozor, existují trigraphy, např. ??/ je backslash. Nahrazuje se všude, dá se nachytat.
+
+Dělá podmíněné překlady, nahrazuje definice.
+
+V includu se provádí expanze maker.
+
+\textbf{Ochrana proti násobnému vložení}:
+\begin{verbatim}
+#ifndef BLABLA_H
+#define BLABLA_H
+
+...
+
+#endif
+\end{verbatim}
+
+Direktiva \texttt{\#pragma} je implementačně závislá, ovládá překladač.
+Podobně se chová i \texttt{\_Pragma}, ale lze se použít kdekoliv.
+
+V makrech se občas hodí konstrukce \texttt{do \{ ... \} while(0)}.
+
+Makra s proměnlivým počtem argumentů se dělají tak, že se do závorek napíše trojtečka a použije se \texttt{\_\_VA\_ARGS\_\_}.
+
+Makro pracuje na tokenech, tedy pokud mám makro \texttt{E}, pak \texttt{12E3} je něco jiného než \texttt{12 E 3}.
+
+\subsection{Standardní knihovna}
+
+Věci jako \texttt{stddef.h}, \texttt{stdlib.h} a podobně.
+
+\subsubsection{\texttt{limits.h}}
+Např. \texttt{CHAR\_BIT} je počet bitů, různé \texttt{INT\_MAX}.
+
+\subsubsection{\texttt{stddef.h}}
+\texttt{ptrdiff\_t} je rozdíl dvou ukazatele, \texttt{size\_t} je výsledek \texttt{sizeof}, \texttt{NULL}, \texttt{offsetof()} zjišťuje offset prvku ve struktuře.
+
+\subsubsection{\texttt{stdbool.h}, \texttt{stdint.h}}
+Např. typy \texttt{int16\_t} (přesně 16 bitů), \texttt{int\_least16\_t} (nejmenší alespoň 16 bitový), \texttt{int\_fast16\_t}.
+Dále \texttt{intmax\_t} (největší integerový) a \texttt{intptr\_t} (vejde se tam ukazatel).
+
+\subsubsection{\texttt{inttypes.h}}
+Formátovací sekvence pro \texttt{printf} ‒ např. PRId16, případně \texttt{SCN*} pro scanf.
+
+\subsubsection{\texttt{stdlib.h}}
+Funkce \texttt{atexit()}, registrují „cleanup handlery“.
+
+Také makra \texttt{EXIT\_SUCCESS} a \texttt{EXIT\_FAILURE}.
+
+\texttt{qsort()}, \texttt{bsearch()}.
+
+\subsection{\texttt{string.h}}
+Např. \texttt{strcspn()}.
