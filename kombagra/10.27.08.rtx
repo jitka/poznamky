@@ -1,0 +1,83 @@
+\subsection{Rovinnost}
+
+\subsubsection{Třísouvislé grafy}
+
+\lemma{O kontrahovatelné hraně}
+Nechť $G$ je vrcholově $3$-souvislý graf takový, že $G≠K₄$, pak $G$ obsahuje hranu $e$ tak, že
+$G$ s kontrahovaným $e$ je stále vrcholově $3$-souvislý.
+
+\proof
+Vyberu si náhodně hranu $(x,y)$ a zkontrahuji ji. Pokud je výsledek $3$-souvislý, tak je vyhráno, tedy předpokládejme, že není.
+
+Tedy je $2$-souvislý, tedy obsahuje $2$-řez. Nový vrchol $xy$ je v něm obsažen (jinak by byl $2$-řez i v originálu), tedy je tvořen $@{xy,z@}$.
+Tedy, pokud žádná „vhodná“ hrana neexistuje, pak pro každou hranu $(v,w)$ existuje vrcholu $u$ tak, že $@{u,v,w@}$ je $3$-řez v původním grafu.
+
+Pokud $G$ je vrcholově $3$-souvislý a nějaká množina $@{a,b,c@}$ tvoří vrcholový $3$-řez, pak každý z vrcholů $a,b,c$ má alespoň jednoho souseda v každé komponentě vzniklé odebráním těchto vrcholů (jinak by zbylé vrcholy tvořily vrcholový řez a tento by nebyl potřeba).
+
+Když zvolím $x,y,z$ tak, aby nejmenší komponenta $G\backslash@{x,y,z@}$ byla co nejmenší.
+Vrchol $z$ má souseda v této nejmenší komponentě, říkejme mu $v$.
+Pro hranu $zv$ existuje vrchol $w$ takový, že $@{z,v,w@}$ je vrcholovým $3$-řezem.
+
+Kde se může nacházet $w$:
+→•
+ • V nejmenší komponentě: To se nemůže stát. Máme komponenty $C₁, C₂, …$, $C₁$ je ta nejmenší.
+   Tedy, když $w∈C₁∨w=x$, potom $y$ má sousedy v $C₂,C₃,…$. Ale zbylý počet vrcholů je menší, než $\len{C₁}$, tedy spor
+   s minimální $C₁$.
+ • V nějaké jiné (větší) komponentě.
+←•
+
+Když odeberu $v,z$, pak je $G$ stále ještě souvislý.
+Tedy $C₁$ stále je v celku, musí vést cesta buď do $x$ nebo do $y$.
+
+$v$ musí ale mít souseda v každé komponentě, tedy i v jiné, než v $C₁$. Spor s tím, že $C₁$ byla samostatná komponenta.
+
+\statement{Kuratovského věta}
+
+Graf $G$ je rovinný právě tehdy, když neobsahuje podrozdělení $K₅$ ani $K_{3,3}$.
+
+\name{Podrozdělení grafu} vznikne tak, že nahradím všechny hrany cestami.
+
+\proof
+Ani $K₅$ ani $K_{3,3}$ není rovinný graf, stačí použít Eulerovu formuli.
+
+Ani jejich podrozdělení nemohou být rovinná, proto ani $G$, který je obsahuje, nemůže být rovinný.
+
+Tedy, ještě je třeba dokázat, že když to neobsahují, tak musí být rovinné.
+Indukcí dle počtu vrcholů:
+→•
+ • Není souvislý: rozdělím.
+ • Má vrcholový $1$-řez. Nakreslím někam tento vrchol a zbytky připojím, křížit se zajisté nemusí.
+   U rovinného grafu můžu prohlásit libovolnou stěnu jako vnější (lze promítnout na kouli, pootočit a promítnout zpět).
+ • Má vrcholový $2$-řez. Tvořen vrcholy $v$ a $w$.
+   Předpokládám, že je to hrana.
+   Kdyby ne, přidám si tu hranu.
+   Jediné, co mi může nastat je, že vznikne zakázaný graf.
+   Nemohou být v různých komponentách (příliš mnoho cest mezi těmi vrcholy, aby se vešlo do $2$-řezu).
+   Tedy musí být v jedné komponentě, ale když bych hranu nepřidal, pak ji mohu obejít skrz jinou komponentu, tedy podrozdělení bylo i v původním grafu.
+
+   Postup tedy obdobný jako $1$-řezu, jen někdy slepuji do „vnitřního“ oka/stěny jiné komponenty.
+
+  • Má vrcholový $3$-řez. Když je to $K₄$, tak ten lze nakreslit do roviny.
+    Pokud ne, můžu hranu zkontrahovat a aplikuji indukci.
+
+    Pokud původní vrchol byl o stupni max. $2$, pak není problém.
+    Když tedy kontrahuji s vrcholem o stupni alespoň $3$.
+    Pak se podívám do původního grafu, ale v takovém případě bylo podrozdělení už v původním.
+
+    Graf bez zkontrahovaného vrcholu je $2$-souvislý, hranice každé stěny je kružnice.
+    Pak potřebuji dokreslit ještě původní $(x,y)$. $x$ si umístím tam, kam patří. Když mi $y$ vyjde do jedné nové stěny,
+    tak je všechno v pořádku. Když se mi to ale nestane, tak mohu najít některý zakázaný graf.
+←•
+
+\statement{Tutteova o generování $3$-souvislých grafů}
+
+Každý vrcholově $3$-souvislý graf lze získat z $K₄$ nahrazováním vrcholů hranami při zachování minimálního stupně $3$ a všechny takto získané grafy jsou vrcholově $3$-souvislé.
+
+\proof
+To, že lze každý získat ‒ půjdu opačně a postupně kontrahuji hrany. Tedy to jde i tímto směrem.
+
+Kdybych mohl vyrobit něco, co není vrcholově $3$-souvislé, pak obsahuje $2$-řez.
+Pokud ten $2$-řez neobsahuje ani jeden z vrcholů, pak byl i v tom původním.
+Kdyby obsahoval jen $(v,w)$, pak by $vw$ byl řez původního grafu.
+
+Pokud tedy je v řezu jeden vrchol a druhý ne, pak ten druhý musí být ve své komponentě sám (jinak by byl $2$-řez v původním grafu) a v tom případě nemá stupeň alespoň $3$ (nemá ve své komponentě dostatek sousedů).
