@@ -1,0 +1,66 @@
+\section{Paměti}
+
+\subsection{Základní model}
+Má procesor připojený ke sběrnici. Na ní žijí i další zařízení a řadič paměti.
+K němu je připojená paměť.
+Také je možné, aby zařízení komunikovaly s pamětí přímo, ale to lze zanedbat.
+
+Paměti existují paměti statické a dynamické.
+Statická je klopný obvod, je velká, ale velmi rychlá.
+Dynamická je založená na kondenzátorech, je menší, ale potřebuje nabíjení (je třeba znovu zapsat) a je pomalejší (asi o 2 řády než procesor).
+
+Proto se dělají hlavní (velké) paměti z dynamických a přidávají se cache z statických.
+
+\subsubsection{Plně asociativní cache}
+Několik řádků, v každém adresa a data, umí to přímo odpovědět, kde je v cache daná adresa.
+Obvykle se na vyhazování používá LRU (Least Recently Used), nejstarší vyhazovat.
+
+Pokud je cache typu write-through (zapíšu do obou), nebo častěji, write-back cache. V cache si pamatuji, že některá data byla změněná, když není co dělat nebo vyhazuji změněnou položku, tak ji zapíšu.
+
+\subsubsection{Optimalizace řádků}
+Obvykle se cachuje po celých řádcích, jeden řádek má velikost většinou $32$ nebo $64$ bajtů.
+Nepotřebuji si potom v cache pamatovat všechny bity z adresy.
+Paměti jsou na toto optimalizované a umí číst celé řádky skoro stejně rychle.
+
+Pro zápis osamostatněného bajtu je třeba napřed řádek načíst, zápisy jsou proto pomalejší.
+
+\subsubsection{Přímo mapovaná cache}
+Asociativní paměti se vyrábějí těžko, proto se každá adresa ukládá na předem dané místo.
+Většinou se používá daná část adresy.
+
+Dochází ke kolizím, říká se tomu cache aliasing.
+
+\subsubsection{Množinově asociativní cache}
+Má hashovací funkci, v každé přihrádce je jedna malá plně asociativní cache ‒ $k$-cestně asociativní (mám v každé přihrádce $k$ řádků).
+
+
+Protože je problém udělat cache, která je zároveň dostatečně velká a dostatečně velká (i kvůli přenosu k procesoru), používá se víceúrovňová hierarchie (čím blíže, tím menší ale rychlejší).
+
+Jsou hierarchie inkluzivní (co je v některé, je i ve všech větších) nebo exkluzivní (co je v jedné nesmí být jinde).
+
+Občas bývají 2 \texttt{L1} cache (na instrukce a na data). V instrukčí mohou být nápovědy.
+
+\subsubsection{MMU}
+Na jedné straně je adresní prostor každého procesu a na druhé se nachází fyzický adresní prostor.
+Obvykle překládá po stránkách (většinou pevné velikosti).
+Dnes například \texttt{4kB}.
+Každá stránka může mít práva, vlastníka, flagy a podobně.
+
+Obvykle se používá strom na vyhledávání překladu, každá ukládá, kde je další tabulka nebo vlastní stránka.
+Je třeba mít v procesoru uloženou kořene.
+
+Některé procesory umí i velké stránky.
+
+Například 32bit vypadá tak, že adresa je rozdělená na $10$, $10$, $12$. Napřed se podívá do kořene, ve kterém je $1024$ položek. Tam může být buď odkaz na $4MB$ stránku, nebo na stránku s dalšími $1024$ položkami.
+
+Dále máme \texttt{TLB} (Translation Lookup Buffer) ‒ cache pro už resolvované adresy stránky.
+Obvykle jsou množinově asociativní a $2$-úrovňové.
+
+Někdy se použivá jen \texttt{TLB}, zbytek se dělá softwarově.
+
+Když by byla cache s fyzickými adresami, je mnohem méně problémů.
+Problém je, že v době, kdy chci hledat, tak ještě nemám hotový překlad.
+Proto se používá hybrid, index (ta hashovaná část) je virtuální, tag (ten asociativní prefix) je fyzický.
+Navíc se starám o to, aby tam nebyla jedna fyzická stránka dvakrát.
+
+\texttt{L2} už bývají adresované čistě fyzicky.
