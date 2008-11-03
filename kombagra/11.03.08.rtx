@@ -1,0 +1,78 @@
+\section{Barevnost}
+
+Maximální barevnost je maximální stupeň $+1$.
+Každý vrchol má max. tolik sousedů, jedna ještě zbyde.
+
+\statement{Brooksova}
+Pokud $G$ je souvislý a není lichá kružnice ani $k_n$, pak je jeho barevnost max. maximální stupeň.
+
+\proof
+→•
+ • $G$ není $Δ$-regulární. $∃$ vrchol $v$ stupně $<Δ$. Vezmu kostru, zakořením v nějakém $v$, projdu v post-orderu a očísluji, jak procházím.
+   Podle těchto čísel barvím. Při barvení vrcholu různých od $v$. Každý má neobarveného souseda ‒ otce ve stromě.
+   Proto má ještě některou barvu volnou.
+   Nakonec obarvím $v$, protože má malý stupeň.
+ • Je $Δ$-regulární. Vezmu některý vrchol $v$ a udělám to, co minule. Může se mi stát, že nemůžu
+   obarvit vrchol $v$. Všichni sousedé $v$ mají různé barvy.
+
+   Pokud některý nemůžu přebarvit, pak mezi nimi musí existovat cesta, kde se střídají jejich barvy.
+   Každý vrchol na této cestě musí vidět všech $Δ-1$ barev, jinak můžu přebarvit.
+
+   Když mám dvě takové cesty, tak se protínají jen v $@{v_i@}$, protože kdyby se protínaly ve více místech, tak je tam vrchol, který má příliš mnoho stejně barevných sousedů, tedy by nemohl vidět všech $Δ-1$ barev.
+
+   Pokud jsou všechny vrcholy $v_i$ sousední, pak můj graf byl úplný, tedy předpokládám, že ne všechny jsou sousední.
+   Nechť jsou to $v_1$ a $v2$. Na této cestě prohodím barvy $1$ a $3$.
+   Cesta $c_{2,3}$ tím nebyla ovlivněn. Na této cestě mohu prohodit barvy $2$ a $3$, tím jsem vytvořil dva vrcholy barvy $3$ ($v_1$ a $v_2$), proto můžu rozšířit na $v$.
+←•
+
+\subsection{Hranová barevnost}
+
+\name{Hranová barevnost} grafu $G$ je nejmenší počet barev $χ'(G)$ takový, že hrany $G$ lze obarvit tak, aby žádné dvě sousední hrany neměly stejnou barvu.
+
+\statement{Vizingova věta}
+
+Když $G$ je bez násobných hran, tak je $Δ@(G@)≤χ'(G)≤Δ@(G@)+1$.
+
+\proof
+Uvažme $G$ nejmenší protipříklad.
+Vezmu si vrchol $v$. Ten má sousedy $v₁, v₂, …$. Podívám se na graf bez hrany $@(v,v₁@)$.
+Ten má hranové obarvení pomocí $Δ+1$ barev. Vezmu si barvu, kterou nemá žádná hrana u vrcholu $v$ a označím ji $A$.
+Kdyby se tato barva nevyskytovala ani u $v₁$, pak je vyhráno.
+Nechť se tam tedy $A$ vyskytuje, ale nevyskytuje se tam barva $C₁$. Ta ovšem nechybí u $v$.
+Tedy vede hrana do $v₂$ a má tuto barvu, tam se vyskytuje $A$, ale nevyskytuje se tam $C₂$.
+Obdobně musí vést hrana do $v₃$ a mít barvu $C₂$, tam ale chybí $C₃$ a tak dále.
+
+Ale toto se musí někde zastavit (nemám nekonečně mnoho barev).
+Tam tedy musí chybět nějaká barva buď $A$ (mohu přebarvit tuto hranu) nebo nějaké $C_i$ pro předchozí $i$.
+
+Začnu posouvat, aby k $v_i$ vedla barva $C_i$, až dojdu do vrcholu $v_{i'}$ (ten uprostřed, kde je stejná chybějící barva jako u posledního).
+Když se mi někde stane, že mi chybí barva $A$, je vyhráno.
+
+Nechť tedy nechybí $A$ a má ji některá z jeho hran.
+Ta hrana vede do dalšího vrcholu v někde polovině, kde nechybí $C_i = C_j$.
+Když se trefí sama do sebe, tak to nejde ($C_i$ tu není, jinde by musela být dvakrát).
+Nemůže skončit uprostřed grafu (mohl bych to přebarvit).
+
+Dojde tedy do vrcholu $v$.
+
+Když posunu všechno, kromě posledního vrcholu, můžu udělat to samé.
+
+A taková cesta nemůže existovat v obou případech, protože to musí být stejná cesta. Musí tedy jednou skončit v $v_i$ a zároveň v $v_{i'+1}$, to ale nemůže nastat kvůli barvám.
+
+\subsubsection{Klasifikace grafů}
+Máme vizigovu třídu $1$ a $2$, kde $1$ jsou grafy, kde $χ'(G) = Δ(G)$, třída $2$ jsou grafy, kde $χ'(G) = Δ(G) + 1$.
+
+Např. kubický graf bez mostů, který je Vizigovy třídy $2$ se nazývá \name{snark}.
+
+Neexistence rovinného snarku je ekvivalentní s větou o $4$ barvách.
+
+\note{}
+Pro každý graf $G$ s $m$ hranami platí, že:
+$$χ(G)≤\inv{2} + \sqrt{2m + \inv{4}}$$
+
+\proof
+Nechť $G$ je graf barevnosti $k$ s co nejméně hranami, který nesplňuje tvrzení. $δ(G)≥k-1$ jinak uvaž vrchol stupně $≤k-2$ a $χ(G\backslash w) = k →→ G\backslash w$ také nesplňuje tvrzení a měl jsem vzít $G\backslash w$.
+
+$$m≥n·\frac{k-1}{2}≥k·\frac{k-1}{2}$$
+
+Pak stačí dosadit do rovnice a zjistit, že takový graf má alespoň tolik hran, jako je popsáno na začátku.
