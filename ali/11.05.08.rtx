@@ -1,0 +1,53 @@
+\subsection{Parametry RAM}
+
+Dram je matice, má řádkový buffer ve statické paměti.
+Vždy se přečte řádek, tím se smaže, když už není potřeba,
+tak ho vrátí (a obnoví) a přečte jiný.
+
+Obvykle se používá hodinový signál na komunikaci.
+V každém tiku se posílá data tam i zpět.
+Můžu poslat adresu a příkaz, můžu vyměňovat data.
+Příkazy jsou:
+→•
+ • \textbf{NOP} ‒ Některé příkazy trvají déle, vyplňování.
+ • \textbf{Active} ‒ Načtení řádku do bufferu. Předává adresu řádku.
+ • \textbf{Read} ‒ Přečtení dat z aktuálního řádku.
+   Může přečíst i více, může být nakonfigurovaná na čtení po dávkách v různě velkých kusech.
+ • \textbf{Write} ‒ Opak read.
+ • \textbf{Precharge} ‒ Vrátí zpátky řádek.
+ • \textbf{Setmode} ‒ Např. nastavení velikosti dávky.
+ • \textbf{Refresh} ‒ Obnoví jeden, nejstarší, řádek.
+←•
+
+Obvykle jsou omezení na minimální čas čekání po Active, reakce na Read, časy mezi Active a Precharge oběma směry.
+
+Dnes se používá něco vylepšeného, DDR.
+
+DDR umí přenést dvě slova za jeden takt (na náběžné i shazovací hraně signálu).
+DDR2 má dvakrát rychlejší sběrnici, než paměť.
+DDR3 má čtyřikrát rychlejší sběrnici, než paměť.
+
+Rozšíření jsou, že lze říct, kterým slovem začít dávku (cyklicky).
+
+Jsou tam oddělené banky, při čekání jednoho můžu dělat něco s jiným.
+Dále umí automatický precharge, je parametr readu.
+Také umí delayed read.
+
+\section{Rozsíření GCC}
+
+Existuje jich hodně, tady jsou některé často používané:
+
+→•
+ • \textbf{Příkazové výrazy} ‒ define, který má proměnné, začíná \texttt{(\{}, pak je blok, poslední výraz je návratová hodnota a ukončené pomocí \texttt{\})}.
+\begin{verbatim}
+#define MIN(a,b) ({ \
+  int _a = (a), _b = (b); _a < _b ? _a : _b; })
+\end{verbatim}
+ • Vnořené funkce, vidí lokální proměnné. Jdou dokonce dávat ukazatele na ni.
+ • \texttt{a ?: b}
+ • Binárně zapisované literály (\texttt{0b00100010}).
+ • \texttt{case 1...5:}
+ • Vkládání assembleru: \texttt{asm("KUS ASM":Výstup:Vstup)}.
+ • Atributy funkcí ‒ \texttt{\_\_attribute\_\_((noreturn))}.
+ • Zabudované funkce, např. \texttt{\_\_builtin\_expect} ‒ říká, že očekávaná hodnota výrazu je nějaká.
+←•
