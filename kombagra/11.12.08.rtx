@@ -1,0 +1,106 @@
+\section{Polynomy v grafech}
+
+Mám-li $K_n$, potom počet obarvení jeho vrcholů pomocí $k$ barev, pak na to mám $P_{k_n}(k)$.
+
+$P_n$, potom počet obarvení je $k·(k-1)^{n-1}$, což je opět polynom v $k$.
+
+Stejně tak můžu mít strom na $n$ vrcholech, barvit pomocí odtrhávání listů.
+
+\name{Tutteho polynom} je polynom ve dvou proměnných $T_G(x,y)$.
+
+Vyberu si libovolnou hranu $e$ grafu $G$.
+Jsou povolené smyčky a násobné hrany.
+
+Pokud je hrana:
+→•
+ • most
+ $$T_G(x,y) = x·T_{G-e}(x,y)$$
+ • smyčka
+ $$T_G(x,y) = y·T_{G-e}{x,y}$$
+ • ostatní
+ $$T_G(x,y) = T_{G-e}(x,y)+T_{G|e}(x,y)$$
+ (Součet grafu bez hrany a s kontrahovanou hranou)
+←•
+
+Pokud graf nemá hrany, je jeho Tutteho polynom roven $1$.
+
+\statement{}
+Nechť $G$ je graf. Pak Tutteho polynom grafu $G$ je roven následujícímu výrazu:
+
+$$
+T_G(x,y)=\Σ_{F@⊂E}(x-1)^{k(F)-k(E)} · (y-a)^{\len{F}-\len{V}+k(F)}
+$$
+
+kde $k(F)$ je počet komponent grafu $(V, F)$.
+
+\proof
+Indukcí podle počtu hran.
+Pokud nemá žádné hrany, pak sčítám přes jednu množinu, vyjde mi $1$.
+
+$G$ má most. Rozdělím sumu na ty, které hranu obsahují a ty které ne.
+
+$$\Σ_{e∈F}(x-1)^{…}·(y-1)^{…} + \Σ_{e∉F}(x-1)^{…}·(y-1)^{…}$$
+
+Druhá část bude $(x-1)·T_{G-e}(x,y)$ ‒ po rozepsání.
+Ta první část je $T_G-e(x,y)$. Pak už stačí sečíst.
+
+$G$ má smyčku.
+
+Rozdělím na dvě části:
+
+$$\Σ_{e∈F}(x-1)^{…}·(y-1)^{…} + \Σ_{e∉F}(x-1)^{…}·(y-1)^{…}$$
+
+Podívám se na $G-e$.
+První exponent se nemění, mění se druhá část, která je o jedničku menší.
+
+Druhá část grafu se zcela nemění. Tedy, výsledek je:
+
+$$(y-1)·T_{G-e}(x,y) + T_{G-e}(x,y)$$
+
+Není ani smyčka, ani most.
+Opět rozepíšu, podívám se, jak vypadá graf se zkontrahovanou hranou a s utrženou hranou.
+
+Speciální případy:
+→•
+ • $T_G(1,1)$ je počet koster.
+ • $T_G(2,1)$ je počet acyklických podgrafů.
+ • $T_G(1,2)$ počet podgrafů se stejným počtem komponent.
+←•
+
+Uvažme polynom $5$ proměnných $U(x,y,α,σ,τ)$ definován:
+→•
+ • $x·U_{G-e}(…)$ pokud je $e$ most.
+ • $y·U_{G-e}(…)$ když je $e$ smyčka.
+ • $σ·U_{G-e}(…)+τ·U_{G|e}(…)$ jinak.
+ • $α^{\len{V}}$ pokud je bez hran.
+←•
+
+\statement{}
+Tento lze získat z tutteova polynomu jako:
+$$
+U(x,y,α,σ,τ) = α^k·σ^n·τ^r·T_G@(\frac{a·x}{τ}, \frac{y}{σ}@)
+$$
+
+Kde:
+→•
+ • $k$ je počet komponent
+ • $n = \len{E} -\len{V} + k$
+ • $r = \len{V} - k$
+←•
+
+\proof
+Pokud nemá žádné hrany, tak je to zřejmé.
+Pak rozebrání případů.
+
+Aplikace:\\
+Lze spočítat počet obarvení $z$ barvami.
+\begin{eqnarray*}
+ x &=& \frac{z - 1}{z} \\
+ y &=& 0 \\
+ σ &=& 1 \\
+ τ &=& -1 \\
+ α &=& z
+\end{eqnarray*}
+
+Tedy, lze spočítat jako:
+$$z^k·(-1)^r·T_G(1-z,0)$$
