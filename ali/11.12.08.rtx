@@ -1,0 +1,33 @@
+\section{Profilování}
+
+Procesor obsahuje registry. \texttt{EAX} až \texttt{EDX} jsou na obecné použití, jsou menší varianty a poté nějaké speciální.
+
+Má také flagy, udávají stav procesoru. Například:
+→•
+ • Sign flag (znaménko)
+ • Zero flag (poslední vyšla nula)
+ • Carry flag (přetečení)
+←•
+
+Máme také zásobník, jsou na manipulaci instrukce a registry (\texttt{ESP} ukazuje nakonec, \texttt{EBP} za návratovou adresu).
+Ukládají se sem funkce a jejich lokální proměnné.
+Na intelu roste směrem dolů.
+
+Příkaz \texttt{objdump} umí například disassemblovat.
+Assembler lze získat také přímo z gcc.
+
+Proměnná \texttt{MALLOC\_CACHE\_} ‒ potom kontroluje, že se nevolá free dvakrát a podobně.
+
+Program ElectricFence odchytává přístup za alokovanou paměť a podobně.
+
+Nejmocnější je asi valgrind.
+
+→•
+ • memcheck ‒ kontrola paměti
+ • helgrind ‒ zamykání paměti
+ • massif ‒ grafy, kolik je paměti spotřebované
+ • cachegrind ‒ cachemissy
+ • callgrind ‒ využití cache, profilování kódu
+←•
+
+Dále lze přidat flagy \texttt{-fprofile-generate} a \texttt{-fprofile-use}.
