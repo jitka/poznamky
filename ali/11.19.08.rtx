@@ -1,0 +1,29 @@
+
+\subsubsection{Profilovací nástroje}
+Např. \texttt{gprof} (jednou za nějakou dobu se podívá, která funkce zrovna běží), \texttt{oprofile}, který k tomu používá kernel a HW podporu.
+
+AMD umí něco zvané Instruction-Based Sampling. Sleduje vždy jednu instrukci při celém jejím zpracování a zaznamenávají se její události (např. cache-miss, počet tiků).
+
+\section{Více procesorů}
+
+Model: procesory a paměťový řadič připojený ke sběrnici (SMP).
+Každý má nějakou cache. Problém je, že je potřeba cache synchronizace.
+Lze řešit pomocí toho, že procesory odposlouchávají sběrnici.
+
+Write-back cache lze vyřešit tak, že max. 1 procesor má data nacachovaná, v případě, že
+jich potřebuje více, tak je write-trough.
+
+Stavy řádků:
+→•
+ • Invalid (nic)
+ • Shared (aktuální data, má je i někdo jiný)
+ • Exclusive (aktuální data, mám je já)
+ • Modified (aktuální data, která nejsou v RAM, mám je jen já)
+←•
+
+Toto je třeba udržovat v průběhu výpočtu u každého řádku, v případě čtení může jiný zasáhnout a říct, že to mám já.
+Pokud se sdílí řádek při zápisech, je to pomalé, pokud mají každé svoje a nelezou si do zelí.
+Druhý problém je, že je to pomalé tak, jak je pomalá paměť ‒ např. když jeden čte změněný řádek, musí se počkat, až předchozí zapíše.
+
+Vylepšeno ‒ nový stav „Owned“ ‒ data nejsou v hlavní paměti a patří aktuálnímu procesoru.
+Rozšířený stav „Shared“, takhle někomu patří a musí je na konci zapsat.
