@@ -98,6 +98,7 @@ exec sed -e 's/α/\\alpha /g;
 	s/…/\\ldots /g;
 	s/···/\\cdots /g;
 	s/·/\\cdot /g;
+	s/\\•/\\bullet /g;
 	s/→•/\\begin{itemize} /g;
 	s/←•/\\end{itemize} /g;
 	s/↑•/\\begin{enumerate} /g;

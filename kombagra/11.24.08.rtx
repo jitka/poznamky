@@ -1,0 +1,84 @@
+\section{Burnsidova věta}
+
+Například máme krychli, kterou chceme obarvit. Zajímá nás počet obarvení, která na sebe nejdou převést rotacemi krychle.
+Zavedeme si grupu $Γ$, což jsou permutace odpovídající rotacím.
+$X$ je množina obarvení. Potom $x∈X$ je \name{orbita} definovaná jako:
+
+$$
+@[x@] = @{y;∃α∈Γ;α·x = y@}
+$$
+
+Máme funkci $w:X→\R$ a $w$ je konstantní na orbitách. Tedy $w@(@[x@]@) = w@(x@)$.
+
+Nyní si nastavím $w(*)= 1$ a chci spočítat $\Σ_{O\hbox{ orbita}}w(O)$.
+
+Pro všechny $α∈Γ$:
+→•
+ • $F(α) = @{x|α·x = x@}$ pevné body.
+ • $Γ(x) = @{α∈Γ,α·x = x@}$
+ • $Γ(x,y) = @{α∈Γ,α·x = y@}$
+←•
+
+\observation
+$Γ(x,y) = α₀·Γ(x)$ pro nějakou $α₀∈Γ$.
+Když zvolíme $α₀∈Γ(x,y)$. Tedy doleva je jasné, opačná je: $β∈Γ(x,y), α₀^{-1}β∈Γ(x), α₀·@(α₀^{-1}·β@) = β$.
+
+\lemma{Burnsidovo}
+
+$$\len{Γ} · \Σ_{O\hbox{ orbita}}w(O) = \Σ_{α∈Γ}\Σ_{x∈F(α)}w(x)$$
+
+\follows
+Počet orbit je:
+$$\inv{\len{Γ}}·\Σ_{α∈Γ}\len{F@(α@)}$$
+
+\proof
+\begin{eqnarray*}
+&& \Σ_{α∈Γ}\Σ_{x∈F(α)}w@(x@)\\
+&=& \Σ_{x∈X}\Σ_{γ∈Γ(x)}w(x)\\
+&=& \Σ_{O \hbox{ orbita}}\Σ_{x∈O} \Σ_{γ∈Γ(x)}w(x)\\
+&=& \Σ_O w(x)·\Σ_{x∈O}\Σ_{γ∈Γ(x)}1\\
+\end{eqnarray*}
+
+Protože $\len{Γ(x)} = \len{Γ(y)} = \len{Γ(x,y)} = \len{Γ(y,x)}$ (viz předchozí lemma a prohazování role x a y), proto se předchozí rovná:
+
+$$
+\Σ_O w(O)·\len{O}·\len{Γ(x_i)}
+$$
+
+kde $x_i$ je libovolný prvek dané orbity.
+
+$$
+\len{Γ} = \len{O}·\len{Γ(x_i)}
+$$
+
+Když orbitu $O$, tak to jsou všechny prvky, na které můžu $x_i$ zobrazit.
+Tedy:
+$$
+Γ=\∪^\•_{x∈O}Γ(x,z) = \len{O}·\len{Γ(x)}
+$$
+
+Nechť $D$ je množina barvení v objektu. $R$ je množina barev. Obarvení je potom funkce $f:D→R$, tedy $f∈R^D$.
+$Γ$ je grupa permutací na $D$.
+$Γ^*$ je grupa permutací na $R^D$.
+Pokud mám $α∈Γ$, potom existuje nějaký $α^*∈Γ^*$ takový, že $(α^*f)(d)=f(α(d))$.
+
+\name{Cyklický index} $Z(Γ; a₁,a₂, …, a_d)$ je polynom:
+$$
+\inv{\len{Γ}}·\Σ_{α∈Γ}\Π_k a_k^{jk^{(α)}}
+$$
+
+$jk^{(α)}$ je počet cyklů $α$ délky $k$.
+
+Definujeme váhovou funkci $w:R→\R$.
+$$w(f) = Π_{a∈D}w@(f@(a@)@)$$
+
+Orbita $O^*$ vůči $Γ^*$, $w$ je konstantní na $O^*$.
+
+\begin{eqnarray*}
+S &=& \Σ_{O^*\hbox{ orbita}}w(O^*)\\
+  && \len{Γ}·\Σ_{O^*}w(O^*)\\
+  &=& \Σ_{α∈Γ}\Σ_{f∈F(α^*)}w(f)\\
+  &=& \Σ_{α∈Γ}\Σ_{r_i∈R}Π_{i=1}^m w(r_i)^{ξ_i}\\
+  &=& \Σ_{α∈Γ}\Π_{i=1}^l @(\Σ_{r∈R}w(r)^{ξ_i}@)\\
+  &=& \Σ_{α∈Γ}Π_{k=1}^d@(\Σ_{r∈R} w(r)^k@)^{jk^{(α)}}
+\end{eqnarray*}
