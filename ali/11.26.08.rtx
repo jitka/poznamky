@@ -1,0 +1,76 @@
+\subsection{Reálná situace}
+
+Procesor je připojen přes \texttt{FSB} (Front Side Bus) k NorthBridge, ten už se stará o komunikaci s rychlými zařízeními (\texttt{DRAM}, \texttt{PCIe}).
+Dále je k němu připojen ještě SouthBridge, ten komunikuje s pomalými zařízeními (porty, karty).
+
+AMD má místo \texttt{FSB} něco, čemu říká HyperTransport, paměti přímo na procesoru.
+HyperTransport umí větvení do stromu.
+
+V případě, že je více procesorů, tak v prvním případě jsou připojeny k NorthBridgi.
+Umí se to až se 4 procesory.
+
+U AMD má každý procesor více hypertransportů, propojují se mezi sebou. Paměti jsou lokální pro procesor, tedy jsou různě rychlé (záleží, jestli je lokální).
+
+Vyrábí se také vícejádrové procesory (více procesorů na jednom čipu). Každé jádro má vlastní L1 cache, ostatní cache již někdy bývají společné.
+Z pohledu programu se chová podobně, jako oddělené procesory, jen je trochu komplikovaný čas na přístup k datům jiných procesorů.
+Paměťový řadič mívají společný.
+
+Existuje také HyperThreading ‒ řídící část je tam dvakrát, ale výkonné jednotky sdílí.
+Bohužel to nefunguje, vyhazují si data z L1 cache.
+
+\subsection{Programování paralelizmů}
+
+→•
+ • Více procesů. Jednoduché, samo se to vyváží, ale málo spolu komunikují.
+   Nehodí se, pokud je potřeba přidělovat dynamicky nebo když mají nějaká sdílená data.
+
+   Možnost vyřešit sdílenou pamětí.
+ • Vlákna, což jsou v podstatě jen procesy se sdíleným adresním procesem.
+   Problém napsat správně, je potřeba synchronizovat.
+←•
+
+\subsubsection{Synchronizační primitiva}
+
+První je Mutex (Mutable Execution). Lze to zamknout a zamknuté to smí mít max. jedno vlákno.
+Zamknutí čeká, dokud není odemčeno.
+
+Verze je RW-mutex, který dovoluje mít zamčeno pro čtení u více procesorů.
+
+Pak jsou semafory ‒ podobně, jako mutex, ale umí počítat a jeho hodnota je vždy nezáporné číslo.
+Up zvýší o 1, down sníží o 1, čeká, pokud to nejde.
+
+Tyto operace jsou drahé, protože nejdou cachovat.
+
+Lze implementovat nějaké rozdělování práce např. pomocí fronty.
+Ta jde implementovat pomocí mutexu a semaforu.
+
+\subsubsection{Vyhýbání se synchronizačním primitivům}
+
+Existují atomické operace, které umožňují vyhnout se takovýmto věcem.
+Je to nebezpečné, mohou se prohazovat zápisy a podobně.
+
+\subsubsection{Atomicita syscallů}
+
+Některá systemová volání jsou atomická. Například zápisy do souboru.
+
+\subsubsection{Nástroje}
+
+Například lze použít OpenMP, které přidává některá \texttt{\#pragma} instrukce.
+Ty pak dovolí paralelizovat kusy kódu.
+
+\subsection{Paralelizace mezi počítači}
+
+Lze paralelizovat ještě přes více počítačů.
+Je třeba zaručit ještě rozumnou komunikační složitost ‒ kolik dat se přenáší.
+
+\subsection{Vektorové instrukce}
+
+Například \texttt{SSE} (Streaming SIMD Extension). Pracují se 128 bitovými registry.
+Dá se s nimi poté pracovat jako s horou čísel za sebou.
+
+Například \texttt{PADDW} ‒ sčítání 16-bitových integerů, \texttt{PMINB} ‒ minimum z bajtů, či porovnávání (\texttt{PCMPEQB}).
+Dále tu jsou permutační instrukce.
+
+Při programování lze používat buď GCC buildiny, tedy např: \texttt{int \_\_attribute\_\_(vector(16))}, pak je to 128 bitů rozdělených na 16. bitové integery.
+
+Případně to může \texttt{<emmintrin.h>} dává lepší jména.
