@@ -1,0 +1,54 @@
+\section{Samoopravné kódy}
+
+Máme zprávu $v$, což je řetězec $n$ bitů.
+Při přenosu může dojít k chybě.
+
+Předpokládáme, že pravděpodobnost, že vznikne více $k$ chyb je podstatně menší, než že nastane nejvýše $k$ chyb.
+
+Vezmeme $v$, transformujeme na $w$, přeneseme, dorazí $w'$. Poté chceme získat transformací opět $v$.
+
+Možnost duplikovat jednotlivé bity.
+
+\subsection{Hammingovy kódy}
+Např. pro řetězec bitů $abcd$ by poslal $abcdefg$, kde $e=a+b+c (\pmod 2)$, $f=a+b+d (\pmod 2)$, $g=a+c+d (\pmod 2)$.
+
+\name{Abeceda $S$} je nějaká konečná množina symbolů (např. $S=@{0,1@}$).
+\name{Slovo} je libovolný řetězec písmen abecedy $S$, tedy prvek $S^n$.
+\name{Kód} délky $n$ nad abecedou $S$ je libovolná $C@⊂S^n$.
+
+Např. pro $4$-bitové řetězce je hammingův kód $16$ $7$-bitových slov.
+
+\name{Hammingova vzdálenost} $d(u,v) = \len{@{i∈1,2,…,n;u_i ≠ v_i@}}$.
+\name{Minimální vzdálenost kódu $C$} $d(C) = \min@{d(u,v), u,v∈C,u≠v@}$.
+
+Čím větší vzdálenost, tím spolehlivější kód, na druhou stranu, čím více slov, tím více informací lze poslat.
+
+Kód $C$ opravuje $t$ chyb, pokud pro $∀u∈S^n;∃$ nejvýše jedno $d(u,w)≤t$.
+
+\observation{}
+Kód $C$ opravuje $t$ chyb $←→d(C)≥2t + 1$.
+
+\tvrz{}
+Hammingův kód opravuje $1$ chybu.
+Např. Golayovy, CD, DVD...
+
+Souvisí s PCP větou.
+
+\subsection{Lineární kódy}
+
+Nechť $S_i$ je konečné těleso (třeba $ℤ₂$).
+$C@⊂S^n$ je lineární kód, pokud $C$ je vektorový podprostor $S^n$.
+Ke každému kódu existuje báze ‒ generující matice kódu ‒ $P$.
+
+Jiný pohled říká, že $C$ je řešení soustavy lineárních rovnic.
+
+Zobecněný hammingův kód, kde abeceda $S=ℤ₂$ a parametr $l≥2$ ($l=3$ je hammingův kód).
+Matice $P$ má $l$ řádek a sloupce má všechny možné nenulové vektory z $@{0,1@}^l$.
+
+\tvrz{}
+Zobecněný hammingův kód $C$ je $d(C)≥3$, tedy opravuje $1$ chybu.
+
+\proof
+$d(u,v) = d(u+w,v+w)$. Tedy $d(u,v) = d(u-v,0)$.
+Tedy $d(C) = \min@{d(w,0);w∈C;w≠0@}$.
+Z toho to už jde spočítat.
