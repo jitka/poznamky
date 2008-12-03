@@ -1,0 +1,100 @@
+\documentclass[a4paper,11pt]{article}
+\input{../stdhead.rtx}
+\input{../defs.rtx}
+
+\begin{document}
+\section*{Vzorce na PAST}
+
+\subsection*{Klasická definice}
+
+Jevy $A₁, A₂, …, A_n$ jsou \name{nezávislé}, pokud:
+
+$$
+∀k∈1…n ∀@{i₁, i₂, … i_k@}@⊂1…n; P@(\∪_{j=1}^k A_{i_j}@) = \Π_{j=1}^k P@(A_{i_j}@)
+$$
+
+Při opakování nezávislých pokusů, kde zdar má pravděpodobnost $p$ je pravděpodobnost
+právě $k$ zdarů:
+
+$$
+\combnum{n}{k}p^k(1-p)^{n-k}
+$$
+
+\subsection*{Podmíněná pravděpodobnost}
+
+$$
+P(A|B) = \frac{P(A∩B)}{P(B)}
+$$
+
+Pro nezávislé jevy:
+
+$$
+P(A|B) = P(A)
+$$
+
+\statement{Bayesova věta}
+
+Pro úplný disjunktní systém $B₁, B₂, …, B_n$ platí:
+
+$$
+P(B_k|A) = \frac{P(A|B_k)·P(B_k)}{P(A|B_i)·P(B_i)}
+$$
+
+\subsection*{Náhodné veličiny}
+
+$f$ je histuta/pravděpodobnost jevu. $F(x)$ je pravděpodobnost, že $X≤x$.
+
+\name{Střední hodnota}:
+
+$$
+EX = ∫_{-∞}^∞X(x)dx
+$$
+
+\name{Rozptyl} je střední hodnoty veličiny $(X-EX)²$. Lze vyjádřit také jako $EX²-(EX)²$.
+
+\begin{tabular}{|l|c|c|c|}
+\hline
+\hline
+\textbf{Název} & \textbf{$X$} & \textbf{$EX$} & \textbf{$Var X$} \\
+\hline
+\hline
+Rovnoměrné & $\inv{n}$ & $\frac{a+b}{2}$ & $\frac{n² - 1}{12}$ \\
+\hline
+\vbox{
+\hbox{Binomické}
+\hbox{Počet úspěchů po $n$ opakování.}
+} & $\combnum{n}{k}p^x (1-p)^{n-x}$ & $n·p$ & $n · p · (p-1)$ \\
+\hline
+\vbox{
+\hbox{Geometrické}
+\hbox{Čekání na první úspěch}
+} & $(1-p)^{x-1}·p$ & $\inv{p}$ & $\frac{1-p}{p²}$ \\
+\hline
+\vbox{
+\hbox{Poissonovo}
+\hbox{Počet událostí ($λ$) za daný interval}
+} & $\frac{e^{-λ}λ^x}{x!}$ & $λ$ & $λ$ \\
+\hline
+\hline
+Exponenciální & $λe^{-λx}$ & $\inv{λ}$ & $\inv{λ²}$ \\
+\hline
+Normální & $\inv{σ·\sqrt{2π}}·e^{-\frac{@(x-μ@)²}{2σ²}}$ & $μ$ & $σ²$ \\
+\hline
+\hline
+\end{tabular}
+
+\subsection*{Odhady}
+
+\subsubsection*{Čebyševova nerovnost}
+
+$$
+P@(\len{X - EX}≥ε@) ≤ \frac{Var X}{ε²}
+$$
+
+\subsection*{Centrální limitní věta}
+
+$$
+\lim_{n→∞} P@(\frac{\Σ_{i=1}^nX_i - n·EX₁}{\sqrt{n·Var X₁}} ≤ x@) = Φ(x)
+$$
+
+\end{document}
