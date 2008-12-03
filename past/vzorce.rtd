@@ -37,20 +37,20 @@ $$
 Pro úplný disjunktní systém $B₁, B₂, …, B_n$ platí:
 
 $$
-P(B_k|A) = \frac{P(A|B_k)·P(B_k)}{P(A|B_i)·P(B_i)}
+P(B_k|A) = \frac{P(A|B_k)·P(B_k)}{Σ_{i=1}^n P(A|B_i)·P(B_i)}
 $$
 
 \subsection*{Náhodné veličiny}
 
-$f$ je histuta/pravděpodobnost jevu. $F(x)$ je pravděpodobnost, že $X≤x$.
+$f$ je hustota/pravděpodobnost jevu. $F(x)$ je pravděpodobnost, že $X≤x$.
 
 \name{Střední hodnota}:
 
 $$
-EX = ∫_{-∞}^∞X(x)dx
+EX = ∫_{-∞}^∞x·X(x)dx
 $$
 
-\name{Rozptyl} je střední hodnoty veličiny $(X-EX)²$. Lze vyjádřit také jako $EX²-(EX)²$.
+\name{Rozptyl} je střední hodnota veličiny $(X-EX)²$. Lze vyjádřit také jako $EX²-(EX)²$.
 
 \begin{tabular}{|l|c|c|c|}
 \hline
@@ -63,7 +63,7 @@ Rovnoměrné & $\inv{n}$ & $\frac{a+b}{2}$ & $\frac{n² - 1}{12}$ \\
 \vbox{
 \hbox{Binomické}
 \hbox{Počet úspěchů po $n$ opakování.}
-} & $\combnum{n}{k}p^x (1-p)^{n-x}$ & $n·p$ & $n · p · (p-1)$ \\
+} & $\combnum{n}{x}p^x (1-p)^{n-x}$ & $n·p$ & $n · p · (p-1)$ \\
 \hline
 \vbox{
 \hbox{Geometrické}
@@ -76,7 +76,7 @@ Rovnoměrné & $\inv{n}$ & $\frac{a+b}{2}$ & $\frac{n² - 1}{12}$ \\
 } & $\frac{e^{-λ}λ^x}{x!}$ & $λ$ & $λ$ \\
 \hline
 \hline
-Exponenciální & $λe^{-λx}$ & $\inv{λ}$ & $\inv{λ²}$ \\
+Exponenciální & $\inv{λ}e^{-\inv{λ}x}$ & $λ$ & $λ²$ \\
 \hline
 Normální & $\inv{σ·\sqrt{2π}}·e^{-\frac{@(x-μ@)²}{2σ²}}$ & $μ$ & $σ²$ \\
 \hline
