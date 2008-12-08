@@ -1,0 +1,19 @@
+\name{Asymptoticky dobrý soubor kódů}
+splňuje podmínky:
+→•
+ • Dá se zakódovat libovolně velký vstup.
+ • Vzdálenosti v nekonečnu jdou k něčemu většímu než 1.
+ • Hustota je větší než jedna.
+←•
+
+\statement{Gilbert,Varshamov}
+
+Existují asymptoticky dobré soubory kódů.
+
+\proof
+Pomocí hladového algoritmu:
+Vstupem je abeceda, délka a $d$ minimální vzdálenost.
+
+Vždy vybere slovo, označí příliš blízká jako nepoužitelná a pokračuje.
+
+Vzdálenost je dostatečná.
