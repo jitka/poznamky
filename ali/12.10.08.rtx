@@ -1,0 +1,20 @@
+\section{Procesory}
+Kroky:
+→•
+ • Načtení instrukce
+ • Dekódování instrukce
+ • Získání parametrů
+ • Vykonání
+ • Zapsání výsledků
+←•
+
+Snaží se to paralelizovat.
+
+Od 486 existuje pipelina, někdy musí počkat na spočítání předchozí instrukce.
+Od pentia se provádí více instrukcí zároveň (paralelní execuční jednotky). Začíná odhadovat skoky.
+
+Pro hádání skoků se používaly statické heuristiky a dynamické odhady.
+
+Mívají return stack, pro případ skoku návratu, loop predictor.
+
+Používají se virtuální registry a má k dispozici více exekučních jednotek.
