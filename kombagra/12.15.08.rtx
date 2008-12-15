@@ -1,0 +1,72 @@
+\section{Extremální kombinatorika}
+
+\lemma{o slunečnici}
+
+Mějme stejně velké množiny $S₁,…,S_k$, které nazvu \name{slunečnicí}, pokud existuje nějaká množina $Y$ taková, že $∀i,j;S_i∩S_j=Y$.
+
+Pokud máme systém $S$ různých $s$ prvkových množin a $\len{S}>s!·(k-1)^s$, potom existuje $S'@⊂S$ takové, že $S'$ je slunečnice.
+
+\proof
+Indukcí podle $s$.
+Pokud $s=1$, potom každých $k$ jednoprvkových různých množin tvoří slunečnici.
+Dle předpokladu $\len{S}>1!·(k-1)ⁱ, \len{S}≥k$.
+
+Nechť je $s>1$. Nechť $S$ je systém více než $s!·(k-1)^s$ $s$-prvkových množin.
+Nechť $B₁,B₂,…,B_l$ je největší možný podsystém navzájem různých množin.
+Pokud $l≥k$, pak je hotovo.
+
+Dále tedy předpokládáme, že $l<k$.
+Potom existuje prvek $x∈\∪B_i$, který je ve více než $(s-1)!·(k-1)^{s-1}$ množinách z $S$.
+
+Nechť $\overline{S}=@{X∈S,x∈X@}$.
+Poté vezmu všechny množiny, ze kterých tento prvek vyhodím.
+Tím získám systém $(s-1)$ prvkových množin, je jich dostatek, dle indukčního předpokladu to pro tento systém platí.
+Nakonec k nim opět tento prvek vrátím a mám stále slunečnici.
+
+Nyní je třeba zařídit, aby byla množina $\overline{S}$ dostatečně veliká.
+Mějme všechny dvojice $(x,A)$, kde $x∈A,A∈S$.
+$\len{@{@(x,A@)@}}>s!·(k-1)^s$.
+Pokud by tomu nebylo, mohu některou množinu přidat mezi tyto disjunktní.
+Možných volem $x$ je $l·s$.
+Tedy existuje nějaké $k$, které je ve více než $\frac{s!·(k-1)^s}{s·(k-1)} = (s-1)!·(k-1)^{s-1}$ množinách.
+
+\lemma{Erdös-Ko-Rado}
+
+Nechť $k$ a $n$ jsou přirozená čísla, $2k≤n$. Nechť $f$ je systém $k$-prvkových podmnožin množiny $@{1,…,n@}$ takový,
+že $∀A,B∈f;A∩B≠∅$. Pak $\len{f}≤\combnum{n-1}{k-1}$.
+
+Poznámka:\\
+Je to optimální.
+Všechny množiny obsahují jeden pevný prvek.
+V takovém případě bude velikost přesně takové.
+
+Poznámka:\\
+Kdyby $2k<n$, potom lze zvolit takové množiny, že $\len{f}=\combnum{n}{k}>\combnum{n-1}{k-1}$ (ve většině případů ‒ až na patologické případy).
+
+\proof
+Vezmu permutaci $π$ čísel $1,…,n$.
+Množinu $X∈f$ nazvu $π$-konzistentní, jestliže $X=@{π(i),π(i+1),…,π(i+k-1)@}$.
+$π$-konzistentních množin v $f$ je nejvýše $k$.
+
+Pokud tam není žádná, pak je hotovo.
+Pokud nějaká je, tak se všechny musí protínat se všemi.
+Takových by bylo až $2·(k-1)$ ‒ každá by mohla v některém místě začínat nebo končit.
+Ale v každé dvojici (jedna začínající a jedna končící) může být nejvýše jedna, protože tyto dvě by se neprotly.
+Na druhém konci se protnout nemohou, protože jsou množiny jen $k$ prvků dlouhé.
+
+\MPOST{ilust}
+pickup pencircle scaled 4;
+for i = 1 upto 4:
+  draw (.5i*cm, 0);
+  for j = 1 upto 3:
+    draw (.5cm*(i-j),-.5cm*j) withcolor red;
+    draw (.5cm*(i+4-j),-.5cm*j) withcolor blue;
+  endfor
+endfor
+\ENDMPOST{Červená a modrá množina se neprotne}
+
+Počítáme všechny dvojice $(π,X)$, $X$ je $π$-konzistentní.
+Určitě jich nemůže být více než $k·n!$. (je $n!$ permutací).
+
+Dále můžu mít $n·k!(n-k)!$ permutací, se kterými je množina konzistentní.
+Proto po vydělení je celkový počet maximálně $\combnum{n-1}{k-1}$.
