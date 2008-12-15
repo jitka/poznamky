@@ -3,11 +3,11 @@
 $run = 0;
 $act = 1;
 foreach( <STDIN> ) {
-	if( /^\\ENDMPOST$/ ) {
+	if( /^\\ENDMPOST/ ) {
 		$run = 0;
 		print FILE "endfig;\nend;\n";
 		close FILE;
-	} elsif( /^\\MPOST$/ ) {
+	} elsif( /^\\MPOST/ ) {
 		open FILE, ">$ARGV[0]-mp-$act.xmp" or die "Could not output file";
 		print FILE "beginfig(1);\n";
 		$act ++;

@@ -4,7 +4,7 @@ foreach $arg ( @ARGV ) {
 	open INP, $arg or next;
 	$nm = 1;
 	foreach( <INP> ) {
-		next unless( /^\\MPOST$/ );
+		next unless( /^\\MPOST/ );
 		$_ = "$arg.dep: $arg-mp-" . ( $nm ++ ) . ".1\n";
 		s/([-_a-z0-9A-Z.]+)\.rt[dx]\.dep/$1.tex.dep/g;
 		s#(/|: )[^/: ]*/\.\./#$1#g;

@@ -5,10 +5,15 @@ $act = 1;
 $FN = $ARGV[0];
 $FN =~ s#.*/##;
 foreach( <STDIN> ) {
-	if( /^\\ENDMPOST$/ ) {
+	if( /^\\ENDMPOST(.*)$/ ) {
+		print "\\caption$1" if length $1;
+		print "\\end$par\n" if length $par;
 		$run = 1;
-	} elsif( /^\\MPOST$/ ) {
+	} elsif( /^\\MPOST(.*)$/ ) {
+		print "\\begin$1" if length $1;
 		print "\\includegraphics{$FN-mp-$act.1}\n";
+		$1 =~ /^(\{[^{}]*\})/;
+		$par = $1;
 		$act ++;
 		$run = 0;
 	} else {
