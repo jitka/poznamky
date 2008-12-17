@@ -1,0 +1,19 @@
+
+\section{Paralelní výpočty}
+
+\subsection{Cell}
+
+Základní, kontrolní, jádro je PPC (rozumí instrukcím) včetně rozšíření altivec (vektorové instrukce).
+Má velmi jednoduché jádro, například nemá out-of-order pipeline, je třeba optimalizovat kód.
+Normálně skrz cache připojený do paměti.
+
+Má také tzv. „synergic processing elements“, obvykle 8. Ke každému je připojený jeden „local store“ (256 kb), celé připojené přes sběrnici „EIB“.Každé toto SPE má 128 128 bitových registrů, má vlastní (očesanou) instrukční sadu, vektorové instrukce odpovídající altivecu. Local store je explicitní.
+
+\subsection{GPU}
+
+Grafická karta lze zneužít i k tomu, aby počítala něco, co se přímo nezobrazuje.
+Lze využít například tak, že framebuffer nemusí být na obrazovku, ale i na texturu.
+A výpočty lze trochu programovat (tzv. shadery). Nějaká funkce se pustí na každý pixel výsledku,
+takže lze využít k paralelním výpočtů. Branche je možné simulovat pomocí Z-bufferu.
+
+Je trochu šílená inicializace a podobně. To se snaží vyřešit OpenCL, ale ještě není implementovaný.
