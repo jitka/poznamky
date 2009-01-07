@@ -36,6 +36,7 @@ exec sed -e 's/α/\\alpha /g;
 	s/Ν/\\Nu /g;
 	s/ι/\\iota /g;
 	s/Ι/\\Iota /g;
+	s/Θ/\\Theta /g;
 	s/ℝ/\\mathbb{R}/g;
 	s/ℚ/\\mathbb{Q}/g;
 	s/ℤ/\\mathbb{Z}/g;

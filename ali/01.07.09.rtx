@@ -1,0 +1,75 @@
+
+\section{Cache-oblivious algoritmy}
+
+Způsob, jak navrhovat algoritmy tak, aby nezávisely na parametrech cache, ale používaly ji dobře.
+
+Pokud se podíváme na návrh, kdy jsou data ve vnější paměti.
+Je vnitřní a vnější paměť, vnitřní má velikost $M$, vstup a výstup probíhá po blocích velikosti $B$.
+Přibude vstupně-výstupní složitost (výstup lze zanedbat, protože to někdy budu muset určitě přečíst).
+
+Tento model lze používat na modelování cache a paměti, vnější paměť je RAM, vnitřní je cache, bloky jsou řádky cache.
+Předpokládejme, že cache se chová zcela optimálně.
+Potom IO model dělá horní odhad, kolik dat proteče.
+
+Pokud algoritmus funguje bez znalosti $M$ a $B$ jen konstantně-krát pomalejší než s jejich znalostmi,
+pak je cache-oblivious.
+
+Takový algoritmus je například scan pole (každou věc jednou přečteme, čte se postupně, když nezná parametry cache,
+tak se mu může stát, že bude neúplný blok na obou stranách, takže přečteme o max. $1$ blok více).
+Stejně tak otočení pole (pokud $M≥2B$).
+
+\subsection{Násobení matic}
+
+Když budeme násobit matice a budeme mít matice uložené „obvyklým“ způsobem po řádcích,
+tak bude z druhé matice vyhazovat data (čtu sloupeček).
+
+Pokud budu mít ale první matici po řádcích a druhou po sloupcích, jsem snížil počet čtení z $N³$ na $Θ@(\frac{N³}{B}@)$.
+
+Často pomáhá metoda „rozděl a panuj“, protože od určité velikosti se už problém vejde do cache.
+Zde je to velmi podobné strasserovu algoritmu.
+Hodí se ale, aby se menší problém byl vždy pohromadě.
+Jednoduše se (rekurentně) ukládá po blocích/čtvrtinách.
+
+$$@(A B\atop C D@)$$.
+
+Bude to uložené jako $ABCD$. Poté je každá část vždy pohromadě.
+Celkově to vyjde $O@(\frac{N²}{B}+\frac{N³}{\sqrt{M}·B}+1@)$.
+Pokud se udělá optimalizace ze strasserova algoritmu, tak prostřední člen bude $\frac{N^{\log₂7}}{\sqrt{M}·B}$.
+
+Pokud by nebylo použito toto uložení, vzniká horší odhad.
+
+Obvykle se uvažuje, že počet řádků cache je alespoň tolik, kolik je velikost cache (říká se tomu \name{štíhlá cache}).
+
+Tedy, pokud by bylo normální uložení matice, tak pro štíhlou cache bude stejný.
+
+\subsection{Vyhledávání v setříděných datech}
+Pokud uděláme binární vyhledávání, tak „skáčeme“ a v ničem to nepomůže.
+Mohli bychom udělat $B-$strom. Problém je, že neznáme $B$.
+
+Binární strom lze přeskládat tak, aby se dobře cacheoval a nebo můžeme udělat $\sqrt{N}‒$strom, ale klíče budou ne lineárně, ale opět v takovémto stromu
+(říká se tomu van-ende-boasovo uspořádání, něco takového je popsané v grafových algoritmech).
+V tomto případě potřebujeme tolik přístupů, kolik je délka cesty až dolů děleno výškou jednoho stromu, který se vejde do $B$.
+(Vyjde to $4·\log_B N$).
+
+\subsection{Reálná situace}
+
+→•
+ • Strategie není optimální
+ • Více úrovní cache
+ • Není plně asociativní
+ • Někdy to má ruční obsluhu
+←•
+
+Mějme posloupnost požadavků $P$, $C$ jsou počty čtení a $N$ jsou velikosti cache.
+Potom:
+
+$$
+C_{LRU}=O@(C_{OPT}·\frac{N_{LRU}}{N_{LRU}-N_{OPT}+1}@)
+$$
+
+Pokud vezmeme $2·$ větší cache bude LRU jen konstanta-krát pomalejší.
+Vzít dvakrát větší cache není problém, protože všechny tyto algoritmy závisí na velikosti cache „rozumě“ (ztratí se to v $O$).
+
+Tyto algoritmy se chovají optimálně ke každé cache zvlášť a pokud je cache hierarchie navržená dobře, tak se chová optimálně k celku.
+
+Na zbylé dva body lze postavit redukce, které to převádí, ale potřebují vědět už vlastnosti cache.
