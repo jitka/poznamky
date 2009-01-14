@@ -1,0 +1,10 @@
+bitoviny
+paralelizace
+vektorizace
+přístupy do paměti
+jazyk a překladač (predikce skoků, misspredikty a pod.)
+konstanty (rekurze, etc)
+GPU?
+cache oblivious
+
+Profiler (Oprofile)
