@@ -1,0 +1,82 @@
+\begin{Statement}
+Pro libovolnou posloupnost požadavků je:
+$$
+\#LRU = O@(\#OPT·\frac{n_{LRU}}{n_{LRU}-n_{OPT}+1}@)
+$$
+\end{Statement}
+
+\begin{Proof}
+Na prvním požadavku je to nastejno.
+
+Pokud v $S_i$ \tt{LRU} mine na $2$ stejných požadavcích, tak proběhlo alespoň $n_{LRU}+1$ různých požadavků. $OPT$ minul alespoň $n_{LRU}-n_{opt}+1$ krát.
+
+Pokud \tt{LRU} mine na $p$, v $S_i$ je $≥n_{LRU}+1$ různých stránek, \tt{OPT} mine alespoň $n_{LRU} - n_{OPT}+1$.
+
+Jinak $LRU$ mine na $n_lru$ různých stránkách navíc různých od $p$, \tt{OPT} mine alespoň na $n_{LRU}-n_{OPT}+1$.
+\end{Proof}
+
+\subsection{Třídění}
+
+Když uděláme $n$-cestný merge-sort ($n=\frac{M}{B}$).
+Potom:
+
+$$
+R@(n@) = Θ@(\frac{n}{B}·\log_{\frac{M}{B}} \frac{N}{B}@)
+$$
+
+To je ale pro případ, kdy známe parametry.
+
+Uděláme si \name{$k$-trychtýř}.
+Ten bude slévat $k$ posloupností o celkové délce $k³$ v čase $O(k³·log k)$ a prostoru $O(k²)$ a počtem přístupů $O@(\frac{k³}\log_{\frac{M}{B}}\frac{k³}{B} + k@)$.
+
+Potom uděláme trychtýřové třídění, což bude rekurzivně třídit za pomoci $n^{\inv{3}}$-cestného slévání pomocí trychtýře.
+
+$$
+R(n) = n^{\inv{3}}·R(n^{\frac{2}{3}}+O@(\frac{N}{B}·\log_{\frac{M}{B}}\frac{n}{B}+n^{\inv{3}}@)
+$$
+
+Rekurzi zastavíme, když třídíme bloky $B²$, které už se vejdou do štíhlé cache, načteme na $O(B)$ přístupů.
+
+Po upočítání vyjde, že pokud máme k dispozici trychtýř, umíme to stejně rychle, jako se znalostí parametrů cache.
+
+\begin{Algorithm}[Trychtýř]
+
+Myšlenka je taková, že trychtýř je strom, který má na hranách buffery.
+Listy načítají z vstupních souborů, výstup padá z kořene.
+Vrcholy slévají ze svých synů do bufferu nad sebou, když něco dojde, tak zavolají rekurzivně „naplnění“ na synovi.
+
+Uděláme na tom van-ende-boassovu reprezentaci ‒ nahoře je jeden $\sqrt{k}$-trychtýř, pod nimi jsou další $\sqrt{k}$-trychtýře.
+Spojeno je to buffery velikosti $k^{\frac{3}{2}}$.
+
+Po upočítání zabere $O(k²)$ paměti, časová složitost je $O(k³·\log_k)$.
+
+Pro výpočet počtu přístupů vybereme $j$ takové, že zabírá $≤\frac{M}{4}$, ale větší už se nevejde.
+Tedy $j$ bude někdy mezi $\sqrt{M}$ a $M^{\inv{4}}$
+
+Předpokládáme štíhlou cache.
+
+Nahrání jednoho trychtýře bude trvat $O@(\frac{J²}{B}+J@)$ ($J$ za první bloky bufferů v listech).
+To se udokazuje, že vyjde $O(\frac{J³}{B})$.
+
+Když dojdou data a spustíme jiný trychtýř, tak přijdeme o tento v cache.
+Ale do bufferu už přijde dostatek dat ($J³$ prvků).
+
+Po upočítání vyjde něco, co je potřeba upočítat, že vyjde stejně, jak chceme.
+
+\end{Algorithm}
+
+\subsection{Dynamické struktury}
+
+Budeme stavět datovou strukturu, která bude umět přidat kamkoliv, odebrat odkudkoliv a projít sekvenčně.
+Uděláme to jako řídké pole (mohou některé části chybět).
+
+\begin{Algorithm}[Dynamická datová vyhledávací struktura]
+Potom z toho půjde pomocí van-ende-boass stromu postavit struktura, která umí dělat jak stromové hledání, tak úpravy a sekvenční procházení.
+
+Představíme si strom nad prvky, udává intervaly povolené hustoty pole.
+Tyto intervaly se „zpřísňují“ směrem ke kořeni.
+
+Invariant může neplatit, když se to nepotká (nikdo si toho nevšimne).
+Když najdeme nějaký, pokračujeme v hledání nahoru, než narazíme na jeden, který je v pořádku.
+Potom přebudujeme tu část, kterou potřebujeme.
+\end{Algorithm}
