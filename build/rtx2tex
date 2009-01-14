@@ -117,4 +117,6 @@ exec sed -e 's/α/\\alpha /g;
 	s/-→/\\longrightarrow /g;
 	s/→/\\to /g;
 	s/←/\\leftarrow /g;
+	s/@☺/\\blacksmiley /g;
+	s/☺/\\smiley /g;
 	'

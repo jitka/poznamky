@@ -3,6 +3,8 @@
 \usepackage{graphicx}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{ifthen}
 
 \setlength{\parskip}{0.45em}
 \setlength{\parindent}{0pt}

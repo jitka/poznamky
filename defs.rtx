@@ -40,3 +40,26 @@
 \newcommand{\len}[1]{{\left|{#1}\right|}}
 \providecommand{\uv}[1]{\quotedblbase{}#1\textquotedblleft}%
 \newenvironment{ilust}{\begin{figure}[h]\begin{center}}{\end{center}\end{figure}}
+
+\newtheorem{Tvrz}{Tvrzení}
+\newtheorem{Statement}{Věta}
+\newtheorem{Follows}{Důsledek}
+\newtheorem{Lemma}{Lemma}
+\newenvironment{Proof}
+{\proof}
+{
+\begin{flushright}
+  $@☺$
+\end{flushright}
+}
+\newcounter{algorcnt}
+\newenvironment{Algorithm}[1][]
+{
+  \addtocounter{algorcnt}{1}
+  \textbf{Algoritmus \thealgorcnt\ifthenelse{\equal{#1}{}}{}{ (#1)}}:\\
+}
+{
+  \begin{flushright}
+    $☺$
+  \end{flushright}
+}
