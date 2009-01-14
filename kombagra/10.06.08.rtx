@@ -9,54 +9,113 @@ Učí Daniel Král'.
 \name{Perfektní párování} je množina hran taková, že z každého vrcholu vede právě jedna hrana této množiny.
 \name{Párování} je množina taková, že z každého vrcholu vede nejvýše jedna hrana.
 
-\tvrz{
+\begin{Tvrz}
 Pokud mohu najít takovou množinu $S@⊂V(G)$ takovou, že když ji odeberu, počet komponent s lichým počtem vrcholů (liché komponenty) je větší než $\len{S}$, potom $G$ nemá perfektní párování.
+\end{Tvrz}
 
-\proof
+\begin{Proof}
 Ten zbylý z každé liché komponenty musí být spárován s něčím z $S$.
 Když jich je více, nezbudou vrcholy.
-}
+\end{Proof}
 
-\statement{Tatteova}
-Pokud taková množina $S$ neexistuje, potom $G$ má perfektní párování.
+\begin{Statement}[Tutteova]
+Pokud taková množina $S$ neexistuje, graf $G$ splňuje Tutteovu podmínku. Potom $G$ má perfektní párování.
+\end{Statement}
 
-\proof
-Sporem. Nechť existuje graf, který nemá perfektní párování, ale žádná taková komponenta neexistuje.
-Přidávání hran nemůže takové $S$ vytvořit, nechť tedy $G$ je maximální graf, který nemá perfektní párování, ale nemá žádnou takovou množinu $S$ (vytvořené přidáváním).
-Nechť $U$ jsou vrcholy, jejichž stupeň je roven $n-1$.
-Všechny komponenty zbylé po odebrání $U$ (komponenty grafu $G\backslash U$) jsou úplné.
-Předpokládejme, že existuje nějaký, který není úplný graf.
-Potom obsahuje nesousední vrcholy, ale existuje mezi nimi cesta, můžeme vybrat nejkratší.
+\begin{Proof}
+\textit{Doplněno ze skript Tomáše Vally}
 
-Nechť $y$ je druhý vrchol od jednoho konce $x$. Tyto nejsou propojené (kdyby byly, toto není nejkratší cesta), ale přidaní hrany $xy$ již vytvoří úplné párování.
+Důkaz bude sporem, tedy, $G$ splňuje Tutteovu podmínku, ale nemá perfektní párování.
+Přidávání hran nemůže takové $S$ vytvořit, nechť tedy $G$ je maximální takový graf (vytvořený přidáváním hran).
+Úplný již má perfektní párování nebo nesplňuje podmínku.
 
-\TODO{Nějaké cykly a přes vybírání hran do párování řekneme, že párování je už teď. Najít ve skriptech TomVally}
+Nechť $U$ jsou vrcholy, jejichž stupeň je roven $n-1$ (jsou spojeny se vším ostatním).
+$U$ z grafu odebereme.
 
-\name{Deficit} je maximum přes všechny $S@⊂V$ z počet lichých komponent $-\len{S}$.
+Rozebereme dva případy. První je, pokud všechny komponenty grafu $G\backslash U$ jsou úplné.
+V sudých komponentách najdeme párování jednoduše, lichých je méně než $\len{V@(U@)}$ a zbylý vrchol tedy můžeme vždy spojit s libovolným z $U$.
+Celkový počet vrcholů je sudý, tedy lze najít perfektní párování i ve zbytku $U$. Tedy graf má perfektní párování ‒ tato možnost nastat dle předpokladu nemůže.
+
+Nechť tedy nastane druhá možnost, že některá z komponent není úplná.
+Vyberme si tu, kde je více než $1$ nenapárovaný vrchol.
+Taková musí existovat, každou, které nezbude žádný neničí párování, takové, které mají jeden se spojí s $U$ a musí být liché.
+Dle předpokladu párování neexistuje, tedy máme nějakou takovou komponentu.
+
+Tato komponenta není úplná, tedy musí existovat dva vrcholy, $a,b$, které nejsou spojené hranou.
+Mezi nimi vede alespoň jedna cesta, vezměme tedy tu nejkratší. Ta obsahuje \name{třešničku} ‒ $K_{1,2}$.
+(Musí mít alespoň 2 hrany, tedy jsou tam vrcholy $x,s,y$, $x$ a $y$ nejsou spojené hranou, jinak by se cesta dala zkrátit).
+Neexistující hranu $x,y$ nazveme $e₁$.
+$s∉U$, proto není spojené s nějakým $t∈V@(G@)$ neexistující hranou $e₂$.
+Jak graf $G∪e₁$ tak $G∪o₂$ mají perfektní párování, $M₁$, resp. $M₂$ (dle indukčního předpokladu).
+
+\MPOST{ilust}
+pair x; x = (25, -25);
+pair y; y = (-25, -25);
+pair s; s = (0, 0);
+pair t; t = (0, 40);
+pair tx; tx = (5, 5);
+pickup pencircle scaled 2;
+draw x--s--y;
+draw y--x withcolor .5white;
+draw s--t withcolor .5white;
+pickup pencircle scaled 7;
+draw s;
+draw x;
+draw t;
+draw y;
+label(btex $x$ etex, x + tx);
+label(btex $s$ etex, s + tx);
+label(btex $y$ etex, y + (-5, 5));
+label(btex $t$ etex, t + tx);
+\ENDMPOST{Třešnička}
+
+$e₁∈M₁∧e₂∈M₂$, jinak by už $G$ mělo perfektní párování.
+Nyní vezmeme $M:= M₁\div M₂$. V této množině jsou všechny komponenty buď samostatné vrcholy a nebo sudé kružnice
+střídající hrany z $M₁$ a $M₂$. Vezměme kružnici obsahující $e₁$ a nazvěme ji $H$.
+
+Pokud $e₂∉H$, potom můžeme použít na kružnici $H$ párování z $M2$ a na zbytek z $M₁$.
+Tím vzniklo perfektní párování.
+
+Pokud $e₁∈H$, potom je i $t∈H$. Vezměme si oblouky, které dostaneme po odebrání $e₁$ a $e₂$
+Na ten, který obsahuje $s$ můžeme použít párování $M₂$, na ten s $t$ $M₁$, $t$ je napárované, jeden z $x,y$ také.
+Protože ten druhý je spojený s $s$, můžeme tuto hranu přidat do párování.
+Na zbytek grafu lze použít jak $M₁$, tak $M₂$. Složením opět dostaneme perfektní párování.
+\end{Proof}
+
+\name{Deficit} $def(G)$ je maximum přes všechny $S@⊂V$ z počet lichých komponent $-\len{S}$.
 $def(G)≥0$.
 
-\follows
+\begin{Follows}
 Maximální párování grafu $G$ pokrývá $n-def(G)$ vrcholů.
+\end{Follows}
 
-\proof
+\begin{Proof}
 Určitě nepokryji alespoň $n-def(G)$ vrcholů, v případě toho $S$, které vytvořilo ono maximum.
 
 Tedy potřebuji ukázat, že mi nezbude výše než tolik vrcholů.
 Vytvořím graf $G'$, přidám $n-def(G)$ nových vrcholů a spojím je se všemi.
-$G'$ má perfektní párování. Poté stačí oříznout zpět na $G$.
+$G'$ má perfektní párování (deficit má $0$, tedy splňuje Tutteovu podmínku).
+Poté stačí oříznout zpět na $G$, čímž ztratím maximálně $def(G)$ hran.
+\end{Proof}
 
-Pokud je $S=∅$, potom $\len{V@(G'@)}$.
-Pokud odebírám jen z původního grafu, pak mi to doplněné vrcholy zachrání.
-Pokud odebírám z nových vrcholů, pak zvýším nové $\len{S}$ dostatečně, aby nerovnost platila.
-Tedy  $G'$ má perfektní párování.
-
-\statement{Petersonova}
-Každý kubický graf bez mostů má perfektní párování.
 \name{Kubický graf} je takový, který má každý stupeň $3$.
 
-\proof
+\begin{Statement}[Petersonova]
+Každý kubický graf bez mostů má perfektní párování.
+\end{Statement}
+
+\begin{Proof}
 Dokazuji pro $G$ souvislý, kdyby nebyl, beru každou komponentu zvlášť.
 
 Má sudý počet vrcholů (všechny mají lichý stupeň, součet stupňů je vždy sudý).
-Nechť je tedy $S≠∅$. Počet hran vedoucích z $S$ je maximálně $3·\len{S}$.
-Pokud mám lichou komponentu, z ní určitě vedou alespoň 3 hrany. Kdyby byla jedna, tak to byl most, kdyby sudý počet, tak nevychází součet stupňů v nové komponentě (vznikne lichý).
+
+Nechť je tedy $S≠∅$. Počet hran vedoucích z $S$ je maximálně $3·\len{S}$ ($deg@(S@)$).
+
+Pokud mám lichou komponentu, z ní určitě vedou alespoň $3$ hrany.
+Kdyby $0$, tak není lichá.
+Kdyby $1$, tak to byl most.
+Kdyby $2$, tak stupeň této komponenty $C$ je $\len{C}·3 - 2$. Protože $\len{C}$ je liché, tak i toto by vyšlo liché.
+
+Všechny tyto tři hrany musí vést do $S$.
+Tedy pro více než $\len{S}$ lichých komponent není dostatek hran vedoucích z $S$.
+\end{Proof}
