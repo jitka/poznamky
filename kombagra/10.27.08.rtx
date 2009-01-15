@@ -2,12 +2,13 @@
 
 \subsubsection{Třísouvislé grafy}
 
-\lemma{O kontrahovatelné hraně}
+\begin{Lemma}[O kontrahovatelné hraně]
 Nechť $G$ je vrcholově $3$-souvislý graf takový, že $G≠K₄$, pak $G$ obsahuje hranu $e$ tak, že
 $G$ s kontrahovaným $e$ je stále vrcholově $3$-souvislý.
+\end{Lemma}
 
-\proof
-Vyberu si náhodně hranu $(x,y)$ a zkontrahuji ji. Pokud je výsledek $3$-souvislý, tak je vyhráno, tedy předpokládejme, že není.
+\begin{Proof}
+Pokud najdu takovou hranu, tak mám vybráno. Předpokládejme tedy, že tam není. Pak si jednu $(x,y)$ náhodně vyberu a zkontrahuju.
 
 Tedy je $2$-souvislý, tedy obsahuje $2$-řez. Nový vrchol $xy$ je v něm obsažen (jinak by byl $2$-řez i v originálu), tedy je tvořen $@{xy,z@}$.
 Tedy, pokud žádná „vhodná“ hrana neexistuje, pak pro každou hranu $(v,w)$ existuje vrcholu $u$ tak, že $@{u,v,w@}$ je $3$-řez v původním grafu.
@@ -20,24 +21,50 @@ Pro hranu $zv$ existuje vrchol $w$ takový, že $@{z,v,w@}$ je vrcholovým $3$-�
 
 Kde se může nacházet $w$:
 →•
- • V nejmenší komponentě: To se nemůže stát. Máme komponenty $C₁, C₂, …$, $C₁$ je ta nejmenší.
-   Tedy, když $w∈C₁∨w=x$, potom $y$ má sousedy v $C₂,C₃,…$. Ale zbylý počet vrcholů je menší, než $\len{C₁}$, tedy spor
-   s minimální $C₁$.
+ • V nejmenší komponentě: To se nemůže stát, spor s minimalitou nejmenší komponenty.
+   Když bych totiž odebral $@{v,w,z@}$, tak mi vznikne podkomponenta $C₁$, která neobsahuje $@{x,y,v,w,z@}$.
  • V nějaké jiné (větší) komponentě.
 ←•
 
 Když odeberu $v,z$, pak je $G$ stále ještě souvislý.
 Tedy $C₁$ stále je v celku, musí vést cesta buď do $x$ nebo do $y$.
 
-$v$ musí ale mít souseda v každé komponentě, tedy i v jiné, než v $C₁$. Spor s tím, že $C₁$ byla samostatná komponenta.
+$w$ je v jiné komponentě než $C₁$, v ní musí mít alespoň jednoho souseda (aby po odebrání $@{v,w,z@}$ mohla vzniknout ještě jiná komponenta).
+V této komponentě ale musí mít souseda i $v$. Spor s tím, že $C₁$ je samostatná komponenta.
 
-\statement{Kuratovského věta}
-
-Graf $G$ je rovinný právě tehdy, když neobsahuje podrozdělení $K₅$ ani $K_{3,3}$.
+\MPOST{ilust}
+pickup pencircle scaled 13;
+draw (0,0)--(0,40) withcolor .6white;
+draw (-40,15)..(0,0)..(40,15) withcolor .6white;
+pickup pencircle scaled 7;
+def vert(expr x, y, name) =
+  draw (x, y);
+  label(name, (x, y) + (10, 10));
+enddef;
+vert(0, 40, btex $x$ etex);
+vert(0, 20, btex $y$ etex);
+vert(0, 0, btex $z$ etex);
+vert(-40, 15, btex $v$ etex);
+vert(40, 15, btex $w$ etex);
+vert(40, 35, btex $?$ etex);
+pickup pencircle scaled 2;
+draw (0,0)--(-40, 15);
+draw (-40,15){up}..(40,35);
+draw (40,35)--(40,15);
+draw (0,20)--(0,40);
+pickup pencircle;
+draw fullcircle scaled 60 shifted (-40, 20);
+label (btex $C_1$ etex, (-40, 55));
+draw fullcircle scaled 60 shifted (45, 20);
+label (btex $C_2$ etex, (40, 55));
+\ENDMPOST{Náhled na dělení}
+\end{Proof}
 
 \name{Podrozdělení grafu} vznikne tak, že nahradím všechny hrany cestami.
 
-\proof
+\statement{Kuratovského věta}
+Graf $G$ je rovinný právě tehdy, když neobsahuje podrozdělení $K₅$ ani $K_{3,3}$.
+\begin{Proof}
 Ani $K₅$ ani $K_{3,3}$ není rovinný graf, stačí použít Eulerovu formuli.
 
 Ani jejich podrozdělení nemohou být rovinná, proto ani $G$, který je obsahuje, nemůže být rovinný.
@@ -52,28 +79,28 @@ Indukcí dle počtu vrcholů:
    Předpokládám, že je to hrana.
    Kdyby ne, přidám si tu hranu.
    Jediné, co mi může nastat je, že vznikne zakázaný graf.
-   Nemohou být v různých komponentách (příliš mnoho cest mezi těmi vrcholy, aby se vešlo do $2$-řezu).
+   Nemohou být v různých komponentách (Každá komponenta zvlášť by měla $1$-řez).
    Tedy musí být v jedné komponentě, ale když bych hranu nepřidal, pak ji mohu obejít skrz jinou komponentu, tedy podrozdělení bylo i v původním grafu.
 
    Postup tedy obdobný jako $1$-řezu, jen někdy slepuji do „vnitřního“ oka/stěny jiné komponenty.
 
-  • Má vrcholový $3$-řez. Když je to $K₄$, tak ten lze nakreslit do roviny.
-    Pokud ne, můžu hranu zkontrahovat a aplikuji indukci.
+ • Má vrcholový $3$-řez. Když je to $K₄$, tak ten lze nakreslit do roviny.
+   Pokud ne, můžu hranu zkontrahovat a aplikuji indukci (v případě potřeby si doplním hranu, stejně jako v předchozím případě).
+   Kontrakce mi zakázaný minor nevyrobí.
 
-    Pokud původní vrchol byl o stupni max. $2$, pak není problém.
-    Když tedy kontrahuji s vrcholem o stupni alespoň $3$.
-    Pak se podívám do původního grafu, ale v takovém případě bylo podrozdělení už v původním.
+   Graf bez zkontrahovaného vrcholu je $2$-souvislý, hranice každé stěny je kružnice (původně byl max. $3$-souvislý, jinak měl $K₅$.
+   Pak potřebuji dokreslit ještě původní $(x,y)$. $x$ si umístím tam, kam patří. Když mi $y$ vyjde do jedné nové stěny,
+   tak je všechno v pořádku. Když se mi to ale nestane, tak mohu najít některý zakázaný graf.
 
-    Graf bez zkontrahovaného vrcholu je $2$-souvislý, hranice každé stěny je kružnice.
-    Pak potřebuji dokreslit ještě původní $(x,y)$. $x$ si umístím tam, kam patří. Když mi $y$ vyjde do jedné nové stěny,
-    tak je všechno v pořádku. Když se mi to ale nestane, tak mohu najít některý zakázaný graf.
+ • Má více-řez. V takovém případě obsahuje podrozdělení $K₅$.
 ←•
+\end{Proof}
 
-\statement{Tutteova o generování $3$-souvislých grafů}
-
+\begin{Statement}[Tutteova o generování $3$-souvislých grafů]
 Každý vrcholově $3$-souvislý graf lze získat z $K₄$ nahrazováním vrcholů hranami při zachování minimálního stupně $3$ a všechny takto získané grafy jsou vrcholově $3$-souvislé.
+\end{Statement}
 
-\proof
+\begin{Proof}
 To, že lze každý získat ‒ půjdu opačně a postupně kontrahuji hrany. Tedy to jde i tímto směrem.
 
 Kdybych mohl vyrobit něco, co není vrcholově $3$-souvislé, pak obsahuje $2$-řez.
@@ -81,3 +108,4 @@ Pokud ten $2$-řez neobsahuje ani jeden z vrcholů, pak byl i v tom původním.
 Kdyby obsahoval jen $(v,w)$, pak by $vw$ byl řez původního grafu.
 
 Pokud tedy je v řezu jeden vrchol a druhý ne, pak ten druhý musí být ve své komponentě sám (jinak by byl $2$-řez v původním grafu) a v tom případě nemá stupeň alespoň $3$ (nemá ve své komponentě dostatek sousedů).
+\end{Proof}

@@ -4,16 +4,16 @@ Rovina je dvourozměrný prostor. Plochy vyššího rodu lze získat:
 →•
  • Vložením ucha ‒ vyberu si v rovině 2 kruhy, ty vyříznu a propojím válcem (červí díra).
    Takto získaná plocha se značí $S_k$ při vložení $k$ uší.
-   Všechny plochy získané vložením $k$ uší jsou homeomorfní (existuje spojité zobrazení z jedné do druhé a má spojitou inverzi).
+   Všechny plochy získané vložením $k$ uší jsou homomorfní (existuje spojité zobrazení z jedné do druhé a má spojitou inverzi).
    $S₁$ je torus, $S₂$ je dvojitý torus.
  • Vložením překrouceného ucha ‒ na jedné straně dám ten válec opačně (tedy ucho projde samo sebou, trochu jako v 4rozměrném prostoru).
-   Značí se $N_i$.
- • Vložením křížítka ‒ Vyberu si bod, kde se hrany mohou beztrestně křížit.
+   Značí se $N_{2k}$.
+ • Vložením křížítka ‒ Vyberu si bod, kde se hrany mohou beztrestně křížit, ale nesmí zatáčet (ten bod tam prostě není). Značí se $N_k$. $N₁$ je projektivní rovina.
 ←•
 
 Plocha, která vznikne vložením $k₁$ uší, $k₂$ překřížených uší a $k₃$ křížítek se značí $N_{2k₁+2k₂+k₃}$ (pokud $k₂+k₃>0$).
 
-Dobré nakreslení grafu bude takové, že každá stěna je homeomorfní disku.
+Dobré nakreslení grafu bude takové, že každá stěna je homomorfní disku.
 
 Eulerův rod plochy $g$.
 $$g(S_k) = 2k$$
@@ -22,25 +22,27 @@ $$g(N_k) = k$$
 $S_k$ mají vlastnost „orientovatelnost“, ty $N_k$ jsou neorientovatelné.
 To říká, že když si vyberu směr hodinových ručiček, odejdu a vrátím se, tak bude stejný. Neorientovatelné to nemají.
 
-\statement{}
+\begin{Statement}[Zobecněná Eulerova formule]
 Nechť graf $G$ je dobře nakreslený na ploše Eulerova rodu $g$. Pak $n+f≥m+2-g$ ($f$ je počet stěn).
+\end{Statement}
 
-\proof
+\begin{Proof}
 Indukcí. Začneme s $g=0$. Pro rovinu je to již dokázané.
 
 Pokud to vzniklo ušením, potom: kružnici můžu navléknout na ucho nebo překroucené ucho. V tom místě lze ucho „rozdělit“ a vložit tam kopii (na obě strany řezu).
 Tím to lze převést na graf s jednou plochou navíc ale o jedno ucho méně, lze přepočítat počty.
 
 U křížítka lze všechno vytahat za cenu toho, že jednu vznikne stěna s dvojnásobnou délkou (plocha se rozsekne podle kružnice, která prochází křížítkem).
+\end{Proof}
 
-Heawoodovo číslo ‒ max. barevnost grafu na rovině daného grafu.
+\begin{Statement}[Heawoodova věta]
+Heawoodovo číslo ‒ max. barevnost grafu na rovině daného grafu je:
 $$H(g) = \left\lfloor{\frac{7+\sqrt{1+24g}}{2}}\right\rfloor$$
+\end{Statement}
 
-Vezmeme graf $G$ vnořený na ploše rodu $g$ a má barevnost $k$.
-Každý podgraf $G$ má menší barevnost.
+Vezmeme graf $G$ vnořený na ploše rodu $g$. Potom takový graf má nejvýše takovou barevnost.
 
-\proof
-Indukcí.
+Důkaz indukcí.
 
 \subsection{Plochy jako fundamentální mnohoúhelník}
 Když vezmu torus, přestřihnu a rozpářu, dostanu obdélník.
