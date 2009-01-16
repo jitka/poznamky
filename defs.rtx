@@ -45,6 +45,7 @@
 \newtheorem{Statement}{Věta}
 \newtheorem{Follows}{Důsledek}
 \newtheorem{Lemma}{Lemma}
+\newtheorem{Note}{Poznámka}
 \newenvironment{Proof}
 {\proof}
 {
