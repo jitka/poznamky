@@ -10,7 +10,7 @@ Vezmeme $v$, transformujeme na $w$, přeneseme, dorazí $w'$. Poté chceme získ
 Možnost duplikovat jednotlivé bity.
 
 \subsection{Hammingovy kódy}
-Např. pro řetězec bitů $abcd$ by poslal $abcdefg$, kde $e=a+b+c (\pmod 2)$, $f=a+b+d (\pmod 2)$, $g=a+c+d (\pmod 2)$.
+Např. pro řetězec bitů $abcd$ by poslal $abcdefg$, kde $e=a+b+c \pmod 2$, $f=a+b+d \pmod 2$, $g=a+c+d \pmod 2$.
 
 \name{Abeceda $S$} je nějaká konečná množina symbolů (např. $S=@{0,1@}$).
 \name{Slovo} je libovolný řetězec písmen abecedy $S$, tedy prvek $S^n$.
@@ -23,14 +23,16 @@ Např. pro $4$-bitové řetězce je hammingův kód $16$ $7$-bitových slov.
 
 Čím větší vzdálenost, tím spolehlivější kód, na druhou stranu, čím více slov, tím více informací lze poslat.
 
-Kód $C$ opravuje $t$ chyb, pokud pro $∀u∈S^n;∃$ nejvýše jedno $d(u,w)≤t$.
+Kód $C$ opravuje $t$ chyb, pokud pro $∀u∈S^n;∃$ nejvýše jedno $u, d(u,w)≤t$.
 
-\observation{}
+\begin{Observation}
 Kód $C$ opravuje $t$ chyb $←→d(C)≥2t + 1$.
+\end{Observation}
 
-\tvrz{}
+\begin{Tvrz}
 Hammingův kód opravuje $1$ chybu.
 Např. Golayovy, CD, DVD...
+\end{Tvrz}
 
 Souvisí s PCP větou.
 
@@ -45,10 +47,12 @@ Jiný pohled říká, že $C$ je řešení soustavy lineárních rovnic.
 Zobecněný hammingův kód, kde abeceda $S=ℤ₂$ a parametr $l≥2$ ($l=3$ je hammingův kód).
 Matice $P$ má $l$ řádek a sloupce má všechny možné nenulové vektory z $@{0,1@}^l$.
 
-\tvrz{}
+\begin{Tvrz}
 Zobecněný hammingův kód $C$ je $d(C)≥3$, tedy opravuje $1$ chybu.
+\end{Tvrz}
 
-\proof
+\begin{Proof}
 $d(u,v) = d(u+w,v+w)$. Tedy $d(u,v) = d(u-v,0)$.
 Tedy $d(C) = \min@{d(w,0);w∈C;w≠0@}$.
 Z toho to už jde spočítat.
+\end{Proof}

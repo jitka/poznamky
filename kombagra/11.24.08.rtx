@@ -1,12 +1,14 @@
 \section{Burnsidova věta}
 
-Například máme krychli, kterou chceme obarvit. Zajímá nás počet obarvení, která na sebe nejdou převést rotacemi krychle.
+Například máme krychli, které chceme obarvit stěny. Zajímá nás počet obarvení, která na sebe nejdou převést rotacemi krychle.
 Zavedeme si grupu $Γ$, což jsou permutace odpovídající rotacím.
 $X$ je množina obarvení. Potom $x∈X$ je \name{orbita} definovaná jako:
 
 $$
 @[x@] = @{y;∃α∈Γ;α·x = y@}
 $$
+
+Tedy množina „stejných“ zobrazení.
 
 Máme funkci $w:X→\R$ a $w$ je konstantní na orbitách. Tedy $w@(@[x@]@) = w@(x@)$.
 
@@ -23,15 +25,18 @@ Pro všechny $α∈Γ$:
 $Γ(x,y) = α₀·Γ(x)$ pro nějakou $α₀∈Γ$.
 Když zvolíme $α₀∈Γ(x,y)$. Tedy doleva je jasné, opačná je: $β∈Γ(x,y), α₀^{-1}β∈Γ(x), α₀·@(α₀^{-1}·β@) = β$.
 
-\lemma{Burnsidovo}
+\begin{Lemma}{Burnsidovo}
 
 $$\len{Γ} · \Σ_{O\hbox{ orbita}}w(O) = \Σ_{α∈Γ}\Σ_{x∈F(α)}w(x)$$
 
-\follows
+\end{Lemma}
+
+\begin{Follows}
 Počet orbit je:
 $$\inv{\len{Γ}}·\Σ_{α∈Γ}\len{F@(α@)}$$
+\end{Follows}
 
-\proof
+\begin{Proof}
 \begin{eqnarray*}
 && \Σ_{α∈Γ}\Σ_{x∈F(α)}w@(x@)\\
 &=& \Σ_{x∈X}\Σ_{γ∈Γ(x)}w(x)\\
@@ -51,16 +56,19 @@ $$
 \len{Γ} = \len{O}·\len{Γ(x_i)}
 $$
 
-Když orbitu $O$, tak to jsou všechny prvky, na které můžu $x_i$ zobrazit.
+Tedy to jsou všechny prvky, na které můžu $x_i$ zobrazit.
 Tedy:
 $$
 Γ=\∪^\•_{x∈O}Γ(x,z) = \len{O}·\len{Γ(x)}
 $$
+\end{Proof}
 
+\begin{Statement}[Pólyova enumerace]
 Nechť $D$ je množina barvení v objektu. $R$ je množina barev. Obarvení je potom funkce $f:D→R$, tedy $f∈R^D$.
 $Γ$ je grupa permutací na $D$.
 $Γ^*$ je grupa permutací na $R^D$.
 Pokud mám $α∈Γ$, potom existuje nějaký $α^*∈Γ^*$ takový, že $(α^*f)(d)=f(α(d))$.
+\end{Statement}
 
 \name{Cyklický index} $Z(Γ; a₁,a₂, …, a_d)$ je polynom:
 $$

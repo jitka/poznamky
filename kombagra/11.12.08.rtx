@@ -1,6 +1,6 @@
 \section{Polynomy v grafech}
 
-Mám-li $K_n$, potom počet obarvení jeho vrcholů pomocí $k$ barev, pak na to mám $P_{k_n}(k)$.
+Například, mám-li $K_n$ a barvím mu vrcholy pomocí $k$ barev, tak na to mám $P_{k_n}(k)$ možností.
 
 $P_n$, potom počet obarvení je $k·(k-1)^{n-1}$, což je opět polynom v $k$.
 
@@ -8,8 +8,10 @@ Stejně tak můžu mít strom na $n$ vrcholech, barvit pomocí odtrhávání lis
 
 \name{Tutteho polynom} je polynom ve dvou proměnných $T_G(x,y)$.
 
+Nechť $G$ je multigraf (povolené smyčky a násobné hrany).
+Potom je Tutteho polynom definován následovně:
+
 Vyberu si libovolnou hranu $e$ grafu $G$.
-Jsou povolené smyčky a násobné hrany.
 
 Pokud je hrana:
 →•
@@ -24,16 +26,17 @@ Pokud je hrana:
 
 Pokud graf nemá hrany, je jeho Tutteho polynom roven $1$.
 
-\statement{}
+\begin{Statement}
 Nechť $G$ je graf. Pak Tutteho polynom grafu $G$ je roven následujícímu výrazu:
 
 $$
 T_G(x,y)=\Σ_{F@⊂E}(x-1)^{k(F)-k(E)} · (y-a)^{\len{F}-\len{V}+k(F)}
 $$
 
-kde $k(F)$ je počet komponent grafu $(V, F)$.
+kde $k(E)$ je počet komponent grafu $(V, E)$.
+\end{Statement}
 
-\proof
+\begin{Proof}
 Indukcí podle počtu hran.
 Pokud nemá žádné hrany, pak sčítám přes jednu množinu, vyjde mi $1$.
 
@@ -42,7 +45,7 @@ $G$ má most. Rozdělím sumu na ty, které hranu obsahují a ty které ne.
 $$\Σ_{e∈F}(x-1)^{…}·(y-1)^{…} + \Σ_{e∉F}(x-1)^{…}·(y-1)^{…}$$
 
 Druhá část bude $(x-1)·T_{G-e}(x,y)$ ‒ po rozepsání.
-Ta první část je $T_G-e(x,y)$. Pak už stačí sečíst.
+Ta první část je $T_{G-e}(x,y)$. Pak už stačí sečíst.
 
 $G$ má smyčku.
 
@@ -59,6 +62,7 @@ $$(y-1)·T_{G-e}(x,y) + T_{G-e}(x,y)$$
 
 Není ani smyčka, ani most.
 Opět rozepíšu, podívám se, jak vypadá graf se zkontrahovanou hranou a s utrženou hranou.
+\end{Proof}
 
 Speciální případy:
 →•
@@ -75,7 +79,7 @@ Uvažme polynom $5$ proměnných $U(x,y,α,σ,τ)$ definován:
  • $α^{\len{V}}$ pokud je bez hran.
 ←•
 
-\statement{}
+\begin{Statement}
 Tento lze získat z tutteova polynomu jako:
 $$
 U(x,y,α,σ,τ) = α^k·σ^n·τ^r·T_G@(\frac{a·x}{τ}, \frac{y}{σ}@)
@@ -87,10 +91,14 @@ Kde:
  • $n = \len{E} -\len{V} + k$
  • $r = \len{V} - k$
 ←•
+\end{Statement}
 
-\proof
+\begin{Proof}
 Pokud nemá žádné hrany, tak je to zřejmé.
 Pak rozebrání případů.
+
+\TODO{rozepsat?}
+\end{Proof}
 
 Aplikace:\\
 Lze spočítat počet obarvení $z$ barvami.

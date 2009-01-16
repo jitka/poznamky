@@ -1,12 +1,12 @@
 \section{Extremální kombinatorika}
 
-\lemma{o slunečnici}
-
+\begin{Lemma}{o slunečnici}
 Mějme stejně velké množiny $S₁,…,S_k$, které nazvu \name{slunečnicí}, pokud existuje nějaká množina $Y$ taková, že $∀i,j;S_i∩S_j=Y$.
 
-Pokud máme systém $S$ různých $s$ prvkových množin a $\len{S}>s!·(k-1)^s$, potom existuje $S'@⊂S$ takové, že $S'$ je slunečnice.
+Pokud máme systém $S$ různých $s$ prvkových množin a $\len{S}>s!·(k-1)^s$, potom existuje $S'@⊂S$ takové, že $S'$ je slunečnice a $\len{S'}=k$.
+\end{Lemma}
 
-\proof
+\begin{Proof}
 Indukcí podle $s$.
 Pokud $s=1$, potom každých $k$ jednoprvkových různých množin tvoří slunečnici.
 Dle předpokladu $\len{S}>1!·(k-1)ⁱ, \len{S}≥k$.
@@ -20,7 +20,7 @@ Potom existuje prvek $x∈\∪B_i$, který je ve více než $(s-1)!·(k-1)^{s-1}
 
 Nechť $\overline{S}=@{X∈S,x∈X@}$.
 Poté vezmu všechny množiny, ze kterých tento prvek vyhodím.
-Tím získám systém $(s-1)$ prvkových množin, je jich dostatek, dle indukčního předpokladu to pro tento systém platí.
+Tím získám systém $(s-1)$ prvkových množin, je jich dostatek (viz níže), dle indukčního předpokladu to pro tento systém platí.
 Nakonec k nim opět tento prvek vrátím a mám stále slunečnici.
 
 Nyní je třeba zařídit, aby byla množina $\overline{S}$ dostatečně veliká.
@@ -29,21 +29,24 @@ $\len{@{@(x,A@)@}}>s!·(k-1)^s$.
 Pokud by tomu nebylo, mohu některou množinu přidat mezi tyto disjunktní.
 Možných volem $x$ je $l·s$.
 Tedy existuje nějaké $k$, které je ve více než $\frac{s!·(k-1)^s}{s·(k-1)} = (s-1)!·(k-1)^{s-1}$ množinách.
+\end{Proof}
 
-\lemma{Erdös-Ko-Rado}
-
+\begin{Lemma}{Erdös-Ko-Rado}
 Nechť $k$ a $n$ jsou přirozená čísla, $2k≤n$. Nechť $f$ je systém $k$-prvkových podmnožin množiny $@{1,…,n@}$ takový,
 že $∀A,B∈f;A∩B≠∅$. Pak $\len{f}≤\combnum{n-1}{k-1}$.
 
-Poznámka:\\
+\begin{Note}
 Je to optimální.
 Všechny množiny obsahují jeden pevný prvek.
 V takovém případě bude velikost přesně takové.
+\end{Note}
 
-Poznámka:\\
-Kdyby $2k<n$, potom lze zvolit takové množiny, že $\len{f}=\combnum{n}{k}>\combnum{n-1}{k-1}$ (ve většině případů ‒ až na patologické případy).
+\begin{Note}
+Kdyby $2k>n$, potom lze zvolit takové množiny, že $\len{f}=\combnum{n}{k}>\combnum{n-1}{k-1}$ (ve většině případů ‒ až na patologické případy).
+\end{Note}
+\end{Lemma}
 
-\proof
+\begin{Proof}
 Vezmu permutaci $π$ čísel $1,…,n$.
 Množinu $X∈f$ nazvu $π$-konzistentní, jestliže $X=@{π(i),π(i+1),…,π(i+k-1)@}$.
 $π$-konzistentních množin v $f$ je nejvýše $k$.
@@ -70,3 +73,4 @@ Určitě jich nemůže být více než $k·n!$. (je $n!$ permutací).
 
 Dále můžu mít $n·k!(n-k)!$ permutací, se kterými je množina konzistentní.
 Proto po vydělení je celkový počet maximálně $\combnum{n-1}{k-1}$.
+\end{Proof}
