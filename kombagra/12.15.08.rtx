@@ -1,6 +1,6 @@
 \section{Extremální kombinatorika}
 
-\begin{Lemma}{o slunečnici}
+\begin{Lemma}[o slunečnici]
 Mějme stejně velké množiny $S₁,…,S_k$, které nazvu \name{slunečnicí}, pokud existuje nějaká množina $Y$ taková, že $∀i,j;S_i∩S_j=Y$.
 
 Pokud máme systém $S$ různých $s$ prvkových množin a $\len{S}>s!·(k-1)^s$, potom existuje $S'@⊂S$ takové, že $S'$ je slunečnice a $\len{S'}=k$.

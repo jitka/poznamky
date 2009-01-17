@@ -19,7 +19,7 @@ Pokud jsou na obou stranách hrany z $M₂$, pak je v $M₁$ střídavá cesta.
 Pokud mají různé konce, pak jich je stejně, pokud je na obou hrana z $M₁$, pak je více hran v $M₁$.
 
 Kde jsou $M₁$ a $M₂$ stejné, tam nás to nezajímá, kde se liší, tam jsou v této diferenci.
-Protože je $M₁$ větší, musí nastat alespoň jeden případ střídavé cesty.
+Protože je $M₁$ menší, musí nastat alespoň jeden případ střídavé cesty.
 \end{Proof}
 
 \name{Svědek maximality} je $S$, které má stejnou velikost jako počet lichých komponent původního grafu a je stejná jako počet nepokrytých vrcholů párování $M$.
@@ -52,7 +52,7 @@ pickup pencircle;
 draw (0,0)--(20,0)--(0,20)--(20,20) dashed evenly withcolor red;
 \ENDMPOST{Cesta délky $3$}
 
-Pokud mi dojdou vrcholy, pak si vezmu vrcholy na lichých hladinách (jsou v komponentě $B$, tedy nazvu je komponentou $B'$)
+Pokud mi dojdou vrcholy, pak si vezmu vrcholy na lichých hladinách (jsou v komponentě $B$, tedy nazvu je množinou $B'$)
 a ty na sudých ($A'$, včetně počátečního vrcholu). $\len{A'}=\len{B'}+1$.
 Můžu tedy prohlásit $B'$ za svědka neexistence ($A'$ se nyní skládá jen ze samých izolovaných vrcholů, kdyby ne, tak jsem ještě pokračoval).
 \end{Algorithm}
@@ -60,6 +60,25 @@ Můžu tedy prohlásit $B'$ za svědka neexistence ($A'$ se nyní skládá jen z
 Kružnice bude \name{skorostřídavá}, pokud je lichá, má jeden nepokrytý vrchol a jinak se střídají párovací a nepárovací hrany.
 \name{Květinka} je skorostřídavá kuržnice, která má ale onen jeden vrchol připojený k střídavé cestě, která končí nepokrytým vrcholem.
 Z květinky lze prohozením „stonku“ udělat skorostřídavou kružnici.
+
+\MPOST{ilust}
+pair kru[];
+for i := 0 upto 5:
+  kru[i] := (0,20) rotated (i * 360 / 5);
+endfor
+pickup pencircle scaled 2;
+for i := 0 upto 4:
+  draw kru[i]--kru[i+1] withcolor (.5-.5*(i mod 2))*white;
+endfor;
+draw kru[0]--kru[0]+(0,20);
+draw kru[0]+(0,20)--kru[0]+(0,40) withcolor .5white;
+pickup pencircle scaled 7;
+for i := 0 upto 4:
+  draw kru[i];
+endfor
+draw kru[0]+(0,20);
+draw kru[0]+(0,40);
+\ENDMPOST{Květinka}
 
 \begin{Lemma}[O zkontrahované kružnici]
 Nechť $C$ je skorostřídavá kružnice. Potom graf $G$ má střídavou cestu právě když $G/C$, který vznikne kontrakcí $C$, má střídavou cestu.
@@ -84,10 +103,10 @@ Mohou nastat některé problémy:
  • \textbf{Párovací hrana na liché hladině} ‒ také květinka.
 ←•
 
-Květinky převedu na skoropokryté kružnice, zkontrahuji, zkusím v menším.
+Květinky převedu na skorostřídavé kružnice, zkontrahuji, zkusím v menším.
 
 Kroků, k nalezení alespoň jedné střídavé cesty je maximálně $O(n²)$, protože při každém hledání můžu muset kontrahovat.
-Celkem můžu najít až $n$ střídavých cest, tedy $O(n³)$.
+Celkem můžu najít až $n$ střídavých cest, tedy $O(n³)$ ‒ každý průběh to zlepší alespoň o $1$ hranu nebo skončí.
 \end{Algorithm}
 
 \begin{Algorithm}[Maximální párování]

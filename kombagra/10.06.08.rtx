@@ -10,7 +10,7 @@ Učí Daniel Král'.
 \name{Párování} je množina taková, že z každého vrcholu vede nejvýše jedna hrana.
 
 \begin{Tvrz}
-Pokud mohu najít takovou množinu $S@⊂V(G)$ takovou, že když ji odeberu, počet komponent s lichým počtem vrcholů (liché komponenty) je větší než $\len{S}$, potom $G$ nemá perfektní párování.
+Pokud mohu najít množinu $S@⊂V(G)$ takovou, že když ji odeberu, počet komponent s lichým počtem vrcholů (liché komponenty) je větší než $\len{S}$, potom $G$ nemá perfektní párování.
 \end{Tvrz}
 
 \begin{Proof}
@@ -46,7 +46,7 @@ Mezi nimi vede alespoň jedna cesta, vezměme tedy tu nejkratší. Ta obsahuje \
 (Musí mít alespoň 2 hrany, tedy jsou tam vrcholy $x,s,y$, $x$ a $y$ nejsou spojené hranou, jinak by se cesta dala zkrátit).
 Neexistující hranu $x,y$ nazveme $e₁$.
 $s∉U$, proto není spojené s nějakým $t∈V@(G@)$ neexistující hranou $e₂$.
-Jak graf $G∪e₁$ tak $G∪o₂$ mají perfektní párování, $M₁$, resp. $M₂$ (dle indukčního předpokladu).
+Jak graf $G∪e₁$ tak $G∪o₂$ mají perfektní párování, $M₁$, resp. $M₂$ (jsou větší, tohle je největší, kde to nefunguje).
 
 \MPOST{ilust}
 pair x; x = (25, -25);
@@ -76,7 +76,7 @@ střídající hrany z $M₁$ a $M₂$. Vezměme kružnici obsahující $e₁$ a
 Pokud $e₂∉H$, potom můžeme použít na kružnici $H$ párování z $M2$ a na zbytek z $M₁$.
 Tím vzniklo perfektní párování.
 
-Pokud $e₁∈H$, potom je i $t∈H$. Vezměme si oblouky, které dostaneme po odebrání $e₁$ a $e₂$
+Pokud $e₂∈H$, potom je i $t∈H$. Vezměme si oblouky, které dostaneme po odebrání $e₁$ a $e₂$
 Na ten, který obsahuje $s$ můžeme použít párování $M₂$, na ten s $t$ $M₁$, $t$ je napárované, jeden z $x,y$ také.
 Protože ten druhý je spojený s $s$, můžeme tuto hranu přidat do párování.
 Na zbytek grafu lze použít jak $M₁$, tak $M₂$. Složením opět dostaneme perfektní párování.
@@ -90,10 +90,10 @@ Maximální párování grafu $G$ pokrývá $n-def(G)$ vrcholů.
 \end{Follows}
 
 \begin{Proof}
-Určitě nepokryji alespoň $n-def(G)$ vrcholů, v případě toho $S$, které vytvořilo ono maximum.
+Určitě nepokryji alespoň $def(G)$ vrcholů, v případě toho $S$, které vytvořilo ono maximum.
 
 Tedy potřebuji ukázat, že mi nezbude výše než tolik vrcholů.
-Vytvořím graf $G'$, přidám $n-def(G)$ nových vrcholů a spojím je se všemi.
+Vytvořím graf $G'$, přidám $def(G)$ nových vrcholů a spojím je se všemi.
 $G'$ má perfektní párování (deficit má $0$, tedy splňuje Tutteovu podmínku).
 Poté stačí oříznout zpět na $G$, čímž ztratím maximálně $def(G)$ hran.
 \end{Proof}

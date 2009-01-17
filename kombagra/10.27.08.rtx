@@ -15,7 +15,7 @@ Tedy, pokud žádná „vhodná“ hrana neexistuje, pak pro každou hranu $(v,w
 
 Pokud $G$ je vrcholově $3$-souvislý a nějaká množina $@{a,b,c@}$ tvoří vrcholový $3$-řez, pak každý z vrcholů $a,b,c$ má alespoň jednoho souseda v každé komponentě vzniklé odebráním těchto vrcholů (jinak by zbylé vrcholy tvořily vrcholový řez a tento by nebyl potřeba).
 
-Když zvolím $x,y,z$ tak, aby nejmenší komponenta $G\backslash@{x,y,z@}$ byla co nejmenší.
+Zvolím $x,y,z$ tak, aby nejmenší komponenta $G\backslash@{x,y,z@}$ byla co nejmenší.
 Vrchol $z$ má souseda v této nejmenší komponentě, říkejme mu $v$.
 Pro hranu $zv$ existuje vrchol $w$ takový, že $@{z,v,w@}$ je vrcholovým $3$-řezem.
 
@@ -85,7 +85,7 @@ Indukcí dle počtu vrcholů:
    Postup tedy obdobný jako $1$-řezu, jen někdy slepuji do „vnitřního“ oka/stěny jiné komponenty.
 
  • Má vrcholový $3$-řez. Když je to $K₄$, tak ten lze nakreslit do roviny.
-   Pokud ne, můžu hranu zkontrahovat a aplikuji indukci (v případě potřeby si doplním hranu, stejně jako v předchozím případě).
+   Pokud ne, můžu některou hranu zkontrahovat a aplikuji indukci (určitě tam některá hrana je, tedy je tam některá, kterou smím zkontrahovat).
    Kontrakce mi zakázaný minor nevyrobí.
 
    Graf bez zkontrahovaného vrcholu je $2$-souvislý, hranice každé stěny je kružnice (původně byl max. $3$-souvislý, jinak měl $K₅$.

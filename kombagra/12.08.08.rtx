@@ -3,18 +3,19 @@
 splňuje podmínky:
 →•
  • Dá se zakódovat libovolně velký vstup.
- • Vzdálenosti v nekonečnu jdou k něčemu většímu než 1.
- • Hustota je větší než jedna.
+ • Vzdálenosti v nekonečnu jdou k něčemu většímu než jedna.
+ • Hustota je větší než nula.
 ←•
 
-\statement{Gilbert,Varshamov}
-
+\begin{Statement}[Gilbert,Varshamov]
 Existují asymptoticky dobré soubory kódů.
+\end{Statement}
 
-\proof
+\begin{Proof}
 Pomocí hladového algoritmu:
 Vstupem je abeceda, délka a $d$ minimální vzdálenost.
 
 Vždy vybere slovo, označí příliš blízká jako nepoužitelná a pokračuje.
 
 Vzdálenost je dostatečná.
+\end{Proof}

@@ -23,7 +23,7 @@ Pokud $G$ je souvislý a není lichá kružnice ani $k_n$, pak je jeho barevnost
 
    Pokud jsou všechny vrcholy $v_i$ sousední, pak můj graf byl úplný, tedy předpokládám, že ne všechny jsou sousední.
    Nechť jsou to $v₁$ a $v₂$. Na této cestě prohodím barvy $1$ a $3$.
-   Cesta $c_{2,3}$ tím nebyla ovlivněn. Na této cestě mohu prohodit barvy $2$ a $3$, tím jsem vytvořil dva vrcholy barvy $3$ ($v_1$ a $v_2$), proto můžu rozšířit na $v$.
+   Cesta $c_{2,3}$ tím nebyla ovlivněn. Tím jsem vytvořil dva vrcholy barvy $3$ ($v₁$ a $v₃$), proto můžu rozšířit na $v$.
 ←•
 \end{Proof}
 

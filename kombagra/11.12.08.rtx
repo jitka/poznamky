@@ -18,7 +18,7 @@ Pokud je hrana:
  • most
  $$T_G(x,y) = x·T_{G-e}(x,y)$$
  • smyčka
- $$T_G(x,y) = y·T_{G-e}{x,y}$$
+ $$T_G(x,y) = y·T_{G-e}(x,y)$$
  • ostatní
  $$T_G(x,y) = T_{G-e}(x,y)+T_{G|e}(x,y)$$
  (Součet grafu bez hrany a s kontrahovanou hranou)
@@ -30,7 +30,7 @@ Pokud graf nemá hrany, je jeho Tutteho polynom roven $1$.
 Nechť $G$ je graf. Pak Tutteho polynom grafu $G$ je roven následujícímu výrazu:
 
 $$
-T_G(x,y)=\Σ_{F@⊂E}(x-1)^{k(F)-k(E)} · (y-a)^{\len{F}-\len{V}+k(F)}
+T_G(x,y)=\Σ_{F@⊂E}(x-1)^{k(F)-k(E)} · (y-1)^{\len{F}-\len{V}+k(F)}
 $$
 
 kde $k(E)$ je počet komponent grafu $(V, E)$.
@@ -82,7 +82,7 @@ Uvažme polynom $5$ proměnných $U(x,y,α,σ,τ)$ definován:
 \begin{Statement}
 Tento lze získat z tutteova polynomu jako:
 $$
-U(x,y,α,σ,τ) = α^k·σ^n·τ^r·T_G@(\frac{a·x}{τ}, \frac{y}{σ}@)
+U(x,y,α,σ,τ) = α^k·σ^n·τ^r·T_G@(\frac{α·x}{τ}, \frac{y}{σ}@)
 $$
 
 Kde:
