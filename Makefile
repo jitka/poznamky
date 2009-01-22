@@ -1,14 +1,13 @@
 D:=$(shell pwd)
-RTDS:=$(wildcard */*.rtd) $(wildcard *.rtd)
-RTXS:=$(wildcard */*.rtx) $(wildcard *.rtx)
+SUBDIRS:=ADS2 algebra analyza-3 komsem topomet analyza-2 lingebra-2 analyza-1 lingebra-1 graforitmy kombagra temno algebra-2 ozd past ali
+RTDS:=$(wildcard $(addsuffix /*.rtd,$(SUBDIRS))) $(wildcard *.rtd)
+RTXS:=$(wildcard $(addsuffix /*.rtx,$(SUBDIRS))) $(wildcard *.rtx)
 
 include build/Makefile.bottom
 
 .PHONY: gen-makes clean-makes clean-tars upload
 
 distclean: clean-makes clean-tars
-
-SUBDIRS:=ADS2 algebra analyza-3 komsem topomet analyza-2 lingebra-2 analyza-1 lingebra-1 graforitmy kombagra temno algebra-2 ozd past ali
 
 gen-makes: $(patsubst %,%/Makefile,$(SUBDIRS))
 
