@@ -8,11 +8,11 @@ $$
 \begin{Proof}
 Na prvním požadavku je to nastejno.
 
-Pokud v $S_i$ \tt{LRU} mine na $2$ stejných požadavcích, tak proběhlo alespoň $n_{LRU}+1$ různých požadavků. $OPT$ minul alespoň $n_{LRU}-n_{opt}+1$ krát.
+Pokud v $S_i$ \texttt{LRU} mine na $2$ stejných požadavcích, tak proběhlo alespoň $n_{LRU}+1$ různých požadavků. $OPT$ minul alespoň $n_{LRU}-n_{opt}+1$ krát.
 
-Pokud \tt{LRU} mine na $p$, v $S_i$ je $≥n_{LRU}+1$ různých stránek, \tt{OPT} mine alespoň $n_{LRU} - n_{OPT}+1$.
+Pokud \texttt{LRU} mine na $p$, v $S_i$ je $≥n_{LRU}+1$ různých stránek, \texttt{OPT} mine alespoň $n_{LRU} - n_{OPT}+1$.
 
-Jinak $LRU$ mine na $n_lru$ různých stránkách navíc různých od $p$, \tt{OPT} mine alespoň na $n_{LRU}-n_{OPT}+1$.
+Jinak $LRU$ mine na $n_lru$ různých stránkách navíc různých od $p$, \texttt{OPT} mine alespoň na $n_{LRU}-n_{OPT}+1$.
 \end{Proof}
 
 \subsection{Třídění}
