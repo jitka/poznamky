@@ -1,0 +1,49 @@
+\section{Úvodní informace}
+
+Skripta na \texttt{http://kam.mff.cuni.cz/\~{}pultr}.
+Opakováný obvyklých matematických struktur.
+Na různé struktury lze pohlížet různě, na $ℝ$ lze pohlížet jako na axiomaticky zavedenou, vektorový prostor, přímku…
+
+\section{Opakování}
+
+\name{Kartézský součin} množin $X$ a $Y$ je $X\times Y = @{@(a,b@), a∈X,b∈Y@}$.
+
+\name{$n$-ární relace} $R@⊂X\times X\times X…\times X$.
+
+\name{Relační systém} ‒ má typ $Δ=@(Δ_t@), t∈T$ je soubor relací $\mathbb{R}=@(R_t@), t∈T$, kde $R_t$ je $Δ_t$-ární na $X$.
+
+\name{Homomorfizmus} relačních struktur $\mathbb{R}$ a $\mathbb{S}$, kde $\mathbb{R}$ je typu $Δ$ na $X$ a $\mathbb{S}$ je typu $Δ$ na $Y$,
+je zobrazení $f:X→Y$, takové, že:
+$$∀t∈T;@(x₁, …, x_{Δ_t}@)∈R_t→→@(f@(x₁@), …, f@(x_{Δ_t}@)@)∈S_t$$
+
+\subsection{Skupiny zobrazení}
+
+\name{Vnoření} ‒ máme relační systém a zobrazení $\mathbb{R}→\mathbb{S}$. Pokud $\mathbb{R}$ na $X$, $\mathbb{S}$ na $Y$, $X@⊂Y$
+a $∀t∈T;R_t@⊂S_t$, pak ho nazveme vnoření. Vnoření je prostý homomorfizmus.
+
+\name{Projekce} ‒ relační systém $\mathbb{R}$ je na $X$, $\mathbb{S}$ na $X\times Y$. Projekce je zobrazení $p_i:X^n→X$, kde $p_i@(x₁,…,x_n@)= x_i$. Jakým způsobem vybudovat na $X^n$ relační systém, aby každá projekce byla homomorfizmus.
+$$@(u₁,…,u_{Δ_t}@)∈Rⁱ_t ∧ @(u₁',…,u_{Δ_t}'@)∈R²_t→→ @(@(u₁,u₁'@),…,@(u_{Δ_t},u_{Δ_t}'@)@)∈S_t$$
+
+$f$ je zobrazení z $X$ do $Y$ je relací $R@⊂X\times Y$, kde $∀x∈X ∃!y∈Y;@(x,y@)∈R;f(x)=y;f:X→Y$.
+Reprezentace trojicí $@(X,Y,R@)$.
+
+\name{Skládání} ‒ mám zobrazení $f:X→Y, g:Y→Z$, potom $gf:X→Z$, $(gf)(x) = g(f(x))$.
+
+\name{Prosté zobrazení} ‒ $∀x,y;x≠y→→f(x)≠f(y)$.
+
+\name{Zobrazení na} ‒ $∀y∈Y∃x∈X;f(x)=y$.
+
+\name{Vzájemně jednoznačné zobrazení} je takové, které je zároveň prosté a na.
+
+\begin{Observation}
+$f$ je bijekce. Poté existuje $f^{-1}Y→X$ takové, že $f^{-1}f = id_x, ff^{-1} = id_y$.
+Je to ekvivalence.
+\end{Observation}
+
+\begin{Observation}
+$f$ je prosté, právě když $fg = fh →→ g = h$.
+\end{Observation}
+
+\begin{Observation}
+$f$ je na, právě když $gf = hf →→ g = h$.
+\end{Observation}

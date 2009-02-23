@@ -1,5 +1,5 @@
 D:=$(shell pwd)
-SUBDIRS:=ADS2 algebra analyza-3 komsem topomet analyza-2 lingebra-2 analyza-1 lingebra-1 graforitmy kombagra temno algebra-2 ozd past ali
+SUBDIRS:=ADS2 algebra analyza-3 komsem topomet analyza-2 lingebra-2 analyza-1 lingebra-1 graforitmy kombagra temno algebra-2 ozd past ali mast
 RTDS:=$(wildcard $(addsuffix /*.rtd,$(SUBDIRS))) $(wildcard *.rtd)
 RTXS:=$(wildcard $(addsuffix /*.rtx,$(SUBDIRS))) $(wildcard *.rtx)
 
@@ -12,7 +12,7 @@ distclean: clean-makes clean-tars
 gen-makes: $(patsubst %,%/Makefile,$(SUBDIRS))
 
 $(patsubst %,%/Makefile,$(SUBDIRS)): %: build/Makefile.dir
-	ln $< $@
+	ln $< $@ -f
 
 clean-makes:
 	rm -f $(patsubst %,%/Makefile,$(SUBDIRS)) $(patsubst %,%/Makefile.rtx.deps,$(SUBDIRS))
