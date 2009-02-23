@@ -22,8 +22,7 @@ Kde jsou $M₁$ a $M₂$ stejné, tam nás to nezajímá, kde se liší, tam jso
 Protože je $M₁$ menší, musí nastat alespoň jeden případ střídavé cesty.
 \end{Proof}
 
-\name{Svědek maximality} je $S$, které má stejnou velikost jako počet lichých komponent původního grafu a je stejná jako počet nepokrytých vrcholů párování $M$.
-Obdobně, \name{svědek neexistence} je $S$, jejíž velikost je menší než počet lichých komponent.
+\name{Svědek neexistence} je $S$, jejíž velikost je menší než počet lichých komponent.
 
 \subsubsection{Algoritmy perfektního párování}
 
@@ -94,7 +93,7 @@ Pokud ta první část neexistuje, tak to nevadí.
 \end{Proof}
 
 \begin{Algorithm}[Perfektní párování pro obecné grafy]
-Začnu v nepokrytých hranách, postupuji stejně, jako u bipartitních.
+Začnu v nepokrytých vrcholech, postupuji stejně, jako u bipartitních.
 Pokud nenajdu střídavou cestu, prohlásím za $S$ liché hladiny.
 
 Mohou nastat některé problémy:

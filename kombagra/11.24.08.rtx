@@ -16,8 +16,8 @@ Nyní si nastavím $w(*)= 1$ a chci spočítat $\Σ_{O\hbox{ orbita}}w(O)$.
 
 Pro všechny $α∈Γ$:
 →•
- • $F(α) = @{x|α·x = x@}$ pevné body.
- • $Γ(x) = @{α∈Γ,α·x = x@}$
+ • $F(α) = @{x|α·x = x@}$ ‒ pevné body permutace $α$.
+ • $Γ(x) = @{α∈Γ,α·x = x@}$ ‒ pevné permutace obarvení $x$.
  • $Γ(x,y) = @{α∈Γ,α·x = y@}$
 ←•
 
