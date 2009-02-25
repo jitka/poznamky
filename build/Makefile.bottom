@@ -41,7 +41,7 @@ clean-mp:
 	rm *-mp-*.* */*-mp-*.* -f
 
 clean-rtx:
-	rm -f $(RTXDVIS) $(RTXPDFS) $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtd,%.log,$(RTDS)) $(patsubst %.rtd,%.aux,$(RTDS)) $(patsubst %,%.dep,$(RTXS) $(RTDS)) $(patsubst %.rtx,%._test.*,$(RTXS)) $(patsubst %.rtx,%.log,$(RTXS))
+	rm -f $(RTXDVIS) $(RTXPDFS) $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtd,%.log,$(RTDS)) $(patsubst %.rtd,%.aux,$(RTDS)) $(patsubst %,%.dep,$(RTXS) $(RTDS)) $(patsubst %.rtx,%._test.*,$(RTXS)) $(patsubst %.rtx,%.log,$(RTXS)) $(patsubst %.rtd,%.out,$(RTDS)) $(patsubst %.rtd,%.toc,$(RTDS))
 
 distclean: clean
 

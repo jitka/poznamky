@@ -6,6 +6,8 @@
 \title{Grafové algoritmy}
 \author{Michal Vaner}
 \maketitle
+\tableofcontents
+\newpage
 \input{10.22.07.rtx}
 \input{10.29.07.rtx}
 \input{11.05.07.rtx}

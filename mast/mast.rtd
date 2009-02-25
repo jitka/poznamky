@@ -5,5 +5,7 @@
 \begin{document}
 \title{Matematické struktury}
 \maketitle
+\tableofcontents
+\newpage
 \input{02.23.09.rtx}
 \end{document}
