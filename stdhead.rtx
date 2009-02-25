@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 \usepackage{wasysym}
 \usepackage{ifthen}
+\usepackage{hyperref}
 
 \setlength{\parskip}{0.45em}
 \setlength{\parindent}{0pt}

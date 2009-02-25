@@ -1,0 +1,133 @@
+\section{Přehled}
+
+\subsection{Obecná úloha}
+
+\name{Obecnou úlohou matematické optimalizace} rozumíme úlohu maximum či
+minimum funkce $f$ na množině $M$, kde $f$ je obecná funkce. $f$ se nazývá
+\name{účelová} nebo \name{cílová}. $M$ se nazývá \name{množinou přípustných
+řešení}. Každý prvek $x∈M$ se nazývá \name{přípustným řešením}. Takové $x₀∈M;
+∀x∈M;f(x₀)≥f(x)$ se nazývá \name{optimálním řešením}.
+
+\subsection{Dělení úloh}
+
+Dle spojitosti:
+→•
+ • \textbf{Diskrétní} ‒ řeší se v kombinatorice, mohou mít konečně mnoho
+   možností.
+ • \textbf{Spojité} ‒ funkce většinou reálné proměnné.
+←•
+
+Dle determinističnosti:
+→•
+ • \textbf{Deterministické}
+ • \textbf{Stochastické} ‒ obsahují nějaké náhodné proměnné. Řeší statistika.
+←•
+
+Dle volnosti:
+→•
+ • \textbf{S volným extrémem} ‒ množina $M$ není definovaná, hledá se na celém
+   prostoru. Hledá se jinak, než u vázaných.
+ • \textbf{S vázaným extrémem} ‒ omezené množinou $M$.
+   →•
+    • Lineární.
+    • Nelineární ‒ konvexní (často kvadratické), zobecněné konvexní a speciální
+      nekonvexní.
+    • Dynamické ‒ každé podřešení optimálního řešení je také optimální. Rozhodovací
+      proces, hledá posloupnost. Diskrétní.
+    • Optimalizační procesy ‒ Totéž, ale spojité.
+    • Teorie her ‒ někdo je protivník.
+    • Semiinfinitní programování.
+   ←•
+
+   Lze udělat nadstavby:
+   →•
+    • Celočíselné programování ‒ některé parametry jsou diskrétní.
+    • Parametrické programování
+    • Vícekriteriální
+   ←•
+←•
+
+\begin{Observation}
+→•
+ • $$\max{f(x)} = \min{-f(x)}$$
+   Tedy, mohu se zabývat pouze jedním z tohoto.
+ • Někdy je potřeba operovat se supremem či infimem.
+←•
+\end{Observation}
+
+\subsection{Volný extrémem}
+Hledám $\min@{f(x);x∈ℝ^n@}$.
+
+Používají se metody newtenova, kvazinewtenova.
+Využívá se v penalizačních a bariérových metodách.
+
+Penalizační je tak, že se jde „zvenčí“ množiny $M$, penalizuji za to, že jsem venku, takže časem dojdu dovnitř.
+Bariérová metoda říká, že začnu někde uvnitř a nesmím $M$ opustit.
+
+\subsection{Lineární programování}
+
+Hledám minimum:
+
+$$
+\min_M@{C^Tx,C∈ℝ^n@},M=@{x∈ℝ^n;Ax≤(≥,=)b, A∈ℝ^{m+n};b∈ℝ^m@}
+$$
+
+\name{Úlohou Lineárního programování} v rovnicovém tvaru rozumíme úlohu:
+\begin{eqnarray*}
+\min_M@{C^Tx@}&,&M=@{x∈ℝ^n;Ax=b,x≥0@},A∈ℝ^{m+n},\\
+               &&h(A) = m,1∈m<n,b≥0,C∈ℝ^n
+\end{eqnarray*}
+
+\name{Úlohou Lineárního programování v normálním tvaru} rozumíme:
+
+$$
+\min_M@{C^Tx@},M=@{x∈ℝ^n;Ax≤b,b≥0@}, A∈ℝ^{m+n},b∈ℝ^m,C∈ℝn
+$$
+
+\subsubsection{Simplexová metoda}
+Vychází z toho, že nějaké optimální řešení, pokud existuje, tak je alespoň v jednom z vrcholů
+mnohostěnu. Začnu v některém vrcholu, posouvám se na ty lepší a lepší, až ho najdu.
+
+\subsubsection{Duální simplexová metoda}
+
+Řeší dvě duální úlohy zároveň. Vezmu bázická (nemusí být přípustná) řešení, ale musí dávat stejnou
+funkční hodnotu. Měním tak dlouho, než dostanu přípustná řešení, protože jsou stejná, musí to být
+optimum.
+
+\begin{Statement}
+Existuje-li řešení, je ho dosaženo alespoň v jednom vrcholu konvexního polyedru $M$.
+\end{Statement}
+
+\subsection{Konvexní programování}
+Hledám $\min_M f(x); f(x)$ je konvexní funkce:
+
+$$
+M=@{x∈ℝ^n;g_j(x)≤0; j∈1…n@}
+$$
+
+$g_j$ jsou podmínky, je jich konečně mnoho.
+Zajišťují konvexnost množiny.
+
+\begin{Statement}
+Každé lokální minimum konvexní funkce je absolutním minimem.
+\end{Statement}
+
+Zobecněné, kvazikonvexní, explicitně kvazikonvexní a pseudokonvexní funkce jsou takové,
+že platí stejná (nebo podobná) věta.
+
+Používají se gradientní metody (též známé jako metody přípustných směrů) ‒ jdu „z kopce“, dokud je to dolů.
+Vždy najdu směr, kam se vydám a jak daleko.
+
+Dále jsou metody sečných nadrovin ‒ spočítám funkční hodnotu, vždy odseknu nadrovinou něco, kde se optimum nemůže nacházet.
+
+\subsection{Celočíselné programování}
+Nemá oddělenou teorii, staví nad lineárním a nelineárním programováním.
+
+Používají se sečné nadroviny, zapomenu na celočíselnost, když to nevyšlo, tak oříznu tak, aby mi zbyly celočíselné, ale ne toto.
+
+Metoda větvení a mezí ‒ simplexovou metodou, když najdu něco neceločíselného, vynechám čísla mezi, rozdělím na dvě množiny.
+
+\subsection{Parametrické programování}
+Výsledná funkce závisí na nějakém parametru.
+
+Rozdělí se na obory stability (kdy se výsledek $x$ nemění v závislosti na parametru).
