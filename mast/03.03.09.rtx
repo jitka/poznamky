@@ -1,0 +1,12 @@
+\section{Částečné uspořádání}
+
+$@(x,≤@)$
+
+→•
+ • $x≤x$
+ • $x≤y∧y≤z→→x≤z$
+ • $x≤y∧y≤x→→x=y$
+←•
+
+Částečné uspořádání nezaručuje porovnatelnost libovolných dvou prvků.
+Pokud platí, že $∀x,y;x≤y ∨ y≤x$, tak se mu říká \name{lineární}.
