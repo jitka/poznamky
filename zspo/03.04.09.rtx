@@ -1,0 +1,123 @@
+
+\subsection{Vícekriteriální optimalizace}
+$\max_M f@(x@)$, kde $f$ je vektorová funkce.
+
+$x₀∈M$ je \name{eficientní}, pokud $\not\exists x∈M$, který by byl alespoň tak dobrý ve všech složkách a alespoň v jedné je lepší.
+Nemusí být všechny.
+
+Přístup kompromisního řešení ohodnotí $f$ pomocí nějaké skalární funkce a řeší se ta obvyklým způsobem.
+
+\subsection{Dynamické programování}
+Předmětem zkoumání jsou diskrétní rozhodovací procesy.
+
+$$
+\max_{\mathcal{P}_n} f_N@(x₁, x₂, …, x_n@)
+$$
+
+Několikrát za sebou se rozhoduji.
+Hledám posloupnost prvků.
+Mám dva druhy proměnných ‒ stavové (popisují aktuální situaci) a rozhodovací (popisují rozhodnutí).
+
+\begin{Statement}[Bellmanův princip optimality]
+Každá podstrategie optimální strategie je také optimální
+\end{Statement}
+
+\subsection{Optimalizační procesy}
+Spojité rozhodovací procesy.
+Nerozhoduje se v daných bodech, ale stále.
+
+\subsection{Teorie her}
+Je ještě protihráč. Např. maticová hra dvou hráčů s nulovým součtem ‒ co vyhraje jeden, prohraje ten druhý.
+Vždy existuje pro oba hráče optimální strategie, přímá souvislost s principem duality v lineárním programováním.
+
+\subsection{Semiinfinitní programování}
+$$
+\max_MC^tx, M∈@{ℝ^n|a(t)≤b(t)@}, t∈T@⊂ℝ^m, a(t)∈ℝ^n,b(t)≤ℝ,C∈ℝ^n
+$$
+
+$T$ je obvykle kompaktní a konvexní.
+
+Problém je, že je zde nekonečně mnoho omezení.
+
+\section{Lineární programování}
+
+Uvažujeme úlohu v rovnicovém tvaru.
+
+$$
+\min_MC^Tx, M=@{x∈ℝ^n;Ax=b,x≥0@}, C∈ℝ^n, b∈ℝ^m,A∈ℝ^{m\times n}, h(A) = m, 1≤m≤n
+$$
+
+Tedy $∃$ konečný počet (alespoň $1$) $A_B∈ℝ^{m\times m}$ regulární. Vezmeme libovolnou $A_B$.
+Potom můžeme přepsat úlohu:
+
+$$
+A=@(A_B,A_N@)
+$$
+
+Stejným způsobem rozdělíme $x=@(x_B, x_N@), C=(C_B, C_N)$.
+
+Protože $A_Bx_B+A_Nx_N = b→→x_B=A_B^{-1}b - A_B^{-1} A_Nx_N = d₀-Dx_N, C_B^Tx_X+C_N^Tx_N \equiv C_B^T(d₀-Dx_N)+C_N^Tx_N=C^T_Bd₀+(C_N-C^T_BD)x_N=\equiv c₀+(C_N-Z_N)x_N$.
+
+Známe-li libovolné bázické řešení $B$, dá se přepsat na tvar:
+
+$$
+\min_M@{C₀+(C_N-Z_N)^T, M=@{@(x_B,x_N@);x_B=d₀-Dx_n≥o,x_N≥0@}@}
+$$
+
+V simplexové metodě je vždy $A_B=I_n$ jednotková matice.
+Buď máme štěstí a je tam a nebo je třeba ji vyrobit.
+
+Výchozí tabulka
+
+$$
+\begin{array}{|rrr|rrr|r|}
+\hline
+1&0&0&a&a&a&b\\
+0&1&0&a&a&a&b\\
+0&0&1&a&a&a&b\\
+\hline
+0&0&0&x&x&x&-c₀\\
+\hline
+\end{array}
+$$
+
+$a$ je matice $A_n$, $x$ jsou $c_N-Z_n$.
+
+\begin{Statement}\label{Simp-1}
+Platí-li $C_n-Z_n≥0$ v každé složce, potom příslušné bázické řešení $x=@(x_B,x_N@)$, $x_B=d₀,x_N=0$ je optimální.
+\end{Statement}
+
+\begin{Statement}\label{Simp-2}
+Existuje-li index $l∈N$ tak, že příslušné $C_n-Z_n≤0$ a $d_l≤0$ v každé složce, potom neexistuje řešení úlohy.
+\end{Statement}
+
+\begin{Statement}
+Nejsou-li splněny předpoklady \ref{Simp-1} ani \ref{Simp-2}, potom označíme-li $C_S-Z_S=\min{C_j-z_j}_{j∈N}$
+
+$\min_{d_s>0}@{d_{i0}\over d_{i-s}@}\equiv \frac{d_{r0}}{d_{rs}}$, dostaneme po transformaci tabulky s pivotem $d_{rs}$ nové
+přípustné řešení $(x'_B,x'_N), C^Tx'≤C^Tx$.
+\end{Statement}
+
+Mám konečný počet bází, ale při transformaci může zůstat stejná hodnota cílové funkce, může vzniknout degenerace a cyklus.
+
+\subsection{Případ degenerace a cyklu}
+Přípustné bázické řešení $(x_B, x_N)$ nazveme \name{degenerovaným}, jestliže existuje alespoň jeden index $p∈B$ tak, že $x_p=0$.
+
+Říkáme, že při simplexové metodě dochází k degeneraci, jestliže alespoň jedno přípustné bázické řešení je degenerované.
+Podle transformačního vzorce platí $(-c₀)'=-c₀-\frac{(c_s-z_s)·d_{r0}}{d_{rs}}$. Pokud $d_{r0}$, pak se nezmění funkční hodnota.
+Může se to zacyklit.
+
+Degenerace nemusí vždy nutně znamenat cyklus.
+
+\subsubsection{Blandovo pravidlo}
+Definujeme-li $s$ jako $s\equiv\min@{l∈N;C_l-z_l<0@}$ a $r\equiv\min@{p∈B;\min@{\frac{d_{i0}}{d_{is}}@}=\frac{d_{p0}}{d_{ps}}@}$.
+Potom při aplikaci simplexové metody nedojde k cyklu.
+
+\subsubsection{$ε$-modifikovaná úloha}
+Degenerace může vzniknout buď zadáním (některé $b_l = 0$) nebo nejednoznačností výběru klíčového řádku.
+Platí-li, že $\min_{d_{is}>0}@{\frac{d_{i0}}{d_{is}}=\frac{d_{r0}}{d_{rs}}=\frac{d_{p0}}{d_{ps}}@}$ a zvolím-li $d_{rs}$ za pivota.
+
+Změním množinu řešení tak, že $M_ε =@{x∈ℝ^n;Ax=b+Aε,x≥0,ε=@(ε,ε²,ε³,…,ε^m@)@}$ za předpokladu, že $A=(EA_N)$.
+Tím zajistím, že degenerace nevznikne v zadání ani v průběhu.
+
+V praxi se to dělá tak, že když nemám jednoznačně určen klíčový řádek, tvoříme minima z podílů prvků prvního sloupce tabulky k prvkům klíčového sloupce, které připadají v úvahu na pivota. Pokud ještě něco zbude, přejdu k dalšímu sloupci a tak dále.
