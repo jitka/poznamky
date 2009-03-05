@@ -1,0 +1,69 @@
+\section{Matroidy}
+
+Řekneme, že graf $H$ je \name{minor}, jestliže lze získat z $G$ vynecháváním a kontrakcí hran.
+
+Graf $H$ je \name{chordální}, jestliže nemá indukovanou kružnici délky $>3$.
+
+\begin{Statement}
+Každý chordální graf má vrchol, jehož okolí je úplný graf.
+Tento vrchol se nazývá \name{simpliciální}.
+\end{Statement}
+
+\begin{Proof}
+Nechť $C⊂V$ je minimální vrcholový řez.
+Potom $C$ indukuje úplný podgraf ‒ kdyby ne, mám indukovanou kružnici délky alespoň $4$.
+\end{Proof}
+
+\begin{Follows}
+Chordální grafy mají stromovou strukturu.
+Má simpliciální vrchol, dá se považovat za něco jako list stromu. Zbytek je opět chordální, tedy musí mít opět simpliciální vrchol.
+\end{Follows}
+
+Nechť $G$ je graf.
+Potom \name{stromová šířka} grafu $G$ $w(G)$ je rovna minimálnímu $k$, že existuje supergraf $G@⊂K$, $K$ je chordální a maximální úplný podgraf $K$ má $k+1$ vrcholů.
+
+\begin{Statement}
+Řada optimalizačních problémů (např. hamiltonovská kružnice) je polynomiální v grafech s omezenou stromovou šířkou.
+
+Vezmu chordální zúplnění, posloupnost simpliciálních vrcholů a postupuji dynamickým programováním, zkouší se to napojovat.
+\end{Statement}
+
+\begin{Observation}
+Když $H$ je minorem $G$, potom $w(H)≤w*G)$.
+\end{Observation}
+
+\begin{Proof}
+$H$ vzniklo kontrakcemi vrcholů a vynecháním hran.
+Ani jedno z toho nezvětšuje stromovou šířkou.
+
+Stačí dokázat, že kontrakce nezvětší úplný podgraf.
+Jediný graf, ve kterém kontrakcí hrany můžu zvětšit maximální úplný podgraf není chordální.
+Kontrakce můžu dělat až po „zchordálnění“, tudíž mi nevadí.
+\end{Proof}
+
+Tedy, množina grafů s omezenou stromovou šířkou je omezená na minory.
+
+\begin{Statement}\label{minor-class}
+Nechť $\mathcal{F}$ je třída grafů uzavřená na minory.
+Potom lze testovat v polynomiálním čase, zda daný graf patří do $\mathcal{F}$.
+\end{Statement}
+
+\begin{Statement}
+Nechť $H$ je daný graf.
+Potom následující úloha je polynomiálně řešitelná: Vstupem je graf $G$. Je $H$ minorem $G$?
+\end{Statement}
+
+\begin{Statement}[Řešení wagnerovy hypotézy]\label{wagner}
+Nechť $H₁, H₂, …$ je libovolná nekonečná posloupnost grafů. Potom existuje $i≠j$, že $H_i$ je minorem $H_j$.
+\end{Statement}
+
+\begin{Proof}
+Od věty \ref{minor-class} ‒ postup pomocí minimálních zakázaných obrázků.
+
+Nechť $\mathcal{F}$ je uzavřená na minory a $H∉\mathcal{F}$. Jestliže $H$ je minorem $G$, potom $G∉\mathcal{F}$.
+
+Pro $\mathcal{F}$ existuje konečná množina $\mathcal{M}$ grafů splňující $X∉\mathcal{F}→→∃m∈\mathcal{M}; m$ je minor $X$.
+$\mathcal{M}$ bude minimální množina zakázaných minorů. To dokážu z věty \ref{wagner}, vezmu doplněk k $\mathcal{F}$, najdu konečnou množinu minorů (ta se musí dát najít, protože u nekonečné vždy jde nějaký „vyhodit“).
+
+Z toho už odvodím polynomiální algoritmus.
+\end{Proof}
