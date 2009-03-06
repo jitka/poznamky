@@ -1,0 +1,103 @@
+\section{Minimální kostry}
+
+Předpokládejme, že máme multigraf, váhy hran se dají porovnávat a jsou navzájem různé.
+Z toho plyne, že má právě jednu minimální kostru $mst(G)$.
+Dále předpokládejme, že je souvislý.
+
+\subsection{Značení}
+
+Nechť $T$ je strom a $u,v$ jsou vrcholy. Pak $T[u,v]$ je cesta stromem mezi nimi.
+Nechť $e=@(u,v@)∈E$, pak $T[e]=T[u,v]$. Hrany této cesty jsou pokryté hranou $e$.
+
+Hrana $e$ je \name{$T$-lehká} $←→∃e'∈T[e];w(e)>w(e')$.
+Hrana je \name{$T$-těžká} $←→∀e'∈T[e];w(e)<w(e')$.
+
+Hrany $e∈T$ nejsou ani lehké ani těžké, zbylé musí být právě jedno z toho.
+
+\begin{Observation}
+Pokud je $e$ $T$-lehká, pak $T≠mst(G)$.
+\end{Observation}
+
+\begin{Statement}
+Kostra $T@⊂G=mst(G)←→\not ∃$ $T$-lehká hrana.
+\end{Statement}
+
+\subsection{Základní poznatky}
+
+\begin{Lemma}[Modré]
+Nechť $C$ je řez grafu $G$. Nejlehčí hrana toho řezu $∈mst(G)$
+\end{Lemma}
+
+\begin{Lemma}[Červené]
+Nechť $C$ je cyklus v $G$. Nejtěžší hrana $e∈C∉mst(G)$.
+
+Silnější verze: je to ekvivalence.
+\end{Lemma}
+
+\begin{Lemma}[Kontrakční]
+Pokud najdu hranu ležící v minimální kostře, tu zkontrahuji najdu zbytek a rozkontrahuju, tak mám minimální kostru původního grafu.
+
+\TODO{Odvodit z předchozích}
+
+Mějme $f_e:G-e→g/e$ přirozenou projekci. Pokud $e∈mst(G)→mst(G) = f^{-1}(mst(G/e)) + e$.
+\end{Lemma}
+
+\subsection{Základní algoritmy}
+
+\begin{Algorithm}[Kontrahující borůvkův]
+Najdu pro každý vrchol a najdu nejmenší hranu z každého. To mi vytvoří komponenty, ty zkontrahuji a pokračuji.
+
+V každé fázi se počet vrcholů sníží alespoň $2·$, dokážu fázi provést v čase $O(m_i)$.
+Vyházení paralelních hran stihnu v lineárním čase (přihrádkově je setřídím a jsou u sebe).
+
+Z toho by šlo odhadnout $O(m·\log n)$ nebo $O(n²)$.
+
+Pokud dokážeme omezit hustotu grafu i mezi kontrakcemi, tak je lineární.
+\end{Algorithm}
+
+\subsection{Verifikace minimální kostry}
+
+Chceme zjistit, jestli kostra je minimální a pokud ne, tak najít všechny $T$-lehké hrany.
+
+\begin{Algorithm}[Komlóšův]
+Umí to na lineárně mnoho porovnání, sám lineární být nemusí.
+
+Tedy, chceme najít všechny lehké hrany (z toho už se pozná, že je kostra minimální).
+Pokaždé nám stačí najít nejtěžší pokrytou hranu $e$ a tu s tím porovnat.
+Tedy, chceme najít nejtěžší hrany těchto cest.
+
+Při hledání by se hodilo, aby ten strom byl nějak rozumě vyvážený.
+Zkonstruujeme „borůvkový keř“ ‒ spustí borůvkův algoritmus na kostru.
+Zajímá nás posloupnost mezivýsledků (doběhne to lineárně, je rovinný).
+Stavím strom, který popisuje, jak se spojují komponenty. Dolů dám původní vrcholy,
+vyšší patra jsou ty komponenty, hrany jsou ohodnoceny tím, kterou hranou se to spojovalo.
+Pokračuji, než mi zbude jeden vrchol.
+
+Tento strom je hluboký maximálně $B(T) = \lceil\log n\rceil$.
+Každý vrchol stromu $v∈B(T)$ odpovídá nějaké komponentě $C(v)$ vzniklé během borůvkova algoritmu.
+
+\begin{Lemma}
+Váha nejtěžší hrany $T[x,y]$ je rovna váze nejtěžší hrany cesty $B(T)[x,y]$
+\end{Lemma}
+
+\begin{Proof}
+$P:=T[x,y], h=@(a,b@)$ nejtěžší na $P$.
+$P':=B(T)[x,y], h'=@(a',b'@)$ nejtěžší na $P'$. Chceme dokázat, že $w(h) = w(h')$.
+
+Nejdříve dokážu, že $∃l'∈P';w(l') = w(h)→→w(h)≤w(h')$.
+V borůvkovém keři jsou dole $a,b$. Existuje $u$ nejnižší společný vrchol.
+Ten má syny $v_a, v_b$. $a∈C(v_a), b∈C(v_b)$.
+Alespoň jedna z hran z $u$ dolů je původní $h$, tedy má stejnou váhu. BÚNO je to $(u, v_a)$.
+
+Nyní je třeba dokázat, že je na $P'$.
+Právě jeden z vrcholů $x,y$ leží v komponentě $C(v_a)$.
+Dokážeme sporem. Kdyby to neplatilo ‒ tak tam buď leží oba, tak $h$ není na této cestě, protože celá cesta je v $C(v_a)$.
+Nebo by tam neležel žádný, pak tamtudy cesta prochází a tato je nejtěžší. Pak jsem si ale musel vybrat tuhle hranu naposled z té cesty a tudíž jeden musel v té komponentě byl.
+
+Nyní si vezměme libovolnou $(u,v)∈P'$.
+Nechť $u$ je horní konec. Tato hrana leží na cestě mezi $x,y$ v borůvkově keři, $x$ leží pod $v$.
+Tedy, vede hrana $q$ ven z $C(v)$ na cestě mezi $x$ a $y$ na $T$. A tuto hranu jsem si nevybral, vybral jsem si tuhle, tedy $w(u,v)≤w(q)$.
+\end{Proof}
+
+Budu počítat cesty jen zvrchu dolů a spojovat je dohromady v těchto vrcholech.
+\end{Algorithm}
