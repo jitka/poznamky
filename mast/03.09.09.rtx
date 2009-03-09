@@ -1,0 +1,79 @@
+\subsection{Supremum, infimum}
+
+Mám množinu s částečným uspořádáným $X(≤)$.
+\name{Horní mez} podmnožiny $M@⊂X$ je libovolné $x∈X;∀m∈M;m≤x$.
+
+\name{Supremum} $\sup M$ je nejmenší horní mez.
+
+Obdobně definuji \name{dolní mez} a \name{infimum}.
+
+Řekneme, že prvek $m∈M$ je \name{největší}, pokud $∀x∈M;x≤m$.
+
+Prvek $m∈M$ je \name{maximální}, pokud $∀x∈M;m\not≤ x$.
+
+\begin{Tvrz}
+\begin{eqnarray*}
+M_i&@⊂&X\\
+\sup@{\sup M_i@}&=&\sup \∪M_i
+\end{eqnarray*}
+
+Kdykoliv má levá strana smysl.
+\end{Tvrz}
+
+\begin{Proof}
+$s_i = \sup M_i, s = \sup s_i$.
+$s$ je horní mez $\∪ M_i$.
+
+Vezmeme nyní $x$ horní mez $\∪ M_i$.
+Tedy $x≥s_i$ (je horní mezí libovolného $M_i$).
+\end{Proof}
+
+Řekneme, že $N@⊂M$ je \name{kofinální} v $M$, pokud $∀m∈M;∃n∈N;m≤n$.
+Opačně se to nazývá \name{koiniciální}.
+
+\begin{Statement}
+Buď $N$ kofinální v $M$. Potom $\sup M = \sup N$ právě když má kterákoliv strana smysl.
+\end{Statement}
+
+\begin{Proof}
+Mají stejné množiny horních mezí.
+\end{Proof}
+
+\begin{Statement}
+Nechť $f$ je monotónní zobrazení.
+Potom platí:
+
+$$
+f@(\sup M@) ≥ \sup f@(M@)
+$$
+
+Za předpokladu, že obě strany mají smysl.
+\end{Statement}
+
+\subsection{Svazy}
+$∀a,b∈L; ∃\inf @{a,b@}$. Potom je to \name{dolní polosvaz}.
+Obdobně je \name{horní polosvaz}.
+
+\name{Svaz} je něco, co je obojí zároveň.
+
+Podmínky říkají, že máme suprema (resp. infima) libovolné neprázdné konečné podmnožiny.
+
+O nejmenším prvku se obvykle mluví jako o nule. Největší bývá jednička.
+Pokud existují, tak mají infima a suprema všechny množiny.
+
+Pokud každá podmnožina má supremum a infimum, tak je to \name{úplný svaz}.
+Z toho plyne, že má vždycky nulu a jedničku.
+
+\begin{Statement}
+Má-li každá podmnožina $M@⊂X(≤)$ supremum, potom $X(≤)$ je úplný svaz.
+\end{Statement}
+
+\begin{Proof}
+Mějme množinu $M$.
+
+Označme $N=@{x;x\hbox{ je dolní mez }M@}$.
+
+Vezměme $i=\sup N$. Tvrdíme, že $i$ je dolní mez $M$.
+Každé $m∈M$ je horní mez $N$.
+Navíc je největší z nich.
+\end{Proof}
