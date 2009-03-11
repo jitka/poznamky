@@ -1,0 +1,103 @@
+\subsection{Množina všech optimálních řešení}
+Množinu $M^{opt} = @{x_i∈M;\min_M C^Tx = C^Tx_i@}$ nazveme množinou všech optimálních řešení.
+
+\begin{Note}
+Pokud známe jedno optimální řešení $x₀$ s hodnotou cílové funkce $C^Tx₀=C₀$, potom můžu zapsat množinu
+$M^{opt} = @{x∈M;C^Tx=C₀@}$.
+\end{Note}
+
+\begin{Statement}
+Jsou-li $x₁,x₂$ dvě různá optimální řešení úlohy lineárního programování,
+potom každý bod úsečky $(x₁,x₂)$ je také optimálním řešením.
+\end{Statement}
+
+\begin{Proof}
+$C^Tx₁=C^Tx₂=C₀$, platí $∀x∈@(x₁,x₂@)$:
+
+\begin{eqnarray*}
+C^Tx &=& C^t (λx₁+(1-λ)x₂) \\
+      &=& λC^Tx₁+(1-λ)C^Tx₂ \\
+      &=& (λ+1-λ)C₀=C₀
+\end{eqnarray*}
+\end{Proof}
+
+\begin{Tvrz}
+$M^{opt}$ je rovna uzávěru stěny $M$ určité dimenze.
+\end{Tvrz}
+
+Nechť jsme získali optimální řešení $x₀$ simplexovou metodou a poslední tabulka je tvaru:
+
+\begin{Statement}
+$M^{opt}=@{x∈M; x_j=0; j∈J@}$. $J$ jsou indexy, kde dole vyjde číslo $>0$.
+\end{Statement}
+
+\begin{Proof}
+Rozepsáním přes sumu.
+\end{Proof}
+
+\begin{Follows}
+Pokud všechna $C_j-z_j>0$, potom je $x₀$ jediným optimálním řešením.
+\end{Follows}
+
+\begin{Note}
+Pokud v poslední (optimální) tabulce máme nějaké $C_j-z_j=0, j∈N$, potom zkoušíme zvolit příslušný sloupec za klíčový.
+→•
+ • Najdeme-li pivota (existuje ve sloupci alespoň jedna kladná hodnota), označme ho $d_{rj}$, potom nové přípustné bázické řešení
+   má hodnotu cílové funkce $-c₀'=-c₀-\frac{(c_j-z_j)·d_{r0}}{d_{rj}}$, tedy hodnota optimální funkce zůstala zachována, dostali
+   jsme tedy nové optimální řešení.
+
+   Pozor, kdyby nastala degenerace, můžu zůstat ve stejném vrcholu.
+ • Neexistuje-li pivot ($∀d_{ij}≤0$). Potom neomezená hrana
+
+   $$@{x∈ℝ^n;x=x₀+td_j;t≥0@}$$
+
+   představuje optimální řešení.
+ • Konvexní kombinací získaných dalších optimálních řešení najdeme část množiny $M^{opt}$.
+←•
+\end{Note}
+
+\subsection{Revidovaná simplexová metoda}
+
+Chceme se zbavit jednotkové matice v tabulce.
+Při každé transformaci vznikne jeden nejednotkový sloupec, ale jeden se zase vyrobí.
+Tyto lze ignorovat. Budu si pamatovat, který sloupec je který „původní“ index ‒ které proměnné odpovídá.
+
+Nejprve se bude transformovat klíčový sloupec.
+Na místě pivota bude jeho převrácená hodnota.
+Ostatní prvky sloupce dělíme $-p$ ($p$ je pivot).
+
+Ostatní prvky tabulky zpracujeme jako u obyčejné simplexové metody.
+Je třeba sledovat, která proměnná to je.
+
+\subsection{Výpočetní složitost simplexové metody}
+
+Jeden krok se spočítá jednoduše.
+Tedy mě zajímá počet kroků.
+
+→•
+ • Lze odhadnout $\combnum{n}{m}$.
+ • Hledáme největší úbytek hodnoty cílové funkce.
+   Při transformaci tabulky v libovolném kroku dostaneme nové
+
+   $$-C₀'=-C₀-\frac{(c_s-r_s)·d_{r0}}{d_{rs}}$$
+
+   Za klíčový sloupec by měl být brán takový, pro který platí $\min_{c_j-z_j <0}@{\frac{(c_j-z_j)·d_{r(j)0}}{d_{r(j)j}}@}$.
+   Pomalé na zjišťování.
+ • Můžu použít $\min_{c_j-z_j<0}(c_j-z_j)$.
+   Reálně to u praktických problémů počet kroků nezávisí na počtu proměnný a pohybuje se mezi $2m$ až $3m$.
+←•
+
+Odhady říkají, že $P(n,m)≤m^\inv{n-1}·(m+1)^n·\frac{2}{5}·π·(1+\frac{eπ}{2})$.
+V praxi bývá mnohem lepší.
+
+\subsection{Teoreticky rychlejší metody}
+Pokusy vytvořit polynomiální algoritmy, prakticky jsou pomalé.
+
+\subsubsection{Chačiova elipsová mateda}
+Sestrojí se elipsoid obsahující množinu přípustných řešení, vezme se polovina, kde $M$ leží.
+Pak se sestrojí další elipsoid uvnitř této poloviny.
+Dělám to tak dlouho, až najdu střed elipsoidu uvnitř $M$.
+
+\subsubsection{Karmankarova}
+Vytvořil se simplex, uvnitř se opsala nadkoule $M$, cílová funkce se promítla na nadkouli,
+opět se sestrojil simplex, etc.
