@@ -1,0 +1,71 @@
+
+Pro hranu $e$ nadefinujeme $Q_e$, což je množina všech dotazů, které obsahují $e$ (dotaz je na nejtěžší hranu té cesty).
+$T_e$ jsou vršky cest z $Q_e$. Pamatuji si jako seznam, setříděný podle hloubek. Bez duplicit.
+$P_e$ je seznam, jenž pro každý vršek $v∈T_e$ si pamatuje maximální váhu na cestě do dolního vrcholu $e$.
+
+Tohle prohledávám do hloubky a pamatuji si, do kterého vrcholu jsme došli ($y$), poslední hranu ($e$) a $T_e$ a $P_e$.
+Prostě spočítám ty maxima cest. Hodí se přimalovat šťopku nad kořen.
+Potom pro všechny hrany $(yz)$ (potomky), zavolat rekurzivně. Potřebuji přepočítat $T$ a $P$. Odečtu všechny co skončily nebo odbočily, přidám všechny, co mají horní hranu $(yz)$. Každá další cesta je zkrácením některé předchozí, takže maxima se jen snižují. Proto mi stačí jednou projít $P_e$ půlením intervalu a odtamtuď to přepíšu. Zavolám rekurzivně.
+
+\begin{Lemma}
+Pro předzpracovaný strom na $n$ vrcholech a $q$ dotazů algoritmus provede $O(n+q)$ porovnání.
+\end{Lemma}
+
+\begin{Proof}
+Očíslujeme hladiny. Nechť $n_i$ je počet vrcholů v $i$-té hladině.
+Strom je alespoň binární, tedy $n_i≤\frac{n}{2^i}$.
+$c_i$ bude počet porovnání při zpracování hran mezi $i+1$ a $i$-tou hladinou.
+\begin{eqnarray*}
+c_i&≤&\Σ_e1+\log\len{T_e}\\
+&≤&n_i+\Σ_e\log\len{T_i}\\
+&=&n_i+n_i·\frac{\Σ_e\log\len{T_e}}{n_i}
+\end{eqnarray*}
+
+Logaritmus je konkávní, tedy můžu:
+
+\begin{eqnarray*}
+&≤&n_i+n_i\log\frac{q+n}{n_i}\\
+&=&n_i + n_i·\log\frac{q+n}+n_i·\log\frac{n}{n_i}
+\end{eqnarray*}
+
+Je potřeba to posčítat. Prý trochu analýzy a nehezkého počítání.
+\end{Proof}
+
+V borůvkovi potřebujeme prořezávat hrany. Dosáhneme toho takto: občas si vybereme podgraf, tomu najdeme kostru. Hrany těžké k této určitě nebudou ve výsledku.
+
+\begin{Lemma}[Karkerovo vzorkovací]
+Je-li $H$ podgraf $G$ vzniklý vzorkováním hran (vezmu všechny vrcholy, u každé hrany si hodím mincí, jestli ji beru) s pravděpodobností $p$ a $T$ je minimální kostra $H$, pak počet hran z $G$, které nezahodíme bude malý vzhledem k počtu vrcholů ‒ v průměru $\frac{n}{p}$.
+\end{Lemma}
+
+\begin{Proof}
+Do kostry se mi dostane max. $n-1$ hran. Když už jsem $n-1$ přijal (házet můžu jen když přidávám do kostry), zbytek zahazuji.
+Neházím za hrany (kdybych bral třeba kruskala), které už zbyly na konci, tedy házím jen pro ty, které nejsou $T$-těžké.
+\end{Proof}
+
+\begin{Algoritm}[Karger-Klein-Tarjan]
+→•
+ • Odstraníme izolované vrcholy, pokud nic nezbylo, končíme.
+ • Provedeme 2 kroky kontrahujícího borůvky.
+ • Vybereme vzorkováním $H⊂G$.
+ • Vybereme $T$ rekurzivně.
+ • Vyhážeme $T$-těžké hrany.
+ • Zavoláme se rekurzivně.
+ • Nakonec doplníme to, co vyházel borůvka.
+←•
+\end{Algoritm}
+
+\begin{Lemma}
+Složitost v nejhorším případě je $O(\min(n^2, m·\log n))$.
+\end{Lemma}
+
+\TODO{Proof}
+
+\begin{Statement}
+Průměrně je to lineární.
+\end{Statement}
+
+\begin{Proof}
+Rozdělím strom rekurze na „levé cesty“ ‒ někde začnu a jdu jen doleva. Tím pokryju celý graf.
+Každá levá cesta má málo hran, u toho udokazuji, že to proběhne lineárně s velikostí vršku.
+Pravá za něco visí, tam mám vždycky dostatečně málo hran.
+\end{Proof}
