@@ -1,0 +1,56 @@
+Máme množiny $X$ a $Y$. Máme $f:X→Y,G:Y→X$ monotónní. Jsou \name{adjugována} ($f$ nalevo, $g$ napravo), jestliže platí $∀x,y;f(x)≤y←→x≤g(y)$.
+
+Také se tomu říká Galoisova konexe.
+Pokud to existuje, je to jednoznačné. Chová se to trochu jako inverzní (inverze takle funguje, ale i jiné věci jsou tohle).
+
+\begin{Observation}
+Jsou-li $f$ a $g$ v adjunkci ($f$ nalevo, $g$ napravo), platí
+
+\begin{eqnarray*}
+∀x&;&x≤g(f(x))\\
+∀y&;&f(g(y))≤y
+\end{eqnarray*}
+
+Naopak platí-li $∀x;x≤g(f(x)) ∧ ∀y;f(g(y))≤y$, pak jsou $f$ a $g$ adjugovány.
+\end{Observation}
+
+\begin{Proof}
+První část je vidět.
+
+Nechť $f(x)≤y$. Potom $x≤g(f(x))≤g(y)$. Obdobně s druhou částí.
+\end{Proof}
+
+\begin{Observation}
+$$
+gfg = g, fgf=f
+$$
+\end{Observation}
+
+\begin{Statement}
+Levé $G$ adjunkty zachovává všechna existující suprema.
+Pravé zachovávají všechna existující infima.
+\end{Statement}
+
+\begin{Proof}
+$M@⊂X$, $s$ je $\sup M$. $f(s)$ je hroní mez $f(M)$. Nechť $x$ je horní mez $F(M)$. $∀m∈M; f(m)≤x$.
+$s≤f(x)$.
+\end{Proof}
+
+\begin{Statement}
+Jsou-li $X, Y$ úplné svazy, potom $f:X→Y$, resp. $g:X→Y$ má pravý, resp. levý adjunkt $←→$ zachovává suprema, resp. infima.
+\end{Statement}
+
+\begin{Proof}
+Nechť $f$ zachovává suprema.
+Definujme $g(y):=\sup@{x;f(x)≤y@}$.
+Tohle už funguje (stačí ověřit).
+\end{Proof}
+
+\begin{Statement}[Knaster,Tarski]
+Nechť $L$ je úplný svaz.
+$f:L→L$ monotóní zobrazení. Potom existuje nejmenší $x$ takové, že $f(x)=x$.
+\end{Statement}
+
+\begin{Proof}
+$x:=\sup @{y;y≤f(y)@}$
+\end{Proof}
