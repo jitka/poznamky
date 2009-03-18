@@ -1,0 +1,33 @@
+
+\subsection{Duální simplexová metoda}
+
+\subsubsection{Princip duality}
+Máme primární úlohu v základním tvaru:
+
+$$
+\max_{M₁}C^Tx,M₁=@{x∈ℝ^n;Ax≤b;x≥0@},C∈ℝn,A∈ℝ^{m\times n},b∈ℝ^m
+$$
+
+Poté úloha:
+
+$$
+\min_{M₂}b^Ty,M₂=@{y∈ℝ^m;A^Ty≥C,y≥0@}
+$$
+
+je této ekvivalentní.
+
+\begin{Lemma}
+Jsou-li $M₁,M₂≠∅$, potom $∀x∈M₁,y∈M₂;c^Tx≤b^Ty$.
+\end{Lemma}
+
+\begin{Proof}
+Nějaké $x$ a $y$ existují.
+\end{Proof}
+
+\begin{Statement}[Princip duality]
+Tyto úlohy mají stejná optimální řešení.
+\end{Statement}
+
+\begin{Follows}
+Rovnost funkčních hodnot platí právě pro optimální řešení.
+\end{Follows}
