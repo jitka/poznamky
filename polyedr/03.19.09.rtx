@@ -1,0 +1,102 @@
+
+Matroidy jsou právě ty dědičné systémy, kde řád je dobře definován.
+$r(A) = \len{\max_{@⊂}\hbox{ nezávislá množina }}$.
+
+\begin{Statement}
+Celočíselná funkce $r:2^X→ℕ$ je řádová funkce matroidu na $X$ právě když:
+
+→•
+ • $r(∅) = 0$
+ • $r(y) ≤ r(y∪@{y@})≤r(y) + 1$
+ • $r(Y∪@{y@}) = r(Y∪@{z@})=r(Y)→→r(Y)=r(Y∪@{y,z@})$
+←•
+\end{Statement}
+
+\begin{Proof}
+První dva jasné, třetí rozepsáním.
+
+Definujme matroid na $X$ přepisem $A∈S←→\len{A} = r(A)$.
+Ukážeme, že $@(X,S@)$ je matroid.
+$∅∈S$. Dále, $S$ je dedičný: $B@⊂A:r(A)≤r(B)+\len{A-B}$. Pro spor předpokládejme, že $r(B)<\len{B}$, tedy $<\len{B}+\len{A-B}=\len{A}$.
+\end{Proof}
+
+\begin{Statement}\label{MatroidRank1}
+$r:2^X→ℕ$ je řádová funkce matroidu právě když:
+→•
+ • $∀Y@⊂X;0≤r(Y)≤\len{Y}$
+ • $Z@⊂Y→→r(Z)≤r(Y)$
+ • $r(Y∪Z)+r(Y∩Z)≤r(Y)+r(Z)$
+←•
+
+Tedy, matroidy jsou strukturální.
+\end{Statement}
+
+\begin{Proof}
+Doprava platí z věty \ref{MatroidRank1} první dva, třetí obrázkem a rozkreslením.
+\end{Proof}
+
+\subsection{Struktura jednoduchých matroidů řádu 3}
+Jednoduchý je jestliže $\len{A}=r(A), \len{A}≤2$.
+$r(X,S) := r(X)$.
+
+Definujeme $L(X,S):=@{A@⊂X;\len{A}>2;r(A)=2;A \hbox{ uzavřená}@}$.
+Uzavřená je, pokud $A=\overline{A}$ (uzávěr $A$).
+$\overline{A}:= @{y;r(A)=r(A∪@{y@})@}=\∪B;A@⊂B;r(A)=r(B)$.
+
+\begin{Observation}
+Množina $L(X,S)$ popisuje matroid $(X,S)$, pokud $(X,S)$ je jednoduchý, řádu 3.
+\end{Observation}
+
+\begin{Proof}
+\begin{eqnarray*}
+A@⊂X;\len(A)∈2&→→&r(A)=\len{A}\\
+\len{A}>2&→→&r(A)=2←→A@⊂C∈L(X,S)
+\end{eqnarray*}
+\end{Proof}
+
+\begin{Observation}
+$$K,L∈L(X,S)→→\len{K∩L}≤1$$
+\end{Observation}
+
+\begin{Proof}
+Sporem, nechť mají společného víc.
+Vezmu si to, co mají různé a dokážu, že uzávěry obsahují oba.
+\end{Proof}
+
+$R2⊂2^X$ je \name{struktura}, jestliže:
+→•
+ • $A@⊂R→→\len{A}≥3$
+ • $A,B∈R, \len{A∩B}≤1$
+←•
+
+\begin{Statement}
+Každá struktura je množina $L(X,S)$ jednoduchého matroidu řádu $3$.
+\end{Statement}
+
+\begin{Proof}
+Nechť $L$ je struktura. Definujme $r$ přepisem: $\len{A}≤2→→r(A)=\len{A}, \len{A}>2→→r(A)=2←→A@⊂C∈L$. V ostatních případech je to $3$.
+\end{Proof}
+
+Příklady: Fannův matroid (fannova rovina), uniformní matroid $(X, \combnum{X}{k})$.
+
+\subsection{Základní operace}
+
+\subsubsection{Zkrácení}
+Mám $k∈ℕ, (X,S)→(X,@{A∈S;\len{A}≤k@})$.
+
+\subsubsection{Součet}
+Máme dvě množiny $X₁,X₂, X₁∩X₂=∅$, matroidy $S₁,S₂$.
+Součet je $(X₁∪X₂,@{A@⊂S₁∪S₂;A∩X₁@∈S₁∧A∩X₂∈S₂@})$.
+
+\subsubsection{Partiční matroid}
+$X=\dot{\∪}X_i, S=@{A@⊂X;∀i;\len{A∩X_i}≤1@}$.
+
+\subsubsection{Vynechání}
+$$(X-Z,@{A;A∈S;A∩Z=∅@}$$
+
+\subsubsection{Kontrakce}
+$$(T@⊂X,@{A∈S/T←→A∪J∈S@})$$, kdy $J$ je maximální nezávislá na $T$.
+
+\begin{Observation}
+Definice nezávisí na výběru $J$.
+\end{Observation}

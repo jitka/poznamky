@@ -8,4 +8,6 @@
 \tableofcontents
 \newpage
 \input{03.05.09.rtx}
+\TODO{Tady chybí jedna hodina}
+\input{03.19.09.rtx}
 \end{document}
