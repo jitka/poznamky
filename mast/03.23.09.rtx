@@ -1,0 +1,15 @@
+\begin{Statement}[Cantor-Berustein]
+Existuje-li prosté $f:X→Y$ a $g:Y→X$, pak existuje i vzájemně jednoznačné $h:X\cong Y$.
+\end{Statement}
+
+\begin{Proof}
+Vezmu $\mathcal{P}(X)$, vezmu $φ(M):=X-g@(Y-f(M)@)$. $φ$ je monotóní.
+Tedy $∃A;φ(A)=A←→A=X-g(Y-f(A))$.
+
+\begin{eqnarray*}
+x∈A&→→&h(x)=f(x)\\
+x∈X-A&→→&h(x)=g^{-1}(x)
+\end{eqnarray*}
+
+Stačí jen dokázat, že je prosté a na.
+\end{Proof}
