@@ -1,0 +1,36 @@
+
+$M$ je \name{minor} $N$, jestliže $M$ dostaneme restrikcí a kontrakcí.
+
+\begin{Observation}
+$H$ je minor grafu $G ←→M_H$ je minor $M_G$.
+\end{Observation}
+
+\subsubsection{Dualita}
+
+Nechť je $M(X,S)$ matroid. Definujeme \name{duální matroid} $M^*(X,S^*)$, $S^*:= @{A@⊂X;∃B\hbox{ báze }M; A∩B=∅@}$.
+
+\begin{Observation}
+$M^*$ je matroid, jeho řádová funkce $r^*(A) = \len{A}-r(X)+r(X-A)$.
+\end{Observation}
+
+\begin{Proof}
+Rozepsáním vzorečku řádové funkce.
+\end{Proof}
+
+\begin{Observation}
+Restrikce a kontrakce jsou duální. (tedy, duál ke kontrahovanému je restrigovaný a naopak).
+\end{Observation}
+
+\begin{Observation}
+$M^*(K_{3,3})$ a $M^*(K₅)$ nejsou grafické.
+\end{Observation}
+
+\begin{Statement}[Matroidová charakterizace rovinných grafů]
+$G$ je rovinný $←→M^*(G)$ je grafový.
+\end{Statement}
+
+\begin{Proof}
+$G$ rovinný $→→M^*(G)=M(G^*)$.
+
+Opačné lze dokázat např. kuratovského větou.
+\end{Proof}
