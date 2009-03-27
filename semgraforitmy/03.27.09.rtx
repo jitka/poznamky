@@ -1,0 +1,12 @@
+\section{Perzistence}
+
+Může být:
+→•
+ • Částečná ‒ můžu přidávat na konec, ptát se na libovolnou verzi.
+ • Plná ‒ můžu se vrátit do minulosti, dá se větvit.
+ • Stoková ‒ dá se i slívat.
+←•
+
+Využívá se např. ve funkcionálních jazycích, dvourozměrné geometrické úlohy.
+
+V každém vrcholu (řekněme stromu) si potřebuji navíc pamatovat tabulku „změn“, občas se narodí nový vrchol, do něj nacpu změny z tabulky.

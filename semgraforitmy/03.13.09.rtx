@@ -42,7 +42,7 @@ Do kostry se mi dostane max. $n-1$ hran. Když už jsem $n-1$ přijal (házet m�
 Neházím za hrany (kdybych bral třeba kruskala), které už zbyly na konci, tedy házím jen pro ty, které nejsou $T$-těžké.
 \end{Proof}
 
-\begin{Algoritm}[Karger-Klein-Tarjan]
+\begin{Algorithm}[Karger-Klein-Tarjan]
 →•
  • Odstraníme izolované vrcholy, pokud nic nezbylo, končíme.
  • Provedeme 2 kroky kontrahujícího borůvky.
@@ -52,7 +52,7 @@ Neházím za hrany (kdybych bral třeba kruskala), které už zbyly na konci, te
  • Zavoláme se rekurzivně.
  • Nakonec doplníme to, co vyházel borůvka.
 ←•
-\end{Algoritm}
+\end{Algorithm}
 
 \begin{Lemma}
 Složitost v nejhorším případě je $O(\min(n^2, m·\log n))$.
