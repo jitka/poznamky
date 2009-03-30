@@ -1,0 +1,82 @@
+\begin{Statement}[Zornovo lemma]
+Buď $(X,≤)$ uspořádaná množina taková, že $∀C@⊂X$ uspořádané lineárně a existuje pro něj horní mez.
+Potom $∀x∈X$ existuje $m$ maximální v $@(X,≤@)$ takové, že $x≤m$.
+\end{Statement}
+
+\begin{Lemma}
+Nechť $F$ je filtr a $J$ ideál v distributivním svazu.
+Nechť $F∩J=∅$.
+Potom existuje prvoideál $\overline{F}$ takové, že $F@⊂\overline{F}∧\overline{F}∩J=∅$.
+\end{Lemma}
+
+\begin{Statement}[Birkhoffova]
+Nechť $F$ je filtr a $J$ ideál v distributivním svazu, $F∩J=∅$.
+Potom existuje prvofiltr $\overline{F}\supseteq F$ a prvoideál $\overline{J}\supseteq J$ nakové, že $\overline{F}∩\overline{J}=∅$
+\end{Statement}
+
+\begin{Follows}
+Nechť v distributivním svazu jsou $a\not≤b$. Potom existuje prvofiltr $F$ takový, že $a∈F∧b∉F$.
+\end{Follows}
+
+$b$ je \name{pseudokomplement} prvku $a$, jestliže $x≤b\equiv x∧a = 0$. Značí se $b=a^*$.
+
+\begin{Tvrz}
+$$a≤a^{**}$$
+\end{Tvrz}
+
+\begin{Proof}
+Dosadím $a^*$.
+\end{Proof}
+
+\begin{Tvrz}
+$$a≤b→→b^*≤a^*$$
+\end{Tvrz}
+
+\begin{Proof}
+$$b∧b^*=0→→a∧b^*=0, b∧a^*=0$$
+\end{Proof}
+
+\begin{Tvrz}
+$$a^*=a^{***}$$
+\end{Tvrz}
+
+\begin{Proof}
+$$a^*≤(a^*)^{**}, (a^{**})^*≤a^*$$
+\end{Proof}
+
+\begin{Tvrz}
+$$a∧b=0\equiv a^{**}∧b = 0$$
+\end{Tvrz}
+
+\begin{Tvrz}
+$$(a∧b)^{**} = a^{**}∧b^{**}$$
+\end{Tvrz}
+
+\begin{Proof}
+$$
+(a∧b)^{**}≤a^{**}∧b^{**}
+$$
+
+$a∧b≤(a∧b)^{**}$. Ale když se použije definice:
+$a∧b∧(a∧b)^*=0$. Tedy $a^{**}∧(b∧(a∧b)^*)=0$.
+$(a∧b)^{**}∧(a∧b)^*=0$. $a^{**}∧b^{**}≤(a∧b)^{**}$.
+\end{Proof}
+
+\begin{Tvrz}{De-Morganova formule}
+Nechť v pseudokomplementárním svazu $∃\sup a_i$. Potom $∃\inf a_i^*$ a platí $\inf a_i^*=@(\sup a_i@)^*$.
+\end{Tvrz}
+
+\begin{Proof}
+\begin{eqnarray*}
+∀i;x&≤&a_i^* \\
+\equiv a_i &≤& x^* \\
+\equiv x∧\sup_i a_i &=& 0∀i;a_i≤x^* \\
+\equiv \sup_i a_i &≤& x^* \\
+\equiv x∧\sup_i a_i &=& 0 \\
+\equiv x&≤&@(\sup a_i@)^*
+\end{eqnarray*}
+\end{Proof}
+
+Nechť $X$ je distributivní svaz. $x$ je \name{komplement} $a$, jestliže $a∧x=0$ a $a∨x=1$.
+
+Svaz $L$ nazveme \name{Heytingovou algebrou}, existuje-li další binární operace $y→z$ taková, že $x∧y≤z\equiv x≤y→z$.
