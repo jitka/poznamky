@@ -1,0 +1,95 @@
+\subsection{Průnik dvou matroidů}
+
+Máme $(X,S₁)$ a $(X,S₂)$. Jejich průnik, $(X, S₁∩S₂)$ ale není matroid.
+\TODO{Dokázat}
+
+Ale dá se v tom poznat maximální množina co do velikosti (ne do inkluze).
+
+\begin{Statement}[Průnik matroidů]\label{PruM}
+Máme matroidy $(X,S₁), (X, S₂)$. Potom:
+
+$$
+\max_{J∈S₁∩S₂}\len{J} = \min_A@⊂X r₁(A) + r₂(X - A)
+$$
+\end{Statement}
+
+\begin{Note}
+Toto dává dobrou charakterizaci pro úlohu „Existuje $J$ velké alespoň $k$?“.
+To znamená, že mám certifikát jak pro odpověď „ano“ (dá mi $J$), ale i pro „ne“ ‒ dostanu nějaké dostatečně malé $A$.
+\end{Note}
+
+\begin{Proof}
+Napřed dokážeme, že $\max≤\min$. Vezmeme $J$, která je nezávislá.
+Nechť $J∈S₁∩S₂, A@⊂X→→J∩A∈S₁∧J∩(X-A)∈S₂$. Tedy $\len{J}≤r₁(A)+r₂(X-A)∀A@⊂X$.
+
+\TODO{Opačná nerovnost}
+\end{Proof}
+
+\begin{Statement}[Obraz matroidu]\label{ObrM}
+Obraz matroidu je matroid, tedy:
+$(X,S)$ je matroid a $f:X→X'$ je funkce.
+Definujeme $S':= @{f(I);I@⊂X, I∈S@}$.
+Potom $(X',S')$ je matroid a $r'(U)=\min_{T@⊂U}@{\len{U-T}+r(f^{-1}(T))@}$.
+\end{Statement}
+
+\begin{Proof}
+Vezmeme $S$ jako $S₁$, množinky všech, které $f$ sloučí do jednoho a označíme $S₂$ a nacpeme do věty \ref{PruM}.
+\end{Proof}
+
+\begin{Follows}[Sjednocení matroidů]
+Pokud $(X,S₁), (X,S₂)$ jsou matroidy, potom $@{Y@⊂X;∃Z@⊂Y,Z∈S₁,Y-Z∈S₂@}$ je matroid na $X$
+a $r(U):= \min_{T@⊂U}@{\len{U-T}+r₁(T)+r₂(T)@}$.
+\end{Follows}
+
+\begin{Proof}
+Nechť $X₁:=X\times @{1@}, X₂:=X\times@{2@}$.
+Vezmeme matroidy $\overline{M₁}:=@(X₁,S₁@), \overline{M₂}:=(X₂,S₂)$.
+Jejich sjednocení $\overline{M₁}\oplus\overline{M₂}$ je také matroid (dle \ref{SumM}).
+Potom vezmu funkci $f$, která zahazuje druhou složku a dle věty \ref{ObrM} je to také matroid.
+\end{Proof}
+
+\begin{Follows}
+$M=(X,S)$ matroid. Potom:
+$$\max@{\len{\∪_{I, \len{I}=k}}@} = \min_{I@⊂X}@{\len{X-T}+k·r(T)@}$$
+\end{Follows}
+
+\begin{Follows}
+$X$ je sjednocení $k$ nezávislých množin $←→∀U@⊂X;k·r(U)≥\len{U}$.
+\end{Follows}
+
+\begin{Follows}
+$M$ má $k$ disjunktních bazí $←→∀U@⊂Xk·(r(x)-r(U))≤\len{X-U}$.
+\end{Follows}
+
+\begin{Note}
+Toto se používá na vektorové matroidy.
+\end{Note}
+
+\subsection{Hladový algoritmus}
+Máme množinový systém $(X,S), S@⊂2^X$ a máme váhovou funkci $w:X→ℝ$.
+Uvažme diskrétní optimalizační problém „najdi $A@∈S$ takové, že $w(A)$ je maximální.
+
+\begin{Algorithm}[Hladový]
+\label{GreedyAlg}
+Nechť $X=@{1,2,…,n@}$ a označme $w_i := w(i)$.
+Uspořádáme prvky tak, že $w₁≥w₂≥w₃…w_n$.
+
+Vezmi množinu $J≠∅$. Potom pro $i:=1,…,n$ pokud $J∪@{i@}∈S∧w_i ≥0$, potom do $J$ přidej $i$.
+\end{Algorithm}
+
+\begin{Statement}
+Nechť $(X,S)$ je dědičný neprázdný systém.
+Potom algoritmus \ref{GreedyAlg} správně řeší diskrétní optimalizační systém pro každou $w:X→ℝ←→(X,S)$ je matroid.
+\end{Statement}
+
+\begin{Proof}
+Pokud $(X,S)$ není matroid. Potom máme dvě množiny maximální do inkluze, které nemají stejnou velikost.
+Pokud vezmu $w(*):=1$, potom mi může nabrat celou tu menší množinu a neumět ji zvětšit.
+
+Drobné pozorování: všechny $w$ ve výsledku jsou $≥0$.
+To, že si neublížím přidáním je jasné z dědičnosti a stejné velikosti maximální množiny co do inkluze.
+\end{Proof}
+
+\begin{Note}
+Hladový algoritmus řeší i následující úlohu: „najdi $\max_{A@⊂X} w_i·z_i;\Σz_i≤r(A),z_i≥0$“.
+\end{Note}

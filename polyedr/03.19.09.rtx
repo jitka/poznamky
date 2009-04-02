@@ -84,7 +84,7 @@ Příklady: Fannův matroid (fannova rovina), uniformní matroid $(X, \combnum{X
 \subsubsection{Zkrácení}
 Mám $k∈ℕ, (X,S)→(X,@{A∈S;\len{A}≤k@})$.
 
-\subsubsection{Součet}
+\subsubsection{Součet}\label{SumM}
 Máme dvě množiny $X₁,X₂, X₁∩X₂=∅$, matroidy $S₁,S₂$.
 Součet je $(X₁∪X₂,@{A@⊂S₁∪S₂;A∩X₁@∈S₁∧A∩X₂∈S₂@})$.
 
