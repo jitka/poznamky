@@ -1,0 +1,119 @@
+\section{Softheap}
+
+Je to halda, která může podvádět. Občas smí některý prvek změnit.
+Na to má ale omezení:
+→•
+ • Hodnotu prvku smí jen zvětšit, nikoliv zmenšit. Při výstupu se dá určit, jestli byl poškozen a kolik byl původně (ale prostě prohazuje pořadí).
+ • Má parametr $ε$ někde mezi $0$ a $0.5$ a zaručuje, že bude poškozených zároveň max.
+   $ε·n$ prvků (ale $n$ je počet prvků, které tam byly kdy vloženy, ne kolik jich je tam teď.
+←•
+
+Každá operace poběží v amortizovaném čase $O(\log\inv{ε})$.
+
+Operace:
+→•
+ • Insert
+ • Delete-Min
+ • Merge
+ • Explode ($O(n)$) ‒ vybere všechno z haldy a řekne, které byly poničené
+←•
+
+\subsection{Aplikace}
+
+\begin{Algorithm}[$k$-tý nejmenší]
+Vytvořím softheap s $ε=\inv{3}$. Nacpu všechno, vyberu třetinu prvků.
+Poslední, který vytáhnu (jeho poničenou hodnotu) označím $x$.
+To je $≥$ všem předchoze vytaženým původním hodnotám.
+Stejně tak je $≤$ alespoň třetině prvků (max $\inv{3}$ jich je poničených).
+To se zvládne v lineárním čase.
+
+Použijeme $x$ jako pivota a zjistíme, kolik jich je možné vyhodit. Vyhodí se alespoň $\inv{3}$ prvků, zrekurzením dojdeme k výsledku v lineárním čase.
+\end{Algorithm}
+
+\subsection{Softtree}
+
+Binární strom (nemusí být úplný), každý vrchol má obousměrný spoják prvků, které bydlí v tomto vrcholu.
+V klidovém stavu jsou seznamy v levých synech prázdné.
+
+Vrcholy jsou černé a bílé, bílé jsou leví.
+
+Další hodnota je řídící klíč vrcholu. To je první prvek seznamu, pokud je neprázdný. Pokud je prázdný, tak je buď $∞$, nebo zůstane nastavený z doby, kdy byl nastavený.
+
+Má haldové uspořádání podle těchto klíčů.
+
+Dále je $rank(v)$, který splňuje, že listy mají $0$, otec má větší, než oba synové.
+
+Ranky obou synů budou stejné.
+
+Ve stromu ranku $k$ má levá cesta minimálně $\frac{k}{2}$ vrcholů.
+
+Každý vnitřní vrchol má právě dva syny.
+
+Strom je \name{úplný}, právě když rozdíly ranků je $1$.
+
+\begin{Observation}
+Každý strom lze vnořit do nějakého úplného se stejným rankem v kořeni.
+\end{Observation}
+
+Rank stromu bude rank jeho kořene.
+Obdobně s klíčem.
+
+\begin{Observation}
+Úplný strom ranku $k$ má $2^{k+1}-1$ vrcholů, z čehož $2^k$ je černých.
+\end{Observation}
+
+\subsubsection{Operace se stromy}
+
+→•
+ • \textbf{Merge} ‒ dostane dva stromy se stejným rankem a vytvoří jeden strom, jehož rank bude o $1$ větší.
+   Seznam z kořene jednoho stromu přesune do kořene nového, druhý jen zavěsí (ten s menším klíčem).
+   Klíč novému bílému necháme stejný.
+ • \textbf{Dismantle} ‒ pokud z kořene vyžereme všechny prvky, není potřeba. Proto zruší levou (zcela prázdnou) cestu.
+   Vznikne $≤k$ stromů různých ranků.
+←•
+
+\subsection{Struktura haldy}
+
+Halda obsahuje obousměrný spoják, ve kterém jsou zapojené stromy v pořadí ostře rostoucích ranků.
+Z toho plyne, že nejsou dva stromy stejného ranku. Nejmenší je hlava, největší ocas.
+
+Dále si pamatuji suffixová minima klíčů. Tedy, každý si pamatuje nejmenšího z následníků.
+
+Nakonec máme ještě nějaký parametr $r$, sudé celé číslo, závisí na $ε$.
+
+Rank haldy je rank ocasu, klíč haldy také.
+
+\subsection{Operace}
+
+\subsubsection{Merge}
+
+Smím slévat jen, pokud mám stejné $r$.
+
+Slévání stromů udělám podobně jako u sčítání binárních čísel, procházením od nejmenších a slučování, pokud jsou stejné.
+Přepočítání sufixových minim zvládnu průchodem zpátky odtamtud, kde jsem skončil.
+
+\subsubsection{Insert}
+
+Vyrobí se jednoprvková halda a mergne se.
+
+\subsubsection{DeleteMin}
+
+Najde strom s minimálním klíčem a z kořene od konce prvek odebere.
+
+Pokud se vyprázdnil, zavoláme naplnění.
+Ještě předtím zkontroluji invariant, že je strom dost hluboký.
+
+Nakonec se přepočítají minima. Přepočítává se doleva od tohoto vrcholu.
+Na toto potřebuji, aby platil invariant o hloubce stromu.
+
+Pokud invariant neplatil, udělám dismantle a mergnu to do haldy. Napřed potřebuji ještě přepočítat sufixová minima.
+
+\subsubsection{Refill}
+
+Funguje rekurzivně na levých synech. Tam je taky prázdno, nechám ho sehnat data. Mám data v obou. Vyberu menší, vezmu si ho a zařídím, aby bylo nalevo prázdno.
+
+Pokud nedostanu data, tak klíč je nekonečno. Taková větev je možná smazat. Tom můžu vymazat sebe a na své místo dát pravého.
+
+V dolních patrech (nižších než $r$) už nic neslévám. V těch vyšších, pokud $rank(v)>r$ a $rank(v)$ lichý nebo $rank(v)>rank(p)+1$, pak zavolám ještě jeden refill na levém a spojím si seznamy, klíč vezmu ten větší.
+
+Nakonec, pokud nejsou žádná data, pak promazávám.
