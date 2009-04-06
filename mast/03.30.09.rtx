@@ -10,6 +10,7 @@ Potom existuje prvoideál $\overline{F}$ takové, že $F@⊂\overline{F}∧\over
 \end{Lemma}
 
 \begin{Statement}[Birkhoffova]
+\label{birk}
 Nechť $F$ je filtr a $J$ ideál v distributivním svazu, $F∩J=∅$.
 Potom existuje prvofiltr $\overline{F}\supseteq F$ a prvoideál $\overline{J}\supseteq J$ nakové, že $\overline{F}∩\overline{J}=∅$
 \end{Statement}

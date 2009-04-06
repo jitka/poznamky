@@ -1,0 +1,50 @@
+\begin{Statement}
+V Booleově algebře $L$ jsou o vlastním filtru $F@⊂L$ následující tvrzení ekvivalentní.
+
+→•
+ • $F$ je prvofiltr
+ • $F$ je maximální filtr
+ • $∀a∈L$ je buď $a∈F$ nebo $\overline{a}∈F$
+←•
+\end{Statement}
+
+\begin{Proof}
+První a druhé je ekvivalentní z věty \ref{birk}.
+
+$a∨\overline{a} = 1 ∈ F$, proto tam musí být alespoň jedno z toho. Tedy, z první plyne třetí.
+
+Nechť nyní platí třetí, ale není maximální, tedy $F⊂G≠L$.
+Tedy v $G$ je nějaké $a$ i $\overline{a}$.
+\end{Proof}
+
+\section{Algebry}
+
+Mají nějaké $n$-ární operace, pro libovolné $n$, $n$ může být i nekonečné, počet operací také.
+
+\subsection{Homomorfizmus}
+
+Homomorfizmus pro operaci to je, když:
+
+$$
+h(ω(x₁,x₂,…,x_n))=ω'(h(x₁),h(x₂),…,h(x_n))
+$$
+
+nebo, jinak zapsáno:
+
+$$
+∀ξ:A→X;h(α(ξ))=β(h·ξ)
+$$
+
+Pokud je to na algebře, tak to platí pro každou operaci.
+
+\begin{Statement}
+Buď $α,β,γ$ $A$-nární operace po řadě na $X,Y,Z$.
+Buď $f:(X,α)→(Y,β)$ prostý homomorfizmus, $g:(Z,γ)→(Y,β)$ libovolný homomorfizmus a $h:Z→X$ takové, že $f\circ h=g$.
+Potom $h$ je homomorfizmus.
+\end{Statement}
+
+\begin{Proof}
+$$
+f(h(γξ))=g(γ(ξ))=β(g\circ ξ) = β(f\circ h\circ ξ) = f(β(h\circ ξ))
+$$
+\end{Proof}
