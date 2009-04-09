@@ -1,0 +1,66 @@
+\section{Lineární programování}
+
+Máme minimalizovat hodnotu $a₁x₁+a₂x₂+…$ za podmínek $b_{1,1}x₁+…≥z₁$, etc.,
+potom existuje ještě duální, maximalizovat „vynásobení podmínek“ tak, aby byl
+odhad z druhé strany co nejlepší.
+
+\begin{Observation}[Slabá věta o duaalitě]
+Pro každé přípustné řešéní $x$ primární úlohy a $y$ její duální úlohy platí, že
+$g(y)≤f(x)$.
+\end{Observation}
+
+\begin{Follows}
+Když mám stejné, tak už to musí být optimum.
+\end{Follows}
+
+\begin{Observation}
+Nechť $A$ je matice $ℝ^{m\times n}$, $b∈ℝ^n$.
+Potom soustava $Ax=b$ má řešení $←→\not∃$ řešení pro $y^tA=0∧y^tb=-1$.
+\end{Observation}
+
+\begin{Proof}
+Plyne z toho, jak funguje gaussova eliminace. Pokud na jedné straně dostanu $0$ a na druhé $-1$, tak to nemá řešení.
+Pokud ho nedostanu, tak vyeliminuju.
+\end{Proof}
+
+\subsection{Fourier-Motzkinova eliminace}
+\label{FourMotz}
+
+\subsubsection{Značení}
+→•
+ • $x=@(x₁,x₂,…,x_n@)$
+ • $x'=@(x₂,x₃,…,x_n@)$
+ • $a_i$ je $i$-tý řádek matice $A$.
+ • $a_i'$ je $i$-tý řádek matice $A$ bez první složky.
+←•
+
+Předpokládejme, že máme $3$ typy nerovností:
+→•
+ • $x₁+a_i'x'≤b_i$
+ • $-x₁+a_j'x'≤bj$
+ • $a_k'x'≤b_k$
+←•
+
+\begin{Observation}
+Úloha má řešení $←→$, když má řešení systém, který dostaneme posčítáním všech dvojic nerovností z první a druhé skupiny. Třetí se jen přidá.
+\end{Observation}
+
+\begin{Proof}
+Doprava je zřejmé.
+
+Opačně potřebuju získat jen $x₁$, zbytek mám spočítané. Máme omezení pro oba směry, ale musí vyjít (jinak by nebyla splněná podmínka pro $x'$), tak vezmu cokoliv z tohoto rozsahu.
+\end{Proof}
+
+\begin{Statement}[Farkašovo lemma]
+Systém $Ax≤b$ má řešení $←→\not∃$ nezáporný vektor $y∈ℝ^{n}_+$, takový, že $y^TA=0$ a $y^Tb<b$.
+\end{Statement}
+
+\begin{Proof}
+Předpokládejme, že má řešení a máme i takový vektor. Pak ale $0=y^T(Ax)≤y^Tb<0$, to je spor.
+
+Doleva indukcí podle počtu sloupců, nepřímo ‒ nemá řešení, tak najdu vektor, vezmu z \ref{FourMotz}
+\end{Proof}
+
+\begin{Statement}[O silné dualitě]
+Řešení obou úloh je stejně velké, pokud mají obě alespoň jedno řešení.
+\end{Statement}
