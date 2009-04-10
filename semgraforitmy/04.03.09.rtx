@@ -108,7 +108,7 @@ Na toto potřebuji, aby platil invariant o hloubce stromu.
 
 Pokud invariant neplatil, udělám dismantle a mergnu to do haldy. Napřed potřebuji ještě přepočítat sufixová minima.
 
-\subsubsection{Refill}
+\subsubsection{Refill}\label{refill}
 
 Funguje rekurzivně na levých synech. Tam je taky prázdno, nechám ho sehnat data. Mám data v obou. Vyberu menší, vezmu si ho a zařídím, aby bylo nalevo prázdno.
 

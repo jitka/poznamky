@@ -1,0 +1,100 @@
+\subsection{Analýza}
+
+Děláme odhad k $r$, což je parametr přesnosti a $n$, což je celkový počet insertů.
+
+\begin{Lemma}
+$∀v\len{list(v)}≤\max(1,2^{\lceil\frac{rank(v)}{2}\rceil-\frac{r}{2}})$
+\end{Lemma}
+
+\begin{Proof}
+Jediné, co dělá nepříjemnosti, je refill (\ref{refill}).
+Buď přesouvá do vrcholu s větším rankem, což je v pořádku, ale někdy volá dvakrát.
+V takovém případě je tam mezera alespoň $2$, tedy se exponent zvětší max. o $1$, tedy zdvojnásobí.
+\end{Proof}
+
+Nyní chceme odhadnout celkovou délku seznamů v horních hladinách (tam, kde můžou být delší, než $1$).
+Ale neznáme přesné tvary stromů, proto je vnoříme do úplných.
+
+\begin{Lemma}
+Úplné stromy ke všem stromům v haldě obsahují nejvýše $n$ černých vrcholů.
+\end{Lemma}
+
+\begin{Proof}
+Merge a insert jsou v pohodě.
+
+Delete v pohodě, jediné, co něco dělá, je refill, ale on může jen černé vrcholy mazat.
+\end{Proof}
+
+\begin{Lemma}
+Úplný strom ranku $k$ obsahuje nejvýše $2^{k-r+2}$ poškozených prvků.
+\end{Lemma}
+
+\begin{Proof}
+Počet vrcholů ranku $i$ = $2^k-i$.
+
+\begin{eqnarray*}
+\Σ_{v,\len{list(v)}>1}\len{list(v)}&≤&\Σ_{i=r+1}^k2^{k-1}·2^{\lceil\frac{i}{2}\rceil-\frac{r}{2}} \\
+&=& 2^{k-\frac{r}{2}+\inv{2a}}·\Σ_{i=r+1}^k2^{-\inv{2}}\\
+&≤&2^{k-\frac{r}{2}+\inv{2}-\frac{r+1}{2}}·\Σ_{i≥0}2^{-\frac{i}{2}} \\
+&≤&2^{k-r}·4
+\end{eqnarray*}
+\end{Proof}
+
+\begin{Follows}
+Úplný strom má $2^k$ černých vrcholů, tedy počet poškozených je $≤2^{2-r}$ černých.
+
+Celkem tedy přes všechny počet poškozených $≤n·2^{2-r}$.
+\end{Follows}
+
+\subsection{Nastavení $r$}
+
+\begin{eqnarray*}
+ε&≥&2^{2-r}\\
+\log ε&≥&2-r\\
+-\log ε&≤&r-2\\
+r&≥&2+\log\inv{ε}
+\end{eqnarray*}
+
+Dále jsme ho chtěli sudé.
+
+\subsubsection{Časová složitost}
+Napřed počítáme s tím, že insert stojí amortizovaně $O(r)$.
+
+Zbytek se vždy nějak naúčtuje.
+
+Napřed vezmeme \textbf{merge}.
+Ten jednak slévá, vyřizuje přenosy a nakonec počítá suffixová minima.
+Explicitní (např. při inzertu) bude trvat $O(1)$, indukovaný (z dismantle) $O(rank(T))$.
+U přenosu ubývají stromy, tedy se naúčtuje buď insertu nebo dismantlu.
+Slévání stojí $O(\min(rank(T₁), rank(T₂)))$.
+Kdyby všechny merge byly explicitní, tak si sestrojíme les mergů. Vždy se dvě haldy sloučí dohromady, slučují z jednoprvkových hald.
+Poprohazujeme syny tak, aby pravý měl menší rank. Tedy to stojí rank pravého syna, který je rovna jeho hloubce.
+Rozložíme přes všechny syny. Počet pravých synů s rankem $k≤\frac{n}{2^k}$.
+Na pravých hranách se liší alespoň o $1$, na levých se hnout nemusí.
+
+Když mám víc vrcholů stejného ranku, tak ho zkomprimuji do jediného. Tímto způsobem už to určitě platí.
+Naúčtováno je $\Σ\frac{n}{2^i}·i=n·\Σ\frac{i}{2^i}=2·n$.
+
+Celková cena všech neindukovaných mergů je $O(n)$.
+
+Nyní vrátíme indukované merge.
+Ale v tomto lese je nebudeme mít.
+Tím někdy může snížit ranky „nahoře“, ale to jen pomůže.
+Sami sebe zaplatí.
+
+Refill v té přesné části stráví nejvíce $O(r)$. V horní části to celkově vyjde $O(n)$ na celou dobu.
+Při návštěvě vrcholu můžeme mazat (ale každý vrchol max. $1\times$), někdy rekurze $2\times$, někdy $1\times$.
+Slévám při tom seznamy, ale ty se rozeberou až nahoře. Slití dohromady je $O(n)$, neb strom slévání je binární.
+Když rekurzíme jen jednou, tak je jen jeden nad sebou.
+
+Delete vyndává prvky ze seznamu, ale to je nezajímavé.
+Dále kontroluje invariant. Pokud platí, tak potom tam projde ještě refill, takže to nevadí.
+Neúspěšná se naúčtuje dismantlu.
+
+Když došlo k dismantlu, tak má moc krátkou levou cestu.
+V horní polovině cesty alespoň jeden rank chybí (je jich tam moc málo).
+Tedy chybí strom ranku alespoň $\frac{k}{2}$.
+Tedy chybí dostatek prvků.
+Sice jsem mohl naúčtovat jednomu prvku více dismanlů, ale jen pro různé ranky, tedy to celkem vyjde jen $O(n)$.
+
+Přepočítání suffixů je jen po cestě sem, s tím ale pomůže rankový invariant.
