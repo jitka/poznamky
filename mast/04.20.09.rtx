@@ -1,0 +1,16 @@
+
+\subsection{Součin algeber}
+
+Máme algebry $(X_i,+_i)$. V součinu $\ΠX_i$ uděláme sčítání $(x₁,…,x_n)+(y₁,…,y_n)=(x₁+y₁, …, x_n+y_n)$.
+Tedy po složkách.
+
+\begin{Statement}
+Buď $A$ netriviální třída algeber nějakého finitárního typu.
+Buď $A$ uzavřená na produkty a podobjekty.
+
+Potom v $A$ existuje nad každou množinou volná algebra.
+\end{Statement}
+
+\begin{Proof}
+Vezměme $M$ a vezměme množinu $B@⊂A$ takovou, že v ní existuje isomorfní algebra pro každou $X∈A$ generovaná nejvýše $\len{M}$ prvky.
+\end{Proof}
