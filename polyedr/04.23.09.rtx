@@ -1,0 +1,54 @@
+
+\begin{Follows}
+Mnohostěn $P$ má konečně mnoho stěn.
+\end{Follows}
+
+\begin{Statement}
+Nechť $F$ je minimální (ve smyslu inkluze, nic menšího už není stěna) neprázdná stěna mnohostěnu $P := @{x|Ax≤b@}$.
+Potom $F=@{x|A^0x=b^0@}$ pro nějaký podsystém $A^0x≤b^0$ systému $Ax≤b$.
+Navíc $rank(A^0)=rank(A)$.
+\end{Statement}
+
+\begin{Proof}
+$F=@{x∈P|A^0x=b^0@}$ dle \TODO{odkaz na minulou větu, až bude minulá věta existovat}.
+Chceme dokázat, že se můžeme na toto $∈P$ vykašlat.
+
+Vezměme libovolný $\overline{x}∈F$.
+$a_i·\overline{x}≤b_i$ pro některou neobsaženou v $A^0x≤b^0$.
+Nemůže to být ale rovnost, mohl bych ji mít uvnitř $^0$ podmínek.
+
+Pro spor předpokládejme, že $∃y:A^0y=b^0$ a $y∉P$.
+Vybereme nějaký bod mezi $\overline{x}$ a $y$, pro který platí $=$ pro některou nepoužitou podmínku.
+(musí takový existovat, u $\overline{x}$ platí ostře, venku porušuje, někde musí platit rovnost.)
+Při přidání této podmínky do těch $^0$, tak bych získal něco menšího, co je ale také stěna.
+Tedy takové $y$ nemůže existovat.
+
+Dále je potřeba dokázat hodnost. Pokud by byla $rank(A)>rank(A^0)$.
+Potom by nemohlo platit to výše.
+\end{Proof}
+
+$v∈P$ je \name{vrchol}, pokud $@{v@}$ je stěna $P$.
+
+\begin{Observation}
+Má-li $P$ vrchol, pak každá minimální stěna je vrchol.
+\end{Observation}
+
+\begin{Proof}
+Plyne z hodností.
+\end{Proof}
+
+\begin{Statement}
+Nechť $P:=@{x|Ax≤b@}$ a $v∈P$. Pak $v$ je vrchol $P←→v$ nelze napsat jako konvexní kombinaci
+vektorů z $P\backslash@{v@}$.
+\end{Statement}
+
+\begin{Proof}
+Mám $A^0x≤b^0$, tj $@{v@}=@{x|A^0x=b^0@}$.
+Pro spor předpokládejme, že $v=λ₁v₁+λ₂v₂+…+λ_kv_k, λ_i≥0;\Σλ_i=1,v_i∈P$.
+
+Všechny patří dovnitř, tedy $A^0v_i≤b^0$.
+Aby někde nastala nerovnost, tak bych musel někde přesáhnout, aby mi vyšlo celé $v$.
+Tedy, $A^0v_i=b^0$, tedy patří do stejné stěny.
+
+Opačně, mějme něco, co nejde napsat jako konvexní kombinace.
+\end{Proof}
