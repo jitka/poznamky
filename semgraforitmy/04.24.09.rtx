@@ -1,0 +1,85 @@
+\section{Pointer machine}
+
+Pointer machine má nějaké datové buňky, uvnitř je pevně stanovený počet položek na ukazatele a na data.
+
+Dále má konstantní počet registrů na ukazatele a symboly.
+
+Dá se přistupovat v registrech, jednak k hodnotách, na které ukazuji registry.
+
+Umím kopírovat ukazatele a data, funkce na datech, podmíněné skoky.
+
+V základní verzi je symbolů konečně mnoho (mnoho algoritmů porušuje, potřebují čísla). Rozšířená verze umí pracovat i s přirozenými čísly.
+
+Další možnost je porovnávat ukazatele, vznikají stále větší a větší (ukazatel je timestamp).
+
+Funkcionální verze nesmí modifikovat buňky, jen nastavit při vytváření.
+
+\subsection{Simulace}
+
+Pointer Machine lze simulovat na RAM s konstantním zpomalením.
+
+RAM lze simulovat na Ponter Machine lze tak, že si pamatujeme čísla jako spojáky a paměť jako trii.
+Aritmetiku dokážu simulovat lineárně, přístup k paměti s logaritmickým zpomalením.
+
+Šířka slova je nějaké $w$, takže složitost $O(T(n)·\log T(n) · w²)$.
+
+\subsection{Algoritmy}
+
+Některé algoritmy jsou přímo stavěné na pointer machine, např. softheap. Jediné co, potřebuji čísla na ranky.
+Na ně utvořím spoják, první je nula, druhý jedna, etc. Porovnat lze porovnáním pointerů (pokud je máme, jinak lineárně).
+U softheapu si dokonce můžeme dovolit to zaplatit.
+
+\subsection{Přihrádkové třídění}
+
+Čísla nejsou čísla, ale spojáky, tak si každý pamatuje ukazatel, kam patří.
+
+Případně si může každý pamatovat svý ukazatel (např. ve vrcholu).
+
+U grafu bylo např. potřeba normovat dvojice vrcholů, aby $i<j$.
+To nejde udělat konstantně. Ale jde to udělat dávkově pro všechny v lineárním čase, přihrádkovým třídění.
+
+Ne vždy je potřeba třídit, ale jen slučovat k sobě, pak není potřeba udržet je setříděné a stačí mi mít seznam „neprázdných“.
+
+\begin{Statement}
+Posloupnost $n$ $k$-tic nad $A$-prvkovou abecedou lze unifikovat v čase $O(kn)$ po inicializaci v čase $O(A)$
+(Inicializace je vyrobení spojáku klíčů).
+\end{Statement}
+
+\subsubsection{Řetězce}
+
+Roztřídí se napřed podle délek a poté jako $k$-tice.
+
+\begin{Statement}
+Posloupnost řetězců $s₁,…,s_n$ nad $A$-prvkovou abecedou lze unifikovat v čase $O(\Σ_is_i+1)$ po inicializaci v čase $O(A)$.
+\end{Statement}
+
+\subsection{Testování isomorfizmu časů}
+
+Napřed si všimněme, že stačí zakořeněné stromy.
+Potřebuji najít odpovídající kořeny ‒ najdu centrum, což je jeden nebo dva vrcholy.
+Vyzkouším obě možnosti (v nejhorším případě).
+
+Isomorfizmus zakořeněných stromů si zobecníme na les.
+Chceme najít ekvivalence na podstromech.
+
+Vrcholům přiřadíme výšky. Budu je postupně trhat a přiřazovat fázi, kdy jsem je utrhnul.
+
+Vím, že podstromy s různými výškami nejsou isomorfní.
+Ve výšce $≤1$ jsou jen jedna možnost, tedy jsou ekvivalentní a přiřadím jim třídu.
+
+Nechť tedy jsme v nějaké výšce a všechny menší jsou již spočítané.
+Každý si lze reprezentovat jako $d$-tici podstromů.
+Ty lze setřidit a potom zunifikovat.
+
+Všechny unifikace zvládneme lineárně. Celková inicializace je také lineárně, neboť abeceda (třídy ekvivalence) je max. $n$ stromů.
+Trochu problém je setřídit jednotlivé řetězce, podle dvojice hodnota-pozice, poté se znovu postaví.
+
+\subsection{Union-Find}
+
+Jediný problém je s ranky. Lze zařídit na porovnávání ukazatelů.
+
+\section{Cell-probe model}
+Je paměť s $\log n$ velkými slovy.
+Jediné věci, které se počítají do složitosti jsou přístupy do paměti.
+
+Často se používá na dolní odhady časové složitosti.
