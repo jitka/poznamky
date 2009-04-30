@@ -1,0 +1,37 @@
+\begin{Statement}[Mikovského]
+Množina $P@⊂ℝ^n$ je polytop $←→∃$ konečná množina $J$ taková, že $P$ je konvexní obal $J$.
+\end{Statement}
+
+\begin{Proof}
+Vyřešme zvláš, když $P=∅$. Potom je $J=∅$.
+
+Nechť je tedy $P$ neprázdné. Potom má alespoň jeden vrchol.
+Označme tedy $v₁,…,v_k$. Těch je jen konečně mnoho.
+Ten konvexní obal je zřejmě jeho podmnožinou.
+
+Nyní pro spor předpokládejme, že existuje něco, co je v $P$ a není v konvexním obalu.
+Z toho se vykope spor (vezmu nějakou tu nadrovinu, ve které je ten bod, ale ta musí potkat nějaký vrchol).
+
+Nyní máme konečnou množinu $J$ a máme $P$, která je konvexní obal $J$.
+Najdeme systém nerovností, které budou popisovat ten polytop.
+Vymyslíme si ho, zjistíme, že máme množinu bodů (kvůli minulé implikaci) a nakonec dokážeme, že to má ty body správné.
+\end{Proof}
+
+\section{Párování v grafech}
+
+\begin{Statement}[Birkhoff]
+Nechť $G$ je bipartitní graf.
+Potom konvexní obal perfektních párování $G$ je popsán následujícím způsobem:
+Součet „existence“ přes sousední hrany je max. 1, hledáme maximum.
+\end{Statement}
+
+\begin{Proof}
+Problém s celočíselností. Předpokládáme tedy, že existuje neceločíselný vrchol v $P$.
+Vezmeme hrany, které se neceločíselně podílejí na tomto vrcholu.
+
+V těchto je alespoň jeden cyklus.
+Délky těchto cyklů jsou sudé (jsme v bipartitním grafu).
+Když budeme některé (třeba liché) zmenšovat, druhé zvětšovat, tak to lze dělat tak, že se pro žádný vrchol součet nezmění.
+Pak to uděláme naopak.
+A původní je lineární kombinace těchto nových, což je spor s tím, že je to vrchol.
+\end{Proof}
