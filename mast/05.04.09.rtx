@@ -1,0 +1,29 @@
+$f:(X,τ)→(Y,ω)$ je spojité, pokud $∀x∀V$ okolí $f(x)∃U$ okolí $z$ tak, že $f(U)@⊂V$.
+
+\begin{Statement}
+Následující tvrzení jsou ekvivalentní:
+↑•
+ • $f$ je prosté
+ • $∀V$ otevřené v $Y$ je $f^{-1}(V)$ otevřená v $X$
+ • $∀A$ uzavřenou v $Y$ je $f^{-1}(A)$ uzavřená v X
+ • $∀A@⊂X$ je $f(\overline{A})@⊂\overline{f(A)}$
+ • $∀B@⊂Y$ je $f^{-1}(B)\supseteq f^{-1}(\overline{B}$
+↓•
+\end{Statement}
+
+\begin{Proof}
+%Tfuj, to je ale množství matematickýho bordelu
+$1)→→2)$: Buď $V$ otevřená v $Y$, $x∈f^{-1}(V)$, kdy $f(x)≤V, ∃U$ okolí $x$, $f(U)@⊂V, x∈U@⊂f^{-1}(V)$.
+
+$2)←→3)$: $f^{-1}$ zachovává doplňky.
+
+$3)→→4)$: $\overline{f@(A@)}$ je uzavřená množina. $f^{-1}@(\overline{f@(A@)}@)$ je také uzavřená množina a $\supseteq f^{-1}@(f@(A@)@) \supseteq A$. $f^{-1}@(\overline{f(A)}@)\supseteq \overline{A}$.
+
+$4)→→5)$: $f@(\overline{f^{-1}@(B@)}@)@⊂\overline{f f^{-1}@(B@)} @⊂ \overline{B} @⊂\overline{f^{-1}(B)}@⊂f^{-1}@(\overline{B}@)$
+
+$5)→→1)$: $V$ okolí $f(x)$, $f(x)∉\overline{Y-V}$, $x∉f^{-1}@(\overline{y-V}@)$, $x∉\overline{f^{-1}@(Y-V@)}=\overline{X-f^{-1}(V)}$. $U=f^{-1}(V)$ je okolí $x$, $f(U)@⊂V$.
+\end{Proof}
+
+\begin{Statement}
+$∀$ soustavu $f_j:(Y,ω)→(X_j, τ_j)∃!f(Y,ω)→\Π(X_i,τ_i)$ takové, že $p_if=f_i∀i$.
+\end{Statement}
