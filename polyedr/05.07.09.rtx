@@ -1,0 +1,27 @@
+\begin{Statement}[Polytop poločíselných párování]
+Nechť $G$ je graf a $\overline{x}∈P(G)$. Pak $\overline{x}$ je vrchol,
+$∀e∈E:\overline{x}_e∈@{0;1;0.5@}$ a hrany s $\overline{x}_e=0.5$ tvoří vrcholově disjunktní liché cykly.
+\end{Statement}
+
+\begin{Proof}
+Máme $\overline{x}$ splňující podmínky.
+Definujme vrchol $w$, $w_e = -1$ pro $x_e=0$ a $\overline{w}_e = 0$ pro $\overline{x}_e>0$.
+Pak $@{\overline{x}@}=P(G)∩@{x|w^Tx=0@}$. Že tam je je jasné, sám je tam proto, že nuly musí mít na stejném místě, poloviny tvoří liché cykly a na snížení jedničky bych si musel někde jinde půjčit.
+
+Tato podmínka je tečná nadrovina, tedy je to vrchol.
+
+Mějme všechny tyto vektory, dokážeme, že $P$ je konvexní obal tohoto.
+Sestrojíme $G'=@(V',E'@), V'=V\times@{0,1@}$ a hrany spojím „mezi vrstvami“.
+Tento graf je bipartitní.
+Definujeme $w'$ pro graf $G'$, tedy ten původní rozkopírujeme.
+\end{Proof}
+
+\begin{Statement}[O polytopu perfektních párování]
+Pro každý graf $G=(V,E)$ platí, že konvexní obal perfektních párování je roven polytopu $PM(G)$, kde $PN(G)=@{x∈ℝ^\len{E}|x(δ(v))=1 ∀v∈V; x(δ(S))≥1 ∀S@⊂V,\len{S}=2k+1, …@}$.
+\end{Statement}
+
+\begin{Proof}
+Indukcí dle velikosti grafu.
+
+Pokud tam jsou liché cykly/části s $x(δ(S))=1$, tak vždy rozdělíme a vezmeme grafy, kde je zkontrahovaná lichá část a zkontrahovaný zbytek (povolené násobné hrany).
+\end{Proof}
