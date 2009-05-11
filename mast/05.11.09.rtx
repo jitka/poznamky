@@ -1,0 +1,57 @@
+\begin{Lemma}[Alexandrovo]
+Nechť v $X$ existuje subbáze $S$ taková, že každé pokrytí prvky $S$ obsahuje konečné podpokrytí.
+Potom $X$ je kompaktní.
+\end{Lemma}
+
+\begin{Proof}
+$τ$ je topologie $X$.
+Sporem, tedy, nechť $X$ není kompaktní.
+Potom existuje nějaké pokrytí, z něhož nejde vybrat konečné (nazveme ho \name{ošklivé}).
+Existuje maximální ošklivé pokrytí (to dokážu Zornovým lemmatem (\ref{Zorn}) ‒ sjednocení ošklivých je zase ošklivé).
+Označme $\mathcal{A}$ nějaké ošklivé maximální pokrytí.
+Při přidání libovolného prvku přestane být ošklivé.
+$u∉\mathcal{A}←→∃V₁,…,V_n∈\mathcal{A};U∪V₁…V_n=X$.
+
+Nechť $\mathcal{B}=τ-\mathcal{A}$. Vlastnosti:
+→•
+ • $U∈\mathcal{B},U@⊂V→→V∈\mathcal{B}$
+ • $U₁,U₂∈\mathcal{B}→→U₁∩U₂∈\mathcal{B}$
+←•
+
+$x∈X,∃U∈\mathcal{A},x∈u,∃S₁,…,S_n∈S,x∈\∩S_i@⊂U$. Tedy $\∩S_i ∉\mathcal{B}$ tedy nějaké $S_k∈\mathcal{A}$, tedy $S∩\mathcal{A}$ je pokrytí.
+To je ale konečné, a tedy spor.
+\end{Proof}
+
+\begin{Statement}
+Libovolný součin kompaktních prostorů je kompaktní.
+\end{Statement}
+
+\begin{Proof}
+Vezmeme subbázi $S=@{p^{-1}_i(U)|U∈τ_i@}$.
+$U@⊂S$ pokrytí. $U_i:=@{U∈τ_i|p^{-i}_i(U)∈U@}$.
+
+Některé $U_i$ pokrývá $X_i$. Jinak $x_i∉\∩U_i, x=(x_i)$, ten nebyl pokrytý.
+\end{Proof}
+
+Tato věta je ekvivalentní s axiomem výběru.
+
+Pokud považuju průniky za násobení, tak se některé množiny chovají jako prvočísla. Například $X-\overline{@{x@}}$.
+
+Prostor je \name{střízlivý}, pokud žádná jiná prvočísla neexistují.
+
+Prostor $X$ je nesouvislý, jestliže existuje nějaká množina, která je otevřená a uzavřená zároveň, kromě úplné a prázdné.
+
+Buď $f:X→Y$ spojitý a $X$ souvislý. Potom $f(X)$ je souvislý.
+
+\begin{Proof}
+Nechť $f(X)=U₁∪U₂$ jsou disjunktní, neprázdné a obě uzavřené.
+Vezmu vzory, o nich to musí platit také. Spros se souvislostí $X$.
+\end{Proof}
+
+\begin{Statement}
+Nechť $X=\∪X_i$, $X_i$ souvislé, $\∩X_i≠∅$. Potom $X$ je souvislý.
+\end{Statement}
+
+\begin{Proof}
+Nechť $X=U∪V$, $U,V$ jsou otevřené. Zvolme $x₀∈\∩X_i$ a definujme $U_i=X_i∩U, V_i=X_i∩V$. $x₀∈U$, vždy $V_i=∅$, tedy $V=∅$.
+\end{Proof}

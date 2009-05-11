@@ -1,4 +1,4 @@
-\begin{Statement}[Zornovo lemma]
+\begin{Statement}[Zornovo lemma]\label{Zorn}
 Buď $(X,≤)$ uspořádaná množina taková, že $∀C@⊂X$ uspořádané lineárně a existuje pro něj horní mez.
 Potom $∀x∈X$ existuje $m$ maximální v $@(X,≤@)$ takové, že $x≤m$.
 \end{Statement}
