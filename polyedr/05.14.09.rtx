@@ -1,0 +1,78 @@
+Vektory jsou \name{afinně nezávislé}, pokud soustava $\Σλ_iv_i=0$ a $\Σλ_i=0$ má právě jedno řešení.
+
+\name{Dimenze} množiny $K@⊂ℝ^n$ je o jedna méně než maximální velikost afinně nezávislé podmnožiny $X$
+
+Řekneme, že mnohostěn $P@⊂ℝ^n$ je \name{plné dimenze}, pokud $dim(P)=n$.
+
+Řekneme $a_ix≤b_i$ ze systému nerovností $Ax≤b$ je \name{implikovaná rovnost}, pokud $a_ix=b_i∀x,Ax≤b$.
+
+\begin{Tvrz}
+Nechť $P@⊂ℝ^n$ je mnohostěn a nechť $\overline{A}x=\overline{b}$ je systém implikovaných rovností z $Ax≤b$.
+Potom $dim(P)=n-rank(\overline{A})$.
+\end{Tvrz}
+
+\begin{Proof}
+Pokud je $\overline{A}$ prázdné, pak vezmeme $v:=\Σ\inv{\len{A}}·v_i$. Ten je někde „uvnitř“ ‒ není na žádné hranici.
+Vezmu tedy dalších $n$ vektorů do všech směrů od něj a máme $n+1$ afinně nezávislých vektorů.
+
+Dále je vždy nějakou proměnnou vyjádřit z implikované rovnosti a tedy se jí zbavit a posunout se do prostoru o dimenzi o $1$ menší.
+Takto se zbavím všech.
+\end{Proof}
+
+\name{Faseta} mnohostěnu $P$ je maximální vlastní stěna $P$.
+
+\begin{Tvrz}
+Nechť $F$ je neprázdná vlastní stěna $P = @{x∈ℝ^n|Ax≤b@}$.
+Potom $F$ je faseta $←→dim(F)=dim(P)-1$.
+\end{Tvrz}
+
+\begin{Proof}
+Máme neprázdnou vlastní stěnu a $dim(F)=dim(P)-1$.
+$F=@{x∈P|A₀x=b₀@}$ pro vhodný podsystém $Ax≤b$.
+$A₀x=b₀$ má $rank=1$. Je to neprázdné, tedy tam jsou jen ty samé rovnosti (až na násobky).
+$F$ je tedy maximální.
+
+Nyní máme neprázdnou vlastní stěnu a je maximální.
+$F$ je stěna, tedy $F=@{x∈P|A₀x=b₀@}$.
+Protože $F$ je maximální stěna, $A₀x=b₀$ je jediná rovnost (mohly by tam být implikované, ale ty jsou nezajímavé).
+Proto je dimenze o jedna menší, než $P$.
+\end{Proof}
+
+Řekneme, že nerovnost $w^Tx≤t$ \name{indukuje fasetu} $F$ mnohostěnu $P$, pokud $F=@{x∈Y|w^Tx=t@}$.
+
+Řekneme, že systém nerovností (nebo rovností) $Ax≤b$ je \name{minimální}, pokud žádnou podmínku nemůžeme vynechat, aniž by se zvětšila množina řešení a žádnou nerovnost nelze přepsat na rovnost, aniž by se zmenšila množina řešení.
+
+\begin{Statement}
+Nechť $P=@{x∈ℝ^n,A'x=b',A''x≤b''@}$ je mnohostěn a nechť je neprázdný.
+Definující systém je minimální $←→$ řádky $A'$ jsou lineárně nezávislé a každá podmínka $a_i''x≤b_i''$ z $A''x≤b''$ indukuje jinou fasetu $P$.
+\end{Statement}
+
+\begin{Proof}
+Máme minimální systém.
+Pokud by byly lineárně závislé, můžeme jeden vyhodit.
+Označme $\overline{A}''x≤\overline{b}''$ podsystém $A''x≤b''$ odebráním $a_i''x≤b_i''$.
+Protože výchozí systém byl minimální, tak existuje vektor, který splňuje vše zbylé, ale nesplňuje odebranou.
+Dále vezmeme bod striktně uvnitř a vezmeme lineární kombinaci těchto dvou bodů takový, že splňuje odebranou podmínku s rovností. Ten ale splňuje ty ostatní s nerovností (ostrou).
+
+\MPOST{ilust}
+draw (0,0)--(0,20)--(20,40)--(40,40);
+draw (-20, 0)--(40,60) dashed evenly;
+pickup pencircle scaled 2;
+draw (10, 30);
+draw (6, 34);
+draw (14, 26);
+\ENDMPOST{body u stěny}
+
+Tedy, musí ležet v některé fasetě.
+
+Opačně, tedy $A'$ jsou lineárně nezávislé a nerovnosti indukují každá jinou fasetu.
+Nahradíme některou rovností. V tu chvíli by klesla dimenze.
+Pokud vynecháme rovnost, pak vzroste dimenze $P$.
+Vynechání nerovnosti $a_i''x≤b_i''$. Označíme $F$ stěnu indukovanou touto nerovností. Toto je faseta.
+Existuje $x₁$, které splňuje všechny rovnosti a splňuje tuto nerovnost neostře a ostatní ostře (tedy, leží v této stěně).
+Potom vezmeme jeden uvnitř a posuneme se o $ε$ ven.
+\end{Proof}
+
+\begin{Follows}
+Mnohostěn plné dimenze má jednoznačný minimální definující systém (až na násobky).
+\end{Follows}
