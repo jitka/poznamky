@@ -78,7 +78,7 @@ Trochu problém je setřídit jednotlivé řetězce, podle dvojice hodnota-pozic
 
 Jediný problém je s ranky. Lze zařídit na porovnávání ukazatelů.
 
-\section{Cell-probe model}
+\subsection{Cell-probe model}
 Je paměť s $\log n$ velkými slovy.
 Jediné věci, které se počítají do složitosti jsou přístupy do paměti.
 
