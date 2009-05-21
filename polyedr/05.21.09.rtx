@@ -1,0 +1,76 @@
+
+Matice $A^{m\times n}$ je \name{unimodulární}, pokud každá čtvercová regulární matice $A$ velikosti $n\times n$
+má determinant $\pm 1$.
+
+Matice $A$ je \name{totálně unimodulární}, pokud každá čtvercová podmatice má determinant $0,\pm 1$.
+
+Předpokládejme, že $A$ je totálně unimodulární.
+Vedle připojíme jednotkovou matici.
+Potom je i tato rozšířená totálně unimodulární, rozvoj podle sloupce.
+Opačná implikace platí také (nemusím z $I$ vůbec vybírat).
+
+\begin{Tvrz}
+Předpokládejme, že $A^{n\times n}$ je celočíselná čtvercová regulární matice.
+Potom $A{^-1}·b$ je celočíselný vektor pro každý celočíselný $b∈ℝ^n←→\det(A)=\pm 1$.
+\end{Tvrz}
+
+\begin{Proof}
+Zprava doleva je to z kramerova pravidla.
+
+Opačně, vezmeme $b$ jako kanonickou bázi, tak dostáváme jednotlivé sloupečky, $A^{-1}$ je celočíselná.
+Proto má determinant $\pm 1$ jak $A$, tak $A^{-1}$.
+\end{Proof}
+
+Mnohostěn $P$ je \name{racionální}, pokud je popsaný racionálním systémem rovností a nerovností.
+
+Mnohostěn $P$ je \name{celočíselný} právě když každá jeho stěna obsahuje celočíselný vektor.
+
+\begin{Statement}
+Nechť $A^{m\times n}$ je celočíselná matice plné řádkové hodnosti (tedy hodnosti $m$).
+Potom mnohostěn $P=@{x∈ℝ^n;Ax=b;x≥0@}$ je celočíselný pro každý celočíselný vektor $b←→A$ je unimodulární.
+\end{Statement}
+
+\begin{Proof}
+Zprava doleva: $A$ je unimodulární a máme celočíselné $b$.
+Máme $\overline{x}$ vrchol $P$. Alespoň jeden musí existovat (např. nulový).
+Tedy, $@{\overline{x}@}=@{x∈ℝ^n;A'b=b',x_i=0∀i∈J@}$ ‒ vyberu takové, aby byly nezávislé, tedy $A'$ je čtvercová.
+
+Sloupce $A$ odpovídající $x_i≠0$ jsou lineárně nezávislé.
+
+Doplňme $B$ na matici $m\times m$ tak, aby byla regulární.
+
+Potom $B\overline{x_B}= b$, kde $\overline{x_B}$ je restrikce $\overline{x}$ na složky odpovídající sloupcům $B$.
+
+Pak i $B^{-1}$ má determinant $\pm 1$ a tedy $\overline{x_B}$ je unimodulární.
+
+Nechť $B$ je regulární podmatice $A$ velikosti $m\times m$.
+Chceme dokázat, že $\det(B)=\pm 1$.
+Dle předešlého tvrzení stačí ověřit, pro každé $∀v$ celočíselné, $B^{-1}·v$ je celočíselné.
+
+Volme $y∈ℤ^n$ tak aby $y+B^{-1}v≥0$.
+Položme $b=B(y+B^{-1}·v)$.
+
+Nechť $z$ označuje vektor vzniklý z $y+B^{-1}·v$ doplněním nulami pro sloupce $A$, které nejsou v $B$.
+Potom $A·z=b$.
+Chceme dokázat, že $z$ je celočíselné.
+$z∈P$, chtěli bychom zjistit, že je to vrchol. Dokážeme z lineární nezávislosti.
+
+Tedy je celočíselný, tedy zpět i $b$ je celočíselné a $B^{-1}·v$ je celočíselné.
+\end{Proof}
+
+\begin{Statement}
+Nechť $A$ je celočíselná matice $m\times n$.
+Potom mnohostěn $P=@{x;Ax≤b,x≥0@}$ je celočíselný pro každé celočíselné b $←→$ $A$ je totálně unimodulární.
+\end{Statement}
+
+\begin{Proof}
+Zavedeme pomocnou proměnnou $z$, matici rozšíříme o $I$ a převedeme to tím na minulou větu.
+\end{Proof}
+
+\begin{Statement}
+Předpokládejme, že $A$ je matice se složkami $0,1,-1$ taková, že každý sloupec obsahuje nejvýše jednu $1$ a nejvýše jednu $-1$.
+\end{Statement}
+
+\begin{Proof}
+Indukce a rozvoj dle sloupce s max jedním nenulovým. Pokud takový není, je singulární.
+\end{Proof}
