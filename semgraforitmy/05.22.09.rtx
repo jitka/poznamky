@@ -1,0 +1,36 @@
+Do mikroproblému zakódujeme nejen strom, ale i jaké se na nich dělají dotazy.
+Tedy, kódujeme hrany původního stromu a dotazové stromy.
+
+Isomorfizmus budeme dělat tak, že procházíme do hloubky, číslujeme vrcholy a u zpětných hran zapisujeme, co bylo na druhém konci (a label).
+Toto je lineární ve velikosti grafu.
+Přesněji, maximálně $n·(n+4)$. Abeceda obsahuje čísla $1…n$, labelů a závorek.
+Abeceda je velká $n+s$. Počet různých kódů je max. $(n+s)^{n·(n+4)}$.
+
+Vstupem bude $\mathcal{C}$ kolekce grafů.
+Postavíme $\mathcal{G}$ kolekci generických grafů.
+Vyřešíme pro generické grafy, získáme $\mathcal{O}$ kolekci generických řešení.
+Pak roztřídíme $\mathcal{C}$ podle kódů a přiřádíme řešením a propojujeme konektory.
+
+Třídění běží dostatečně rychle.
+Vyrobit $\mathcal{G}$ za $O(k+s)^{(k+4)^2}$.
+Spočítat $\len{G}(T(k)+O(k²)$.
+
+To se pro $T$ polynomiální stihne v lineárním čase.
+
+Ověření minimality kostry udělám tak, že si pomocí LCA najdu předchůdce a každou hranu nahradím hranami „nahoru“.
+Potom ještě potřebuji hledat maxima cest.
+Použiji strukturu link-eval (podobná union-findu).
+
+Máme les zakořeněných stromů s ohodnocenými hranami.
+Máme operaci $\ostar$ (to je eval). Link přivěsí strom někam.
+Eval spočítá cestu z $v$ do kořene.
+
+Kdybych v union-findu nedělal path-compression, je to OK.
+Když dělám, ukládám do hran.
+
+S tímhle mám hledání nejtěžší hrany na cestě.
+
+Problém je, že minimalitu kostry nemůžeme prohlásit za topologický problém.
+Použijeme rozhodovací stromy ‒ bude odpovídat ne na dotazy, ale rozhodovacími stromy.
+
+Rozhodovací strom spočítám v $2^{O(k²)}$, po dosazení to ještě vyjde.
