@@ -30,8 +30,8 @@ Takové ,,plné`` hrany rovnou vyhazuji (a updatnu mazání slepých uliček).
 
 Jedna fáze lze zhora odhadnout na $O(M*N)$.
 
-V každé fázi se $l$ zvětší alespoň o $1$, $l_max = N$---zastaví se, celková složitost je $O(M*N^2)$.
-Nelze dokázat tím, že cesty délky $l$ zablokuju---přibývají jiné (opačné) hrany---ale vznikají tím jen hrany z $k$ do $k-1$ vrstvy.
+V každé fázi se $l$ zvětší alespoň o $1$, $l_{max} = N$ ‒ zastaví se, celková složitost je $O(M*N^2)$.
+Nelze dokázat tím, že cesty délky $l$ zablokuju ‒ přibývají jiné (opačné) hrany---ale vznikají tím jen hrany z $k$ do $k-1$ vrstvy.
 
 Lze upravit tak, že celou dobu jen snižujeme rezervy, až to bude celé hotové, tak se ty rozdíly odečtou a máme správný tok.
 Obě čištění mohou být průběžné.
