@@ -22,7 +22,7 @@ Potom ještě potřebuji hledat maxima cest.
 Použiji strukturu link-eval (podobná union-findu).
 
 Máme les zakořeněných stromů s ohodnocenými hranami.
-Máme operaci $\ostar$ (to je eval). Link přivěsí strom někam.
+Máme operaci $\star$ (to je eval). Link přivěsí strom někam.
 Eval spočítá cestu z $v$ do kořene.
 
 Kdybych v union-findu nedělal path-compression, je to OK.
