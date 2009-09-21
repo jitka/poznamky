@@ -44,4 +44,4 @@ O grupě $G$ řeknu, že je \name{cyklická}, existuje-li $g∈G$, takové $@<@{
 Potom $φ$ je homomorfizmus grup, $φ(\Z)=@<g@>$.
 }
 
-\follows{Je-li $G$ grupa, $g∈G$ a $m,n∈\Z$, pak $@(g^{-1}@)^n=@(g^n@)^{-1}$ a $@(g^n@)^m= g^n·m$.}
+\follows{Je-li $G$ grupa, $g∈G$ a $m,n∈\Z$, pak $@(g^{-1}@)^n=@(g^n@)^{-1}$ a $@(g^n@)^m= g^{n·m}$.}

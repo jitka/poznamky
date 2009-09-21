@@ -10,7 +10,7 @@ Algebru $G(·, ^{-1}, 1)$ nazveme \name{grupou}, je-li $(·,1)$ monoid a $^{-1}$
 
 \name{Komutativní (Abelova) grupa} je taková grupa, jejíž $·$ je komutativní.
 
-\name{Podgrupa} je grupa, jejíž nosná množina je podmnožina jiné algebry.
+\name{Podgrupa} je grupa, jejíž nosná množina je podmnožina jiné grupy.
 
 Poznámka:\\
 Nechť $S(·,1)$ je monoid a $S^*$ je množina všech invertibilních prvků.
@@ -19,7 +19,7 @@ $S^*(\odot, ^{-1}, 1)$ je grupa.
 
 Všechny tyto operace jsou dobře definovány.
 
-\name{Normální podgrupa} bude podgrupa splňující $∃g,h∈G;g·h·g^{-1}∈G$.
+\name{Normální podgrupa} bude podgrupa splňující $∃g∈G∀h∈H;g·h·g^{-1}∈G$.
 
 Poznámka:\\
 Nechť $G(·,^{-1}, 1)$ je grupa a $ρ$ je relace na $G$. Pak je $ρ$ kongurence na $G$ právě tehdy, když $@[1@]_ρ$ je te normální podgrupa $G$ a $@(g,h@)∈ρ←→g^{-1}h∈@[1@]_ρ$.

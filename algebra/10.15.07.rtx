@@ -9,7 +9,11 @@ Nechť $f:A→B$ je zobrazení a $ρ$ je ekvivalence na $A$. Potom platí:
 • Zobrazení $g:A/ρ→B$ takové, že $∃gπ_ρ = f←→ ρ⊂\ker f$
 ←•
 
-Buď $ρ$ ekvivalence na $A$, $α$ je $n$-ární operace na $A$. Řekněme, že $ρ$ je \name{slučitelná} s $α$, platí-li $∀a_1,…,a_n, b_1,…,b_n ∈A;@(a_i,b_i@)∈ρ→→ @(α@(a_1,…,a_n@), α@(b_1,…,b_n@)@)∈ρ$. Řekneme, že ekvivalence $ρ$ na algebře $A@(α_i@)$ je \name{kongurence}, jestliže $ρ$ je slučitelná se všemi $α_i$.
+Buď $ρ$ ekvivalence na $A$, $α$ je $n$-ární operace na $A$. Řekněme, že $ρ$ je \name{slučitelná} s $α$, platí-li:
+
+$$∀a_1,…,a_n, b_1,…,b_n ∈A;@(a_i,b_i@)∈ρ→→ @(α@(a_1,…,a_n@), α@(b_1,…,b_n@)@)∈ρ$$
+
+Řekneme, že ekvivalence $ρ$ na algebře $A@(α_i@)$ je \name{kongurence}, jestliže $ρ$ je slučitelná se všemi $α_i$.
 
 Buď $f:A→B$ homomorfizmus dvou algeber stejného typu (jiné homomorfizmy ani neuvažujeme). Potom $\ker f$ je kongurence na $A$.
 
