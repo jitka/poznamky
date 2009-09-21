@@ -21,7 +21,7 @@ Existuje největší společný dělitel $NSD(p·b, a·b)$.
 Tedy $p\backslash b$.
 
 \statement{}
-Nechť každý ireducibilní prvek $S(·,1)$ je prvočinitelem. Nechť $p_1, …, p_n$ a $q_1, …, q_m∈S$ posloupnosti ireducibilních prvků, pro něž platí, že součuin $\Π_{i=1}^n || \Π_{i=1}^m$. Potom $n = m$ a existuje bijekce $σ$ mezi posloupnostmi takové, že $p_i||q_{σ(i)}$.
+Nechť každý ireducibilní prvek $S(·,1)$ je prvočinitelem. Nechť $p_1, …, p_n$ a $q_1, …, q_m∈S$ posloupnosti ireducibilních prvků, pro něž platí, že součuin $\Π_{i=1}^n p_i || \Π_{i=1}^m q_i$. Potom $n = m$ a existuje bijekce $σ$ mezi posloupnostmi takové, že $p_i||q_{σ(i)}$.
 
 \proof
 Indukcí dle $n$.

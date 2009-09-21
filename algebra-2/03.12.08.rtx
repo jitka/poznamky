@@ -16,7 +16,7 @@ Buď $R(+,·,-,0,1)$ (komutativní) okruh a $p,q∈R@[x@]$. Pak platí:
  • $$(p+q)°≤\max@{p°,q°@}$$
  • je-li $p,q\neq 0$, pak
    $$(p·q)°≤ p°+q°$$
- • Jestliže $R$ je obor integrity, pak
+ • Jestliže $R$ je obor integrity a $p$ a $q$ jsou nenulové.
    $$(p·q)°= p°+q°$$
  • $R$ je obor integrity $←→R@[x@]$ je obor integrity.
  • $p$ je invertibilní prvek a $R$ je obor integrity $←→p°=0\land p(0)$ je invertibilní v $R$.
@@ -50,7 +50,7 @@ Ostatní indukcí postupným dělením.
 
 Buď $R(+,·,-,0,1)$ obor integrity a necť existuje $μ:R→\N\cup@{0,-1@}$ tak, že platí $∀a,b∈R,b\neq 0$:
 ↑•
- • $$bR@⊂aR:μ(a)≤μ(b)$$
+ • $$a|b:μ(a)≤μ(b)$$
  • $$∃q,r:a=q·b+r;μ(r)<μ(b)$$
 ↓•
 

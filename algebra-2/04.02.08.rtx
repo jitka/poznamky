@@ -37,8 +37,7 @@ Stejně tak i podgrupy.
 
 Následně uvažujme tělesa $U(+,·,-,0,1)$ a jeho podtěleso $T@⊂U$, případně $V\supseteq U$ je nadtěleso $U$.
 
-Nechť $S@⊂$.
-$T@[S@]$ bude nejmenší podokruh obsahující množinu $T\cup S$. Obdobně $T(S)$ je nejmenší podtěleso obsahující $T\cup S$.
+Nechť $S@⊂U$ těleso. $T@[S@]$ bude nejmenší podokruh obsahující množinu $T\cup S$. Obdobně $T(S)$ je nejmenší podtěleso obsahující $T\cup S$.
 
 Jestliže $S=@{α_1,…,α_n@}$, pak $T@[α_1,…,α_n@]:=T@[S@], T@(α_1,…,α_n@):=T@(S@)$.
 

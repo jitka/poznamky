@@ -11,7 +11,7 @@ Potom polynom $x^n-1$ a $x^{n+1}-x$ nemají vícenásobný kořen.
 Zkusí se zderivovat.
 
 \statement{}
-Každá konečná podgrupa grupy $T-@{0@}(·,-1,1)$ tělesa $T(+,·,-,0,1)$ je cyklická.
+Každá konečná podgrupa grupy $T-@{0@}(·,^{-1},1)$ tělesa $T(+,·,-,0,1)$ je cyklická.
 
 \proof
 $G$ buď nějaká konečná podgrupa této grupy. $n:=\len{G}$.
