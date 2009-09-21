@@ -1,0 +1,94 @@
+\subsection{Ackermanova funkce}
+
+\begin{eqnarray*}
+A(0,y)&=&2y\\
+A(x,0)&=&0\\
+A(x,1)&=&2\\
+A(x,y)&=&A(x-1,A(x,y-1))
+\end{eqnarray*}
+
+Roste rychle (velmi). Jednoparametrovou lze definovat jako diagonálu.
+
+Možných inverzích je spoustu. První je nekonečná posloupnost funkcí, $λ_i(n)$ je inverze $i$-tého řádku. Tedy
+$\min@{y|A(i,y)>\log n@}$.
+
+$α(n)$ je diagonální inverze, tedy $\min@{x|A(x)>\log n@}$. Roste ještě pomaleji, než všechny $λ$.
+
+$$α(m,n):=\min@{x|A@(x,4\left\lceil\frac{m}{n}\right\rceil@)>\log n@}$$
+
+\begin{Observation}
+Při zafixování $n$ je největší pro $m=n$.
+\end{Observation}
+
+\begin{Observation}
+$$α(m,n)≤α(n+1)$$
+\end{Observation}
+
+\begin{Proof}
+\begin{eqnarray*}
+α(m,n)&≤&α(n,n)\\
+A(x,4)=A(x-1,A(x,3)&≥&A(x-1,x-1)=A(x-1)
+\end{eqnarray*}
+\end{Proof}
+
+\begin{Observation}
+Pro pevné $i$, když $m≥n·λ_i(n)$, pak $α(m,n)≤i$.
+\end{Observation}
+
+\begin{Proof}
+$A@(x,4·\left\lceil\frac{m}{n}\right\rceil@)≥A(x,4·λ_i(n))≥A(x,λ_i(n))>\log n$
+
+To určitě nastane pro $x≥i$.
+\end{Proof}
+
+\subsection{Nejnižší společný předek}
+
+Pro union-find platí, že $m≥n$ operací na $n$-prvkové struktuře trvá $O(n+m·α(m,n))$.
+
+Nyní, $n$ bude velikost stromu (počet vrcholů) a $m:=n+\#\hbox{dotazů}$. Já si tyto dotazy přidám jako hrany.
+BÚNO není multigraf (stejné dotazy dokážeme sjednotit na jednu hranu).
+
+\begin{Algorithm}[Pomalý]
+Pustím na to DFS na původní strom.
+V každém vrcholu mám union-find ekvivalenční třídu na vrcholy „nalevo“ od cesty.
+Když se vracíme z vrcholu, tak ekvivalenční třída obsahuje celý podstrom.
+Chystáme se sjednotit s otcem, ale napřed se podíváme na dotazoné hrany z tohoto vrcholu.
+Podíváme se, kam padne druhý konec, podle toho poznáme nejbližšího společného předchůdce (pokud už byl také navštívený ‒ pokud ne, počkáme na druhý konec).
+\end{Algorithm}
+
+Časová složitost tohoto algoritmu stojí na union-findu.
+
+\subsubsection{Dekompozice}
+Zvolíme nějaké $k$ ($1≤k≤n$). Mikrostromy zvolíme tak, že velikost je nejvýše $k$ a kdybychom ho zavěsili výš, tak už $k$ překročíme.
+Makrostrom bude ten zbytek.
+
+\begin{Observation}
+Má maximálně $\frac{n}{k}$ listů.
+\end{Observation}
+
+Pokud se ptám na interně uvnitř mikrostromu, tak řeším lokálně. V makrostromu je to uvnitř, jinak nahrazuji listem makrostromu, pod kterým mikrostrom visí.
+
+\subsubsection{Upravený union-find}
+Máme $n$ prvků, z nichž alespoň $l$ je speciálních. Zakážeme union dvou komponent, které ani jedna nemá speciální vrchol.
+Potom posloupnost $m$ operací trvá $O(n+m·α(m,l))$.
+
+Vypadá stejně, jako minulá, budu si pamatovat místo počtu vrcholů jen počty speciálních vrcholů.
+Stromy vypadají tak, že ty obyčejné jsou vždycky listy.
+Operace nad obyčejnými přejdou po konstantě do množiny speciálních vrcholů.
+
+Nyní můžu použít tuto union-find na spojování ve stromech, protože speciální budou listy.
+
+Složitost algoritmu na makrostromu je tedy $O@(n+m·α@(m,\overline{n}{k}@)@)$. $k$ nastavím na $\log^{\inv{3}}n$.
+Tím jsme stlačili $α$ pod $2$, tedy složitost je $O(n+m)$.
+
+\subsubsection{Topologický grafový problém}
+Vstupem bude neorientovaný graf s vrcholy a hranami ohodnocenými symboly z konečné abecedy $Σ$.
+
+Výstupem je ohodnocený neorientovaný graf a ukazatele do vstupu.
+
+Např. by se tím dalo vyřešit perfektní párování ‒ nechám jen párovací hrany a u vrcholu odkazy na původní ve vstupu.
+
+Toto se dá vyřešit i s konektory (kvůli přenálepkovávání) ‒ abych u velkého výstupu stihl vyměnit vstup.
+
+\subsubsection{Mikrostromy}
+Zakódujeme všechny mikrostromy do řetězců a pak setřídíme do přihrádek.
