@@ -1,0 +1,65 @@
+\section{Úvod}
+
+Intuitivní teorie množin měla problémy ‒ spory. Chce to tedy zavést teorii prvního řádu, která je bezesporná. Kdyby byla i úplná,
+tak by to bylo ještě lepší.
+
+Když byla aritmetika s $+,·$, tak se nedalo rozhodnout, jestli tam nějaká věta patří, nebo ne. Když tam bylo jen $+$, tak
+rozhodnutelnost dokázat šla.
+
+Gödel dokázal, že rozumná teorie (pokud má něco „užitečného“), tak v ní nelze dokázat bezespornost. A je také nerozhodnutelná.
+
+\section{Turingovy stroje}
+
+Má nekonečnou pásku, na každé buňce jeden z konečně mnoha znaků, vnitřní stav z konečně mnoha stavů, rozhoduje o změně stavu,
+posunu a zápisu.
+
+Obvykle se zapisuje jako pětice $T=@(A, Q, δ, \overline{q}, F@)$.
+
+→•
+ • $A$ je vnější abeceda
+ • $Q$ je vnitřní abeceda
+ • $δ:@(Q-F@)\times @{A∪@{Λ@}@}→@{-1,0,1@}\times@{A∪@{A@}@}$ přechodová funkce, je v ní zadán program
+ • $\overline{q}$ počáteční stav
+ • $F$ koncové stavy
+←•
+
+Existují i jiné modifikace (konečné, $Λ$ součást abecedy, etc).
+
+Konfiguraci zapisuji obvykle jako $UqsV$, kde $U$, $V$ jsou kusy před a za čtecí hlavou (které obsahují vše „zajímavé“ ‒ prázdno
+do nekonečna můžu zahodit), $q$ je stav a $s$ je čtecí hlava.
+
+Turingův stroj umí v zásadě všechno, ale programovat ho je složité. Proto lze vytvořit některé operace:
+
+→•
+ • Skládání ‒ pustím dva stroje „za sebou“
+ • Větvení ‒ jeden má dva koncové stavy, za jeden pověsím jeden další stroj, za druhý další.
+ • Jde pospojovat i cyklus.
+←•
+
+\subsection{Modifikace}
+
+Možnost nepovolit mu zůstat na místě ‒ je stejně silný, můžu popojít tam a zase zpět.
+
+Pokud se můžu pohybovat jen jedním směrem, degraduje to na konečný automat.
+
+Pokud bude páska jen na jednu stranu, tak můžu zmergovat na liché/sudé, nebo kartézký součin abecedy (a udělat ji dvoustopou).
+
+Když zavedu omezovače ‒ okraje ‒ umí poznat, kde končí, musí se posouvat.
+
+Omezení činnosti ‒ když mu povolím udělat jen dvě věci zároveň, tak mu to stačí. Dokonce stačí, když bude smět dělat jen jednu
+věc. Není jednoduché dokázat.
+
+Omezení na počet písmen ‒ stačí dvě různá ($Λ, 1$) ‒ budu kódovat sekvence.
+
+Mít jen jeden aktivní stav nestačí ‒ není se dle čeho rozhodnout. Jsou potřeba alespoň dva aktivní stavy.
+
+Univerzální turingův stroj ‒ bere kromě vstupu také program, ten interpretuje. Budeme tvrdit, že se programy podmíněně rovnají,
+pokud se zastavují v obou případech stejně a když se zastaví, dají stejné výsledky. Musím si pamatovat stavy, přecházet a
+prohledávat program. Poněkud pomalé.
+
+\subsection{Složitost}
+
+Obvykle se uvažuje prostorová a časová. Na počítání složitostí se hodí, protože je to jednoduchý model.
+
+Můžeme uvažovat více pásek, čímž se to zrychlí. Počítá se, že složitost je alespoň délka vstupu, ale u prostorové to tak není ‒
+počítá se jedna vstupní páska (jen pro čtení) a jedna přepisovatelná páska.
