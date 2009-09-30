@@ -1,0 +1,57 @@
+\section{Úvod}
+
+K porovnávání algoritmů slouží složitost. Závisí na velikosti vstupu. Pokud bychom chtěli měřit velikost vstupu, rigorózně se
+používá počet bitů nutných k zakódování. Pokud by se používala jiná než dvojková soustava, tak to je až na konstantu stejné číslo
+‒ není zajímavé (až na jednoprvkové abecedy).
+
+Časová složitost je funkce udávající počet kroků algoritmu v závislosti na velikosti vstupu, obdobně u paměťové. Nezajímá nás
+přesný tvar, jen asymptota. U polynomiálních to roste ještě „rozumě“, u exponenciálních a podobně je to už nepoužitelné.
+
+Typy odhadů:
+→•
+ • $O$ ‒ horní odhad.
+ • $ω$ ‒ ostrý dolní odhad.
+ • $o$ ‒ ostrý horní odhad.
+ • $Ω$ ‒ dolní odhad.
+ • $Θ$ ‒ přesný odhad.
+←•
+
+\section{Hladové algoritmy}
+
+Algoritmus hledá globální minimum tak, že vždy lokálně vybere maximum. Mezi ně patří například minimální kostra grafu (Borůvkův).
+Nebo množina úkolů (jednotkové délky), u nich lhůty a penalizace.
+
+\subsection{Matroidy}
+
+Matroid je $(X, S)$, kde $S@⊂\mathcal{P}(X)$, splňující:
+→•
+ • $\len{X}<ω, X≠∅$
+ • $A∈S∧B@⊂A→→B∈S$
+ • $∀A,B∈S;\len{A}<\len{B}→→∃x∈B\backslash A;A∪@{x@}∈S$
+←•
+
+Matroidy například maticové (nezávislé jsou nezávislé sloupce), grafový (nezávislé množiny hran jsou takové, které tvoří les).
+
+\begin{Lemma}
+Les obsahující $k$ hran sestává z $n-k$ stromů.
+\end{Lemma}
+
+\begin{Proof}
+Dokáže se indukcí podle $k$ (od $0$).
+\end{Proof}
+
+Nechť $A,B$ jsou lesy a $\len{A}<\len{B}$. Tedy $A$ má víc stromů, tedy můžu vzít něco z $B$, co vede mezi stromy z $A$.
+
+\begin{Lemma}
+Všechny maximální nezávislé (co do inkluze) jsou stejně veliké.
+\end{Lemma}
+
+\begin{Proof}
+Spor s výměnnou vlastností ‒ do menší bych mohl něco přidat.
+\end{Proof}
+
+\subsubsection{Matroidový problém}
+
+Máme kladné váhy pro prvky $X$. Chceme najít maximální nezávislou množinu. Lze udělat hladově.
+
+Mnoho problémů se dá takto převádět na matroidy.
