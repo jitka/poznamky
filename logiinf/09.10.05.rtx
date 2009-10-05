@@ -1,0 +1,38 @@
+\section{Rezoluce}
+
+Týká se výrokové logiky.
+
+Výroková logika má dvě části. Syntax a sémantiku. Syntax jsou formule, proměnné, spojky a tak dále. Sémantika je dána ohodnocením
+(zobrazení z proměnných do množiny $@{0,1@}$). Když máme formuli $φ$, tak nám stačí jen její proměnné a umíme určit její hodnotu.
+Pokud je pravdivá, říkáme, že je \name{splněna} v daném ohodnocení. Formule je \name{splnitelná}, pokud existuje ohodnocení, ve
+kterém je splněná. Formule je \name{tautologie}, pokud je pravdivá v každém ohodnocení. $φ$ je tautologije $←→\lnot φ$ je
+nesplnitelná.
+
+\name{Výrokový rezoluční systém} nebo rezoluce je systém, který slouží k dokazování formulí ve tvaru „disjunkce konjunkcí
+literálů“, kde literály jsou proměnné nebo jejich negace. Máme tedy DNF. Resoluční systém je založen na důkazu sporem. Negací ji
+převedeme na CNF. Disjunkci literálů budeme říkat \name{klauzule}. Zavedeme pravidlo rezoluce. Máme klauzuli $@{P₁,…,P_k, p_i@}$ a
+$@{Q₁,…,Q_l,\lnot p_i@}$, z toho vyvodíme $@{P₁,…,P_k@}∪@{Q₁,…,Q_l@}$. Postupně dojdeme k prázdné klauzuli, čímž získáme spor.
+
+Toto pravidlo zachovává splnitelnost.
+
+Obecný důkaz je posloupnost. Lépe se analyzuje důkaz stromový ‒ klauzule se slévají, až zbude jen kořen. Listy (původní klauzule)
+se mohou opakovat. Existují tautologie v DNF takové, že mají exponenciálně velké stromové důkazy, ale polynomiálně velké lineární
+‒ to opakování může nastat na všech hladinách, kopíruje se to moc.
+
+Složitost splňování v CNF je NP-úplné, tautologie DNF coNP-úplné. Hypotéza je, že NP není coNP, což je silnější, než že P není
+stejně jako coNP. Z této hypotézy plyne, že žádný důkazový systém pro DNF nemá polynomiálně omezené důkazy.
+
+Příklady, které vyžadují exponenciálně velké důkazy v rezoluci:
+→•
+ • Šuplíkový princip ($PHP^{n+1}_n$). Říká, že neexistuje prosté zobrazení z množiny $1…n+1$ do $1…n$. Ala Holubnikuv princip.
+ • G je neorientovaný graf. Nechť $c:V→@{0,1@}$, počet $1$ lichý. Potom pro každé ohodnocení hran $e:E→@{0,1@}$. $\Σ_{@(u,v@)∈E} ≠
+   c(v) (mod 2)$.
+←•
+
+Důkazový systém $S$ se nazývá \name{automatizovatelný}, pokud existuje algoritmus $A$ takový, že pro zadanou pravdivou formuli $φ$ a danou
+mez $m$ $A$ sestrojí důkaz $d$ délky $≤m$ v čase polynomiálně omezeném $m$.
+
+\begin{Statement}[Alechuvich, Rcetfov]
+Pro určitou pravděpodobnou hypotézu $H$ platí. Je-li $H$ pravdivá, potom obecná automatizace není obecně automatizovatelná. Stejně
+tak stromová.
+\end{Statement}

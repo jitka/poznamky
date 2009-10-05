@@ -1,0 +1,11 @@
+\documentclass[a4paper,11pt]{article}
+\input{../stdhead.rtx}
+\input{../defs.rtx}
+
+\begin{document}
+\title{Logika v informatice}
+\maketitle
+\tableofcontents
+\newpage
+\input{09.10.05.rtx}
+\end{document}
