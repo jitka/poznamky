@@ -1,0 +1,9 @@
+\section{Úvod}
+
+Například, pokud budeme chtít řešit sudoku. Je zadaná hromada proměnných, každá nabývá něčeho z diskrétní domény. Dále máme horu
+podmínek, co říká, co z toho je a není kompatibilní.
+
+Poté je hromada algoritmů, které nějak prohledávání.
+
+Také budeme modelovat reálné úlohy pomocí těchto technik.
+
