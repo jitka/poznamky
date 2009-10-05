@@ -1,0 +1,26 @@
+\section{Hashování}
+Chceme implementovat množinu s operacemi:
+
+→•
+ • Insert(x)
+ • Delete(x)
+ • Member(x)
+←•
+
+Pomocí bitového pole to jde zvládnout rychle, ale když je velké univerzum, je to pole velké.
+
+Proto vezmeme nějakou funkci, která vezme prvek a vrátí rozumě malé číslo, používá se toto číslo místo toho. Ovšem vznikají kolize
+(více prvků patří na stejné místo), je třeba řešit.
+
+\subsection{Hashování se separovanými řetězci}
+V každé pozici bydlí spoják všech věcí, které bydlí v tomto místě. Potom je potřeba spojáček prohledávat.
+
+Poté je potřeba nějak zjišťovat rychlost. První možnost je vše spočítat, je to pracné, ale přesné. Druhá možnost je měřit to, ale
+je to nepřesné, je potřeba dělat statistiky. V tomto případě, nejhorší možnost je, že vše se to nacpe do jednoho řetězce, nejhorší
+složitost je $O(n)$.
+
+Pokud máme nějaké předpoklady, například že $S$ je náhodně vybraná z universa a že $h$ rozkládá prvky náhodně. Nemusí platit. A v
+praxi často neplatí ‒ poté se děly špatné věci.
+
+Uvažujeme faktor naplnění $α=\frac{n}{m}$. Je třeba spočítat očekávanou průměrnou a maximální délku řetězce, průměrný počet testů
+pro úspěšné resp. neúspěšné vyhledání.
