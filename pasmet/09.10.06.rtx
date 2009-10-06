@@ -1,0 +1,57 @@
+\begin{Priklad}[Ramseova čísla]
+
+Nechť $R(k)=\min@{n, ∀G;\len{V(G)}=n; α(G)≥k ∨ ω(G)≥k@}$. Např. $R(3)=6$.
+
+Je dokázáno, že $R(k)≤\combnum{2k}{k}≤4^k$.
+
+\TODO{Tady se ty vzorečky renderují nehezky}
+
+Chceme dokázat, že $R(k)>2^{\frac{k}{2}}$. Tedy chceme najít graf takový, že $∃G$ s $2^{\frac{k}{2}}$ vrcholy a $α(G)≤k ∧ ω(G)<k$.
+Pokud neumíme graf přímo najít, zkusíme pravděpodobnostní metodu. Vezme se náhodný graf: vezme se $n$ vrcholů a pro každou dvojici
+dvojici si náhodně vybereme, jestli tam hrana bude, nebo ne. Vybírat budeme tedy $\combnum{n}{2}$. Nyní si vybereme $S$
+$k$-prvkovou množinu vrcholů a spočítáme pravděpodobnost, s jakou je $S$ nezávislá ‒ vyjde $\inv{2}^{\combnum{k}{2}}$. Stejná
+pravděpodobnost je i že bude klika.
+
+Jaká je pravděpodobnost, že nějaká taková nezávislá $S$ existuje? To vyjde $≤\combnum{n}{k}·\inv{2^{\combnum{k}{2}}}$. To, že je
+$S$ která je buď klika nebo nezávislá je dvojnásobná. Teď stačí dokázat, že tato pravděpodobnost $<1$ a je hotovo ‒ s nějakou
+pravděpodobností vyjde graf, který nemá žádné takové $S$.
+
+Lze použít některé odhady:
+→•
+ • $$\combnum{n}{k}<2^n$$
+ • $$@(\frac{n}{k}@)^k≤\combnum{n}{k}≤@(\frac{en}{k}@)^k$$
+←•
+
+Při použití druhého odhadu už dokážeme (pro dostatečně velké $k$).
+\end{Priklad}
+
+\section{Pravděpodobnost}
+
+\name{Pravděpodobnostní prostor} je trojice $(Ω, Σ, p)$, kde $Ω$ jsou elementární jevy, $Σ$ jsou jevy (mohou být podmnožiny $Ω$) a
+$p:Σ→@<0,1@>, \Σ_(σ∈Σ)p(σ)=1$. My budeme používat konečné množiny. Dále:
+→•
+ • $p(Ω) = 1$
+ • $p(∅) = 0$
+ • $A∩B=∅→→p(A∪B) = p(A) + p(B)$
+←•
+
+Z toho také plyne, že $∀A,B∈Σ;p(A∪B)≤p(A)+p(B)$.
+
+Jevy \name{jsou nezávislé}, pokud $p(A∩B) = p(A)·p(B)$, nebo $p(A) = \frac{p(A∩B)}{p(B)} = p(A|B)$.
+
+\begin{Priklad}
+Máme $k$-uniformní hypergraf (tedy, máme hrany dlouhé $k$), který není $2$-obarvitelný (tedy, máme dvě barvy a žádná hrana není
+jednobarevná).
+$m(k)$ je nejmenší počet hran pro to, aby toto muselo nastat. $m(2)$ je zřejmě $3$.
+
+\begin{Tvrz}
+$m(k)≥2^{k-1}$.
+\end{Tvrz}
+
+\begin{Proof}
+Mám $k$-uniformní hypergraf $\mathcal{H}$ s $m$ hranamia $m<2^{k-1}$, tak $\mathcal{H}$ je $2$-obarvitelný. Tedy existuje $c$
+obarvení. Zvolíme $c$ náhodně (tedy, všechny funkce $c:V→@{0,1@}$ mají stejnou pravděpodobnost ‒ náhodně uniformně nezávisle
+barvím vrcholy). Chceme tedy dokázat, že $p(c\hbox{ je špatné})≤1$, tedy $∃e∈E(\mathcal{H})$ že $e$ je jednobarevná. Shora
+odhadneme tím, že nějaká množina $e$ je jednobarevná. No a $m·2^{1-k}<1$.
+\end{Proof}
+\end{Priklad}

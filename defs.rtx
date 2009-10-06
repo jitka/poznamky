@@ -47,6 +47,7 @@
 \newtheorem{Lemma}{Lemma}
 \newtheorem{Note}{Poznámka}
 \newtheorem{Observation}{Pozorování}
+\newtheorem{Priklad}{Příklad}
 \newenvironment{Proof}
 {\proof}
 {
