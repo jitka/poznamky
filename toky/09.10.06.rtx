@@ -1,0 +1,50 @@
+\section{Úvod}
+
+\subsection{Multikomoditní toky}
+Máme více stoků a zdrojů. Dvě možnosti ‒ chceme maximalizovat jen součet všech toků (součtový) a nebo máme nějaký požadavek na
+procenta/velikost nebo tak (souběžný). Při snížení počtu komodit na jednu oboje degraduje na obyčejný tok. Lze je řešit pomocí
+lineárního programování. Řezové problémy k tomu nejsou v přímé dualitě.
+
+Souvisí s reálnými problémy (logistika) a s grafovými parametry (například s expanzí grafu).
+
+Budeme používat lineární programování, semidefinitní programování, geometrii, pravděpodobnostní metodu a vnořování metrických
+prostorů.
+
+\subsection{Toky omezené délky}
+Normální toky neuvažují délku cesty. Tady si délku nějak omezíme. Také přestane platit dualita, někdy je NP-těžké počítat ten tok,
+řez vždycky.
+
+\subsection{Vícecestné toky}
+Jsou $n$-tice hranově disjunktních cest, vždy po celé této $n$-tici musí téct stejně (odolnost proti výpadkům sítě ‒ aby nešlo jen
+tak přehlodat jednu klíčovou hranu).
+
+\subsection{Celočíselné toky}
+U těchto speciálních toků již ztrácíme tu hezkou vlastnost, že vždycky na celočíselných kapacitách vychází celočíselné výsledky.
+
+\section{Multikomoditní součtové toky}
+Na vstupu máme graf $G=(V,E)$, je neorientovaný a $c:E→ℝ^+$ jsou kapacity hran. Potom jsou komodity $(s₁,t₁), (s₂,t₂), …,
+(s_k, t_k)$ jsou komodity a dvojice zdroj-spotřebič. Potom $\mathcal{P}_i$ si označíme množinu všech cest z $s_i$ do $p_i$.
+Dále vezmeme $\mathcal{P}=\∪_{i=1}^k \mathcal{P}_i$. Samozřejmě nesmíme překročit kapacitu hran. Když pustím proti sobě různé
+komodity, potom se sčítají. Tedy, $\Σ_{p:e∈p}f_p≤c(e), f_p≥0$. Chceme maximalizovat součet jednotlivých toků.
+
+Můžeme převést na lineární programování tak, že zavedeme pravidla pro vrcholy, pro kapacity hran a fungujeme na jednotlivých
+komoditách.
+
+\subsection{Multikomoditní řež}
+Chceme najít nějakou množinu hran takovou, že po odebrání nebude žádná dvojice $(s_i,t_i)$ sdílet stejnou komponentu. Snažíme se
+minimalizovat součet kapacit hran v tomto řezu.
+
+Pro každou hranu máme proměnnou o hodnotě buď $x(e)∈@{0,1@}$. Chceme minimalizovat $\Σx(e)·c(e)$ a $∀p∈P;\Σ_{e∈p} x(e)≥1$. Ale
+chceme celočíselné řešení. Tyto problémy jsou k sobě skoro duální (po úpravě, že hrana může mít větší hodnotu, než $1$).
+Potřebujeme ale celočíselné řešení ‒ jak moc se liší?
+
+\begin{Algorithm}[Algoritmus potvrzující řez]
+Vezmu si $\overline{V}=V$ a $e=1$. Dokud $\overline{V}$ obsahuje nějaké $s_i$ a $t_i$, tak najdeme nějaké $V_e@⊂\overline{V}$,
+která je separuje. Potom z $\overline{V}$ odeberu $V_e$, k $e$ přičtu $1$.
+
+Jinými slovy, toto rozděluje graf na části a vypisujeme všechny hrany, které cestují mezi komponentami.
+\end{Algorithm}
+
+Vyřešíme duální úlohu lineárního programování. $B_x(s_i,r):=@{v∈V|d_x(s_i,v)≤r@}$, kde $d_x(s_i,v)$ je délka nejkratší cesty z
+$s_i$ do $v$. Objem $V_x(s_i, r)=\frac{Φ}{k}+\Σ_{e=(u,v)∈E,u,v∈B_x(s_i,r)} + \Σ$ ze zbytku hran podle toho, jaká délka zbývá
+(tedy, objem potrubí do vzdálenosti $r$ od $s_i$). $Φ$ je celkový objem systému. $C_x(s_i,r)$ je součet kapacit přes hrany, které vedou z té koule ven.
