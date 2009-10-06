@@ -1,0 +1,34 @@
+\subsection{Univerzální turingův stroj}
+Existuje univerzální turingův stroj, tj. takový, který dokáže simulovat libovolný jiný. Jeho vstupem je původní vstup (překódovaný
+do jeho abecedy) a program původního stroje. Má pásku, kde má vstup, kód stroje, ohraničení a oddělovače a odkládací místo (na
+stav, aktuálně přečtené políčko, etc). Na vstupu si označuji místo vstupu, kde je zrovna hlava.
+
+Je potřeba všechno kopírovat po bitu a pobíhat, resp. hledat instrukce a podobně.
+
+\subsection{Halting problém}
+Máme daný program a data. Ptáme se, jestli se zastaví. Není algoritmicky rozhodnutelný ‒ neexistuje turingův stroj, který se vždy
+zastaví a rozhodne. Použiji kantorovu diagonální metodu. Předpokládejme, že máme takový program. Vezmeme ho jako číslo, tedy musí
+umět být vstupem sama sebe.
+
+Funkce $φ:ℕ^k→ℕ$ je \name{turingovsky vyčíslitelná}, jestli existuje turingův stroj, který ji vyčísluje. Nezáleží na kódování
+čísel.
+
+\section{Primitivně, částečně rekurzivní funkce}
+
+Přístup, který zvolil Göedel. Ve funkcionálním přístupu abstrahuje od implementace, nezajímáme se o to, jak se to dělá. Má to
+induktivní charakter. Máme axiomy a odvozovací pravidla.
+
+Máme $3$ druhy základních funkcí:
+→•
+ • Nulová funkce ($o(x) = 0$).
+ • Následník )$S(x) = x + 1$).
+ • Projekce ($I_n^j(x₁,x₂,…,x_n)=x_j$).
+←•
+
+Dále máme odvozovací pravidla:
+→•
+ • Operátor substituce ‒ nahradí proměnnou za funkci.
+ • Operátor primitivní rekurze $R_n(f, g)$, kde $f$ má $n-1$ proměnných, $g$ má $n+1$ proměnných. $h(0, x₂,…,x_n) = f(x₂,…,x_n)$ a
+   $h(y+1,x₂,…x_n) = g(y,h(y,x₂,…,x_n))$. Tedy, máme inicializaci ($f$) a krok.
+ • Operátor minimalizace $M_n(f)$, $f$ má $n+1$ proměnných. $h(x₁,…,x_n) = (f(x₁,…,x_n,z)=0)∧∀j<zf(x₁,…,x_n,j)<>0$.
+←•
