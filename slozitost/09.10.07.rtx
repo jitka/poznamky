@@ -1,0 +1,36 @@
+\begin{Lemma}
+Pokud neexistuje jednoprvková nezávislá množina obsahující $x$, pak neexistuje žádná nezávislá obsahující $x$.
+\end{Lemma}
+
+\begin{Proof}
+Triviální důsledek dědičnosti.
+\end{Proof}
+
+\begin{Follows}
+Prvky přeskočené před prvním výběrem nebudou v žádné optimální množině.
+\end{Follows}
+
+\begin{Follows}
+Nechť $S$ je setříděno podle vah a nechť je první prvek, který je nezávislý. Potom existuje optimální řešení, které obsahuje $x$.
+Tedy první výběr nezablokuje cestu k optimu.
+\end{Follows}
+
+\begin{Lemma}
+Když už víme, že $x$ tam bude, můžeme ze všeho $x$ vyhodit (a vyhodit ty nezávislé, které neobsahují $x$) a najít optimum zbytku.
+\end{Lemma}
+
+\begin{Proof}
+Třeba dokázat, že po kontrakci vznikne matroid a že to bude obsahovat přesně to, co má.
+\end{Proof}
+
+\begin{Statement}
+Hladový algoritmus dává pro matroidy správný výsledek.
+\end{Statement}
+
+\begin{Proof}
+Jen iteruji předchozí lemmata.
+\end{Proof}
+
+\section{$2$-souvislost}
+Graf je $2$-souvislý, když nemá artikulaci. Hledám pomocí DFS ‒ nějak si všímáme zpětné hrany.
+
