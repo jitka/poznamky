@@ -8,4 +8,5 @@
 \tableofcontents
 \newpage
 \input{09.10.05.rtx}
+\input{09.10.12.rtx}
 \end{document}

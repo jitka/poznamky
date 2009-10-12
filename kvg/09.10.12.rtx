@@ -1,0 +1,70 @@
+\begin{Lemma}[Farkasovo]
+Máme matici s $d$ řádky a $m$ sloupci (nazveme ji $A$). Chceme najít takové $x$, aby $Ax=0$. Toto má vždy minimálně triviální
+řešení. Buď má i nějaké další, nebo existuje nějaké $y$, že $y^TA$ má všechny složky záprné.
+\end{Lemma}
+
+\begin{Proof}
+Plyne z věty o oddělování ‒ přečteme matici $A$ po sloupečcích, tím získáme množinu bodů, označme ji $V$. Mohou nastat dva případy
+‒ buď $0$ je obsažéna v konvexní kombinaci, potom má netriviální řešení a nebo není. Tedy se dá oddělit nadrovinou
+$h=@{x:@<y,x@>=b@}$. Poloprostor, kde je $V$ bude $<b$ (kdyžtak přeznačíme znaménka u $y$). Potom $@<y,0@><@<y,a_i@>$.
+\end{Proof}
+
+\begin{Statement}[Carathéodory]
+$X@⊂ℝ^d∧ x∈conv(X) →→ ∃Y@⊂X∧ \len{Y}≤d+1∧x∈conv(Y)$.
+\end{Statement}
+
+\begin{Lemma}[Radonovo]\label{radon}
+$A@⊂ℝ^d, \len{A} = d+2$. Potom existují disjunktní množiny $A₁,A₂@⊂A$ takové, že $conv(A₁)∩conv(A₂)≠∅$.
+
+Bod $x∈conv(A₁)∩conv(A₂)$ se nazývá \name{Radonův bod} a množiny $A₁, A₂$ \name{Radonův rozklad}.
+\end{Lemma}
+
+\begin{Proof}
+Nechť $A=@{a₁,a₂,…,a_{d+2}@}$. Ty jsou affinně závislé. Takže existují koeficienty $α₁,α₂,…,α_{d+2}$, ne všechny $0$, $\Σ α_i =
+0$, $\Σα_i·a_i = 0$. Potom vezmeme $A₁:=@{a_i;α_i>0@}, A₂:=@{a_i;α_i<0@}$. Vyrobíme $x$, který bude ležet v konvexním obalu obou.
+Nechť $S:=\Σ_{α_i > 0} α_i = -\Σ_{α_i < 0} α_i$. Vezměme $x:= \inv{S}\Σ_{α_i > 0} α_i·a_i = -\inv{S} \Σ_{α_i < 0}α_i·a_i$. To jsou
+ale konvexní kombinace bodů.
+\end{Proof}
+
+\begin{Statement}[Hellyho]\label{helly}
+Nechť $C₁,C₂,…,C_n$ jsou konvexní množiny v $ℝ^d$ a $n≥d+1$. Předpokládejme, že každých $d+1$ z těchto množin má neprázdný průnik.
+Potom všechny $C_i$ mají neprázdný průnik.
+\end{Statement}
+
+\begin{Proof}
+Indukcí z lemmatu \ref{radon}. Klíčový je krok pro $n≥d+2$. Předpokaládáme, že $C₁,…,Cn$ jako ve větě. Když libovolnou z nich
+vynecháme, tak existuje bod, který mají společný. Označme jej $a_i$ (při vynechání $C_i$. Uvažme $a₁,…,a_{d+2}$. Aplikujeme
+Radonovo lemma a dostaneme nějaké $x$. Nyní dokážeme, že takové $x$ leží ve všech. To se vezme přes úsečky/podmnožiny, musí se
+někde protínat, tam, kde se protínají, je všechno.
+\end{Proof}
+
+\begin{Statement}[Hellyho nekonečná]\label{hell-inf}
+Pokud je $\mathcal{C}$ systém kompaktních konvexních množin, a dále stejné jako věta \ref{helly}.
+\end{Statement}
+
+\begin{Proof}
+Za daných předpokladů dle věty \ref{helly} má každý konečný podsystém $\mathcal{C}$ neprázdný průnik. Základní vlastnost
+kompaktních množin je, že $∀\mathcal{F}$ systém kompaktních množin platí, že pokud má $∀$ konečný podsystém neprázdný průnik, pak
+i celé $\mathcal{F}$ má neprázdný průnik.
+\end{Proof}
+
+Nechť $X$ je $n$-bodová množina v $ℝ^d$. Potom $x∈ℝ^d$ se nazývá \name{centrem} $X$, pokud každý uzavřený poloprostor obsahující
+$x$ obsahuje $\frac{n}{d+1}$.
+
+\name{Medián} je hodnota taková, že polopřímka „nalevo“ obsahuje alespoň půlku bodů a „napravo“ také.
+
+\begin{statement}
+Každá konečná $X@⊂ℝ^d$ má alespoň jedno centrum.
+\end{statement}
+
+\begin{Proof}
+$x$ je centrum $X←→∀H$ otevřený poloprostor $\len{H∩X}>\frac{d}{d+1};x∈H$. Místo $H$ budeme brát konvexní $C_H$, která bude
+konvexní obal všech bodů z průniku $X$ a $H$.
+
+Každých nejvýše $d+1$ množin $C_H$ má neprázdný průnik. Vynechá málo bodů na to, aby to vyšlo.
+\end{Proof}
+
+\begin{Statement}[O sandwichi]
+Pro $d$-dimenzionální sandwich složený z $d$ ingrediencí, potom existuje přímý řez, který všechny ingredience rozpůlí. Půlení
+znamená, že žádný otevřený poloprostor neobsahuje více než polovinu bodů.
+\end{Statement}
