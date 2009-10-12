@@ -1,0 +1,42 @@
+\subsection{Davis-Putmanova procedura}
+
+Slouží k nalezení splňujícího ohodnocení, je až exponenciální, ale ořezává.
+
+Máme klauzule $\mathcal{C} := @{C₁,…,C_n@}$ a proměnné $p₁,…,p_n$.
+Konstruujeme lineární strom způsobem ‒ nechť $v$ je kořen. Zvolíme v něm proměnnou $p_i$ a větvíme se podle toho, jestli dosadíme
+$0$ nebo $1$.
+
+Když dosadíme $0$, vypustíme všechny klauzule obsahující $\lnot p_i$. Z těch, které obsahují $p_i$ vypustíme $p_i$. Když zbude
+$\mathcal{C}$ jako prázdné, označíme toto částečné ohodnocení jako splňující. Pokud se některá klauzule zkrátí na prázdnou, pak
+tuto větev ukončíme.
+
+Když dosadíme $1$, tak postupujeme duálně.
+
+\begin{Tvrz}
+Pokud existuje splňující ohodnocení, potom ji tato procedura najde (všechny).
+
+Naopak, pokud neexistuje, pak jsou všechny větve uzavřeny sporem a lze sestrojit důkaz ve stromové resoluci stejné velikosti.
+\end{Tvrz}
+
+\begin{Proof}
+Na každý list dáme klauzuli, která je nesplněná. Dále jdeme zpět ke kořeni a provádíme rezoluci podle proměnných, podle kterých se
+větvilo. Pokud to nejde, vezmeme klauzuli, která neobsahuje literál s danou proměnnou.
+\end{Proof}
+
+\begin{Follows}
+Stromová (tudíž i obecná) resoluce je úplný důkazový systém pro DNF, tj. pro konečnou nesplnitelnou množinu klauzulí existuje
+stromový resoluční důkaz sporu.
+\end{Follows}
+
+\begin{Statement}[Efektivní interpolace pro resoluci]
+Existuje efektivní algoritmus $A$, který pro daný důkaz sporu z množiny klauzulí ve speciálním tvaru:
+
+$$\mathcal{C}=@{φ_i@(\overline{p},\overline{r}@)@}_{i∈I}∪@{ψ_q@(\overline{p},\overline{q}@)@}_{j∈J}$$
+
+Kde $\overline{p}, \overline{q}, \overline{r}$ jsou disjunktní množiny proměnných a z daného ohodnocení
+$\overline{a}:\overline{p}→@{0,1@}$ sestrojí důkaz sporu buď z první nebo druhé množiny v polynomiálním čase.
+\end{Statement}
+
+\begin{Note}
+Pokud je $\mathcal{C}$ nesplnitelná, potom alespoň jedna z těchto množin nesplnitelná.
+\end{Note}
