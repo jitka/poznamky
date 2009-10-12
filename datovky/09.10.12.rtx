@@ -1,0 +1,12 @@
+\subsection{Hashování s přemísťováním}
+Podobně, jako u separovaných řetězců, ale položky jsou uvnitř tabulky a odkaz je index do tabulky. Spotřebovává méně paměti, je
+lepší ke cachím.
+
+\subsection{Hashování s dvěma ukazateli}
+Podobně jako u separovaných řetězců, jednosměrné seznamy. Řetězec může začít kdekoliv, na to je položka begin ‒ když řetězec
+začíná někde jinde (položky jsou sice přímo v hashovací tabulce, ale pozice zcela nesouvisí s hodnotou).
+
+\subsection{Srůstající hashování}
+Buď standardní a nebo s pomocnou pamětí. Prvky se strkají do tabulky a pokračují za sebou. Když není volno, pokračujeme na další a
+další, dokud volno nebude. Tím se mohou spojit některé řetězce dohromady. Dělí se jednak, jestli použijeme pomocnou paměť (aby
+nesrůstaly) a jednak podle toho, kam se vkládá nový prvek v případě kolize.
