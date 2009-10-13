@@ -1,0 +1,50 @@
+
+\begin{Priklad}
+Dokážeme, že $m(3)=7$. Je potřeba dokázat obě nerovnosti.
+
+$∃3$-uniformní hypergraf se $7$ hranami, který není $2$-obarvitelný. Je to například Fannova rovina.
+
+Opačně chceme, aby každý s nejvýše $6$ hranami byl $2$-obarvitelný. Rozebereme případy: když jich bude 6, tak to nastat nemůže.
+Když míň, můžu nacpat izolované vrcholy, když víc, budou některé nespojené, potom je můžu slučovat.
+\end{Priklad}
+
+Pravděpodobnost:
+\name{Náhodná veličina} ‒ něco, co může mít různé hodnoty, my měříme, kterou budeme mít. Máme střední hodnotu („očekávanou
+hodnotu“).
+
+Střední hodnota je lineární
+
+$$
+E(X=Y) = EX + EY
+$$
+
+Veličina „něco nastane, potom je to jedna, nebo něco nenastane, pak nula“ se nazývá indikátor.
+
+\begin{Priklad}
+Máme turnaj, kdo s kým hraje. Máme $K_n$, hrany orientované dle výher. Máme hamiltonovskou cestu obsahující všechny vrcholy ‒
+seřazení podle výkonosti. Pro každý turnaj existuje taková hamiltonovská cesta. Existuje i turnaj o $n$ hráčích, kde počet těchto
+cest je $≥\frac{n!}{2^{n-1}}$.
+\end{Priklad}
+
+\begin{Proof}
+Zvolíme náhodně turnaj ‒ pro každou dvojici náhodně vybereme směr. Vezmeme náhodnou veličinu ‒ počet hamiltonovských cest.
+Ukážeme, že střední hodnota je $\frac{n!}{2^{n-1}}$.
+
+Napíšeme $X$ jako součet $\ΣX_c$, kde $c$ budou hamiltonovské cesty v neorientovaném turnaji ‒ všechny permutace vrcholů. $X_c$
+bude indikátor, že nikde není proti směru hran. Počet cest je $n!$, každá hrana je s pravděpodobnostní $0,5$ orientovaná správně,
+hran je $n-1$. Tím je dokázáno. To, že jsou závislé nám nevadí, protože linearita platí vždy.
+\end{Proof}
+
+\begin{Observation}
+Střední hodnota indikátoru je pravděpodobnost, že to nastane.
+\end{Observation}
+
+\begin{Priklad}
+Máme graf, rozdělím vrcholy do dvou skupin a chci co nejvíce hran, které vedou mezi těmito skupinami. Poznat, jestli je tento
+počet $≥k$ je NP-úplná. Toto číslo je $≥0.5·\len{E(G)}$.
+\end{Priklad}
+
+\begin{Proof}
+Vezmeme jednu množinu náhodně ‒ tj. pro každý prvek si hodíme náhodně mincí, jestli tam je nebo není.
+To je totéž jako součet indikátorů u každé hrany, jestli vede mezi množinami. Indikátor bude $0.5$.
+\end{Proof}
