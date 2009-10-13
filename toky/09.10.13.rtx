@@ -1,0 +1,24 @@
+Fixujme $s_i$ a budeme objem považovat za funkci poloměru. Tato je neklesající. Je po částech spojitá, je nespojitá jen v tolika
+bodech, kolik máme vrcholů.
+
+\begin{Lemma}
+Existuje poloměr $r<0.5$ takový, že velikost toho řezu vůči velikosti potrubí je nejvýše $2·\log 2·k$.
+
+
+\end{Lemma}
+
+K čemu nám toto pomůže? Najdeme dvojici $s_i, t_i$ a aplikujeme lemma, vyndáme správně velkou kouli a pokračujeme. Celkově
+neodebereme určitě více než $2Φ$ koulí.
+
+Správné $r$ budeme hledat taková, která jsou mezi vrcholy ‒ ve spojitých částech.
+
+Algoritmus nalezne $4·\ln 2k$ aproximaci minimálního multikomoditního řezu.
+
+Určitě multitok je vždy $≤$ multiřez. Opačný odhad lze vzít z předchozího algoritmu.
+
+\subsection{Souběžný multitok a multiřez}
+
+Máme graf, máme kapacity, máme komodity (každá má zdroj, stok a požadavek, kolik chce protéct). Kromě obvyklých požadavků chceme
+také, aby byly požadavky dodrženy rovnoměrně (tedy, třeba všechny na $35\%$).
+
+Tok lze opět vyřešit lineárním programem.
