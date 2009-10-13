@@ -1,0 +1,31 @@
+Toto je ve všech rozumných jazycích jednoduše implementovatelné.
+
+Třída primitivně rekurzivních funkcí je třída obsahující základní funkce a je uzavřená na první dva operátory.
+
+Částečně rekurzivní funkce jsou uzavřené i na třetí operátor.
+
+Obecné rekurzivní funkce musí být definované všude.
+
+Tyto funkce ‒ z jejich odvození ‒ lze implementovat.
+
+\name{Odvození funkce} je posloupnost funkcí, z nichž každá je buď primitivní, nebo vzniká z předchozí pomocí povolených
+operátorů. Samozřejmě je potřeba přidat i kterou základní, nebo z kterých předchozích se tvoří, etc. Poslední je ta funkce.
+Odvození hraje roli programu.
+
+Primitivně rekurzivní funkce jsou všude definované a efektivně vyčíslitelné ‒ idukcí dle složitosti formule.
+
+\begin{Tvrz}
+Primitivně rekurzivní jsou vlastní podmnožinou obecných rekurzivních a ty jsou vlastní podmnožinou částečných rekurzivních funkcí.
+\end{Tvrz}
+
+\begin{Proof}
+Neostré inkluze jsou zřejmě vidět.
+
+Ackermanova funkce patří do obecně rekurzivních, ale není primitivně rekurzivní ‒ for cyklus na ni nestačí.
+\end{Proof}
+
+\begin{Priklad}
+Součet je primitivní rekurzivní funkce. Stačí použít operátor primitivní rekurze.
+\end{Priklad}
+
+Primitivní rekurzivní funkce jsou právě všechny funkce, které jsou naprogramovatelné v programovacím jazyce s pomocí for cyklu.
