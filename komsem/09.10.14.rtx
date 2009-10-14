@@ -1,0 +1,7 @@
+\section{Sčítání řad}
+
+Máme řadu $1^p+2^p+…+n^p$, což když sečneme, tak vyjde $a_{n+1}·n^p+a_n·n^{p-1}+…+a₁·n+a₀$. Chceme zjistit tyto koeficienty.
+Uděláme si tabulku $p\times p$, sloupečky indexované od $0$, řádky od $1$. Zapisujeme odshora, vlevo nahoře je $1$, v druhém řádku
+jsou na prvních $2$ místech $\inv{2}$. Kromě prvního sloupečku se počítají poté takto: podíváme se doleva nahoru, vynásobíme
+číslem řádku, vydělíme číslem sloupce. V prvním řádku doplním tak, aby součet řádku byl $1$. Poté vezmu jako koeficienty první
+sloupec. $a₀=0$.
