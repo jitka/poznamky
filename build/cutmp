@@ -1,12 +1,11 @@
-#!/usr/bin/perl
-
 $run = 1;
 $act = 1;
 $FN = $ARGV[0];
 $FN =~ s#.*/##;
 foreach( <STDIN> ) {
-	if( /^\\ENDMPOST(.*)$/ ) {
+	if( /^\\ENDMPOST({.*?})?({.*?})?$/ ) {
 		print "\\caption$1" if length $1;
+		print "\\label$2" if length $2;
 		print "\\end$par\n" if length $par;
 		$run = 1;
 	} elsif( /^\\MPOST(.*)$/ ) {

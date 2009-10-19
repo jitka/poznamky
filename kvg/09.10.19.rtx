@@ -1,0 +1,60 @@
+\section{Mřížky a Minkovského věta}
+Uvažujeme standardní čísla, tedy $ℤ^d$ ‒ tedy, mřížové body.
+
+\begin{Statement}[Minkovského]
+$C@⊂ℝ^d$ konvexní, omezená a symetrická podle počátku. Její objem $vol@(C@)>2^d$. Potom $C$ obsahuje alespoň jeden mřížový bod
+různý od počátku.
+\end{Statement}
+
+\begin{Proof}
+Uvážíme množinu $C'$, což je $@{0.5·c;c∈C@}$.
+
+\begin{Tvrz}\label{minko-tvrz-pomoc}
+Existuje nenulový celočíselný vektor $v$ takový, že $C'∩@(C'+v@)≠∅$.
+\end{Tvrz}
+
+\begin{Proof}
+Sporem. Nechť se žádné dvě neprotínají. Vezmeme $R$ dostatečně velké přirozené číslo a vezmeme
+$\mathcal{C}=@{c'+v;v∈@{-R,-R+1,…R@}^d@}$. Žádné z těchto se neprotínají (protože se neprotíná $C'$ s žádnou $C''∈\mathcal{C}$).
+Ke krychli přidáme nějaký okraj, aby se tam všechny tyto vešly, tedy jsou uzavřené v $@<-R-D,R+D@>^d$, kde $D$ je poloměr $C'$.
+Potom součet objemů těchto musí být menší než objem krychle. Ale to vyjde příliš málo vzhledem k objemu $C$.
+\end{Proof}
+
+Máme $v$ jako v tvrzení \ref{minko-tvrz-pomoc}. Tedy existuje $∃x∈C';x∈C'+v$, ze symetrie dostaneme, že jak $x-v$, tak $v-x∈C'$.
+Tedy, $2x∈C,2(v-x)∈C$. Proto (z konvexity) $x+(v-x)∈C$, tedy $v∈C$ a $v$ je mřížový bod.
+\end{Proof}
+
+\begin{Priklad}
+Les (kruhový) o poloměru $26m$, ve všech mřížových bodech kromě počátku stromy o průměru $16cm$, my stojíme v počátku. Je třeba
+dokázat, že nikde není vidět ven. Tedy, vezme se to sporem, tedy že pás o šířce $16cm$ je prázdný až ven ‒ nemůže, moc velký
+objem.
+\end{Priklad}
+
+\begin{Priklad}
+$α∈ℝ$, chceme aproximovat číslem $z∈ℤ$. Jak dobře to jde? Jde to libovolně. Když si zvolíme nějakou přesnost jako $10^k$, tak
+zvolíme čitatel a je hotovo.
+
+Nechť $α∈@(0,1@)$, $N$ přirozené číslo, potom $∃$ dvojice $m,n$ celých čísel, $1≤n≤N$, potom $\len{α-\frac{m}{n}}<\inv{n·N}$.
+\end{Priklad}
+
+\begin{Follows}
+Existuje nekonečně mnoho dvojic $@(m,n@)$ tak že $\len{α-\frac{m}{n}}≤\inv{n²}$.
+\end{Follows}
+
+\section{Incidence bodů a přímek}
+Máme $P$ množinu $m$ bodů v rovině a $L$ množina $n$ přímek v rovině. Chceme $I(P,L):=@{@(p,l@);p∈P,l∈L,p∈l@}$. Chceme vědět, jaká
+největší množina to může být.
+
+→•
+ • $I(1,n)=n$
+ • $I(m,1)=m$
+←•
+
+\begin{Statement}[Szemerédi-Trotter]
+$∀m,n≥1: I(m,n)=O@(m^\frac{2}{3}+n^\frac{2}{3}+m+n@)$ a tento odhad je nejlepší možný až na hodnotu konstanty (a ta konstanta je
+„rozumná“).
+\end{Statement}
+
+\section{Problém jednotkových vzdáleností}
+Chceme nakreslit několik bodů do roviny tak, aby tam bylo co nejvíc jednotkových vzdáleností. Toto se zatím neví, ale ví se, že
+$U(n) = O(n^\frac{4}{3})$, na druhé straně $U(n)≥n^{1+\frac{c}{\log \log n}}$.
