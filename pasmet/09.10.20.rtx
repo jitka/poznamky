@@ -1,0 +1,42 @@
+Kromě náhodného házení (třeba vrcholů do partit), můžu vzít pytel všech množin a jednu si vybrat. A nebo můžu vzít jen množiny
+splňující nějakou vlastnost.
+
+\begin{Priklad}
+Máme vektory, chceme jim vybrat znaménka ($\pm$) tak, aby dohromady dali nějaký součet. $\len{v_?}=1$.
+
+\begin{Tvrz}
+Existují znaménka taková, že součet je $≥\sqrt{n}$ a i taková, že $<\sqrt{n}$.
+\end{Tvrz}
+
+Vybereme znaménka uniformně nezávisle. Hodilo by se ukázat, že střední hodnota je $\sqrt{n}$.
+
+Budeme zkoumat jinou náhodnou veličinu ‒ a to $\len{x}²$ ($x$ je součet). To se dá upočítat na $n$, takže stačí odmocnit.
+\end{Priklad}
+
+\begin{Statement}
+Pokud jsou $X$ a $Y$ nezávislé, potom $E(X·Y) = EX·EY$.
+\end{Statement}
+
+\begin{Priklad}
+Máme $X, \len{X}=n, \mathcal{S}@⊂\combnum{X}{k}$, a $∀S₁,S₂∈\mathcal{S};S₁∩S₂=∅$. Potom $\len{\mathcal{S}}≤\combnum{n-1}{k-1}$.
+Je to věta Erdös-Ko-Rado.
+
+Obvyklý důkaz je přes počítání dvěma způsoby.
+
+Vezmněme $π$ náhodné cyklické pořadí.
+\end{Priklad}
+
+\begin{Statement}[Spesnerova]
+Máme množinu $\mathcal{S}@⊂\mathcal{P}(X);S₁≠S₂∈\mathcal{S}→→S₁⊄S₂$. Potom:
+$$\len{\mathcal{S}}≤\combnum{n}{\lfloor\frac{n}{2}\rfloor}$$
+\end{Statement}
+
+\begin{Statement}[Bellbás]
+Nechť $A_i,B_i@⊂X, i=1…n, \len{A_i}=k, \len{B_i}=l, ∀i;A_i∩B_i = ∅, ∀i≠j; A_i∩B_j≠∅$. Potom:
+$$n≤\combnum{k+l}{k}$$
+\end{Statement}
+
+\begin{Proof}
+$π∈S_x$, $u_i:=@{π∈S_x;π(A_i)≤π(B_i)@}$. Když vezmu takové rozložení, tak se ukáže, že některé množiny nemají možnost, aby měly
+společný prvek. Z toho se utluče, že $u_i$ má nějakou pravděpodobnost pro nějaký počet, takže počet musí být malý.
+\end{Proof}
