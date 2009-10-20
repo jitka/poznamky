@@ -1,0 +1,11 @@
+To, že ackermanova funkce není primitivně rekurzivní je zřejmé z toho, že nám nestačí konečně mnoho vnořených for-cyklů.
+
+Množina $M$ je \name{rekurzivní}, pokud $χ_M$ (charakteristická funkce) je obecně rekurzivní. Tedy, jsou to právě algoritmicky
+rozhodnutelné množiny.
+
+Predikáty (vlastnosti, podmínky) ‒ lze ztotožnit s množinami.
+
+\begin{Tvrz}
+Spojky výrokového počtu zachovávají rekurzivitu (libovolnou) predikátů.
+Stejně tak omezená kvantifikace.
+\end{Tvrz}
