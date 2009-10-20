@@ -1,0 +1,26 @@
+Pro podmnožinu vrcholů $S@⊂V(G)$ označíme $δ(S)$ množinu všech hran, které vedou ven z $S$, tedy
+$@{@{u,v@}∈E(G);\len{@{u,v@}∩S}=1@}$. $I(S)$ jsou indexy komodit, které odebrání $S$ rozpojí.
+
+Pro $S@⊂V$ je \name{hustota} je:
+
+$$
+\frac
+{\Σ_{e∈δ(S)} c(e)}
+{\Σ_{i∈I(S)} d_i}
+$$
+
+Hledáme nějaký řez s co nejmenší hustotou.
+
+\begin{Observation}
+Pro nezáporná čísla $a₁,…,a_n$ a kladná čísla $b₁,…,b_n$ platí:
+
+$$
+\min_i \frac{a_i}{b_i}≤\frac{\Σa_j}{\Σb_j}
+$$
+\end{Observation}
+
+Když $I@⊂1,…,k, D(I)=\Σ_{i∈S} D(i)$ budeme značit součet požadavků vybraných komodit. $D$ bude součet všech a $H(D)$ bude $D$-té
+harmonické číslo.
+
+Vybereme si množinu indexů, že požavadek té komodity je velký, tedy alespoň $\inv{D(I)·H(D)}$. Poté najdeme nejmenší multiřez pro
+tyto komodity.
