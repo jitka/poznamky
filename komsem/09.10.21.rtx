@@ -1,0 +1,10 @@
+\section{Rekonstrukční hypotéza}
+Místo grafu si pamatuju jen nějaký systém podgrafů. Je nějaký další graf, který má stejný systém podgrafů? Rekonstrukční hypotéza
+tvrdí, že ne, že je to jednoznační.
+
+$G_v$ je indukovaný podgraf grafu $G$ na vrcholech $V(G)-v$. Balíček bude multimnožina všech takových $G_v$. Jednotlivé grafy jsou
+karty. $H$ je rekonstrukce balíčku $B←→$ Balíček grafu $H$ je isomorfní balíčku danému. Rekonstrukční hypotéza tvrdí, že jediný
+graf, na kterém toto nefunguje je samostatná hrana.
+
+Dá se dokázat pro nějakou třídu grafů, že je rekonstruovatelná. První věc je, jestli je graf rozpoznatelný (když dostanu balíček,
+zjistím, jestli je to z této třídy).
