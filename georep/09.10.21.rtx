@@ -1,0 +1,38 @@
+Budeme probírat především průnikovou reprezentaci. Chceme graf mít vrcholy ‒ množiny a hrana bude v grafu existovat, pokud průnik
+vrcholů bude neprázdný. Když $\mathcal{M}$ bude množina, potom $G(\mathcal{M})$ je průnikový graf $\mathcal{M}$.
+
+\begin{Observation}
+Kazdý graf lze takto reprezentovat.
+\end{Observation}
+
+\begin{Proof}
+Každý vrchol bude množnia obsahující všechny hrany, které z něj vedou.
+\end{Proof}
+
+\name{Intervalové grafy (IR)} jsou grafy, kdy dostanu intervaly na přímce a udělám z toho průnikový graf.
+
+U některých tříd průnikových grafů lze mnoho obecně složitých věcí řešit rychle (např. barvení, klikatění, …).
+
+Když $\mathcal{M}$ je množina, potom:
+$$\mathcal{IG}(\mathcal{M}):= @{G|∃f:v(G)→\mathcal{M}∀u≠v;uv∈E(G)←→f(u)∩f(v)≠∅@}$$ Například
+úplný graf je v této třídě pokud tato množina obsahuje alespoň jednu neprázdnou množinu.
+
+\name{Circle grafy (CIR)} jsou průnikové grafy tětiv kružnice.
+
+\name{Circle-Arc grafy (CA)} jsou oblouky na kružnici, jen IR zacyklené dokola.
+
+\name{Permutační grafy (P)} jsou průnikové grafy úseček mezi dvěma rovnoběžnýma přímkama.
+
+\name{Funkční grafy (FUN)} ‒ máme spojité funkce na intervalu (třeba $@(0,1@)$), protínám jejich grafy.
+
+\name{Úsečkové grafy (SEG)} ‒ úsečky v rovině.
+
+\name{Niťové grafy (STR)} ‒ křívky v rovině.
+
+Budeme řesit, jak těžké je tyto třídy rozpoznávat. Velikost reprezentace se bude také řešit.
+
+Perfektní graf je takový, jehož barevnost je rovna velikosti největší kliky a platí to pro všechny indukované podgrafy.
+
+Dále budeme řešit kreslení a reprezentaci rovinných grafů.
+
+\name{Chordální graf} ‒ $C_m$ není indukovaný podgraf pro $m≥4$.

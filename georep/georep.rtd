@@ -1,0 +1,11 @@
+\documentclass[a4paper,11pt]{article}
+\input{../stdhead.rtx}
+\input{../defs.rtx}
+
+\begin{document}
+\title{Geometrické reprezentace grafů}
+\maketitle
+\tableofcontents
+\newpage
+\input{09.10.21.rtx}
+\end{document}
