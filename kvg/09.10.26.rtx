@@ -1,0 +1,36 @@
+Máme graf $G$ a definujeme průsečíkové číslo $Cr(G)$ jako minimální počet křížení hran v nakreslení grafu $G$. Pokud se kříží než
+dvě hrany, potom to počítáme, jako kdyby se neprotínaly v jednom bodě. Je to $NP$ těžký problém.
+
+Můžeme požadovat třeba nakreslení jen úsečkami.
+
+\begin{Statement}[O průsečíkovém čísle]
+Nechť je $G$ graf, který má $n$ vrcholá a $m$ hran, hrany nejsou násobné. Potom $Cr(G)≥\inv{64}·\frac{m³}{n²}-n$.
+\end{Statement}
+
+\begin{Proof}
+
+\begin{Lemma}\label{PruLemma}
+$G$ graf, $Cr(G)≥m-3·n$.
+\end{Lemma}
+
+\begin{Proof}
+Plyne z eulerovy formule.
+\end{Proof}
+
+Uvažme libovolné nakreslení grafu $G$, má $x$ křížení. Budeme předpokládat, že $m≥4n$ (jinak ta věta stejně nic neříká). Vybereme
+nějaké $p∈@(0,1@)$ a vybereme náhodnou podmnožinu $V'@⊂V$, každý vrchol s pravděpodobností $p$ vezmeme, nezávisle na ostatních.
+
+Velikost $v'$ označíme jako $n'$. Tím také vybereme i nějaké hrany (hrany, které nemají oba vrcholy, umřou), takže máme nějaké
+$E'$ a $m'$. Máme ho také nakreslený, má nějaký počet průsečíků ($x'$). Dle lemmatu \ref{PruLemma} $x'≥m'-3n'$.
+
+Podíváme se na střední hodnoty, takže $Ex'≥Em'-3En'$. $En'=p·n$, $Em'=p²·m$. Počet křížení je $Ex'=p⁴x$ (musím vybrat obě hrany).
+Poté je jasné, že $xp⁴≥mp³-np$.
+
+Potom vybereme $p$ tak, abychom maximalizovali pravou stranu. Můžeme vzít $p=\frac{4n}{m}$. A po zjednodušení to vyjde.
+\end{Proof}
+
+Nyní můžeme dokázat větu \ref{SzemerediTrotter}.
+
+\begin{Proof}
+Definujeme nakreslení grafu tak, že z každé úsečky odebereme přímky „do nekonečna“ a necháme to jen mezi body.
+\end{Proof}

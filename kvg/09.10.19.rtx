@@ -50,7 +50,7 @@ největší množina to může být.
  • $I(m,1)=m$
 ←•
 
-\begin{Statement}[Szemerédi-Trotter]
+\begin{Statement}[Szemerédi-Trotter]\label{SzemerediTrotter}
 $∀m,n≥1: I(m,n)=O@(m^\frac{2}{3}+n^\frac{2}{3}+m+n@)$ a tento odhad je nejlepší možný až na hodnotu konstanty (a ta konstanta je
 „rozumná“).
 \end{Statement}
