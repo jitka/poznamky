@@ -1,0 +1,49 @@
+\begin{Statement}[Markovova nerovnost]
+Máme náhodnou nezápornou veličinu $X≥0$, $EX≠0$ a číslo $a>0$. Potom:
+
+$$
+P(X≥a)≤\frac{EX}{a}
+$$
+
+\end{Statement}
+
+\begin{Proof}
+Vezmeme veličinu $X≥a$ (indikátor), vynásobíme $a$ a odhadneme. Můžeme rozdělit na ty, které platí a které ne, z toho to už
+vyplyne.
+\end{Proof}
+
+\begin{Priklad}
+$$P(\∪B_i)≤\ΣP(B_i)$$
+
+Vezmu si $X$ jako počet ve kterých je daný prvek.
+\end{Priklad}
+
+\begin{Priklad}
+$$
+∀n;R(k)>n-\combnum{n}{k}·2^{1-\combnum{k}{2}}
+$$
+
+Uvážíme graf s $n$ vrcholy. Vezmeme $X$ počet podmnožin velikosti $k$, které jsou buď úplné nebo nezávislé.
+
+Vezmu náhodný graf s $n$ vrcholy. Ten má $EX=\ΣEX_S=\combnum{n}{k}2^{1-\combnum{k}{2}}$. Z každé takové špatné množiny zahodím
+jeden vrchol. Dostanu graf s $≥n-\combnum{n}{k}·2^{1-{k}{2}}$ vrcholy a neobsahuje žádnou množinu velikosti $k$, tedy $R(k)>n$
+tohoto grafu.
+\end{Priklad}
+
+\section*{Metoda alterace}
+Funguje to tak, že si něco vybereme náhodně, poté to upravíme tak, aby to vypadalo jak chceme a zkoumáme, jak moc jsme to
+ovlivnili tou úpravou a co nám zbylo.
+
+\begin{Priklad}
+\begin{Statement}
+$$
+∀k∀l∃G;χ(G)≥K;G\hbox{ neobsahuje cykly délky }≤l
+$$
+\end{Statement}
+
+\begin{Proof}
+Vezmeme náhodný graf a $G_{n,p}$, tedy máme $n$ vrcholů a hrana tam je s pravděpodobností $p$.
+
+$p$ zvolíme jako $n^{\inv{l}-1}$. Ukážeme, že neobsahuje moc cyklů délky menší než $l$.
+\end{Proof}
+\end{Priklad}
