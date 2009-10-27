@@ -1,0 +1,51 @@
+Najdeme ho tak, že seřadíme požadavky dle velikosti a začneme brát od těch největších, pokaždé kontrolovat, jestli to ještě jde.
+
+\subsubsection{Lepší algoritmus řezu}
+Označíme $d(u,v)$ délku nejkratší cesty mezi vrcholy $u,v$.
+
+Budeme předpakládat, že nejklatší cesta mezi dvěma vrcholy vede po přímé hraně (pokud taková existuje) a požadavek každé komodity
+je roven délce nejklatší hrany.
+
+To, že toto můžeme udělat, dokážeme sporem, předpokládejme, že máme nějaké optimální řešení, které nesplňuje to první. Vezmeme
+nejmenší takové, které porušuje co nejméně. Můžeme upravit délku hrany, aniž bychom to porušili. Tím podmínku neporušíme, protože
+tam byla jiná cesta.
+
+Určitě musí platit, že $y(i)≥d(s_i,t_i)$, protože jinak to porušuje podmínku, ale pak to můžu přenastavit na rovnost.
+
+Tedy, na to řešení lze nahlížet jako na metrický prostor.
+
+\begin{Lemma}
+Nechť $f:V→ℝ^d$ pro nějaké $d$ a nechť $x(e) = \len{f(u)-f(v)}_{l₁}$ a pro $y(i)=\len{f(s_1)-s(t_i)}_{l₁}$ a spočítejme
+$β=\Σ_{i=1}^k d_i·y(i)$. Potom tvrdíme, že $@(\frac{x}{β},\frac{y}{β}@)$ je řešení pro lineární program duální k tomu tokovému.
+\end{Lemma}
+
+\begin{Lemma}
+Nechť $(x,y)$ je řešení indukované zobrazením $f:V→ℝ^d$ (jako v minulém lemmatu). Pak lze v polynomiálním čase najít řez $S@⊂V$ s
+hustotou $ρ(S)≤\Σc(e)·x(e)$.
+\end{Lemma}
+
+\begin{Proof}
+Pro dané $f$ si označme $μ(u,v):=\len{f(u)-f(v)}_{l₁}$. Pro každou podmnožinu vrcholů $S@⊂V$ definujme $∀u,v∈V$
+$μ_s(u,v)∈@{0,1@}$, podle toho jestli je právě jeden uvnitř. Říká se tomu řezová pseudometrika.
+
+\begin{Lemma}
+Existují konstanty $λ_s≥0$ pro každou podmnožinu tž $∀u,v∈V;μ(u,v)=\Σ_{S@⊂V}λ_sμ_s(u,v)$. Navíc množina nenulových $λ_s$ je
+nejvýše $n·d$, kde $d$ je dimenze prostoru, $n$ je počet vrcholů.
+\end{Lemma}
+
+\begin{Proof}
+Uvažme příspěvek první souřadnice do $μ$. Očíslujme vrcholy $V$ podle první souřadnice. Označme $S(l)=@{v₁,…,v_l@}$. Vezmeme
+vrcholy $v_i, v_j, i<j$.
+\end{Proof}
+
+
+\end{Proof}
+
+\begin{Lemma}
+Pro libovolné přípustné řešení $@(x,y@)$ lze sestrojit zobrazení $f:V→ℝ^d$, že indukuje řešení $@(\overline{x}, \overline{y}@)$ s
+vlastností $\Σc(e)·\overline{x}(e)$, které je nejvýše $O(\log k)$ krát horší, než účelová funkce $(x,y)$.
+\end{Lemma}
+
+\begin{Tvrz}
+Existuje polynomiální pravděpodobnostní algoritmus, který najde $O(\log k)$ aproximaci nejřidšího řezu.
+\end{Tvrz}
