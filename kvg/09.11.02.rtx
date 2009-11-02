@@ -1,0 +1,74 @@
+\section{Konvexní mnohostěny}
+Máme systém množin $F@⊂2^X$, lze jim přiřadit charakteristické vektory. Potom vezmeme konvexní obal těchto charakteristických
+vektorů. Patří do polyedrální kombinatorice.
+
+\subsection{Geometrická dualita}
+Mějme konvexní mnohoúhelník. Dále vezmeme množinu všech přímek, které protínají tento mnohoúhelník. Můžeme definovat dualitu $D₀$
+‒ když máme bod $a∈ℝ^d\backslash@{0@}$, tak mu přiřadíme nadrovinu $D₀(a)=@{x∈ℝ^d;@<a,x@>=1@}$. Když mám nadrovinu $h@⊂ℝ^d$, která
+neprochází počátkem, tak přiřadíme bod $D₀(h)=a$ takové, že pro $a$ platí výše zmíněná rovnice. Toto je jednoznačné přiřazení.
+
+Například když máme v rovině bod $a$, tak její přímka bude kolmá na spojnici $a$ s počátkem ve vzdálenosti $\inv{\len{a}}$.
+
+Potom ta množina přímek může být reprezentovaná množinou bodů, vznikne něco jako doplněk k mnohoúhelníku (vnějšek).
+
+\begin{Statement}[Vlastnosti duality $D₀$]
+Platí následující věci:
+
+→•
+ • $p∈ℝ^d\backslash@{0@}$, $h$ nadrovina neprocházející počátkem. Potom
+   $p∈h→→D₀(h)∈D₀(p)$.
+ • $p,h$ jako v předchozím. $h^-=@{x∈ℝ^d:@<a,x@>≤1@}$, tedy poloprostor obsahující počátek.
+   Potom $p∈h'←→D₀(h)∈D₀(p)^-$.
+←•
+\end{Statement}
+
+\begin{Proof}
+Oboje je jen dosazení.
+\end{Proof}
+
+Mějme $X@⊂ℝ^d$, potom $X^*@{y∈ℝ^d;∀x∈X;@<x,y@>≤1@}$ je \name{duální množina} (nebo také polární množina). Tedy je to průnik
+poloprostorů, pro každý bod jeden poloprostor, tedy je konvexní, obsahuje počátek a je uzavřená.
+
+Pokud $X$ je konvexní, uzavřená a obsahuje počátek, potom $@(X^*@)^*=X$.
+
+Pokud budeme mnohostěn reprezentovat rovinným grafem, pak duál k tomu grafu odpovídá duálu mnohostěnu jako množiny.
+
+\begin{Note}[Jiná dualita]
+Máme nadrovinu $h$, která není svislá, pak ji lze jednoznačně napsat jako $h=@{x∈ℝ^d;x_d=@(\Σ_{i=1}^{d-1}a_i·x_i@)-a_d@}$.
+
+Toto dává vztah mezi body a nadrovinami.
+\end{Note}
+
+\name{$V$-mnohostěn} je definován jako konvexní obal konečné množiny $ℝ^d$.
+
+\name{$H$-polyedr} je průnik konečně mnoha uzavřených poloprostorů v $R^d$.
+
+\name{$H$-mnohostěn} je $H$-polyedr, který je ještě k tomu omezený.
+
+\begin{Statement}
+$H$-mnohostěny definují stejnou třídu objektů, jako $V$-mnohostěny.
+\end{Statement}
+
+\begin{Proof}
+Indukcí dle $d$. Pro $d=1$ triviální, nechť je $d$ větší. Máme neprázdný omezený průnik. Máme i hranici. Každé $F$ z hranice je
+$H$-mnohostěn dimenze $≤d-1$. Pro ně to platí a můžeme zkombinovat body.
+
+Zpět pomocí duality.
+\end{Proof}
+
+Lineární programování využívá toho, že toto je stejné.
+
+Když se řekne Konvexní mnohostěn, tak se myslí libovolný z těchto popisů. U neomezeného se používá polyedr.
+
+Dimenze mnohostěnu je dimenze jeho afinního obalu.
+
+Příklady:
+Platonská tělesa (krychle).
+
+Někdy se za $n$-dimenzionální krychli považuje $@<-1,@>^n$.
+
+Křížové mnohostěny ‒ vezmu několik os, na nich vezmu úsečky a obalím (tedy, $conv@{e₁,-e₁,e₂,…,e_d,-e_d@}$).
+
+\subsection{Simplexy}
+Simplex lze definovat jako lineární obal afinně nezávislé množiny bodů.
+\subsection{Simplexy}
