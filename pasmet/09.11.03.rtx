@@ -1,0 +1,66 @@
+\begin{Tvrz}
+Máme $G$ s $n$ vrcholy a $m$ hranami, $d$ bude průměrný stupeň ($\frac{2m}{n}$). Potom $α(G)≥\frac{n}{2d}$, $α(G)$ je nezávislá
+množina grafu.
+\end{Tvrz}
+
+\begin{Proof}
+Máme množinu $S$ náhodnou, $p$ vybereme později.
+
+Chceme aby $S$ byla nezávislá, tak vezmeme $X=\len{E@(G@[S@]@)}$, tedy počet hran, které chceme odstranit. To je $\Σ_e X_e$, kde
+$X_e$ je jestli má oba konce v $S$. $X_e=p²$. $EX=m·p²$ a chceme, aby tohle bylo $<1$.
+
+Vezmeme $Y=\len{S}$. $EY=n·p$. Chceme aby $X<1∧Y≥\frac{n}{2d}$. To se asi nepodaří.
+
+Tak zkusíme, aby $Y-X$ bylo velké. Z každé hrany můžu sebrat vrchol a dostanu $S$, která je nezávislá a stále ještě je velká
+alespoň $Y-X$.
+
+Chceme tedy, aby $-m·p²+n·p≥\frac{n}{2d}$. To už se dá utlouct, že $p=\inv{d}$. Pozor, $d$ nesmí být příliš malé.
+\end{Proof}
+
+\begin{Priklad}
+Máme jednotkový čtverec $U$, vyberem $S@⊂U$ a $T(S)$ je minimální plocha trojúhelníka s vrcholy z $S$. $S$ konečná. Zajímá mě,
+kolik je $\max{T(S)}$ pro $n$ bodů.
+
+\begin{Tvrz}
+$T_n≥Ω@(\inv{n²}@)$.
+\end{Tvrz}
+
+\begin{Proof}
+Vybereme $S$ náhodně. $X(S)$ bude počet trojúhelníků s plochou $<\inv{100·n²}$. Potom vyhodím $X(S)$ bodů tak, aby tyhle
+trojúhelníky přestaly existovat.
+
+To spočítám jako $\combnum{2n}{3}·P@(\len{\triangle xyz}<\inv{100 n²}@)$.
+
+Když je $x$ dáno, potom pravděpodobnost toho jednoho je $b≤\len{xy}≤b+db$.
+
+Když je dáno $x,y$. \TODO{Tady to přestalo nějak dávat smysl, ale prý to stačí upravděpodobnostnit a vyjde to něco jako
+$16π·\combnum{2n}{3}·\inv{100n²}$.}
+\end{Proof}
+\end{Priklad}
+
+\section{Čebyševova nerovnost}
+Anglicky se nazývá „second moment method“. $EX^t$ se nazývá $t$-tý moment.
+
+Rozptyl je $Var X=E(X-EX)² = EX²-(EX)²$.
+
+$$
+P(\len{X-EX}≥t)≤@(\frac{Var X}{t}@)²
+$$
+
+Nebo také
+
+$$
+P(\len{X-EX}≥t·Var X)≤\inv{t²}
+$$
+
+Tato nerovnost je nejlepší možná bez dalších předpokladů.
+
+Lze odvodit z Markovovy nerovnosti.
+
+\begin{Priklad}
+Máme náhodný graf $G_{n,p}$, zkoumáme $X_H$, což je počet kopií $H$ v $G$. Například
+$EX_{k₄}=\combnum{n}{4}·p⁶≤\inv{4!}·p⁶·n⁴≤n^{-4}·n⁴=1$.
+\end{Priklad}
+
+Funkce $p₀$ se nazývá \name{prahová funkce} pro vlastnost $P$ pokud $p<<p₉$, potom pravděpodobnost $P$ jde k $0$ a pro $p>>p₀$
+jde k $1$.

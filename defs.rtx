@@ -47,7 +47,6 @@
 \newtheorem{Lemma}{Lemma}
 \newtheorem{Note}{Poznámka}
 \newtheorem{Observation}{Pozorování}
-\newtheorem{Priklad}{Příklad}
 \newenvironment{Proof}
 {\proof}
 {
@@ -60,6 +59,18 @@
 {
   \addtocounter{algorcnt}{1}
   \textbf{Algoritmus \thealgorcnt\ifthenelse{\equal{#1}{}}{}{ (#1)}}:\\
+
+}
+{
+  \begin{flushright}
+    $☺$
+  \end{flushright}
+}
+\newcounter{PriCnt}
+\newenvironment{Priklad}[1][]
+{
+  \addtocounter{PriCnt}{1}
+  \textbf{Příklad \thePriCnt\ifthenelse{\equal{#1}{}}{}{ (#1)}}:\\
 
 }
 {
