@@ -1,0 +1,12 @@
+\begin{Lemma}
+Pro libovolné přípustné řešení $(X,Y)$ lze v polynomiálním čase sestrojit vnoření $f:V→ℝ^d$, které indukuje řešení $(X',Y')$
+takové, že hodnota účelové funkce se zhorší max. o $O(\log k)$.
+\end{Lemma}
+
+Předpokládejme, že každému vrcholu dáme jen jednu souřadnici (vnořujeme do $ℝⁱ$) a zobrazíme ho  $\min d_x(u,v)$. Vzdálenost
+tedy bude nejvýše tak velká, jako původní. Když budeme zobrazovat do $d$ dimenzionální, potom nám vyjde maximálně $d$ krát
+větší.
+
+Nakonec to vyjde, že narostou nejvýše $\log² k$ a alespoň $\log k$.
+
+
