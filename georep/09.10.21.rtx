@@ -1,3 +1,4 @@
+\section{Úvod}
 Budeme probírat především průnikovou reprezentaci. Chceme graf mít vrcholy ‒ množiny a hrana bude v grafu existovat, pokud průnik
 vrcholů bude neprázdný. Když $\mathcal{M}$ bude množina, potom $G(\mathcal{M})$ je průnikový graf $\mathcal{M}$.
 

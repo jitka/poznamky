@@ -1,0 +1,141 @@
+\section{Chordální grafy}
+Graf je \name{chordální}, pokud $C_k$ není indukovaný podgraf pro $k≥4$.
+
+\begin{Observation}
+Když je $G$ chordální a udělám z něj $H=G+v$ takový, že sousedi vrcholu $v$ jsou úplný podgraf, potom $H$ je také chordální.
+\end{Observation}
+
+\begin{Observation}
+Když mám $G$ a $U@⊂V(G)$ je vrcholový řez a $G@[U@]$ je úplný podgraf, potom to řez rozdělí na $G₁,G₂$. Pokud $G₁+U$ i $G₂+U$ jsou
+chordální, potom i $G$ je chordální.
+\end{Observation}
+
+\begin{Proof}
+Kružnice by musela procházet přes $U$, ale tam jsou alespoň $2$ vrcholy, ty jsou spojené.
+\end{Proof}
+
+\begin{Lemma}
+Když $G$ je chordální, potom $∀$ minimální řezy indukuje úplný podgraf.
+\end{Lemma}
+
+\begin{Proof}
+Nechť $U$ je minimální řez, mám nějaké $G₁,G₂$ na různou stranu. Každý vrchol v řezu je potřeba, tedy z každého vrcholu vede
+hrana do každé komponenty souvislosti. Vede kružnice skrz ně, kdyby mezi těmito vrcholy nebyla hrana, vezmu nejkratší takovou
+kružnici, to musí indukovat kružnici, nemá vnitřek, má alespoň $4$ vrcholy, musí mít hranu mezi těmito dvěma vrcholy v řezu.
+
+Toto můžu udělat pro každé dva vrcholy.
+\end{Proof}
+
+Vrchol grafu se nazývá \name{simpliciální}, pokud jeho sousedi indukují úplný graf.
+
+\begin{Statement}
+$∀G≠∅$ chordální graf obsahuje simpliciální vrchol.
+\end{Statement}
+
+\begin{Proof}
+\begin{Lemma}
+Každý chordální graf je buď úplný a nebo má dva nesousední simpliciální vrcholy.
+\end{Lemma}
+
+\begin{Proof}
+Indukcí. První krok ‒ $n=1$ ‒ $K₁$, úplný.
+
+Nechť máme tedy chordální graf $G$, ten má alespoň dva vrcholy. První možnost je, že je úplný, což je v pořádku.
+
+Když úplný není, potom existují vrcholy $x,y$, $@(x,y@)∉E(G)$. Ostatní vrcholy tvoří vrcholový řez, tedy existuje i nějaký
+minimální vrcholový řez $U$. Vezmu $G₁$ a $G₂$ nějaké komponenty i s $U$. Jak $G₁$, tak $G₂$ mají ostře méně vrcholů, než $G$,
+ty jsou podle indukčního předpokladu mají nějaký simpliciální vrchol mimo $U$.
+
+Pokud $G₁$ je úplný, tak libovolný vrchol je simpliciální, vezmu nějaký, který není v $U$. Jinak máme alespoň $2$ simpliciální
+vrcholy, které nejsou spojené hranou, nemohou proto ležet oba v $U$.
+
+Tyto (alespoň $2$) vrcholy jsou simpliciální i v $G$, protože přes $U$ nenabere nové sousedy.
+\end{Proof}
+
+Z toho už to jasně plyne.
+\end{Proof}
+
+\begin{Follows}
+Každý chordální graf má \name{PES} (Perfect Elimination Scheme) ‒ uspořádání vrcholů $v₁,v₂,…,v_n$ takové, že $v_i$ je
+simpliciální v indukovaném grafu $G@[@{v₁, v₂, …, v_i@}@]$.
+\end{Follows}
+
+\begin{Proof}
+\begin{Observation}
+Každý indukovaný podgraf chordálního grafu je také chordální. Tedy, jsou dědičné na indukované podgrafy.
+\end{Observation}
+
+\begin{Proof}
+Vidět z definice.
+\end{Proof}
+
+Indukcí tvoříme PES indukcí od $v_n$.
+\end{Proof}
+
+PSI jsou užiteční při řešení optimalizačních úloh. Polynomiálně udělám tuto sekvenci, potom sestavuju a mám omezenou velikost
+věcí, na kterých pracuji. Jde to i v lineárním čase v počtu hran.
+
+\begin{Algorithm}[Barvení chordálních grafů]
+Barvíme způsobem „first fit“ ‒ na každý simpliciální vrchol dám nejmenší číslo, které jde.
+\end{Algorithm}
+
+\begin{Proof}
+Určitě je to obarvení.
+
+Představme si, že jsem musel použít $k$ barev. Měl alespoň $k-1$ sousedů, s nimi tvoří $K_k$, určitě jsou tedy potřeba. Je tedy
+nejmenší.
+\end{Proof}
+
+Mimo jiné mi našel také největší kliku v grafu.
+
+\begin{Statement}
+Chordální grafy jsou perfektní (barevnost je stejná jako klikovost, pro všechny indukované podgrafy).
+\end{Statement}
+
+\subsection{Odbočka o perfektních grafech}
+Každý minimální neperfektní graf je buď $C_{2k+1}$ nebo $\overline{C_{2k+1}}$.
+
+Existuje i slabší verze, ta tvrdí, že $G$ je neperfektní $←→\overline{G}$ je neperfektní.
+
+Barevnost, klikovost, nezávislost a poklytí klikami lze řešit polynomiálně přes lineární programování.
+
+\begin{Algorithm}[Nezávislá množina]
+Vezmu PSa, hladově, pokud můžu přidat vrchol, tak ho tam přidám, ale jdu odzadu.
+\end{Algorithm}
+
+\begin{Proof}
+Každá největší tam má buď ten vrchol, nebo některý jeho soused. Můžu prohodit a neublížím si tím.
+\end{Proof}
+
+Ale spoustu věcí polynomiální není ‒ například minimální dominující množina (každý další vrchol je spojený alespoň s jedním
+vrcholu z této množiny). Vezmu libovolný $G$, udělám v něm $H$, za každou hranu na ni navěsím trojúhelník, na celý původní dáme
+kliku. Když najdeme minimální dominující v $H$, tak můžeme z těch nových vrcholů nastěhovat „dovnitř“. Potom taky existuje také
+vrcholové pokrytí v $G$.
+
+Takovým $H$ se říká \name{Split}-grafy (klika+nezávislá množina, nějaké hrany mezi nimi).
+
+\name{Clique-tree} grafu $G$ je strom $T$, jeho vrcholy jsou všechny maximální kliky co do inkluze grafu $G$. Hrany jsou tak, že
+$∀v∈G$, když se podívám na $T@[@{Q_i;v∈Q_i@}@]$ je souvislý. Toto nemusí být jednoznačné (co se týče hran).
+
+\begin{Statement}
+Následující podmínky jsou ekvivalentní:
+→•
+ • $G$ je chordální.
+ • $G$ je průnikový graf podstromů ve stromě.
+ • $G$ má clique-tree.
+←•
+\end{Statement}
+
+\begin{Proof}
+Druhé implikuje první. Vyznačím si nějaké podstromy, které průnikuji. Chci ukázat, že to, co vznikne, je chordální.
+
+Předpokládejme, že máme indukovanou kružnici délky alespoň $4$. Vezmu si ty vrcholy kružnice. Potom najdu v původním stromu
+kružnici.
+
+Když je chordální, umíme udělat PSa a z toho uděláme clique-tree. Když je $G=K_n$, tak je to jednoduché. Dále tedy máme $G$,
+který má clique-tree. Přidáme simpliciální vrchol $v_n$. Podívám se na sousedy, ti tvoří kliku $Q$. Pokud je $Q$ maximální, jen
+tuto maximální kliku zvětším, všechny hrany zůstanou stejné. Pokud nebyla maximální, byla obsažena v nějakém $Q'$. Připojím
+novou maximální kliku $Q∪@{v_n@}$, tu k tomu připojím. Pro ty původní z $Q$ se nic nezměnilo, $v_n$ je jen v jednom.
+
+Třetí implikuje druhé. Máme $T$, nechme ho jako nosný strom, pro každé $u$ definujme $T@[@{Q_i;u∈Q_i@}@]$.
+\end{Proof}
