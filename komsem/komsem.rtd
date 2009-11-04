@@ -1,9 +1,6 @@
 \documentclass[a4paper,11pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[czech]{babel}
-\usepackage{amsfonts}
-
-\input{../defs.tex}
+\input{../stdhead.rtx}
+\input{../defs.rtx}
 
 \begin{document}
 \title{Kombinatorický seminář}
@@ -13,4 +10,5 @@
 \input{10.31.07.rtx}
 \input{09.10.14.rtx}
 \input{09.10.21.rtx}
+\input{09.11.04.rtx}
 \end{document}

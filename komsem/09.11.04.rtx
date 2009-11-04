@@ -1,0 +1,47 @@
+\section{Hledání transversály lichých kružnic v grafu}
+
+\name{Transversála} je nějaká množina vrcholů taková, že to ostatní je bipartitní graf. Obecně je to těžké, tohle je „fixed
+parameter tractable“ ‒ když budu hledat jen takové, které obsahují maximálně $k$ vrcholů, tak to poběží v polynomiálním čase ve
+velikosti grafu, ale konstanta závisí na $k$.
+
+Předpokládejme, že máme algoritmus, co z transversály o $k+1$ vrcholech vybere nějakou o $k$ vrcholech. Vezmu graf o prvních
+$k+1$ vrcholech a prohlásím vše za transversálu, jeden vyhodím, přidám nový vrchol původního grafu, etc.
+
+\subsection*{Složitější algoritmus}
+kopií transversály, uvnitř transversály si vyberu, která hrana to bude, aby nevedly vnitřkem.
+
+Potom vezmu nějakou podmnožinu původní transversály ($Y$), to se zobrazí na $Y'$ ‒ to je dvakrát velké. To rozdělím na dvě části
+$Y_a,Y_b$ tak, že každý vrchol má jednu kopii v $Y_a$ a druhou v $Y_b$.
+
+\begin{Lemma}
+$X$ je minimální transversála $←→∀Y@⊂X;∀Y_a,Y_b∃\len{Y}$ vrcholově disjunktních cest z $Y_a$ do $Y_b$ v
+$G'\backslash@(X\backslash Y@)$.
+\end{Lemma}
+
+\begin{Proof}
+Doleva sporem. Vezmu transversálu $X$ a transversálu $Z$, $\len{Z}<\len{X}$. Zvolím $Y=X\backslash Z$. $G\backslash Z$ má dvě
+partity ($S₁', S₂'$). Zvolím $Y_a=@{y₁∈S₁'∩Y@}∪@{y₂∈S₂'∩Y'@}$.
+
+$\len{Z\backslash X}<\len{Y}$. Chci dokázat, že $Z\backslash X$ odděluje.
+
+Nakonec dokážu, že budu mít jednu cestu, která je zároveň lichá i sudá.
+
+Doprava: $X$ je minimální. $∃Y1=@(Y_a,Y_b@)$ tž $W$ odděluje $Y_a, Y_b$, $\len{W}<\len{Y}$. Potom $G\backslash@(X\backslash
+Y+W@)$ je bipartitní. Dokážu stejně obarvit obě kopie a tedy můžu splácnout obě kopie do jednoho a mít je mimo transversálu.
+\end{Proof}
+
+Vyzkouším tedy všechny možnosti, jak vybrat $Y$ a rozdělit na $Y_a, Y_b$ (jen $4^k$ možností). Potom pomocí toku najdu počet
+disjunktních cest, takže celý algoritmus zvládnu $O(4^k·k·\len{E}·\len{V})$.
+
+\subsection*{Jednodušší algoritmus}
+Mám transversálu a nějakou konkurenční transversálu. Ta rozdělí původní na $3$ části ‒ společná, ta u jedné partity a ta u druhé
+partity. Původní vezmu a v půodních partitách si najdu sousedy nových transversálních „uší“.
+
+\begin{Lemma}
+Mám $S$, zvolím rozkouskování na „společnou“ část a ty dvě, co patří do jednotlivých partit. Umím dopočítat novou transversálu a
+partity. Jde to i opačně.
+\end{Lemma}
+
+Vyzkouším všechny rozklady na $3$ množiny, zkusím, jestli se najde něco menšího.
+
+Takže tohle běží v $O(3^k·k·\len{E}·\len{V})$.
