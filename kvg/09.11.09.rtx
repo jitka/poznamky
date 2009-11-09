@@ -1,0 +1,71 @@
+\name{Stěna} mnohostěnu $P$ je buď $P$ samotný, nebo $P∩h$, kde $h$ je nadrovina taková, že celý $P$ leží v jednom poloprostoru
+ohraničeném $h$.
+
+Stěna dimenze $j$ je \name{$j$-stěna}.
+
+\begin{Observation}
+Stěna $P$ je mnohostěn.
+\end{Observation}
+
+\begin{Observation}
+Když je $P$ omezené, potom $P$ je konvexní obal svých vrcholů.
+\end{Observation}
+
+\begin{Tvrz}
+Relace inkluze na množině stěn $P$ je svaz.
+\end{Tvrz}
+
+\begin{Tvrz}
+Svaz $P^*$ je převrácený svaz $P$.
+\end{Tvrz}
+
+\name{Graf mnohostěnu} $P$ je graf určený stěnami dimenze $0,1$.
+
+\begin{Statement}[Steinitz]
+Graf je grafem mnohostěnu právě když je rovinný a vrcholově $3$-souvislý.
+\end{Statement}
+
+Stěna dimenze $0$ je vrchol, $1$ je hrana, $2$ je mnohoúhelník, $d-1$ faseta.
+
+Mnohostěn $P$ je \name{simpliciální}, pokud každá jeho vlastní stěna je simplex.
+
+\begin{Observation}
+Pokud vrcholy $P$ jsou v obecné poloze, potom $P$ je simpliciální.
+\end{Observation}
+
+$P$ je \name{jednoduchý}, pokud každá $j$-stěna je obsažena v právě $d-1$ fasetách (pro $j=0,…,d-2$).
+
+\begin{Note}
+V jednoduchém mnohostěnu v okolí vrcholu vypadá kombinatoricky jako okolí $d$-dimenzionální krychle nebo simplexu.
+\end{Note}
+
+\begin{Tvrz}
+$P$ je jednoduchý $←→P^*$ je simpliciální.
+\end{Tvrz}
+
+\subsection{Maximální počet stěn mnohostěnu}
+\begin{Statement}[Upper bound theorem]
+Maximální počet stěn v $d$-dimenzionálním mnohostěnu s $n$ vrcholy je $Θ(n^{\lfloor\frac{d}{2}\rfloor})$.
+\end{Statement}
+
+\begin{Note}
+Maximum je známo přesně.
+\end{Note}
+
+Dolní odhad je pomocí cyklických mnohostěnů.
+
+Máme momentovou křivku v rovině, tedy $@{t, t²,…,t^d@@} t∈ℝ$. Tedy, v rovině je to parabola.
+
+\begin{Lemma}
+Každá nadrovina protíná momentovou křivku v nejvýše $d$ bodech.
+\end{Lemma}
+
+\begin{Proof}
+Dosazením nadroviny do křivky, vyjde polynom.
+\end{Proof}
+
+\begin{Follows}
+Každých $d$ bodů na momentové křivce je afinně nezávislých.
+\end{Follows}
+
+\name{Cyklický mnohostěn} je konvexní obal libovolné konečné množiny bodů momentové křivky.
