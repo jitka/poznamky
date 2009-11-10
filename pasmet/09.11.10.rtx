@@ -1,0 +1,12 @@
+\subsection{Aplikace}
+
+\begin{Priklad}
+Máme množinu $S@⊂ℕ$. Říkáme, že má \name{různé součty}, pokud součet každých dvou podmnožin je různý.
+
+Dá se dokázat, že je-li $n$ maximum množiny, potom velikost množiny je $≤\log n + \log \log n + c$.
+\end{Priklad}
+
+\begin{Proof}
+Máme $S:= @{x₁,…,x_n@}$, vezmeme podmnožinu $T$ náhodně. Jako náhodnou veličinu vezmeme součet této podmnožiny. Její střední
+hodnota je $EX=\frac{\Σx_i}{2}$. Střední hodnota … \TODO{Chybí}
+\end{Proof}
