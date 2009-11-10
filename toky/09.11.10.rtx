@@ -1,0 +1,8 @@
+\section{Počítání lineárního programování}
+
+\subsection{Simplexový algoritmus}
+Máme program, který má exponenciálně proměnných. To mírně komplikuje situaci, potřebujeme si stav lépe pamatovat. Budeme si
+pamatovat jen ty proměnné, které nejsou $0$ a těch bude mnohem méně.
+
+Vyjde to lépe, než si ten program udělat tak, že máme proměnné pro hrany a komodity a podmínky pro každý vrchol (což má
+polynomiálně mnoho), ale v praxi se tamto minulé lépe „komprimuje“.
