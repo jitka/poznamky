@@ -1,0 +1,90 @@
+Grafy jsou \name{srovnatelné}, právě když existuje uspořádání $U$ na $V(G)$, $∀u≠v,(u,v)∈E(G)←→(u,v)∈U∨(v,u)∈U$.
+
+Tranzitivní uzávěr orientovaného Hassenova diagramu.
+
+\begin{Observation}
+$G$ je srovnatelné $←→$ hrany je možno tranzitivně orientovat. (Když to vede po cestě jedním směrem, vede tím směrem i hrana.)
+\end{Observation}
+
+Například, každý úplný graf je srovnatelný (lineární uspořádání), bipartitní, liché kružnice ale ne, doplňky ke kružnicím ne.
+
+\begin{Observation}\label{co-fork}
+Když mám vidličku, tak obě musí být orientované stejně, jinak by mezi vidličkou musela existovat hrana.
+
+\MPOST{ilust}
+draw (cm, 0)--(0,0)--(0,cm);
+pickup pencircle scaled 5;
+draw (0,0);
+draw (cm, 0);
+draw (0, cm);
+\ENDMPOST{Vidlička}
+\end{Observation}
+
+\begin{Statement}
+Srovnatelné grafy jsou perfektní.
+\end{Statement}
+
+\begin{Proof}
+\begin{Statement}
+Nechť je třída grafů $\mathcal{G}$ uzavřená na podrgrafy a $∀G≤\mathcal{G};χ(G)=w(G)$, potom jsou všechny grafy této třídy
+perfektní.
+\end{Statement}
+
+Srovnatelný graf je uzavřený na podgrafy.
+
+Vezmeme nejmenší počet nezávislých množin (nejmenší počet nezávislých množin je velká stejně jako délka největšího řetězce). U
+tohodle máme každý řetězec taky úplný.
+
+Ne však kazdý perfektní je srovnatelný.
+\end{Proof}
+
+\begin{Statement}
+K rozeznávání grafů se hodí:
+↑•
+ • Intervalové grafy jsou takové, které jsou chordální a jejich doplněk je srovnatelný.
+ • Permutační jsou takové, které jsou srovnatelné a jejich doplňky také srovnatelné.
+ • Funkční jsou ty, jejichž doplňky jsou srovnatelné.
+↓•
+\end{Statement}
+
+\begin{Proof}
+Na $3)$ vezmu větší třídu ‒ vezmu křivky natažené mezi dvěma rovnoběžnýma rovnoběžkama. Když mám dvě křivky, které se
+neprotínají, tak jedna to rozděluje na dvě oblasti, druhá musí být v jedné z nich, tedy je můžu porovnat.
+
+Opačně, že doplňky srovnatelných jsou funkční. Vezmeme $G$, který je doplňěk srovnatelného grafu a $H$ je tento doplněk. Proto
+existuje částečné uspořádání $U$. To má dimenzi (minimální počet lineárních uspořádání, kde $U$ jde získat jako průnik těchto
+lineárních uspořádání). Vezmeme $k$ svislých přímek (kde $k$ je ta dimenze), napíšeme tam ty lineární uspořádání. Ty věci se
+spojí a máme funkce. Pokud nejsou srovnatelné, musí se někde prohodit a tedy protnout. Naopak, jsou rovně, neprotnou se.
+
+$2)$ Doplněk permutačního grafu je opět permutační. Máme reprezentaci $@{1,2,…,n@}→@{p₁, p₂, …, p_n@}$. Pravá strana se vezme
+„pozpátku“ a ono to vyjde. Když to otočím, dva se protínaly, teď se neprotínají, a naopak.
+
+Permutační jsou podmnožinou funkčních. Tedy jsou podmnožinou dolpňků srovnatelných, ale jejich doplňky jsou tedy podmnožinou
+srovnatelných. Taktéž doplňky permutačních jsou částí permutačních. Tedy, permutační jsou součástí průniků.
+
+Opačně, máme graf $G$ je srovnatelný a $H$ je jeho doplněk, že je taky srovnatelný. Tedy, mezi každými dvěma vrcholy je buď
+„šipka“ za hranu nebo za nehranu. Sjednocení je tranzitivní orientace úplňáku, tedy lineární uspořádání. Budu si kreslit případy
+,kdy jsou dva za sebou. Když jsou stejné, tak nezajímavé. Když jsou různé, tak jsem měl na začátku pozorování \ref{co-fork}.
+
+Vezmu první lineární uspořádání jako ten úplňák, co jsem právě dostal. Potom otočím šipky třeba u nehran, udělám totéž a dostanu
+druhé lineární uspořádání. Tyhle umístím na jednotlivé přímky a vyjde to (protože jsem to otočil jen u těch jedněch, tím dostanu
+buď permutační graf a nebo jeho doplněk, což je taky permutační graf a odpovídá těm hranám v $G$ nebo v $H$).
+
+$1)$ Intervalové grafy jsou podmnožinou průniku. Nakreslím si přímku a na ni vrcholy jako konce intervalu. Každý interval je
+podcesta, tedy mám ten graf jako průnikový graf těchto cest, to je podmnožina průnikových grafů podstromů ve stromech, což jsou
+chordální grafy.
+
+Druhé můžeme vzít, že doplňky intervalových jsou srovnatelné. No, ty se neprotnou, aby to mělo hranu, máme uspořádání.
+
+Opačná implikace: Vezmeme graf $G$, který je chordální a jeho doplněk je srovnatelný. Protože je chordální, máme jeho klikový
+strom. Z něj se inspiruju a vezmu $Q₁,…,Q_d$ maximální úplné podgrafy. Je doplněk srovnatelného grafu, takže existuje
+tranzitivní orientace doplňku $G$. Definujeme uspořádání: $Q_i<Q_j←→∃u∈Q_i,v∈Q_j;uv∈$ orientace doplňku $G$.
+
+Určitě nemáme $Q_i<Q_i$. Nemůže se nám stát, že $Q_i< Q_j$ a $Q_j<Q_i$, $u,u'$ nemůže být totéž a $v,v'$ nemůže být totéž (jinak
+by byla hrana orientovaná „oběma“ směrama a nebo máme vidličku. Poslední případ, buď budu mít obousměrnou nehranu, nebo
+indukované $C₄$. Ještě potřebujeme tranzitivitu. Kdyby ten, přes který jdeme, měl stejný vrchol, přes který jdeme. Určitě mezi
+vnějšími existuje nehrana. Nechť tedy jsou zorientované opačně. To všechno musí být různé vrcholy. Potom zase rozebíráme
+případy, zakazujeme nehrany a hrany a vyjde nám zase něco, co není chordální.
+
+Každé dvě kliky jsou tedy porovnatelné. Vrchol nemůže „přeskočit“ jednu kliku. A tím mi to vytvoří intervaly.
+\end{Proof}
