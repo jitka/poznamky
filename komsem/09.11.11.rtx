@@ -1,0 +1,18 @@
+\section{Viditenostní grafy bodů v rovině}
+
+\name{Viditelnostní graf} je graf, jestli se navzájem body vidí. Nevidí se ty, které mají na úsečce mezi sebou jiný bod. Značíme
+$μ(s)$.
+
+\begin{Statement}
+$∀G,V(G)=@{1,…,n@};∃X@⊂ℝ²;μ(X∪ℤ²)$ je isomorfní s $G$.
+\end{Statement}
+
+\begin{Lemma}
+$∃M∈ℕ$ tak, že $∃$ množina prvočísel $P=@{p_{i,j};1≤i<j≤n@}$ o které platí:
+→•
+ • $2^M<p_{i,j}<2^{M+1}$
+ • $$Q_k:=2^{n_k}·\Π_{i=1}^{k-1}p_{i,k}\Πj={k+1}^np_{k,j}$$,
+ kde $\lfloor \log Q_k\rfloor = 2^{nM+2k}$
+ • $p_{k,l}$ je jediné z $P$, které dělí $Q_l-Q_k$.
+←•
+\end{Lemma}
