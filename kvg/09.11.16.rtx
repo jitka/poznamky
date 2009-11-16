@@ -1,0 +1,60 @@
+\begin{Lemma}[Gale]
+$d$ vrcholů cyklického mnohostěnu tvoří stěnu právě když jsou na momentové křivce rozdělené na dvojice (lichý nebo sudý
+počáteční úsek, potom souvislé sudě dlouhé úseky, zase libovolný uzavírací úsek).
+\end{Lemma}
+
+\begin{Follows}
+Cyklický mnohostě má $Ω(n^{\lfloor  \frac{d}{2}\rfloor})$ faset.
+\end{Follows}
+
+\begin{Proof}
+Vybereme taková čísla, že tvoří dvojice, to máme dostatek možností.
+\end{Proof}
+
+Toto nám dalo dolní odhad, chtěli bychom i horní odhad.
+
+\begin{Tvrz}
+Simpliciální mnohostěn $P$ má nejvýše $O(f_{\lfloor\frac{d}{2}\rfloor} - 1)$ stěn, kde $f_i$ je počet $i$-stěn.
+\end{Tvrz}
+
+\begin{Tvrz}
+Maximum nabývá pro některý simpliciální mnohostěn.
+\end{Tvrz}
+
+\begin{Proof}
+Náznak: když máme něco, co není simpliciální mnohostěn, tak uděláme perturbaci vrcholů (malinko jimi hneme) a každá stěna se
+rozpadne na simplexy.
+\end{Proof}
+
+\begin{Proof}
+V simpliciálním mnohostěnu máme nejvýše $\combnum{n}{\lfloor\frac{d}{2}\rfloor}$ $@(\lfloor\frac{d}{2}\rfloor-1@)$-stěn (každá stěna je
+simplex, potřebuji vybrat tolik vrcholů).
+
+Poté posčítáme počet stěn ‒ sečteme.
+\end{Proof}
+
+Dualita: Simpliciální mnohostěn lze převést na jednoduchý mnohostěn. Máme zafixovanou dimenzi, počet všech stěn je tedy také
+omezen $O(f_{\lfloor\frac{d}{2}\rfloor}$. Zvolme směr takový, že žádné $2$ vrcholy neleží na stejné úrovni. Každý z těchto
+vrcholů vypadá lokálně jako na $d$-dimenzionální krychli, má tedy $d$ hran.
+
+Každý vrchol je nejvyšší nebo nejnižší nejvýše v $\lceil\frac{d}{2}\rceil$ stěně.
+
+\subsection{Voroného diagramy}
+
+Je to množina regionů, které mají vždy k nějakému bodu nejblíž. Tedy, $reg(p∈P):= @{x∈ℝ^d;∀g∈P;\len{x-p}≤\len{x-q}@}$.
+
+\begin{Observation}
+Lze zapsat jako průnik poloprostorů, tedy je to mnohostěn.
+\end{Observation}
+
+\name{Jednotkový paraboloid} je $U:=@{x∈ℝ^{d+1};x_{d+1} = x₁²+x₂²+…+x_d²@}$.
+
+Přímku, která prochází bodem $p$ v $ℝ^d$ (podstavci) a je k němu kolmá, nazveme $e(p)$ a bod, kde se dotýká $π(p)$.
+
+Tečnou nadrovinu nazveme $l_x$, pokud protíná podstavec v $x$.
+
+\begin{Tvrz}
+$p,x∈ℝ^d→→\len{l_x∩e(p),l_x∩U}=\len{x,p}²$
+
+Tedy, čím dál je bod v podstavci dál od roviny, tím výš nadruhou protíná parabolu.
+\end{Tvrz}
