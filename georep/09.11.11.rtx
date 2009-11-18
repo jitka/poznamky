@@ -1,3 +1,4 @@
+\section{Strovnatelné grafy}
 Grafy jsou \name{srovnatelné}, právě když existuje uspořádání $U$ na $V(G)$, $∀u≠v,(u,v)∈E(G)←→(u,v)∈U∨(v,u)∈U$.
 
 Tranzitivní uzávěr orientovaného Hassenova diagramu.
@@ -86,5 +87,4 @@ indukované $C₄$. Ještě potřebujeme tranzitivitu. Kdyby ten, přes který j
 vnějšími existuje nehrana. Nechť tedy jsou zorientované opačně. To všechno musí být různé vrcholy. Potom zase rozebíráme
 případy, zakazujeme nehrany a hrany a vyjde nám zase něco, co není chordální.
 
-Každé dvě kliky jsou tedy porovnatelné. Vrchol nemůže „přeskočit“ jednu kliku. A tím mi to vytvoří intervaly.
-\end{Proof}
+Každé dvě kliky jsou tedy porovnatelné.

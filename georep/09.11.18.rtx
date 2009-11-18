@@ -1,0 +1,62 @@
+Vrchol nemůže přeskočit kliku (když je v jedné, druhé, tak musí být i ve všech mezi tím). Dokážeme sporem, ta prostřední nemá
+$u$, ale musí mít nějaké $v$ (jinak by to nebyl největší úplný podgraf), který není spojený s $v$. Orientace mezi $u$ a $v$ je
+špatně, protože $u$ je na obou stranách.
+
+Tedy, můžeme udělat intervaly podle těchto klik.
+\end{Proof}
+
+\subsection{Struktura srovnatelných grafů}
+
+Definujeme relaci $Γ@⊂V²\times V²$ které tvoří hrany, $abΓcd←→@(@(a=c∧bd∉E@)∨@(b=d∧ac∉E@)@)∧ab,cd∈E$.
+
+Poté $Γ^*$ je tranzitivní uzávěr $Γ$. $Γ$ je reflexivní a symetrická. Tedy, $Γ^*$ je ekvivalence. Ta rozkládá množinu na bloky,
+vždy orientace jedné hrany vynutí orientaci celého bloku (kvůli pozorování \ref{co-fork}).
+
+\begin{Observation}
+Kdykoliv $xy∈@<a,b@>_{G^*}→→xy∈E$ (tedy, nestane se mi, že bych chtěl orientovat nehranu v $G^*$).
+\end{Observation}
+
+\begin{Statement}
+$G$ je srovnatelné $←→∀ab∈E:@<ab@>_{Γ^*}$ je antisymetrická (tedy, že nevynucuji, aby hrana byla orientovaná „oběma směry“).
+Tedy, teď už na ně koukám jako na hrany zase, ne dvojice hran.
+\end{Statement}
+
+\begin{Proof}
+Jestliže je srovnatelný, potom každý blok musí být antisymetrický. Je vidět z definice.
+
+Opačně:
+Máme relaci $R@⊂V\times V$. Řekneme o ní, že je \name{senzitivní}, pokud kdykoliv $abR∧cd∈E$ t.ž. $abΓcd→→cd∈R$.
+Řeknu o ní, že je \name{úplná}, pokud je senzitivní a tranzitivní. Nazvu ji \name{slušná}, pokud je antisymetrická (co se týče
+uspořádaných dvojic) a operuje jen na hranách grafu.
+
+Mám $M@⊂V\times V$, potom $@<M@>_S$ je senzitivní uzávěr, $@<M@>_T$ tranzitivní a $@<M@>$ je úplný uzávěr.
+
+\begin{Lemma}
+$$@<M@> = @<@<M@>_S@>_T$$
+\end{Lemma}
+
+\begin{Proof}
+Určitě to obsahuje celé $M$. Určitě je to podmnožina toho, co chci, protože jsem přidával jen to, co jsem musel. To napravo je
+zřejmě tranzitivní. Chceme dokázat, že je senzitivní.
+
+Napřed budeme předpokládat, že $@<M@>$ je slušná, proto je také $@<M@>_S$ slušná. Proto to musí vyjít i tranzitivně, protože by mi
+tam jinak zvolil opačné uspořádání.
+\end{Proof}
+
+\begin{Lemma}
+Pro každou hranu, jestliže $@<ab@>_S$ je antisymetrická, potom je $@<ab@>_S=@<ab@>$.
+\end{Lemma}
+
+\begin{Proof}
+Sporem, rozebere se, indukce podle délky rozebrání.
+\end{Proof}
+
+\begin{Lemma}
+Mám $m$ bloků, potřebuju je sesadit tak, aby to sedělo, tedy ne všech $2^m$ možností je správně. Když budu mít $M$ relaci, která
+je úplná a slušná a mám hranu $@(xy@),@(y,x@)∉M$. $@<M∪@{xy@}@>$ je slušná relace. Tedy, mám něco už zorientovaného, když tam
+nějakou hranu nemám, tak ji tam můžu přidat jakkoliv, podívám se, co mi to vynutí a to vynucené bude v pořádku. To ale může
+změnit strukturu (tedy, dělám tranzitivní uzávěr).
+\end{Lemma}
+
+Tedy, tohle jde rozpoznávat v polynomiálním čase.
+\end{Proof}
