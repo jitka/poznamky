@@ -1,0 +1,35 @@
+\begin{Follows}
+Voroného diagram vznikne kolmou projekcí nějakého mnohostěnu $P$, který je průsečíkem poloprostorů $e(p)$.
+\end{Follows}
+
+\subsection{Arrangmenty nadrovin}
+Máme $H₁,…,H_n$ nadroviny. Ty se budou protínat.
+
+\name{Stěna} v $ℝ^d$ je uzávěr maximální souvislé části $\∩_i{i∈I} H_i\backslash\∪_{i∉I} H_i$.
+
+\name{Buňka} je stěna dimenze $d$.
+
+\begin{Tvrz}
+Máme $\mathcal{H}=@{H₁,…,H_n@}$ v obecné poloze v $ℝ^d$, potom počet buněk je $\Σ_{i=0}^d \combnum{n}{i}$.
+\end{Tvrz}
+
+\begin{Proof}
+Důkaz indukcí, rozdělí se některé buňky na dvě ‒ ty protnuté.
+\end{Proof}
+
+\subsection{Hladiny}
+$\mathcal{H}$ je konečná hladina nadrovin v $ℝ^d$, mějme bod $o$ (nazveme jej počátek), který není součástí žádné nadrovinu.
+
+Úroveň bodu $x$ z $x∈ℝ^d$ je počet nadrovin mezi $o$ a $x$ (protínající otevřenou úsečku mezi $o$ a $x$). Úroveň stěny jako
+úroveň libovolného bodu vnitřku té stěny.
+
+\name{Hladina} $k$ je množina všech stěn úrovně $k$.
+
+\begin{Statement}
+Počet stěn hladin $≤k$ je $O@(n^{\lfloor\frac{d}{2}\rfloor}@(k+1@)^{\lceil\frac{d}{2}\rceil}@)$, konstanta nezávisí na $d$.
+\end{Statement}
+
+\begin{Proof}
+Pro $k=0$ jsou to mnohostěny, na ně máme upper bounds theorem. Vyšší: budeme předpokládat, že máme obecnou polohu. Počítá se
+pravděpodobnostně.
+\end{Proof}
