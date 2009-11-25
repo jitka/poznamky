@@ -31,7 +31,7 @@ uspořádaných dvojic) a operuje jen na hranách grafu.
 
 Mám $M@⊂V\times V$, potom $@<M@>_S$ je senzitivní uzávěr, $@<M@>_T$ tranzitivní a $@<M@>$ je úplný uzávěr.
 
-\begin{Lemma}
+\begin{Lemma}\label{lemsentranclosure}
 $$@<M@> = @<@<M@>_S@>_T$$
 \end{Lemma}
 

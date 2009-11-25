@@ -1,0 +1,33 @@
+\begin{Proof}
+Vyvodí se z toho, že Lemma \ref{lemsentranclosure}. Potom pro spor předpokládáme, že nastane problém a najdeme nejmenší cyklus,
+který by to rušil a zkrátil cyklus.
+\end{Proof}
+
+\section{Interval Filament}
+
+Je největší množina grafů, kde prochází klika a nezávislá množina v polynomiálním čase. Jsou to průnikové grafy kladných funkcí
+z intervalů.
+
+Intervalové jsou zřejmě podmnožina tohoto.
+
+Tětivové jsou podmnožinou tohoto, protože můžu kružnici na jednom místě „rozstřihnout“ a rozbalit, vyjde něco takového.
+
+Polygon-Circle grafy jsou takové, kde nacpu polygony dovnitř kružnice. Můžu opět rozstřihnout, budu nad tím mít „kopečky“.
+Circle-Arc jsou podmnožinou těchto (každý konec intervalu bude vrchol, čím prochází interval, tam nasázím polygon).
+
+Mějme třídu grafů $\mathcal{G}$ a vytvoříme novou třídu\\
+$\mathcal{G}$-mixed
+$\{G=@(V,E@);E=E₁\dot{∪}E₂;@(V,Eⁱ@)∈\mathcal{G}∧\vec{E₂} \hbox{ tranzitivní orientace
+};$ $∀x,y,z∈V;@(xy∈\vec{E₂}∧yz∈E₁@)→→xz∈E₁\}$.
+
+\begin{Statement}
+CO-IFA = CO-INT-mixed
+\end{Statement}
+
+\begin{Proof}
+Když vezmu IFA, tak rozdělím intervaly na ty, co jsou „vedle“ sebe a v sobě. Rozeberu případy, to, co nesedí, přijde do $E₂$.
+
+Opačně, mám CO-INT-mix. Tedy, $@(V,Eⁱ@)$ je doplněk intervalováhe grafu. Jednoduše seberu ty hrany, co jsou v $E₂$ a ty budou „v
+sobě“. Nad intervalama budeme mít půlkružnice. Potom můžu upravovat, posouvat intervaly aby to vyšlo. Nakonec budu zvedat
+obloučky.
+\end{Proof}
