@@ -1,0 +1,31 @@
+\subsection{Algoritmy}
+
+\begin{Algorithm}[Poznání chordálních grafů]
+Dnes budeme mít PES inverzní, tedy, že vrchol $v_i$ je simpliciální ve vrcholech $G@[v_i,…,v_n@]$. Vstupem bude graf $G$. Na
+začátku pro každé $u∈V$ inicializuje $w(u)=∅$, potom $T=∅$. Potom jde od $n$ k jedné. Nechť $u$ je maximální prvek $V\backslash
+T$ v lexikografickém uspořádání podle $w(u)$. Potom vezmeme $v_i := u$. Vezmeme všechny hrany které vedou do neseřazeného
+zbytku, do souseda přidám sebe do jeho $w(u)$. Do $T$ přidáme $u$.
+
+Když je to chordální, dostaneme PESa. Předpokládejme, že to vydalo $v_i$, který není simpliciální, tedy napravo od něj jsou
+$v_k$ a $v_j$, které nejsou spojené hranou. Vezmeme $v_i$ největší možné, $v_j$ největší možné pro dané $v_i$. Nemohly mít
+stejná slova, protože nejsou spojené. Musel existovat vrchol lexikografický větší než $v_i$, ten musel být spojen s $v_k$. Pak
+tam najdu ještě nějaké dvě nehrany, tedy máme nějakou $C₄$, tedy není chordální.
+
+Při implementaci nepotřebuji množiny, ale můžu mít jen nějaké kvaziuspořádání. Tohle jde udělat rychle.
+
+Je potřeba zkontrolovat psa. Stačí kontrolovat jen toho nejmenšího ze sousedů (ten už si to překontroloval u svých sousedů sám).
+\end{Algorithm}
+
+\begin{Statement}
+Pokud je maximální vážená klika polynomiální na nějaké třídě grafů $\mathcal{G}$, poté je také polynomiální v
+$\mathcal{G}$-mixed.
+\end{Statement}
+
+\begin{Algorithm}[Maximální nezávislá v IFA]
+Předpokládám, že už mám rozdělení na orientaci (to je těžký problém). Přidám si ještě vrchol, do kterého vede vše a je nulový.
+
+Pro vrchol vezmu množinu $W_i$ takovou, kde je sám a všechno, z čeho sem vede šipka v $E₂$. Budu konstruovat $C_i$ tak, aby to
+byla vážená klika v $G@[W_i@]$. Nakonec najdu výsledek v tom posledním přidaném vrcholu.
+
+Indukčně, přišlo mi zleva všechny menší $C_i$. Sestavím z těch sousedů a přidám se k té nejlepší.
+\end{Algorithm}
