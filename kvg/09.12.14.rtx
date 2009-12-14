@@ -1,0 +1,30 @@
+Máme afinní arrangment a žádné tři pseudopřímky nemají společný průsečík. Dá se překreslit do wiring diagramu. Lze si všimnout,
+že protože se každé dvě protínají právě jednou, tak musí skončit v opačném pořadí, než začaly.
+
+Arrangmentů pseudopřímek je mnoho (dolní odhad se dá udělat něco jako $2^{n²}$ přes mřížku, další sada každý průsečík obchází
+zezdola nebo zespoda). U přímek to bude jen něco jako $2^{n\log n}$.
+
+\subsection{Půlící přímky}
+Nechť $P$ je množina bodů v obecné poloze. Přímka je \name{půlící}, pokud protíná dva body a na každé straně leží právě $\frac{n-2}{2}$
+bodů. Budeme předpokládat, že $n$ bude sudé.
+
+Nechť $h(P)$ je počet přímek v $P$. $h(n)$ bude maximum přes všechny $P$ velké $n$ z $h(P)$.
+
+Půlící úsečka je taková, která leží na půlící přímce.
+
+Je jich alespoň $\frac{n}{2}$ ‒ vezmu jeden bod a seřadím si ostatní podle úhlu. Větší najít nejde (příklad na takle malý).
+
+\begin{Statement}
+$$n·e^{Ω\sqrt{log n}}≤h(n)≤O(n^\frac{4}{3})$$
+\end{Statement}
+
+\begin{Lemma}
+Půlící úsečky v libovolném bodě $p∈P$ a jejich prodloužení se pravidelně střídají.
+\end{Lemma}
+
+\begin{Follows}
+Z každého $p∈P$ vychází lichý počet půlících úseček.
+\end{Follows}
+
+Nechť $G$ je geometrický graf (vrcholy budou body množiny $P$, hrany jsou půlící úsečky). Lze počítat přes počty průsečíků
+úseček.

@@ -36,4 +36,3 @@ dimenzionálních stěn zóny s $n$ nadrovinami. Vezememe náhodnou $h∈\mathca
 modrá, pokud její vnitřek bude disjunktní s červenou. Jaký je střední počet modrých stěn v zórě, zase dva způsoby. Že zůstane
 modrá je, že žádná z $k$ protínajících se není modrá, takže $\frac{n-k}{n}·f_{d-k}(n)$. Druhým způsobem, máme $f_{d-k}(n-1)$
 starých modrých stěn po odebrání červené, přibude ‒ zase rozdělujeme.
-\end{Proof}

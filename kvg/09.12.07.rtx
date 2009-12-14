@@ -1,0 +1,46 @@
+Každý vrchol leží v nějaké $3$-dimenzionální stěně arrangmentu, což je polyedr. Je to tedy rovinný graf a podle eulerova formule
+není počet vrcholů více, než lineárně s počtem stěn. Každá $2$-dimenzionální stěna může sousedit s konstantně mnoha
+$3$-dimenzionálních (závislé na dimenzi prostoru).
+\end{Proof}
+
+\subsection*{Arrangmenty obecnějších geometrických objektů}
+Kdybych měl třeba úsečky v rovině, tak to dělá složité věci. Vrcholy budou průsečíky úseček, hrany jsou části po odebrání bodů,
+stěny jsou souvislé části roviny, kde to nepřerušují úsečky.
+
+Mám $O(n²)$ vrcholů i hran. Složitost jedné stěny je řádu $α(n)$.
+
+Kdybychom měl libovolné množiny v $ℝ^d$, tak arrangement bude rozklad na jednotlivé stěny, které jsou souvislé podmnožiny a
+nezalézají do žádné z množin.
+
+Řekneme že $x$ je ekvivalentní s $y$ pokud jsou ve stejných množinách. Stěny budou takové části, které jsou ekvivalentní.
+
+\subsubsection*{Arrangment algebraických ploch}
+Vezmou se mnohočleny a beru nulové množiny (množiny, kde jsou nulové). Předpokládáme, že stupeň všech polynomů je menší než
+nějaké $D$ (budeme uvažovat především malé). Tímto se dá udělat spoustu útvarů (kužele, koule…).
+
+Vezmeme $D$ a $d$ konstanty. Potom arrangement bude mít $O(n^d)$ stěn.
+
+Slabší verze je znaménková posloupnost. Vezmeme posloupnost čísel $∈@{0,-1,1@}$. Tato posloupnost je znaménková, pokud existuje
+bod, kde polynomy nabývají takových znamének v tomto bodě.
+
+\begin{Statement}[Müllerova-Thorova]
+Nechť $p₁,p₂,…,p_n$ jsou mnohostěny $d$ proměnných maximálního stupně $D$. Potom maximální počet stěn arrangmentu nulových
+množin těchto polynomů (tedy i znaménkových posloupností) je:
+
+$$
+@(\frac{50D·n}{d}^d@)
+$$
+\end{Statement}
+
+\subsubsection*{Arrangement pseudopřímek}
+Je to arrangement konečného souboru křivek v rovině, které splňují následující:
+→•
+ • Každá křivka je $x$-monotóní a neomezená v obou směrech (tedy, protíná každou svislou přímku v právě jednom bodě).
+ • Každé dvě křivky se protínají přesně v jednom bodě, tam se kříží.
+←•
+
+Vylučuje rovnoběžné a svislé. Je to technicky těžší.
+
+Dva arrangementy pseudopřímek jsou isomorfní, pokud se kříží „ve stejném pořadí“.
+
+Pro každý arrangement nejvýše $8$ pseudopřímek k němu existuje ekvivalentní arrangement přímek, pro víc už to neplatí.
