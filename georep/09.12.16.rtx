@@ -1,0 +1,80 @@
+\section{Reprezentace rovinných grafů jako dotykové grafy úseček}
+
+Existuje něco jako Fáryho nakreslení, to je takové, že okolo vrcholů se dají nakreslit kružnice, které se dotýkají právě když
+jsou vrcholy spojené hranou. Dá se $ε$-ovým nafouknutím zařídit, aby to byl průnikový graf kružnic. Dá se upravit také tak, aby
+to byl průnikový graf křivek, kdy mají vždy nejvýše jeden průnik. Dá se i průniky úseček, bude dokázáno v letním semestru. Je
+hypotéza, že to jde udělat jen tak, že jsou úsečky jen ve $4$ směrech (a nedotýkají se rovnoběžné).
+
+\begin{Statement}
+Každý rovinný graf lze reprezentovat jako dotykový graf trojúhelníků. Všechny tyto trojúhelníky budou rovnoramenné a s
+rovnoběžnými základnami.
+\end{Statement}
+
+Hypotéza je, že by mohli být i rovnostranné, ale muselo by to být průnikové, ne dotykové.
+
+\begin{Statement}
+Rovinné bipartitní jsou podmnožinou $2$-dir (průnikové úseček ve $2$ směrech).
+\end{Statement}
+
+\begin{Statement}
+Rovinné bipartitní jsou dotykové grafy svislých a vodorovných úseček.
+\end{Statement}
+
+\subsection{$st$-číslování}
+Mám graf $G$ a chci ho nakreslit do roviny. Zorientuji si ho tak, aby měl právě jeden zdroj a právě jeden stok. Chci ho
+nakreslit tak, aby všechny hrany byly orientované odsdola nahoru (podle $y$ souřadnice). Můžu potřebovat ohnuté, ale budou
+$y$-monotónní.
+
+$st$-numbering je ona orientace a nakreslení do roviny.
+
+\begin{Lemma}
+Rovinný $2$-souvislý graf má $st$-numbering.
+\end{Lemma}
+
+\begin{Proof}
+Indukcí podle počtu hran. Napřed ho nakreslíme do roviny, je rovinný. Potom už budu s tím jen hýbat, deformovat, ale bude to
+stejné nakreslení. Vezmu vnější stěnu ‒ protože je $2$-souvislý, tak se na žádné stěně nic neopakuje. Jeden z vnějších vrcholů
+nakreslím úplně dolů, jeden nahoru a zorientuji vnější hrany.
+
+Dále pokračujeme podobně jako v ušatém lemmatu. Když přidávám ucho, tak ji můžu dát ozdola nahorhu, všechny stěny můžu udržovat
+stejně ‒ mají jeden vrchol až nahoře a jeden až dole. Přípojky bude nový lokální zdroj a stok (buď jdou oba do nové, nebo se
+rozdělí mezi starou a novou stěnu, druhé dva se doplní z původních).
+
+Rovinnost to zachovává, uši trhám z původního nakreslení.
+\end{Proof}
+
+Když vezmu $st$-numbering, přidám si (pokud tam už není) hranu z $s$ do $t$ (ze zdroje do stoku) a očísluju tak, aby to šlo vždy
+od menšího k většímu číslu. Vezmu duální graf, hrany orientuji zleva doprava. Jedinou výjimku tvoří hrana $(s,t)$, ta ji má
+doprava. Duál je také se stokem a zdrojem (oba ve vnější stěně rozdělené tou $(s, t)$ hraně). Je to něco jako $st$-numbering,
+jen nemusejí být vždy nakreslené zleva doprava (asi by to šlo dokázat, ale není potřeba). Druhý zdroj ani stok to nemá, jinak by
+v původním byl cyklus.
+
+\begin{Observation}
+Duální graf je acyklický a má právě jeden zdroj a právě jeden stok.
+\end{Observation}
+
+\begin{Proof}
+Že je právě jeden zdroj a stok je dokázáno, ještě by tam mohla být kružnice. Omezuje oblast, všechny šipky vedou ven (nebo
+dovnitř). Tak někde uvnitř musí být zdroj. Ale ten cyklus nemůže určitě být na $s$ ani $t$, protože to není na cyklu.
+\end{Proof}
+
+Můžu to topologicky očíslovat.
+
+Udělám si čtverečkovou síť, počet linek je tolik, kolik je původních vrcholů, počet sloupečků, kolik je vrcholů v duálu. V této
+tabulce udělám čáru na každém řádku podle čísla vrcholu. Ta bude začínat na stěně vlevo od tohoto vrcholu a končit na stěně
+doprava od něho. Analogicky v duálu pro sloupečky.
+
+Tyto čáry se nikdy nebudou protínat, jen se budou dotýkat. Je to tedy dotyková reprezentace nějakého grafu. Každá hrana
+původního grafu jsou obdélníky, obdobně v duálu (tam můžou bejt násobné hrany, ale dostanu víc obdélníků).
+
+Tomu se někdy říká viditelnostní reprezentace. Vrcholy jsou vodorovné úsečky, hranou jsou spojeny, pokud existuje oblast, ve
+které se svisle vidí.
+
+Tyhle obdélníčky budou fungovat, lze vykoukat z okolí vrcholů a z toho, že se nic neprotíná.
+
+Toto je reprezentace bipartitního grafu vrcholy + stěny.
+
+Nyní, nechť $G$ je bipartitní rovinný graf. Můžu přidávat nové vrcholy a hrany tak, aby byla quadrangulaci (rozčtverečkování).
+$G$ bude indukovaný podgraf toho, co vzniklo. Při tom taky zařídím, aby ten graf byl dvousouvislý. Potom spojím v každém
+čtyřúhelníku vrcholy jednoho druhu (třeba modré). Poté smažu všechny červené vrcholy. Červené jsou nové stěny, modré jsou
+vrcholy. Přebytečné vrcholy můžu zahodit.
