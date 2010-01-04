@@ -1,0 +1,51 @@
+\begin{Tvrz}
+$$
+cr(G)+\Σ@(\combnum{\inv{2}·@(deg( v)+1@)}{2}@)=\combnum{\frac{n}{2}}{2}
+$$
+\end{Tvrz}
+
+Napřed ověříme pro konvexní polohu. To je vidět (můžeme jimi otáčet).
+
+Když nejsou konvexní, body můžu šoupat, pokud je to uvnitř jedné stěny.
+Pokud přelezeme přes půlící úsečku (vnitřkem, mezi těmi konci), tak jedna zmizí (ta původní) a nahradí se dvěma novýma.
+Průsečíkové číslo se zmenší (tam, kde bydlel původně, bylo méně vrcholů a protože část vede do něj a ne přes něj). A postupně se to popřehází.
+
+Opačně, když není půlící, ale ty dvě jsou půlící, tak je situace opačná. Tedy, levá strana se opět nemění.
+
+Pokud prochází vnějškem. Potom ale můžeme koukat jako že přelejzá prostřední a to už je rozebrané.
+
+\begin{Follows}
+$$
+cr(G)≤n²
+$$
+\end{Follows}
+
+Zapojíme větu \ref{pruci}.
+Z toho plyne, že $h(n)=O@(n^{\frac{4}{3}}@)$.
+
+\subsection{Kovnexní nezávislost}
+\begin{Lemma}
+Máme množinu $X@⊂ℝ²$. Potom obsahuje konvexní čtyřúhelník.
+\end{Lemma}
+
+\begin{Proof}
+Vezmeme konvexní obal $X$. Pokud má $4$ vrcholy, pak jsme vyhráli, pokud jen $3$, pak jeden zahodíme a tyto $4$ jsou konvexní
+čtyřúhelník.
+\end{Proof}
+
+\begin{Statement}[Erdös-Szekeres]
+$∀k∃n$ pro $n$ bodů v rovině $∃$ konvexní $k$-úhelník.
+\end{Statement}
+
+\begin{Proof}
+BÚNO žádné dva body neleží na svislé přímce. Potom $k$-miska je konvexní množina $k$ bodů které jdou „dolů a potom nahoru“ (leží
+na grafu konvexní funkce). $k$-čepice je opačně.
+
+Označíme $f(k,l)$ jako maximální počet bodů v obecné poloze v $ℝ²$ mez $k$-misky a $l$-čepice. Dokážeme, že toto číslo je
+konečné, indukcí a je to $\combnum{k+l-4}{k-2}$.
+
+$f(k,2) = f(2,l) = 1$. Další krok je, že jak $k$, tak $l$ jsou alespoň $3$ a pro menší součet to platí. Tedy,
+$f(k,l-1)=\combnum{k+l-5}{k-2}, f(k-1,l)=\combnum{k+l-5}{k-3}$. Určitě je to alespoň součet těchto dvou čísel, tedy
+$f(k,l)≥f(k-1,l)+f(k,l-1)$. Dám je za sebe, první nahoru $f(k,l-1)$, druhý dolů  $f(k-1,l)$ (když vlevo proložíme libovolné $2$
+body, tak vpravo leží všechno pod tím, vpravo opačně).
+\end{Proof}

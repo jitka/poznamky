@@ -3,7 +3,7 @@ dvě hrany, potom to počítáme, jako kdyby se neprotínaly v jednom bodě. Je 
 
 Můžeme požadovat třeba nakreslení jen úsečkami.
 
-\begin{Statement}[O průsečíkovém čísle]
+\begin{Statement}[O průsečíkovém čísle]\label{pruci}
 Nechť je $G$ graf, který má $n$ vrcholá a $m$ hran, hrany nejsou násobné. Potom $Cr(G)≥\inv{64}·\frac{m³}{n²}-n$.
 \end{Statement}
 
