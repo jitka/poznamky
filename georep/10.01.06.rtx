@@ -1,0 +1,45 @@
+\subsection{Kanonické očíslování}
+
+Mějme rovinnou triangulaci, vnější trojúhelník je $a,b,c$.
+\name{Kanonické očíslování} vrcholů $v₁,v₂,…,v_n$ je takové, že $v₁=a,v₂=b,v_n=c$. Kdykoliv se podívám na graf $G[v₁,v₂,…,v_k]$,
+tak je $2$-souvislý. Ty, které jsou $i≤k$ jsou uvnitř tohoto grafu, větší venku. Vrchol $v_{k+1}$ má všechny sousedy na hranici
+a ty tvoří interval.
+
+Z toho plyne $v_{k+1}$ leží vně $G[v₁,…v_k]$, má alespoň dva sousedy na hranici a tvoří interval (nebyla by to triangulace).
+Přilehlé trojúhelníky jsou prázdné.
+
+\begin{Lemma}
+Každá rovinná triangulace má kanonické očíslování.
+\end{Lemma}
+
+\begin{Proof}
+Budeme odshora odebírat vrcholy, vrchol $c$ bude odebrán jako první.
+
+Když máme něco odebrané, tak máme pseudotriangulaci (uvnitř je natriangulováno). Máme dvousouvislou hranici. Všichni sousedi
+tvoří interval (pro vrchol na hranici), protože je to vytriangulované. Ale při odebrání bych mohl ztratit dvousouvislost ‒ pokud
+z něho vede hrana do vrcholu na vnější stěně (diagonála) ‒ tak tím čepičku uříznu.
+
+Takto si můžu vyznačit všechny diagonály (ty dělají problém), délku diagonály budu měřit počtem přeskočených vrcholů z horní
+hranice. Diagonály se nekříží. Můžu vzít tu nejkratší, cokoliv nad ní je vhodný vrchol, protože je to diagonála, je tam aspoň
+jeden takový.
+
+Když takle odebírám vrcholy, tak do levého souseda udělám modrou šipku, do pravého červenou a z libovolného vnitřního vrcholu
+dám zelenou nahoru. Pokud neberu v úvahu vnější hrany, tak dostanu orientovanou kostru do každého vrcholu.
+
+Z každého vrcholu vychází právě jedna modrá nebo červená a to do nižšího čísla. U zeleného ‒ někdy musí vrchol přestat být na
+hranici, a to do většího. Tedy vše musí vždy téct do krajního vrcholu.
+
+Barva se ve vrcholu stéká, v každém vrcholu „překříží“ obě zbylé a vyleze z druhé strany.
+\end{Proof}
+
+\begin{Statement}
+Rovinné grafy jsou dotykové grafy rovnoramenných trojúhelníků s rovnoběžnými základnami.
+
+Vezmu rovinný graf. Každý je indukovaný podgraf triangulace. Tedy mi stačí umět reprezentovat tu triangulaci a něco zrušit.
+Kanonicky ji očíslujeme. Uděláme tolik vodorovných čar, kolik je vrcholů v tomto případě. Na těchto vodorovných čarách budou
+základny. U každého vrcholu si najdu maximálního souseda a na té bude mít špičku. Tím postupně doplňuju trojúhelníky od
+nejmenších. Vlevo se bude dotyk s tím, kde má červenou šipkou, vpravo s modrou a dole na ní končí zelení. Zelení tam končí
+najednou ‒ zmizí z horní hranice.
+\end{Statement}
+
+Když povolím, aby byly byly průnikové ale rovnoramenné, tak se to neví.
