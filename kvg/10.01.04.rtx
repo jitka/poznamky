@@ -33,7 +33,7 @@ Vezmeme konvexní obal $X$. Pokud má $4$ vrcholy, pak jsme vyhráli, pokud jen 
 čtyřúhelník.
 \end{Proof}
 
-\begin{Statement}[Erdös-Szekeres]
+\begin{Statement}[Erdös-Szekeres]\label{esst}
 $∀k∃n$ pro $n$ bodů v rovině $∃$ konvexní $k$-úhelník.
 \end{Statement}
 
@@ -47,5 +47,4 @@ konečné, indukcí a je to $\combnum{k+l-4}{k-2}$.
 $f(k,2) = f(2,l) = 1$. Další krok je, že jak $k$, tak $l$ jsou alespoň $3$ a pro menší součet to platí. Tedy,
 $f(k,l-1)=\combnum{k+l-5}{k-2}, f(k-1,l)=\combnum{k+l-5}{k-3}$. Určitě je to alespoň součet těchto dvou čísel, tedy
 $f(k,l)≥f(k-1,l)+f(k,l-1)$. Dám je za sebe, první nahoru $f(k,l-1)$, druhý dolů  $f(k-1,l)$ (když vlevo proložíme libovolné $2$
-body, tak vpravo leží všechno pod tím, vpravo opačně).
-\end{Proof}
+body, tak vpravo leží všechno pod tím, vlevo opačně).
