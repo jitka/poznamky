@@ -2,10 +2,10 @@
 Když vezmeme $f(k-1, l)+f(l-1,k)+1$, tak to už buď $k$-misku nebo $l$-čepici obsahovat musí obsahovat.
 Předpokládejme, že ne. Vezmeme všechny koncové body $k-1$-misek, označíme jako množinu $A$. Vezmeme zbytek, to musí být
 dostatečně malé, protože je to bez $k-1$ misky a bez $l$-čepice, $A$ musí být dostatečně velké. Kdyby obsahovalo $k$-misku, tak
-spor, obsahuje tedy $l-1$ čepici $č$. Ty jsou někde spojené, ty $3$ body (jeden, který je spojuje) tvoří buď $3$-misku nebo
+spor, obsahuje tedy $l-1$ čepici $c$. Ty jsou někde spojené, ty $3$ body (jeden, který je spojuje) tvoří buď $3$-misku nebo
 $3$-čepici. Tedy jde něco z toho prodloužit.
 \end{Proof}
 
 Označme $ES(k)$ jako nejmenší věta, pro které platí věta \ref{esst}. Potom $ES(k)$ určitě obsahuje konvexní $k$-úhelník v obecné
-poloze. Je doměnka, že $ES(k) = 2^{k-1} + 1$. Dolní odhad na to existuje, horní je dokázán na $\kombnum{2k-5}{k-2}+1$ pro
+poloze. Je doměnka, že $ES(k) = 2^{k-1} + 1$. Dolní odhad na to existuje, horní je dokázán na $\combnum{2k-5}{k-2}+1$ pro
 $k≥5$.
