@@ -1,0 +1,40 @@
+\section{Model PRAM}
+
+Staví na modelu RAM. Ten je sekvenční, pevný program. Je paměť indexovaná
+číslem, a každá buňka obsahuje libovolně velké přirozené číslo.
+
+PRAM funguje tak, že je mnoho RAMů, na začátku se vybere počet těchto RAMů,
+které se aktivují. Každý má své číslo (PID). Dále dostanou kromě vlastní paměti
+ještě globální (sdílenou) paměť, kterou smějí sledovat/ovlivňovat všichni.
+
+\subsection{Konflikty}
+
+Může se stát, že by došlo ke konfliktu při komunikaci s globální paměti.
+
+Při čtení může být buď Exclusive read (nesmí se paralelně číst) nebo Concurrent
+read (smí se číst zároveň).
+
+Při zápisu může být buď Exclusive write, Concurrent write je třeba ještě
+rozdělit.
+
+Možnosti jsou prioritný (např. podaří se tomu s nejmenším PID), arbitrary (někdo
+z nich zapíše, neví se kdo), collision (zapíše se značka, že nastala kolize),
+common (smějí, ale musí zapisovat totéž) a W-PRAM (smějí zapisovat zároveň, ale
+všichni musí zapisovat číslo 1).
+
+\subsection{Synchronizace}
+
+→•
+ • \textbf{SIMD} ‒ shodné programy nad více dat. Je to jednodušší, ale problémy
+   s podmínkami. Může se řešit tak, že má každý procesor bit, který říká, jestli
+   zapisuje výsledky, nebo ne.
+ • \textbf{Uniformně} ‒ mají stejné programy, za jeden tick jednu instrukci, ale
+   programové čítače můžou být různé (tedy, každý může počítat jinak).
+ • \textbf{MIMD} ‒ různé programy na různých procesorech.
+←•
+
+Simulovat dolů jdou jednoduše.
+
+Uniformní na SIMD modelovat tak, že v každém kole si každý procesor zkontroluje,
+že má zrovna simulovat tu a tu instrukci (tedy, napřed se kontroluje „simuluju
+první instrukci?“, potom „simuluju druhou?“, etc…), zpomalení podle délky kódu.
