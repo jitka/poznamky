@@ -1,0 +1,83 @@
+\section{Geometrické incidence}
+
+Navazuje na incidence bodů a přímek.
+
+\subsection{Dolní odhady}
+
+Na větu \ref{SzemerediTrotter} byla mřížka široká $k$, vysoká $4k²$, přímky jsou
+s celočíselnými souřadnicemi. Celkem tedy zhruba $k³$ přímek i bodů, $k⁴$
+průsečíků.
+
+Původní byl jiný: mřížka $\sqrt{n}\times\sqrt{n}$, přímky které jsou ve tvaru
+$y=\frac{a}{b}x + c$, kde $a,b∈0…t$, $t$ volíme tak, aby bylo zhruba $n$ přímek,
+tedy to vyjde asi $n^\inv{6}$, každý bod bude mít zhruba $n^\inv{3}$ incidencí.
+
+Na jednotkové vzdálenosti ‒ $∃$ mnoho jednotkových vzdáleností pro vhodnou normu
+v rovině (autor: Valtr). Norma ‒ máme jednotkový kruh, ptáme se, kolikrát je
+potřeba ho zvětšit, aby se bod ocitl uvnitř. Obecná norma je nějaká množina,
+která obsahuje počátek a je dle něj symetrická (např. elipsa).
+
+Z normy uděláme metriku tak, že hledáme normu rozdílu bodů.
+
+Známé důkazy horního odhadu $O(n^\frac{4}{3}$ vrací stejný odhad i pro
+libovolnou normu v $ℝ²$ (tedy, nevyužívají „kulatosti“ kružnice).
+
+Existuje norma že $∀n∃$ množina $n$ bodů v $ℝ²$ s $≥c·n^\frac{4}{3}$
+jednotkových vzdáleností. Máme dvě paraboly „nad sebou“ (horní prochází $[-1,0],
+[0,1], [1,0]$, tedy $\len{y}≤1-x²$. Potom vezmeme mřížku s $k$ body na šířku a
+$k²$ na výšku tak, aby se to „vešlo“ do paraboly (tedy, výška i šířka mřížky
+bude vždy 2).
+
+Některé body mají vzdálenost $1$ od počátku, to jsou ty na hranici, tedy body o
+souřadnici $@(\frac{i}{k}, 1-\frac{i²}{k}@)$. Tedy, v každém sloupečku bude
+alespoň jeden nahoře a jeden dole. Pro počátek tedy je řádově $k$ bodů o
+jednotkové vzdálenosti. Mám $k³$ bodů, každý má řádově $k$ bodů v jednotkové
+vzdálenosti (kvůli posunutí počátku), celkem tedy $k⁴$ jednotkových vzdáleností,
+což je $n^\frac{4}{3}$.
+
+\begin{Statement}
+$∀n>2∃n$ bodů v $ℝ²$, které mají alespoň $n^{1+\frac{c}{\log\log n}}$
+jednotkových vzdáleností (zde se už mluví zase o euklidovské vzdálenosti).
+\end{Statement}
+
+\begin{Proof}
+Vezmeme mřížku $\sqrt{n}\times\sqrt{n}$ bodů, ale dobře škálovaná (řádově tak
+velká jednotka jako velikost mřížky, ale trochu menší).
+
+Hledáme body takové $a$ a $b$ počty mezer, že $a²+b²=c$.
+
+\begin{Lemma}
+Nechť $p₁<p₂<…<p_r$ prvočísla tvaru $4k+1$ a $M:=\Πp_i$. Potom $M=a²+b²$ má
+$≥2^r$ celočíselných řešení pro $@(a, b@)$.
+\end{Lemma}
+
+\begin{Proof}
+Prvočíslo $p>3$ se dá napsat jako $a²+b², a,b∈ℤ←→p\cong 1 (\bmod 4)$. Bereme
+jako fakt z teorie čísel (doprava jednoduché, ale my potřebujeme doleva, vyplývá
+z věty \ref{minkovskeho}).
+
+Víme, že každé prvočíslo $p_j$ lze zapsat jako $a_j²+b_j², a_j, b_j∈ℤ$. Uděláme
+gaussova celá čísle $ℤ@[i@]$ (to jsou komplexní celá čísla). Toto je okruh s
+jednoznačným rozkladem na prvočinitele. Tedy, je to euklidovský okruh.
+
+Definujeme $α_j:= a_j+i·b_j, \overline{α_j}:=a_j - i·b_j, \len{α_j²} =
+α_j·\overline{α_j}=a_j²+b_j²=p_j$. $∀J@⊂I:=@{1,2,…,r@} A_J+i·B_j :=
+@(\Π_{j∈J}α_j@)@(\Π_{j∈I\backslash J}\overline{α_j}@)$. Tyto $A_J$ a $B_J$ jsou
+různá.
+$A_J²+B_J²=\len{A_J+i·B_J}²=(A_J+i·B_J)(A_J-i·B_j)=(\Π_{j∈J}α_j)(\Π_{j∉J}\overline{α_j})(\Π_{j∈J}\overline{α_j})(\Π_{j∉J}α_j)=\Πp_j
+= M$.
+
+Čísla $A_J, B_J$ jsou řešení naší rovnice. Pokud mají různé rozklady na
+prvočinitele, pak musejí být různé. Na to stačí ověřit, že $α_{1…r},
+\overline{α_{1…r}}$ jsou prvočinitele v $ℤ@[i@]$ a žádné se nedostane z jiného
+vynásobení jednotkou (žádnou jednotkou ‒ $1, -1, i, -i$).
+$α_j≠{-1,i,-i}\overline{α_j}$. Když porovnávám $α_j, α_{j'}$, tak mají různou
+absolutní hodnotu.
+
+Prvočinitele se dokážou z toho, že $p_i$ jsou prvočísla. Předpokládejme, že
+$α_i=γ₁γ₂→→\len{α_i}²=p_i=\len{γ₁}²·\len{γ₂}²$, obě celá čísla, jedno z toho
+musí být jednotka.
+\end{Proof}
+
+\end{Proof}
+

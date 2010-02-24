@@ -1,7 +1,7 @@
 \section{Mřížky a Minkovského věta}
 Uvažujeme standardní čísla, tedy $ℤ^d$ ‒ tedy, mřížové body.
 
-\begin{Statement}[Minkovského]
+\begin{Statement}[Minkovského]\label{minkovskeho}
 $C@⊂ℝ^d$ konvexní, omezená a symetrická podle počátku. Její objem $vol@(C@)>2^d$. Potom $C$ obsahuje alespoň jeden mřížový bod
 různý od počátku.
 \end{Statement}
