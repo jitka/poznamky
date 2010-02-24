@@ -1,0 +1,78 @@
+\section{Úvod}
+
+Nebude to o celých překladačích, moc rozsáhle a provázané. Dělí se na frontend a
+backend. Frontend je v podstatě parser jazyka. Hlavní problém je aby šly rychle
+a házely dobré chybové hlášky.
+
+Z toho leze AST (abstraktní syntaktický strom). Poté se z toho udělá
+reprezentace v mezijazyce (průchodem do hloubky). To je seznam funkcí, v tom
+seznam basic-blocků, každý má nějaký seznam příkazů (většinou trojice ‒ typ
+operace, cíl, operandy).
+
+Potom to žere backend. Ten optimalizuje a potom generuje kód, alokace registrů a
+nakonec z toho leze assembler.
+
+To mezitím se nazývá middle-end. Frontendy a backendy se mění (podle jazyka,
+podle platformy). Na nový kus je potřeba celou tu danou část v zásadě přepsat.
+Middle end je to, co „přežívá“ ‒ je dostatečně nezávislé jak na jazyce, tak na
+architektuře (něco o nich ví, ale není to moc do hloubky).
+
+Tato přednáška bude o middle-endech.
+
+\subsection{Existující projekty}
+
+\subsubsection{GCC}
+
+Klíčový z projektů GNU, nějaká 80 léta, už v roce 1987 podporoval skoro celé
+ansi-C. V té době uměl alfy.
+
+Kolem verze 2.0 (92) převzal Richard Kenner, důležitý vývojář do dnes.
+
+V roce 1995 se rozhodl (2.7.0), že vydá, až bude hotové C++, vzniklo mnoho
+forků. Odrazovalo to nové vývojáře (byrokracie), vývoj ve firmě cygnus byl taky
+fork, zaměstnávali mnoho vývojářů.
+
+1997 vydal cygnus egcs, fork, mnoho problémů, nakonec se stalo hlavním GCC ‒
+2.95, vzniklo steering comitee, nové otevření.
+
+2001 verze 3.0, podpora C++, poté se šlo do architektury, 2005 verze 4.0, má
+middle end.
+
+Asi nejvíce podporovaných platforem, jazyk mezijazyk RTL je jednoduchý na
+připisování nových backendů.
+
+Mnoho systémů ho používá.
+
+\subsubsection{LLVM}
+
+Původně dizertačka Chris Lattnera. Původně založen na frontendech GCC, je to
+Low-Level Virtual Machine, jednoduchý mezijazyk. Snaží se ho dotáhnout Apple,
+zatím se to úplně nedaří (nedodělané).
+
+Má podporu x86-64, mips, ppc, nvidia GPU.
+
+Hodně modulární (phase manager, který řeší, kdy co pouštět), zjednodušuje vývoj.
+
+Výsledný kód není úplně nejlepší.
+
+\subsubsection{Open64}
+
+Původně se jmenoval MipsPro, má dlouhou historii, generoval rychlý kód pro
+tehdejší architekturu. Poté to mířilo na itánium, což SGI zkrachovalo, těsně
+předtím překladač uvolněn (2000), ne kompletní (něco patřilo někomu jinému),
+vzniklo nahrazením C++ frontendu od GCC, zahodili backend do itanium.
+
+Vývojáři nesměli pracovat na stejném projektu (měli to ve smlouvě), problémy
+(nikdo tomu nerozuměl, nespravoval).
+
+Mezijazyk WHIRL (Wery High Level Intermediate Language). Má několik mezistavů,
+optimalizace na správné úrovni. Znalo ho několik univerzit v té době.
+
+Vzniklo několik klonů:
+→•
+ • ORC ‒ Open Research Compiler, měl to být kvalitní překladač pro itanium,
+   zaniklo 2003.
+ • PathScale ‒ x86-64. Špatný bussiness model.
+←•
+
+Umí generovat docela rychlý kód.

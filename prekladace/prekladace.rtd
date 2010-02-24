@@ -1,0 +1,11 @@
+\documentclass[a4paper,11pt]{article}
+\input{../stdhead.rtx}
+\input{../defs.rtx}
+
+\begin{document}
+\title{Optimalizace kódu produkčních překladačů}
+\maketitle
+\tableofcontents
+\newpage
+\input{10.02.24.rtx}
+\end{document}
