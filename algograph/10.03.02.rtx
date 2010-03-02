@@ -1,0 +1,55 @@
+\section{Grafy omezené stromové šířky}
+
+\name{Stromový rozklad} $G$ je strom $T$ kde $X_i∈V_T→→X_i@⊂V(G)$. Dále, pro
+$∀(v₁,v₂)∈E(G)∃X_i;v₁∈X_i∧z₂∈X_i$ a když zafixuji $v∈V(G)$ potom $∀X_i;v∈X_i$
+je souvislý podstrom.
+
+Místo posledního je možné brát že je-li $X_k$ na cestě mezi $X_i$ a
+$X_j→→X_i∩X_j@⊂X_k$.
+
+\name{Šířka rozkladu} $T$ je $\max{X_i}-1$.
+
+\name{Stromová šířka} je minimální šířka rozkladu přes všechny rozklady (jeden
+graf může mít více rozkladů, rozklad kde jediný $X₁$ obsahuje všechny vrcholy
+určitě existuje).
+
+Stromová šířka grafu je nejvýše $1←→G$ je les.
+
+Stromová šířka grafu je nejvýše $2←→G$ je podgrafem sériově-paralelního grafu
+(což je totéž, jako že nemá $K₄$.
+
+Pokud $H$ je podgraf $G$, potom $tw(H)≤tw(G)$.
+
+Pokud $G$ obsahuje $K_n$, potom stromový rozklad je alespoň $n-1$.
+
+$∀(X_i,X_j)∈E(T)$ platí, že $X_i∩X_j$ je řez v $G$, nebo každý uzel za $X_i$ je
+podmnožinou $X_j$ nebo naopak.
+
+K programování použijeme dynamické programování, v jednom $X_i$ je max omezená
+interference mezi částmi. Použijeme zakořeněný stromový rozklad, z podstromů
+bereme výsledky a spojujeme (posílá se více řešení nahoru, bere se jak to jde
+nejlepší).
+
+\subsection{Maximální nezávislá množina}
+
+Hledáme $α(G)$ nějakého grafu $G$ (tedy, maximální podmnožina vrcholů, kde
+nevede ani jedna hrana).
+
+Kromě $G$ dostaneme i zakořeněné $T$. Výstupem má být velikost této množiny.
+
+Pro každý vrchol máme tabulku dvojic $(S, a)$, kde $S$ je nezávislá na $X_i$ a
+lze ji rozšířit na nezávislou množinu o velikosti $a$ na celém podstromu $T$.
+
+Je-li $X_i$ list, tak hrubou silou vytahám nezávislé podmnožiny.
+
+Má-li $X_i$ zpracované děti, potom pro každou nezávislou $S$ na $X_i$ potřebuji
+spočítat $a$. Pro každé dítě se podívám, jaká nejlepší jeho nezávislá množina je
+pořád ještě nezávislá s tou mojí $S$. Tedy, $a$ bude $\len{S} + $ součet přes
+všechny děti takové, jaké jsou nejlepší nezávislé množiny těch „zbytků“.
+
+Jednoduše vezmu všechny ty $a$, odečtu jim společné části.
+
+V kořenu vezmu nejlepší $a$.
+
+Časová složitost je $O(\len{V(T)}·2^{tw(G)})$. Pro danou fixovanou šířku to je
+$O(N)$ (protože optimální má nejvýše $n-1$ vrcholů v $T$).
