@@ -19,7 +19,7 @@ clean-makes:
 
 DIST_RTDS:=$(wildcard $(patsubst %,%/*.rtd,$(SUBDIRS)))
 DIST_PDFS:=$(patsubst %.rtd,%.pdf,$(DIST_RTDS))
-pdfs.tar.bz2: $(DIST_PDFS)
+pdfs.tar.bz2: $(DIST_PDFS) $(shell find -iname *.xoj)
 	tar c $^ | bzip2 -9 > $@
 
 clean-tars:

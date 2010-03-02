@@ -1,0 +1,78 @@
+\section{String grafy}
+
+Poznávání průnikových grafů křivek je $NP$-těžké.
+
+Podtřída \name{$1$-string} je taková, že se každé dvě křivky protínají maximálně v $1$
+bodě, nesmějí se dotýkat.
+
+\name{Outer-String} jsou takové, že je oblast, všechny mají jeden konec na
+hranici, zbytek mají uvnitř.
+
+Zatočené fun grafy ‒ křivky natažené mezi dvěma soustřednými kružnicemi.
+
+\name{CO-string} (constrained) je něco jako Outer-string, ale na vnější hranici
+musí být v tom pořadí, v jakém mají očíslované vrcholy. Například doplněk
+kružnice není součástí tohoto (nesmějí se potkat sousední). Lze dokázat indukcí
+podle $n$. Pro $n=4$ se mají křížit ty, které se nesmějí křížit ($1-3$ oddělí od
+sebe $2, 4$, ty už se nesmějí potkat).
+
+V indukčním kroku ‒ zkrátím $n+1$ křivku tak, aby se poslední, s čím se
+protínala, protínala jen jednou. Když zkrátím ještě o kousek, tak se změní graf.
+Pokud to byl ob-soused, potom to byl problém pro o $n$ vrcholech. Obdobně
+můžeme oříznout na menší a menší, tak vždycky narazím.
+
+\subsection{$NP$-těžkost}
+
+Převedeme na to $3$-SAT. Máme formuli $Φ$. Ten budeme reprezentovat takto: Každá
+proměnná bude vrchol (ať pozitivní nebo negativní), za každou klauzuli bude
+jeden vrchol, spojím hranou, pokud klauzule obsahuje vrchol. Tohle se jmenuje
+$G_Φ$.
+
+Budeme brát jen formule, které mají tento graf rovinný a $3$-souvislý (každá se
+na toto dá převést) a každá proměnná bude nejvýše u $4$ klauzulích.
+
+Dokážeme, že lze vytvořit $G(Φ)$ (jiný graf), který bude stringový právě když je
+$Φ$ splnitelná.
+
+$D_Φ$ bude rovinné reklineární (hrany jsou lomené čáry, které jsou jen vodorovné
+nebo svislé) nakreslení. Z toho nějak udělám gadgety, pomocí nich udělám $G(Φ)$.
+
+Ke každému vrcholu v $D_Φ$ přidám oblast, kam přijde reprezentace gadgetů pomocí
+stringů, okolo hran cestičky.
+
+K proměnné udělám kružnici s $16$ vrcholy, každý druhý vrchol důležitý, každá
+připojená klauzule má jeden „levý“ a jeden „pravý“ vrchol. Tohle lze reprezentovat
+$16$ stringama „dokola“, jako je ta kružnice, jde nakreslit po směru nebo proti
+směru. To bude udávat hodnotu proměnné. Ty nedůležité vrcholy zaručují, že se
+neprohází (udržují pořadí).
+
+Od každé proměnné ke klauzuli povedou 2 cestičky, která má tolik vrcholů, kolik
+úseků má ta hrana v $D_Φ$ ‒ jedna levá a jedna pravá. Levá cesta je napojená na
+levý vrchol téhle klauzule na proměnné, pravá na pravý.
+
+Když proměnná dává pravdivou hodnotu, tak přijdou správným směrem, když opačným,
+tak bude nepravdivá. Podle toho si klauzule pojmenuje cesty buď stejně, nebo
+opačně, pokud má proměnnou negovanou.
+
+Stringová reprezentace řetízků je taky „cestička“ z malých stringů, nemohou se
+tedy překřížit.
+
+Aby se nedělaly problémy při překřížení cestiček k různým klauzulím, připojím
+přes propojku s $K_{2,2}$.
+
+\TODO{Obrázek}
+
+Protože kružnice dělí rovinu na 2 kusy, je $3$-souvislej, tak můžu předpokládat,
+že vnitřky proměnných jsou prázdné, můžu je zcvrknout, cestičky obdobně,
+klauzule taky. Dostanu zpětně $D_Φ$. To je ale $3$-souvislé, proto to má
+jednoznačné nakreslení. To se přenese i na původní „nafouknutý“ graf.
+
+Klauzule bude $12$-cyklus. Venku zase přípojky, každá spojená s jedním
+mezispojovátkem uvnitř, ten s vnitřním vrcholem. Vnitřních vrcholů je 6 a mají
+doplněk 6-cyklu. Když to přijde false, tak uvnitř chci nareprezentovat doplněk
+$C₆$ pomocí CO-string, to nejde.
+
+Kdykoliv přijde něco jiného, tak už se to dá nakreslit.
+
+Pokud to jde kreslit, jde to i s úsečkami (SEG). Obdobně lze dokázat, že je
+$NP$-těžké poznávat $2$-dir, jen klauzule mají jiný gadget.

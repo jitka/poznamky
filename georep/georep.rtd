@@ -15,4 +15,6 @@
 \input{09.12.02.rtx}
 \input{09.12.16.rtx}
 \input{10.01.06.rtx}
+% Letní semestr
+\input{10.03.02.rtx}
 \end{document}
