@@ -1,0 +1,85 @@
+\section{Složitosti}
+
+\subsection{Časová}
+
+Potřebujeme říct, jak dlouhé jsou instrukce. Možnost buď jednotková a nebo
+logaritmická (tedy, podle počtu bitů), ale v tom případě je problém se
+synchronizací procesorů.
+
+\subsection{Paměťová}
+
+Těch je více. Jednak udává počet spotřebovaných registrů celkem (tedy, součet
+přes všechny procesory) ‒ $S(n)$.
+
+Potom tu je $P(n)$ ‒ počet aktivovaných procesorů.
+
+$W(n)$ je šířka slova ‒ tedy, kolikabitová čísla budou stačit.
+
+\section{Aktivace}
+
+První možnost je, že se probudí všechny naráz. To je problematické.
+
+Druhou možností je, že se probudí první a ten budí další (ty taky mohou budit).
+
+\section{Instrukční sady}
+
+Můžeme používat různě omezené instrukční sady (např. jen sčítání, odčítání a
+posun doleva o 1).
+
+\section{Řešení konfliktů}
+
+Pokud se chceme vyhnout konfliktům, tak lze postavit strom, kterým se to
+slučuje/rozděluje.
+
+Toto dává logaritmické zpomalení.
+
+Potřebujeme trochu rozdělit, co dělat, když každý zapisuje jinam, kde sehnat
+pomocné procesory, etc.
+
+Lze vystačit jen s globální pamětí (tu rozstrkat).
+
+\section{Sekvenční modely}
+
+Různé turingovy stroje, Markovovy algoritmy, částečně rekurzivní funkce. Všechny
+stejně silné, rychlostí se liší jen polynomiálně (pokud jsou „rozumné“).
+
+PRAM se dá simulovat na nich.
+
+Všechny „rozumné“ paralelní modely se liší jen polynomiálně a jsou vázané na
+paměťovou složitost sekvenčních algoritmů.
+
+Zatím je otevřené, jestli když je problém v polylog-space, pak by se dal
+paralelně vyřešit exponenciálně rychleji. Zatím se nevím, jestli každý problém z
+$P$ je z polylog-space.
+
+Třída $NC$ je taková, kde k vyřešení v polylog čase a stačí k tomu polynomiální
+množství procesorů.
+
+Pokud je zrychlení polylogaritmické a práce je stejně (tedy, počet procesorů
+$\times$ čas), pak je optimální. Efektivní je, pokud je práce nejvýše
+polylogaritmicky více. Toto je stejné ve všech rozumných modelech.
+
+\section{Paralelní algoritmy pro vybrané funkce}
+
+Jedním principem je postup „pozděl a panuj“, druhý je „práce v týmech“ ‒ každý
+tým dostane jedno potenciální řešení, on zkontroluje, zda to odpovídá.
+
+\subsection{Logaritmus}
+
+Princip týmů, jednočlenné, každý procesor ověří, jestli je jeho id správný
+výsledek.
+
+\subsection{Nalezení maxima}
+
+Každý tým o $n$ procesorech zkouší, jestli tenhle je maximum, ten co je se
+zapíše.
+
+\subsection{Sčítání $n$-bitových čísel}
+
+Udělám $2^{n(b+\log n)}$ týmů, velikosti čísel zaokrouhlíme na mocniny dvojky.
+Kontroluje se, jestli to opravdu sedí (uhodnou jak výsledky, tak přenosy,
+kontrolují).
+
+\subsection{Násobení}
+
+Fungují podobně, jakoby pod sebou.
