@@ -1,0 +1,155 @@
+
+\begin{Statement}[Prvočíselná]
+Nechť $π(n)=\len{@{p≤n,p\hbox{ prvočíslo}@}}$. Potom
+$$π(n)=@(1+o(1)@)·\frac{n}{\len n}$$
+\end{Statement}
+
+Když máme aritmetickou posloupnost (tedy, $a+kd$), některé žádná prvočísla
+neobsahují.
+
+\begin{Statement}[Dirichletova]
+Nechť $π_{a,d}(n)$ je počet prvočísel v aritmetické posloupnosti $a+k·d$, potom
+pokud jsou $a,d$ nesoudělná (pak by to neobsahovalo žádná prvočísla), tak je:
+
+$$
+π_{a,d}(n)=@(1+o(1)@)·\frac{n}{φ(d)·\log n}
+$$
+\end{Statement}
+
+\begin{Follows}
+$$π_{1,4}(n)∈Ω@(\frac{n}{\ln n}@)$$
+\end{Follows}
+
+Máme tedy mřížku $\sqrt{n}\times\sqrt{n}$ mřížka. $M$ je součin prvních $r-1$
+prvočísel tvaru $4k+1$, $r$ největší takové, že $M≤\frac{n}{4}$. Mřížku
+naškálujeme na $\inv{\sqrt{M}}$.
+
+Každý bod se podílí alespoň na tolika jednotkových vzdálenostech, kolik je
+reprezentací $M=a²+b²$, kde $a,b$ jsou nezáporná celá čísla (beru jen čísla v
+levém dolním půlkruhu). Máme alespoň $2^{r-1}$ reprezentací. Z toho alespoň
+$\frac{2^{r-1}}{4}$ jsou nezáporná celá.
+
+Z volby $n$ plyne, že $4·\Π_{i=1}^{r-1} p_i≤n<4\Π_{i=1}^r p_i$, $2^r≤n$,
+$pr≥@(\frac{n}{4}@)^\inv{r}$.
+
+$$r=π_{1,4}(p_r)≥@(\inv{2}-o(1)@)·\frac{p_r}{\ln p_r}>\sqrt{p_r}≥n^{\frac{1}{3}r}$$
+(ta třetina je v exponentu kvůli tomu dělení 4).
+
+\begin{eqnarray*}
+r^{3r}&≥&n\\
+3r\ln r&≥&ln n\\
+r&≥&\frac{\log n}{3\log r}\\
+r&≥&\frac{\log n}{3\log \log n}\\
+\log r &<& \log\log n
+\end{eqnarray*}
+
+Celkem tedy alespoň $n·\frac{2^π}{16}≥n^{1+\frac{c}{\log \log n}}$.
+
+\section{Věty o součtech a součinech}
+
+Budeme uvažovat konečné množiny reálných čísel $A@⊂ℝ$. Budeme značit:
+
+→•
+ • $A+A = @{a+b;a,b∈A@}$
+ • $A·A = AA = @{a·b;a,b∈A@}$
+←•
+
+Pokud je $A$ generická (nejsou mezi nimi lineární závislosti) a $\len{A} = n$,
+potom $\len{A+A} = \combnum{n}{2}+n$.
+
+Naopak, pokud bude $A=@{1,2,…,n@}$, potom $A+A=@{2,3,…,2n@}$, což je $2n-1$
+členů. Toto platí pro libovolnou aritmetickou posloupnost. Dá se ukázat, že je
+to nejmenší možné.
+
+\begin{Statement}[Freiman]
+$∀C∃d,C₁$ taková, že $A@⊂ℝ,\len{A}=n;\len{A+A}≤C·n$, potom existuje
+$d$-dimensionální aritmetická posloupnost $A'$ taková, že $A@⊂A'∧\len{A1}≤C₁·n$.
+
+\name{$d$-dimensionální aritmetická posloupnost} jsou čísla ve tvaru
+$@{a₀+\Σ_{i=1}^d k_i·b_i@}$, $k_i∈n_i$, kde $n_i,b_i$ jsou parametry.
+\end{Statement}
+
+Podobně to bude fungovat pro $A·A$ a geometrickou posloupnost.
+
+Dá se najít nějaká množina $A$, kde $A+A$ je malé a i $A·A$ malé? Hypotéza je,
+že $∀ε∈ℝ^+ \max{\len{A+A},\len{A·A}}≥c·n^{2-ε}$.
+
+Rekord je $\max(\len{A+A}, \len{A·A})>n^\frac{4}{3}$.
+
+\begin{Statement}[Elekes]
+$$\max(\len{A+A},\len{A·A})≥c·\len{A}^\frac{5}{4}$$.
+\end{Statement}
+
+\begin{Proof}
+Dokážeme pomocí věty \ref{SzemerediTrotter}, že
+$\len{A+A}·\len{A·A}≥c'·n^\frac{5}{2}$.
+
+Na jednu osu si nakreslíme $A+A$, na druhou $A·A$, vezmeme jejich kartézský
+součin ‒ tím získáme body.
+
+Nechť $A=@{a₁,…,a_n@}$, přímky $l_{i,j}=@{y=a_i·(x-a_j)@}$, $i,j∈1…n$
+
+Máme $n²$ bodů a $n²$ přímek.
+
+$∀k$ uvážíme bod $a_j+a_k$ a bod $a_i·a_k$. To náleží do $l_{i,j}$. Tedy, každá
+přímka z $L$ má alespoň $n$ incidencí. Dosadíme do věty \ref{SzemerediTrotter},
+vyjde, že $I(P,L)≥3$.
+$≤C@(\len{P}^\frac{2}{3}·\len{L}^\frac{2}{3}+\len{P}+\len{L}@) =
+C@(n^\frac{4}{3}\len{P}^\frac{4}{3}+\len{P}+n²@)≥n³$.
+
+Z toho už vyjde, že $\len{P}≥c·n^\frac{5}{2}$.
+\end{Proof}
+
+\begin{Statement}[Solymosi]
+Nechť $A@⊂ℝ^+$ je množina kladných čísel. Potom $\max(\len{A+A},
+\len{A·A})≥c·\frac{\len{A}^\frac{4}{3}}{@(\log\len{A}@)^\inv{3}}$.
+\end{Statement}
+
+\begin{Proof}
+Dokážeme, že $\len{A+A}²·\len{A·A}≥c·\frac{\len{A}⁴}{\log{A}}$. Zavedeme
+veličinu $E(A)$, říká se jí multiplikativní energie množiny. To je
+$\len{@{@(a,b,c,d@);a,b,c,d∈A;a·d=b·c@}}$.
+
+\begin{Lemma}
+$$E(A)≥\frac{\len{A}⁴}{\len{A·A}}$$
+\end{Lemma}
+
+\begin{Proof}
+Počítání dvěma způsoby, Cauchy-Swartzova nerovnost:
+
+Budeme brát dvojice podle toho, jaké mají součiny (tedy, zafixuji $ad$, k nim
+vybírám $bc$ tak, aby měly stejný součin). Tedy, $n_p:=
+\len{@{@(x,y@);x,y∈A;xy=p@}}$.
+
+$$
+E(A)=\Σ_{p∈A·A}n_p²
+$$
+
+$$
+\len{A}⁴=\Σ_{p∈A·A}\Σ_{q∈A·A}n_p·n_q = @(\Σ_{p∈A·A}n_p@)²
+$$
+
+Pak vezmeme cauchy-swartzovu nerovnost:
+
+$$
+@(\Σx_iy_i@)² ≤ @(\Σx_i²@)·@(\Σy_i²@)
+$$
+
+(za $y_i$ dáme $1$, za $x_i$ dáme $n_p$).
+
+Tedy, máme:
+$$
+\len{A}⁴≤(\Σn_p²)·\len{A·A}=E(A)·\len{A·A}
+$$
+\end{Proof}
+
+\begin{Lemma}
+$$
+\frac{E(A)}{\log\len{A}} = O(\len{A+A}²)
+$$
+\end{Lemma}
+
+Budeme z těch čtveřic energie dělat prvky $(A+A)\times(A+A)$. Na prvky
+$(A+A)\times(A+A)$ se můžeme dívat jako na $(A\times A)+(A\times A)$.
+
+\end{Proof}

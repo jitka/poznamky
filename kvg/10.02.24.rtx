@@ -20,7 +20,8 @@ která obsahuje počátek a je dle něj symetrická (např. elipsa).
 Z normy uděláme metriku tak, že hledáme normu rozdílu bodů.
 
 Známé důkazy horního odhadu $O(n^\frac{4}{3}$ vrací stejný odhad i pro
-libovolnou normu v $ℝ²$ (tedy, nevyužívají „kulatosti“ kružnice).
+libovolnou normu v $ℝ²$, pokud je striktně konvexní. (tedy, nevyužívají
+„kulatosti“ kružnice).
 
 Existuje norma že $∀n∃$ množina $n$ bodů v $ℝ²$ s $≥c·n^\frac{4}{3}$
 jednotkových vzdáleností. Máme dvě paraboly „nad sebou“ (horní prochází $[-1,0],
