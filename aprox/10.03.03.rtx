@@ -1,0 +1,54 @@
+\section{Minimální vrcholové pokrytí}
+
+Přikládám vždy celou hranu, tu utrhnu ‒ $2$-aproximace.
+
+\subsection{Bipartitní graf}
+
+V něm je optimum rovno velikosti maximálního toku.
+
+\subsection{Vážená verze}
+
+Řeší se přes lineární programování. Proměnná na vrchol, buď $0$ nebo $1$.
+Chceme, aby pro každou hranu byl součet alespoň $1$. Vyjde něco, co má s
+celočíselným řešení něco společného. Dá nám dolní odhad na optimum. Vezmu
+všechny vrcholy, které jsou alespoň $0.5$, ty nastavím na $1$. Velikost je
+nejvýše $2\times$ větší, než hodnota lineárního programu.
+
+\begin{Statement}[PCP]
+Je $NP$-těžké rozlišit splnitelné formule od formulí, kde lze splnit nejvíce
+$99\%$ klauzulí.
+\end{Statement}
+
+Toto je až upravená verze.
+
+Z toho například plyne, že je $NP$-těžké $α$-aproximovat vrcholové pokrytí pro
+$α<\frac{7}{6}$.
+
+Existuje hypotéza, ze které plyne, že asi neexistuje lepší, než $2$-aproximace
+(protože by to mělo podobné následky, jako kdyby se ukázalo, že $P=NP$).
+
+Když hledáme maximální nezávislou množinu v grafu, tak je to opačné k
+vrcholovému pokrytí. Z toho, mimo jiné, plyne, že nelze odlišit optimum od
+nezávislých množit, které jsou „hodně dobré“.
+
+Hledání největší kliky je také problém nějak duální k nezávislé množině (klika v
+doplňku je totéž jako nezávislá množina originálu).
+
+\section{Obchodní cestující}
+
+Pro obecnou nejde najít žádnou aproximaci (uměli bychom řešení hamiltonky).
+
+Jsou-li vzdálenosti podle trojúhelníkové nerovnosti, můžu pomocí kostry hledat
+$2$-aproximaci (určitě to nebude víc jak $2*$ horší, než kostra, kostra je
+nejvýše tak velká, jako hamiltonka).
+
+Vylepšená verze ‒ najdeme minimální kostru, potom všechny vrcholy, kde je stupeň
+v kostře lichý. Potom najdeme minimální perfektní párování na těchto vrcholech.
+Potom uděláme eulerovský tah na kostře sjednocené s párováním (poznámka: tohle
+může být multigraf). Tohle potom zkrátím (vyhážu duplicity).
+
+Tohle je $\frac{3}{2}$-aproximace. Párování je nejvýše polovina optima. To se
+sečte, takže max. $\frac{3}{2}$ optima.
+
+To, že to párování je nejvýše polovina je vidět z toho, že hamiltonka lze složit
+ze dvou párování (a jedné hrany navíc).
