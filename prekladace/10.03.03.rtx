@@ -1,0 +1,146 @@
+\section{Mezijazyky}
+
+Překladače mají různé úrovně optimalizací (high-level ‒ např. inlinování funkcí,
+middle-level, low-level ‒ např. alokace registrů).
+
+Na každou úroveň se obvykle používají různé mezijazyky. Např. gcc má:
+
+→•
+ • Generic
+ • Gimple
+ • RTL
+←•
+
+Teprve nedávno to začalo používat ty „vyšší“.
+
+Při návrhu je několik problémů:
+
+\subsection{Reprezentace typů}
+
+Také, od nejvyšších, po nižší ‒ nějaké jak je to naparsované, přes to, co umí
+daná architektura (integery, floaty, skládání do struktur/polí), až po ty
+nejnižší, co umí jen procesor.
+
+Gimple gcc dělí na druhy:
+
+→•
+ • Integer
+ • Real
+ • Pointer
+ • Complex
+ • Vector
+ • Bool
+ • Enum
+ • Array
+ • Record
+ • Union
+ • Kvalifikovaný union (to je z ADY)
+ • Funkce
+ • Metoda
+←•
+
+Každé to nese mnoho dalších informací (rozsahy, jak přetýká, etc).
+
+V RTL už je těch informací mnohem méně, jen 16-bitová informace, co je to zač
+(liší se v zásadě jen v délce a jestli je to int, float a nebo flagy procesoru).
+
+Potom tam bude spousta přetypování mezi velmi podobnými typy. Např. v C++ je
+$60\%$ instrukcí přetypování, nepomáhá to optimalizacím (i když to negeneruje
+kód, překáží to optimalizerům, když se to snaží umísťovat tak, aby minimalizoval
+operace). Na druhou stranu lze nad tím něco studovat (přeuspořádávat položky
+struktury).
+
+Potom se řeší nějaké deklarace ‒ kus paměti, který má nějaký typ a tak. Ty nižší
+mají spíše registry, než deklarace.
+
+Dále je problém, jak popsat control-flow. Ta vysoká úroveň má nějaké podmínky,
+cykly, etc, na střední nějaký control flow graph, na konci už jsou jen podmíněné
+skoky.
+
+Potom je potřeba reprezentovat vlastní instrukce. Jedno je abstraktní
+syntaktický strom (vypadne nějaká deklarace, přiřadítko, …). Druhý extrém je
+nějaké instrukce. V tom prostředku se to snaží být ten syntaktický strom nějak
+zploštělý do nějakých $n$-tic, co se má s čím dít.
+
+\subsubsection{RTL}
+
+To se snaží popisovat assemblerové instrukce cílového procesoru. Jsou zase
+nějaké n-tice, které říkají, co se má provádět, s čím, a tak. Jsou v tom nějaké
+basic-bloky, kam to patří, odkaz na následující, na předchozí, debug info.
+
+\subsubsection{Přístupy do paměti}
+
+Jeden extrém je reprezentovat to podle toho, jak je to napsané (popsané
+idnexování polí, lezení do struktur), až k tomu, kdy se to zapisuje jako
+matematický výraz z ukazateli. Občas je potřeba řešit překlady do dědičnosti a
+podobně.
+
+Je potřeba řešit aliasování (že něco může ukazovat na stejné/různé místo). Je
+vhodné tohle vyndat z typů a uložit do těch přiřazení.
+
+\subsection{Debugovací informace}
+
+Je vhodné, aby šlo debugovat i to, co je zoptimalizované. Ukládá se to do
+formátu dwarf (poměrně rozsáhlý standard). Je to programovací jazyk ‒ může to i
+počítat i spoustu věcí, kde co je a tak (například kvůli stacku) ‒ umí např.
+revertovat převod for cyklu do pointerové aritmetiky.
+
+V překladači je potřeba to táhnout „s sebou“. Některé věci (interní) nemají
+debug info. Každý kus si nese něco zvané „locus“ ‒ info, kde se to stalo (řádek,
+zdroják).
+
+Většina věcí si pamatuje, odkud vzniklo (registry, proměnné…). Takže je možné
+mít víc instancí (v kódu) proměnných.
+
+Jsou tam nějaké instrukce typu „tady by se nastavilo tohle, kdyby se to
+nevyoptimalizovalo“.
+
+\subsection{Exception handling}
+
+Jsou dvě strategie ‒ setjump a longjump, druhé jsou unwind zásobníku.
+
+To první funguje, jenže je to pomalé (setjumpy jsou pomalé).
+
+Navíc musí být kompatibilní mezi jazyky, mezi verzemi, překladači a podobně.
+Používá se norma pro C++ a itanium (nezávislá na platformě a jazyce).
+
+Unwindování stacku se dělá pomocí runtimu, který používá dwarf popisy, opravuje
+to zásobník, volá handlery. Jednak tam jsou tedy ty dwarfové popisy zásobníky,
+jednak action chainy (každá instrukce dělá jinou výjimku, vyhledává se, co se s
+ní dělá ‒ každá může být jiná).
+
+Ve vysokých jazycích jsou různé regiony:
+
+→•
+ • Cleanup (na konci bloku, na uvolňování/volání destruktorů).
+ • Try (tam kde napíše uživatel).
+ • Must not throw (když to člověk oflaguje, že nehlásí, když vyhodí, tak to
+   skončí). Nafukuje program. Taky kolem cleanupu.
+ • Allowed exceptions (něco jako must not throw, ale s nějakými povolenými).
+←•
+
+Jsou gcc instrukce eh\_dispatch, resX (chytání, pokračování unwindování).
+
+\subsection{Control flow graph}
+
+Orientovaný graf, každý vrchol je basic block (kus kódu, kde se neskáče). Hrany
+jsou možné přechody. Vnitřek basic blocku bývá spoják. Většina překladačů má
+explicitně reprezentované hrany, obvykle přímo za basic blocku.
+
+Z basic blocku obvykle vede max. 2 hrany.
+
+Jsou různé druhy hran:
+
+→•
+ • Skoky.
+ • Exception handling (problémové).
+ • Abnormální hrany (longjump $→$ setjump (do všech, neví se který)). Navíc
+   tyhle nejdou přesměrovávat.
+←•
+
+Je to na každou funkci zvlášť, kvůli tomu, že se to na „celek“ nehodí.
+
+Pak je ještě callgraph, je to multigraf, mezi funkcema.
+
+Je více druhů callgraphů (některým optimalizacím vadí, když by se uprostřed
+basic blocku volalo exit nebo tak).
