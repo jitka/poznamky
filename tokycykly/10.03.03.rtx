@@ -1,0 +1,78 @@
+Mějme $G$ orientovaný multigraf, $Γ$ abelovská (koumutativní) grupa.
+
+Funkce $f:E(G)→Γ$ se nazývá \name{tok}, pokud splňuje kyrhofův zákon v každém
+vrcholu (tedy, co teče dovnitř, to teče i ven).
+
+Konstantně nulová funkce je platný tok. Součet dvou toků je taky tok. Násobek
+taky. Množina toků je také grupa. Je to také vektorový prostor, pokud $Γ$ je
+těleso. Báse jsou základní cykly.
+
+Máme graf $G$, grupu $Γ$, $f:E(G)→Γ$ \name{nikde nulový tok}, pokud $f$ je tok a
+$∀e∈E(G);f(e)≠0$.
+
+Mějme podmnožiny vrcholů $A,B$, potom $f(A,B)$ bude značit tok, který teče na
+hranách vedoucích z $A$ do $B$.
+
+$f^+(v) = f(@{v@}, V)$, $f(v)=f(V,@{v@})$.
+
+\begin{Lemma}
+$G,Γ,f$ jako výše. Potom nechť $U@⊂V(G), \overline{U}=V(G)\backslash U$, potom
+$f(U,\overline{U})=f(\overline{U},U)$.
+\end{Lemma}
+
+\begin{Proof}
+Z kyrhofova zákona platí, že $f^+(v)=f^-(v)$. Jednoduše stačí sečíst všechny
+$f^+$ a všechny $f^-$. Každá z těch hran se někam započítá, musí to sedět.
+\end{Proof}
+
+\begin{Follows}
+Nechť $e$ je most v grafu $G$. Potom $f(e)=0$.
+\end{Follows}
+
+\begin{Follows}
+Pokud $G$ má mosty, nemá nenulové toky.
+\end{Follows}
+
+\begin{Follows}
+Nechť $e, e'$ je $2$-řez. Potom $f(e)+f(e')=0$.
+\end{Follows}
+
+\begin{Observation}
+Když otočím všechny hrany, tak zachovám to, že je to tok.
+\end{Observation}
+
+\begin{Observation}
+Kdykoliv otočím jednu hranu, tak můžu jen otočit to, co teče, na záporné a mám
+hotovo.
+\end{Observation}
+
+\begin{Follows}
+Toky lze zkoumat na neorientovaných multigrafech.
+\end{Follows}
+
+\begin{Statement}[Tutte]
+$∀$ graf $G$ existuje polynom $P_G(x)$ takový, že $∀$ grupy $Γ$ počet nenulových
+$Γ$-toků v $G$ je $P_G(\len{Γ}-1)$.
+\end{Statement}
+
+Tomuto $P_G$ se říká tokový polynom.
+
+\begin{Proof}
+Vezmeme podle počtu hran. Pokud nejsou žádné, potom existuje právě jeden
+(nenulový) tok.
+
+Nechť tedy má nějaké hrany. Zafixujme si nějakou hranu $e$. Pokud je $e$ smyčka,
+máme $\len{Γ}-1$ krát víc možností, než ve zbytku a nic se tím nemění. Pokud je
+most, pak počet nenulových toků je $0$. Jinak zkusíme hranu zkontrahovat. Co
+bylo tok předtím, je i po kontrakci. Opačně to platí ale také, jen nesmí tahle
+být nulová. Odečteme ty, které tam tu hranu nemají (a nejsou zkontrahované).
+\end{Proof}
+
+\begin{Follows}
+Počet/existence nenulových $Γ$-toků záleží na velikosti $Γ$.
+\end{Follows}
+
+\begin{Note}
+Tohle je vedlejší produkt tuttova polynomu, který tohle produkuje při správném
+dosazení jedné proměnné.
+\end{Note}
