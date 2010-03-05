@@ -1,0 +1,77 @@
+\section{Nejkratší cesty}
+
+Hledat nejkratší cesty nejde rychle, umíme nejkratší sledy. Dá se to obejít,
+když nejsou záporné cykly, splývá s nejkratším sledem.
+
+Budeme pracovat na ohodnocených grafech.
+
+Chceme dostat graf, dva vrcholy, chceme najít nejkratší cestu mezi nimi. To se
+také moc neumí, umí se ze zdrojového najít nejkratší sledy do všech ostatních.
+Přímo konstruovat cesty je nepraktické, obvykle se konstruují buď vzdálenosti,
+nebo strom nejkratších cest. Strom lze převádět na vzdálenosti, opačně to také
+jde. Tomuhle se říká SSSP.
+
+Často se hledá nezáporná verze, kde nesmějí být žádné záporné hrany.
+
+Chceme sestrojit všechny dvojice nejkratších cest. Tomu se říká APSP.
+
+\subsection{SSSP}
+
+Obvykle začneme s nějakým ohodnocením, postupně zlepšujeme, až dokonvergujeme.
+Tři druhy vrcholů ‒ neviděné, načaté, hotové.
+
+Poté se nějakým způsobem vybere rozdělaný vrchol, relaxuje podél hran, co vedou
+ven a prohlásí za hotový. Cílový, pokud upraví, nastaví na rozdělaný (i když ten
+byl i hotový). Této operaci budeme říkat scan. Algoritmus končí ve chvíli kdy
+jsou všechny hotové.
+
+Tohle nikdy neskončí, pokud tam je záporný cyklus. Libovolné ohodnocení vždy
+odpovídá nějakému sledu ze zdrojového vrcholu sem. Kdyby sled nebyl cestou, tak
+vznikl cyklus, který musel být záporný.
+
+Na pořadí scanů záleží. Někdy to může trvat až exponenciálně dlouho.
+
+Pokud očísluji vrcholy a scanuji v cyklickém pořadí, potom je v $i$-tém průběhu,
+$d(v)$ je omezené na cykly délky alespoň $i$.
+
+Bellman-Ford je zlepšená verze tohoto. Tomu nevadí záporné hrany. Lze stihnout v
+$Θ(m·n)$.
+
+Byly různé vylepšovací heuristiky, ale kazí složitost v nejhorším případě.
+
+Dijxtra zavírá ten z otevřených, který má nejmenší ohodnocení. Takto formulované
+to funguje i se zápornými hranami, jen bude ničit složitost. Spousta algoritmů
+vychází z tohoto, jen vyměňuje haldu a využívá např. celočíselnosti.
+
+\subsubsection{Redukce na nezáporné}
+
+Mějme potenciál $Φ:V(G)→ℝ$. Kdykoliv máme $l:E(G)→ℝ$, pak lze udělat úpravu $l$
+tak, že $l_Φ(u,v):= l(u,v)+Φ(u)-Φ(v)$. Potom se to poodčítá na každém sledu tak,
+že je tam jen první a poslední. Cykly to neničí.
+
+Tím se dá zbavit záporných hran. Zařídíme, aby to byl dostatečný rozdíl.
+Vzdálenosti od nějakého daného vrcholu, tak to platí. Tohle se vyplatí, pokud se
+něco má iterovat mnohokrát (např. jednou pustit bellman-forda, potom mnohokrát
+dijxstru, pokud chceme všechny dvojice).
+
+\subsection{Heuristiky pro hledání k cílovému vrcholu}
+
+Existují různé, které se snaží vylepšit dijxtru, aby nemusel prohledávat
+všechno.
+
+Například $A^*$ je vylepšení dijxtry, který obecně nefunguje. Máme hint $h(v)$,
+potom vybíráme $\min d(v)+h(v)$. Kdybych koukal na $h(v)$ jako náš upravovací
+potenciál (potenciál je $-h(v)$). Např. na mapě euklidovská vzdálenost funguje.
+
+Další trik je, že se dají pustit dva dijxtrové „proti sobě“. Tohle ne vždy
+funguje, ale když počítám nějak přes spojovací hranu, tak už to fungovat bude.
+
+\subsection{Trik s majáčky}
+
+Rozmístím majáčky (dobře vybrané vrcholy) a rozpočítat si vzdálenosti k nim
+odněkud. Minimum, maximum a průměr je korektní potenciál. Průběžným přepínáním
+se dá zařídit, aby scanoval „přibližně správným směrem“ přednostně.
+
+Dijxtrově algoritmu stačí monotónní halda ‒ minima tvoří monotónní posloupnost.
+Lze použít nějaké přihrádky, pokud jsou malé celočíselné délky hran. Dá se to
+různě nakombinovat.
