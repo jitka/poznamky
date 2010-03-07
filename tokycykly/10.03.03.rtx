@@ -13,7 +13,7 @@ $∀e∈E(G);f(e)≠0$.
 Mějme podmnožiny vrcholů $A,B$, potom $f(A,B)$ bude značit tok, který teče na
 hranách vedoucích z $A$ do $B$.
 
-$f^+(v) = f(@{v@}, V)$, $f(v)=f(V,@{v@})$.
+$f^+(v) = f(@{v@}, V)$, $f^-(v)=f(V,@{v@})$.
 
 \begin{Lemma}
 $G,Γ,f$ jako výše. Potom nechť $U@⊂V(G), \overline{U}=V(G)\backslash U$, potom
@@ -73,6 +73,6 @@ Počet/existence nenulových $Γ$-toků záleží na velikosti $Γ$.
 \end{Follows}
 
 \begin{Note}
-Tohle je vedlejší produkt tuttova polynomu, který tohle produkuje při správném
+Tohle je vedlejší produkt tutteho polynomu, který tohle produkuje při správném
 dosazení jedné proměnné.
 \end{Note}
