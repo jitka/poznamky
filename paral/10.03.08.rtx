@@ -1,0 +1,16 @@
+\begin{Lemma}[Parberry,Schnitger]
+Nechť $T(n)$ je $ws$-konstruovatelná. Potom PRAM s omezenou sadou aritmetických
+instrukcí může simulovat $k$-páskový deterministických turingův stroj v
+konstantním čase, pokud ten běží v $O(T(n))$.
+\end{Lemma}
+
+Nagenerují se všechny posloupnosti a ověří.
+
+\begin{Statement}
+Nechť $B(n)$ je $ws$-kostruovatelná a $T(n)$ časově omezený TS. Potom se dá
+odsimulovat v čase $O@(\frac{T(n)}{B(n)}@)$ s šířkou slova $O(B(n)+\log T(n))$.
+\end{Statement}
+
+\begin{Follows}
+Libovolné polynomiální zrychlení je možné.
+\end{Follows}
