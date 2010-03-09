@@ -1,0 +1,49 @@
+\subsection{Pěkné stromové rozklady}
+
+\name{Pěkný stromový rozklad} je takový, že jeho uzly jsou 4 druhů.
+
+→•
+ • Listy. Ty obsahují pouze jeden vrchol.
+ • Množivé uzly $X_i$. Mají jedno dítě $X_j$, platí, že $X_i=X_k+u$ (přidaný jeden
+   vrchol).
+ • Inverze tohoto.
+ • Spojovací. Mají dvě děti $X_j$, $X_k$, obě děti mají stejné množiny.
+←•
+
+Někdy se požaduje, aby kořen byl stupně 1.
+
+\begin{Tvrz}
+Pro každý rozklad $T$ existuje pěkný rozklad $T'$ stejné šířky.
+\end{Tvrz}
+
+\begin{Proof}
+Zakořeníme v libovolném listu. Poté se moc-větvící nahradí binárními stromečky.
+Poté se natáhne to, co se moc liší, přeměňuje se symetrická diference. Nakonec
+se vytáhnou listy.
+\end{Proof}
+
+Zajímalo by nás, jak velký bude tento rozklad vzhledem k $n$, pokud je stromová
+šířka fixovaná.
+
+Problém bude jen u spojovacích vrcholů. Na obou stranách jsou různé podstromy
+(jinak můžu jednu zahodit). Tedy, těch může být maximálně lineárně.
+
+\subsection{Barevnost}
+
+Máme dán graf a nějaké $k$. Ptáme se, jestli je obarvitelný $k$ barvami.
+Chromatické číslo je nejvíce stromová šířka $+1$.
+
+Předpokládejme, že tedy $k$ je nejvýše stromová šířka.
+
+Pro každé $X_i$ uložíme do tabulky všechna možná obarvení s nejvýše $k$ barvami,
+s tím, že se berou jen ekvivalence.
+
+Když $X_i$ je list, pak je tam jen jedna množina. Když máme množivý, tak nemůže
+být strčen do stejné množiny, jako ty, se kterými je spojen. Ubírání je v
+pohodě. Je potřeba mergovat ty, které se „tváří“ stejné. Spojovací jen vybereme
+ty, které si dokáží odpovídat. Je-li to v kořeni neprázdné, tak má obarvení.
+
+\subsection{Hamiltonka}
+
+V tabulce si pamatujeme, jak by to mělo jít spojit nahoře, pamatují se nějaké
+dvojice.
