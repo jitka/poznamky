@@ -1,0 +1,36 @@
+\subsection{2-dir}
+
+Máme úsečky dvou směrů, protínají se jen ty různěsměrné.
+
+Proměnná bude podobná. Klauzule má rámeček, dovnitř vedou zase drátky.
+
+\name{Boxicita} grafu $G$ je nejmenší $k$ takové, že $G$ je průnikový graf
+$k$-dimenzionálních kvádrů. Např. pokud je to $1$, tak to je intervalové grafy.
+
+\section{Kruhy}
+
+Máme průnikové grafy kruhů. Lze brát i dotykové grafy (anglicky disc).
+
+Dotykové grafy kruhů jsou rovinné grafy, tedy jsou polynomiálně
+reprezentovatelné (z kruhů na rovinnost je jasné).
+
+Pokud omezíme na jednotkovou velikost, tak jak průnikové, tak dotykové jsou
+$NP$-těžké. Zase přes formule.
+
+Průnikové libovolných grafů je opět $NP$-těžké.
+
+Pseudodisk je jednoduchá uzavřená jordanovská křivka a celý vnitřek. Protínají
+se tak, že tam jsou právě dva průsečíky a je to souvislý kus mezi nimi (nesmí se
+jen třeba 2* dotknout). Rozpoznávat tohle je $NP$-úplné.
+
+Zase budeme převádět z CNF. Informaci přenášíme žebříčkem (špruslíky tam buď
+jsou nebo ne). Ty šprusle jsou kvůli tomu, aby se to při otočení dostalo
+správným směrem (je to protnuté podobně, jako u křivek).
+
+Převádíme na not-all-equal splnitelnost, ale to není $NP$-úplné na rovinné
+formule, použijeme tedy libovolné formule. Křížení budeme dělat pomocí špruslí,
+zpevní se dalšími žebříky okolo. Kdyby to nebylo $3$-souvislé, tak přidáme zase
+zpevňovátka.
+
+Obdobně se dá dokázat pro konvexní mnohoúhelník. Potom i to, co sestavím
+stejnolehlými mnohoúhelníky, je $NP$-úplné.
