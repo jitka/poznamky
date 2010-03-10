@@ -1,0 +1,48 @@
+\begin{Statement}
+Nechť $G$ je kubický multigraf. Potom $f$ je nenulový $ℤ₂²$-tok na $G←→f$ je
+dobré $3$-obarvení hran $G$.
+\end{Statement}
+
+\begin{Proof}
+Určitě nemůžou mít stejnou (pak by na tu třetí nic nezbylo). Naopak, takle
+vždycky sedí kirhofův zákon.
+\end{Proof}
+
+\begin{Observation}
+Mějme graf $G$ a $f$ je $ℤ₂$-tok. $F$ je $\sup f:=@{e∈E(G);f(e)≠0@}$. Potom
+$\deg_F v$ je sudý $∀v∈V(G)$.
+\end{Observation}
+
+\begin{Follows}
+Pokud má vrcholy lichého stupně, potom nemá nenulový $ℤ₂$-tok.
+\end{Follows}
+
+\name{Kružnice} je souvislý $2$-regulární graf (většinou neprázdné).
+\name{Cyklus} je graf (množina hran), kde jsou všechny stupně sudé.
+
+\begin{Follows}
+V kubickém grafu s mosty neexistuje dobré hranové $3$-obarvení.
+\end{Follows}
+
+Definujeme $φ(G)$ jako minimální velikost grupy potřebnou pro to, aby existoval
+nenulový tok.
+
+Budeme mít $k$-tok, pokud všechny velikosti hran jsou menší než $k$.
+
+\begin{Statement}
+$G$ má nenulový $ℤ_k$ tok právě když má nenulový $k$-tok.
+\end{Statement}
+
+\begin{Proof}
+Z $k$ na $ℤ_k$ je to jednoduché.
+\end{Proof}
+
+\begin{Follows}
+Pokud máme nenulový tok v $ℤ_k$, potom i v $ℤ_{l,l>k}$.
+\end{Follows}
+
+\begin{Statement}
+$G$ má $4$-tok právě tehdy, když existují množiny hran $E₁,E₂$ takové, že
+$E=E₁∩E₂$ a $E_i$ jsou cykly.
+\end{Statement}
+
