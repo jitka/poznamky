@@ -1,0 +1,91 @@
+Když bude multiplikativní energie veliká, bude těch součtů hodně.
+
+Definujeme $m_q:= \len{@{@(a,b@)∈A²;\frac{a}{b}=q@}}$. $E(A)=\Σ_{q∈A/A}m_q²$.
+Toto říká, že na přímce se směrnicí $q$ je tolikle bodů.
+
+\begin{Observation}
+Kdykoliv vezmeme součet dvou vektorů, tak výsledek padne mezi ně. Když tedy jsou
+$3$ vektory, tak součet prvního s druhým a druhého s třetím, tak nikdy nesplynou
+(nebudou ve stejném kvadrantu). Tedy, kdykoliv $αu+α'u'=βu+β'u'$, pak taky $α=β$
+a $α'=b'$. Pro takové $3$ přímky dostaneme alespoň $m_qm_q'+m_q'm_q''$.
+\end{Observation}
+
+Pokud to vezmeme abstraktně, $m₁,m₂,…,m_s$ přirozená čísla. Potom $\Σm_i²=E(A)$.
+Chceme vybrat indexy $i₁,i₂,…,i_t$ tak, aby
+$m_{i₁}m_{i₂}+m_{i₂}m_{i₃}+…+m_{i_{t-1}}m_{i_t}$ byly co největší (ideálně
+$E(A)$).
+
+Samozřejmě, jsou menší, než $n$.
+
+Na to použijeme trik. Rozdělíme je do škatulek podle velikosti (od $1$ do $2$,
+od $2$ do $4$, etc, až $2^{k},2^{k+1}$). Těch je řádově $\log n$. Existuje
+nějaká, která obsahuje alespoň taková $m_i$, aby $\Σ_{i∈I}m_i²≥\frac{E(A)}{\log
+n}$. $t$ bude počet indexů v této škatulce. Z toho se odvodí, že
+$tm²≥\frac{E(A)}{4\log n}$.
+
+$$
+\Σ_{j=1}{t-1}m_{i_j}m_{i_{j+1}}≥(t-1)m²≥\frac{t-1}{t}\frac{E(A)}{4\log n}
+$$
+
+Ošetření, že $t=1$, je, že příspěvek téhle šaktulky je nejvíc $n²$. Vezmu první
+řádek a první sloupec, sečtu nějaký z jeho vektorů.
+\end{Proof}
+
+\subsection{Sumy a součiny v konečných tělesech}
+
+Máme těleso $𝔽_q, A@⊂𝔽_g$. Opět se ptáme, kolik je
+$\max@(\len{A+A}, \len{A·A}@)$.
+
+Pro incidence v konečné afinní/projektivní rovině platí jen slabší odhady pro
+$Szemereni-Trotter$.
+
+Konečná projektivní rovina řádu $q$ má $n=q²+q+1$ bodů, má také $n$ přímek,
+každá přímka má $q+1$ incidencí. Počet incidencí $I(n,n)≥n^\frac{3}{2}$.
+
+Když $q=p^α$ je mocnina prvočísla, $β|α$, pak $𝔽_{p^β}$ je podtěleso
+$𝔽_{p^α}$.
+
+Tedy, pokud $q$ není prvočíslo, potom netriviální podtěleso, $A=A+A, A=A·A$.
+
+Nicméně platí:
+\begin{Tvrz}
+$∀δ>0∃ε>0$, $p$ prvočíslo, $A@⊂𝔽_p, 1≤\len{A}≤p^{1-δ}$. Potom
+$\max@(\len{A+A}, \len{A·A}@)≥c·δ·\len{A}^{1+ε}$.
+\end{Tvrz}
+
+\begin{Tvrz}
+Když $q$je obecné (tedy, i mocnina prvočísla), potom když
+$\sqrt{q}^{1+δ}≤\len{A}≤q^{1-δ}$, potom platí totéž, jako v minulém.
+\end{Tvrz}
+
+Dají se s tím vytvářet pseudonáhodné objekty (ramseoyvské grafy, expandery),
+používá se ve výpočetní složitosti, kryptografii, teorie grup.
+
+\begin{Statement}
+$A@⊂𝔽_q$. Potom $\max@(\len{A+A}, \len{A·A}@)≥c·\min@(\sqrt{q·\len{A}},
+\frac{\len{A}²}{q}@)$.
+\end{Statement}
+
+\begin{Proof}
+Nejdříve zapomeneme na $A$ a budeme si všímat tělese $𝔽_q$. Za pomoci něj
+definujeme multigraf $G$, jehož vrcholy budou dvojice $𝔽_q^*\times𝔽_q$ (tedy, první
+není nula). Hrany budou $E:=@{@{@(a,b@),@(c,d@)@}, ac=b+d@}$.
+
+Má $q·(q-1)$ vrcholů. Budeme tomu říkat $n$. Každý vrchol $(a,b)$ má stupeň
+$q-1$. Pro každé $c$ nenulové existuje právě jedno $d$ tak, aby to vyšlo.
+
+Vlastní čísla $G$: definujeme matici sousednosti $M$ ($n\times n$, jedničky
+odpovídají hranám).
+
+$M$ je reálná symetrická matice. Ta má $n$ reálných vlastních čísel $λ₁,λ₂,…,_n$
+(nemusí být všechna různá). Existuje ortogonální báze $ℝ^n$ z vlastních vektorů.
+
+V každém řádku je $q-1$ jedniček. To znamená, že když ji vynásobím vektorem
+samých jedniček (vyjdou mi řádkové součty), tak dostanu vektor samých
+$(q-1)$-ček. Toto je první vlastní číslo, tedy $λ₁$ je $q-1$. $\len{λ_i}≤q-1$
+(protože součet maximálně $q-1$ prvků).
+
+\begin{Lemma}
+Všechny ostatní jsou menší (v absolutní hodnotě) než $\sqrt{3q}$.
+\end{Lemma}
+\end{Proof}

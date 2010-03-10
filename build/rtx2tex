@@ -40,6 +40,7 @@ s/ℚ/\\mathbb{Q}/g;
 s/ℤ/\\mathbb{Z}/g;
 s/ℂ/\\mathbb{C}/g;
 s/ℕ/\\mathbb{N}/g;
+s/𝔽/\\mathbb{F}/g;
 s/°/^\\circ /g;
 s/‒/{--}/g;
 s/„/{\\quotedblbase}/g;
