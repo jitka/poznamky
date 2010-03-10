@@ -1,0 +1,89 @@
+\section{Rozvrhování}
+
+Budeme mít $m$ počítačů. Vstup je posloupnost čísel $p₁,…,p_n∈ℝ^+$, což budou
+úlohy. Výstup má být zobrazení $S:1…n→1…m$. Cíl bude minimalizovat délka
+rozvrhu, tedy $\max_{i∈1…n} \Σ_{j∈1…m;S(j)=i} p_j$ (tedy, jen rozdělení na
+počítače, ne jak za sebou).
+
+Opačně máme deadline, chceme co nejmíň počítačů. To se nazývá bin-packing.
+
+\subsection{Hladový algoritmus}
+
+Vždy vrhne úlohu na nejméně zatížený počítač. Je hloupý, ale je online.
+
+Toto je $2-\inv{m}$ aproximační algoritmus. Nechť $T$ je doba našeho rozvrhu a
+$t$ je startovní čas úlohy, která končí v $T$. $T-t<p_j≤opt$. $t≤opt$ (protože
+každý pracuje alespoň do $t$).
+
+Dokonce, $T+(m-2)t≤m·opt$, tedy $m·T≤(2m-1)·opt$.
+
+Řekneme, že algoritmus je \name{$R$-kompetitivní}, pokud je online a $∃c∀$
+vstupy dá nejhůř $R·opt+c$. Ví se, že existuje nějaký pro $R<2$, ale neví se,
+jak přesně ani jaký to je.
+
+Pokud napřed seřadíme, tak je $\frac{4}{3}$ aproximační.
+
+\begin{Tvrz}
+Je to $NP$-těžké.
+\end{Tvrz}
+
+\begin{Proof}
+Převedu na to loupežníky, vezmu $m=2$.
+\end{Proof}
+
+Ze stejného důvodu i bin-packing.
+
+\begin{Statement}
+Neexistuje $\frac{3}{2}-ε$ aproximační algoritmus pro bin-packing pokud $P≠NP$
+(tedy, potřebuju rozlišit 2 a 3 počítače).
+\end{Statement}
+
+\subsection{Rozvrhování se závislostmi}
+
+Máme podmínky tak, že něco musí skončit dřív, než něco jiného začne.
+
+Uděláme hladový algoritmus. Bereme čas postupně, v čase $t$, pokud existuje
+volný počítač a úloha se splněnými závislosti, tak ji tam hodíme.
+
+\begin{Tvrz}
+Toto je $(2-\inv{m})$ aproximace.
+\end{Tvrz}
+
+\begin{Proof}
+Toto je zobecnění minulého hladového algoritmu. Zkonstruujeme cestu v grafu $G$
+takovou, že kdykoliv v rozvrhu je volný počítač, tak běží jedna z úloh na této
+cestě. Toto je dolní odhad na optimum.
+
+Konstruuju od konce, vezmu poslední, pak se mrknu na poslední volno, pokud
+existuje. V tom případě se v té době na něco muselo čekat (jinak jsme to mohli
+pustit).
+
+Délka tohoto je dolní odhad optima, musí jít po sobě.
+\end{Proof}
+
+\subsection{Hladový bin-packing}
+
+Používá „first-fit“, nacpe do první, kam se vejde. Když nevejde, koupí další
+počítač.
+
+\begin{Tvrz}
+Tohle je $2$-aproximace.
+\end{Tvrz}
+
+\begin{Proof}
+Všechny kromě jednoho jsou alespoň z poloviny zaplněné. Nová úloha buď menší než
+půl, potom když začínám, tak zbytek musí být víc než napůl. Když dostanu velkou,
+můžu začít nové, a zase bude do půl plné.
+
+Tedy, na konci máme určitě $\frac{m-1}{2}$ množství práce. Z toho vyjde, že
+$m<2·opt+1$.
+\end{Proof}
+
+Ve skutečnosti je to $1.7·opt + const$.
+
+Řekneme, že opt. problém má poly-čas aproximační schéma, pokud $∀ε∃$ algoritmus
+běžící v čase polynomiálním ve velikosti instance a je $1+ε$ aproximace.
+
+Plně-polynomiální aproximační schéma vyžaduje polynomialitu i v $\inv{ε}$.
+
+Je-li problém silně $NP$-těžký a má FPTAS, pak $P=NP$.
