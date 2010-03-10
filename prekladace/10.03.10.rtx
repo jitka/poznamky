@@ -1,0 +1,48 @@
+\section{Propagace konstant}
+
+Základní implementace je lokální ‒ v rámci jednoho basic-blocku a dosazuje,
+pokud je to konstanta, zkusí vypočítá dál, propagovat. Lze to zlepšit, pokud
+jsou nějaké basic blocky za sebou a hrany jen odchází, pak to jde propagovat i
+skrz. Lze vykoukat i nějaké konstanty z podmínek (např. když je podmínka, že
+něco je rovno konstantě).
+
+Extended basic block je strom, který se jen dělí (neslučuje). V rámci toho lze
+propagovat také.
+
+Můžeme také přeskakovat smyčky (pokud se v ní nic nemění, pak to může jít skrz).
+
+Hyperblock je acyklická část control flow grafu. Například toto obsahuje i
+if-then-else. Lze si pamatovat hodnoty „s podmínkou“. Lze toho využívat. Na to
+se používá if-konverze, přidá to ty hyperbloky, pak je zase rozebírá.
+
+\section{Data-flow}
+
+Máme svaz hodnot, control flow graph, přechodové funkce a meet operator.
+
+To nesmí užírat konstantní hodnoty (protože by to zhoršovalo) a ten svaz musí
+mít konečnou hloubku.
+
+Zabírá to hodně paměti, počet iterací je omezen velkým číslem, může trvat
+dlouho.
+
+Umí se to dobře řešit při acyklických, ty se smáčknou, smyčky se řeší zvlášť.
+
+Jsou dopředný a dozadný.
+
+Dělá se taky něco jako sparse reprezentace ‒ u každého výskytu se odkazuje na
+místa, kde to mohlo vzniknout.
+
+\subsection{SSA forma}
+
+Single-Static Assignment. Říká, že každá proměnná se definuje jednou. Bohužel
+tím nejde vytvořit for-cyklus. Přidává se $φ$ operátor, na začátku basic-blocku,
+jeho parametry odpovídají vstupním hranám, je tam několik výrazů, on vybere ten
+správný výraz.
+
+A \name{dominuje} B právě když na každé cestě do B je A.
+
+Jednak, B dominuje samo sebe. Dále je to tranzitivní. Pokud dva dominují
+třetího, tak se taky dominují navzájem (právě jedním směrem).
+
+Tohle definuje strom. Dá se spočítat v $O(n·α(n))$. Existuje mnohem jednodušší
+algoritmus $O(n·\log n)$.
