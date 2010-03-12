@@ -1,0 +1,40 @@
+\subsection{Kvantování}
+Zvolím si kvantum $Q$, nasekám délky na toto (tím jsou celočíselné). Rekurzivně
+spočítám v tom, co jsem dostal. Výsledek se liší maximálně o $Q·l$. Definujeme
+potenciál jako $Q·$ to co vyšlo.
+
+Délka ze zdroje do libovolného vrcholu je max. $Q·n$.
+
+\begin{Observation}
+Vzdálenosti v grafu nakvantovaném jsou maximálně $Q·n$. Nalezení této cesty lze
+tedy stihnout (díky přihrádkám) v $O(m+Q·n)$. Pro $Q=\frac{m}{n}$ vyjde čas
+celého $O(m·\log_\frac{m}{n}·L)$.
+\end{Observation}
+
+\begin{Statement}
+Je-li $G$ rovinný na $n$ vrcholech, potom existuje separátor velikosti maximálné
+$O(\sqrt{n})$ a zbylé komponenty mají max. $\frac{2}{3}$ vrcholů.
+\end{Statement}
+
+Když seřadím napřed komponenty a potom až nakonec separátor, pak když pustím
+Floyd-Warshalla, potom můžu napřed vyřešit jednotlivé komponenty zvlášť, potom
+vyřešit separátor ‒ dopočítání je tedy v $O(n^{2.5})$. Postupně práce ubývá,
+tedy dokážeme všechny dvojice v $n^{2.5}$.
+
+Pokud máme matici sousednosti, pak nám násobením vypadne, co je s čím spojené.
+Pokusíme se to upravit na to, aby počítalo délky cest, resp. sledů. To místo
+násobení budeme sčítat, místo sčítání budeme brát minimum. Tohle bohužel
+nefunguje s těmi zrychlovacími triky, ty potřebují inverzi (odčítání). Ale jde
+to převést na maticový součin na polynomech, ale to nepomáhá (leda by se
+počítalo na fourierových obrazech, fuj).
+
+Dá se to uutlouct na na něco jako 6 $+,\min$ součinů a dva normální.
+
+\subsection{Všechny vzdálenosti v neohodnocených neorientovaných grafech}
+
+Uděláme si $G²$ (má hranu kde byla původně hrana, nebo sled délky $2$, ale ne
+smyčky). Z toho se dají spočítat vzdálenosti $δ²$. V původním jsou dvojnásobné.
+Je potřeba zjistit, kde odečíst jedničku od toho dvojnásobku. Dá se vykoukat z
+průměru vzdáleností sousedů.
+
+Redukce se zastaví, když máme úplňák.
