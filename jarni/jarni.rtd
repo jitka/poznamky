@@ -1,0 +1,11 @@
+\documentclass[a4paper,11pt]{article}
+\input{../stdhead.rtx}
+\input{../defs.rtx}
+
+\begin{document}
+\title{Jarní škola}
+\maketitle
+\tableofcontents
+\newpage
+\input{sparse.rtx}
+\end{document}

@@ -1,0 +1,31 @@
+\section{Sparse graphs}
+
+O grafech s konstantní hustotou $c$, předpokládáme, že ji známe. Chceme
+reprezentaci (umí zjistit, jestli jsou sousední, přidávat/odebrávat hrany).
+
+Bude žrát $O(m+n)$ paměti, $O(c)$ na operaci na zjištění, insert za $O(1)$,
+delete $O(c+\log n)$. Vše amortizované.
+
+Dá se dokázat, že dá rozsekat na $c$ částí hran, každá je vždy les.
+
+Vezmeme kořeny tohoto, hrany ke kořeni ‒ výstupní stupeň je vždy max. $c$.
+Ukládáme jen ten, který vybíhá ven (tedy, jen u jednoho).
+
+Definujeme $Δ$-orientaci (více, než $c$), že to zorientujeme takto. Když má
+$Δ$-orientaci, tak $c≤2Δ$.
+
+Jak zjištění, tak delete je jednoduchý.
+
+U insertu zkusíme vrazit do jednoho. Když se vejde, OK, když ne, otočíme všechny
+hrany ven, propagujeme. To opakujeme.
+
+Tohle není o mnoho horší, než optimální. Představíme si optimální s $δ≤2Δ$
+(tedy, má povoleno méně ven). Počítáme, kolik hran se liší od tohoto
+optimálního. Dokážeme, že reorientace sníží počet špatných.
+
+Pokud máme vrchol s moc hranami, někde blízko je nějaký, který je menší (když
+budeme počítat, kam až se dostaneme po vrcholech, které mají alespoň maximum,
+tak za chvíli sežereme celý graf).
+
+Existuje posloupnost, při které nejsou žádné reorientace při vkládání a max.
+$\log_{\frac{δ}{c}\len{V}}$.
