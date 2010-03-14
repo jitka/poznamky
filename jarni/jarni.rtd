@@ -9,4 +9,5 @@
 \newpage
 \input{sparse.rtx}
 \input{randomrank.rtx}
+\input{redux.rtx}
 \end{document}

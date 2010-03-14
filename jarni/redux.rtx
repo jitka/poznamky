@@ -1,0 +1,48 @@
+\section{Treewidth reduction for separating problem}
+
+Chceme vytvářet nový graf s omezenou šířkou se zachováním nějakých vlastností.
+
+Máme li $A,B,S@⊂V(G)$. Potom $S$ \name{odděluje} $A$ od $B$ právě když na každé
+cestě mezi $A$ a $B$ leží vrchol $S$.
+
+\begin{Lemma}
+Máme stromový rozklad grafu. Potom průnik dvou uzlů odděluje jejich zbytky od
+sebe. Oddělují i celé zbytky stromů.
+\end{Lemma}
+
+\name{Vyvážený oddělovač} nějaké podmnožiny vrcholů je $S$, který to dělí na
+komponenty a je uvnitř každé maximálně polovina.
+
+\begin{Lemma}
+Když je stromová šířka $G$ nejvýše $k$, potom $∀w@⊂V(G)$ existuje vyvážený
+oddělovač o max $k+1$ vrcholech.
+\end{Lemma}
+
+\begin{Lemma}
+Pokud je stromová šířka $>3k$, potom existuje $w, \len{w}=2k+1$, která nemá
+vyvážený oddělovač.
+\end{Lemma}
+
+\name{Parametrizovaný problém} je rozhodovací problém.
+
+\name{Fixed parameter tractable} problém pokud existuje algoritmus, který umí
+rozhodnout kladně v čase $f(k)·\len{X}^c$, kde $k$ je parametr, $X$ je vstup.
+
+\begin{Statement}
+Máme-li označkovaný graf a chceme ověřit nějakou monadickou vlastnost (je na to
+formule), potom je to linear time fixed tractable.
+\end{Statement}
+
+Tohle lze rozšířit na grafy s omezenou stromovou šířkou.
+
+\subsection{Minimální stabilní $s,t$-řez}
+
+Dostaneme $k$, ptáme se, jestli je zde nezávislá množina této velikosti, co je
+odděluje. Tohle je fixed parameter tractable.
+
+Torzo ‒ když máme podmnožinu vrcholů $C$ a spojíme je v novém grafu hranou,
+pokud v originálu byly spojeny cestou, která měla vrcholy jen venku z $C$ (tedy,
+i přímo spojené hranou). Tohle zachovává separátory.
+
+V fixed-parameter-tractable čase lze sestrojit graf, který zachovává všechny
+separátory velikosti nejvýše $k$ a bude mít stromovou šířku max. $k$.
