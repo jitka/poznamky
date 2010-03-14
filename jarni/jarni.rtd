@@ -8,4 +8,5 @@
 \tableofcontents
 \newpage
 \input{sparse.rtx}
+\input{randomrank.rtx}
 \end{document}

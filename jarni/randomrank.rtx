@@ -1,0 +1,5 @@
+\section{Rank width of random graphs}
+
+Ranky přes ranky matic sousednosti mezi dvěma částmi grafu. Bere se minimum přes
+všechny podstromy, z každého maximum přes odebranou hranu, čímž se to rozdělí na
+ty dvě části.
