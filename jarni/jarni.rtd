@@ -10,4 +10,5 @@
 \input{sparse.rtx}
 \input{randomrank.rtx}
 \input{redux.rtx}
+\input{geo.rtx}
 \end{document}

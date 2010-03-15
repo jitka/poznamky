@@ -1,0 +1,56 @@
+\section{Hilbertův 3. problém}
+
+Jde nasekat polygon na kousíčky tak, aby šel přerovnat na jiný?
+
+\begin{Statement}[Bolyai-Gerwien]
+Tohle jde v $ℝ²$ vždy, když mají stejný obsah.
+\end{Statement}
+
+\begin{Lemma}
+Vezmeme grupu $G$, pokud $P,Q$ fundamentální regiony, potom $P$ jde převést na
+$Q$.
+\end{Lemma}
+
+Prý to plyne z dláždění plochy jedním.
+
+To použijeme tak, že natriangulujeme jeden, převedeme na rovnoběžník, ten na
+obdélník, obdélníky naskládáme na sebe a máme jeden velký obdélník. Ten druhý
+lze také.
+
+Ne vždy to platí v $ℝ³$, například pravidelný čtyřstěn není převoditelný na
+krychli.
+
+$P$ je šťastný, pokud $∃c_i∈ℚ^+;\Σ_ic_iγ_i=π$.
+
+\begin{Statement}[Brickardova podmínka]
+Pokud je to nešťastné, není to kongruentní s krychlí.
+\end{Statement}
+
+\begin{Proof}
+Nejdou spojit vedle sebe, protože nejdou nařezat na to, aby daly $π$. Hodně
+technických rozborů případů.
+\end{Proof}
+
+\subsection{Algebraický přístup}
+
+Polytop je \name{podobný sobě sama}, pokud lze převést na několik (menších)
+kopií sebe sama.
+
+\begin{Statement}[Sydlerovo kritérium]
+Polytop je zkrychlovatelný, pokud je podobně sobě sama.
+\end{Statement}
+
+Dva zkrychlovatelné, tak jejich slepení je taky zkrychlovatelné.
+
+Pokud $A\oplus B\cong C\oplus D ∧B\cong D→→A\cong C$.
+
+\begin{Statement}
+Tato kongruence má kontinuum tříd (i pokud se smí zvětšovat a zmenšovat).
+\end{Statement}
+
+Přes ořezávání krychle.
+
+Dláždění prostoru nazveme \name{periodické}, pokud existují $3$ nezávislé
+vektory, že to dláždění je invariant vůči těmto vektorům.
+
+Pokud polytop dokáže vydláždit prostor periodicky, potom je zkrychlovatelný.
