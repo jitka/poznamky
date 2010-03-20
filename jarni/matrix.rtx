@@ -1,0 +1,11 @@
+\section{Extremální $0-1$ matice}
+
+Máme matice s $0$ a $1$. Ptáme se, jestli má podmatici takovou, že má jedničky
+alespoň na nějakých předepsaných místech (může mít i jiné).
+
+Chceme zjistit, kolik jedniček tam ještě jde přidat, aby nebyla.
+
+Například tímto jdou reprezentovat bipartitní matice. Tohle je zakázaný podgraf.
+
+Dá se tím počítat například počet hran v grafu, když tam není žádný ekvivalentní
+$C₄$, nebo počet jednotkových vzdáleností na konvexní množině bodů.

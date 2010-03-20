@@ -13,4 +13,5 @@
 \input{geo.rtx}
 \input{alontarsi.rtx}
 \input{teorel.rtx}
+\input{matrix.rtx}
 \end{document}
