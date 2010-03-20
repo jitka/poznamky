@@ -1,0 +1,31 @@
+\section{Speciální teorie relativity}
+
+Dají se dělat transformace časoprostoru. U světla má vycházet, že
+
+\begin{eqnarray*}
+(ct')²-X'² &=& 0 ←→
+(ct)²-X²=0
+\end{eqnarray*}
+
+Zatímco třeba zvukové vlny se deformují při pohybu zdroje, světelné ne.
+
+\subsection{Aditivní funkce}
+
+Chceme funkce, které $∀x,y∈ℝ;g(x+y) = g(x)+g(y)$. Když přidáme ještě podmínku
+(např. $g(π) = 0$) a bude nenulová, potom to mít hustý graf ‒ v každém čtverci v
+rovině se vyskytuje bod grafu.
+
+Dá se indukcí dokázat, že $∀q∈ℚ;g(q·x) = q·g(x)$. Tedy, na racionálních
+násobcích $π$ je nula, někde jinde je nenula, tam tvoří „děravou“ přímku. Můžu
+pomocí racionálního násobku $π$ posunout.
+
+Na reálná čísla jde koukat jako na vektorový prostor nad racionálnímy čísly.
+Má nekonečnou dimenzi. Chceme najít takovou bázi, že každé reálné číslo má
+konečně mnoho nenulových koeficientů.
+
+Když se vrátíme k fyzice, tak máme tu transformační funkci, která je aditivní. Z
+toho se odvodí, že $f(q·x) = q·f(x)$. Chceme, aby to byla spojitá funkce. To
+dohromady dává, že je to lineární funkce, tedy má matice $L^{4\times 4}$, tedy
+$x'=L·x$.
+
+Z toho vyvodíme, že transformace je kvadratická forma.

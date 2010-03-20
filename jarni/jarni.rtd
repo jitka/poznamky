@@ -11,4 +11,6 @@
 \input{randomrank.rtx}
 \input{redux.rtx}
 \input{geo.rtx}
+\input{alontarsi.rtx}
+\input{teorel.rtx}
 \end{document}
