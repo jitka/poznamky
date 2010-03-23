@@ -1,0 +1,51 @@
+\subsection{Monadická logika 2. řádu}
+
+\begin{Statement}
+Grafová vlastnost vyjádřitelná monadické logice 2. řádu lze ověřit v lineárním
+čase na grafech omezené stromové šířky.
+\end{Statement}
+
+MSOL formule má proměnné pro vrcholy, hrany, množiny vrcholů a množiny hran.
+Máme rovnost, inkluze, spojky a kvantifikátory.
+
+Patří sem např. $k$-barevnost pro dané $k$, hamiltonovskost ($2$-faktor +
+souvislost přes to, že nejde najít rozdělení).
+
+Nechť tedy máme formuli $φ$ a jeho pěkný rozklad $T$. Napřed určíme možné
+hodnoty proměnných $φ$ v $X_i$. Poté je potřeba zařídit, aby to šlo
+reprezentovat konečně mnoha třídami. Nakonec je potřeba dokázat, že z dat dětí
+lze udělat data pro rodiče.
+
+\subsubsection{Reprezentace proměnných}
+
+Pokud je $x_v$ vrcholová proměnná, potom si pamatujeme buď že už byla a nebo že
+bude (hádání jako u hamiltonky). U hran buď lokální, nebo „někde jinde“.
+Proměnná pro množiny vrcholů budou mít ukládané jen průniky s lokálním uzlem.
+
+\subsubsection{Generování hodnot volných proměnných}
+
+U listů jsou všechny hodnoty nahoře nebo lokálně, hranová proměnná jedině jinde,
+množiny buď prázdná, nebo jednoprvková u vrcholů.
+
+U zapomínací je to jednoduché (jen se z nich stávají „spodní“ vrcholy nebo
+hrany). Toto zobrazení nemusí být prosté.
+
+Když $X_i$ bude generovací uzel, tak zachovává vše kromě „horních“. U některých
+horních si můžu vymyslet hodnotu a vzít si ji k sobě.
+
+U joinu jen vybírám ty, které se shodují na externím, nebo je právě jeden
+interní.
+
+\subsubsection{Reprezentování formulí}
+
+Predikát $P(x₁,…,x_k)$ je \name{regulární}, pokud existuje konečná $C$ a $C'@⊂C$
+a zobrazení $h$ ze všech možných ohodnocení proměnných do $C$ následujících
+vlastností:
+→•
+ • Když zobrazení $h$ zobrazí dvě $k$-tice na stejný element, potom ty predikáty
+   vycházejí také stejně.
+ • Výsledek v $C'$ právě když je $P$ splněný.
+ • $h$ závisí pouze na svých synech.
+←•
+
+Zbývá dokázat, že ty naše MSOL predikáty jsou regulární.
