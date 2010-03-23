@@ -1,0 +1,66 @@
+\section{Tolerant graph}
+
+Máme intervaly a kladná čísla. Hrana je právě tehdy, pokud velikost průniku je
+alespoň (součet|součin|cokoliv|maximum) z čísel těch vrcholů.
+
+\begin{Statement}
+Max-tolerant grafy jsou právě průnikové grafy stejnolehlých trojúhelníků.
+\end{Statement}
+
+\begin{Proof}
+Když mám Max-tolerant, tak nad každý interval dám trojúhelník. Potom ho uříznu
+ve výšce odpovídající toleranci a nechám jen ten vršek. To se už vykouká.
+
+\MPOST{ilust}
+draw ((3,2)--(3,0)--(0,0)--(2,2)--(3,2)--(3,3)--(2,2)) scaled .5cm;
+fill ((2,2)--(3,3)--(3,2)--cycle) scaled .5cm;
+\ENDMPOST{Trojúhelníčky}
+
+Opačně natáhneme čáru dole daleko pod nimi, natáhnu, funguje to přesně opačně.
+\end{Proof}
+
+Toto rozpoznávat je těžké, protože to jsou pseudodisky, jde to upravit.
+
+\begin{Statement}
+Maximální klika v max-tolerančních grafech je polynomiální.
+\end{Statement}
+
+\begin{Proof}
+\begin{Lemma}
+Máme 2 disjunktní konvexní polygony $P$, $Q$. Pro ně existuje oddělující přímka
+rovnoběžná se stranou jednoho z nich.
+\end{Lemma}
+
+\begin{Proof}
+Vezmu a šoupnu přímku do vrcholu, pootočím a kousek uhnu zpět.
+\end{Proof}
+
+Mějme reprezentaci a nějakou maximální kliku co do inkluze. Vezeme z ní nejvyšší
+základnu, nejvyšší v jiném směru, etc.
+
+Mějme množinu $Q(a,b,c)$ jsou všechny trojúhelníky, které mají neprázdný průnik
+se všemi třemi těmito stranami $a,b,c$. Tvrdíme, že to se rovná $Q$ (tedy, celé
+té klice). To, že klikatý je v této množinou dokážu tak, že s těmi trojúhelníky
+musí mít, a tahle stěna je nejvíc dovnitř, musí to vést tam (má tu správnou
+stranu někde dál). Také dokážeme, že $Q(a,b,c)$ je úplný. Pokud se dva
+neprotínají, tak jsou oddělené přímkou rovnoběžnou s nějakou stranou. Tedy,
+obsahuje $Q$, je úplný podgraf, je $Q$ je maximální, tedy to musí být přímo ono.
+
+Tedy, $G$ má $O(n³)$ maximálních klik.
+
+Existují algoritmy na nalezení všech maximálních klik co do inkluze.
+
+Tento odhad je těsný, těch klik opravdu může existovat tolik.
+\end{Proof}
+
+Mějme $P$ konvexní polygon. Potom $P_{hom}$ je průniková reprezentace
+stejnolehlých $P$. Vždy to jsou pseudodiskové grafy, jsou $NP$-těžké rozpoznat.
+
+\begin{Statement}
+Nechť $P$ $k$-úhelník, potom $P_{hom}$ má $O(n^k)$ maximálních klik.
+\end{Statement}
+
+\begin{Proof}
+Podobně, ale beru nějakou „dolní obálku“ ‒ které strany lze protnout, když druhý
+dám níž.
+\end{Proof}
