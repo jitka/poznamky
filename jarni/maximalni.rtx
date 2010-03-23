@@ -1,0 +1,90 @@
+\section{Zasažení všech maximálních klik pomocí stabilních nahnutých nezávislých
+transversál}
+
+\begin{Lemma}
+Máme $r$-partitní graf, skládající se z $V₁,V₂,…,V_r$. \name{Nezávislá
+transversála} je množina, která je nezávislá a z každé části $V_i$ vezme jeden.
+
+Pokud má graf max. stupeň $Δ$ a $\len{V_i}≥2Δ$, potom nezávislá transversála
+existuje.
+\end{Lemma}
+
+\begin{Lemma}
+Nechť $G$ je $r$-partitní graf s částmi $V₁,…,V_r$ a $k∈ℕ$. Pokud každý vrchol z
+$V_i$ má nejvýše $\min@{k,\len{V_i}-k@}$ sousedů mimo množiny $V_i$, pak
+existuje minimální transversála.
+\end{Lemma}
+
+Když tam vrzneme $Δ$ jako $k$, tak z toho plyne to minulé.
+
+\begin{Proof}
+\begin{Lemma}
+Nechť $G$ je $r$-partitní graf s nezávislou transversálou v $G@[V₁∪…∪V_{r-1}@]$.
+Dále $w∈V_r$ takové, že neexistuje transversála v $G$ obsahující $w$, existuje
+totálně dominující množina v podgrafu $G$ indukovaném partitami s neprázdným
+průnikem s $Y$ taková, že $X∪Y$, $X,Y$ jsou nezávislé množiny, $Y$ je částečná
+transversála (průnik s každou nejvýše 1) v $G@[V₁∪…∪V_{r-1}@]$ a $w∈X$ a hrany z
+$X$ do $Y$ je sjednocení disjunktních hvězdiček.
+
+\name{Totálně dominující množina} je taková, kde má každý vrchol souseda uvnitř
+(včetně jejích prvků).
+\end{Lemma}
+
+\begin{Proof}
+Grafu $G@[V₁∪…∪V_{r-1}@]$ budeme říkat $G₀$.
+
+Na začátku $X₁:= @{w@}$, $R₁:=$ nezávislá transversála v $G₀$ takové, že má
+minimální průnik s okolím $w$. $Y₁:=$ průnik okolí $w$ s $R₁$.
+
+Pokud něco není dominované, nazveme ten vrchol $w₂$, pomocí něj definujeme
+$X₂:=@{w,w₂@}$, za $R₂$ nezávislou transversálu takovou, že to bude rozšíření
+okolí $w$ a ze sousedů $w₂$ co nejméně. Potom definujeme $Y₂:=Y₁∪(R₂∪N(w₂))$ a
+dokážeme, že to naroste. Kdyby ne, tak dostaneme spor s volbou $R₁$.
+
+Dále iterujeme.
+
+Časem to musí narůst tak, že už nejde pokračovat, proto to musí být správné $X$
+a $Y$.
+\end{Proof}
+
+Podle indukce předpokládejme, že prvních $r-1$ má transversálu. Aplikujeme
+pomocné lemma, dostaneme nějaké $X,Y$. Z nich dostaneme spor (moc velký stupeň).
+Tedy, takové $w$ nemůže existovat a tedy musí existovat správná transversála.
+\end{Proof}
+
+\begin{Statement}
+Nechť $G$ je graf. Velikost jeho největší kliky $ω(G)>\frac{2}{3}(Δ(G)+1)$. Potom
+existuje nezávislou množinu protínající každou kliku velikosti $ω(G)$.
+\end{Statement}
+
+Tohle je nejlepší možný odkaz, pěticyklus, každý vrchol vyměním za úplňák na $k$
+vrcholech, to prodrátuju. V tomto už nejde najít nezávislou množinu.
+
+\begin{Proof}
+
+\begin{Tvrz}
+Nechť $C₁,…,C_m$ jsou kliky velikosti $ω(G)$ v $G$. Na nich si udělám pomocný
+graf, spojím je hranou, pokud mají neprázdný průnik. Toto mi umožní rozdělit je
+na komponenty souvislosti na $\mathcal{C}₁,…,\mathcal{C}_n$.
+\end{Tvrz}
+
+\begin{Statement}[Kostočka]
+Pokud $G$ je graf, o kterém platí $ω(G)>\frac{2}{3}(Δ(G)+1)$.
+$$
+\len{\∩_{C∈\mathcal{C}_i} C}≥2ω(G)-(Δ(G)+1)
+$$
+\end{Statement}
+
+\begin{Statement}[Hajnal]
+$$
+\len{\∪_{C∈\mathcal{C}_i}C} + \len{\∩_{C∈\mathcal{C}_i}C}≥2ω(G)
+$$
+\end{Statement}
+
+Pomocí průniků uděláme partity $F_i$, najdeme si nezávislou transversálu. Tím
+jsem zasáhl všechny velké kliky.
+
+Za $k:=\inv{3}(ω(G)+1)$.
+
+Vezmeme vrchol $v$. Sousedů má maximálně $k$, to se poodčítá.
+\end{Proof}
