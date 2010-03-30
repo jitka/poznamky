@@ -1,0 +1,8 @@
+
+\begin{Statement}
+Rozpoznávání průnikových grafů úseček a rozpoznávání konvexních obrazců je v
+$PSPACE$.
+\end{Statement}
+
+\TODO{Tohle nějak skoro chybí to o tom, že stringy nejdou hádat klasickým
+způsobem, že uhodnu reprezentaci}
