@@ -1,0 +1,63 @@
+\section{Kliková šířka}
+
+Nechť $I=@{1,…,k@}$ je množina značek. \name{Sestavovací strom} je zakořeněný
+strom z uzlů typů:
+
+→•
+ • Vstupní uzel $i(u)$ pro $i∈I$ říká, že zavádím vrchol $u$ se značkou $i$.
+   Toto musí být list stromu.
+ • Sjednocovací $\oplus$, má dva syny a výsledný graf je disjunktní sjednocení jeho dvou
+   synů.
+ • Spojovací uzel $η_{i,j}$ s jedním dítětem, říká, že má spojit vrcholy s danými značkami
+   (všechny).
+ • Přeznačovac $ρ_{i→j}$, přejmenuje všechny $i$ na $j$.
+←•
+
+Kořen odpovídá nějakému označkování grafu.
+
+\name{Kliková šířka} je nejmenší počet značek nutných k vybudování grafu (značí
+se $cw(G)$.
+
+\begin{Observation}
+$G$ je indukovaný podgraf $G'$, potom $cw(G)≤cw(G')$
+\end{Observation}
+
+\begin{Proof}
+Jen něco nevyrobím.
+\end{Proof}
+
+Graf odpovídající uzlu je ovlivněn jen podstromem a cestou do kořene.
+
+\begin{Observation}
+Stačí předpokládat, že se každá hraná max. jednou.
+\end{Observation}
+
+\begin{Proof}
+Stačí vzít poslední, všechny, které bych spojil někde níže, se chovají stejně.
+\end{Proof}
+
+\subsection{Obarvení grafu}
+
+Řekneme, že $W@⊂V(G)$ je označkována množinou značek, pokud je ta množina
+tvořena právě značkami vrcholů z $W$.
+
+Na vstupu máme sestavovací strom, chceme zjistit, jaká je barevnost.
+
+Ukládáme si obarvení grafů, ukládáme průniky s označkováním. Každé podmnožině
+značek přiřadím počet tříd značek, které používají právě tyto značky.
+
+\begin{Observation}
+Velikost tabulky je $ch^{2^k}$.
+\end{Observation}
+
+Pro list je to jedno obarvení (jedna barevná třída), vyskytne se jen značka $i$.
+
+Protože počítáme i s cestou až do kořene, tak tam hrany již jsou. Tedy,
+přidávání ran už se vzalo do úvahy dříve.
+
+Když mění značky pomocí $ρ$, tak obarvení zůstávají stejné. Ty dvě se slévají,
+ta co zmizí bude prázdná.
+
+Disjunktní sjednocení je problematické. To se dělá přes soustavu lineárních
+rovnic (co s čím spojuji). Je potřeba zahodit ty, které mají hranu ve stejné
+barevné třídě.
