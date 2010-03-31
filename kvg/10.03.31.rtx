@@ -1,0 +1,24 @@
+\section{Purdyho doměnka}
+
+Máme dvě přímky, na každé je $n$ bodů. Ptáme se, kolik minimálně
+vzdáleností je specifikovaných body různých přímek (tedy, mezi $p_i, q_j$ a ne
+mezi $p_i, p_j$).
+
+Dá se sestavit $O(n)$ na dvou rovnoběžných, když jsou pravidelně. Druhá možnost
+je dvě kolmé, vzdálenosti jsou $\sqrt{1}, \sqrt{2}, \sqrt{3}…$.
+
+Domněnka je, že pokud přímky nesvírají úhel $0, \frac{π}{2}$ je počet
+vzdáleností $ω(n)$.
+
+Máme souřadnice tak, že měříme vzdálenost od jejich průsečíku v nějakých
+jednotkových vektorech jejich směru. $λ=\cos α$, chceme, aby nebyl ani $0$, ani
+$\pm 1$. Vzdálenost budeme měřit jako $p(x,y) = x²+y²-2λxy$.
+
+Řekneme, že polynom $p(x,y)$ je \name{speciální}, pokud existují polynomy $f(x),
+g(x), h(x)$ takové, že $p(x,y)$ jde zapsat buď jako $f(g(x)+h(y))$ nebo
+$f(g(x)·h(y))$.
+
+\begin{Statement}
+Pokud $p$ není speciální, potom nabývá na množině parametrů velikosti $n$
+$ω(n)$ výsledků.
+\end{Statement}
