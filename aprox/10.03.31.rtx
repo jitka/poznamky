@@ -1,0 +1,35 @@
+\section{Množinové pokrytí}
+
+Máme množinu $U$ prvků a množinový systém $\mathcal{S}@⊂2^U$, chceme
+$\∪\mathcal{C}=U$, chceme  minimalizovat váhu množin.
+
+Můžeme zapsat jako lineární program.
+
+Chceme $x_s≥0$, chceme, aby prvek z univerza měl aspoň $1$. Minimalizujeme
+$\Σw_sx_s$. Duální program je $f=\max_i$ počet množin, ve kterých se vyskytuje
+daný prvek. Dá se získat $f$-aproximační algoritmus, jednoduše vezmeme všechny,
+které tam jsou alespoň jednou $f$-tinou.
+
+Když vezmu duál, tak můžu každou dát každou množinu do výsledku s
+pravděpodobností $x_s^*$. Tohle nemusí dát správný výsledek, ale když to
+zopakujeme řádově $\log n$ krát.
+
+Pravděpodobnost, že někdo je nepokrytý je menší, než $@(1-\inv{e}@)^{α·\log
+n}<\inv{2}{n}$. Pravděpodobnost, že něco je nepokryté je půl.
+
+Cena je $α·\log n·opt_{lp}$.
+
+\subsection{Primar-dual pro set-cover}
+
+Na začátku nastavím $y:=0$ a $\mathcal{C}:=∅$. Vezmu nějaké nepokryté $i$.
+Zvyšujeme $y_i$, dokud některá duální podmínka není těsná. Přidáme všechny $S$
+takové, které mají $w_s$ rovny $y$.
+
+\subsection{Hladový algoritmus}
+
+Přidávám vždy tu s nejlepším poměrem ceny a „nových“ prvků (ty, co ještě nemám).
+
+Hladový algoritmus je $H_k$ je aproximační, kde $k$ je max. velikost množiny,
+$H$ je $k$-té harmonické číslo.
+
+\subsection{Semidefinitní programování}
