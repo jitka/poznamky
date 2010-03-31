@@ -1,0 +1,36 @@
+\begin{Statement}
+Každý graf bez mostů má nenulový tok.
+\end{Statement}
+
+Každá hrana je na kružnici, dá se to tedy někudy obejít.
+
+\begin{Statement}[Jaeger]
+Pro každý graf bez mostů existuje $8$-tok.
+\end{Statement}
+
+\begin{Proof}
+Nechť $G$ je $3$-souvislý. Zdvojíme hrany. To je $6$-souvislé.
+\end{Proof}
+
+Toky:
+→•
+ • $1$-tok neexistuje.
+ • $2$-tok právě na cyklech.
+ • $3$-tok bipartitnost u kubických.
+ • $4$-tok hranová $3$-obarvitelnost u kubických, a existuje $λ≥4$, neobsahuje
+ petersonův graf.
+ • $5$-tok je otevřený.
+ • $6$-tok existuje.
+ • $7$-tok také.
+ • $8$-tok existuje.
+←•
+
+\begin{Statement}
+Máme orientovaný multigraf $G$ a máme $0<a≤b$. Následující tvrzení jsou
+ekvivalentní:
+→•
+ • Existuje $ℤ$-tok takový, že $a≤f(e)≤b$.
+ • Totéž, ale pro $ℝ$-tok.
+ • $∀U@⊂V(G);\frac{a}{b}≤\frac{δ^+(U)}{δ(U)}≤\frac{b}{a}$.
+←•
+\end{Statement}
