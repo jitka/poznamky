@@ -1,0 +1,25 @@
+\section{Alias analýza}
+
+Řeší, jestli náhodou něco nemůže ukazovat na stejné věci a dělat tedy problémy.
+Vrací to, jestli ano, ne, nebo možná. To samozřejmě nejde na jistotu rozhodnout
+(obecně). Navíc chceme, aby se nikdy nespletla.
+
+Lze vykoukat, že pokud máme statickou proměnnou, kde když se nevezme adresa, tak
+nikdy nemůže aliasovat. Dále je (obvykle) zakázané, aby se aliasovaly různé
+typy.
+
+Dá se to také stopovat. Je problém, jak to reprezentovat. Můžeme zaznamenat
+všechna „pravdivá tvrzení“, ale má to docela velikou velikost.
+
+Pozor, tohle nemusí být ekvivalence. Takže reprezentovat třídami ekvivalencemi,
+tak to moc nefunguje.
+
+Také je možné ukládat množinky a hrany mezi nimi, co může ukazovat na co.
+
+Je výhodné občas rozlišit, co daný jeden ukazatel znamená na různých místech. Na
+to se hodí například SSA forma.
+
+Lze to kromě lokální analýzy dělat i globálně, brát v úvahu volání funkcí
+externích knihoven a podobně.
+
+Dá se pomoct i v programu, nějakým constem (u funkce), nebo restrictem.
