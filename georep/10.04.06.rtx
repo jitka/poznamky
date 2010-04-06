@@ -1,0 +1,20 @@
+Neví se, jestli je to v $NP$. Reprezentace může být popsána koncovými body
+úseček, rovnice přímek a nějaké délky, nebo seznamy, které protíná. Nebo lze
+popsat kombinatorické uložení přímek. Potom je ale problém, jestli to jde
+narovnat na přímky, to je ale $NP$-těžké.
+
+U uhádnutí koncových bodů to nemusí být polynomiální, mohou být daleko.
+
+\begin{Statement}
+Máme polynomy $P₁,…,P_n$, chceme rozhodnout, zda je nějaké $x₁,…,x_m$ takové, že
+některé dané polynomy jsou kladné a některé jsou nezáporné. Toto je v $PSPACE$.
+\end{Statement}
+
+Začneme na konvexních množinách. Mám graf, každý vrchol toho grafu budu
+reprezentovat jako konvexní množinu. Aproximuji konvexním mnohoúhelníkem. To
+jde, můžu do každého průniku dát bod, udělat konvexní obal. Stačí nám pro
+reprezentaci souřadnice vrcholů.
+
+Kdykoliv se mi neprotínají, máme přímku, co je odděluje. Máme nějaká znamínka
+pro každý bod, kladná na jedné straně od přímky, záporné na druhé. Tohle můžu
+zařídit pro všechny.
