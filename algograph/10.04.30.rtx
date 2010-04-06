@@ -1,0 +1,28 @@
+\section{$L-1-1$ barvení}
+
+To je $NP$-úplné už pro sériově-paralelní grafy. Budeme zkoumat na grafech s
+omezeným vrcholovým pokrytím. Ptám se, jestli existuje obarvení celými čísly od
+$0$ do $λ$ takové, že sousedi nejsou stejní a ani ob dva, tak také. Je totéž,
+jako barvení v $G²$. Problém je, že $λ$ je součástí vstupu.
+
+Chceme grafy, které mají vrcholové pokrytí velikosti maximálně $k$. Je vidět, že
+stromová šířka je nejvýše toto. Dokonce by se z uzlů nemusel dělat strom, ale
+jen cesta.
+
+Máme graf $G$ s vrcholovým pokrytím nejvýše $k$. Mimo $W$ může být hodně
+vrcholů, ale jsou si ekvivalentní, pokud mají stejné sousedy ve $W$.
+
+Je-li $c$ nějaké $L-1-1$ obarvení $G$, potom každá barevná třída $c$ protíná
+každou množinu $I_j:=@{u∈V(G)-W;(u_i,w_i)∈E(G)←→i∈J@}$ nejvýše v $1$ vrcholu. Lze
+tyto barevné třídy rozdělit podle toho, do jakých $I_j$ zasáhnou a který vrchol
+ve $W$ obsahují.
+
+Pokud $J$ a $J'$ mají neprázdný průnik, potom $X_k$ (počet barev, které zasahují
+právě do nich) je $0$.
+
+\begin{Algorithm}
+Napřed určíme množiny $I_j$ pro všechna $J@⊂@{1,…,k@}$. Zkusíme obarvit $W$
+nejvýše $k$ barvami. Uděláme částečné rozšíření do sjednocení $I$.
+
+Udělá se nějaký lineární celočíselný program, ten se použije.
+\end{Algorithm}
