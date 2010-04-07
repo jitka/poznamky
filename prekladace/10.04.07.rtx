@@ -1,0 +1,37 @@
+\section{Meziprocedurální optimalizace}
+
+Basic blocky mohou brát v úvahu nějaké počty, pravděpodobnosti výstupů a podobně
+(třeba z profilování). Pro to je potřeba obsadit hrany, dává se jen na některé
+(ne na kostru, ta jde dopočítat). Některé překladače dělají jen počítání
+basic-blocků, GCC i hrany (je to dražší). Daly by se generovat i různé cesty, ne
+jen hrany.
+
+Toto je problém při vícevláknech.
+
+Když toto není, tak se to snaží hádat. Například se generuje statický profil,
+heuristika na to, že funkce „error“ se spíš nezavolá a podobně.
+
+Smyčky se hledají tarjanovým algoritmem na $2$-souvislost. Přirozené smyčky se
+hledají průchodem do hloubky, najde to strom vnořených smyček.
+
+GCC má dvě sady heuristiky, používá first-match (vezme se první, co řekne, že
+ví).
+
+Jsou loop exit (končící smyčku spíš ne), test dvou proměnných na stejnost asi
+nebude, odhady počtu iterací, většina pointerů nebývá null, goto se asi
+neprovede. Kopie první podmínky for cyklu asi bude pravdivá, etc.
+
+Pokud tohle nevyjde, tak se dělají nějaké další odhadovací počítání z tvaru toho
+grafu a podobně. Na to se počítá hitrate a coverage (měření, jak často a jak
+dobře).
+
+Dříve byly že vždy jedna funkce, teď obvykle unit at time (otázka, co je unit).
+U některých to umí spojovat dohromady. Také se dají dělat linkové optimalizace
+(až nad assemblerem). Možné je i na celý program, lze předpokládat, že už se
+nebude nic přidávat.
+
+Potom to má k dispozici callgraph, viditelnost, dostupnost.
+
+Nejdůležitější je asi inlining, constant propagace, alias analýza, mazání
+mrtvého kódu, změna datových struktur, devirtualizace, specializace, parametry
+funkcí.
