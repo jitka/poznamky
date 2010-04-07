@@ -1,0 +1,29 @@
+\begin{Proof}
+Z jedničky dvojka triviální, z dvojky trojka, dokáže se přes to, že každým řezem
+teče $0$.
+
+Z trojky jednička ‒ budu konstruovat něco obecného.
+\end{Proof}
+
+Cyklus je kolmý na všechny řezy.
+
+Pokud dáme vrcholům potenciály, potom $δp$ je tenze. \name{Tenze} je zobrazení z
+hran do čísel takové, že součet po různých cestách je stejný.
+
+U tenzí lze otáčet hrany podobně jako u toků.
+
+\begin{Statement}
+$t$ je tenze $←→∃p$ potenciál takové, že $t=δp$.
+\end{Statement}
+
+\begin{Proof}
+Na jednu stranu vidět, na druhou, jednomu dám $0$, upravuju. Kdyby to
+nevycházelo, tak spor.
+\end{Proof}
+
+\begin{Statement}
+Mějme prostor tenzí. To je ortogonální doplněk k prostoru toků.
+\end{Statement}
+
+Prostor tenzí je generovaný je definovaný vrcholovými řezy ‒ $+1$ na hranách z
+$u$, $-1$ na do do, $0$ jinde.
