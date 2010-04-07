@@ -1,0 +1,38 @@
+\section{Dolní obálky, Davenport-Schinzelovy posloupnosti}
+
+Máme množinu úseček a pozorovatele v ploše, přes úsečky není vidět. Vidí nějaké
+úseky, z některé úsečky může vidět i více částí. Otázkou je, kolik úseků vidí.
+
+Máme množinu úseček, koukáme na ni zespodu (tedy, jakoby v $-∞$).
+
+Máme funkce $ℝ→ℝ$, každé dvě se protínají v max řekněme $3$, nebo v $s$ bodech,
+kolik kousků vidí pozorovatel zespodu?
+
+\name{Davenport-Schinzelova posloupnost} rádu $s$ nad abecedou $1…n$ je
+posloupnost délky $m$:
+→•
+ • $∀i;a_i ∈@{1,…,n@}$
+ • $∀i<m; a_i≠a_{i+1}$
+ • Daná posloupnost neobsahuje střídavou podposloupnost délky $s+2$.
+←•
+
+Maximální délka této posloupnosti se označuje $λ_s(n)$.
+
+→•
+ • $λ₁(n) = n$
+ • $λ₂(n)=2n-1$ indukcí podle $n$.
+ • $λ₃(n) = 2n·\ln n + 4n$
+←•
+
+Existuje i zobecnění, zakazujeme i jiné vzory, než střídavé podposloupnosti.
+
+Nechť $w=a₁a₂a₃…a_l$. $w$ je \name{$m$-rozložitelná}, pokud $w$ lze rozložit na
+$m$ řetězců takových, že se v žádném nic neopakuje.
+
+Nechť $ψ(m,n)$ je max. délka $m$-rozložitelné posloupnosti řádu $3$ nad $1…n$.
+
+\begin{Lemma}
+$λ₃(n)=ψ(2n,n)$
+\end{Lemma}
+
+Uděláme uspořádání na abecedě, $a<b$, pokud první výskyt $a$ je dříve, než $b$.
