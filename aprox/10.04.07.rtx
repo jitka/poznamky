@@ -1,0 +1,48 @@
+Matice $A$ je \name{pozitivně semidefinitní}, pokud:
+
+→•
+ • $∀x;x^TAx ≥0$
+ • $∀λ;λ≥0$
+ • $A=W^TW$
+ • Všechny hlavní podmatice mají determinant $≥0$
+←•
+
+Program nazvu \name{pozitivně semidefinitní}, pokud má proměnné v matici a
+chceme maximalizovat nějakou lineární funkci $C·X$ za podmínek, že $X$ je
+pozitivě semidefinitní, $A_k·X=b_k$. Toto je zobecnění lineárního programu (můžu
+si udělat proměnné jen po diagonále, můžu mít nerovnosti obvyklým podvodem).
+
+\name{Vektorové programy}, kde proměnné jsou vektory. Taktéž chceme
+maximalizovat, tentokrát $\Σc_{i,j}(v_i·v_j)$ a podmínky jsou, že
+$∀k\Σa_{i,j,k}·(v_i·v_j)$.
+
+\begin{Statement}
+Semidefinitní programy a vektorové programy jsou ekvivalentní.
+\end{Statement}
+
+\begin{Proof}
+Do matice $W$ napíšu vektory jako sloupce, utvořím matici $X=W^T·W$, pak je to
+matice, co má prvky jako skalární součiny.
+\end{Proof}
+
+\subsection{Maximální řez}
+
+Chceme rozdělit graf na 2 části tak, aby součet vah hran mezi nimi byl
+maximální.
+
+Můžeme vzít každou hranu s pravděpodobností polovina, pak máme v průměru
+$\inv{2}$ aproximaci. Nebo to můžu zkusit hladově a házet do jedné nebo do
+druhé, podle toho, kde dostane víc.
+
+Zkusíme to takto. Vezmeme proměnné, což budou $\pm1$. Snažím se maximalizovat
+$\Σ_{e∈E}w_e·(1-v_i·v_j)$.
+
+Místo toho vezmeme reálné vektory v $ℝ^n$, $v_i·v_i = 1$. To už je vektorový
+program, to řešit lze.
+
+\subsection{Vektorový program}
+
+Bude jen $1+ε$ aproximace, protože mohou vycházet iracionální čísla.
+
+Vezmu náhodný vektor $r$ na sféře. Všechny, kde $v_i·r≥0$ dám do jedné, ostatní
+do druhé.
