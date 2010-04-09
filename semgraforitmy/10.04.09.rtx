@@ -1,0 +1,26 @@
+\section{Isomorfismus stromů}
+
+Zakořeníme si to. Každý strom má centrum nebo bicentrum, vezmu je (pokud jsou
+bicentra, vyzkouším obě možnosti).
+
+Začnu počítat kódování od listů. List má nějaký triviální, při počítání otce
+zkombinuji všechny syny a seřadím. Problém je, že tohle trvá dlouho.
+
+Přihrádkové třídění můžu udělat i na pointer machine (můžu indexovat přímo
+pointery na vrcholy).
+
+\subsection{Binární stromy}
+
+Budu počítat třídy isomorfismů na všech zakořeněných podstromech. Budu průběžně
+přiřazovat kódy. Máme nějaké stromy hloubky $n$, začneme tím, že budeme
+pojmenovávat od prázdných stromů.
+
+Napřed si je chceme uspořádat (ty dvojice synů). To by bylo pomalé, ale můžu si
+udržovat přihrádky, které už jsou použité. Na pořadí nezáleží, nám jde jen o to,
+aby byly u sebe. Poté zunifikuji stejné dvojice, stejné budou nové ekvivalenční
+skupiny.
+
+Když jsou více než binární, tak napřed setřídíme podle stupňů, poté můžeme
+třídit už normálně přihrádkově.
+
+Je potřeba ještě umět uspořádávat syny. Stejný trik s přidáváním přihrádek.
