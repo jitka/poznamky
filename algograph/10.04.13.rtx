@@ -1,0 +1,61 @@
+\section{Průnikové grafy kruhů}
+
+Je to uzavřené na indukované podgrafy.
+
+Rozpoznání grafu jednotkových disků je $NP$-těžké. Tedy, když nemám
+reprezentaci, tak je těžké ji vymyslet. Dá se na to přivést NAE-SAT, pomocí rámů
+(skoroobdélníčky), jsou tam praporky, nesmějí být dva praporky „proti sobě“ ‒
+překážely by si. Praporky jsou skoro všude, jen tam, kde je literál v klauzuli,
+tak to vynechám. Gace jsou nahoře, negace dole, tím rámem jde otáčet nahoru a
+dolu ‒ tím určím ohodnocení.
+
+\subsection{Barevnost}
+
+$3$-obarvitelnost rovinných grafů je $NP$-těžká i pro stupeň max $4$. Rovinné
+se stupněm max. $4$ lze nakreslit do čtvercové mřížky. Udělám si řetízek
+trojůhelníčků:
+
+\MPOST{ilust}
+u := .6cm;
+draw (0,0)--(1u,1u)--(1u,-1u)--cycle;
+draw (1u,1u)--(2u,0)--(1u,-1u);
+draw (3u,1u)--(2u,0)--(3u,-1u)--(4u,0)--cycle--(3u,-1u);
+draw (4u,0)--(5u,0);
+pickup pencircle scaled 2;
+draw (0,0);
+draw (1u,1u);
+draw (1u,-1u);
+draw (2u,0u);
+draw (3u,1u);
+draw (3u,-1u);
+draw (4u,0);
+draw (5u,0);
+\ENDMPOST
+
+Potom můžu dělat hranu, co drží barvu a nakonec dát tu opravdovou hranu. Tím to
+převedeme na ty rovinné.
+
+Můžeme ale aproximovat ‒ na okolí vrcholu se stejnou barvou může být max. 5
+exemplářů. Hladový algoritmus je tedy $5$-aproximace, nepotřebuji ani
+reprezentaci.
+
+Kdybych chtěl $3$-aproximaci, tak můžu jít zprava doleva. Zbývají už maximálně
+$3$ sousedi, nalevo mám max. $3$ obsazené barvy. To chce ale reprezentaci. Můžu
+ale brát místo toho můžu brát někoho, kdo má nezávislost nejvýše $3$.
+
+V případě různých kružnic vyberee nejenší kroužek, stejný trik jako bez
+reprezentace.
+
+\subsection{Nezávislá množina}
+
+Je to těžké.
+
+\subsection{Klikovost}
+
+Pro každý vrchol určíme nejvzdálenějšího souseda. $d$ bude vzdálenost. Pokusíme
+se najít kliku takovou, že nějaké vrcholy jsou nevzdálenější v té klice.
+
+Podle nejdelší hrany to rozpůlím na horní a dolní polovinu.
+
+$G-w$ je doplněk bipartitního grafu, hrany mohou vést pouze z horní do dolní
+poloviny.
