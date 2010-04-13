@@ -1,0 +1,55 @@
+\subsection{PC-grafy}
+
+Polygon-Circle grafy ‒ průnikáče polygonů vepsaných do kružnice.
+
+Když budeme reprezentovat graf jako $PC$, tak \name{zubatost} je nejmenší počet
+vrcholů, kolik má největší polygon v reprezentaci.
+
+$k$-PC-graf je takový, který má polygony maximálně $k$ vrcholů.
+
+Kolik je potřeba vrcholů na získání zubatosti $k$? Odhad je na $n-\log n+δ·\log
+n$.
+
+Rozpoznávání je v $NP$ ‒ určitě stačí $(n-1)·n$ vrcholů.
+
+\begin{Lemma}
+$$cor_{PC}(n)≥n-\log n-\log\log n + k$$ pro nekonečně mnoho $n$.
+\end{Lemma}
+
+\begin{Proof}
+Máme dvě množiny vrcholů, jedna malá, druhá velká a potom žije jeden samostatný
+vrchol. Ten jeden vrchol bude hodně zubatý. Do malé množiny dáme všechny hrany,
+do velké žádné, do tamtoho vrcholu do všech ostatních.
+
+Těch ve velké je tolik, aby každý byl indexovaný právě polovinou vrcholů té
+malé. Potom spojím každý z velké s „jeho“ z malé.
+
+Ta zubatost už vyjde.
+\end{Proof}
+
+\begin{Lemma}
+Pro každé $c<1∃n₀$ že pro všechny $PC$-grafy s $n≥n₀$ vrcholy existuje
+reprezentace s polygony $≤n-c·\log n$.
+\end{Lemma}
+
+\begin{Proof}
+Vezmeme hladově minimální reprezentaci (zub, který nepotřebujeme, vyhodíme).
+
+Když nejde co vyhazovat, tak se buď musí moc protínat, nebo mají rozdílné
+sousedy.
+\end{Proof}
+
+\begin{Statement}
+Rozpoznávání $k$-PC grafů je $NP$-úplné pro $k>2$.
+\end{Statement}
+
+\begin{Proof}
+Když máme bipartitní graf, kde jedna partita má samý vrcholy stupně $3$, tak
+chceme, aby byly každý vrchol v druhé partitě dostal jednu ze tří barev tak, aby
+každý v první viděl všechny $3$ barvy. To je $NP$-těžké.
+
+To se dá udělat pomocí reprezentace ‒ dáme tam $C₆$, barvy ob jeden vrchol.
+Pomocí gadgetů to donutím, aby žilo na správném místě. Vždycky trojůhelníček pro
+vrchol jedné partity, ta $C₆$ blokuje, aby ty druhé nevylézaly ven z
+jednobarevné oblasti.
+\end{Proof}
