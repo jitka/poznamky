@@ -1,0 +1,62 @@
+Prostor toků ‒ můžeme je sčítat, násobit ‒ máme lineární prostor. To je jádro
+matice incidence.
+
+Prostor tenzí je obraz matice incidence, když ji transponujeme.
+
+Toky v grafu $G$ odpovídají tenzím v duálu.
+
+\begin{Statement}
+Nechť $G$ je graf vnořený v rovině. Právě když má nenulový $k$-tok, potom má
+stěnové obarvení $k$ barvami.
+\end{Statement}
+
+\begin{Proof}
+Na každé hraně něco teče, je tam nenulová tenze, je tam tedy jiný potenciál na
+těch stěnách. $k$ potenciálů musí stačit. A fungovat to musí i opačně.
+\end{Proof}
+
+Tato věta na ostatních plochách nefunguje. Na projektivní rovině je to třeba
+peterson (duál je $K₆$). Na toru je to třeba mřížka $2\times 3$. Neplatí občas
+orientovatelnost, neplatí občas to, že duál řezu je kružnice. Pro obecné plochy
+neplatí ani jeden směr.
+
+Orientovatelné plochy: Pokud $G$ má stěnové $k$-obarvení, potom má $G$ nenulový
+$k$-tok (duál tenze je vždy tok), nevadí nám neorientovatelnost.
+
+\subsection{Cycle double cover conjecture}
+
+Každá hrana je obsažená právě ve dvou kružnicích.
+
+\begin{Statement}
+Pokud je $G$ graf bez mostů, potom existuje množina kružnic taková, že každá
+hrana je právě ve dvou z nich.
+\end{Statement}
+
+\name{Cirkulární vnoření} grafu $G$ na plochu $S$ je takové, aby stěny vnoření
+byly homeomorfní s otevřeným kruhem a hranice stěn musejí být kružnice.
+
+Jako \name{cyklus} bereme libovolný eulerovský podgraf.
+
+\begin{Note}
+Je hypotéza, že každý graf mez mostů má cirkulární vnoření na nějaké ploše.
+\end{Note}
+
+\begin{Statement}
+Graf má nenulový $4$-tok $←→G$ má dvojité pokrytí $3$ cykly $←→$ má dvojité
+pokrytí $4$ cykly.
+\end{Statement}
+
+\begin{Proof}
+Když máme cykly $C₁,…,C₄$, tak vyrobíme $C₁\oplus C₂$, $C₁\oplus C₃$ a $C₁\oplus
+C₄$. Nyní se rozebere, kde hrana byla a kde vyjde a dostaneme, že jsou zase $2$.
+\end{Proof}
+
+\begin{Note}
+Je hypotéza, že každý graf bez mostů má porkytí $5$ cykly.
+\end{Note}
+
+\begin{Note}
+Hypotéza o orientovaném pokrytí cykly: každý $G$ bez mostů má pokrytí hran
+orientovanými kružnicemi, tak, že každá hrana je pokryta v každém směru právě
+jednou.
+\end{Note}
