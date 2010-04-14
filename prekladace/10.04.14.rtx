@@ -1,0 +1,29 @@
+\subsection{Inlining}
+
+Inlinování má tu výhodu, že se okolo dají prohazovat příkazy, optimalizovat
+„skrz“, ale zase to zvětšuje program (disk, cache), zvětšuje nároky na kompilaci
+(ne všechno je lineární s velikostí kusu kódu, ukládání struktur).
+
+Je potřeba porozhodovat, co inlinovat. Jednak do toho může mluvit programátor,
+jednak podle toho, kolikrát je funkce volaná, podle její váhy, je potřeba váhy
+při inlinu něčeho přepočítávat. Chceme spíš inlinovat něco, co je volané často,
+ale zase ne něco, co je velké. Hodí se vyhodit všechna volání, když už se
+inlinuje (aby se jí dalo zbavit).
+
+Hodí se, aby už byly předoptimalizované, aby se lépe počítaly odhady. Na druhou
+stranu, inlining je dobrý k mnoha dalším věcem.
+
+Občas se dělá tzv. early inlining ‒ jen lokální měření, jak je velká a podobně.
+Inlinuje se, když je menší nebo srovnatelná s vlastním voláním.
+
+Potom se občas dělá částečné inlinování ‒ např. když je tam nějaká podmínka na
+začátku.
+
+\subsection{Informace o funkcích}
+
+Často se hodí o funkcích vědět nějaké dodatečné informace, jako například že nic
+nikde nemění, že nemá side-effecty, že závisí pouze na parametrech a podobně. To
+jednak umožní optimalizace okolí volání, jednak i třeba volání občas vyhodit
+nebo zkonstant-propagovat.
+
+Je třeba taky propagovat konstanty skrz funkce.
