@@ -1,0 +1,49 @@
+\section{Online algoritmy}
+
+Máme problém prohledávání přímky (cow-path problem, bridge problem). Máme
+přímku, kráva hledá díru v přímce.
+
+Algoritmus je \name{$R$-kompetetivní}, pokud je online algoritmus a pro všechny
+instance projde maximálně $R·opt(I)+c$.
+
+\begin{Statement}
+Algoritmus „chodím v $2*$ vzrůstajících intervalech po přímce“ je
+$9$-kompetitivní.
+\end{Statement}
+
+Pravděpodobnostní algoritmus je $R$-kompetitivní, že průměrný výsledek je
+$R$-kompetitivní. Dvě možnosti ‒ oblivious adversary je takový, že nereaguje na
+průběžné výsledky programu, adaptive adversary si může vymýšlet podle toho, co
+dělá algoritmus.
+
+\subsection{Pagin/caching}
+
+Máme $k$ stránek rychlé paměti. Vstup je posloupnost požadavků na jednotlivé
+stránky z nějakých $n$ stránek, které existují celkem (pomalých). Cena je za
+načítání stránek.
+
+Líné algoritmy ‒ v $i$-tém kroku čte maximálně jednu stránku.
+
+$k=1$ ‒ každý algoritmus je optimální.
+
+Potom je fifo, clock, statistiky za poslední dobu, počty požadavků, stárnutí.
+
+LRU je že vyberu tu, která se nejdéle nepožadovala.
+FWF (Flush When Full) ‒ když musím vyhazovat, vyhodím všechno.
+
+FIFO, LRU, FWF jsou $k$-kompetitivní pro deterministický algoritmus.
+
+\name{Značkovací algoritmus} je takový, který si pamatuje příznak, ten nastaví
+při požadavku na stránku ho nastaví, při page-fault příznaky ruší (např. když
+žádná bez značky není) a vyhazuje něco neoznačeného.
+
+LRU a FWF jsou značkovací.
+
+Každý značkovací algoritmus je $k$-kompetitivní. Posloupnost požadavků rozdělím
+na fáze. Každý první požadavek nové fáze je ten, kdy mažu značky. Algoritmus má
+maximálně $k·M$ vyhazování ($M$ je počet fází). Optimum musí být alespoň $M-1$.
+Ve dvou po sobě jdoucích fází je alespoň $k+1$ různých stránek, je tedy potřeba
+něco vyhodit.
+
+FIFO není značkovací. Ale když vyhážeme požadavky, kde není page-fault, na tom
+se to chová stejně. A na tom se to chová jako LRO.
