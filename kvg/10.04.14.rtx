@@ -1,0 +1,5 @@
+Inverzní ackermanova funkce $α(n)=\min@{k≥1;A(k)≥n@}$.
+
+Snažíme se dokázat, že $λ₃(n)∈O(n·α(n))$.
+
+$m,n≥1$, $m=m₁+m₂+…+m_p$, $m_i≥1$.
