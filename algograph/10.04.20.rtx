@@ -1,0 +1,29 @@
+\subsection{Nezávislá množina}
+
+Pro ni existuje Úplné Aproximační Schéma.
+
+Z toho $ε$ spočítáme nějaké $k$, to bude říkat, na jak velké kusy se to musí
+rozsekat a najít lokální optimum, aby to vyšlo. Představím si, že to máme v
+mřížce o velikosti políčka $1$. Potom beru kusy $k\times k$. Vyzkouším vždycky
+všechny možné „posunutí“. Pokaždé umažu vše, co se dotýká okrajů kusů (aby zbyly
+jen vnitřky).
+
+Nezávislé množiny tohoto jde zjistit v $n^{O(k^2)}$.
+
+Potom vezmu takový výsledek, který je nejlepší ze všech posunutí.
+
+Nyní je potřeba dokázat, jak přesně to aproximuje.
+
+Může to vyházet z optimální max to, co je na čárách. Dokážeme, že tam je taková,
+která nevyháže moc. Každá možnost vodorovná vyškrtá jiné možnosti, každá svislá
+jiné. To jde podle Holubníka rozpočítat.
+
+Pokud jsou různě velké kruhy, tak pokud mají omezeně velké rozdíly (třeba max.
+3*), potom to seběhne stejně.
+
+Jinak to rozdělíme do vrstev, po vrstvách použijeme totéž a výsledky
+zkombinujeme. V každé vrstvě se průměr kruhů liší maximálně dvojnásobně.
+Potřebujeme sesynchronizovat mřížky.
+
+Dá se to postavit odspoda nahoru, doplňovat „mezery“ velkých oblastmi malých,
+které jsou už předpočítané.
