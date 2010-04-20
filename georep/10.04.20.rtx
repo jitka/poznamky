@@ -1,0 +1,65 @@
+
+\name{Vlastní intervalový graf} je takový, kde jeden interval nesmí obsahovat
+celý jiný.
+
+V tomhle povolíme, aby $d$-dir grafy mohly protínat i ty, které jsou stejně
+směrované.
+
+Chceme algoritmus pro nezávislou množinu velikosti $k$ v $d$-dir v čase
+$f(k,d)·n^{O(1)}$.
+
+Nezávislá množina je $NP$-úplná pro $2$-dir.
+
+Pro obecné grafy neexistuje takto dobrý algoritmus, pokud něco nezdegeneruje. V
+intervalových grafech lze řešit v lineárním čase.
+
+Algoritmus bude robustní ‒ buď dá množinu, nebo řekne, že není nebo řekne, že
+vstup není $d$-dir.
+
+\begin{Lemma}
+Máme graf $G$, $u,v$ jsou jeho vrcholy. Uzavřené okolí jednoho je podmnožina
+uzavřeného okolí je druhého. Potom můžu ten s větším okolím beztrestně zahodit a
+počítat ve zbytku.
+\end{Lemma}
+
+\begin{Proof}
+Když to obsahovalo ten větší, můžu ho vyměnit za menší, oba tam nemohou být,
+jsou to uzavřená okolí.
+\end{Proof}
+
+Graf $G$ je \name{redukovaný}, pokud tam žádná taková dvojice vrcholů není.
+Redukovat graf umíme v $O(m·n)$.
+
+\begin{Lemma}
+Pokud máme $2$-dir graf, potom je okolí jednoho vrcholu intervalový.
+\end{Lemma}
+
+\begin{Proof}
+Ořežu ty věci, co vedou do stran, zbydou intervaly stejně směrované a nebo
+bodové z těch kolmých.
+\end{Proof}
+
+\begin{Lemma}
+Pokud $G$ je $d$-dir reprezentace redukovaného grafu, pokud má alespoň
+$((k-1)(d-1)+1)·d(k-1)^2$, pak buď existuje $k$ paralelních úseček na různých
+přímkách, nebo existuje přímka, na které leží $k$ neprotínajících se úseček.
+\end{Lemma}
+
+\begin{Proof}
+Tohle jde utlouct holubníkem.
+\end{Proof}
+
+\begin{Algorithm}
+Napřed zredukujeme. Pokud zbylo alespoň $2k^2(k^2-1)^2$, potom spočítáme matici
+sousednosti, vyzkoušíme každou podmnožinu velikosti $k$.
+
+Najde největší nezávislou v $G'$ pro kazdé sousedství každého vrcholu.
+\end{Algorithm}
+
+\begin{Lemma}
+Nechť $R_G$ je $d$-dir reprezentace redukovaného grafu. $d_v$ je směr vrcholu
+$v$, $G'= reduce G[N(v)]$. Potom $G'$ obsahuje max. dva segmenty ve směru $d_v$.
+\end{Lemma}
+
+Vše funguje tak, že když má dost vrcholů, tak hrubou silou budeme hledat, když
+najde, tak OK, když nenajde, tak konec, protože je špatný graf.
