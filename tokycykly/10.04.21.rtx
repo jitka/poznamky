@@ -1,0 +1,43 @@
+Pokud máme $k$-dvojité orientované pokrytí, potom je i $k$-nenulový tok. Opačně
+to platí pro $k=2,3,4$.
+
+\begin{Tvrz}
+Pokud hypotéza o dvojitém pokrytí kružnicemi platí pro kubické grafy bez mostů,
+potom platí pro všechny grafy bez mostů.
+\end{Tvrz}
+
+Grafy se dají nafukovat ‒ každý vrchol se stupněm větším než $3$ můžu nahradit
+kružnicí, nevytváří to mosty.
+
+\begin{Lemma}{O štěpení vrcholů}
+Nechť $G$ je graf, $v∈V(G)$ a $F$ je množina hran incidentní s $v$. Potom graf
+$G_{[v,F]}$ je vzniklý odštěpení hran $F$ od vrcholu $v$ (vrchol se „rozpůlí“,
+ty půlky se nespojují, na jedné je to z $F$, na druhé ten zbytek).
+
+$G$ bez mostů, souvislý. $deg(v)≥4$, $e₁,e₂,e₃$ incidentní s $v$. Potom nastává
+jedna z možností:
+→•
+ • $G_{[v,@{e₁,e₂@}]}$ je souvislý a bez mostů.
+ • $G_{[v,@{e₁,e3@}]}$ je souvislý a bez mostů.
+ • $e₁,e₂,e₃$ je hranový řez.
+←•
+\end{Lemma}
+
+Redukce na kubický graf potom probíhá tak, že eliminuji stupně velikosti alespoň
+$4$. Pokud něco tvoří hranový $3$-řez, tak z něj zvolím jen jednu, můžu štěpit.
+Poté zkontrahuji vrcholy stupně $2$. Mám kubický graf bez mostů.
+
+\begin{Note}[Berge-Fulkersonova hypotéza]\label{BFH}
+Nechť $G$ je kubický graf bez mostů. Potom existuje $6$ perfektních párování
+pokrývajících každou hranu právě dvakrát.
+\end{Note}
+
+\begin{Note}[Hypotéza]
+$∃k$ hrany každého kubického grafu bez mostů se dají pokrýt $k$ perfektními
+párováními.
+\end{Note}
+
+\begin{Tvrz}
+\ref{BFH} je ekvivalentní s tím, že každý graf bez mostů má $4$-pokrytí
+$6$-cykly.
+\end{Tvrz}
