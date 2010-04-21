@@ -1,0 +1,12 @@
+
+\begin{Statement}
+Každý pravděpodobnostní $R$-kompetitivní algoritmus pro paging má $R≥H_k$.
+\end{Statement}
+
+\section{$k$-server problém}
+
+Máme danou metriku $M$ a parametr $k$. Vstupem je posloupnost bodů v $M$ (to
+jsou požadavky). Chceme rozposílat $k$ agentů tak, aby každý požadavek byl
+navštívený tak, aby nacestovali co nejméně.
+
+Cachování je speciální případ pro uniformní metrika.
