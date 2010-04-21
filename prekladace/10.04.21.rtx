@@ -1,0 +1,50 @@
+Občas se dělá také forward substituce a partial inlining (inlinovat jen kus
+funkce, vložit počítání parametru až někam dovnitř).
+
+Také se dá dělat třeba reorganizace datových struktur.
+
+Type escape analýza ‒ kontrola, že nikam neutíká datový typ.
+
+U inlinování se používá buď top-down nebo bottom-up (jestli se ve stromu leze z
+vrchu nebo zespodu).
+
+\subsection{Přerovnávání funkcí}
+
+Je lepší, když fce, co se volají, jsou pohromadě a skoky pokud možno dopředu.
+
+\section{Globální optimalizace}
+
+To optimalizuje vždy celou funkci.
+
+\subsection{PRE}
+
+To je Partial Redundancy Elimination. Například pokud se jeden výraz počítá
+vícekrát, tak se ukládá. Jde na hodně rozšířených basic-blocích, ale ne úplně na
+všem.
+
+Globální verze funguje tak, že hledá, pokud to může být stejné ve více věcích,
+tak to propaguje skrz to a hledá, kde je to stejné. Napřed se pomocí data-flow
+zjišťuje, jestli ho něco zabíjí a kde všude je to vidět.
+
+Toto je potřeba iterovat, protože po zpropagování mohou vzniknout nové
+duplicity.
+
+Tohle může být problematické, pokud to nedojde do konce ‒ je hromada proměnných,
+překážejí register-alokátoru, který se snaží znovu z toho občas dělat výrazy.
+
+Občas je potřeba nějakou větev „doplnit“ o výpočet (jiné větve počítají, některé
+ne), umístit na hranu.
+
+Jde to i opačně, mít šipky „nahoru“ ‒ a říkat, že čekám tenhle výraz. Občas je
+možno/nutno něco nepočítat.
+
+Taky se chce, aby těch výpočtů bylo na konci méně, než na začátku. Strká se to
+nejvíc nahoru, jak jen to jde.
+
+Je potřeba zařídit, že se nesmí počítat navíc nic, co by ten program shodilo.
+Také nesmím ignorovat žádné zabití.
+
+Dá se dokázat, že přes to strkání na hranici je to nejlepší.
+
+Tohle má ale tendenci stěhovat všechno co nejvíc nahoru, tím ucpává registry.
+Také to škodí ve smyčkách (předpočítá invarianty, ale když jich je hodně…).
