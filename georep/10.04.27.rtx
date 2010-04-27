@@ -1,0 +1,19 @@
+\section{Barvení CA grafů}
+
+CA (Circle Arc) grafy, je to $NP$-úplné.
+
+Existuje problém disjunktních cest ‒ máme několik spotřebičů a zdrojů, hledáme
+tak, aby se nepotkaly. To je $NP$-úplné i pro acyklické a $G+H$ eulerovské (když
+přidám zpátky hrany ze stoku do příslušného zdroje).
+
+Dáme vrcholy z grafu $G+H$ na kolečko, nataháme hrany, přidáme ještě $0$, pak
+spojuju vrcholy, hrany $G$ nepokrývají nulu, z $H$ naopak ano. Stejná barva se
+dá těm, které se jen potkávají ve vrcholu, ale nepřekrývají.
+
+U intervalového je $NP$-úplné i předbarvení (pár barev nastavím, potom se ptám,
+jestli lze doplnit). Pomocí toho lze barvi circle-arc graf (rozstříhneme,
+předbarvíme, aby byly stejné).
+
+Obdobně, když máme tětivové grafy, tak lze převést také (když mám obloučky, můžu
+nadělat tětivy). Když by to nestačilo, můžu jich tam přidat víc. Aby byly stejně
+barevné, tak tam nacpu kličku (na ten roh) a donutím je mít stejnou barvu.
