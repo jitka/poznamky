@@ -1,0 +1,24 @@
+\subsubsection{Pokus o FPT}
+
+Máme dáno $k$, ptáme se, jestli tam je nezávislá velikosti $k$.
+
+Když máme malou plochu, tak tam určitě není. Na druhou stranu, když tam najdu
+hladově (vyberu jeden, zabiju všechny, kterých se dotýká), tak tam určitě je (to
+je v případě, když je dostatečná plocha).
+
+Zajímavé věci se tedy dějí jen v určitém rozmezí ploch. V takovém případě se
+použije metoda rozděl a panuj. Prostor štípnu na poloviny (zhruba, podle
+plochy) a to tak, aby řezaný úsek byl malý, spočítá se řešení na řezu a roztáhnu
+na obě strany.
+
+Na řezu řešíme hrubou silou, v těch zbytcích (pro každou z nich) se zarekurzí na
+řez spojené se zbytkem. Počet pokusů na nezávislou v řezu je $2^{O(\sqrt{k}·\log
+n)}$.
+
+Abych získal malý řez, tak vezmu malou mřížku a vyházím všechno, co nemá žádný
+kontakt s kruhem. Tohle bude rovinný graf (ty čtverečky), najdu v tom planární
+separátor.
+
+Budeme ale chtít tokázat, že FPT to nejde, budeme mít problém, jestli je tam
+klika velikosti $k$, což je těžký problém. To se udělá speciální mřížka a bude
+to nějak fungovat.
