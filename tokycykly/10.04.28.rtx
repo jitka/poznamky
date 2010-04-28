@@ -1,0 +1,70 @@
+\section{Polytop párování}
+
+\name{Párování} je $1$-regulární podgraf.
+
+Máme vektory, jednička pro hranu, která tam je, nula, když není.
+
+Polytop párování je konvexní obal všech takových vektorů, která jsou párováními.
+Určitě to obsahuje počátek (prázdná množina hran je párování).
+
+Tento polytop lze popsat nerovnostmi, tedy $\Σ_{e∈δ(v)}≤1$, ale je potřeba mít
+to celočíselné. Nebo to lze zapsat tak, aby tam byl součet hran nejvýše polovina
+počtu vrcholů (zaokrouhleno dolů).
+
+Perfektní párování má $\Σ_{e∈δ(v)}=1$. Pokud rozepíšu:
+
+$$
+\Σ_{e∈δ(X)}f(e)+2·\Σ_{e∈E(X)}f(e)=\Σ_{v∈X}\Σ_{e∈δ(v)}f(e)=\len{X}
+$$
+
+Z toho plyne, že z liché podmnožiny vychází alespoň jedna hrana.
+
+$r$-regulární graf $G$ se nazývá $r$-graf, pokud
+$∀X@⊂V(G),\len{X}=2k+1;\len{δ(X)}≥r$.
+
+\name{Uniformní pokrytí párováními} znamená, že každá hrana je ve stejném počtu
+párování.
+
+\begin{Statement}[Edmonds]
+Když $G$ je $r$-graf $→→∃$ uniformní pokrytí $E(G)$ perfektními párováními.
+\end{Statement}
+
+\begin{Proof}
+Podíváme se na vektor $@(\inv{r}, \inv{r}, …, \inv{r}@)$. Tohle je uvnitř
+polytopu perfektních párování. Okolí každého vrcholu je rovna $1$.
+
+Z nějaké symetrie se dokáže, že se to potom nasčítá v každé položce na stejně.
+\end{Proof}
+
+\begin{Follows}
+Kubický graf bez mostů má uniformní pokrytí perfektními párováními.
+\end{Follows}
+
+\begin{Follows}
+Kubický graf bez mostů má perfektní párování, dokonce pro každou hranu existuje
+perfektní párování, které ji obsahuje.
+\end{Follows}
+
+\begin{Note}
+Je otevřený problém, jestli existuje $6$ perfektních párování takových, jestli
+pokrývají každou hranu právě dvakrát.
+\end{Note}
+
+\begin{Follows}
+$G$ je kubický graf bez mostů, potom existuje perfektní párování, které
+neobsahuje $3$-řez. Dokonce je uniformní pokrytí, které neobsahuje žádný
+$3$-řez.
+\end{Follows}
+
+Když máme kubický graf bez mostů, tak velikost jednoho perfektního párování je
+$\frac{m}{3}$. Chceme, aby $\len{p₁∩p₂}≥c·m$ (více, než $\frac{2}{3}$ nejde).
+
+Máme uniformní pokrytí $Q₁,…,Q_N$, každá je v jedné třetině z těchto párování,
+tedy lze udělat dvě párování taková, že dohromady mají
+$\inv{3}+\frac{2}{3}·\inv{3}$.
+
+Můžeme to zkusit ale tak, že vezmeme jako základ vektor
+$@(α,α,α,…,β,β,β,β,β,β,…@)$. Vždycky u vrcholu jedna $α$ a dvě $β$.
+
+Vezmeme párování z uniformního pokrytí. Z toho se už bude dát vytlouct pokrytí
+$\frac{3}{5}m$.
