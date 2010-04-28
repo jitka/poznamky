@@ -1,0 +1,31 @@
+\subsection{Potenciál}
+
+Pro každý online $R$ kompetitivní algoritums lze najít potenciál, který říká,
+kolik peněz může stát libovolné další pokračování.
+
+Potom platí, že $0≤Φ(S_N,A_N)≤Φ(S₀,A₀)+R·OPT - ALG$.
+
+\section{Vážené stránkování}
+
+Podobně, jako stránkování, ale každá stránka má nějakou váhu, tedy cenu, kolik
+ji stojí nabrat do cache.
+
+Toto má $k$-kompetetivní deterministický algoritmus. Je to ekvivalentní
+$k$-serveru na metrice „hvězdička“.
+
+Existuje řádově $\log k$ kompetitivní pravděpodobnostní algoritmus.
+
+\section{Stránkování souborů}
+
+Každá stránka má dva parametry ‒ velikost a cena.
+
+Existuje $k$-kompetitivní deterministický a $O(\log²k)$ kompetitivní
+pravděpodobnostní pro cenu $1$ a rovnou velikosti.
+
+\section{Problém pohybu}
+
+Máme robota ve skladišti, kde jsou krabice, má se dostat k jedné (dané) straně.
+Když narazí na něco, tak to detekuje.
+
+Na toto může existovat vejlépe $\sqrt{n}$ kompetitivní algoritmus. Obrázek ‒
+překrývající-se „cihličky“. Vezmu ty, které potká, musím obcházet a to $k$-krát.
