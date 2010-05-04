@@ -1,0 +1,34 @@
+\section{$k$ na cestě}
+
+Máme $k$ vrcholů, chceme najít indukovanou cestu, která prochází všema.
+
+Pokud by byla neindukovaná, tak mám $k!$ minorů, ty můžeme najít.
+
+Pokud by to bylo spáru-prosté (neobsahuje indukovaný $K_{1,3}$), tak je to
+hledání cesty.
+
+Kvazi-line grafy jsou takové, že okolí každého vrcholu lze pokrýt dvěma klikami
+(tedy, je to něco jako tlustá cesta).
+
+Line grafy, o jsou průnikáče intervalových, které nemají inkluze (že by jeden interval
+obsahoval celý jiný).
+
+Nalezení indukované cesty na line-grafech je polynomiální. Vyzkouším všechny
+permutace a potom ke všemu uhádnu předchůdce/následníky (těch důležitých
+vrcholů). Poté odeberu všechny vrcholy, co neleží na žádné indukované cestě.
+
+Nebude to potom obsahovat žádnou lichou antidíru velikosti alespoň $7$ (doplněk
+indukovaného cyklu). Když tam mám vrchol s okolím $5$-cyklem, tak ten vrchol
+umažu.
+
+Homogenní dvojice klik je $A,B$ taková, že zbytek jsou $4$ množiny, taková,
+která není spojená s ani jednou, taková, která s oběma a dvě, které právě s
+jednou (když s klikou, tak se všemi v klice).
+
+Když mám takovouhle dvojici, tak obě kliky můžu zkontrahovat.
+
+Quazi-line grafy bez homogenních dvojic klik jsou buď circle-arc-graph a nebo
+slepenec intervalových pásků.
+
+To potom jde procházet více „napřímo“ (když vlezu do pásku, musím projít, do
+kliky nesmím znovu). Tak to můžu zmenšit, to už bude line-graph.
