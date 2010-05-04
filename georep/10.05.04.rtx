@@ -1,0 +1,36 @@
+\section{Kreslení celočíselně}
+
+Budeme chtít nakreslit rovinný graf s tím, že máme celočíselné souřadnice a
+rovné části.
+
+Lze nakreslit takovou tu 3-barevnou triangulaci. Každý vrchol bude mít
+souřadnice (počítá se počet vrcholů v oblasti definovanou cestou do okrajových
+vrcholů).
+
+Kdybychom si vzali trojúhelníčkovou síť (místo čtverečkové), můžu to podle toho
+do toho kreslit. To jde otočit na pravoúhlý trojúhelník.
+
+\begin{Tvrz}
+Žádné dvě hrany se v tomto neprotínají.
+\end{Tvrz}
+
+\begin{Proof}
+U všech vrcholů se zachová stejné pořadí vycházejících vrcholů. Kvůli
+triangulaci je ve vějířku hrany mezi sousedy, část vede na jednu stranu vějíře,
+část na druhou. Nebo se dá dokázat indukcí od spodu.
+
+Poté se dokáže, že se nic neprotíná. Kdyby se něco protínalo, tak se musí někde
+změnit pořadí vycházejících hran.
+\end{Proof}
+
+\section{Obdélníky}
+
+Máme dvě množiny obdélníků v rovině. Oblast dolů a/nebo doprava nazvu $BR(a)$ pro
+obdélník $a$ a podobně. Řekneme, že $a₁<_Ra₂ ←→ a₁∩BR(a₂)≠∅$.
+$b₁<_Lb₂←→b₁∧BL(b₂)≠∅$.
+
+Tvrdíme, že obě relace jsou acyklické, antireflexivní a antisymetrické.
+
+K tomu můžu udělat topologické uspořádání. Potom se mi nestane, že bych našel
+$b₁,b₂,b₃, a₁,a₂,a₃$, tak že bych dostal kříž z jedniček uprostřed s nulou a to
+dokonce i s mezerou. Tedy, jsou to průnikáče 2-DIR.
