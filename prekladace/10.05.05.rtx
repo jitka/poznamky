@@ -1,0 +1,22 @@
+\subsection{GVN-PRE}
+
+GVN ‒ třídy výrazů, které jsou stejné, se vyhodnotí stejně.
+
+Postaví se SSA forma nad proměnnýma i nad výrazama.
+
+Má dvě věci ‒ instrukce a výrazy. Máme množinu všech takových dostupných na
+začátku basic blocku. Umíme vypočítat, co bude k dispozici na konci.
+
+Pak se to kanonizuje (vyháže, co je tam vícekrát).
+
+
+\section{Loop unrolling}
+Chceme detekovat smyčky a indukční proměnné. Ta dělá v SSA grafu silně souvislou
+komponentu. Podle indukční proměnné umím určit počet iterací. Z toho se dělá i
+loop unrolling ‒ něco se nakopíruje vícekrát, snažíme se zbavit výstupní
+podmínku. Lze buď vědět počet, nebo dodat kód, který to spočítá na začátku a
+potom to „dožene“, aby zbyl násobek správného čísla. Ale nevyplatí se rozbalit
+cokoliv (mnoho jich proběhne málokrát). Může se taky hodit vykopírovat pár kopií
+dopředu, pro případ, že je hodně krátkých cyklů.
+
+Indukční proměnné se často přepíšou do adresního módu.
