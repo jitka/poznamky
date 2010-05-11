@@ -1,0 +1,47 @@
+\section{Perfektní a skoro grafy}
+
+To jsou takové, kde klikovost je rovna barevnosti a je to pro všechny podgrafy.
+Je to hezké u tříd, které jsou omezené na podgrafy ‒ stačí dokázat že klikovost
+je rovna barevnosti pro každý.
+
+Skoro-perfektní budeme říkat, že je shora omezená nějakou funkcí klikovosti.
+
+Chordální jsou perfektní. Intervalové také.
+
+Permutační a Funkční. Comparability-grafy jsou perfektní, funkční tedy jsou také
+perfekční.
+
+CA, CIR jsou skoro-perfektní.
+
+String a úsečky se zatím nevědí.
+
+\subsection{Polygon-circle}
+
+Dokážeme, že $χ≤50·2^ω$.
+
+Ty si lze také reprezentovat jako intervaly a ke každému množinu bodů, kde jsou
+i krajní. To odpovídá „rozstřižení“ kružnice. Hrana existuje, pokud alternují
+(tedy, je nějaký jednoho mezi dvěma druhého).
+
+Označme si $x₀$ vrchol, který má svůj levý vrchol nejvíce vlevo.
+
+\begin{Lemma}
+Pokud lze rozdělit na hladiny/partity zleva doprava, kde každá lze obarvit $k$ barvami,
+potom barevnost celku je nejvýše $2k$.
+\end{Lemma}
+
+\begin{Lemma}
+Máme vrchol $u∈V_i, U@⊂V_i,I_u@⊂\∩_{x∈U}I_i→→∃z∈V_{i-1}∀x∈@{u@}∪U;(xz)∈E(G)$.
+\end{Lemma}
+
+\begin{Lemma}
+Nechť $A,B$ jsou množiny intervalů. Dále nechť platí:
+→•
+ • $\len{A} = 2m-1$
+ • $∀x,y∈A;x∩y≠∅$
+ • $∀x≠y∈B;x∩y=∅$
+ • $∀a∈A∃b₁≠b₂;b₁,b₂@⊂a$
+←•
+
+Potom $∃A'@⊂A,\len{A'}=m,∃b∈B;b@⊂\∩_{a∈A'}a$
+\end{Lemma}
