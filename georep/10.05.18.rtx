@@ -1,0 +1,22 @@
+\section{Velikost reprezentace segmentových grafů}
+
+Je to určitě v $PSPACE$, neví se, jestli je v $NP$ ‒ konce mohou být velké. Dá
+se naklánět postupně víc a víc, přidáváním nových přímek ‒ a ono se to bude
+rozlézat více a více doprava.
+
+\begin{Lemma}[Order-forcing]
+Pro každou reprezentaci $R$ grafu $G$ existuje graf $G'$, který má nejvýše
+kvadraticky vrcholů, že pro každou reprezentaci $R'$ existuje homeomorfizmus,
+který zobrazí na $R$.
+\end{Lemma}
+
+Tedy, každá reprezentace se dá vynutit „přilepením“ k papíru a vyztužením
+dalšími vrcholy a hranami.
+
+Tedy, jsou grafy, které mají exponenciálně veliký zápis.
+
+Použijeme problém strict-ineq. Máme nějaké polynomy, hledáme proměnné tak, aby
+všechny polynomy byly kladné. Toto je $NP$-těžké, je v $PSPACE$. Pomocí toho
+vyřešíme rozpoznání segmentových.
+
+Vyvěštíme pseudo-segmentovou reprezentaci, máme problém, jestli jdou natáhnout.
