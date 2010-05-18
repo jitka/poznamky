@@ -1,0 +1,45 @@
+\section{Rozpoznávání grafů oblouků}
+
+Když si představíme, jakou máme reprezentaci ‒ není důležitý přesný konec, jen
+pořadí, v jakém začínají a končí.
+
+Jednak můžeme předpokládat, že graf na vstupu nemá univerzální vrchol (spojený
+se všemi ‒ objel bych skoro celé kolo). Dále, liší se co se týče množin sousedů.
+Dále je to souvislé.
+
+V jakém vztahu jsou dva oblouky v reprezentaci?
+→•
+ • Disjunktní. Hrana patří do doplňku.
+ • Potkávají se jedním koncem. Zařadím hranu do $G₁$.
+ • Potkávají se oběma konci „zvenčí“. Zařadím do $G₂$.
+ • Jeden oblouk obsahuje druhý. Zařadím do $D_c$.
+←•
+
+Zapíšeme to maticí, dáme tam buď $1,2,n,c,t$, když to je v $G₁,G₂$, doplňku, v
+$D_c$ nebo v opačném $D_c$.
+
+Budeme mít operace:
+Překlopení ‒ necháme konce, oblouk se natáhne druhou stranou. Toto jde udělat i
+jen na matici.
+
+\subsection{Myšlenka algoritmu}
+Napřed vytvoříme nějakou matici. Poté budeme matici upravovat, bude garantované,
+že pokud $T₄$ má reprezentaci, potom část kružnice je nepokrytá, tedy jsou
+intervalové. Ta překlopení lze udělat zase zpátky.
+
+Při tvorbě matice, $D_c$ jde konstruovat snadno, doplněk také. Problém je
+rozeznat $1$ a $2$. Pokud objímají celé, tak musí sousedit dohromady se vším a
+co nesousedí s jedním musí být uvnitř druhého.
+
+Napřed vyrobíme $T₁$, ta má vrchol stupně $O(m/n)$ takový, že všichni sousedé
+obsahují právě jeden konec oblouku tohoto vrcholu. Nejdříve najdeme vrchol $v$
+minimálního stupně. Pokud $v$ nemá žádnou hranu v $G₂$, pak OK. Když mám v
+relaci uvnitř, tak překlopím a zlepšilo se to. Pokud ale má dvojkové relace,
+potom vezmu souseda v té relaci, který není pod obloukem něčeho jiného. Toho
+vezmu, překlopím a dám jako výsledek.
+
+Rozdělíme si na sousedy a nesousedy tohoto vrcholu. Rozdělím do komponent, v
+každé překlopím jednu partitu ‒ zbavím se dvojek a $n$.
+
+Pak budu koukat na skupiny, co jsou do sebe vzájemně vnořené. Hledám alespoň
+jeden konec z jednoho oblouku zasahuje do $D₁$.
