@@ -1,0 +1,40 @@
+\begin{Lemma}[Fleichner]\label{Fleichner}
+Máme graf $G$ souvislý bez mostů, máme $v∈V(G);deg(v)≥4$, $e₀,e₁,e₂∈δ(v)$. Pokug
+$G@[v:e₀e₁e₂@]$ je souvislý, pak $G@[v:e₀e₁@]$ nebo $G@[v:e₁e₂@]$ je souvislý bez
+mostů.
+\end{Lemma}
+
+To $G@[v:@{e@}@]$ je graf, kde $v$ štípnu na dva, na jedné nechám hrany $@{e@}$
+a na druhé ten zbytek.
+
+\begin{Note}[Tutteova hypotéza]
+Každý graf bez mostů má $5$-tok.
+\end{Note}
+
+Kdyby neplatila, tak si vezmeme minimální protipříklad (co do počtu vrcholů a
+hran) $G$.
+
+$G$ nemá artikulaci. Dalo by se to rozstřihnout, každý menší má, pak by měl ale
+i celek.
+
+Je $3$-regulární. Stupeň není jedna (most) ani dva (nebyl by
+minimální, šel by zmenšit). Kdyby měl víc, tak jde použít Lemma \ref{Fleichner}.
+Potom můžu jednu kopii vrcholu (ta co má jen 2 hrany) zkontrahovat a je to zase
+menší.
+
+Obdobně se dají převádět na $3$-regulární grafy i jiné hypotézy.
+
+$G$ je hranově $3$-souvislý. Kdyby ne, tak má $2$-řez, jednu hranu zkontrahuju,
+je menší, má tedy $5$-tok, ale i původní by musel mít $5$-tok.
+
+Je hranově skoro-hranově-$4$-souvislý (okolo každého vrcholu je řez, ale jinak
+když nesousedí všechny $3$ s jedním vrcholem, tak už je to OK).
+
+Nemá kružnici kratší než $7$.
+
+\section{Snarky}
+
+Graf $G$ je \name{snark}, pokud je $3$-regulární, není $3$-barevný a je hranově
+$2$-souvislý/$3$-souvislý/hranově $4$-souvislý (obvykle se bere $2$-souvislost).
+
+Pokud je hranově $3$-obarvitelný, potom má $4$-tok a tedy i $5$-tok.
