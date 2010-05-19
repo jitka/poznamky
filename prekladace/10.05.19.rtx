@@ -1,0 +1,50 @@
+
+Stide redukce ‒ když je více indexačních/iteračních proměnných, možná se dají
+odvodit z jedné. Stejně se většina dá spočítat během adresace.
+
+Občas se vyplatí otáčet smyčky (třeba díky instrukci loop, ta umí do nuly) ‒ ale
+jen někdy a ne vždy se vyplatí (třeba prefetching). Je potřeba dependency
+testing. Na to se používá iterační vektor (vektor, kolikátá iterace je to uvnitř
+které vnořené smyčky).
+
+GCD test ‒ zjišťuje závislosti velikosti smyček.
+
+Omega test (má to knihovnu). Dělá normalizaci (když vše je dělitelné něčím, tak
+to tím vydělí), eliminuje rovnosti, řeší nerovnosti.
+
+Dělá se otáčení, prohazování smyček. Je potřeba něco, čemu se říká „perfect
+nest“ (příkazy jen uvnitř té vnitřní).
+
+Polyhedrální model ‒ rozebere se, nad tím jsou operace a potom se to zase složí.
+Má kusy, které mají jen jeden vstup a výstup. Ten se dá prohlásit jako jedna
+instrukce. V prostoru jsou mohoúhelníky, ve kterých jsou instrukce, potom nějak
+udělá pořadí, jak se jeho celočíselné body projdou. Ne vše jde převést do
+tohodle. Proto se dějí hacky, jako přidávají podmínky, přidávají jiné kusy na
+jednu hranu, etc.
+
+Také se optimalizuje na cache procesoru ‒ prohazování smyček, scewing (naklonění
+polyhedru), slučování smyček, které jsou za sebou, či občas naopak (kvůli
+přístupům ke cache, či kvůli chybějícím registrům), distribuce, prefetching
+(přednačítání) ‒ pozor, pere se s HW prefetchingem. Jsou občas instrukce, které
+nepoužívají cache. Jsou občas instrukce, které nepoužívají cache. Jsou občas
+instrukce, které nepoužívají cache. Jsou občas instrukce, které nepoužívají
+cache. Jsou občas instrukce, které nepoužívají cache. Jsou občas instrukce,
+které nepoužívají cache. Jsou občas instrukce, které nepoužívají cache. Jsou
+občas instrukce, které nepoužívají cache ‒ reuse analýza (důležité je spíše
+neprefetchovat, než opačně, už kvůli paralelizmu, ucpávání, …).
+
+\subsection{Vektorizace}
+
+Je to jen pattern-matching, dependency testing (nesmí ty smyčky na sebe
+záviset). Problém je alignování, pakování ‒ spíše speciální případy, než teorie.
+
+\subsection{Software pipelining}
+
+Když má něco latenci, tak se vyplatí promíchat iterace za sebou, aby se tím
+nacpaly všechny jednotky (na začátku hora čtení, potom hora dalšího…). Obvykle
+se udělá unroll, vytáhne prostředek, z toho prostředka (kde je to promíchané)
+udělá zase smyčku. Může používat i třeba registrová okna.
+
+\subsection{Predictive commoning}
+
+Občas programátor to minulé už napíše sám.
