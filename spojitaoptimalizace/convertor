@@ -1,0 +1,35 @@
+#!/usr/bin/perl
+
+use common::sense;
+
+$\ = "\n";
+$, = ", ";
+
+sub pusht($\@@) {
+	print @_;
+	my($style, $array, @data) = @_;
+	push @$array, map {
+		({
+			' ' => sub { $_[0] },
+			L => sub { "$_[0]L" },
+			o => sub { $_[0] % 2 ? "$_[0]L" : () },
+			A => sub { $_[0] % 2 ? "$_[0]L" : "$_[0]R" }
+		}->{$style}->($_));
+	} @data;
+}
+
+my @args;
+
+foreach(<>) {
+	chomp;
+	next if /^D/;
+	my($style, $range) = /^(.)\s*(.*)/;
+	print $range;
+	print split /\s+/, $range;
+	pusht $style, @args, map { eval } split /\s+/, $range;
+}
+
+print @args;
+my @cmd = ('pdftk', 'MINOLTA20100518151542.pdf', 'cat', (sort { $a <=> $b } @args), 'output', 'output.pdf');
+print @cmd;
+system @cmd;
