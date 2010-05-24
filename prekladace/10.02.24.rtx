@@ -38,7 +38,7 @@ fork, zaměstnávali mnoho vývojářů.
 2001 verze 3.0, podpora C++, poté se šlo do architektury, 2005 verze 4.0, má
 middle end.
 
-Asi nejvíce podporovaných platforem, jazyk mezijazyk RTL je jednoduchý na
+Asi nejvíce podporovaných platforem, mezijazyk RTL je jednoduchý na
 připisování nových backendů.
 
 Mnoho systémů ho používá.
@@ -60,7 +60,7 @@ Výsledný kód není úplně nejlepší.
 Původně se jmenoval MipsPro, má dlouhou historii, generoval rychlý kód pro
 tehdejší architekturu. Poté to mířilo na itánium, což SGI zkrachovalo, těsně
 předtím překladač uvolněn (2000), ne kompletní (něco patřilo někomu jinému),
-vzniklo nahrazením C++ frontendu od GCC, zahodili backend do itanium.
+vzniklo nahrazením C++ frontendu od GCC, zahodili backend pro itanium.
 
 Vývojáři nesměli pracovat na stejném projektu (měli to ve smlouvě), problémy
 (nikdo tomu nerozuměl, nespravoval).

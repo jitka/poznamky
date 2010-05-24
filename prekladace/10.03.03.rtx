@@ -72,7 +72,7 @@ basic-bloky, kam to patří, odkaz na následující, na předchozí, debug info
 
 Jeden extrém je reprezentovat to podle toho, jak je to napsané (popsané
 idnexování polí, lezení do struktur), až k tomu, kdy se to zapisuje jako
-matematický výraz z ukazateli. Občas je potřeba řešit překlady do dědičnosti a
+matematický výraz s ukazateli. Občas je potřeba řešit překlady do dědičnosti a
 podobně.
 
 Je potřeba řešit aliasování (že něco může ukazovat na stejné/různé místo). Je
@@ -82,7 +82,7 @@ vhodné tohle vyndat z typů a uložit do těch přiřazení.
 
 Je vhodné, aby šlo debugovat i to, co je zoptimalizované. Ukládá se to do
 formátu dwarf (poměrně rozsáhlý standard). Je to programovací jazyk ‒ může to i
-počítat i spoustu věcí, kde co je a tak (například kvůli stacku) ‒ umí např.
+počítat spoustu věcí, kde co je a tak (například kvůli stacku) ‒ umí např.
 revertovat převod for cyklu do pointerové aritmetiky.
 
 V překladači je potřeba to táhnout „s sebou“. Některé věci (interní) nemají
@@ -105,7 +105,7 @@ Navíc musí být kompatibilní mezi jazyky, mezi verzemi, překladači a podobn
 Používá se norma pro C++ a itanium (nezávislá na platformě a jazyce).
 
 Unwindování stacku se dělá pomocí runtimu, který používá dwarf popisy, opravuje
-to zásobník, volá handlery. Jednak tam jsou tedy ty dwarfové popisy zásobníky,
+to zásobník, volá handlery. Jednak tam jsou tedy ty dwarfové popisy zásobníků,
 jednak action chainy (každá instrukce dělá jinou výjimku, vyhledává se, co se s
 ní dělá ‒ každá může být jiná).
 
@@ -125,7 +125,7 @@ Jsou gcc instrukce eh\_dispatch, resX (chytání, pokračování unwindování).
 
 Orientovaný graf, každý vrchol je basic block (kus kódu, kde se neskáče). Hrany
 jsou možné přechody. Vnitřek basic blocku bývá spoják. Většina překladačů má
-explicitně reprezentované hrany, obvykle přímo za basic blocku.
+explicitně reprezentované hrany, obvykle přímo za basic blockem.
 
 Z basic blocku obvykle vede max. 2 hrany.
 

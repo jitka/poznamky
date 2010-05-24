@@ -1,5 +1,5 @@
 
-Stide redukce ‒ když je více indexačních/iteračních proměnných, možná se dají
+Stride redukce ‒ když je více indexačních/iteračních proměnných, možná se dají
 odvodit z jedné. Stejně se většina dá spočítat během adresace.
 
 Občas se vyplatí otáčet smyčky (třeba díky instrukci loop, ta umí do nuly) ‒ ale
@@ -26,12 +26,8 @@ Také se optimalizuje na cache procesoru ‒ prohazování smyček, scewing (nak
 polyhedru), slučování smyček, které jsou za sebou, či občas naopak (kvůli
 přístupům ke cache, či kvůli chybějícím registrům), distribuce, prefetching
 (přednačítání) ‒ pozor, pere se s HW prefetchingem. Jsou občas instrukce, které
-nepoužívají cache. Jsou občas instrukce, které nepoužívají cache. Jsou občas
-instrukce, které nepoužívají cache. Jsou občas instrukce, které nepoužívají
-cache. Jsou občas instrukce, které nepoužívají cache. Jsou občas instrukce,
-které nepoužívají cache. Jsou občas instrukce, které nepoužívají cache. Jsou
-občas instrukce, které nepoužívají cache ‒ reuse analýza (důležité je spíše
-neprefetchovat, než opačně, už kvůli paralelizmu, ucpávání, …).
+nepoužívají cache ‒ reuse analýza (důležité je spíše neprefetchovat, než opačně,
+už kvůli paralelizmu, ucpávání, …).
 
 \subsection{Vektorizace}
 

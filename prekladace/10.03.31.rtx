@@ -11,8 +11,8 @@ typy.
 Dá se to také stopovat. Je problém, jak to reprezentovat. Můžeme zaznamenat
 všechna „pravdivá tvrzení“, ale má to docela velikou velikost.
 
-Pozor, tohle nemusí být ekvivalence. Takže reprezentovat třídami ekvivalencemi,
-tak to moc nefunguje.
+Pozor, tohle nemusí být ekvivalence. Takže reprezentovat třídami ekvivalencemi
+moc nefunguje.
 
 Také je možné ukládat množinky a hrany mezi nimi, co může ukazovat na co.
 
