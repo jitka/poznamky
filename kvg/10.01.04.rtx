@@ -1,8 +1,10 @@
 \begin{Tvrz}
 $$
-cr(G)+\Σ@(\combnum{\inv{2}·@(deg( v)+1@)}{2}@)=\combnum{\frac{n}{2}}{2}
+cr(G)+\Σ_{v∈V}@(\combnum{\inv{2}·@(deg( v)+1@)}{2}@)=\combnum{\frac{n}{2}}{2}
 $$
 \end{Tvrz}
+
+\TODO{Je to určitě dobře?}
 
 Napřed ověříme pro konvexní polohu. To je vidět (můžeme jimi otáčet).
 
@@ -20,18 +22,22 @@ cr(G)≤n²
 $$
 \end{Follows}
 
+\TODO{Proč?}
+
 Zapojíme větu \ref{pruci}.
 Z toho plyne, že $h(n)=O@(n^{\frac{4}{3}}@)$.
 
 \subsection{Kovnexní nezávislost}
 \begin{Lemma}
-Máme množinu $X@⊂ℝ²$. Potom obsahuje konvexní čtyřúhelník.
+Máme množinu $X@⊂ℝ²$ velikosti alespoň $5$. Potom obsahuje konvexní čtyřúhelník.
 \end{Lemma}
 
 \begin{Proof}
 Vezmeme konvexní obal $X$. Pokud má $4$ vrcholy, pak jsme vyhráli, pokud jen $3$, pak jeden zahodíme a tyto $4$ jsou konvexní
 čtyřúhelník.
 \end{Proof}
+
+\TODO{Proč a který?}
 
 \begin{Statement}[Erdös-Szekeres]\label{esst}
 $∀k∃n$ pro $n$ bodů v rovině $∃$ konvexní $k$-úhelník.
@@ -41,7 +47,7 @@ $∀k∃n$ pro $n$ bodů v rovině $∃$ konvexní $k$-úhelník.
 BÚNO žádné dva body neleží na svislé přímce. Potom $k$-miska je konvexní množina $k$ bodů které jdou „dolů a potom nahoru“ (leží
 na grafu konvexní funkce). $k$-čepice je opačně.
 
-Označíme $f(k,l)$ jako maximální počet bodů v obecné poloze v $ℝ²$ mez $k$-misky a $l$-čepice. Dokážeme, že toto číslo je
+Označíme $f(k,l)$ jako maximální počet bodů v obecné poloze v $ℝ²$ bez $k$-misky a $l$-čepice. Dokážeme, že toto číslo je
 konečné, indukcí a je to $\combnum{k+l-4}{k-2}$.
 
 $f(k,2) = f(2,l) = 1$. Další krok je, že jak $k$, tak $l$ jsou alespoň $3$ a pro menší součet to platí. Tedy,

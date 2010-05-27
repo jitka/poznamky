@@ -3,12 +3,16 @@ Máme nějaké přímky. Vybereme si nějakou přímku $g$ a vezmeme všechny bo
 
 Budeme předpokládat, že $g∉\mathcal{H}$ a i $g$ je v obecné poloze.
 
-Maximální počet stěn zóny nadroviny v arrangmentu nadroviny v $ℝ^d$ je $O(n^{d-1})$ pro pevné $d$ (konstanta závisí na $d$).
+Maximální počet stěn zóny nadroviny v arrangmentu nadrovin v $ℝ^d$ je $O(n^{d-1})$ pro pevné $d$ (konstanta závisí na $d$).
+
+\TODO{Neplyne to přímočaře z upper bounds theorem? Nebo z toho, kolik buněk má
+$g$?}
 \end{Statement}
 
 \begin{Proof}
 Indukcí podle $d$, případ $d=2$ vezmeme jako základ. Počet buněk v zóně je řádově $O(n^{d-1})$. To odpovídá buňkám uvnitř $g$,
-které nařežeme těmi zbylými nadrovinami.
+které nařežeme těmi zbylými nadrovinami (pokaždé, co krosneme přímku, máme
+buňku).
 
 Libovolných $n$ vrcholů v arrangmentů přímek v $R²$ může mít celkem až $n^\frac{4}{3}$, takže počet buněk nám nestačí.
 
@@ -21,18 +25,22 @@ pravou a jednu levou hranu. Předpokládejme tedy, že má dvě pravé hrany. Ve
 Potom ji tato přímka nevidí. $l$ zastíní vše nalevo od sebe. Ale ta „bližší“ přímka zakrývá vše od paty až doprava. U levé
 obdobně.
 
+\textit{Možná se počítá jen to, co není úplně přímo nalepené?}
+
 Dále tedy indukční krok: Předpokládáme, že počet stěn v zóně $d-1$ je nejvýše $O(n^{d-2})$. Indukce podle $n$, bohužel,
 nefunguje. Chceme dokázat, že v průměrném případě se to nezhorší příliš. Napřed odvodíme, že maximální počet facet v zóně je
-$O(n^d-1)$. Označme $f(n)$ jako maximální možný počét facet pro $n$ nadrovin. Uvažme nějaké $\mathcal{H},g$, kde se $f(n)$
+$O(n^{d-1})$. Označme $f(n)$ jako maximální možný počet facet pro $n$ nadrovin. Uvažme nějaké $\mathcal{H},g$, kde se $f(n)$
 nabývá. Vezmeme náhodný pokus ‒ obarvíme náhodně zvolenou $h∈H$ červeně, ostatní modře. Každá faceta má tedy barvu. Zkoumáme
 počet modrých facet v zóně. Každá má pravděpodobnost, že bude modrá, $\frac{n-1}{n}$. Tedy modrých bude $\frac{n-1}{n}·f(n)$.
 Když se podíváme na jen modré nadroviny, tak máme $f(n-1)$. Kolik jich přibude, když přidáme tu červenou (ale počítáme jen
-modré). Ty vznikají jen tak, že nějaká modrá stará je rozpůlená na dvě části. Počét vzroste jen, když jsou obě části v zóně.
+modré). Ty vznikají jen tak, že nějaká modrá stará je rozpůlená na dvě části. Počet vzroste jen, když jsou obě části v zóně.
 Podíváme se tedy na arrangment uvnitř červené. Potom ten řez modré facety musí být v zóně v červené kolem $g$. Tedy, celkový
 počet facet je $O(n^{d-1})$.
 
+\TODO{Mírně dlouhé a nepřehledné. Co s tím?}
+
 Počet stěn dimenze $d-k$, kde $k$ je mezi $1$ a $d-1$ (nezahrnuje hrany a vrcholy). Označíme $f_{d-k}(n)$ maximální počet $d-k$
-dimenzionálních stěn zóny s $n$ nadrovinami. Vezememe náhodnou $h∈\mathcal{H}$, obacvíme červeně, zbytek modře. Stěna bude
+dimenzionálních stěn zóny s $n$ nadrovinami. Vezememe náhodnou $h∈\mathcal{H}$, obarvíme červeně, zbytek modře. Stěna bude
 modrá, pokud její vnitřek bude disjunktní s červenou. Jaký je střední počet modrých stěn v zórě, zase dva způsoby. Že zůstane
-modrá je, že žádná z $k$ protínajících se není modrá, takže $\frac{n-k}{n}·f_{d-k}(n)$. Druhým způsobem, máme $f_{d-k}(n-1)$
+modrá je, že žádná z $k$ protínajících není modrá, takže $\frac{n-k}{n}·f_{d-k}(n)$. Druhým způsobem, máme $f_{d-k}(n-1)$
 starých modrých stěn po odebrání červené, přibude ‒ zase rozdělujeme.

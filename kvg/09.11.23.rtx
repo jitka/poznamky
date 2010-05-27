@@ -5,7 +5,7 @@ Voroného diagram vznikne kolmou projekcí nějakého mnohostěnu $P$, který je
 \subsection{Arrangmenty nadrovin}
 Máme $H₁,…,H_n$ nadroviny. Ty se budou protínat.
 
-\name{Stěna} v $ℝ^d$ je uzávěr maximální souvislé části $\∩_i{i∈I} H_i\backslash\∪_{i∉I} H_i$.
+\name{Stěna} v $ℝ^d$ je uzávěr maximální souvislé části $\∩_{i∈I} H_i\backslash\∪_{i∉I} H_i$.
 
 \name{Buňka} je stěna dimenze $d$.
 
@@ -14,7 +14,12 @@ Máme $\mathcal{H}=@{H₁,…,H_n@}$ v obecné poloze v $ℝ^d$, potom počet bu
 \end{Tvrz}
 
 \begin{Proof}
-Důkaz indukcí, rozdělí se některé buňky na dvě ‒ ty protnuté.
+Důkaz indukcí podle $d$ i $n$, rozdělí se některé buňky na dvě ‒ ty protnuté.
+
+Když přidám $n$-tou nadrovinu, rozdělím na dvě tolik, kolik na nadrovině zbylých
+$n-1$ nadrovin nakreslí buněk.
+
+\TODO{Skoro by to chtělo obrázek?}
 \end{Proof}
 
 \subsection{Hladiny}
@@ -32,4 +37,6 @@ Počet stěn hladin $≤k$ je $O@(n^{\lfloor\frac{d}{2}\rfloor}@(k+1@)^{\lceil\f
 \begin{Proof}
 Pro $k=0$ jsou to mnohostěny, na ně máme upper bounds theorem. Vyšší: budeme předpokládat, že máme obecnou polohu. Počítá se
 pravděpodobnostně.
+
+\TODO{Jak?}
 \end{Proof}

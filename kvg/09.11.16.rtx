@@ -3,12 +3,22 @@ $d$ vrcholů cyklického mnohostěnu tvoří stěnu právě když jsou na moment
 počáteční úsek, potom souvislé sudě dlouhé úseky, zase libovolný uzavírací úsek).
 \end{Lemma}
 
+\TODO{Tohle by fakt chtělo obrázek či něco, co je tím myšlené?}
+
 \begin{Follows}
 Cyklický mnohostě má $Ω(n^{\lfloor  \frac{d}{2}\rfloor})$ faset.
 \end{Follows}
 
 \begin{Proof}
+Každá faceta leží na nějaké nadrovině, nevyšly by nadroviny.
+\end{Proof}
+
+\begin{Proof}
 Vybereme taková čísla, že tvoří dvojice, to máme dostatek možností.
+
+$$
+\combnum{n-\frac{d}{2}}{\frac{d}{2}}
+$$
 \end{Proof}
 
 Toto nám dalo dolní odhad, chtěli bychom i horní odhad.
@@ -34,14 +44,17 @@ Poté posčítáme počet stěn ‒ sečteme.
 \end{Proof}
 
 Dualita: Simpliciální mnohostěn lze převést na jednoduchý mnohostěn. Máme zafixovanou dimenzi, počet všech stěn je tedy také
-omezen $O(f_{\lfloor\frac{d}{2}\rfloor}$. Zvolme směr takový, že žádné $2$ vrcholy neleží na stejné úrovni. Každý z těchto
+omezen $O@(f_{\lfloor\frac{d}{2}\rfloor}@)$. Zvolme směr takový, že žádné $2$ vrcholy neleží na stejné úrovni. Každý z těchto
 vrcholů vypadá lokálně jako na $d$-dimenzionální krychli, má tedy $d$ hran.
 
-Každý vrchol je nejvyšší nebo nejnižší nejvýše v $\lceil\frac{d}{2}\rceil$ stěně.
+Každý vrchol je nejvyšší nebo nejnižší nejvýše v $\lceil\frac{d}{2}\rceil$
+stěnách.
+
+\TODO{Jakých stěnách? Libovolných?}
 
 \subsection{Voroného diagramy}
 
-Je to množina regionů, které mají vždy k nějakému bodu nejblíž. Tedy, $reg(p∈P):= @{x∈ℝ^d;∀g∈P;\len{x-p}≤\len{x-q}@}$.
+Je to množina regionů, které mají vždy k nějakému bodu nejblíž. Tedy, $reg(p∈P):= @{x∈ℝ^d;∀q∈P;\len{x-p}≤\len{x-q}@}$.
 
 \begin{Observation}
 Lze zapsat jako průnik poloprostorů, tedy je to mnohostěn.
@@ -49,12 +62,15 @@ Lze zapsat jako průnik poloprostorů, tedy je to mnohostěn.
 
 \name{Jednotkový paraboloid} je $U:=@{x∈ℝ^{d+1};x_{d+1} = x₁²+x₂²+…+x_d²@}$.
 
-Přímku, která prochází bodem $p$ v $ℝ^d$ (podstavci) a je k němu kolmá, nazveme $e(p)$ a bod, kde se dotýká $π(p)$.
+Přímku, která prochází bodem $p$ v $ℝ^d$ (podstavci) a je k němu kolmá, nazveme
+$e(p)$ a bod, kde protíná $U$ $π(p)$.
 
 Tečnou nadrovinu nazveme $l_x$, pokud protíná podstavec v $x$.
 
 \begin{Tvrz}
 $p,x∈ℝ^d→→\len{l_x∩e(p),l_x∩U}=\len{x,p}²$
 
-Tedy, čím dál je bod v podstavci dál od roviny, tím výš nadruhou protíná parabolu.
+Tedy, čím dál je bod v podstavci od roviny, tím výš nadruhou protíná parabolu.
+\TODO{Vždyť je to parabola, ne? Tak co tvrzení? Něco jsem nepostřehnul?
+Obrázek?}
 \end{Tvrz}
