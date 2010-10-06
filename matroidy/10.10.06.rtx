@@ -110,3 +110,13 @@ ho přidám, dostanu závislou.
 
 Pro ně existují nějaké báze, tam lze něco přestrkovat.
 \end{Proof}
+
+\begin{Lemma}
+Třetí podmínka kružnic jde zesílit ‒ můžu si vybrat i jeden prvek z
+$C₁\backslash C₂$, který tam musí skončit.
+\end{Lemma}
+
+\begin{Lemma}
+U bází to jde i naopak ‒ ne, že řeknu „tenhle vyhoď“ a v závislosti na tom si
+nějaký vyberu, ale řeknu „tenhle přidej“ a v závislosti na tom jeden vynechám.
+\end{Lemma}
