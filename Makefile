@@ -1,5 +1,5 @@
 D:=$(shell pwd)
-SUBDIRS:=ADS2 algebra analyza-3 komsem topomet analyza-2 lingebra-2 analyza-1 lingebra-1 graforitmy kombagra temno algebra-2 ozd past ali mast zspo polyedr semgraforitmy vycis slozitost kvg datovky omez logiinf pasmet toky georep paral prekladace algograph aprox tokycykly jarni
+SUBDIRS:=ADS2 algebra analyza-3 komsem topomet analyza-2 lingebra-2 analyza-1 lingebra-1 graforitmy kombagra temno algebra-2 ozd past ali mast zspo polyedr semgraforitmy vycis slozitost kvg datovky omez logiinf pasmet toky georep paral prekladace algograph aprox tokycykly jarni matroidy
 RTDS:=$(wildcard $(addsuffix /*.rtd,$(SUBDIRS))) $(wildcard *.rtd)
 RTXS:=$(wildcard $(addsuffix /*.rtx,$(SUBDIRS))) $(wildcard *.rtx)
 

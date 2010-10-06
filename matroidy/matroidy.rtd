@@ -1,0 +1,15 @@
+\documentclass[a4paper,11pt]{article}
+\input{../stdhead.rtx}
+\input{../defs.rtx}
+
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\B}{\mathcal{B}}
+
+\begin{document}
+\title{Teorie matroidů}
+\maketitle
+\tableofcontents
+\newpage
+\input{10.10.06.rtx}
+\end{document}

@@ -1,0 +1,112 @@
+\section*{Pojmy}
+
+\name{Matroid} je uspořádaná dvojice $\mathcal{m} = @(E, \I@)$, kde $E$ je
+neprázdná nosná množina matroidu a $I@⊂2^E$ je množina nezávislých množin
+splňující:
+→•
+ • $∅∈\I$
+ • $@(I∈\I∧I'@⊂I@)→→ I'∈\I$
+ • $@(I₁,I₂∈\I∧\len{I₁}<\len{I₂}@)→→@(∃e∈I₂\backslash I₁@)@(I₁∪@{e@}∈\I@)$
+←•
+
+Isomorfismus na matroidech funguje obvykle (je to zobrazení, které převádí
+nezávislé na nezávislé).
+
+Minimální závislé množiny (co do inkluze) jsou \name{kružnice}.
+
+\begin{Lemma}\label{circles-lemma}
+Máme matroid $\M=@(E, \I@)$ a $\mathcal{C}$ je množina závislých podmnožin v
+$\M$. Potom platí:
+→•
+ • $∅∉\mathcal{C}$
+ • $(C₁, C₂∈\mathcal{C}∧C₁@⊂C₂)→→(C₁=C₂)$
+ • $(C₁, C₂∈\mathcal{C},C₁≠C₂,e∈C₁∩C₂)→→(∃C₂∈\mathcal{C};C₃∈(C₁∪C₂)-e$
+←•
+\end{Lemma}
+
+\begin{Proof}
+První a druhé je jednoduché, přímo z axiomů.
+
+To třetí dokazujeme sporem. Nechť máme tedy $C₁,C₂$. Ty jsou různé, proto
+existuje $f$, které je v $C₂$ a není v $C₁$. Když ho z $C₂$ odeberu, dostanu
+něco nezávislého. Zkusím přidávat tak, abych dostal maximální nezávislou $I$. Tam
+určitě není $f$. Celé $C₁$ tam také není, proto tam chybí ještě nějaké
+$g∈C₁\backslash I$. A je vidět, že $f≠g$, tedy v $I$ chybí minimálně $2$ prvky
+oproti sjednocení $C₁∪C₂$. Ale sjednocení bez $e$ je jen o $1$ menší. Na $I$
+tedy aplikuji třetí axiom, přidám prvek, ale to je spor s maximalitou $I$, proto
+toto nastat nemůže.
+\end{Proof}
+
+Jednoprvkové kružnice se nazývají \name{smyčky}.
+
+\begin{Statement}
+Nechť $\mathcal{C}@⊂2^E$ o kterém platí podmínky z Lemmatu \ref{circles-lemma}.
+Potom $\I:=@{I|@(I@⊂E@)∧@(∀C∈\mathcal{C}(C\not\subseteq I@)@}$ tvoří matroid
+$\M=@(E,I@)$ a $\mathcal{C}$ jsou kružnice $\M$.
+\end{Statement}
+
+\begin{Proof}
+Protože prázdná nesmí být kružnice, prázdná je v $\I$. Pokud něco neobsahuje
+kružnici, pak ani nic menšího, druhá podmínka také platí.
+
+Třetí dokazujeme sporem, máme dva prvky, $I₁,I₂,\len{I₁}<\len{I₂}$ a kdykoliv
+cokoliv k $I₁$ přidáme z $I₂$, tak dostaneme kružnici/závislou množinu. Zvolme
+nezávislou množinu $I₃$ takovou, že $\len{I₃}>\len{I₁}$ a $\len{I₁\backslash
+I₃}$ je minimální (přidáváme, dokud to jde). Tento rozdíl je neprázdný. Fixujme
+$e∈I₁\backslash I₃$. Definujme $T_f:=(I₃-f+e)$, pro každé $f∈I₃\backslash I₁$, kde to jde.
+
+Pokud $T_f$ je nezávislá, pak zmenším rozdíl, tedy spor s minimalitou
+$\len{I₁\backslash I₃}$. Tedy je závislá, je tam kružnice $C_f$. $e∈C_f, f∉C_f$.
+Pokud $C_f∩(I₃\backslash I₁)=∅→→C_f@⊂(I₃∩I₁+e-f)$. To je spor.
+
+Existuje tedy $∃g∈C_f∩@(I₃\backslash I₁@)$. Aplikujeme třetí podmínku Lemmatu
+\ref{circles-lemma}. $e∈C_f∩C_g;g∈C_f;g∉C_g$, tedy $C_g≠C_f$, tedy
+$∃C@⊂(C_f∪C_g)-e@⊂I₃,C∈\mathcal{C}$, což je spor. Proto původní předpoklad je
+chybný.
+\end{Proof}
+
+Co do inkluze maximální nezávislé množiny jsou \name{báze}, značíme $\B$ nebo
+$\B(\M)$.
+
+\begin{Lemma}\label{base-size-lemma}
+Nechť $B₁,B₂∈\B$. Potom $\len{B₁}=\len{B₂}$
+\end{Lemma}
+
+\begin{Proof}
+Triviálně plyne z výměnného axiomu (třetího).
+\end{Proof}
+
+\begin{Lemma}[Vlastnosti báze]\label{base-props}
+Jednak, existuje alespoň jedna báze. A když mám dvě báze, z jedné něco odeberu a
+přidám něco z druhé, mám opět bázi.
+\end{Lemma}
+
+\begin{Proof}
+Triviálně plyne z prvního a z třetího.
+\end{Proof}
+
+\begin{Lemma}\label{lemma-base-samesize}
+Nechť $\B$ splňuje podmínky v Lemmatu \ref{base-props}. Potom libovolné dvě báze
+jsou stejně velké.
+\end{Lemma}
+
+\begin{Proof}
+Sporem. Máme $\len{B₁}>\len{B₂}$. Vezmu prvek $e∈B₁\backslash B₂$, aplikuji
+druhou podmínku, získám opět bázi, stejně velkou, pokračuju, dokud mi nedojdou
+prvky $e$ ‒ ale potom mám něco většího, než $B₂$.
+\end{Proof}
+
+\begin{Statement}
+Vlastnosti báze jsou dostatečné zadání matroidu (když vezmu všechny podmnožiny
+bazí, mám $\I$).
+\end{Statement}
+
+\begin{Proof}
+První triviální, druhé také.
+
+Pro spor předpokládejme, že třetí neplatí. Máme dvě nezávislé $I₁,I₂,
+\len{I₁}<\len{I₂}$ a vezmu libovolný prvek z $I₂$ $e$, který není v $I₁$. Když
+ho přidám, dostanu závislou.
+
+Pro ně existují nějaké báze, tam lze něco přestrkovat.
+\end{Proof}
