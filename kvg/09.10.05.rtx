@@ -1,14 +1,16 @@
 \section{Úvod, pojmy}
 Často budeme pracovat v nějakém $ℝ^d$, což jsou $d$-tice reálných čísel ‒ $@(x₁, …, x_d@)$.
 
-V lineární algebře se například používaly podprostory roviny (lineární) ‒ přímky skrz počátkem. V geometrii budeme mít i přímky,
-které neprocházejí počátkem ‒ \name{afinní podprostory}. Nějaký $(d-1)$ dimenzionální afinní podprostor $ℝ^d$ nazveme
-\name{nadrovina}. Afinní podprostor lze definovat jako $L+x=@{l+x;l∈L@}$, kde $L$ je nějaký podprostor.
+V lineární algebře se například používaly podprostory roviny (lineární) ‒ přímky
+skrz počátek. V geometrii budeme mít i přímky, které neprocházejí počátkem ‒
+\name{afinní podprostory}. Nějaký $(d-1)$ dimenzionální afinní podprostor $ℝ^d$
+nazveme \name{nadrovina}. Afinní podprostor lze definovat jako
+$L+x=@{l+x;l∈L@}$, kde $L$ je nějaký podprostor.
 
 \name{Lineární obal} množiny $X@⊂ℝ^d$ je nejmenší podprostor $R^d$, který obsahuje $X$ (což je průnik všech podprostorů, které jej
 obsahují). \name{Afinní obal} definujeme obdobně.
 
-Afinní kombinace bodů $a₁,…,a_n∈X$ je $α₁·x₁+α₂·a₂+…+α_n·a_n$, $α₁,…,α_n∈ℝ$ a $\Σ_{i=1}^n α_i = 1$. Pokud afinní prostor obsahuje
+Afinní kombinace bodů $a₁,…,a_n∈X$ je $α₁·a₁+α₂·a₂+…+α_n·a_n$, $α₁,…,α_n∈ℝ$ a $\Σ_{i=1}^n α_i = 1$. Pokud afinní prostor obsahuje
 počátek, pak je to podprostor. Tedy, když některé z $a_i$ je počátek, pak je to podprostor. Jinak můžeme celou množinu posunout
 tak, aby jeden z nich nula byl, najít lineární obal a posunout zpět.
 
@@ -22,7 +24,7 @@ Pokud máme v $ℝ^d$ nejvíce $d+1$ bodů, afinní nezávislost zjistíme pomoc
 $@(a₁-a_{d+1},…,a_d-a_{d-1}@)$, tak jsou lineárně nezávislé právě když jsou původní afinně nezávislé. To odpovídá nenulovému
 determinantu. Je to opět trik s posunutím o jeden z bodů, tentokrát o $a_d$.
 
-Nadrovani $ℝ^d$ se dá zapsat jako $h=@{x∈ℝ^d;a₁·x₁+…+a_n·x_n=b@}$, neboli je to řešení jedné lineární rovnice. Lze psát také jako
+Nadrovina $ℝ^d$ se dá zapsat jako $h=@{x∈ℝ^d;a₁·x₁+…+a_n·x_n=b@}$, neboli je to řešení jedné lineární rovnice. Lze psát také jako
 $@<a,x@>=b$, kde $@<,@>$ značí standardní skalární součin vektorů.
 
 \name{Poloprostor} (uzavřený) v $R^d$ je množina $@{x∈ℝ^d;@<a,x@>≥b@}$, $a∈ℝ^d\backslash@{0@}$, $b∈ℝ$. Nadrovina $@<a,x@>=b$ tvoří
@@ -35,8 +37,10 @@ $$
 ∀x,y∈C;∀λ∈@(0,1@);λ·x+(1-λ)·y∈C
 $$
 
-\name{Konvexní obal} množiny $X@⊂ℝ^d$ je nejmenší konvexní množina, která obsahuje tuto množinu, tedy průnik všech konvexních,
-které ji obsahují. V rovině jsou to konvexní mnohoúhelníky, v prostoru už vypadají zajímavě (jsou to konvexní mnohoúhelníky).
+\name{Konvexní obal} množiny $X@⊂ℝ^d$ je nejmenší konvexní množina, která
+obsahuje tuto množinu, tedy průnik všech konvexních, které ji obsahují. V rovině
+jsou to konvexní mnohoúhelníky, v prostoru už vypadají zajímavě (jsou to
+konvexní mnohostěny).
 
 Konvexní obal je také množina všech konvexních kombinací bodů z $X$.
 
@@ -54,20 +58,30 @@ t₁,…,t_n &≥& 0
 Konvexní obal $X@⊂ℝ^d$ je rovna množině všech konvexních kombinací bodů z $X$.
 \end{Lemma}
 
+Tedy, že stavba zevnitř a zvenčí je stejná.
+
 \begin{Proof}
 $$C:=conv(X) = \∩_{C' \hbox{konvexní}, X@⊂C'} C'$$
 
+Tedy, že každá konvexní kombinace leží v každé konvexní množině. No, kdyby v ní
+neležela, tak ta množina není konvexní, že….
+
 $$\tilde{C} = @{\hbox{konvexní kombinace bodů z $X$}@}$$
 
-Každá konvexní kombinace leží v $C$, tedy $\tilde{C}@⊂C$. Indukcí podle $n$.
+Každá konvexní kombinace leží v $C$, tedy $\tilde{C}@⊂C$.
 
 $C@⊂\tilde{C}$ ‒ na to stačí, že $\tilde{C}$ je konvexní.
+
+Když $n=2$, tak to přímo odpovídá definici ‒ úsečka.
+
+Když $n>2$ ‒ lze přepočítat na úsečku, která má protějšek na vnější stěně.
+\TODO{Tohle je dost podezřelé a na zkoušce neprošlo, skripta, prosím}.
 \end{Proof}
 
 \subsection{Základní výsledky o konvexních množinách $ℝ^d$}
 
 \begin{Statement}[Oddělovací]
-Nechť $C,D@⊂ℝ^d$ konvexní, $C∩D=∅ →→ ∃$ nadmnožina $h$ oddělující $C$ od $D$ (neostře) ‒ $C$ je v jednom uzavřeném poloprostoru,
+Nechť $C,D@⊂ℝ^d$ konvexní, $C∩D=∅ →→ ∃$ nadrovina $h$ oddělující $C$ od $D$ (neostře) ‒ $C$ je v jednom uzavřeném poloprostoru,
 $D$ v druhém.
 
 Pokud je $C$ uzavřená a omezená, $D$ uzavřená, pak je lze oddělit ostře.
@@ -75,4 +89,6 @@ Pokud je $C$ uzavřená a omezená, $D$ uzavřená, pak je lze oddělit ostře.
 
 \begin{Proof}
 Nejdříve se předpokládá, že obě jsou kompaktní. Pustím podprostor v polovině jejich vzdáleností, takže je pak opravdu oddělí.
+
+\TODO{Doplnit ze skript}
 \end{Proof}

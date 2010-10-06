@@ -18,6 +18,10 @@ Sporem. Nechť se žádné dvě neprotínají. Vezmeme $R$ dostatečně velké p
 $\mathcal{C}=@{c'+v;v∈@{-R,-R+1,…R@}^d@}$. Žádné z těchto se neprotínají (protože se neprotíná $C'$ s žádnou $C''∈\mathcal{C}$).
 Ke krychli přidáme nějaký okraj, aby se tam všechny tyto vešly, tedy jsou uzavřené v $@<-R-D,R+D@>^d$, kde $D$ je poloměr $C'$.
 Potom součet objemů těchto musí být menší než objem krychle. Ale to vyjde příliš málo vzhledem k objemu $C$.
+
+Objem okraje roste s $R^{d-1}$ (má konstantní tloušťku), objem vnitřku s $R^d$,
+to, co chybělo, musí někdy dorůst, pokud $vol(C')>1$. Ale pokud se neprotínají,
+tak se to tam nemá kam vejít.
 \end{Proof}
 
 Máme $v$ jako v tvrzení \ref{minko-tvrz-pomoc}. Tedy existuje $∃x∈C';x∈C'+v$, ze symetrie dostaneme, že jak $x-v$, tak $v-x∈C'$.
@@ -42,7 +46,8 @@ Existuje nekonečně mnoho dvojic $@(m,n@)$ tak že $\len{α-\frac{m}{n}}≤\inv
 \end{Follows}
 
 \section{Incidence bodů a přímek}
-Máme $P$ množinu $m$ bodů v rovině a $L$ množina $n$ přímek v rovině. Chceme $I(P,L):=@{@(p,l@);p∈P,l∈L,p∈l@}$. Chceme vědět, jaká
+Máme $P$ množinu $m$ bodů v rovině a $L$ množina $n$ přímek v rovině. Chceme
+$I(P,L):=\len{@{@(p,l@);p∈P,l∈L,p∈l@}}$. Chceme vědět, jaká
 největší množina to může být.
 
 →•
@@ -51,7 +56,7 @@ největší množina to může být.
 ←•
 
 \begin{Statement}[Szemerédi-Trotter]\label{SzemerediTrotter}
-$∀m,n≥1: I(m,n)=O@(m^\frac{2}{3}+n^\frac{2}{3}+m+n@)$ a tento odhad je nejlepší možný až na hodnotu konstanty (a ta konstanta je
+$∀m,n≥1: I(m,n)=O@(m^\frac{2}{3}·n^\frac{2}{3}+m+n@)$ a tento odhad je nejlepší možný až na hodnotu konstanty (a ta konstanta je
 „rozumná“).
 \end{Statement}
 

@@ -24,7 +24,7 @@ Slabší verze je znaménková posloupnost. Vezmeme posloupnost čísel $∈@{0,
 bod, kde polynomy nabývají takových znamének v tomto bodě.
 
 \begin{Statement}[Müllerova-Thorova]
-Nechť $p₁,p₂,…,p_n$ jsou mnohostěny $d$ proměnných maximálního stupně $D$. Potom maximální počet stěn arrangmentu nulových
+Nechť $p₁,p₂,…,p_n$ jsou polynomy $d$ proměnných maximálního stupně $D$. Potom maximální počet stěn arrangmentu nulových
 množin těchto polynomů (tedy i znaménkových posloupností) je:
 
 $$

@@ -25,6 +25,8 @@ Svaz $P^*$ je převrácený svaz $P$.
 Graf je grafem mnohostěnu právě když je rovinný a vrcholově $3$-souvislý.
 \end{Statement}
 
+\TODO{Důkaz?}
+
 Stěna dimenze $0$ je vrchol, $1$ je hrana, $2$ je mnohoúhelník, $d-1$ faseta.
 
 Mnohostěn $P$ je \name{simpliciální}, pokud každá jeho vlastní stěna je simplex.
@@ -33,15 +35,22 @@ Mnohostěn $P$ je \name{simpliciální}, pokud každá jeho vlastní stěna je s
 Pokud vrcholy $P$ jsou v obecné poloze, potom $P$ je simpliciální.
 \end{Observation}
 
-$P$ je \name{jednoduchý}, pokud každá $j$-stěna je obsažena v právě $d-1$ fasetách (pro $j=0,…,d-2$).
+$P$ je \name{jednoduchý}, pokud každá $j$-stěna je obsažena v právě $d-j$ fasetách (pro $j=0,…,d-2$).
 
 \begin{Note}
-V jednoduchém mnohostěnu v okolí vrcholu vypadá kombinatoricky jako okolí $d$-dimenzionální krychle nebo simplexu.
+Krychle je jednoduchá.
+\end{Note}
+
+\begin{Note}
+V jednoduchém mnohostěnu v okolí vrcholu vypadá kombinatoricky jako okolí
+$d$-dimenzionální krychle nebo simplexu (tedy, vždy má $d$ sousedů).
 \end{Note}
 
 \begin{Tvrz}
 $P$ je jednoduchý $←→P^*$ je simpliciální.
 \end{Tvrz}
+
+\TODO{Důkaz?}
 
 \subsection{Maximální počet stěn mnohostěnu}
 \begin{Statement}[Upper bound theorem]
@@ -54,7 +63,7 @@ Maximum je známo přesně.
 
 Dolní odhad je pomocí cyklických mnohostěnů.
 
-Máme momentovou křivku v rovině, tedy $@{t, t²,…,t^d@@} t∈ℝ$. Tedy, v rovině je to parabola.
+Máme momentovou křivku v $ℝ^d$, tedy $@{t, t²,…,t^d@} t∈ℝ$. Tedy, v rovině je to parabola.
 
 \begin{Lemma}
 Každá nadrovina protíná momentovou křivku v nejvýše $d$ bodech.

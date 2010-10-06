@@ -1,17 +1,55 @@
 \begin{Lemma}[Farkasovo]
 Máme matici s $d$ řádky a $m$ sloupci (nazveme ji $A$). Chceme najít takové $x$, aby $Ax=0$. Toto má vždy minimálně triviální
-řešení. Buď má i nějaké další, nebo existuje nějaké $y$, že $y^TA$ má všechny složky záprné.
+řešení. Buď má i nějaké další, nebo existuje nějaké $y$, že $y^TA$ má všechny
+složky záporné.
 \end{Lemma}
 
 \begin{Proof}
 Plyne z věty o oddělování ‒ přečteme matici $A$ po sloupečcích, tím získáme množinu bodů, označme ji $V$. Mohou nastat dva případy
 ‒ buď $0$ je obsažéna v konvexní kombinaci, potom má netriviální řešení a nebo není. Tedy se dá oddělit nadrovinou
-$h=@{x:@<y,x@>=b@}$. Poloprostor, kde je $V$ bude $<b$ (kdyžtak přeznačíme znaménka u $y$). Potom $@<y,0@><@<y,a_i@>$.
+$h=@{x:@<y,x@>=b@}$. Poloprostor, kde je $V$ bude $<b$ (kdyžtak přeznačíme znaménka u $y$). Potom $@<y,0@>>@<y,x_i@>$.
+
+\MPOST{ilust}
+u := .8cm;
+path x; x := ((-1,-1)--(-1,0)--(0,1)--(1,0)--cycle) scaled u;
+draw x;
+draw x shifted (4u,0);
+draw (-1.2u,-1.2u)--(1.2u,-.3u);
+pickup pencircle scaled 3;
+draw (0,-u);
+draw (4u,0);
+\ENDMPOST{Dva případy}
 \end{Proof}
 
 \begin{Statement}[Carathéodory]
 $X@⊂ℝ^d∧ x∈conv(X) →→ ∃Y@⊂X∧ \len{Y}≤d+1∧x∈conv(Y)$.
 \end{Statement}
+
+\begin{Proof}
+Nechť je $a$ konvexní kombinace alespoň $d+2$ bodů. Potom máme soustavu:
+\begin{eqnarray*}
+X·\vec{t} &=& a\\
+\vec{t}·\vec{1} &=& 1
+\end{eqnarray*}
+
+\textit{$\vec{t}$ jsou $t_i$ z konvexní kombinace, $X$ je množina $d+2$ bodů
+zapsaná za sebou jako sloupečky, $\vec{1}$ jsou samé jedničky}.
+
+Tato soustava má $d+1$ řádků, a alespoň $d+2$ sloupečků, máme slíbené nezáporné
+řešení, tedy nějaké má.
+
+Pokud je už něco nulové, tak to jde jednoduše vyhodit.
+
+Pokud ne, vybereme nějakou závislou proměnnou a začneme ji posouvat k nule. Co
+se stane první?
+→•
+ • Doleze až k nule. Můžeme ji vyhodit, ostatní jsou stále nezáporné.
+ • Něco jiného doleze k nule (v tu chvíli stop, aby nepřelezlo). No, vyhodíme
+   to.
+←•
+
+Něco k nule dolézt musí.
+\end{Proof}
 
 \begin{Lemma}[Radonovo]\label{radon}
 $A@⊂ℝ^d, \len{A} = d+2$. Potom existují disjunktní množiny $A₁,A₂@⊂A$ takové, že $conv(A₁)∩conv(A₂)≠∅$.
@@ -32,10 +70,19 @@ Potom všechny $C_i$ mají neprázdný průnik.
 \end{Statement}
 
 \begin{Proof}
-Indukcí z lemmatu \ref{radon}. Klíčový je krok pro $n≥d+2$. Předpokaládáme, že $C₁,…,Cn$ jako ve větě. Když libovolnou z nich
-vynecháme, tak existuje bod, který mají společný. Označme jej $a_i$ (při vynechání $C_i$. Uvažme $a₁,…,a_{d+2}$. Aplikujeme
-Radonovo lemma a dostaneme nějaké $x$. Nyní dokážeme, že takové $x$ leží ve všech. To se vezme přes úsečky/podmnožiny, musí se
-někde protínat, tam, kde se protínají, je všechno.
+Indukcí z Lemmatu \ref{radon}. Klíčový je krok pro $n≥d+2$.
+
+Předpokaládáme, že $C₁,…,Cn$ jako ve větě. Když libovolnou z nich
+vynecháme, tak existuje bod, který mají společný. Označme jej $a_i$ (při
+vynechání $C_i$).
+Uvažme $a₁,…,a_{d+2}$. Aplikujeme Radonovo lemma a dostaneme nějaké $x$. Nyní dokážeme, že takové $x$ leží ve všech.
+
+Radon nám rozdělil (viz důkaz) původní body na dvě disjunktní množiny
+(neprázdné) ‒ $A₁, A₂$. Doplňky k těmto mají tedy méně množin, pro ně věta
+platí. Navíc, $x$ je konvexní kombinací vybraných bodů, musí tedy být i v těch
+průnicích.
+
+\TODO{Raději zkontrolovat podle skript}
 \end{Proof}
 
 \begin{Statement}[Hellyho nekonečná]\label{hell-inf}
@@ -49,19 +96,24 @@ i celé $\mathcal{F}$ má neprázdný průnik.
 \end{Proof}
 
 Nechť $X$ je $n$-bodová množina v $ℝ^d$. Potom $x∈ℝ^d$ se nazývá \name{centrem} $X$, pokud každý uzavřený poloprostor obsahující
-$x$ obsahuje $\frac{n}{d+1}$.
+$x$ obsahuje alespoň $\frac{n}{d+1}$.
 
 \name{Medián} je hodnota taková, že polopřímka „nalevo“ obsahuje alespoň půlku bodů a „napravo“ také.
 
-\begin{statement}
+\begin{Statement}
 Každá konečná $X@⊂ℝ^d$ má alespoň jedno centrum.
-\end{statement}
+\end{Statement}
 
 \begin{Proof}
-$x$ je centrum $X←→∀H$ otevřený poloprostor $\len{H∩X}>\frac{d}{d+1};x∈H$. Místo $H$ budeme brát konvexní $C_H$, která bude
-konvexní obal všech bodů z průniku $X$ a $H$.
+$x$ je centrum $X←→∀H$ otevřený poloprostor takový, že $x∈H$ platí $\len{H∩X}>\frac{n}{d+1}$.
+Místo $H$ budeme brát konvexní $C_H$, která bude konvexní obal všech bodů z
+průniku $X$ a $H$.
 
-Každých nejvýše $d+1$ množin $C_H$ má neprázdný průnik. Vynechá málo bodů na to, aby to vyšlo.
+Každých nejvýše $d+1$ množin $C_H$ má neprázdný průnik. Vynechá málo bodů na to,
+aby to vyšlo.
+
+\TODO{Tohle je hodně podezřelé. Nemám dokonce i protipříklad? Jak se použije
+toho, že je to $ℝ^d$? Skripta}.
 \end{Proof}
 
 \begin{Statement}[O sandwichi]
