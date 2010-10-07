@@ -1,0 +1,85 @@
+\section{Minory}
+
+Graf $H$ je \name{minorem} $G$, pokud existují podmnožiny disjunktní
+$V₁,…,V_k@⊂V(G)$, každý $G@[V@]$ je souvislý a platí, že pokud $(v₁,v₂)∈E(H)→→∃$
+hrana mezi nějakými vrcholy $V₁$ a nějakým z $V₂$
+
+Alternativní definice je taková, že $H$ jde získat posloupností vynecháváním
+hran, izolovaných vrcholů a kontrakcemi hran.
+
+\begin{Priklad}
+Nechť $\mathcal{G}$ je třída grafů uzavřená na minory (tzn. pokud $G∈\mathcal{G}$,
+potom i jeho minor $G'∈\mathcal{G}$. Například minory.
+\end{Priklad}
+
+\begin{Statement}[Kuratovského s minory]
+Kuratovského věta platí i s minory, nejen s podrozděleními.
+\end{Statement}
+
+\begin{Hypothesis}[Hadwidgerova hypotéza]
+Pokud $χ(G)≥k→→G$ obsahuje $K_k$ jako minor.
+\end{Hypothesis}
+
+Pro malé případy to platí, lze vyzkoušet.
+
+Pro $k=4$ to můžeme dokázat obměnou implikace.
+
+\begin{Lemma}
+Nechť $G$ je hranově maximální graf bez minoru $K₄$ na alespoň $3$ vrcholech.
+Pak $G$ lze vytvořit z trojúhelníků lepením za hrany (eg. je to $3$-strom).
+\end{Lemma}
+
+\begin{Proof}
+Předpokládejme, že je $3$-souvislý. Mám dva vrcholy, mezi nimi musí vézt
+alespoň $3$ vrcholově disjunktní cesty, alespoň $2$ z toho tedy mají vrcholy. Ty
+původní vrcholy můžu zahodit a stále to je souvislé. Potom ale musí obsahovat
+minor $K₄$.
+
+Kdyby nebyl souvislý, tak mezi komponenty můžu přidat hranu a tím určitě nemůžu
+vytvořit minor $K₄$.
+
+Kdyby nebyl $2$-souvislý, tak by existoval vrchol, který po utržení rozpadne
+tuto věc na dvě části. Ten má v každé komponentě alespoň jednoho souseda, můžu
+mezi ně přidat hranu. Ale to to taky nemůže vytvořit $K₄$.
+
+Obsahuje tedy $2$-řez. Když jsou spojeny hranou, tak ho rozložím na dva, který
+jsou hranově maximální bez minoru $K₄$. Hurá, indukce.
+
+Když tedy nejsou spojeny, tak tam přidám hranu. Musel mi vzniknout minor $K₄$,
+ale to opět nejde.
+\end{Proof}
+
+Přidám-li hrany, můžu to získat lepením trojúhelníků (přidávání hran barevnost
+nesnižuje, to je OK). A to lepení už mi tu $3$-barevnost zaručí (trojúhelník je
+$3$-barevný, při lepení jen přejmenovávám barvy).
+
+Pro pětku to plyne z věty o 4 barvách, šestka už je slavný výsledek.
+
+Graf $G$ je \name{chordální}, pokud neobsahuje indukovanou kružnici na alespoň
+$4$ vrcholech.
+
+\begin{Tvrz}
+Nechť $G$ je chordální (souvislý, ne úplný) a $V$ je minimální (co do inkluze)
+řez. Potom $G[V]$ je úplný graf.
+\end{Tvrz}
+
+\begin{Proof}
+Viz georep. Kdyby chyběla hrana, najdu nejkratší cesty mezi nespojenými vrcholy
+v rámci každé komponenty, dohromady to tvoří kružnici bez chordy.
+\end{Proof}
+
+\begin{Statement}
+Graf $G$ je chordální $←→$ je průnikový graf podstromů ve stromě.
+\end{Statement}
+
+\begin{Proof}
+Viz georep.
+\end{Proof}
+
+\begin{Lemma}[Hellyho vlastnost]
+Nechť $T₁,…,T_k$ jsou podstromy stromu $T$ a každé dva mají neprázdný průnik.
+Pak všechny mají neprázdný průnik.
+\end{Lemma}
+
+\name{Stromová šířka} $tw(G)$ je takové nejmenší $k$ takové, že existuje
+chordální $G'$ takový, že $G@⊂G'$ a velikost kliky $w(G')=k+1$.

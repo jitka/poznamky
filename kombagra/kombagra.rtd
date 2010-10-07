@@ -27,4 +27,6 @@
 \input{12.01.08.rtx}
 \input{12.08.08.rtx}
 \input{12.15.08.rtx}
+% Trojka
+\input{10.10.07.rtx}
 \end{document}
