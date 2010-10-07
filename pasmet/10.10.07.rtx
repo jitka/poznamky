@@ -1,0 +1,59 @@
+\section{Úvod}
+
+Dokazovací technika. Tady je příklad, že $R(k,k)>2^{\frac{k}{2}}$ ($R(k,l)$ je
+minimální velikost v grafu, kde musí buď být $K_k$ nebo $K_l$ v jeho doplňku).
+Naházíme si náhodný graf na $n$ vrcholech. Spočítá se horní odhad
+pravděpodobnosti, že to tam je. Pokud to je menší, než $1$, pak to nemusí nastat
+a pro takto velký graf to ještě neplatí.
+
+\section{Pravděpodobnost}
+
+\name{Pravděpodobnostní prostor} je $Ω, Σ, P$, kde $Ω$ je množina elementárních
+jevů, $Σ$ je sigma-algebra zajímavých/měřitelných jevů a $P:Σ→@<0,1@>$
+splňující:
+
+→•
+ • $P(∅)=0$
+ • $P(A∩B)=0→→P(A∪B)=P(A)+P(B)$
+ • $P(Ω)=1$
+←•
+
+Obecně $Σ@⊂2^Ω$, kdyby to bylo rovno, tak je to fajn, ale občas to nejde.
+
+V konečném případě, pokud máme $Ω=\∪ω_i$ a ty nenastávají zároveň, potom
+$P(@{ω₁…ω_n@})=\Σ_{i=1}^nP(@{ω_i@})=\Σ_{i=1}^n P_i$.
+
+\subsection{Subaditivita pravděpodobnosti}
+
+\begin{Lemma}
+$$P(A∪B) ≤ P(A) + P(B)$$
+\end{Lemma}
+
+\begin{Proof}
+Lze upočítat, že $P(A∪B) = P(A)+P(B)-P(A∩B)$, každá pravděpodobnost je
+nezáporná.
+\end{Proof}
+
+Lze to rozšířit i na libovolný počet množin, takže:
+
+$$
+P(\∪A_i)≤\ΣP(A_i)
+$$
+
+Nebo, jinak:
+
+$$
+Pr@[∃iφ_i@] ≤ \ΣPr@[φ_i@]
+$$
+
+\subsection{Nezávislost jevů}
+
+Jevy $A$ a $B$ jsou \name{nezávislé} znamená, že $P@(A∩B@)=P@(A@)·Pr@(B@)$.
+
+Pokud $P(B)≠0$, potom je to také:
+
+$$
+P(A)=\frac{P(A∩B)}{P(B)}
+$$
+
+(Toto používá podmíněnou pravděpodobnost).
