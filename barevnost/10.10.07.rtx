@@ -1,0 +1,141 @@
+\section{Seznamová barevnost}
+
+Máme graf $G$, každý vrchol má přiřazen seznam přípustných barev $L_v$. Cílem je
+nalézt obarvení tak, aby každý vrchol měl barvu ze svého seznamu a dva sousedi
+nebyli stejní.
+
+\name{Vybíravost} grafu $G$ je nejmenší $k$ takové, že pro každé seznamy délky
+alespoň $k$ existuje obarvení.
+
+Zcela očividně platí, že $χ(G)≤χ_l(G)$, protože můžu všem dát stejné seznamy.
+Lze najít graf, kde je to ostré (např. $K_{3,3}$).
+
+Opačně je to zcela očividně $Δ+1$.
+
+Graf $G$ je \name{$d$-vybíravý}, jestliže pro každé seznamy $L_v$ takové, že
+$\len{L_v}=d(v)$ existuje přípustné obarvení.
+
+\begin{Observation}
+Obě může nastat. Např. trojúhelník takto obarvit nejde.
+\end{Observation}
+
+\begin{Tvrz}
+Nechť $G$ je souvislý graf a $L_v$ jsou seznamy barev, takové, že pro každý
+vrchol velikost seznamu je alespoň jeho stupeň a alespoň pro jeden vrchol je ta
+nerovnost ostrá. Potom existuje přípustné obarvení.
+\end{Tvrz}
+
+\begin{Proof}
+Vezmeme si libovolnou kostru, zakořením v tom vrcholu, co má jeden navíc.
+Postupuji nahoru, vždy mám ještě jednu barvu volnou (buď mám rodiče, ten je
+neobarven, nebo je to ten s jednou barvou navíc).
+\end{Proof}
+
+\subsection{Stupňově vybíravé grafy}
+
+\name{Blok} grafu je maximální úplný $2$-souvislý podgraf.
+
+\name{Gallaiův strom} je souvislý graf, jehož každý blok je buď úplný graf nebo
+lichá kružnice. Vznikne lepením zmíněných kusů za vrcholy.
+
+\begin{Statement}\label{gallai-tree-statement}
+Nechť $G$ je souvislý graf. $G$ $d$-vybíraví $←→$ $G$ není gallaiův strom.
+\end{Statement}
+
+\begin{Lemma}\label{souvis-nek-nec-lemma}
+Nechť $G$ je $2$-souvislý graf, který není kružnice (ani sudá) a není úplný graf.
+Potom $∃v∈V(G);∃v',v''∈N_G(v)$ takové, že $(v',v'')∉E(G)$ a $G\backslash v',
+v''$ je souvislý.
+\end{Lemma}
+
+\begin{Proof}
+Předpokládejme na chvíli, že $G$ je $3$-souvislý. Existují v něm dva nesousední
+vrcholy a nejkratší cestu mezi nimi. Tedy, ta cesta je indukovaná. Pak vezmu
+jeden z nich jako $v'$, další na cestě $v$ a třetí jako $v''$. Graf zůstane
+souvislý po jejich odebrání.
+
+Nechť tedy obsahuje $2$-řez $x,y$ takový, že nejmenší komponenta po jeho
+odebrání je co nejmenší. Na chvíli předpokládejme, že $(x,y)∈E(G)$. Mám alespoň
+$2$ komponenty, $x$ bude $v$ a vezmu dva sousedy z různých komponent. Je třeba
+ověřit, že po odebrání to zůstane souvislé. Vezmu libovolné $z$ v jedné komponentě
+a vedou z něj alespoň $2$ vrcholově disjunktní cesty do řezu, tedy je to
+souvislé.
+
+Zbývá tedy, když hranou spojeny nejsou. Opět zvolím $2$ sousedy $x$. Každý
+vrchol ale má cestu alespoň do $x$ nebo do $y$. Rozdělím je do dvou množin,
+$Z_x$ a $Z_y$, podle toho, kam mohou, když odeberu $v'$ a $v''$. Ty jsou
+disjunktní (jinak to je souvislé a nemám co řešit). Ptáme se, jak vypadají
+průniky s nejmenší komponentou. Průnik $Z_x$ s ní je prázdný, jinak bych mohl
+vzít $v'$ a $x$ jako řez a měl bych menší komponentu. Obdobně ale do $y$. Tedy,
+ta menší komponenta je jen jeden vrchol $v'$.
+
+Zakontrahuji $v'$ a pokračuji indukcí. Pokud mi vyjde úplný graf (kružnice
+nemůže), tak to nějak vykoukám (např $v'$ ten kontrahovaný, jeden soused $v$ a
+něco jiného $v''$). Když z indukce vypadnou $v_H, v_H', v_H''$ a nepoužívám
+hranu vzniklou kontrakcí mezi $v_H$ a $v_H'$ (BÚNO), pak je vezmu tak, jak
+jsou. Pokud ano, pak jediný případ je tak, že jeden je $v_H$ a jeden $v_H'$,
+místo $v_H'$ vezmu $v'$ a zase v pohodě.
+\end{Proof}
+
+\begin{Proof}
+Od té věty: Dokážeme něco trochu silnějšího ‒ pokud to nejde obarvit, pak $G$ je
+gallaiův strom a v každém bloku $B$ lze přiřadit seznam $L_B$ takový, že:
+→•
+ • Pokud dva bloky mají společný vrchol, jejich seznamy jsou disjunktní.
+ • Seznam vrcholů $v$ je sjednocení přes všechny bloky, ve kterém se vyskytuje.
+←•
+
+To dokážeme indukcí podle počtu bloků. Při jednom bloku je to buď lichá kružnice
+nebo úplňák a všechny vrcholy mají stejný seznam, podle Lemma
+\ref{souvis-nek-nec-lemma}.
+
+Jinak se podívám na libovolný koncový blok. Dle indukce, pokud zbytek nelze
+obarvit, potom je to gallaiův strom a seznam je dle tvrzení.
+
+Pokud pro každou podmnožinu $L_v$ o $d$ prvcích ($d$ je stupeň $v$ v tom
+zbytku) existuje obarvení, potom mám dostatek barev na doobarvení (zbyde mi
+alespoň jednu navíc, protože to nějak přečísluji).
+\end{Proof}
+
+\begin{Follows}
+Nechť $G$ je $2$-souvislý graf, který není ani lichá kružnice ani úplný. $G$ je
+potom stupňově vybíravý.
+\end{Follows}
+
+\begin{Proof}
+Předpokládejme, že existují dva vrcholy, jejichž seznamy jsou různé. Vezmu cestu
+mezi nimi a podívám se na seznamy na této cestě, musím tam najít dva sousedy,
+kteří se takto liší.
+
+Uděláme trik s kostrou. Jeden ze seznamů musí mít barvu navíc oproti druhému.
+Odstraním tento vrchol, najdu kostru, zakořením v druhém, přidám ho zpět jako
+souseda kořene. Obarvím napřed odstraněný vrchol. Když barvím kořen, tak má sice
+tolik barev, kolik sousedů, ale jedna není jeho, tak mu ji nesebere.
+
+Pokud mají tedy všechny stejné seznamy, tak mají stejný stupeň. Uvážím, když
+graf je sudá kružnice, ale ta má barevnost $2$ a stupeň taky.
+
+Lze tedy použít lemma \ref{souvis-nek-nec-lemma}. Uvážíme kostru grafu
+$G\backslash v',v''$, má kostru, zakořeníme ve $v$, tyto dva vrcholy přilepíme
+pod kořen, ty dostanou stejnou barvu, pak už pokračuji v pohodě.
+\end{Proof}
+
+\begin{Note}
+Toto dokazuje víc ‒ pokud tam jsou dva s různými seznamy, tak nevadí lichá
+kružnice ani úplný, to obarvím také.
+\end{Note}
+
+\begin{Statement}[Brooksova pro vybíravost]
+Nechť $G$ je souvislý graf, který není lichá kružnice nebo úplný graf. Pak
+$χ_L(G)<Δ$.
+\end{Statement}
+
+\begin{Proof}
+Toto plyne z věty \ref{gallai-tree-statement}. Pokud to není gallaův strom, pak
+je to zřejmé (ořežu a hotovo). Když $G$ je $2$-souvislý a je to gallaiův strom,
+potom je to buď lichá kružnice nebo úplný graf (je celý jeden blok).
+
+Nechť tedy není $2$-souvislý, pak vezmu jeden koncový blok (takový, co má jen
+jednu artikulaci, je gallaiovým listem). Vezmu nějaký jeho jiný vrchol, ten má
+menší vrchol, než maximální.
+\end{Proof}

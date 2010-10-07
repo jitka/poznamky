@@ -1,0 +1,11 @@
+\documentclass[a4paper,11pt]{article}
+\input{../stdhead.rtx}
+\input{../defs.rtx}
+
+\begin{document}
+\title{Barevnost}
+\maketitle
+\tableofcontents
+\newpage
+\input{10.10.07.rtx}
+\end{document}
