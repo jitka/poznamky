@@ -1,0 +1,9 @@
+Hamingovy kódy.
+
+\begin{Priklad}
+Město, v něm spolky. Velikost každého spolku je lichá, průniky jsou sudé. Kolik
+tam může být spolků? Určitě alespoň tolik, jako lidí (jednočlenné spolky).
+
+Na druhou stranu to ale nejde lépe. Vezmeme charakteristické vektory. Ty musí
+být lineárně nezávislé.
+\end{Priklad}

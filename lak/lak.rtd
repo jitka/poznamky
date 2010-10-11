@@ -1,0 +1,11 @@
+\documentclass[a4paper,11pt]{article}
+\input{../stdhead.rtx}
+\input{../defs.rtx}
+
+\begin{document}
+\title{Aplikace lineární algebry v kombinatorice}
+\maketitle
+\tableofcontents
+\newpage
+\input{10.10.11.rtx}
+\end{document}
