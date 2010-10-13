@@ -1,0 +1,79 @@
+\subsection{Ranková funkce}
+
+\name{Ranková funkce} je funkce $r:2^E→ℤ₀^+$. Na matroidech funguje tak, že
+přiřazuje velikost maximální nezávislé podmnožiny.
+
+$r(\M)$ je rank celého matroidu a je to zřejmé, co je.
+
+\begin{Lemma}[Vlastnosti rankové funkce]\label{rank-spec-lemma}
+→•
+ • $0≤r(X)≤\len{X}$
+ • $X@⊂Y→→r(X)≤r(Y)$
+ • $X,Y@⊂E;r(X∪Y)+r(X∩Y) = r(X)+r(Y)$
+←•
+\end{Lemma}
+
+\begin{Proof}
+První a druhé je vidět.
+
+Třetí je potřeba utlouct, vezmeme si ty nejlepší nezávislou v průniku a v
+sjednocení. Poté se začne počítat s těma „ušima“ a utluče se to.
+\end{Proof}
+
+\begin{Lemma}\label{rank-add-items}
+Nechť $\M(E,\I)$ je matroid a $r:2^E→ℤ₀^+$ splňuje vlastnosti z Lemma
+\ref{rank-spec-lemma}. Potom $X,Y@⊂E$ takevé, že $∀y∈Y\backslash X;r(X+y)=r(X)$.
+Poto $r(X∪Y) = r(X)$
+\end{Lemma}
+
+\begin{Proof}
+Indukcí podle velikosti rozdílu. Pokud je jen $1$, tak pohoda.
+
+Jinak štípnu ty rozdílné na dvě části ($Y₁,Y₂$), když přidám ty, tak dle
+indukčního předpokladu to platí. Na ty dvě části platí pustíme submodularitu.
+
+\begin{eqnarray*}
+r(X∪Y₁) &=& r(X)\\
+r(X∪Y₂) &=& r(X)\\
+r(X∪Y)+r(X)&≤&r(X)+r(X)\\
+r(X)≤r(X∪Y)&≤&r(X)
+\end{eqnarray*}
+\end{Proof}
+
+\begin{Statement}
+Nechť $E$ je konečná množina, $r$ je funkce splňující věci z Lemma
+\ref{rank-spec-lemma}. Potom $\M(E, \I=@{I@⊂E;r(I)=\len{I}@})$ je matroid a $r$
+je jeho ranková funkce.
+\end{Statement}
+
+\begin{Proof}
+První je, že prázdná je nezávislá, což zjevně je.
+
+Dvojku dokážeme pomocí submodularity, vyjde nám, že velikosti stále sedí.
+
+Trojku dokážeme sporem. Vezmeme $I₁,I₂$ nezávislé, $I₁<I₂$, ale žádné z rozdílu
+nejde přidat. To znamená, že ten prvek přebývá v mohutnosti oproti ranku
+($r(I₁)≤r(I₁+e)<\len{I₁}+1$, tedy se přidáním nezmění. Podle lemmatu
+\ref{rank-add-items} ale to musí být totéž jako $r(I₁∪I₂)$.
+$\len{I₂}=r(I₂)≤r(I₁∪I₂)=r(I₁)=\len{I₁}$, což je ale ve sporu s velikostmi v
+předpokladu.
+
+To, že je to ranková funkce, je vidět z definice.
+\end{Proof}
+
+$H@⊂E$ je \name{nadrovina}, pokud $H$ je maximální podmnožina s vlastností, že
+$r(H)<r(\M)$.
+
+\begin{Lemma}[Sčítání matroidů]
+Nechť $\M₁=@(E₁,\I₁@)$, $\M@(E₂,\I₂@)$, $\M₁∩\M₂=∅$. Potom $\M@(E:=E₁∪E₂@,
+@{I@⊂E;I∩E₁∈\I₁∧I∩E₂∈\I₂@}@)$ je také matroid.
+\end{Lemma}
+
+Když máme matici $A$ a její nezávislé sloupce, máme matroid.
+
+Matroid je nad nějakým tělesem \name{representovatelný}, pokud existuje matice
+nad tím tělesem, která tvoří tento matroid. Obecně (bez tělesa) je
+reprezentovatelný, pokud existuje alespoň jedno těleso, nad kterým to jde.
+
+Lze převést na jednotkovou matici nějakého řádu a pak nějaký zbytek (ten řád
+bude rank matroidu). Báze bude ty jednotkové sloupce.
