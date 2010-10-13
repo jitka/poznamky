@@ -1,0 +1,49 @@
+\name{Minor} se dá získat tak, že zahazuju vrcholy a hrany a kontrahuju hrany.
+
+\name{Topologický minor} používá jen topologické kontrakce (kontrahuje se jen taková
+hrana, jejíž alespoň jeden vrchol má stupeň 2).
+
+\begin{Observation}
+Můžu kontrakce uvažovat až na konec.
+\end{Observation}
+
+\name{Indukovaný minor} je takový, který jen kontrahuje.
+
+\begin{Lemma}
+Nechť $H$ je minorem $G$. Potom existuje zobrazení $f:V(H)→\mathcal{P(V(G)}$
+takové, že:
+→•
+ • $∀v∈V(H);f(v)$ je neprázná a souvislá.
+ • Neprotínají se.
+ • Pokud je v $H$ hrana, pak musí být hrana mezi množinami v původním.
+←•
+\end{Lemma}
+
+\begin{Proof}
+Buď je to vidět, nebo je to napsané v barevnosti.
+\end{Proof}
+
+\begin{Lemma}
+Nechť $H$ je max. stupně 3. Potom platí, že $H$ je minorem $G←→H$ je
+topologickým minorem.
+\end{Lemma}
+
+\begin{Proof}
+Jedna implikace je triviální.
+
+Druhá, najdu si stromečky v skupinkách, ty už mají malé stupně, tam to jde
+vykoukat.
+\end{Proof}
+
+\begin{Observation}
+Relace být minorem je transitivní.
+\end{Observation}
+
+\begin{Proof}
+Prostě se udělají za sebou.
+\end{Proof}
+
+Třída grafů $\mathcal{G}$ je \name{uzavřená na minory}, pokud s každým jeho
+prvkem obsahuje i všechny jeho minory.
+
+Podobně uzavřenost na libovolné jiné minory.
