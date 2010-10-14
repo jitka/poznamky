@@ -1,0 +1,52 @@
+\begin{Statement}[Cornellova]
+Nechť $P$ je problém popsatelný pomocí monadické lokigy druhého řádu a nechť
+$\mathcal{G}$ je třída grafů omezené stromové šířky. Potom existuje lineární
+algoritmus, který rozhoduje problém $P$ na této třídě.
+\end{Statement}
+
+\begin{Proof}
+Máme formuli s $x₁,…,x_k$ a $X₁,…,X_l$.
+
+Procházíme graf tak, že máme hranici o velikosti maximálně $w$, tam se dějou ty
+zajímavé věci, řeším případy, jestli je to uvnitř, nebo venku, rozeberu ty
+případy.
+
+Budeme to dělit, co je uvnitř, venku, lepit.
+
+Poté dokazujeme indukcí dle složitosti formule. Rozborem připadů. Napřed se
+vyberou hodnoty pro jednotlivé kousíčky, to se rozšiřuje.
+
+Upravím stromovou dekompozici tak, aby:
+→•
+ • Každý vrchol má stupeň max. $3$.
+ • Zařídím, aby každý stupně $3$ měl jen stejné sousedy.
+ • Dva se liší nejvýše o jeden vrchol.
+ • Všechny jsou stejně velké (můžu přisypat od sousedů).
+←•
+
+Každý vrchol rozkladu bude říznutí v předchozím, tam už to půjde. Tím se každý
+vrchol rozkladu dostane do jedné z třídy ekvivalencí (včetně přípojek zezdola).
+Tedy, list patří do nějaké třídy ekvivalence, při spojování u potomků se něco
+stane, u vrcholu s jedním potomkem také.
+
+Je potřeba najít lineárně velkou dekompozici, to ale jde v lineárním čase.
+\end{Proof}
+
+\begin{Statement}
+Nechť $\mathcal{G}$ je vlastní třída grafů uzavřená na minory. Pak existuje $c$
+takové, že $∀G∈\mathcal{G}$, $\len{E(G)}≤c·\len{V(G)}$.
+\end{Statement}
+
+\begin{Observation}
+Třída grafů stromové šířky $≤k$ je vlastní třída uzavřená na minory.
+\end{Observation}
+
+\begin{Proof}
+Mazat hrany a vrcholy je v pohodě. Kontrakce taky jdou.
+\end{Proof}
+
+\begin{Statement}
+Pro každé $k$ existuje algoritmus běžící v lineárním čase, který pro graf $G$
+buď vrátí, že má moc velkou stromovou šířku, nebo nalezne hezký stromový rozklad
+dané šířky.
+\end{Statement}
