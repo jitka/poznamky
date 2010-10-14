@@ -1,0 +1,59 @@
+\section{Náhodné permutace}
+
+Váže se na míchání karet.
+
+Máme značky, jako:
+$$
+\combnum{X}{k}=@{A@⊂X;\len{X}=k@}
+$$
+
+Lze použít i s $≤k$ a $\combnum{n}{≤k}$, což je součet binomických koeficientů
+až do $k$.
+
+\begin{Priklad}\label{excercise-max-combsize}
+Nechť $\mathcal{F}@⊂\combnum{X}{k}, \len{X}=n$ a nechť každé dvě množiny
+$\mathcal{F}$ mají neprázdný průnik. Jak velké může být $\mathcal{F}$?
+\end{Priklad}
+
+\begin{Statement}
+Pro $k≤\frac{n}{2}$, $\mathcal{F}$ splňující to v příkladu
+\ref{excercise-max-combsize}, $\len{\mathcal{F}}≤\combnum{n-1}{k-1}$.
+\end{Statement}
+
+\begin{Lemma}
+Nechť $X=@{0,…,n-1@}, A_s:=@{s,s+1,…,s+k-1@} \bmod n$. Potom
+$\len{@{s;A_s∈\mathcal{F}@}}≤k$.
+\end{Lemma}
+
+\begin{Proof}
+Musí se potkávat v alespoň jednom bodě, který mají společný.
+\end{Proof}
+
+\begin{Proof}
+Máme pevné $\mathcal{F}$, náhodně zvolím $A∈\mathcal{K}{k}$. Pak tvrdím (což je
+totéž, jako věta), že $Pr@[A∈\mathcal{F}@]≤\frac{k}{n}$.
+
+Zvolme $σ$ náhodnou permutaci a $s∈0…n-1$ uniformě náhodné. Potom máme
+$σ(A_s)=@{σ(s),…,σ((s+k-1) \bmod n)@}$. Potom
+$Pr@[σ(A_s)∈\mathcal{F}@]≤\frac{k}{n}$. To už větu dokazuje. Dokážeme, že to
+platí pro každou permutaci $\overline{σ}$, pak to bude platit v průměru i pro
+jednu danou náhodnou.
+\end{Proof}
+
+\begin{Priklad}
+Nechť $A₁,…,A_n$ a $B₁,…,B_n$ jsou množiny, $\len{A_i}=k, \len{B_i}=l$,
+$A_i∩B_i=∅$, $∀i≠j;A_i∩B_j≠∅$. Jak velké může být $n$?
+\end{Priklad}
+
+\begin{Statement}
+Pokud platí to, jako v minulém příkladu, pak $n≤\combnum{k+l}{k}$.
+\end{Statement}
+
+\begin{Proof}
+Ze spernerovy věty, berou se prvky a doplňky.
+\end{Proof}
+
+\begin{Statement}[Spernerova]
+Nechť $\mathcal{F}@⊂2^{0…n-1}$ a $∀A,B∈\mathcal{F};A@⊂B→→A=B$.
+Potom $\mathcal{F}≤\combnum{n}{\left\lfloor \frac{n}{2}\right\rfloor}$.
+\end{Statement}
