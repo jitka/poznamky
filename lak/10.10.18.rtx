@@ -1,0 +1,59 @@
+Máme ramseyovu teorii.
+
+Nyní, udělejme $\len{X}=n$ a $@(V=\combnum{X}{3}, E=@{uv;\len{u∩v}=1@}@)=G$.
+$w(G)≤n$, $A@⊂V,\len{A}=m;A₁,A₂…,A_n@⊂X,\len{A_i∩A_j}=1→→m≤n$.
+
+$2$-vzdálenostní množiny: Máme v rovině body, chceme je rozmístit tak, aby jich
+množina obsahovala co nejméně různých vzdáleností.
+
+\begin{Statement}
+Označíme-li maximální počet bodů v $n$-rozměrném prostoru prostoru tak, že mají
+jen dvě vzdálenost, jako $m(n)$, potom:
+
+$$
+\frac{n·@(n+1@)}{2}≤m(n)≤\frac{@(n+1@)·@(n+4@)}{2}
+$$
+\end{Statement}
+
+\begin{Proof}
+Dolní tak, že vezmeme body, co mají samé nuly a dvě jedničky. Potom jen
+vzdálenosti $2$ a $\sqrt{2}$. Těch je zřejmě jen tolik, jako dolní odhad, ale
+jen pokud bereme ty vektory jako součást prostoru o dimenze $n+1$. Ale protože
+splňují rovnici $\Σx_i = 2$, což je podprostor (sice nevíme souřadnice uvnitř
+něj, ale to nevadí).
+
+Odhad zhora. Máme množinu $A₁,…,A_m∈E_n$. $d(A_i, A_j)∈@{a,b@}$. Definujme si
+$F(x,y) = (d²(x,y)-a²)(d²(x,y)-b²)$. Vpravo dostanu vždy nulu. Nyní zafixujme
+jeden argument ($f_i(x) = F(A_i, x)$). Množina funkcí do reálných čísel je
+vektorový prostor. Je třeba dokázat, že toto je lineárně nezávislé. Kdyby byly
+závislé, tak umím sestavit nulovou funkci. To je ale spor, protože dostávám
+všude nulu, kromě sebe sama, to je nenula.
+
+Máme tedy $m$ funkcí, což je ale menší, než dimenze prostoru, ve kterém žijí.
+Ale to jsou polynomy 4. stupně. Popíšeme generátory toho podprostoru. Pak už se
+upočítá dimenze.
+\end{Proof}
+
+Mějme úplňák, chceme rozdělit jeho hrany tak, že dostáváme úplné bipartitní
+grafy (ty množiny musí být disjunktní, ale nemusí to pokrývat celé).
+
+\begin{Statement}
+Pokud to tak je, potom počet úplných bipartitních grafů je alespoň $n-1$.
+\end{Statement}
+
+\begin{Proof}
+Dokazuje se stejně, sčítáním nad $ℤ₂$.
+\end{Proof}
+
+\begin{Statement}
+$∀G∃$ rozklad na dvě disjunktní $V₁,V₂$ takové, že $G@[V₁@],G@[V₂@]$ jsou
+eulerovské (všechno je sudé).
+\end{Statement}
+
+\begin{Proof}
+Mám množinu $M@⊂T^n$, ortogonální doplněk $M^\perp$.
+\end{Proof}
+
+\begin{Lemma}
+Mám $M@⊂GF(2)^n$. Potom $\mathbb{1}∈@<M∪M^\perp@>$.
+\end{Lemma}
