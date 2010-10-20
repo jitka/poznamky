@@ -1,0 +1,96 @@
+\subsection{Dualita}
+
+Máme $\mathcal{B}$ množinu bazí matroidu $\M=@(E,\I@)$. Definujme
+$\mathcal{B}^*=@{E\backslash B; B∈\mathcal{B}@}$. Toto splňuje podmínky bazí,
+tedy je to matroid. Takovému říkáme že je \name{duální}.
+
+\begin{Tvrz}
+$\mathcal{B}^*$ je množina bazí.
+\end{Tvrz}
+
+\begin{Proof}
+Je to neprázdné (to je vidět).
+
+Když vyměňuji prvky, tak budu jen vyměňovat naopak.
+\end{Proof}
+
+\begin{Follows}
+$@(\M^*@)^*=\M$
+\end{Follows}
+
+$$
+r(E)+r^*(E)=\len{E}
+$$
+
+\begin{Tvrz}
+$$
+∀X@⊂E;r^*(X)=\len{X}-r(E)+r(E\backslash X)
+$$
+\end{Tvrz}
+
+\begin{Proof}
+Jen upočítat, nějakým doplňováním na bázi.
+\end{Proof}
+
+\begin{Lemma}
+$C*$ je co-kružnice, právě když její komplement je nadrovina.
+\end{Lemma}
+
+\begin{Proof}
+To je upočítatelné z předchozího tvrzení a z toho, že kružnice je minimální, co
+má rank o jedna menší, než počet prvků, nadrovina zase max co je o 1 menší, než
+matroid.
+\end{Proof}
+
+\begin{Follows}
+Nadroviny v grafech jsou minimální hranové řezy $G$.
+\end{Follows}
+
+\begin{Tvrz}
+$C$ je kružnice, $C^*$ je duální kružnice. Potom $\len{C∩C^*}≠1$.
+\end{Tvrz}
+
+\begin{Proof}
+Sporem. Vezmeme nadrovinu $H$, která je doplňkem $C^*$. $e$ (který je v $C$ i v
+$C^*$ tam neleží. Tak ho tam zkusíme přidat. Vezmu $r(C)+r(E)=r(C-e)+r(H+e)$ (do
+nadroviny můžu přidat, to se zvětší, ale u kružnice se rank nezmění). To je
+totéž jako $r(C∩H)+r(C∪H)≤r(C)+r(H)$. Tedy, $r(E)≤r(H)$, což nejde.
+\end{Proof}
+
+\begin{Tvrz}
+$\M₁, \M₂$ jsou matroidy na disjunktních množinách.
+$\M₁^*\oplus\M₂^*=(\M₁\oplus\M₂)^*$.
+\end{Tvrz}
+
+\begin{Proof}
+Z definice přes baze. Prostě v každém žije kus báze.
+\end{Proof}
+
+\subsection{Minory}
+
+Chceme vynechávat a kontrahovat.
+
+Když vynechám hrany, tak mám $\M\backslash T=@(E\backslash
+T,\I'=@{I;I@⊂E\backslash T∧I∈\I@}@)$. Toto je matroid, to je vidět.
+
+Pokud kontrahuji, tak dostanu $\M/T=@(\M^*\backslash T@)^*$. Používám jen
+matroidové operace, takže dostanu matroid.
+
+\begin{Tvrz}
+Nechť mám $\M$, $T@⊂E$, $X@⊂E\backslash T$. Po vynechání rank $X$ zůstane.
+U kontrakce $r_{\M/T}(X)=r_\M(X∪T)-r_\M(T)$.
+\end{Tvrz}
+
+\begin{Proof}
+Přes vzoreček pro duality, jen upočítání.
+\end{Proof}
+
+$C'@⊂E\backslash T$ je kružnice v $\M/T$ právě když $C'$ je minimální neprázndá
+z $@{C\backslash T; C∈\mathcal{C}(\M)@}$.
+
+Pořadí vynechávání a kontrahování lze libovolně prohazovat.
+
+$ \mathcal{N}$ je minor $\mathcal{M} ←→ \mathcal{N}^*$ je minor $\mathcal{M}^*$.
+
+Duál k $K₅$ a k $K_{3,3}$ není grafový (minor dle definice existuje, ale nejde
+nakreslit jako graf).

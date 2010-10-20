@@ -65,7 +65,7 @@ $H@⊂E$ je \name{nadrovina}, pokud $H$ je maximální podmnožina s vlastností
 $r(H)<r(\M)$.
 
 \begin{Lemma}[Sčítání matroidů]
-Nechť $\M₁=@(E₁,\I₁@)$, $\M@(E₂,\I₂@)$, $\M₁∩\M₂=∅$. Potom $\M@(E:=E₁∪E₂@,
+Nechť $\M₁=@(E₁,\I₁@)$, $\M@(E₂,\I₂@)$, $\M₁∩\M₂=∅$. Potom $\M@(E:=E₁∪E₂,
 @{I@⊂E;I∩E₁∈\I₁∧I∩E₂∈\I₂@}@)$ je také matroid.
 \end{Lemma}
 
