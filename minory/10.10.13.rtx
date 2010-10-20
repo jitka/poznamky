@@ -23,7 +23,7 @@ takové, že:
 Buď je to vidět, nebo je to napsané v barevnosti.
 \end{Proof}
 
-\begin{Lemma}
+\begin{Lemma}\label{low-deg-topol-minor-lemma}
 Nechť $H$ je max. stupně 3. Potom platí, že $H$ je minorem $G←→H$ je
 topologickým minorem.
 \end{Lemma}

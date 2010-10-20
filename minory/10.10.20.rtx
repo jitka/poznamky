@@ -1,0 +1,105 @@
+\begin{Statement}[Kuratovského minorová]
+Graf je rovinný, právě když neobsahuje $K₅$ ani $K_{3,3}$ jako minor.
+\end{Statement}
+
+\begin{Lemma}\label{k-kurat-topol-lemma}
+Pokud $G$ obsahuje $K₅$ nebo $K_{3,3}$ jako minor, tak jeden z nich obsahuje i
+jako topologický minor.
+\end{Lemma}
+
+\begin{Proof}
+Pro $K_{3,3}$ platí podle Lemmatu \ref{low-deg-topol-minor-lemma}.
+
+Pro $K₅$, pokud napřed mažu vrcholy a hrany a potom teprve kontrahuji, tak se mi
+může poštěstit, že mám jen topologické kontrakce. Nechť tomu tak není. Kontrakce
+můžu proházet, nechť poslední kontrakce je tedy netopologická. Najdu tam buď
+$K₅$ nebo $K_{3,3}$. Potom ho ale má jako topologický.
+
+\MPOST{ilust}
+for i := 0 upto 5:
+	for j := 0 upto 5:
+		if (i < j):
+			if (i = 0) and (j = 2):
+			else:
+				draw (3cm * sind(360*i/6), 3cm * cosd(360*i/6))--(3cm * sind(360*j/6), 3cm * cosd(360*j/6));
+			fi
+		fi
+	endfor
+endfor
+pickup pencircle scaled 10;
+for i := 0 upto 5:
+	color c;
+	if i mod 2 = 0:
+		c := red;
+	else:
+		c := black;
+	fi
+	draw (3cm * sind(360*i/6), 3cm * cosd(360*i/6)) withcolor c;
+endfor
+\ENDMPOST
+\end{Proof}
+
+\begin{Proof}
+Přímo plyne z Lemma \ref{k-kurat-topol-lemma}.
+\end{Proof}
+
+\begin{Observation}
+Máme dané nakreslení $G$ na plochu. Podom odebírání vrcholů, hran a kontrakce
+zachovávají nakreslení.
+\end{Observation}
+
+\begin{Proof}
+Odebírání je zřejmé. Kontrakce ‒ místo jednoho vrcholu tam půjdou ty hrany podél
+sebe, co vedla ta původní.
+\end{Proof}
+
+Tím jsme zavedli \name{minor nakreslení} (musí jít převádět přímo to nakreslení
+‒ nesmí se přeskakovat někde).
+
+\begin{Observation}
+Třída grafů nakreslitelná na danou plochu je uzavřená na minory.
+\end{Observation}
+
+Nechť $G$ je multigraf s daným nakreslením. Označme $F$ množinu bodů
+reprezentujících stěny v tomto nakreslení. Potom $G^*$ je \name{duální graf} je
+multigraf, kde $F$ je množina vrcholů a hrany jsou původní, jen otočené.
+
+Identifikuje původní graf až na izolované vrcholy. Kdyby byl $3$-souvislý, tak
+má jen jedno nakreslení a tedy jen jeden duál.
+
+\begin{Observation}
+Je-li $H$ minorem $G$, potom $H^*$ je minorem $G^*$.
+\end{Observation}
+
+\begin{Proof}
+Odebrání hrany odpovídá kontrakci a naopak. Odebírejme jen izolované vrcholy.
+\end{Proof}
+
+Opačně platí jen pokud tam nejsou žádné izolované.
+
+\section{Vnějškově rovinné grafy}
+Má nějaké nakreslení, kdy jsou všechny vrcholy na vnější stěně.
+
+\begin{Observation}
+Je to uzavřené na minory.
+\end{Observation}
+
+\begin{Proof}
+Zřejmě po libovolné operaci zůstane rovinný, z vnější stěny to taky nic
+nedostane.
+\end{Proof}
+
+\begin{Statement}
+Vnějškově rovinný je právě když neobsahuje jako minor ani $K₄$ ani $K_{3,2}$.
+\end{Statement}
+
+\begin{Proof}
+Že tyto věci nejsou vnějškově rovinné je vidět.
+
+Jinak sporem. Když mám vnějškově rovinné, vezmu duál a odeberu vrchol
+odpovídající vnější hraně, dostanu les.
+
+Nechť je tedy rovinný (jinak obsahuje něco moc velkého). Když duál bez vrcholu
+je les, tak pohoda. Jinak máme kružnice nebo násobné hrany. Pokud ne, tak
+vykoukám minory.
+\end{Proof}
