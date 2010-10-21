@@ -1,0 +1,41 @@
+Entropie náhodné proměnné $H$ je počet náhodných bitů, které potřebuje, aby
+se mohla vybrat.
+
+$H(α)$ je entropie pro proměnnou $Pr[X=1]=α$ a je to
+$-α\log₂α-(1-α)·\log₂(1-α)$.
+
+Nechť $X$ je náhodná proměnná. Potom \name{střední hodnota} je $E[X] =
+∫_ΩX(w)dP(w)$. Střední hodnoty jde násobit skalárem, sčítat a násobit mezi
+sebou, pokud jsou nezávislé.
+
+Indikátorová náhodná proměnná $I_A(w)$ je $1$ pokud to patří do jevu, $0$ když ne.
+Střední hodnota $E[I_A]=P[A]$.
+
+\begin{Priklad}
+Šatnářka. Máme náhodnou permutaci. Potom $X=\len{@{i|σ(i)=i@}}$. A nebo si to
+můžu napsat jako $A_i=Pr[σ(i)=i]$, takže pak sečteme.
+\end{Priklad}
+
+\begin{Priklad}
+Máme graf $G$. Potom existuje $H@⊂G$ bipartitní a má alespoň $\frac{m}{2}$
+hran. Vezmeme tedy podmnožinu vrcholů náhodně. Počítáme pravděpodobnost, že je
+tam která hrana.
+\end{Priklad}
+
+\name{Turnaj} je orientovaný úplný graf. Zajímá nás, jestli hamiltonovských cest
+(od poraženého k vítězi) může existovat hodně.
+
+\begin{Statement}
+Existuje turnaj, ve kterém jich je $\frac{n!}{2^{n-1}}$.
+\end{Statement}
+
+\begin{Proof}
+Vezmeme si náhodný turnaj, a $σ$ je permutace. Potom $A_σ=@{T;σ\hbox{ je cesta }@}$.
+\end{Proof}
+
+\begin{Priklad}
+Máme vektory, každý je dlouhý $1$. Sečteme je s $\pm 1$ koeficienty a získáme
+$v$. Jak velké bude $v$? Lze je navolit tak, aby to bylo $≥\sqrt{n}$.
+Jde také tak, že uděláme něco, co je $≤\sqrt{n}$, na to koeficienty zvolím
+náhodně. Vezmeme proměnnou $X=\len{v}²$. Tam střední hodnota vyjde $n$.
+\end{Priklad}
