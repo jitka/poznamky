@@ -1,0 +1,51 @@
+\section{Dobré uspořádání}
+
+\name{Předuspořádání} je relace, která je tranzitivní a reflexivní.
+
+Částečné uspořádání z toho uděláme faktorizací podle tříd ekvivalence.
+
+Množina $X$ je dobře uspořádaná pomococí $≤$ pokud každá posloupnost $x_i∈X$ obsahuje
+neklesajícídvojici, tj $∃i,j;i<j∧x_i≤x_j$.
+
+Je-li třída $X$ dobře uspořádaná, potom každá posloupnost obsahuje neklesající
+podposloupnost. Uděláme pomocí nekonečné ramseyovy věty.
+
+Řekneme, že $O$ je množina zakázaných prvků pro $Y@⊂X$, pokud platí:
+$∀x∈X;x∉Y←→∃o∈O;o≤x$.
+
+\begin{Observation}
+Je-li $X$ dobře uspořádané a $Y$ je uzavřená na $≤$, potom $O$ existuje a je
+konečná.
+\end{Observation}
+
+\begin{Proof}
+Za $O$ vezmeme množinu minimálních prvků $X\backslash Y$. Ty jsou neporovnatelné
+a proto je to konečné (jinak bych je mohl nastrkat do posloupnosti).
+\end{Proof}
+
+Jestliže $@(X,≤@)$ je uspořádání, potom $@(X^{<∞},≤@)$, kde $X^{<∞}$ jsou
+všechny konečné podmnožiny $X$ (např. trojprvkové) a množiny $a,b∈X^{<∅}$, pokud
+existuje prosté zobrazení z $f:a→b$ takové, že $a_i≤f(a_i)∀a_i∈a$.
+
+\begin{Statement}
+Je-li $@(X,≤@)$ dobře uspořádané, potom i $@(X^{<∞},≤@)$ je dobré.
+\end{Statement}
+
+\begin{Proof}
+Vezmeme špatnou posloupnost takovou, že každý prvek je nejmenší možné velikosti tak, aby
+rozšiřoval předchozí do špatné. Ale můžu vyměnit za $B_i$, to ale už musí být
+dobrá posloupnost.
+\end{Proof}
+
+\begin{Statement}
+Třída zakořeněných stromů je dobře uspořádaná na topologické minory.
+\end{Statement}
+
+\begin{Proof}
+Předpokládejme, že existuje špatná posloupnost. Podobně jako minulý důkaz.
+\end{Proof}
+
+\begin{Priklad}
+To s $X^{<∞}$ neplatí pro nekonečné. Jednoduše si můžu vždycky dvě různé vybrat,
+jednu zvednout, jednu snížit a dvojic mám libovolně mnoho.
+\end{Priklad}
