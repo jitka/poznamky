@@ -1,0 +1,55 @@
+\section{Souvislost}
+
+$G$ je vrcholově $2$-souvislý $←→$ každé dva vrcholy leží na společné kružnici.
+
+V matroidu můžeme mít totéž, jen říkáme s hranami, ne s vrcholy, ale vychází
+stejná vlastnost.
+
+Vlastnost, že jsou spolu v kružnici je symetrická, reflexivní a tranzitivní (to
+poslední se dokáže sporem).
+
+Množina $X$ je \name{separátor}, pokud $X$ je sjednocení komponent souvislosti.
+
+Každá kružnice leží v právě jedné komponentě.
+
+\begin{Tvrz}
+$X$ je separátor $←→r(X)+r(E\backslash X) = r(\M)$.
+\end{Tvrz}
+
+\begin{Proof}
+Jedním směrem ze submodularity. Dokážeme, že báze jsou jen v jedné nebo druhé
+části.
+\end{Proof}
+
+\begin{Lemma}
+$X$ je separátor. Potom je $r(F)=r(F∩X)+r(F\backslash X)$.
+\end{Lemma}
+
+\begin{Lemma}
+$\M/X=\M\backslash X ←→ X$ je separátor.
+\end{Lemma}
+
+\begin{Proof}
+Přes báze a definice.
+\end{Proof}
+
+\begin{Lemma}
+$X$ je separátor $←→r(X)+r^*(X)=\len{X}$.
+\end{Lemma}
+
+\begin{Proof}
+Plyne z $r^*(X)=\len{X}-r(\M)+r(E\backslash X)$.
+\end{Proof}
+
+\begin{Follows}
+$X$ je separátor v $\M←→X$ je separátor $\M^*$.
+\end{Follows}
+
+\begin{Statement}
+Matroid je direktním součtem svých komponent souvislosti.
+\end{Statement}
+
+\begin{Lemma}
+$\M$ je souvislý $←→$ pro každé dva prvky existuje nadrovina, která jimi
+neprochází.
+\end{Lemma}
