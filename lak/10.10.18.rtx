@@ -53,7 +53,3 @@ eulerovské (všechno je sudé).
 \begin{Proof}
 Mám množinu $M@⊂T^n$, ortogonální doplněk $M^\perp$.
 \end{Proof}
-
-\begin{Lemma}
-Mám $M@⊂GF(2)^n$. Potom $\mathbb{1}∈@<M∪M^\perp@>$.
-\end{Lemma}

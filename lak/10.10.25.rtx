@@ -1,0 +1,52 @@
+\begin{Lemma}
+$$M@⊂GF(2)^n→→1∈@<M∪M^\perp@>$$
+\end{Lemma}
+
+\begin{Proof}
+Pokud $@<M@>∩M^\perp$ obsahuje jen $0$. Potom $dim(M)=k, dim(M^\perp)=n-k$ a
+tedy z toho vyvodíme, že $@<M@>∪M^\perp=GF(2)^n$, tedy i $1$.
+
+Pokud $∃u∈@<M@>∪M^\perp$, potom $∀u\perp@<M@>, u\perp u$. Tedy ale
+$@<u,u@>=0=\Σu_i=@<u,1@>$ a tedy $1\perp u$.
+\end{Proof}
+
+$G=@(V,E@), E=@{e₁,…,e_n@}, GF(2)^n$ jsou podgrafy grafu $G$.
+
+Když máme podprostor kružnic $M$, $M^\perp$ je prostor řezů.
+
+Celý graf je tedy v součtu obou.
+
+$∀G∃V₁,V₂$ disjunktní takové, že $V=V₁∪V₂$.
+
+Komplexní matice se nazývá \name{normální}, když komutuje s hermitovskou
+transpozicí.
+
+$A$ má ortonormální bázi z vlastních vektorů $←→$ je normalní.
+
+$A₁,A₂,…,A_n$ mají společnou ortonormální bázi z vlastních vektorů $←→$ jsou
+normální a $∀i,j;A_iA_j=A_jA_i$.
+
+$A=A^*←→A$ je normální a reálná.
+
+$A=A^*→→A^*A=AA^*$ a je normalní, potom $∃XX^*=E;X^*AX=D$ (s vlastními čísly),
+$D^*=D→→$ všechny prvky jsou reálné.
+
+\begin{Follows}
+$G$ je graf, $A_G$ je matice sousednosti. Potom $A_G$ má $n$ vlastních čísel
+(součet jak algebraických tak geometrických násobností) a všechna jsou reálná.
+\end{Follows}
+
+\begin{Statement}[Moorova]
+Mějme $d$-regulární graf bez $C₄,K₃$. Určitě $n≥1+d²$ (počítání vrstev). Pokud
+je zde rovnost, graf se nazývá \name{Moorův}. Takových je málo.
+\end{Statement}
+
+\begin{Proof}
+$A$ je matice sousednosti. $λ_{\max} = d$. $A²$ má na diagonále $d$čka, mezi
+sousedy je určitě $0$, jinak $1$. Tedy, $A²/J-A+(d-1)·E$. Z toho se odvodí, že
+existuje jen málo vlastních čísel.
+\end{Proof}
+
+\begin{Statement}
+$$λ₁+…+_n=0$$
+\end{Statement}
