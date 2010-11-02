@@ -67,7 +67,7 @@ Definujme deficit pro grafy s max. stupněm $6$, a to $d(G):=\Σ6-deg v$.
 
 \begin{Lemma}
 Pokud mám Gallaiův strom se stupněm max. $6$, co není $K₇$, pak
-$d(H)≥\frac{\len{V(H)}{2}}$. Nalezneme očíslování vrcholů čísly $0,1$ a $3/2$. Součet bude
+$d(H)≥\frac{\len{V(H)}}{2}$. Nalezneme očíslování vrcholů čísly $0,1$ a $3/2$. Součet bude
 alespoň dostatek, s jedničkou alespoň jednou a s $3/2$ alespoň $3/2$.
 \end{Lemma}
 
