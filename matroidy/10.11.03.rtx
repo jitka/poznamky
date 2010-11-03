@@ -5,7 +5,7 @@ nezávislou množinu v obou (třeba i váženě).
 
 \begin{Statement}
 $$
-\max_{X@⊂E;r₁(X)=r₂(X)=\len{X}} \len{X} = \min_{E₁{\centerdot \atop ∪} E₂} r₁(E₁)+r₂(E₂)$$
+\max_{X@⊂E;r₁(X)=r₂(X)=\len{X}} \len{X} = \min_{E₁{\centerdot \atop ∪} E₂=E} r₁(E₁)+r₂(E₂)$$
 \end{Statement}
 
 \begin{Proof}
