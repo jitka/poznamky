@@ -1,0 +1,79 @@
+\section{Matroid intersection theorem}
+
+Máme dva matroidy $\M₁,\M₂$ na stejné množině $E$. Snažíme se najít co největší
+nezávislou množinu v obou (třeba i váženě).
+
+\begin{Statement}
+$$
+\max_{X@⊂E;r₁(X)=r₂(X)=\len{X}} \len{X} = \min_{E₁{\centerdot \atop ∪} E₂} r₁(E₁)+r₂(E₂)$$
+\end{Statement}
+
+\begin{Proof}
+Napřed $≤$. Pokud $X$ je nezávislá v $\M₁$ i $\M₂$ a $E₁{\centerdot \atop ∪} E₂ = E$, potom:
+$$
+\len{X∩E_i}≤r_i(E_i)
+$$
+
+V druhé části ukážeme algoritmus, máme orákulum, to říká, jestli je podmnožina
+nezávislá.
+
+Iterativně v krocích, v každém kroku buď najdeme rozklad nebo $X$ o kousek
+zvětšíme. Začneme s prázdnou množinou.
+
+Sestrojíme pomocný graf. Bude bipartitní, na jedné straně $X$, na druhé
+$E\backslash X$. Hranu z $y∈E\backslash X$ do $x∈X$ dám, pokud nahrazení $x$
+prvkem $y$ bude nezávislou v $\M₂$. Opačnou dám, pokud je nezávislá v $\M₁$.
+
+Množina $Y₁$ jsou ty prvky $y$ takové, že je můžu přidat a bude nezávislá v
+$\M₁$ a $Y₂$ obdobně.
+
+První příklad je, když existuje orientovaná cesta z $Y₁$ do $Y₂$ a druhý případ
+je, když není.
+
+\textbf{Vezmeme napřed případ druhý}.
+
+$E₂:=@{z;\hbox{ existuje orientovaná cesta do $z$ z $Y₁$}@}$. $E₁:=E\backslash
+E₂$. Celé $Y₁@⊂E₁, Y₂@⊂E₂$, všechny případné hrany vedou z $E₂$ do $E₁$.
+
+$r₂(E₂)=\len{X∩E₂}$. Určitě je to $≥$, protože $E₂$ je nezávislá v $\M₂$.
+Kdyby neplatilo opačně, tak $\len{Z}>\len{X∩E₂}$, $Z$ je nezávislá v $\M₂$. BÚNO
+$X∩E₂@⊂Z$. Tedy $∃z∈Z\backslash X∪E₂$. $X∪@{z@}$ je závislá $\M₂$, protože jinak
+$z∈Y₂$. $r₂(X∪@{z@})=\len{X}$. $@(X∩E₂@)∪@{z@}$ je nezávislá v $\M₂$,
+$@(X∩E₂@)∪@{z@}@⊂Z'@⊂X∪@{@}; r₂(Z')=\len{Z'} = \len{X}$. Tedy
+$Z'=@(X\backslash@{x@}@)∪@{z@}$. Našel jsem tedy šipku z $E₂$ do $E₁$, tedy
+spor.
+
+Protože jsme použili jen směr šipek, ne dostupnost, lze totéž udělat i pro $E₁$.
+
+\textbf{Nyní případ, kdy orientovaná cesta z nějakého vrcholu v $Y₁$ do nějakého
+v $Y₂$ vede}.
+
+Vezmu tu nejkratší cestu. Označím ji jako $y₀,x₁,y₁,x₂,…,y_k$, $y₀∈Y₁,y_k∈Y₂$.
+Vezmu množinu $X':=X@{x₁,…,x_k@}∪@{y₀,…,y_k@}$. Pokud se $Y₁, Y₂$ protínají, je
+něco, co je nezávislé v obou, lze to prostě přidat ($y₀=y_k$).
+
+Tato množina je větší, chceme dokázat, že je nezávislá v obou matroidech.
+
+Dokážeme v $\M₁$, druhý směr je stejný, jen se prohodí $₁,₂$ a směr šipek.
+
+Vezmeme indukcí. $X$ je nezávislá, po první výměně (jdeme od posledního prvku na
+cestě) je to ještě definice hrany.
+
+Jsme tedy ve stavu, kdy jsme dokázali, že
+$X\backslash@{x_{i+1},…,x_k@}∪@{y_{i+1},…y_k@}$ je závislá a pro spor
+předpokládejme, že $X\backslash@{x_i,…,x_k@}∪@{y_i,…,y_k@}$ je závislá. V té
+staré je tedy prvek, který zvedne té nové rank, musí být mezi těmi, které
+vyhazuju.
+
+Také $X\backslash@{x_i@}∪@{y_i@}$ je nezávislá (existence šipky). Tedy existuje
+$x_j$, které tam můžu přidat ($y_i$ to není, to by nebyla závislá). Tedy, mám
+nezávislou množinu velikosti $\len{X}$. Z této množiny můžu přidat něco do
+$X\backslash @{x_i@}$, je to některé $y_l$, ale pro $l≥i$. Potom tam je ale
+šipka a je to zkratka, nebyla to nejkratší cesta. Takže máme jinou množinu
+stejné velikosti.
+
+Dále, dle $Y₁$, $X∪@{y_i@}$ je nezávislá. Takže tam můžeme přidat jeden prvek
+tak, aby byla nezávislá. Pokud je to $y₀$, pak hurá, nechť tedy je to některé
+$x_i$. To, co vznikne, je větší, než $X$ a lze tedy tam lze něco přidat, je to
+některé $y_i$. No ale potom $y_i∈Y₁$ a nemám nejkratší cestu.
+\end{Proof}
