@@ -1,0 +1,47 @@
+\name{Stromový rozklad} grafu $G$ je strom $T$ takový, že:
+→•
+ • $∀X_i∈V(T); X_i@⊂V(G)$
+ • $∀e∈E(G);∃X_i∈V(T);@{u,v@}@⊂X_i$
+ • $∀v∈V(G);T|x_i$, kde $u∈x_i$ je neprázdný souvislý podstrom.
+←•
+
+Vrcholům stromu $T$ budeme říkat \name{uzly}.
+
+\name{Šířka rozkladu} bude $\max_i \len{X_i}-1$.
+
+Stromová šířka $G$ je nejmenší možná šířka nějakého jeho stromového rozkladu.
+
+Třetí podmínka je ekvivalentní s
+$ ∀x_i,X_j,X_k$ takové, že $X_k$ je mezi $X_i,X_j$ v $T$. Potom $X_k@⊂X_i∩X_j$.
+
+\begin{Observation}
+Šířka grafu je rovna nejvyšší šířce jeho některé komponenty.
+\end{Observation}
+
+\begin{Lemma}
+$tw(G)≥ω(G)-1$
+\end{Lemma}
+
+\begin{Proof}
+Sporem. Předpokládejme, že celá klika není uvnitř jednoho uzlu.
+
+Když zorientuji hranu k nějakému chybějícímu vrcholu. Každý má jednu, jedna
+hrana musí být oboustranná. Chybí hrana.
+\end{Proof}
+
+\begin{Tvrz}
+Je-li $H$ minorem $G$, potom $tw(H)≤tw(G)$.
+\end{Tvrz}
+
+\begin{Tvrz}
+Stačí vzít původní rozklad.
+\end{Tvrz}
+
+\subsection{Rekurzivně definované třídy grafů}
+Pro $k∈ℕ$, \name{$k$-pólový} graf je takový graf, ve kterém je vyznačeno $k$ vrcholů a
+vzniká slepováním takových grafů za póly (nesmí se spojit póly stejného) a
+vyznačí se nových $k$ z nich. Tyto operace jsou dány.
+
+Rekurzivní třída grafů určené $@(O,B@)$ je množina $k$-pólových grafů a $O$ je
+množina operací na $k$-pólových grafech, je třída grafů, která lze z $B$ pomocí
+$O$ vytvořit.
