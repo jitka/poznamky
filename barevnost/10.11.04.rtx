@@ -1,0 +1,118 @@
+\begin{Statement}[Alon]
+Nechť $G$ je graf s průměrným stupněm $d$ a $t$ je číslo splňující:
+$$
+d>4\combnum{t⁴}{t}\log_e 2\combnum{t⁴}{t}
+$$.
+
+Potom $G$ není $t$-vybíravý.
+\end{Statement}
+
+\begin{Proof}
+Má podgraf s minimálním stupněm $d\over 2$. Prostě odeberu vrcholy s malými
+stupni, iterativně k tomu dojdu.
+
+Z toho vyrobím bipartitní podgraf s minimálním stupněm $d\over 4$, jednoduše
+rozdělím na dvě části tak, aby tam bylo co nejvíce hran. Tedy minimální stupeň
+bude $\combnum{t⁴}{t}\log_e2\combnum{t⁴}{t}$. Budeme předpokládat, že partita $A$
+je větší, než $B$.
+
+Nechť množina barev $K=@{1,…,t⁴@}$. Každému vrcholu v $B$ přiřadím náhodně
+$t$-prvkovou množinu z množiny $K$. Vrchol $v∈A$ se na jeho sousedech vyskytují
+všechny $\combnum{t⁴}{t}$ různé $t$-prvkové podmnožiny $K$ jako seznamy.
+Pravděpodobnost, že $v$ není dobrý je nejvýše
+$\combnum{t⁴}{t}@(1-\inv{\combnum{t⁴}{t}}@)^\frac{d}{4}$.
+Máme $t$-prvkovou množinu, která se nevyskytuje na žádném.
+
+Protože $@(1-x@)≤e^{-x}$, tak odhaje je $<\combnum{t⁴}{t}·e^-{\log_e
+2@\combnum{t⁴}{t}} = 0.5$.
+
+Tedy, ve střední hodnotě máme alespoň polovinu dobrých vrcholů. Existuje tedy
+takové přiřazení, že alespoň polovina jich je dobrých, ty si zafixujme.
+
+Každému vrcholu v $A$ náhodně vybereme $t$-prvkovou podmnožinu z z množiny $K$.
+Zafixujme nějaké obarvení $γ$ vrcholů v $B$ z jejich seznamů. Zkoumejme
+pravděpodobnost, že $γ$ lze rozšířit na $A$ pro náhodnou volbu seznamů. Vezmu
+nějaký dobrý vrchol. Na jeho sousedech se vyskytuje alespoň $t⁴-t+1$ barev
+(jinak bych nemoh z každé té podmnožiny vybrat). Tedy pravděpodobnost, že mám
+ještě nějakou barvu je nejvýše:
+$$
+\frac{@(t-1@)\combnum{t⁴}{t-1}}{\combnum{t⁴}{t}}≤\frac{@(t-1@)·t}{t⁴}<\inv{t²}
+$$
+
+Jestli jde rozšířit na jeden nebo druhý dobrý vrchol je nezávislý jev.
+Pravděpodobnost, že lze rozšířit s danou $γ$ je $\inv{t²}^{\len{A}\over
+2}≤\inv{t^\len{A}}$.
+
+Pravděpodobnost, že existuje $γ$, které lze rozšířit je
+$<t^{\len{B}}·\inv{t^{A}}≤1$. Tedy, existuje šance, ze pro nějaké seznamy to
+nejde, takže vyberu tyto.
+\end{Proof}
+
+\section{Cirkulární barevnost}
+Graf má \name{cirkulární $ρ$ obarvení}, pokud existuje kružnice (v rovině), jejíchž
+obvod je $ρ$ že existuje funkce mapující vrcholy na kružnici tak, že každá
+hrana má délku alespoň $1$ (a hrana leze tou kratší stranou) (tedy, vrcholy
+spojené hranou nejsou moc blízko).
+
+\name{Cirkulární barevnost} je infimum z $ρ$ takových, že existuje cirkulární
+obarvení.
+
+\begin{Observation}
+$$χ_c(G)≤χ(G)$$
+\end{Observation}
+
+\begin{Proof}
+Nasekám těch $χ(G)$ barev dokola ve vzdálenostech $1$ a můžu je tam prostě
+naskládat.
+\end{Proof}
+
+\begin{Observation}
+Stačilo by i minimum.
+\end{Observation}
+
+\begin{Proof}
+Vezmu plášť kužele tak, aby u podstavy existovalo obarvení, to je kompaktní
+prostor, na něm to bude limitit, takže musí zlimitit k nějaké kružnici, na ní to
+ještě bude platit.
+\end{Proof}
+
+\begin{Observation}
+$$χ(G)-1<χ_c(G)$$
+\end{Observation}
+
+\begin{Proof}
+Vezmeme nějaké cirkulární obarvení. Nechť je to zatím celé číslo, pak mi to dělí
+na intervaly po jedničkách, co je v intervalu, tam není hrana ‒ obarvím
+intervaly.
+
+Když není celé číslo, tak smím použít o až o skoro jednu barvu víc, takže jen
+jeden interval bude kratší.
+\end{Proof}
+
+\begin{Statement}[Gallai-Royova]
+$∀Gχ(G)=\min$ přes všechny acyklické orientace maximální délky orientované
+cesty (měřeno počtem vrcholů).
+\end{Statement}
+
+\begin{Proof}
+Napřed $≥$. Máme obarvení pomocí celých čísel, orientuji z většího do menšího
+čísla vrcholu.
+
+Potom $≤$. Vezmu orientaci, vrcholu přiřadím délku nejdelší orientované cesty.
+\end{Proof}
+
+Máme orientaci. \name{Balancovanost} je maximum přes všechny kružnice z:
+$$
+\max_c \frac{\len{C}}{\min{\len{C^+},\len{C^-}}}
+$$
+
+\begin{Statement}
+$∀Gχ_c(G)=\min$ orientace z balancovanosti.
+\end{Statement}
+
+\begin{Proof}
+Napřed $≥$. Tedy, existuje kružnice obvodu $ρ$. Rozpůlíme ji v bodě, kam se nic
+nezobrazuje. Zorientuji je tak, jak jsou na cestě vzniklé rozseknutou kružnicí.
+U toho se udokazuje, že se to odečítá málo často a přičítá dostatečně často,
+nebo naopak (zorientujeme kružnici naopak).
+\end{Proof}
