@@ -1,0 +1,72 @@
+\begin{Statement}[Maderova]
+$∀n∃δ$ takové, že každý graf s minimálním stupněm $δ$ obsahuje podrozdělení
+grafu $K_n$.
+\end{Statement}
+
+\begin{Proof}
+Uděláme silnější tvrzení. Nechť $H$ je ouvislý s $m$ hranami a $G$ je graf s
+minimálním stupněm $2^m$, pak $G$ obsahuje podrozdělení $H$.
+
+Indukcí. Začneme $H$ je strom. Potom $2^m≥n$. Najdu dokonce jako podgraf,
+vždycky mám ještě dostatek sousedů, ze kterých brát, můžu prostě hladově.
+
+Dále máme $H$ souvislý, není strom. Tedy $∃e$ takové, že $H:=H\backslash E$ je
+stále souvislý. Dále BÚNO $G$ je souvislý. Uvažme největší množinu vrcholů $W$
+takovou, že $G@[W2@]$ je souvislý a $\len{E(G/ W)}≥2^{2-1}·\len{V(G/W)}$. Můžu
+si za $W$ zvolit jeden vrchol, proto takové $W$ určitě existuje. Nechť $G'$ je
+podgraf $G$ indukovaný vrcholy $w$ takovými, že $w∉W$ a $w$ má sousedy v $W$
+(okolí množiny $W$). Tvrdíme, že minimální stupeň $G'$ je alespoň $2^{m-1}$.
+
+Takové $W'$ obsahuje dle indukce $H'$, ale chybí tam jedna hrana. Tu nahradím
+cestou skrz v $W$, to je podrozdělení této hrany.
+
+Nyní dokazujeme, že minimální stupeň v $G'$ je alespoň $2^{m-1}$. Sporem,
+vezmeme vrchol $v$, který má málo sousedů, tedy nejvýše $2^{m-1}-1$. Vrazím
+takový vrchol do $W$. Tam má dostatek sousedů (protože jich má málo tady). Od
+něj ztratím málo hran, protože tady jich má málo. Upočítá se, že $W$ nebylo
+nejmenší.
+\end{Proof}
+
+\begin{Follows}
+Nechť $\mathcal{G}$ je vlastní třída grafů uzavřená na minory. Potom existuje
+$c₀$ takové, že barevnost této třídy je nejvýše $c₀$.
+\end{Follows}
+
+\begin{Proof}
+Neobsahuje úplné grafy libovolné velikosti, existuje tedy nějaké $n₀$ takové, že
+$K_{n₀}$ není součást $\mathcal{G}$ a tedy ani podrozdělení a minimální stupně
+jsou méně než $δ₀$, obarvíme.
+\end{Proof}
+
+\begin{Follows}
+Nechť $\mathcal{G}$ je vlastní třída grafů uzavřená na minory. Pak existuje
+konstanta $d₀$ taková, že počet hran je nejvýše $d₀·n$.
+\end{Follows}
+
+Graf $G$ je $k$-spojovaný, pokud pro každé vrcholy $u₁,…,u_k,v₁,…,v_k$ existuje
+vrcholově disjunktní cesta mezi každou dvojicí $u_i,v_i$.
+
+\begin{Statement}
+$∀k∃l$ takové, že každý $l$-souvislý graf je $k$-spojovaný.
+\end{Statement}
+
+\begin{Proof}
+Vezmu $l:=δ+2k=2^{\combnum{3k}{2}+2k}$. Odstraním vrcholy $u_i,v_i$. Ten bytek
+obsahuje podrozdělení $K_{3k}$, je $2k$-souvislý. Vezmu takové cesty, aby počet
+hran mimo to podrozdělení byl nejmenší možný.
+\end{Proof}
+
+Číslo $t(n,l)$ je počet hran úplného balancovaného $l$-partitního grafu na $n$
+vrcholech.
+
+\begin{Statement}[Turanova]
+Pokud $G$ je grafna $n$ vrcholech s alespoň $t(n,2)+1$ hranami, pak $G$ obsahuje
+$K_{l+1}$ jako podgraf.
+\end{Statement}
+
+\begin{Proof}
+Indukce podle $n$. Pokud je $n≤l$, to má $\combnum{n}{2}$ hran, to obsahuje
+úplňák. Nechť $n≥l+1$, $G$ má alespoň $t(n,l)+1$ a neobsahuje $K_{l+1}$. BÚNO
+přidání libovolné hrany vytvoří $K_{l+1}$, tedy obsahuje $K_l$. Ale dopočítáme,
+že je tam moc velká klika (protože musí tam být ještě něco připojeného ke všem).
+\end{Proof}
