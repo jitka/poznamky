@@ -1,0 +1,47 @@
+\section{Silně regulární grafy}
+
+Graf $G$ je \name{$(d,e,f)$-silně regulární}, pokud je:
+→•
+ • Je $d$-regulární.
+ • Každá hrana leží v $e$ trojúhelnících ($∀xy∈E;\len{N(x)∩N(y)}=e$).
+ • $∀xy∉e;x≠y;\len{N(x)∩N(y)}=f$
+ • Není to úplný graf.
+←•
+
+\begin{Statement}
+Jestliže existuje $(d,e,f)$ silně regulární graf s $n$ vrcholy, potom:
+→•
+ • $f=e+1,d=2f,n=2d+1$
+ • nebo $(e-f)²-4(f-d)=s²$ a $\frac{d}{2s}((d-1+f-e)(s+f-e)-2)∈ℕ$.
+←•
+\end{Statement}
+
+\begin{Proof}
+Nechť $A$ je matice sousednosti. Matice $A$ má na diagonále $d$ (vždy tam a
+zpět). Na hranách jsou $e$ a kde nejsou hrany, tam kde nejsou je $f$. Tedy:
+$A²=dE+eA+f(J-E-A)$. Tedy, $A²+A(f-e)+(f-d)=fJ$.
+
+Všechny vlastní čísla dostaneme jako kořeny $p(x)=x²+(f-e)x+(f-d)$.
+
+$d$ je největší vlastní číslo.
+
+Součet vlastních čísel je totéž jako její stopa.
+\end{Proof}
+
+
+\begin{Statement}[Friendship theorem]
+Nechť každí dva lidé mají právě jednoho společného přítele, potom existuje
+superpřítel.
+\end{Statement}
+
+\begin{Proof}
+Máme množinový systém $μ=@{N(x);x∈V@}$. $x∩y→→\len{N(x)∩N(y)} = 1$. Ať jsou nebo
+nejsou spojeny hranou, tak mají právě jeden průnikový prvek. To jsou dva axiomy
+projektivní roviny (je splněna i $4$ body v obecné poloze? ‒ ne, nemůže nastat
+všichni na jedné přímce, ale může nastat jeden, ostatní na přímce).
+
+Tedy, pokud není superpřítel, tak máme konečnou projektivní rovinu. Máme tedy
+její řád a to je zde $m=1$. Máme tedy $m+1,1,1$ silně regulární graf o $m²+m+1$
+vrcholech. První možnost nastat nemůže, druhá $s²=4m, s=2t, m=t²$. Po dosazení
+do druhé rovnice to nevyjde.
+\end{Proof}
