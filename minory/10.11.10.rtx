@@ -1,0 +1,68 @@
+\begin{Statement}
+Graf má stromovou šířku nejvýše $2←→$ je podgrafem nějakého sériově-paralelního
+grafu.
+\end{Statement}
+
+\begin{Proof}
+Když máme sériově-paralelní postup, tak tvoříme terminály takové, že terminály
+jsou v kořeni.
+
+Paralelní udělám tak, že jen je pověsím za společný kořen.
+
+U sériového smíme mít uzly velikosti $3$, nacpu jak spojovaný, tak nové
+terminály do kořene a hotovo. Nad to můžu přidat nový kořen jen s těmi novými
+terminály (kvůli čistotě).
+
+Opačně, upravíme rozklad, aby byl hezký. Všechny uzly budou obsahovat právě $3$
+vrcholy (můžu si půjčit). Sousední uzly budou mít společné $2$ vrcholy (to se dá
+také popůjčovat). Můžeme doplnit hrany tak, aby každý uzel indukovat $K₃$.
+
+Máme list, ten má $3$ vrcholy, se sousedem má společné $2$ vrcholy. Ten třetí už
+se nikde nevyskytne. Zapomeňme na něj chvíli a z indukce předpokládejme, že to
+jde vytvořit. V něm je někde jako list sestavovacího stromu ta zbylá hrana. V
+době kdy vznikla, tak jsem mohl přidat ještě tu dvouhranu (tu vytvořím sériově,
+přidám paralelně).
+\end{Proof}
+
+\begin{Statement}
+Sériově-paralelní grafy jsou právě ty, co nemají $K₄$ jako minor.
+\end{Statement}
+
+\begin{Proof}
+Vezmeme nakreslení (můžeme předpokládat, že je rovinný), vezmeme minor.
+
+Když je sériově paralelní, tak tam $K₄$ není, kvůli tomu, že $K₄$ má moc velkou
+šířku.
+
+Když tam je stupeň velikosti $1$, tak je to list. Pokud lze vytvořit zbytek, tak
+tohle taky. Dále tedy nemějme listy. Obdobně, když má stupeň $2$, tak dokážu
+udělat cestičku. Dále, paralelní hrany.
+
+Tedy, když vyřadíme všechno toto, tak má minimální stupeň $3$ a je prostý.
+
+Potom ale bude mít $K₄$ jako minor. To se dokáže sporem. Vezmeme nejmenší
+protipříklad. Je $2$-souvislý ($K₄$ neproleze skrz artikulaci). Obdobně i
+$3$-souvislý. Zahodím nějaké $u$, pak je $2$-souvislý. Buď najdu kružnici, která
+prochází $3$ vrcholy. Nebo ne, a potom mám také $K₄$.
+\end{Proof}
+
+\section{Chordální gray}
+Chordální graf neobsahuje indukovanou kružnici větší než $4$.
+
+\name{$k$-strom} je graf, který lze vybudovat z kliky na $k+1$ vrcholech tak, že
+nový vrchol vždy udělám sousedem existující kliky na $k$ vrcholech.
+
+Každý $k$-strom je chordální graf. Má rozklad takový, že každý uzel indukuje
+kliku.
+
+\begin{Follows}
+Stromová šířka je nejmenší $k$ takové, že nějaký $k$-strom obsahuje tento strom.
+\end{Follows}
+
+Lze je konstruovat pomocí slepovacích operací.
+
+Jsou to průnikové grafy podstromů ve stromě.
+
+Jsou $k$-degenerované (je stupeň max. stupně $k$, lze rozebírat).
+
+Má lineárně mnoho hran s počtem vrcholů.
