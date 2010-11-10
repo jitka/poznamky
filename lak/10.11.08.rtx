@@ -45,3 +45,114 @@ její řád a to je zde $m=1$. Máme tedy $m+1,1,1$ silně regulární graf o $m
 vrcholech. První možnost nastat nemůže, druhá $s²=4m, s=2t, m=t²$. Po dosazení
 do druhé rovnice to nevyjde.
 \end{Proof}
+
+\section{Proplétání vlastních čísel}
+Máme matici $A$, její vlastní čísla $λ_1≥a_2…≥a_n$ a k tomu vlastní vektory $u_i$, které
+tvoří ortonormální bázi.
+
+\begin{Lemma}
+$$
+x∈span@{u₁,…,u_k@}→→x^*Ax≥λ_kx^*x
+$$
+\end{Lemma}
+
+\begin{Proof}
+\begin{eqnarray*}
+x&=&\Σ_{i=1}^k α_i u_i\\
+x^*A(\Σα_iu_i)&=&\\
+x^*(\Σα_iAu_i)&=&\\
+x^*(\Σα_iλ_iu_i)&=&\\
+\Σα_j^*u_j^*α_iλ_iu_i≥\Σα_i^*α_iλ_k&=&\\
+λ_kx^*x
+\end{eqnarray*}
+
+\end{Proof}
+
+\begin{Follows}
+$$λ_i=\max_{x≠0}\frac{x^*Ax}{x^*x}$$
+\end{Follows}
+
+Nechť matici $B$ dostaneme z $A$ vyškrtnutím $i$-tého řádku a $i$-tého sloupce
+$span(B)=μ₁≥₂…≥μ_{n-1}$.
+
+\begin{Statement}
+Potom $λ₁≥μ₁≥λ₂≥…μ_{n-1}≥λ_{n}$.
+\end{Statement}
+
+\begin{Proof}
+$∀k;λ_k≥μ_k≥λ_{k+1}$. $S₁=span@{u_k,u_{k+1},…,u_n@}$, $S₁=span@{v₁,v₂,…,v_k@}$
+Doplníme na $i$-té místo nuly abychom dostali $v₁',z₂'…$. $S₃=@{v₁',v₂',…@}$.
+$dim S₁+dim S₃= n+1$. To je $dim(S₁+S₃)+dim(S₁∩S₃)$. Tedy $dimS₁∩S₃≥1$, tedy
+existuje tam alespoň jeden nenulový vektor, ale na $i$-tém místě má $0$, takže
+tuto pozici nepotřebuji. Z toho vykopu $x^*Ax=y^*By$, z toho vykopu že
+$μ_k≤λ_k$.
+
+Tu druhou zvolím $S₁=span@{u₁,u₂,…,u_{k+1}@}$, $S₂=span@{v_k,…,v_{n-1}@}$ a
+obdobně.
+\end{Proof}
+
+\begin{Follows}
+Tentokrát vyškrtneme $k$ řádků a odpovídajících $k$ sloupců, takže máme
+$μ₁≥…≥μ_{n-k}$ Potom platí, že $λ_i≥μ_i$ a $μ_i≥λ_{i+k}$.
+\end{Follows}
+
+\begin{Proof}
+Škrtáme postupně.
+\end{Proof}
+
+\begin{Statement}
+$G$ graf. Potom $α(G)≤\min@{\len{i;λ_i≤0}, \len{i;λ_i≥0}@}$.
+\end{Statement}
+
+\begin{Proof}
+Vezmeme matici sousednosti, uspořádejme je tak, že v levém horním rohu jsou
+nezávislá množina, ta matice je nulová. Vyhodím ty vrcholy, co nejsou v
+nezávislé množině, zbyde mi $α$ nul jako vlastní čísla. Tedy, $λ_{1,2,…α}≥0$ a
+$0≥λ_{n,n-1,…,n-α+1}$.
+\end{Proof}
+
+\begin{Statement}
+$G$ je $d$-regulární, potom $α(G)≤n·\frac{-λ_n}{d-λ_n}$.
+\end{Statement}
+
+\begin{Proof}
+Vezmeme $A$ matici sousednosti a $J$ samých jedniček. $AJ=d·J =JA$. Tedy
+existuje společná ortonormální báze složená z vlastních vektorů. $X^*X=E,
+X^*AX=D$. U $J$ máme jedno číslo $n$ a jinak nuly. Nechť
+$C=A-\inv{n}@(d-λ_n@)J$. $X^*CXX^*AX-\inv{n}@(d-λ_n@)X^*JX$. $C$ má dvakrát
+$λ_n$.
+
+Provedeme podobný trik jako předtím, $B$ je podmatice odpovídající $λ$, její
+vlastní čísla jsou nuly, a $-\frac{α}{n}@(d-λ_n@)≥λ_n$.
+\end{Proof}
+
+\begin{Follows}
+$χ(G)≥1+\frac{λ_1}{\len{λ_n}}$
+\end{Follows}
+
+\begin{Proof}
+V každé barvě je nejvýše $α$ prvků.
+\end{Proof}
+
+\begin{Statement}
+Toto platí i pro obecné grafy.
+\end{Statement}
+
+\begin{Lemma}
+$λ_1≥$ průměrný stupeň $G$.
+\end{Lemma}
+
+\begin{Proof}
+\TODO{Cvičení}
+\end{Proof}
+
+\begin{Statement}
+$χ(G)≤1+λ_1$.
+\end{Statement}
+
+\begin{Proof}
+Každý graf obsahuje kritický graf pro tu barevnost jako indukovaný podgraf.
+Minimální stupeň je $δ(G)≥χ(G)-1$, jinak bych ten menší mohl vyhodit, obarvil a
+dobarvil podle toho, co zbyde. Průměrný stupeň je alespoň $χ-1$, tedy
+$λ_{max}^{G'}≥χ-1$, tedy $λ_1≥λ_{max}^{G'}$.
+\end{Proof}
