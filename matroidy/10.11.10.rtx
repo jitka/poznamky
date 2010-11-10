@@ -1,0 +1,94 @@
+\section{Souvislost}
+
+\begin{Tvrz}
+$G$ je souvislý graf, $X,Y$ rokzlad $E$ a $G_X, G_Y$ indukované $X, Y$.
+Potom $r(X)+r(Y)-r(E)≤\len{V(G_x)∩V(G_y)-1}$. Navíc je to rovnost pouze pro
+$G_X, G_Y$ souvislé.
+\end{Tvrz}
+
+\begin{Proof}
+Budeme počítat počty hran podle počtu vrcholů v lesech.
+\end{Proof}
+
+Nechť $\M=(E,I)$, $(X,Y)$ rozklad $E$ je \name{$k$-separace} pokud z
+$r(X)+r(Y)-r(E)≤k-1$. $k$-separace je \name{Tutteovská}, pokud $\min@{\len{X},
+\len{Y}@}≥k$. Je \name{cyklická}, pokud $r(x)<\len{X}$ a $r(Y)≤\len{Y}$ (každá
+obsahuje kružnici). Esenciální (vertikální) je $\min@{r(X), r(Y)@}≥k$.
+
+Esenciální separace je i tutteovská.
+
+Souvislost (tutteovská) matroidu $\M$ je $λ(\M)=\min\{∞,k;\M$ má tutteovskou
+separaci $\}$.
+
+Je (tutteovsky) $k$-souvislý, pokud jeho souvislost je alespoň $k$. Matroid je
+souvislý, právě když je $λ(\M)≥2$.
+
+Cyklická je $γ(\M)$ a esenciální $κ(\M)$.
+
+\begin{Tvrz}
+$λ(\M)=λ(\M^*)$
+\end{Tvrz}
+
+\begin{Proof}
+$r(Y)=r(E)-r(X) = r(X)+r^*(X)-\len{X} = r^*(X)+r^*(E\backslash X)-r^*(E)$
+\end{Proof}
+
+\begin{Tvrz}
+$κ(\M)=γ(\M^*)$
+\end{Tvrz}
+
+\begin{Proof}
+Něco žije v nadrovině, doplněk je kružnice v duálu.
+\end{Proof}
+
+\begin{Tvrz}
+Mějme matroid $\M$ s $λ(\M)<∞$. Potom $\M$ je tutteovsky $k$-souvislý $←→$
+cyklicky $k$-souvislý a essinciálně $k$-souvislý.
+\end{Tvrz}
+
+\begin{Proof}
+Esenciálí $k$-separace je také tutteovská.
+
+Opačně sporem přes nejmenší protipříklad.
+\end{Proof}
+
+\begin{Statement}
+$k≥2$ a $G$ souvislý graf s alespoň $k+1$ vrcholy. $G$ je vrcholově
+$k$-souvislý, pokud $\M(G)$ je esenciálně $k$-souvislý.
+\end{Statement}
+
+\begin{Proof}
+Vezmeme minimální řez. Máme tedy části $A,B$, grafy $G_A, G_B$ jsou ta
+komponenta i s řezem, hrany $E_A$ jsou grafu $G_A$, tak aby $E_A, E_B$ byl
+rozklad. $R(e_a)≥\len{S}$. Je to tedy esenciální $\len{S}$-separace.
+
+Druhé sporem.
+$G$ je $k$-souvislý. Vezmu $G₁,G₂$, což je všechny vrcholy jen s jednou množinou
+hran.
+
+Najdeme dva vrcholy, co jsou v různých komponentách v obou grafech. Dokáže se,
+že taková dvojice neexistuje. Tedy, alespoň jeden z nich je souvislý. Takže
+$r(E₁)=r(E)$.
+\end{Proof}
+
+V grafu \name{cyklický} $k$-řez je takový, že obě části jsou cyklické. Pozor,
+řez je průnik, ne odebrání.
+
+\begin{Statement}
+$k$ je alespoň $2$, $G$ je cyklicky $k$-souvislý $←→\M(G)$ je cyklicky
+$k$-souvislý.
+\end{Statement}
+
+\begin{Proof}
+Sporem. Máme v grafu malý řez. Z definice.
+
+Opačně, malý řez v $\M(G)$, minimalizujeme i počet komponent. Chvíli
+předpokládáme, že $G₁$ i $G₂$ je souvislý. Vytáhneme spor, můžeme nerovnost
+použít s rovností.
+
+Máme tedy v každém kružnici, každá taková žije v jedné komponentě. Nechť tedy
+$G₂$ je ten nesouvislý. Vezmeme komponentu, která neobsahuje alespoň jednu
+kružnici. Přestrčím tuto komponentu z $E₂$ do $E₁$. Rank se na jedné straně
+zmenší přesně o rank té komponenty, na druhé straně vzroste nejvýše o to. Stále
+máme $k'$-separátor. Musí mít ale méně komponent, proto spor.
+\end{Proof}
