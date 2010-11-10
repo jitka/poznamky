@@ -92,3 +92,30 @@ kružnici. Přestrčím tuto komponentu z $E₂$ do $E₁$. Rank se na jedné st
 zmenší přesně o rank té komponenty, na druhé straně vzroste nejvýše o to. Stále
 máme $k'$-separátor. Musí mít ale méně komponent, proto spor.
 \end{Proof}
+
+$E₁,E₂$ rozklad hran, $\len{V(G[E₁])∩V(G(E₂)}=k$, $\len{E₁},\len{E₂}≥k$.
+
+Tutteovský řez je buď vrcholový nebo cyklický.
+
+\begin{Statement}
+$G$ je souvislý. Je tutteovsky $k$-souvislý když $\M(G)$ je tutteovsky
+$k$-souvislý.
+\end{Statement}
+
+\begin{Proof}
+Zase dvěma spory.
+\end{Proof}
+
+\begin{Statement}
+$\M, λ(\M)<∞$. Potom $λ(\M)=\min{κ(\M),g(\M}$, kde $g$ je obvod ‒ délka
+minimální kružnice.
+\end{Statement}
+
+\begin{Proof}
+$λ(\M)≤κ(\M)$. Dále, $λ(\M)≤γ(\M)$. Pokud zbytek grafu obsahuje nějakou
+kružnici, pak také $≤g(\M)$.
+\end{Proof}
+
+\begin{Follows}
+$G$ souvislý, $\len{V}≥3$, není to trojúhelník. Potom $λ(\M(G))=@{κ(G),g(G)@}$.
+\end{Follows}
