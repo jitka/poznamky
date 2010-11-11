@@ -1,0 +1,68 @@
+\section{Semeredi regularity lemma}
+
+Mám bipartirtitní graf $H$ s partitami $A, B, \len{A} = \len{B}$. Potom je
+\name{$ε$-regulární} pokud platí, že $∀A'@⊂A;B'@⊂B, \len{A'}≥e·\len{A},
+\len{B'}≥e·\len{B}$. Potom
+$\frac{\len{e(A',B')}}{\len{A'}\len{B'}}-\frac{A,B}{\len{A}\len{B}}≤ε$. To $e$ je počet
+hran mezi dvěma množinami.
+
+\begin{Statement}[Szeméredi regularity lemma]\label{regularity-lemma}
+$$∀ε,m₀∃M₀,n₀;∀G,\len{V(G)}=n≥n₀∃\hbox{ rozklad na } V₀,V₁,…,V_m,m₀≤m≤M₀$$
+
+Takové, že:
+→•
+ • $\len{V₀}≤ε·n$
+ • $\len{V₁}=\len{V₂}=…=\len{V_m}$
+ • Nejvýše $ε·m²$ dvojic $V_i, V_j, 1≤i<j≤m$ není $ε$-regulárních
+←•
+\end{Statement}
+
+\begin{Lemma}[Removal lemma for triangles]
+$∀ε₀>0∃δ₀>0∀G$ platí alespoň jedno z následujících:
+
+→•
+ • $G$ obsahuje $δ₀·n³$ podgrafů izomorfních s $K₃$.
+ • $∃F@⊂E(G)$ takové, že $G\backslash F$ neobsahuje trojúhelník a
+ $\len{F}≤ε₀·n²$.
+←•
+\end{Lemma}
+
+\begin{Observation}
+Nechť $A$, $B$ je $ε$-regulární bipartitní graf a jeho hustota je $d$. Potom $A$
+obsahuje alespoň $(1-ε)·\len{A}$ vrcholů stupně alespoň $(d-e)·\len{B}$.
+\end{Observation}
+
+\begin{Proof}
+Sporem, předpokládejme, že máme hodně takových malých vrcholů. Zvolím $B':=B,
+\len{A'}≥ε·\len{A}$.
+\end{Proof}
+
+\begin{Proof}
+Nastavím, že $ε:=ε₀/20$ a $m₀:=20/ε₀$ a dám to do \ref{regularity-lemma}. Vypadne
+$M₀,n₀$. Poté nastavím $δ₀:=@{\inv{n₀³}, x@}$. ($x$ se spočítá).
+
+Udělám regularity graf (každá část má vrchol, je hrana, pokud tam je alespoň
+tolik, jako je hustota hran a je $ε$-regulární. Stačí dokazovat pro vrcholy s
+alespoň $n₀$ vrcholy (jinak bud mám jeden trojúhelník, nebo ne).
+
+Uděláme $H$ regulární graf pro $G$ s rozkladem z \ref{regularity-lemma} a
+hustotu $ρ:=\frac{ε₀}{2}$. Pokud $H$ neobsahuje trojúhelník, pak do množiny $F$
+dáme hrany, kde jeden vrchol je v $V₀$ (odpadní), hrany uvnitř rozkladových
+tříd, hrany spojující dvojice, co nejsou $ε$-regulární a hrany mezi řídkými
+dvojicemi. To zajistí, že hrany jsou jen tam, kde hrany máme teď, takže teď už
+žádné trojúhelníky nemáme.
+
+Hran ve $V₀=ε·n²$. Uvnitř jedné je to
+$m·\frac{n}{m}²≤\frac{n²}{m₀}=\frac{ε₀·n²}{20}$. Stejně bude i odhad pro
+neregulární dvojice. Těch málo hustých je $≤n²ρ\frac{n}{m}²≤\frac{ρ·n²}{2}$. To
+je dostatečně málo.
+
+Pokud $H$ má trojúhelník, zafixujme si ho. Každá dvojice je $ε$-regulární a
+počet hran mezi nimi je alepsoň $ρ·V_i·V_j$. Vyjde že máme alespoň
+$(1-2ε)ε³\len{V_i}\len{V_j}\len{V_k}$. Odhadneme velikosti $V$ a dosadíme do
+$x$.
+\end{Proof}
+
+\begin{Statement}[Szemerédiho]
+$$∀ε∃n₀∀X@⊂1…n₀;\len{X}≥n₀·ε∃x,y,z;x+y=z$$
+\end{Statement}
