@@ -1,0 +1,52 @@
+
+Nyní si zafixuji tu orientaci s minimem. Hledáme funkci $φ:V(G)→ℝ$. Ta bude
+splňovat, že kdykoliv mám hranu, potom $1≤φ(v)-φ(u)≤β-1$. Tuto osu lze potom
+namotat na kružnici.
+
+Nechť $φ:V(G)→ℝ$ je funkce taková, že platí $0≤φ(v)-φ(u)≤β-1$ minimalizuje
+$\Σ\max@{0,1-(φ(v)-φ(u)@}$. Nějaké takové $φ$ existuje (konstantní). Toto je
+kompaktní množina, minimum nabývám. Pokud to je $0$, tak je to hotovo.
+
+Tedy existuje hrana s malým rozdílem. Snažím se ji zvětšit o $ε$. Tím můžu kazit
+jinou hranu. Tak se budu snažit konec taky zvedat o $ε$. Nebo můžu někde přelézt
+$β-1$, takže další konec taky zkusím posunout o $ε$ a to se iteruje.
+
+Formálně, lze sestrojit pomocný graf $H$, má stejné vrcholy, hrana existuje
+tehdy, když musím zvedat jeden vrchol v závislosti na druhém. Ten musí mít
+cyklus. Potom ale na ní bude moc malá vybalancovanost.
+\end{Proof}
+
+Podle vizingovy věty, cirkulární hranová barevnost je $Δ≤χ_C'(G)≤Δ+1$.
+
+Máme kubický graf bez mostů.
+
+\begin{Lemma}
+Nechť $G$ je kubický graf bez mostů a obsahuje čtvereček. Potom můžu čtvereček
+rozstřihnout a zkontrahovat (buď svisle nebo vodorovně) tak, aby byl tak bez
+mostů (alespoň jeden z nich nemá most).
+\end{Lemma}
+
+\begin{Proof}
+Rozebereme, co je most. Nechť tedy je to vzniklá hrana. To ale vyjde, že most
+byl i původně.
+
+Když by byl jinde, ale kdyby teď patřily do stejné části, tak byl most i
+původně.
+
+Máme tedy každé v jedné části. Obdobně i nahoře a dole. Máme tedy $4$ druhy
+vrcholů (průniky podle částí pro oba případy). Jeden kvartál mi zbyde, bude
+most.
+\end{Proof}
+
+\begin{Statement}[Afshami, Hatami, Hatami, Tussevkani, Zhu]
+Nechť $G$ je kubický graf bez mostů. Pak jeho cirkulární hranová barevnost je
+nejvýše $\frac{11}{3}$.
+\end{Statement}
+
+\begin{Proof}
+Vezmeme kružnici o obvodu $\frac{11}{3}$. Stačí barvit jen body násobky třetin.
+BÚNO nemá trojúhelníky, čtyřcykly, paralelní hrany. Paralelní hrany lze zaměnit
+za jednu hranu (protože to, co venku z těch vrcholů vedou stejné barvy). Obdobně
+lze zkontrahovat trojúhelník. Čtyřcyklus lze nahradit buď za dvě hrany nahoře a
+dole, nebo dva vlevo a vpravo. Při obarvení jsou buď blízko u sebe, nebo daleko.
+\end{Proof}
