@@ -49,4 +49,3 @@ BÚNO nemá trojúhelníky, čtyřcykly, paralelní hrany. Paralelní hrany lze 
 za jednu hranu (protože to, co venku z těch vrcholů vedou stejné barvy). Obdobně
 lze zkontrahovat trojúhelník. Čtyřcyklus lze nahradit buď za dvě hrany nahoře a
 dole, nebo dva vlevo a vpravo. Při obarvení jsou buď blízko u sebe, nebo daleko.
-\end{Proof}

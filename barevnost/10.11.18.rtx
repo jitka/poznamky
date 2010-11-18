@@ -1,0 +1,75 @@
+
+Má perfektní párování, tak ho zafixujeme. Podíváme se na jeho komplement, ten
+bude tvořen lichými a sudými kružnicemi. Hledáme orientaci hran line grafu
+(nazveme ho $L$) tak, aby nebalancovanost byla max. $11\over 3$.
+
+Najdeme orientaci splňující:
+→•
+ • Po $3$ hranách ve stejném směru na cestě musí být už v protisměru.
+ • Když jsou $3$, $1$, $3$, $1$, tak teď už může být max $2$ zasebou a jedna
+   proti.
+←•
+
+Vezmu kružnici, ta je rozdělená na úseky, kdy jdou po směru, dělené hranami v
+protisměru. Úseky délky $0,1,2$ nazvu krátké, zbylé (délky $3$ jsou dlouhé).
+Máme max. $2$ dlouhé úseky za sebou.
+
+Počet dlouhých úseků je nejvýše $2*$ počet krátkých. Počet všech je max. počet
+protisměrných hran. Z toho už se to vypočítá.
+
+Opačný směr je vidět.
+
+V line grafu zorientuji hrany tak, že od původní hrany perfektního párování vede
+do cyklu. U sudé uvnitř zorientuji nastřídačku. Tam jsou jen úseky délky $2$.
+
+U lichého máme problém, jedna hrana zbyde, takže mám cestičku délky $3$, za ní
+už násteduje jedna v protisměru (resp. obě). To ale neřeší druhou podmínku.
+
+Rozdělím hrany párování jako vstupní a výstupní (vstupní je tak, kde začíná
+dlouhý úsek). Hrana je aktivní, pokud je vstupní pro jednu lichou kružnici a pro
+jinou výstupní. Problém je, pokud bych měl na jedné liché kružnici dvě aktivní
+hrany. Budeme minimalizovat počet aktivních hran přes celý graf.
+
+Pro spor předpokládejme, že mám kružnici, co má jednu vstupní a jednu výstupní
+hranu aktivní. Kdybych nemohl pootočit tuto kružnici, tak máme všechny hrany
+potenciálně aktivní, některé jsou na druhé straně vstupní a některé výstupní.
+Protože je lichá, musí být alespoň dvě stejným směrem a někde za tím jedna
+opačně. Tam to přetočím a hotovo, snížím tím počet aktivních hran.
+\end{Proof}
+
+\begin{Lemma}
+Nechť $p(x₁,…,x_n)$ je polynom takový, že stupeň $x_i≤d_i-1$.
+Potom $y₁,…,y_n$ jsou podmnožiny velikosti $y_i = d_i$.
+Pokud $p(x₁,…,x_n)=0∀(x₁,…,x_n)∈y₁\times…\times y_n$, potom je identicky nulový.
+\end{Lemma}
+
+\begin{Proof}
+Indukcí. Pro jednu proměnnou je vidět.
+
+Při vyšším to budu skládat dohromady.
+\end{Proof}
+
+Graf je $d$ vybíravý, pokud pro každé seznamy takové, že délka seznamu vrcholu
+$v$ je $d(v)$, potom si umí vybrat.
+
+\begin{Statement}[Alon-Tarsi]
+Nechť $d(v) = \deg_\in(v)+1$. Potom, když počet sudých eulerovských podgrafů je
+různý od počtu lichých eulerovských podgrafů, tak je $d$-vybíravý (liché a sudé
+podle počtu hran).
+\end{Statement}
+
+\begin{Follows}
+Každý rovinný bipartitní graf je $3$-vybíravý.
+\end{Follows}
+
+\begin{Proof}
+Nalezneme orientaci se vstupními stupni nejvýše $2$.
+
+Dále, každý eulerovský graf musí mít sudý počet hran. Prázdný graf existuje a je
+sudý.
+
+Uděláme si pomocný graf. Každý vrchol tam bude dvakrát, vrcholy budou i za
+hrany, každou hranu spojím s jejími koncovými body. Hranu zorientuje do
+spárovaného vrcholu. Najdu párování pokrývající hrany. Tady už stačí jen ověřit
+hallovu podmínku.
+\end{Proof}
