@@ -1,0 +1,22 @@
+\begin{Statement}
+Mějme danou hustotu hran $d$, máme $k$ barev. Kolik nejvýše různých obarvení je
+možné najít na grafu $G$ s hustotou $d$? Hledáme tedy limitně, kolik je $n$-tá
+odmocnina z počtu obarvení.
+
+Toto je $β(d,k)=e^{δ(d,k)}$, kde $δ=\Σ α_A\ln \len{A}$.
+\end{Statement}
+
+\begin{Proof}
+Rozdělíme na množiny indexované neprázdnými podmnožinami barev, nacpeme úplňák,
+pokud jsou indexy disjunktní. Takže si můžu u každého vrcholu vybrat libovolnou
+barvu z indexu. Chceme mít relativní velikosti $α_i$ množin, což jsou nezáporné
+a dohromady dají $1$, $\Σα_i·α_j≥d$. Chci maximalizovat $\Πn·α_i$ (to odpovídá
+oné $n$-té mocnině, které se zbavujeme). Tím máme dolní odhad.
+
+Na druhou stranu stačí najít správné $α$, abych dokázal, že není nejlepší.
+Vezmeme nekonečnou posloupnost rostoucích grafů.
+
+Vyberu si dominantní typ, vezmu si ty barvy, co se objevují často.
+
+\TODO{Hmm, tady to chybí}
+\end{Proof}
