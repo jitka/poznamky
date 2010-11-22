@@ -1,0 +1,45 @@
+\section{Shanonova kapacita grafu}
+
+Úplný součin grafů je takový graf $G\boxtimes H$, že:
+$V:= V(G)\times V(H)$ a hrana ${(v₁,u₁),(v₂,u₂)}$ tam je když $v₁=v₂∨v₁v₂∈E₁$ a
+totéž pro $u$ (s tím, že nebereme smyčky).
+
+\name{Shanonova kapacita} je
+$$
+\sup@{α(G^k)^\inv{k}@}
+$$
+
+Pro $5$-cyklus je to $\sqrt{5}$. Uděláme ortogonální reprezentaci grafu, každý
+vrchol dostane vektor, pokud mezi nimi není hrana, tak jsou na sebe kolmé.
+
+Nejlepší reprezentace je taková, která jde do co nejmenšího kulového vrchlíku.
+
+Definujme $τ=\max_{c,\len{c}=1}\inv{@<c;v@>²}$ ($v$ je vektor vrcholu).
+
+\begin{Lemma}
+$α(G)≤τ(G)$
+\end{Lemma}
+
+\begin{Proof}
+Vezmeme si nezávislou, dáme libovolnou reprezentaci. Ta už musí udělat sama
+dostatečně veliký vrchlík.
+\end{Proof}
+
+\begin{Lemma}
+Máme grafy $G,H$ a jejich reprezentace. Potom pro $G\boxtimes H$ existuje
+reprezentace taková, že $τ(G\boxtimes H) = τ(G)·τ(H)$.
+\end{Lemma}
+
+Máme vektory $x$, $y$. Potom \name{tenzorový součin} je $x\otimes y∈ℝ^{m·n}$ a
+vyjde vynásobením každý s každým v lexikografickém pořadí opačně (tedy, od druhé
+souřadnice). Vyjde taky jako $x^T\times y$.
+
+\begin{Observation}
+Je to lineární operátor.
+\end{Observation}
+
+\begin{Proof}
+Stačí vzít tenzorový součin těch vektorů.
+\end{Proof}
+
+Nyní už stačí vzít jen reprezentaci $C₅$, nasadit obě lemmata a je hotovo.
