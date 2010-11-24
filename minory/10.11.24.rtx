@@ -1,0 +1,46 @@
+\section{Vyhledávací hry a stromová šířka}
+
+Jeden hráč je zloděj, druhý hráč je $k$ policejních vrtulníků, hrací plán je
+graf. Během jednoho tahu policejní vrtulník vzletí a je známo kam, kam se
+přesouvá, během toho zloděj může libovolně daleko ne přes vrtulníky, pak
+vrtulník přestane.
+
+Cílem je pro zloděje utíkat navždy, u policistů obsadit zloděje.
+
+\begin{Tvrz}
+Policie má vyhrávající strategii s $k+1$ vrtulníky $←→$ stromová šířka je
+nejvýše $k$.
+\end{Tvrz}
+
+\begin{Proof}
+Když je dostatek vrtulníků, tak máme vždy obsazený některý uzel. Při přesunu
+sedím na průniku dvou uzlů.
+\end{Proof}
+
+\section{Stromová šířka a minorová věta}
+
+\begin{Statement}[Kruskal]
+Grafy stromové šířky nejvýše $1$ jsou dobře uspořádané na minory.
+\end{Statement}
+
+\begin{Statement}
+Obdobně jako Kruskalova, ale platí pro libovolnou danou stromovou šířku.
+\end{Statement}
+
+\begin{Statement}
+Pro každý graf $G$ platí ekvivalence, že $G$ je rovinný $←→$ třída grafů bez $G$
+jako minor má omezenou stromovou šířku.
+\end{Statement}
+
+\begin{Statement}
+Pro každé $n$ existuje $k_n$ takové, že graf šířky alespoň $k$ obsahuje mřížku
+$n\times n$ jako minor.
+\end{Statement}
+
+\begin{Statement}
+Nechť $G₀,G₁,…$ jsou grafy a $G₀$ je rovinný. Potom v $G_i$ najdu buď $G₀$ jako
+minor nebo to má omezenou stromovou šířku.
+\end{Statement}
+
+\name{Hadvigerovo číslo} je velikost největšího úplného grafu, který je minor
+$G$. Domněnka je, že barevnost je tímto omezená.
