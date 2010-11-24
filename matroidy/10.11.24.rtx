@@ -1,0 +1,10 @@
+
+Chceme minimalizovat počet nezávislých množin na pokrytí. To je
+$∀E'@⊂E;\len{E'}≤k·r(E)$.
+
+Maximální průměrný stupeň $mad(G)=\max_{G'@⊂G}\frac{2·\len{E(G')}}{\len{V(G)}}$.
+
+Když ho chceme najít, tak ho hledáme mezi hodnotami $\frac{2k}{l}$. Chceme
+nejmeníš, co je alespoň tak velký jako $mad$.
+
+$mad(G≤2k←→$ lze najít $k$ nezávislými z $\M^+(G)$.
