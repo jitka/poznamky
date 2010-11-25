@@ -1,0 +1,74 @@
+\begin{Priklad}
+Máme graf $H$. Kolik musí mít graf na $n$ vrcholech, aby obsahoval $H$ jako
+podgraf? Budeme předpokládat, že $H$ není strom (asi jen nezajímavé).
+
+Určitě můžu vzít $χ(H)-1$ partitní úplný graf, ten ho neobsahuje, takže nestačí
+$t(n,χ(H)-1)$
+\end{Priklad}
+
+\begin{Statement}[Erdös-Stown]
+$∀H∀γ∃n₀∀G;n=\len{V(G)}≥n₀,\len{E(G)}≥t(n,χ(H)-1)+γn²$, potom $G$ obsahuje $H$.
+\end{Statement}
+
+\begin{Proof}
+Vezmu $d:=\frac{γ}{2}$.
+
+Dále potřebuji, aby $(d-ε)^Δ-Δε≥\inv{2}d^Δ$, kde $Δ$ je max. stupeň v $H$.
+Zvolíme $ε$ tak, aby to platilo a bylo menší, než $d$.
+
+Zvolíme $m$ tak, aby $2γ-ε²-4ε-d-\inv{m}>0$ a $m≥χ(H)$.
+
+Potom na to pustíme Semerediho Regularity Lemma a vrátí $M$ a $n_{0,s}$. Potom
+dáme $n₀≥\frac{2M·\len{V(H)}}{d^Δ@(1-ε@)}$ a zároveň $n₀≥n_{0,s}$.
+
+Dále máme $ε$ regulární rozdělení na $V₀,V₁,…,V_n$ tak, že $m≤n≤M₀,\len{V₀}≤ε·n,
+\len{V₁}=…=\len{V_n}$. Uděláme regularity graf s hraniční hustotou $d$.
+
+Buď obsahuje $K_{χ(H)}$ nebo má nejvýše $t(m,χ(H)-1)$ hran (a podle Turanovy
+věty nastává alespoň jedna možnost).
+
+$H$ má vrcholy $w₁,…,w_k$, uvážíme jeho obarvení. Jako kandidátskou množinu
+vrcholu $w_i$ barvy $c$ zvolíme $V_c$ (kde to $K_{χ(H)}$ je na prvních $χ(H)$
+$V$ vrcholech). Té budu říkat $Y_i$.
+
+Dále budeme postupně určovat vrcholy z kandidátských množin. Budeme mít
+invariant, že $Y_i$ pro neurčený vrchol $w_i$ bude alespoň $(d-ε)^l·\len{V_i}$,
+kde $l$ je počet již zafixovaných sousedů.
+
+Druhý invariant je, že pokud mám dva vrcholy určené, tak pokud byly v $H$
+hranou, tak jsou i nyní.
+
+Pokud $w_i$ je zafixovaný a $w_j$ není zafixovaný, potom $Y_j$ obsahuje jen
+sousedy $w_i$.
+
+Na začátku to triviálně platí.
+
+Nechť jsou $w₁,…,w_κ$ zafixované, fixuji $w_{κ+1}$. Velikost $Y_{κ+1}$ je
+alespoň $(d-ε)^Δ·\len{V₁}$. Nemohu použít $≤k-1$ vrcholů, které jsou již
+obsazené. A také nemůžu použít nejvýše $Δ·ε·\len{V₁}$, které mají málo sousedů v
+kandidátských množinách nezafixovaných sousedů $w_{κ+1}$.
+
+Nyní je potřeba dokázat, že mi ještě něco zbylo. To je potřeba upočítat z
+předpokladů.
+
+
+Druhý případ je, že $K_{χ(H)}$ tam není. Předpokládejme, že
+$\len{E(G)>t(m,χ(H)-1}$.
+
+Jednak můžeme mít až $ε·n²$ hran do odpadní množiny. Dále \TODO{}.
+\end{Proof}
+
+\begin{Priklad}
+$∀ε>0∃n₀∀A@⊂1…n,n≥n₀,\len{ε·n};A$ obsahuje aritmetickou posloupnost délky $3$.
+
+Tohle se udělá přes removal lemma pro trojúhelníky. Uděláme si $3$-partitní
+graf, očíslované pomocí $1…3n$ (takže celkem $9n$ vrcholů). Spojím hranou dva
+vrcholy sousedních partit, když jejich rozdíl je v $A$, ty krajní když
+polovina rozdílu je v $A$. Na aritmetické posloupnosti vidím trojúhelník.
+
+Obsahuje $n·\len{A}$ hranově disjunktních trojúhelníků. Takže to má moc
+trojúhelníků/hran, takže druhý případ removal lemma nenastane. Tedy máme
+trojúhelníků hodně. Ale trojúhelníků tvaru $x,x+a,x+2a$ je jen $3n²$. Proto
+existuje i jiný trojúhelník. Proto tam mám nějaká čísla $a, b, \frac{a+b}{2}$ v
+$A$. Máme tedy aritmetickou posloupnost.
+\end{Priklad}
