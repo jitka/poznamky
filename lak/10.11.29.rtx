@@ -1,0 +1,58 @@
+\begin{Statement}
+Nechť $P$ je reguární. Potom:
+$$Sp(A) = Sp(P·A·P^{-1})$$
+\end{Statement}
+
+\begin{Proof}
+Roznásobením přes determinanty.
+\end{Proof}
+
+\begin{Lemma}
+Nechť $A∈ℂ^{n\times n}$ je hermitovská a $S∈ℂ^{m\times n}$, $m<n$, $SS^*=E$. Potom
+vlastní čísla $SAS^*$ proplétají vlastní čísla $A$.
+\end{Lemma}
+
+\begin{Proof}
+Vektory z $S$ jsou na sebe kolmé. Lze rozšířit na ortonormální bázi $R$ takové,
+že $RR^*=E$ (ale větší).
+
+Nahradím tedy $S$ za $R$. To odpovídá blokovému násobení matic, nalevo nahoře
+mám $SAS^*$. Tedy, vlastní čísla $SAS^*$ problétají vlastní čísla $RAR^*$. Ale
+to má stejná vlastní čísla, jako $A$.
+\end{Proof}
+
+\begin{Lemma}
+Mám čtvercovou matici $A$ nařezanou na bloky dlouhé $n₁,n₂,…,n_m$. Získáme matici
+$B∈ℂ^{m\times m}$ tak, že vezmeme daný bloček, vše sečteme a vydělíme $n_i$.
+
+Vlastní čísla matice $B$ problétají vlastní čísla $A$.
+\end{Lemma}
+
+\begin{Proof}
+Udělám matici $S∈ℂ^{m\times n}$. Takže mám řádků kolik je bloků a sloupečků
+kolik je sloupečků. Do prvního bloku přijdou jedničky na první řádek, do druhého
+na druhý, etc, jinak nuly.
+
+Potom $SS^*$ je matice $m\times m$. Na diagonále budou velikosti bloků, jinak
+nuly. $SAS^*$ vychází součty prvků v celém bloku. Pohrajeme si a napasujeme
+předchozí lemma.
+\end{Proof}
+
+\begin{Statement}
+$G$ je graf. Potom $α(G)≤n·\frac{-λ₁λ_n}{δ²(G)-λ₁λ_n}$.
+\end{Statement}
+
+\begin{Proof}
+Nastěhuju si nezávislou jako nejnižší indexy. Rozdělím matici na $4$ kusy, a
+spočítám $B$ jako v minulém lemmatu. Vlevo nahoře mám $0$, vpravo dole mě to
+nezajímá. Potom $b_{2,1} = b_{2,1}·\frac{α}{m-α}$. Ta má vlastní čísla $γ₁,γ₂$ a
+proplétá vlastní čísla matice sousednosti.
+\end{Proof}
+
+\begin{Statement}
+$χ≥1-\frac{λ₁}{λ_m}$
+\end{Statement}
+
+\begin{Proof}
+Nařežeme na nezávislé množiny podle barev.
+\end{Proof}
