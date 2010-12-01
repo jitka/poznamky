@@ -1,0 +1,83 @@
+\section{Řezy}
+
+\name{Řez} souvislého grafu $G$ je množina $S@⊂V(G)$ taková, že $G\backslash S$
+má více než jednu komponentu.
+
+\begin{Tvrz}
+Nechť $T$ je stromový rozklad souvislého grafu $G$. Potom $∀(X_i, X_j)∈E(T)$
+platí alespoň jedno z:
+→•
+ • $X_i∩X_j$ je řez v $G$.
+ • Všechny uzly za $X_i$ jsou podmnožiny $X_j$.
+ • Opačně.
+←•
+\end{Tvrz}
+
+\begin{Proof}
+Sporem. Ukážeme, že neplatí ani jedno a najdeme tam cyklus v tom stromovém
+rozkladu.
+\end{Proof}
+
+\name{Řezem množiny} množiny $W@⊂V(G)$ je $S@⊂V(G)$ takové, že alespoň dva
+vrcholy $W$ patří do různých komponent.
+
+Kliku takto nepřeříznu, cokoliv jiného ano.
+
+\begin{Observation}
+Pro každou množinu $W@⊂V(G)$ a každý rozklad $T$ grafu $G$ platí, že $W@⊂v∈V(T)$
+nebo má řez tvaru $X_i∩X_j;(X_i,X_j)∈E(T)$.
+\end{Observation}
+
+\begin{Proof}
+Nechť není v rámci jednoho uzlu. Takže $∀X_i∃u∈W\backslash X_i$. Orientuji hranu
+z $X_i$ směrem ke komponentě obsahující $u$. Existuje obousměrně orientovaná
+hrana. Řez na této hraně je oddělí.
+\end{Proof}
+
+Řez $S$ množiny $W$ nazveme \name{dobrým}, pokud žádná z komponent $G\backslash
+S$ neobsahuje více než $\frac{\len{W}}{2}$ vrcholů z $W$.
+
+\begin{Observation}
+Je-li $tw(G)≤k$, potom každá $W$ má dobrý řez velikosti nejvýše $k+1$.
+\end{Observation}
+
+\begin{Proof}
+Vyzkouším řez každý vrchol, existuje-li velká komponenta, orientujeme hranu
+směrem k ní. Vznikne obousměrná hrana.
+\end{Proof}
+
+\begin{Statement}[Lipton-Tarjan]
+Každý rovinný graf na $n$ vrcholech má řez $S$ velikosti nejvýše $2\sqrt{2n}$
+takový, že každá komponenta $G\backslash S$ má méně než $\frac{2}{3}n$.
+\end{Statement}
+
+\begin{Proof}
+Označme $k:=\lfloor \sqrt{2n} \rfloor$. BÚNO $G$ je rovinná triangulace.
+
+$C$ bude řez a zároveň cyklus, ne nutně indukovaný. Zvolíme $C$ tak, aby
+$\len{C}≤2k$, vnějšek $\len{B}≤\frac{2}{3}n$ a aby $\len{A}-\len{B}$ co nejmenší
+($A$ je vnitřek).
+
+Předpokládejme pro spor, že vnitřek nám vyjde příliš veliký.
+
+$D$ bude podgraf určený hranami, které jsou nakresleny na $C$ nebo uvnitř $C$.
+
+Označíme $∀u,v∈C;c(u,v)$ jako vzdálenost v $C$ a $d(u,v)$. Je vidět, že
+$d(u,v)≤c(u,v)$.
+
+Dokážeme, že vždy máme rovnost. Pro spor předpokládáme, že $d(u,v)<c(u,v)$.
+Vezmeme nejbližší takové $u,v$. Uvnitř mám tedy zkratku, to nám dělí na dvě
+části. V tom případě ale můžu udělat lepší volbu přes tu zkratku. Jediné, co
+musím udokazovat je, že mi $B$ moc nenaroste, ale protože $A$ bylo moc velké a
+ukrojím max polovinu, tak zbude alespoň $\inv{3}$ pro nové $A$.
+
+Nyní, když budeme předpokládat, že $C$ je moc dlouhé a nejsou tam žádné zkratky,
+tak je uvnitř příliš mnoho vrcholů. To udělám přes protilehlé vrcholy a cesty
+mezi nimi, ty cesty jsou disjunktní (kdyby neexistovaly cesty, tak by existoval
+řez, to by byla cestička a byla by příliš krátká). Tam je ale už moc vrcholů (je
+jich kvadraticky).
+\end{Proof}
+
+\begin{Tvrz}
+Nechť $G$ je rovinný. Potom $tw(G)=O(\sqrt{\len{V(G)}})$.
+\end{Tvrz}
