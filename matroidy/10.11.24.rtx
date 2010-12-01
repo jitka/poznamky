@@ -7,4 +7,4 @@ Maximální průměrný stupeň $mad(G)=\max_{G'@⊂G}\frac{2·\len{E(G')}}{\len
 Když ho chceme najít, tak ho hledáme mezi hodnotami $\frac{2k}{l}$. Chceme
 nejmeníš, co je alespoň tak velký jako $mad$.
 
-$mad(G≤2k←→$ lze najít $k$ nezávislými z $\M^+(G)$.
+$mad(G)≤2k←→$ lze najít $k$ nezávislými z $\M^+(G)$.

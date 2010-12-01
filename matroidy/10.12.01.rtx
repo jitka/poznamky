@@ -1,0 +1,68 @@
+Představme si, že máme matroid $\M$ a jeho standardní reprezentaci.
+\name{Pivotace} je výběr prvkku matice a zeliminování podle něho. Toto zachovává
+matroid, jen vyměňuje prvek v bázi. Lze jen s těmi, které jsou na fundamentální
+kružnici.
+
+\begin{Statement}
+Matroid $\M$ je binární $←→$ nemá minor $U_{2,4}$.
+\end{Statement}
+
+\begin{Proof}
+$U_{2,4}$ není binární, proto nic, co ho má jako minor.
+
+Opačně, nechť $\M$ je minorově minimální nebinární matroid a BÚNO
+$2r(\M)≤\len{E}$ (jinak můžu udělat duál). Neobsahuje smyčky a paralelní hrany
+(stejně nedělají problém). $B$ je máze, $D$ je matice incidence fundamentálních
+kružnic vzhledem k $B$. Toto by byla reprezentace, pokud by byl binární.
+Existuje $B'$ taková, že fundamentální kružnice vzhledem k $B'$ nejsou korektně
+reprezentovány. Má tedy dva sloupce, tedy má nejvýše $4$ elementy (jinak by byla
+moc malá báze, kvůli předpokladu na rank). Ale má alespoň jeden element.
+\end{Proof}
+
+\begin{Lemma}
+$\M$ je binární matroid, $C∈\mathcal{C}; C^*∈\mathcal{C}^*; →→ \len{C∩C^*}$ je
+sudý.
+\end{Lemma}
+
+\begin{Proof}
+Pokud je to nula, tak OK.
+
+Jinak, máme $x$ z průniku. Bude se koukat, jeden prvek s jedničkou v bázi, musí
+se posčítávat na $0$ v řádku i ve sloupečku.
+\end{Proof}
+
+\begin{Lemma}
+Symetrický rozdíl kružnic je disjunktní sjednocení kružnic.
+\end{Lemma}
+
+\begin{Proof}
+Vidět ze součtů sloupečků, ty musejí vyjít $0$.
+\end{Proof}
+
+\begin{Statement}
+Pro matroid $\M$ je ekvivalentní:
+→•
+ • $\M$ je binární.
+ • $∀C∈\mathcal{C};∀C^*∈\mathcal{C^*};\len{C∩C^*}$ sudý.
+ • Symetrický rozdíl $2$ kružnic obsahuje kružnici.
+ • Symetrický rozdíl $2$ kružnic je disjunktní sjednocení kružnic.
+ • Totéž pro libovolné systémy kružnic.
+ • Pro každou bázi a $∀C∈\mathcal{C}$ je $C$ symetrický rozdíl fundamentálních
+   kružnic vzhledem k $B$ přes všechny prvky $C\backslash B$.
+ • Existuje báze taková, že platí předchozí.
+←•
+\end{Statement}
+
+\begin{Tvrz}
+$F₇$ a jeho duál jsou zakázané minory pro všechna tělesa kromě těles
+charakteristiky $2$.
+\end{Tvrz}
+
+\begin{Statement}
+U $GF₃$ jjsou zakázané minory $F₇,F₇^*, U_{2,5}, U_{3,5}$.
+\end{Statement}
+
+\begin{Statement}
+$q$ je mocnina prvočísla, $\M$ je mtroid ranku $r$ nereprezentovatelný nad
+$GF_q$ bez smyček a paralelních prvků. Potom je omezený počet prvků.
+\end{Statement}
