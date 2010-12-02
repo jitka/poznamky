@@ -1,0 +1,146 @@
+\section{Discharging}
+
+Důkazová metoda založená na tomto:
+→•
+ • Uvážíme minimální protipříklad.
+ • Minimální protipříklad nemůže obsahovat některé konfigurace.
+ • Každý rovinný (nebo jiný) graf obsahuje alespoň jednu zakázanou konfiguraci.
+   To se ukáže metodou přerozdělování náboje. Každý vrchol a každá stěna dostane
+   nějaký náboj. Součet je záporný. To si mezi sebou nějak popřesunují. Konečný
+   náboj bude nezáporný.
+←•
+
+\name{Cyklické obarvení grafu na nějaké ploše} je obarvení takové, že každé dva
+vrcholy ležící na společné stěně mají různou barvu. To je určitě velikost
+maximální stěny, tedy $Δ^*$.
+
+\begin{Priklad}
+Nechť $G$ je rovinný graf takový, že žádné dvě stěny velikosti alespoň $4$
+nemají společný vrchol. Pokud $Δ^*≥6$, potom cyklická barevnost je nejvýše
+$Δ^*+1$.
+\end{Priklad}
+
+\begin{Proof}
+Dokážeme, že nechť $G$ je rovinný graf a $D≥6$. Pokud $Δ^*≤D$, potom barevnost
+je nejvýše $D+1$.
+
+Budeme mít graf minimální v počtu vrcholů, z nich minimální počet hran.
+
+\begin{Lemma}
+Minimální protipříklad je $2$-souvislý.
+\end{Lemma}
+
+\begin{Proof}
+Pokud ne, tak můžu v klidu roztrhnout, obarvit a spojit, jen s přebarvením.
+\end{Proof}
+
+To znamená, že počet vrcholů a hran na stěně je stejný.
+
+\begin{Lemma}
+Minimální protipříklad nemá paralelní hrany.
+\end{Lemma}
+
+To je jednoduché.
+
+\begin{Lemma}
+Minimální protipříklad nemá separující trojúhelník.
+\end{Lemma}
+
+\begin{Proof}
+Roztrhnu, obarvím, slepím a zase hotovo.
+\end{Proof}
+
+\begin{Lemma}
+V minimálním protipříkladu, $δ≥3$.
+\end{Lemma}
+
+\begin{Proof}
+Jedna stěna, se kterou sousedí je trojúhelník. Můžu vrchol odebrat, tím neudělám
+dvě velké stěny vedle sebe. Můžou vzniknout dvě paralelný hrany, to můžu
+splácnout, mám jinak obarvím, mám alespoň dvě zbylé barvy pro vrácení.
+\end{Proof}
+
+\begin{Lemma}
+Každý vrchol stupně $3,4$ nebo $5$ leží na stěně velikosti alespoň $5$.
+\end{Lemma}
+
+\begin{Proof}
+Kdyby
+ne, tak to můžu vyndat, ztriangulovat, obarvit a vrátit.
+\end{Proof}
+
+\begin{Proof}
+Minimální stupeň je $4$. Kdyby měl stupeň $3$, tak má jednu velkou stěnu,
+vyměním za hranu, pak vrátím.
+\end{Proof}
+
+\begin{Lemma}
+Každý vrchol stupně $4$ leží na stěně velikosti alespoň $6$.
+\end{Lemma}
+
+\begin{Proof}
+Použiju separující trojúhelník, podobně jako u $5$.
+\end{Proof}
+
+\begin{Lemma}
+Žádná velká stěna neobsahuje po sobě následující vrcholy stupně $4$.
+\end{Lemma}
+
+\begin{Proof}
+Ta stěna má alespoň velikost $6$. Vyndám je a uvolněné místo vytrianguluji. Lze
+obarvit a pak je vrátit.
+\end{Proof}
+
+\begin{Lemma}
+Žádná velká stěna neobsahuje vrcholy stupňů $4,5,5$ ani $4,5,4$.
+\end{Lemma}
+
+\begin{Proof}
+Viz obrázek. Opět to půjde dobarvit.
+\end{Proof}
+
+\begin{Lemma}
+Žádná velká stěna neobsahuje vrcholy stupňů $5,4,5$.
+\end{Lemma}
+
+\begin{Proof}
+Opět obrázek.
+\end{Proof}
+
+\begin{Lemma}
+Žádná věta velikosti $5$ neobsahuje dva vrcholy stupně $5$ za sebou.
+\end{Lemma}
+
+\begin{Proof}
+Zase obrázek.
+\end{Proof}
+
+Každému vrcholu přiřadíme $d-6$ jednotek náboje, kde $d$ je jeho stupeň. Každé
+stěně přiřadíme $2d-6$ jednotek náboje, kde $d$ je její stupeň. Součet bude
+$6·\len{E(G)} - 6\len{V(G)} - 6 \len{F(G)}$. Z eulerovy formule tedy vyjde, že
+je to $-12$.
+
+Zavedeme pravidla:
+→•
+ • Stěna velikosti alespoň $5$ posílá $2$ jednotky každému vrcholu stupně $4$,
+   který je na ní.
+ • Stěna velikosti alespoň $5$ posílá jednu jednotku vrcholu stupně $5$.
+←•
+
+Každý vrchol má nyní nezáporný náboj. Vrcholy stupně $6$ a vyšší jsou nezáporné
+od začátku, menší jsou na stěně velikosti alespoň $5$, tak dostali dostatek.
+
+Každá stěna má nyní nezáporný náboj. Trojúhelníky mají $0$ od začátku, $4$
+nikomu nic nedají také.
+
+$5$-stěna neobsahuje stupeň $4$. Ta obsahuje jen vrcholy $5$. Obsahuje nejvýše
+dva takové.
+
+Pokud je stěna veliká (dostatečně), pokud všechny vrcholy stupně $4$ nebo $5$.
+Potom všechny jsou $5$, potom pošle celkem $d$ jednotek. Tak dále vezmu úseky
+stupňů $4,5$. V takovém úseku je max jedna čtyřka a v takovém případě je dlouhý
+max. 2. Posílá tedy nejvýše tolik, kolik je délka úseku + 1. Velikost stěny je
+součet úseků + počet úseků (mezi nimi je jeden nakrmený vrchol).
+
+To je ale nezáporné, spor s $-12$, proto není minimální protipříklad.
+\end{Proof}
