@@ -1,0 +1,61 @@
+
+Důkaz regularity lemmatu:
+
+\begin{Proof}
+Budeme mít potenciál rozdělení. Jemnější rozdělení bude vyšší a je to číslo mezi
+$0$ a $1$. Vezmu náhodné, potom postupně zlepšuji.
+
+Potenciál bude:
+
+$$
+q(A,B):=\frac{e(E,B)^2}{n₂·\len{A}·\len{B}}$$
+
+A pro celek:
+
+$$
+q(A₁,…,A_l):=\Σq(A_i,A_j)
+$$
+
+Pro náš rozklad to bude tak, že $V₀$ rozdrobním na jednotlivé prvky, jinak je to
+stejné.
+
+Pokud rozdělím něco na dva kusy, tak to zůstane alespoň stejné.
+
+$\frac{e(A,B)²}{\len{A}}≤\frac{e(A',B)²)}{\len{A'}}+\frac{e(A'',B)²}{\len{A''}}$.
+
+To se vykouká z cauchy-swartzovy nerovnosti.
+
+To, že je to do jedničky, to dokážu z rozkladu na jednotlivé vrcholy.
+
+\begin{Lemma}
+Pokud $C,D$ není $ε$-regulární dvojice, potom je můžu rozdělit každou na dvě
+množiny takové, že $\Σq(C_i,D_j)≥q(C,D)+ε⁴\frac{\len{C}\len{D}}{n²}$.
+\end{Lemma}
+
+\begin{Proof}
+Hnusné rozepsání a roznásobení. Poté cauchy-swartz. Potom z předpokladu, že
+$\len{C₁}≥\len{C}$ a obdobně pro $D$ dokážeme, že to vzroste dostatečně.
+\end{Proof}
+
+\begin{Lemma}
+$ε≤\inv{8}$, máme rozdělení $V_i$, velikosti jsou stejné. Pokud není
+$ε$-regulární, potom existuje rozdělení $V_i'$ takové, že:
+$\len{V₀'}≤\len{V₀}+\frac{n}{2^m}$, $m≤m'≤m·4^m$, stejné velikosti, a potenciál vzroste alespoň o
+$\frac{ε^5}{4}$.
+\end{Lemma}
+
+Toto už stačí. Libovolně rozdělíme na části $V₁,…,V_{m₀'}$, zbylé dám do $V₀$,
+$m₀'≥m₀$. Nyní používám předchozí lemma, dokud není $ε$-regulární. V každém
+kroku mi potenciál vzroste o konstantu. Takže počet kroků je shora omezen, pak
+už to určitě nesmí jít.
+
+\begin{Proof}
+Mám dostatek dvojic, co nejsou $ε$-regulární. Pro každou dvojici použiju
+předchozí lemma. Jedno $V_i$ může být v mnoha dvojicích, tak ho rozdělíme
+vícekrát. To vytvoří nové rozdělení. To dostatečně zvedne potenciál.
+
+Poté to nasekám ještě hodně tak, aby byly stejně veliké ($\frac{l}{4^m}$, kde
+$l$ jsou původní velikosti) a co zbyde, to nacpu do odpadu.
+\end{Proof}
+
+\end{Proof}
