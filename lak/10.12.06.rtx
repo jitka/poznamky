@@ -1,0 +1,33 @@
+\section{Siedelův switching}
+
+\name{Siedelův switching} je operace na grafu, kdy si vyberu jeden vrchol, tomu
+vyměním/zneguji všechny jeho sousední hrany.
+
+$G~H$ pokud mezi sebou jdou převádět postupným přepínáním.
+
+To je ekvivalentní s tím, že všechny vrcholy nějaké množiny můžu switchnout
+(měním hrany jen mezi množinou a okolím). To je vidět.
+
+To je totéž jako sčítání v $ℤ₂$ s úplným bipartitním grafu (používajícím všechny
+vrcholy). Jde přeswitchovat, když existuje takový graf.
+
+Takže třídy ekvivalence lze získat tak, že vyfaktorizuji všechny grafy pomocí
+báze všech úplný bipartitních na všech vrcholech.
+
+\begin{Statement}
+Tříd ekvivalence je stejně jako eulerovských grafů.
+\end{Statement}
+
+\begin{Proof}
+Jsou to ortogonální doplňky.
+\end{Proof}
+
+\name{Lineární forma} je zobrazení z vektorového prostoru do jeho tělesa, které
+jsou lineární. $V^*$ je prostor těchto forem. Platí, že $dim V= dim V^*$.
+
+\begin{Lemma}[Burnsidovo]
+Mějme grupu $G$ a množinu $M$. Potom akce grupy na množině je zobrazení $G\times
+M→M$ takové, že jednička z $G$ nechávají $m$ napokoji a $(g·h)·m=g(h·m)$.
+
+Potom prvky, které se dají dostat z jednoho prvku akcemi z $G$ jsou ekvivalence.
+\end{Lemma}
