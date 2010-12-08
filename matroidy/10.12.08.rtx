@@ -1,0 +1,68 @@
+\section{Ternární matroidy}
+
+\subsection{Totálně unimodulární matice}
+
+$A$ je \name{totálně unimodulání} matice (bude nad $ℝ$), pokud pro každou její
+čtvercovou podmatici platí, že její determinant je buď $0$, $\pm1$. Tedy, i
+prvky jsou $0, \pm1$.
+
+$\M$ je unimodulární, pokud je reprezentovatelný nad $ℝ$ pomocí totálně
+unimodulární matice.
+
+\begin{Lemma}
+$A$ je totálně unimodulární matice. Potom pivotací získáme opět totálně
+unimodulární matici.
+\end{Lemma}
+
+\begin{Proof}
+Jediné, co se může změnit na determinantu, je jeho znaménko, pomocí násobení. Je
+potřeba rozmyslet, co se bude dít, když pivot je mimo. Ale pak je tam můžu
+přidat a tvářit se na to.
+\end{Proof}
+
+\begin{Lemma}
+Duál unimodulárního matroidu je opět unimodulární.
+\end{Lemma}
+
+\begin{Proof}
+Transpozice bude zachovávat determinanty podmatic.
+\end{Proof}
+
+\begin{Lemma}
+Minory zachovávají unimodularitu.
+\end{Lemma}
+
+\begin{Proof}
+Vynechání jen omezí množinu podmatic. A kontrakce je vynechání v duálu.
+\end{Proof}
+
+\begin{Lemma}
+$\M$ je binární a $@[I_r|D₁@]$ je jeho reprezentace nad $M$ s prvky $0,1,-1$ a
+$@[I_r|D₂@]$ vznikne pivotací z $@[I_r|D₁@]$. Potom jsou prvky jen $0,\pm 1$.
+\end{Lemma}
+
+\begin{Proof}
+Rozbor případů.
+\end{Proof}
+
+\begin{Statement}
+Následující charakteristiky $\M$ jsou ekvivalentní:
+→•
+ • $\M$ je unimodulární.
+ • $\M$ je regulární (reprezentovateléné $∀𝔽$ tělesa).
+ • $\M$ binární a $𝔽$-reprezentovatelné pro nějaké těleso $𝔽$ charakteristiky
+   $≠2$.
+←•
+\end{Statement}
+
+\begin{Follows}
+$\M$ je regulární $←→$ je binární a ternární.
+\end{Follows}
+
+\begin{Statement}
+Minory zakázané pro regulární matroidy jsou
+$U_{2,4}, F₇, F₇^*$
+\end{Statement}
+
+Plyne ze zakázaných pro binární a ternární, jen vyhážu to, co už není potřeba.
+
