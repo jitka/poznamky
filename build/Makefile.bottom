@@ -8,8 +8,12 @@ Makefile.rtx.deps: $(RTXS) $(RTDS)
 Makefile.mp.deps: $(RTXS) $(RTDS)
 	perl $(D)/build/genmpdeps $^ > $@ || ( rm -f $@ ; false )
 
+Makefile.svg.deps: $(RTXS) $(RTDS)
+	perl $(D)/build/genilustdeps $^ > $@ || ( rm -f $@ ; false )
+
 include Makefile.rtx.deps
 include Makefile.mp.deps
+include Makefile.svg.deps
 
 $(RTXPDFS): %.pdf: %.dvi
 	cd $(shell echo $< | sed -e 's/\(.*\/\|\)[^/]*/\1/') . && dvipdf $(shell echo $< | sed -e 's/.*\///') $(shell echo $@ | sed -e 's/.*\///')
@@ -29,6 +33,9 @@ $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtx
 %.1: %.mp
 	cd $(shell echo $< | sed -e 's/\(.*\/\|\)[^/]*/\1/') . && mpost $(shell echo $< | sed -e 's/.*\///')
 
+%.eps: %.svg
+	convert $< $@
+
 %.mp: %.xmp
 	sed -f $(D)/build/rtx2tex < $< > $@ || ( rm $@; false )
 
@@ -46,7 +53,7 @@ clean-rtx:
 distclean: clean
 
 clean-depfiles:
-	rm -f Makefile.rtx.deps Makefile.mp.deps *.dep */*.dep
+	rm -f Makefile.rtx.deps Makefile.mp.deps *.dep */*.dep Makefile.svg.deps
 
 $(patsubst %,test-%,$(RTDS)): test-%.rtd: %.dvi
 	kdvi $<

@@ -79,3 +79,8 @@
   \end{flushright}
 }
 \newtheorem{Hypothesis}{Hypotéza}
+\newcommand{\svgilust}[1]{
+\begin{ilust}
+\includegraphics{#1.eps};
+\end{ilust}
+}
