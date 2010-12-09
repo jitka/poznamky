@@ -1,0 +1,90 @@
+\section{Vybíravost}
+
+Definice viz barevnost.
+
+\begin{Observation}
+$χ≤χ_l$.
+\end{Observation}
+
+\begin{Observation}
+Existují grafy, kde je to ostré (např. $K_{3,3}$).
+\end{Observation}
+
+\begin{Tvrz}
+Existuje rovinný graf s vybíravostí alespoň $5$. Na cvičení.
+\end{Tvrz}
+
+\begin{Statement}[Thomasen]
+Každý rovinný graf je $5$-vybíravý.
+\end{Statement}
+
+\begin{Proof}
+Dokážeme silnější: Nechť $G$ je souvislý graf vnořený do roviny. Dále, nechť
+$v₁,…,v_k$ jsou vrcholy vnější stěny takové, že $v₁$ a $v₂$ jsou sousední. Pro
+každé přiřazení seznamů splňující:
+→•
+ • $\len{L(V₁)}=\len{L(V₂)} = 1$, $L(V₁)≠L(V₂)$.
+ • $\len{L(V₃)}…\len{L(V_k)} = 3$.
+ • $∀v∈V(G)\backslash @{v₁,…,v_k@},\len{L(w)}=5$.
+←•
+
+Pak existuje $L$-obarvení.
+
+Uděláme to indukcí podle počtu vrcholů.
+
+Pokud není $2$-souvislý, tak má artikulaci. Ta je buď venku, pak to rozštěpím,
+někde zbydou předbarvené, uděláme z indukce. Ve druhé se mi předbarví vrchol,
+předbarvím ještě druhý a hotovo.
+
+Když žije uvnitř, potom je to podobné, barvím prvně vnějšek.
+
+Nadále je vnější stěna ohraničena kružnicí $C:=v₁,…,v_k$.
+
+Kdyby měla chordu, tak ji můžu okolo té chordy přestřihnout.
+
+Nyní nám tedy zbyla venku kružnice bez chord. Nechť to napřed není trojúhelník.
+Odtrhneme $v₃$ (první nepředbarvený). Tomu zbývají až $2$ nepoužité barvy, $α,
+β$. Od všech jeho sousedů (kromě $v₂$ a $v₄$) sebereme $α,β$. Ty se dostanou na
+vnější stěnu, stačí jim tedy $3$ barvy. Když je to trojúhelník, tak to jde také,
+obdobně. $v₃$ ještě jedna barva nakonec zbude ($v₄$ mohlo jednu sežrat).
+
+Začátek indukce funguje kdekoliv pod $5$ vrcholů.
+\end{Proof}
+
+\name{Orientace grafu} bude přiřazení nějakého směru každé hraně.
+
+Orientovaný graf je \name{jaderný}, pokud každý jeho indukovaný podgraf má
+jádro.
+
+\name{Jádro} je taková nezávislá množina, do které vede hrana z každého jiného.
+
+\begin{Lemma}
+Pokud $G$ má jadernou orientaci s maximálním výstupním stupněm nejvýše $k-1$,
+pak $G$ je $k$-vybíravý.
+\end{Lemma}
+
+\begin{Proof}
+Budeme dokazovat silnější, tedy že mi budou stačit seznamy délky $\deg^-(v)+1$.
+Indukcí podle počtu vrcholů. Pro jednovrcholový je zřejmé.
+
+Nechť $γ$ je libovolná barva vyskytující se v nějakém seznamu $L(v)$. $W$
+označím všechny vrcholy, co mají v seznamu barvu $γ$. Podgraf $G@[W@]$ má jádro
+$A$. Vrcholům $A$ přiřadím barvu $γ$, odeber tyto vrcholy a $γ$ ze seznamů.
+\end{Proof}
+
+\begin{Statement}[Galvinova]
+Nechť $G$ je bipartitní graf. Potom jeho hranová vybíravost $χ_l' = χ' = Δ$.
+\end{Statement}
+
+\begin{Proof}
+Nalezneme jadernou orientaci line-grafu s $Δ^- = Δ(G)-1$.
+
+Obarvíme hrany původního pomocí barev $1…Δ$. V jedné partitě zorientuji hrany v
+line grafu od menší barvy ke větší, v druhé partitě naopak.
+
+Je třeba dokázat jadernost. Vezmeme indukcí podle velikosti.
+
+Vybereme kandidáta ‒ v levé partitě si vybereme hranu s největším číslem. Pokud
+je to nezávislé, tak mám jádro. Jednu ze závislých odeberu (tu větší), najdu
+jádro zbytku. To je jádrem i naší množiny. Rozeberou se případy.
+\end{Proof}
