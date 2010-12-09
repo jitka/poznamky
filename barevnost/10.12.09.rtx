@@ -1,0 +1,62 @@
+\begin{Statement}[Thomasen]
+Nechť $G$ je $2$-souvislý rovinný graf obvodu alespoň $5$ (nemá trojúhelníky a
+čtyřcykly) a nechť $C$ je stěnový cyklus vnější stěny. Pokud $C$ má délku
+nejvýše $9$, potom lze každé předbarvení cyklu $C$ rozšířit do $3$-obarvení $G$
+s výjimkou případu, kdy $\len{C}=9$ a existuje vrchol $3$ různých vrcholů na
+vnější stěně se $3$ různými barvami.
+\end{Statement}
+
+\begin{Proof}
+Uvážíme minimální protipříklad. Každý vnitřní vrchol má nejvýše $1$ souseda na
+$C$ ‒ jinak rozdělím na $2$ a předbarvím. To je menší, obarvím, rozšířím.
+
+Každý vrchol má stupeň alespoň $3$, jinak odeberu, obarvím a vrátím.
+
+Dále, $C$ nemá chordu. Úplně skoro stejně.
+
+Neexistuje cesta délky $l=3$ nebo $l=4$ (měřeno počtem hran) spojující $2$
+vrcholy na $C$ taková, že ani jedna z čátí oddělených touto cestou není stěna
+velikosti $≤2l-1$ (tedy, každá taková cesta vytváří společně s $C$ stěnu
+velikosti nejvýše $2l-1$). Nechť tedy existuje. První možnost je, že máme stěnu,
+ale velkou (tedy, na části $C$ jsou alespoň $2/3$ vrcholy). Vrcholy na cestě
+obarvím, druhou část vyřeším a hotovo. Pokud jdu zkraje hladově, tak to funguje
+(viz obrázek, má vždy alespoň jednu volnou barvu). Dále, ani jedna strana není
+stěna sama o sobě. Smažu vnitřek menší části (druhý obrázek), můžu rozšířit.
+Pokud to nejde kvůli chordě, tak celou jednu část zahodím (to vyjde na počet
+vrcholů, že můžu) a řeším obdobně jako se stěnou.
+
+Každá vnitřní stěna má délku $5$ nebo $6$. Nechť mám vnitřní stěnu délky $7$.
+Určitě tam jsou $2$ vrcholy za sebou, co neleží na vnější stěně. Ale každý
+vrchol má na $C$ nejvýše jednoho souseda, takže když mám jednoho se sousedem,
+tak vedle musí být nějaký, který na $C$ není. Tak zidentifikuji vrchol uvnitř a
+objedno na $C$ (obrázek $3$). To už můžu opět převést ($3$ sousedy na hranici se
+uargumentují, že by už předtím musel mít $2$, to nemáme, předbarvení ‒ chorda
+nevznikne, jinak bych narazil na předchozí případ). Problém by mohl být s tím,
+že vznikne trojúhelník nebo čtyřcyklus. Kdyby to ale vznikalo, tak před
+identifikací uvnitř muselo něco žít, to jde smazat.
+
+Každá vnitřní stěna má délku $5$. Pro spor máme $6$-stěnu. Obdobně, máme nějaké
+dva zasebou nepředbarvené. Ten $6$-cyklus splácnu (obrázek).
+\end{Proof}
+
+\begin{Statement}[Grötzschova věta]
+Každý rovinný graf bez trojúhelníků je $3$-barevný.
+\end{Statement}
+
+\begin{Proof}
+Stačí dokázat, že tříbarevný je graf s obvodem alespoň $5$. Díky Thomasenově
+větě bude minimální protipříklad $2$-souvislý, se min. stupněm alespoň $3$. Z
+toho vyjde, že má stěnu $≤5$ (třeba přes discharging, nebo přes eulerovu
+formuli), tu prohlásíme za vnější.
+
+Když dostanu čtyřúhelník (stěnový), tak vezmu dva protější vrcholy a sjednotím
+je. To můžu udělat buď jedním, nebo druhým způsobem, když alespoň jedním
+způsobem nemám trojúhelník, tak pohoda, přes indukci. Pokud nemůžu ani jedním,
+tak mám mezi každou úhlopříčkou cestu délky dva, ty musejí mít společný vrchol,
+měl jsem trojúhelník už původně.
+
+Jinak máme separující $4$-cyklus. Nakreslíme do roviny, vezmeme takový
+$4$-cyklus, který uvnitř nemá žádný jiný. Z grafu vyřízneme tento $4$-cyklus, je
+to menší, není to protipříklad, obarvím a hotovo. Tím obarvím cyklus,
+podrozdělím jednu hranu a získám $5$-cyklus.
+\end{Proof}
