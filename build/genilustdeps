@@ -1,5 +1,6 @@
 #!/usr/bin/perl
-use common::sense;
+use strict;
+use warnings;
 
 foreach my $filename (@ARGV) {
 	open my $file, '<', $filename or die "Could not open $filename ($!)";
