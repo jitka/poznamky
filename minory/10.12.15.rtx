@@ -1,0 +1,55 @@
+\section{Dolní mez na tromovou šířku}
+
+\name{Houští} je systém podmnožin $\mathcal{B}$ nad vrcholy, pokud platí:
+→•
+ • $B∈\mathcal{B}$, potom $B$ indukuje souvislý podgraf.
+ • $B₁,B₂∈\mathcal{B}$, potom $B₁∪B₂$ indukuje souvislý podgraf.
+←•
+
+K tomu druhému, buď se překrývají, nebo je mezi nimi hrana.
+
+Říkáme, že množina $W@⊂V_G$ \name{drží} houští $\mathcal{B}$, pokud
+$B∩W≠∅∀B∈\mathcal{B}$. \name{Řád} houští je největší velikost $W$.
+
+\begin{Tvrz}
+Má-li $G$ houští řádu $k$, potom $tw(G)≥k-1$.
+\end{Tvrz}
+
+\begin{Proof}
+Sporem. Kdyby ne, tak neexistuje $X_i$, který drží $\mathcal{B}$. Zorientuji hrany
+k nějaké $B_i$, která má prázdný průnik s $X_i$. Budu mít obousměrnou hranu.
+\end{Proof}
+
+\begin{Statement}[minorová pro $tw$, Seamur, Thomas]
+Pro každé $k≥1$ platí, že $G$ má houští řádu alespoň $k←→$ má stromovou šířku
+$k-1$.
+\end{Statement}
+
+\begin{Proof}
+Budu dokazovat silnější. Nechť $G$ nemá houští řádu $k+1$. Potom pro každé
+houští $\mathcal{B}$ existuje rozklad $T$ takový, že každý uzel velikosti
+alespoň $k+1$ je list v $T$ a nedrží $\mathcal{B}$.
+
+Vezmeme houští $\mathcal{B}=@{V_G@}$. Potom $T$ podle předchozího odstavce nemá
+velké uzly.
+
+Tedy, jak dokážu to silnější? Všechna houští setřídím podle počtu množin
+velikosti nejvýše $k$, které ji drží.
+
+Když mám dáno $\mathcal{B}$, zvolím $W$ nejmenší, které ji drží (což je nejvýše
+$k$). Označme $A₁,…,A_r$ komponenty $G\backslash W$.
+
+$∀i∈1…r$ má graf $G_i:=G|W ∪ A_i$ má rozklad $T_i$ takový, že $W$ je uzlem $T_i$
+a každý uzel velikosti alespoň $k+1$ je listem a nedrží $\mathcal{B}$.
+
+První případ je, když $\mathcal{B}∪@{A_i@}$ není houští. Potom $T_i$ bude nahoře
+$W$, pod tím $A_i∪N(A_i)$. Tím pádem existuje $B$, že $B∪A_i$ není souvislý
+(jinak by $\mathcal{B}∪@{A_i@}$ bylo houští), proto $N(A_i)$ není v
+$\mathcal{B}$, proto ani $A_i∪N(A_i)$ nedrží.
+
+Druhý případ je, když $B@{A_i}$ je houští $\mathcal{B'}$. V jakém pořadí jsou
+$\mathcal{B}$ a $\mathcal{B'}$? Každá množina, která drží $\mathcal{B'}$ drží i
+$\mathcal{B}$, ale $W$ nedrží $B'$, protože se tam neprotíná. Tu už jsme
+vyřešili. Splňuje-li $T'$ podmínky pro $\mathcal{B}$, tak pohoda. Nesplňuje-li ji,
+potom je disjunktní $A_i$, potom můžeme obdobně $A_i∪\N(A_i)$ přidat.
+\end{Proof}
