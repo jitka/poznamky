@@ -47,7 +47,7 @@ $W$, pod tím $A_i∪N(A_i)$. Tím pádem existuje $B$, že $B∪A_i$ není souv
 (jinak by $\mathcal{B}∪@{A_i@}$ bylo houští), proto $N(A_i)$ není v
 $\mathcal{B}$, proto ani $A_i∪N(A_i)$ nedrží.
 
-Druhý případ je, když $B@{A_i}$ je houští $\mathcal{B'}$. V jakém pořadí jsou
+Druhý případ je, když $B@{A_i@}$ je houští $\mathcal{B'}$. V jakém pořadí jsou
 $\mathcal{B}$ a $\mathcal{B'}$? Každá množina, která drží $\mathcal{B'}$ drží i
 $\mathcal{B}$, ale $W$ nedrží $B'$, protože se tam neprotíná. Tu už jsme
 vyřešili. Splňuje-li $T'$ podmínky pro $\mathcal{B}$, tak pohoda. Nesplňuje-li ji,
