@@ -36,6 +36,9 @@ $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtx
 %.eps: %.svg
 	convert $< $@
 
+%.svg: %.xoj
+	gunzip -c < $< | perl $(D)/build/xoj2svg.pl > $@ || ( rm $@; false )
+
 %.mp: %.xmp
 	sed -f $(D)/build/rtx2tex < $< > $@ || ( rm $@; false )
 

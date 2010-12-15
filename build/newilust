@@ -1,12 +1,21 @@
 #!/bin/bash
 
+EXT=svg
+CMD=inkscape
+
+if [ "$1" = "xournal" ] ; then
+	EXT=xoj
+	CMD=xournal
+	shift
+fi
+
 BASE=${1%.*}
 NUM=1
-while [ -e "$BASE-$NUM.svg" ] ; do
+while [ -e "$BASE-$NUM.svg" -o -e "$BASE-$NUM.xoj" ] ; do
 	NUM=$((NUM + 1))
 done
 
-cp "$HOME"/skola/build/empty.svg "$BASE-$NUM.svg"
-git add "$BASE-$NUM.svg"
+cp "$HOME"/skola/build/empty.$EXT "$BASE-$NUM.$EXT"
+git add "$BASE-$NUM.$EXT"
 echo "\\svgilust{$BASE-$NUM}"
-inkscape "$BASE-$NUM.svg" >/dev/null 2>&1 &
+$CMD "$BASE-$NUM.$EXT" >/dev/null 2>&1 &
