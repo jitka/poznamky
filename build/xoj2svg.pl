@@ -2,6 +2,11 @@
 use strict;
 use warnings;
 
+my ($width, $height);
+while (<>) {
+	last if (($width, $height) = /<page width="(.*)" height="(.*)">/);
+}
+
 print <<'SVG';
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
@@ -13,8 +18,9 @@ print <<'SVG';
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="500"
-   height="500"
+SVG
+print "width='$width' height='$height'\n";
+print <<'SVG';
    id="svg"
    version="1.1"
    inkscape:version="0.48.0 r9654"
@@ -57,7 +63,7 @@ print <<'SVG';
      id="layer1">
 SVG
 
-my($color, $width, $id);
+my($color, $id);
 my @data;
 while (<>) {
 	if (/<stroke [^>]* color="([^']+)" width="([.0-9]+)">/) {

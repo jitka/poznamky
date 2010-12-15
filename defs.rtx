@@ -81,6 +81,6 @@
 \newtheorem{Hypothesis}{Hypotéza}
 \newcommand{\svgilust}[1]{
 \begin{ilust}
-\includegraphics{#1.eps};
+\includegraphics[scale=0.25]{#1.eps}
 \end{ilust}
 }

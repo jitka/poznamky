@@ -5,9 +5,11 @@ use warnings;
 foreach my $filename (@ARGV) {
 	open my $file, '<', $filename or die "Could not open $filename ($!)";
 	$filename =~ s/\.rt[dx]$/\.tex/;
+	my $base = $filename;
+	$base =~ s/[^\/]*$//;
 	while (<$file>) {
 		while (s/\\svgilust\{([^{}]+)\}//) {
-			print "$filename.dep: $1.eps\n";
+			print "$filename.dep: $base$1.eps\n";
 		}
 	}
 }
