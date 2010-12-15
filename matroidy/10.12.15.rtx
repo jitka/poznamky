@@ -1,0 +1,52 @@
+\section{Grafové minory}
+
+$G(V,E), X@⊂E; r(X) = \len{V} - C(V,X)$
+
+Budeme brát jen grafy bez smyček a izolovaných vrcholů.
+
+Zatímco graf určuje matroid jednoznačně, opačně to neplatí. Např. můžu mít dva
+grafy se stejným matroidem, viz:
+
+
+\svgilust{10.12.15-1}
+
+Tedy, můžu identifikovat vrchol různých komponent (opačně, rozdělit artikulaci)
+a protočit v $2$-řezu.
+
+\begin{Lemma}
+$G$ je $3$-souvislý graf, $H$ je bez izolovaných vrcholů a $\M(G)=\M(H)$. Potom
+$G\cong H$.
+\end{Lemma}
+
+\begin{Proof}
+Minimální hranový řez $G$ je kokružnice v $\M(G)$. Doplněk je nadrovina v
+$\M(G)$. Potom $H@⊂E$ je souvislá nadrovina $\M(G)$. $E\backslash H$ je
+incidentní s jedním vrcholem. Tedy $G$ indukuje izomorfní graf s $H$.
+\end{Proof}
+
+\begin{Statement}[Whitney]
+Nechť $G,H$ jsou grafy, $φ(E(G))→φ(E(H))$ isomorfizmus $\M(G)$ a $\M(H)$. Tak
+lze $G$ použitím operací na začátku kapitoly převést na $H$. Navíc, jsou-li
+$G,H$ 2-souvislé, používáme pouze přetáčení.
+\end{Statement}
+
+\begin{Statement}
+Máme $G$ graf a $\M$ matroid. $\M\cong \M*G ←→r(\M)=r(\M(G))∧$ každý elementární
+řez je sjednocení kokružnic $\M$.
+\end{Statement}
+
+\begin{Proof}
+Jedním směrem triviální.
+
+Opačně indukcí podle počtu prvků. Nosná množina je $\len{E}$. Búno $G$ je
+souvislý. Předpokládejme, že nejsou stejné, ale tamto platí.
+\end{Proof}
+
+\subsection{Testování binarity}
+
+Vezmeme $k∈ℕ, k≥3$ a množinu $E@{x₁,…,x_k, y₁,…y_k@}$ a
+$\mathcal{C₁}@{@{x_i,x_j,y_i,y_j@};i≠j@},
+\mathcal{C₂}=@{@{z₁,…,z_k@};z_i∈@{x_i,y_j@};@{z_1,…,z_k@}∩@{y_1,…,y_k@}\hbox{ je
+sudé }@}$.
+
+Toto je binární matroid.
