@@ -82,7 +82,7 @@ while (<>) {
 		undef $color;
 	} elsif ($color) {
 		push @data, split;
-	} elsif (s/<text font="([^"]+)" size="([^"]+)" x="1([^"]+)" y="([^"]+)" color="([^"]+)">//) {
+	} elsif (s/<text font="([^"]+)" size="([^"]+)" x="([^"]+)" y="([^"]+)" color="([^"]+)">//) {
 		my $font = $1;
 		my $width = $2;
 		my $x = $3;

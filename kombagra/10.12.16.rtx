@@ -1,0 +1,129 @@
+\section{$Π₂$-úplnost}
+
+\name{Problém} je něco, kde mám vstup a očekávaný výstup je ano/ne.
+
+Problém $\mathcal{P}$ je ve třídě $P$, pokud existuje polynomiálně vyčíslitelný predikát $Q$
+takový, že $\mathcal{P}(x)=Q(x)$.
+
+Problém $\mathcal{P}$ je ve třídě $NP$, pokud existuje polynomiálně vyčíslitelný
+predikát $Q$ a polynom $q$, $\mathcal{P}(x)=∃y,\len{y}≤q(\len{x});Q(x,y)$. Také
+se tomu říká $Σ₁$
+
+$co-NP$ je takový, že doplněk je $NP$. Říká se jim $Π₁$.
+
+Problém $\mathcal{P}$ je ve třídě $Π_k$, pokud existuje polynomiálně
+vyčíslitelný $k+1$-ární predikát $Q$ a polynom $q$ takový, že
+$\mathcal{P}(x)=∀y₁≤q(\len{x})∃…Q(x,y₁,y₂,…)$ (prostě se ty $∃$ a $∀$ se
+střídají).
+
+Toto je všechno v $P-space$.
+
+Třída rozhodovacích problémů $\mathcal{A}$, pak problém
+$\mathcal{P}∈\mathcal{A}$ je $\mathcal{A}$-úplný, pokud
+$∀\mathcal{P'}∈\mathcal{A}$ existuje polynomiálně vyčíslitelná funkce, že
+$∀x∈2^*;x∈\mathcal{P'}←→f(x)∈\mathcal{P}$.
+
+Jeden z $Π₂$ úplných problémů je určení, jestli:
+$$∀x₁,…,x_n∃x_{n+1},…,x_{2n}\bigwedge_{i=1}^m@(x_{i₁}^{ε_{i₁}}∨x_{i₂}^{ε_{i₂}}∨x_{i₃}^{ε_{i₃}}@)$$
+
+To lze dokázat zakódováním Turingova stroje.
+
+\begin{Statement}[Erdös,Rabin,Taylor]
+$3$-Vybíravost bipartitních grafů je $Π₂$-úplný problém.
+\end{Statement}
+
+\begin{Proof}
+To, že je ve třidě $Π₂$ je vidět.
+
+Je potřeba dokázat i $Π₂$-těžký. Prozatím si budu diktovat, jestli vrchol
+dostane seznam velikosti $2$ nebo $3$ (později převedu všechno na $3$).
+
+Budeme dělat gadgety. První nazveme \name{polopropagátor}
+
+\svgilust{10.12.16-1}
+
+Každé předbarvení vstupu lze rozšířit. Vždy barva zbývá.
+
+Pro každé obarvení výstupu existuje nejvýše jedna barva, která je nekompatibilní
+(kdyby se dala na vstup, tak by nešla rozšířit). To dokážu rozborem případů a
+tím, že $K_{2,3}$ je $2$-vybíravý.
+
+Existují seznamy takové, že existuje předbarvení vstupu, které je jednoznačně
+rozšiřitelné (viz barvičky v obrázku).
+
+\name{Propagátor} vypadá tak, že nalepí dva polopropagátory za sebe.
+
+Každé předbarvení vstupu lze rozšířit. Plyne z polopropagátoru.
+
+Existuje nejvýše jedna barva vstupu, která je nekompatibilní s nějakou barvou
+výstupu. To se udokazuje nakreslením, které barvy jsou navzájem nekompatibilní a
+rozborem případů.
+
+Existují seznamy takové, že existuje předbarvení vstupu, že jej lze jednoznačně
+rozšířit. Plyne z polopropagátoru.
+
+\name{Multipropagátor} je toto:
+
+\svgilust{10.12.16-2}
+
+Každé předbarvení vstupu lze rozšířit. Z propagátoru.
+
+Existuje nejvýše jedna barva vstupu, že je nekompatibilní s nějakým předbarvením
+výstupů. Taky uargumentuju z propagátoru.
+
+Existují seznamy a předbarvení, že lze jednoznačně rozšířit. Z propagátoru.
+
+\name{Existík} je toto:
+
+\svgilust{10.12.16-3}
+
+Předbarvení z každé strany/vstupu (modrý) lze rozšířit. Je vidět.
+
+\name{Provšechník} je toto:
+
+\svgilust{10.12.16-4}
+
+Existují seznamy, že si jednu koncovou barvu vynutím (zelená v příkladu nalevo).
+
+Alespoň jeden z konců lze obarvit libovolnou jeho barvou. Je to očividně
+$2$-vybíravé. To, že jeden zbude, jak chci, je tak, že když jeden je zakázaný,
+určitě má druhý povolené oboje.
+
+Nyní jsem dostal formuli. Udělám si existíky pro existenční proměnné,
+provšechníky pro provšechnové proměnné. Na každé výstupy si pověsím
+multipropagátor. Za každou klauzuli mám vrchol, spojím se správnými výstupy
+multypropagátorů.
+\svgilust{10.12.16-5}
+
+
+Toto je bipartitní. Každý gadget je bipartitní sám o sobě. Všechny výstupy z
+multipropagátoru jsou ve stejné (plyne z propagátoru a u něj z polopropagátoru),
+existík a provšechník mají konce ve stejné, to jde pospojovat.
+
+Vytvořím polynomiálně, to je vidět.
+
+Předpokládejme, že je formule nesplnitelná. $∃x₁,…,x_n$ takové, že
+$x_{n+1},…,x_{2n}$ nejdou doplnit, aby platilo. Vynutím si tedy vždy jednu barvu
+na buď pozitivním (když je false) nebo negativním (true) konci provšechníka. Multipropagátorům dám
+vynucenou barvu (nad nimi). U existíků dám všude stejné seznamy $A,B$. Na
+existíka nastavím multiplikátory takové, že na jednom vynutí barvy když $A$, na
+druhém když $B$ (takže si to musí vybrat, který konec vynutí). Klauzule dostane
+tu barvu, kterou má na vynuceném konci, pokud má něco nevynucené, tak cokoliv
+(ta už nekouše). Kdyby se to povedlo obarvit, tak to znamená, že každá klauzule
+má nevynucený koneček, potom ale můžu podle ní zvolit proměnnou.
+
+Pokud je splněná, tak hledám obarvení. Multipropagátor má nejvýše jednu špatnou
+barvu na vstupu, tak si zvolím tu která není špatně, rozšířím to pro druhou
+stranu (tam možná něco vynutím). Tím jsem navolil ohodnocení u provšechnítek,
+dostanu ohodnocení u existítek, na nich si vyberu dobrou barvu. A každá klauzule
+je už buď dobře obarvená, nebo musí vést do neobarveného (a rozšiřitelného)
+konce, a hurá.
+
+Nyní potřebuji nadělat seznamy délky $3$. Vezmu $9$ kopií těchto grafů. Potom
+vezmu dva nové vrcholy, jeden spojím se všemi $2$ v jedné partitě, k druhému z
+druhé partity. Těm dám barvy $A,B,C$, každé kopii doplním jednu disjunktní
+dvojici barev do seznamů. Pokud je obarvitelný ten původní, tak ty dva nové
+dostanou libovolnou barvu. Pokud ale nešly obarvit, novým vyberu barvu a jednu
+dvojici tím zabiju, tedy tomu zbyly jen ty původní $2$ barvy a to nešlo obarvit.
+
+\end{Proof}
