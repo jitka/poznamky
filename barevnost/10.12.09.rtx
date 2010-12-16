@@ -45,6 +45,71 @@ dva zasebou nepředbarvené. Ten $6$-cyklus splácnu (obrázek).
 
 \svgilust{10.12.09-4}
 
+Pokud je na vnější kružnici $C$ vrchol stupně $2$, potom je $\len{C}=9$. Určitě
+nejsou dva vedle sebe (kvůli $5$-cyklům). Tedy je to jako na obrázku. Kdybych ho
+utrhl a měl minule něco menšího, tak spor s minimálním protipříkladu.
+
+\svgilust{10.12.09-5}
+
+Existuje vnitřní stěna existující následovně:
+
+\svgilust{10.12.09-6}
+
+A ta je disjunktní s vnější stěnou. Sporem a dischargingem.
+
+Nyní, stupňe dostanou $2\deg(v)-6$ a stěnám $\deg -6$. Vnější stěna dostane $10$
+navíc. To je $-2$ celkem.
+
+Každý vrchol stupně alespoň $4$ posílá každé sousední stěně $.5$ jednotky
+náboje. Vnější stěna posílá do každé s ní sousedící stěně pošle jednotku. Vnější
+stěna dá vrcholu stupně $2$ dvě jednotky náboje.
+
+Všechno bude nezáporné. Vrchol pošle max tolik, kolik může (když je $2$, tak
+dostane, posílá když je aspoň $4$, a to vyjde nezáporně).
+
+Všechny vnitřní stěny začnou na $-1$. Pokud sdílí s vnější, tak je v pohodě.
+Jinak kdyby neexistovala ta stěna, pak dostane alespoň $1$ od vrcholů.
+
+Vnější stěna posílá jednotku za každou sousední stěnu. Vrcholů stupně $2$ je tam max.
+$4$. Pokud má i stupeň $2$, jedna dostane stěna (za obě hrany) a $2$ do vrcholu.
+Celkem tedy $\len{C}+$ počet vrcholů délky $2$, což je nejvýše $\deg+4$.
+
+Tedy, minimální protipříklad má tu divnou stěnu.
+
+Kdyby některý z těch vrcholů stupně $3$ ležel na vnější stěně, tak by bývala
+musela být i hranově sousední s vnější stěnou (ta okolo toho vrcholu viděla $2$
+stěny). Tedy ve vnější stěně může být jen ten neznámý vrchol.
+
+\svgilust{10.12.09-7}
+
+Kdyby všechny $y₁,…,y₄$ ležely na vnější stěně, potom užeru ty stěny okolo, čímž
+jen zmenšuji vrcholy (mezi $y_i$ a $y_j$ musí vždy ležet alespoň jeden vrchol,
+jinak mám čtyřcykly). To pustím do menšího případu/indukce a hotovo.
+
+Druhý případ je, že alespoň jeden z $y₁,y₂$ není na hranici (jinak překlopím dle
+svislé osy). Provedu identifikace a odstranění dle obrázku.
+
+\svgilust{10.12.09-8}
+
+Nezidentifikuji nic na hranici. $y₁,y₂$ nejsou oba na hranici. $x₅,y₃$ nejsou na
+hranici, potom by něco nalevo nebo napravo od nich musela být stěna, ale to
+není.
+
+Vrchol s třemi sousedy nevznikne, pak předtím musel mít dva sousedy, což už je
+zakázané. Kdyby nebyl původně sousedem, tak tak musel mít dva sousedy na hranici
+předtím.
+
+Monochromatickou chordu nevytvořím proto, že jsme měli vnitřní stěny velikosti
+$5$. To byly sousedi, proto nemohli mít ruznou barvu.
+
+Nyní, když je obvod alespoň $5$, tak zavolám menší případ, po rozidentifikaci
+mají barvy, nejsou sousední, a dobarvím (rozbor případů).
+
+Když nám ale vznikne malý obvod, tak používá některý z těch zidentifikovaných
+vrcholů. Pak tam najdu něco jako $6-7$-cyklus, tak vyndám vnitřek, obarvím, vnořím
+se. Kdyby jeden používal oba, tak nesmí být „hned vedle“, potom ale najdu
+separující $5$-cyklus, přes něj to opět jde rozebrat.
+
 \end{Proof}
 
 \begin{Statement}[Grötzschova věta]
