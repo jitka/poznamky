@@ -1,0 +1,81 @@
+\section{Neexistence perfektrích kódů}
+
+Máme abecedu $Σ$, $\len{Σ}=q$. $Σ^n$ jsou slova, $d_H(x,y)$ je počet míst, na
+kterých se tato slova liší.
+
+Vysílají se jen daná kódová slova.
+
+Řekneme, že kód $C$ opravuje $t$ chyb, pokud kdykoliv dojde až k $t$ chybám při
+přenosu, tak lze najít jednoznačně nejbližší kódové slovo.
+
+\begin{Observation}
+Vzdálenosti kódových slov jsou alespoň $2d+1$.
+\end{Observation}
+
+\begin{Proof}
+Přes okolíčka a jejich průniky.
+\end{Proof}
+
+\begin{Observation}
+$d_H$ je metrika.
+\end{Observation}
+
+\begin{Proof}
+Jen upočítat. Zajímavá je jen trojúhelníková nerovnost.
+\end{Proof}
+
+\begin{Observation}
+Nechť $C@⊂Σ^n$ opravuje $t$ chyb. Potom $\len{C}≤\frac{q^n}{\Σ_{i=0}^t \combnum{n}{i}@(q-1@)^i}$
+\end{Observation}
+
+\begin{Proof}
+Velikosti okolíček.
+\end{Proof}
+
+$C@⊂Σ^n$ se nazývá \name{$t$-perfektní} s parametry $q,n,t$, pokud platí
+rovnost. Tedy, okolíčka tvoří rozklad.
+
+\begin{Priklad}
+Mějme $q$ prvočíslo a matici $ℤ₂^{k\times 2^{k}-1}$, v ní všechny kromě nulového
+vektoru. A $C=@{x|Hx=0@}$. $C$ je $1$-perfektní kód.
+\end{Priklad}
+
+\begin{Proof}
+Opravuje jednu chybu. Sporem, najdeme vektor součet těchto dvou slov, ten musí
+být v $C$, ale nevyjde tam.
+
+Počet slov bude velikost jádra.
+\end{Proof}
+
+\begin{Statement}
+$∃(q,n,t)$-perfektní kód a $q=p^r$ (mocnina prvočísla). Potom $\Σ_{i=0}^t\combnum{n}{i}@(q-1@)^i=q^k$.
+\end{Statement}
+
+\begin{Proof}
+Je to celé číslo. Z toho vytlučeme, že je to mocnina $p$ a z toho se už uspoří,
+že musí být i mocnina $q$.
+\end{Proof}
+
+\begin{Follows}
+Nechť $q=p^r$ a $∃(q,n,1)$-perfektní kód, potom $n=\frac{q^k-1}{q-1}$.
+\end{Follows}
+
+\begin{Proof}
+Jen dosazení.
+\end{Proof}
+
+Jsou kódy pro mocniny prvočísla a $t=1$, pro $n=11$ a $t=2$ a pro $n=23$ a
+$t=3$. Na mocninách prvočísla žádná jiná nejsou.
+
+Ve složených se ví, že neexistují, kromě $t=1,2$, kde se neví.
+
+\begin{Statement}[Podmínka pakování koulí]
+$∃(q,n,t)$-perfektní kód. Potom $\Σ_{i=0}^t\combnum{n}{i}@(q-1@)^i|q^n$ pro
+složená $q$ a $q^k$ pro $q=p^r$.
+\end{Statement}
+
+\begin{Statement}
+Pokud $∃(q,n,t)$-perfektní kód, potom
+$L_t(x)=\Σ_{j=0}^t@(-1@)^j@(q-1@)^{t-1}\combnum{x-1}{q}\combnum{n-x}{t-j}$ má
+$t$ různých celočíselných kořenů mezi $1$ a $n$.
+\end{Statement}
