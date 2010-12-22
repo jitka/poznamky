@@ -1,0 +1,42 @@
+\begin{Statement}[Rovinná mřížková]
+Každý rovinný graf, který má stromovou šířku alespoň $30k+1$, pro $k≥2$ obsahuje
+mřížku $k\times k$ jako minor.
+\end{Statement}
+
+Podmnožina vrcholů $W^*$ je \name{silně $k$-souvislá}, jestliže pro každý řez $S$
+velikosti max. $k$, existuje komponenta $G\backslash S$, která obsahuje alespoň
+$\frac{2}{3}$ vrcholů $W^*$.
+
+\begin{Proof}
+Vezmeme za $W$ takovou množinu vrcholů, že její nejmenší dobrý (žádná komponenta
+nemá více než polovinu vrcholů) řez $S$ má největší možnou velikost.
+
+Velikost tohoto řezu je alespoň $10k+1$. Jinak by šlo zkonstruovat rozklad šířky
+nejvýše $30k+1$. Obsahuje silně $5k$-souvislou množinu.
+
+Nechť $W$ není silně $5k$-souvislá. Potom vezmeme řez $S₁$, který této silné
+$5k$-souvislosti zabraňuje. $S₁$ nesmí být dobrý, takže existuje komponenta $C$,
+která obsahuje více než polovinu, ale méně než $\frac{2}{3}$ vrcholů. Tuto
+část označíme jako $W':=W∩C$. Pokud není silně $5k$-souvislá, můžu zopakovat.
+Tím získám $S₂$, $S:=S₁∪S₂$, ten je ale dobrý, má velikost $10k$, což je spor.
+První $W^?$, co se mi líbí, prohlásím za $W^*$.
+
+Vezmu nakreslení $G$ a určíme uzavřenou křivku $φ$ takovou, že protíná $G$ jen
+ve vrcholech, prochází nejvýše $4k$ vrcholy, $φ$ se svým vnitřkem obsahuje
+alespoň $\frac{2}{3}$ vrcholů $W^*$, celkově ale obsahuje nejméně vrcholů, co
+jde. Zcela zřejmě existuje nějaká taková existuje.
+
+BÚNO obsahuje právě $4k$ vrcholů. Označím vrcholy podél této křivky jako
+$v₁,…,v_{4k}$. Lze nalézt $k$ disjunktních cest $(r₁,…,r_k)$, které spojují $v₁$
+a $v_{3k}$, $v₂$ a $v_{3k-1}$, …, všechny uvnitř $φ$. To dokážeme sporem. Potom
+existuje řez, které ty dvě strany od sebe odděluje. Přidáme řez k $φ$ a máme řez
+velikosti nejvýše $5k$. Ty dvě části ale tedy neobsahují dostatek vrcholů. Z
+toho odvodíme, že $W^*$ není silně $5k$-souvislá.
+
+Podobně tam najdu i cesty kolmé na toto. To už se ukontrahuje, beru třeba první
+svislík zleva (modrý):
+\svgilust{10.12.22-1}
+
+Pokud by na vodorovné něco překáželo od té další svislé, tak to přesměruju na objížďce
+na svislé (červený).
+\end{Proof}
