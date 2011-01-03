@@ -1,0 +1,23 @@
+\begin{Statement}
+Pro $q=p^r$ a $t\geq$ neexistují $(n,q,t)$ perfektní kody s jinými
+parametry než s Hamingových a Golojových kódů.
+\end{Statement}
+
+\begin{Proof}
+Má $t$ ruzných celočíselných kořenů.
+
+\TODO{Tady bylo hromada chlupatých výpočtů}, které se použijí na omezení
+$t≤11,n≤495,q≤27$ a nacpe se na to počítač.
+\end{Proof}
+
+\begin{Note}
+Pro $q=2$ se přidá součit $Π(σ_i-2)$, udělá se něco podobného.
+\end{Note}
+
+\begin{Tvrz}
+$q=2, t=2$.
+\end{Tvrz}
+
+\begin{Proof}
+Podmínka pakování koulí říká, že $1+\combnum{n}{1}+\combnum{n}{2}=2^α$.
+\end{Proof}
