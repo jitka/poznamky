@@ -1,0 +1,67 @@
+\section{Jiné druhy šířek}
+
+\subsection{Cestová šířka}
+
+\name{Cestová šířka} $pw(G)$ je definovaná skoro stejně jako stromová šířka, jen se
+nepožaduje strom, ale cesta.
+
+Je vidět, že $tw(G)≤pw(G)$.
+
+\begin{Tvrz}
+Platí, že $pw(T_k)≥k$, kde $T_k$ je zakořeněný strom na $k+1$ úrovních, kde
+každý vnitřní vrchol má $3$ syny.
+\end{Tvrz}
+
+\begin{Proof}
+Indukcí podle $k$. Vezmu menší stromy $T_{k-1}, T_{k-1}', T_{k-1}''$, dám jim společný kořen. Vezmu cestový
+rozklad tohoto, mám uzly $X₁,…,X_l$, BÚNO $X₁$ obsahuje vrchol $T_{k-1}''$ a $X_l$
+obsahuje vrchol $T_{k-1}''$ nebo $T_{k-1}'$. Chci dokázat, že
+$pw(T_k)≥pw(T_{k-1}$. Mám někde kus pro $T_{k-1}''$. Ale celé je to souvislé,
+musím tam přidat ještě něco, aby se to nerozpadlo.
+\end{Proof}
+
+\begin{Tvrz}
+$$pw(G)=O(tw(G)·\log n)$$
+\end{Tvrz}
+
+\begin{Proof}
+Vezmu optimální stromový rozklad a zakořením. Definujeme značkování. $z(X_i):=
+1$, je-li $X_i$ list. Jsou-li $X_{j₁},…,X_{j_i}$, potom vezmu dvě největší
+značky a vezmu bud tu první, nebo druhou $+1$ (co je větší z toho). Tedy, na
+stoupnutí značky ji potřeba, aby tam byly dvě děti největší značky. Tedy, značka
+kořene je nejvýše $\log n$.
+
+Rozklad uděláme tak, zřetězím za sebe a v prostředku vždy přidám jeden krajní,
+tedy pokaždé naroste nejvýše o stromovou šířku. Velikost odpovídá.
+
+Jediný problém je se souvislým výskytem vrcholu. Ale nic nemůže utéct, protože
+nalevo od toho je $X_j$, které je jiný uzel, tedy to musí jít skrz něj.
+\end{Proof}
+
+Existují problémy, které jsou těžké pro stromovou šířku, ale ne pro cestovou.
+
+Lze charakterizovat jako počet policistů nutných k chycení neviditelného
+zloděje.
+
+\subsection{Větvová šířka}
+
+Pro dané rozdělení hran na $A$ a $\overline{A}$ řeknu, že váha rozdělení je
+definována jako počet vrcholů náležících hranám z obou polovin.
+
+Větvený rozklad grafu $G$ je strom $B$, kde všechny vrcholy jsou stupně buď $3$
+nebo $1$. Listy $B$ odpovídají hranám. Potom každá hrana $f∈E(B)$ určuje
+rozdělení $A,\overline{A}$. Šířka rozkladu je maximum ze všech vah rozdělení
+podle hran.
+
+Větvená šířka grafu je nejmenší možná šířka nějakého rozkladu.
+
+\begin{Tvrz}
+Je-li $bw(G)≥2$, potom $bw(G)≤tw(G)+1≤\lfloor \frac{3}{2}bw(G)\rfloor$.
+\end{Tvrz}
+
+\begin{Proof}
+Pro každou $e∈E$ najdu $X_i∈T$ a zavěsím k $X_i$ jako list. Poté budu
+podrozdělovat a kontrahovat.
+
+Opačná nerovnost, budu doplňovat do všech uzlů mezi.
+\end{Proof}
