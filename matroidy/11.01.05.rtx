@@ -1,0 +1,41 @@
+\section{Grafové šířky}
+
+Viz např. minory.
+
+Nyní u brandwidth budeme definovat:
+
+šířka hrany $e = r(E₁) + r(E₂) - r(E)+ 1$ (hrana rozkladu) ‒ při rozkladu na
+$(E₁,E₂)$ po odebrání $e$ z rozkladu. Nyní se to ale liší od grafové šířky, liší
+se, pokud má graf most, pokud nemá, potom se rovnají.
+
+Branchwidth matroidu a jeho duálu jsou stejné.
+
+Nechť $k≥1$. $k$-rozklad matroidu bude strom, kde všechny vnitřní kromě kořene
+mají stupeň $3$, kořen má stupeň $2$ (binární zakořeněný strom). Uděláme bijekci
+mezi prvky matroidu a listy, označím si smyčky. Pro vnitřní máme funkci $φ_v$,
+která dvojici čísel $(0…k)²→0…k$ a $φ_v^r:(0…k)²→ℕ₀$.
+
+Když chci spočítat rank, tak obarvím prvky množiny $1$, jinak $0$. Listy
+obarvené $1$, které nejsou smyčky označím značkou $1$. Všechny ostatní dostanou
+značku $0$.
+
+Barva vnitřního  $γ$ bude $φ_v(γ₁,γ₂)$ a značka $λ:=λ₁+λ₂-φ_v^r(γ₁,γ₂)$. Pokud
+vždy v kořeni najdeme rank, tak to je dekompozice. Dekompoziční šířka je
+nejmenší $k$, pro které existuje funkční dekompoziční strom.
+
+To jde někdy, protože můžu vždycky mít exponenciálně mnoho barev, tak do toho
+můžu zakódovávat celé množiny.
+
+\begin{Statement}
+$\M$ reprezentovatelný nad konečným tělesem $\mathbb{F}, \len{\mathbb{F}}=q$. $mbw(\M)≥1$, potom
+existuje $k$-dekompozice $\M$, kde $k=\frac{q^{k+1}-q(k+1)+k}{(q-1)²}$. Je-li
+dán rozklad, najdu $k$-dekompozici v čase $O(n^{1+α}$, kde $α$ je exponent u
+násobení matic.
+\end{Statement}
+
+\begin{Proof}
+Kořen vrazím do libovolné hrany.
+$W_v$ je lineární obal listů podstromu zakořeněného ve $v$. $W_v'$ je lineární
+obal ostatních listů. $D_v= W_v∩W_v'$. Dimenze tohoto je nejvýše $k$. Mám
+nejvýše $\Σ_{i=1}^k\frac{q^i-1}{q-1}+1$ různých podprostorů.
+\end{Proof}
