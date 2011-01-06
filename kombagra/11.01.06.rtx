@@ -1,0 +1,47 @@
+\section{Ramseioviny}
+
+Budeme pracovat s abecedou $A$, $\len{A}=t$.
+
+$A^k$ je množina slov délky $k$, ale také $k$-krychle nad $A$.
+
+$a=@(a₁,a₂,…,a_k@)∈A^k$ je $k$-řetězec.
+
+Přidáme hvězdičku ‒ žolíka. Pokud bude $k$-řetězec nazván \name{kořenem}, pokud
+obsahuje alespoň jednu hvězdičku.
+
+$α(s)$ bude nahrazení všechny hvězdičky znakem $s$.
+
+Když máme $α$ kořen, potom $l_α$ \name{přímka} je množina prvků $α(0),α(1),…,α(t)$.
+
+\begin{Statement}[Haywlet-Juwet]
+$∀t,r∈ℕ∃N=H(t,r)∈ℕ$ takové, že $∀$ obarvení $χ:A^N→@[r@]$ existuje
+monochromatická kombinatorická přímka.
+\end{Statement}
+
+\begin{Proof}
+Indukcí, zafixujeme $r$, podle $t$.
+
+Pro $t=1$ je jednoduché, jednoprvková krychle má jednobarevný prvek.
+
+Nyní zvolíme $N₁:=r^{t^n}, N_i:=r^{t^{\Σ_{j=1}^{i-1} N_j+n}}$.
+$H(t,r):=N:=\Σ{i=1}^nN_i$.
+
+\name{Sousedi} jsou takové prvky, které jsou všude stejné, jen jeden má na
+jednom místě $0$ a druhý $1$.
+
+\begin{Tvrz}
+$∃$ posloupnost kořenů $τ₁,τ₂,…,τ_n$ nad $A∪@{*@}$ takové, že $\len{τ_i}=N_i$ a
+$χ(τ(a))=χ(τ(b))$ pro $a,b$ sousedi $a,b∈A^n$.
+\end{Tvrz}
+\end{Proof}
+
+\subsection{Aplikace}
+
+\begin{Statement}[Vanclav Waerden]
+$∀r,t∈ℕ∃N=W(r,t)$ takové, že $∀$ obarvení $@{1…N@}$ existuje monochromatická
+aritmetická posloupnost o $t$ členech.
+\end{Statement}
+
+\begin{Proof}
+
+\end{Proof}
