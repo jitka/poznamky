@@ -1,0 +1,66 @@
+\section{Silné barevné číslo}
+
+Graf je \name{$k$-silně obarvitelný}, pokud $n=k·r$, tak $∀V=V₁∪V₂∪…V_r$ takové,
+že $\len{V_i}=\len{V_j}$ jde graf obarvit tak, že v každé množince je každá
+barva alespoň jednou.
+
+Alternativně, $∀H$ disjunktní sjednocení klik velikosti $k$ $χ(G∪H)=k$.
+
+Když $k$ nedělí $n$, tak se tam přidají nějaké izolované vrcholy.
+
+\begin{Tvrz}
+Pokud je to $k$-silně obarvitelné, pak je to také $(k+1)$-silně obarvitelné.
+\end{Tvrz}
+
+\begin{Proof}
+No, odeberu z každého poslední, tam mi zbude pro $k$, pak zbudou nějaké, co
+nadělají zbylé množinky po $k$. Nemůžu ještě použít obarvení a přebarvit
+poslední na stejnou, mohou být hrany. Ale to, co má stejnou barvu v těch po $k$
+je nezávislé, můžu zopakovat s tím.
+\end{Proof}
+
+Silné barevné číslo je takové nejmenší číslo, že je to silně obarvitelné.
+
+\begin{Observation}
+Silné chromatické číslo je více než $Δ$.
+\end{Observation}
+
+Silné chromatické číslo stupně bude maximum přes všechny grafy s daným
+maximálním stupněm.
+
+Je to alespoň dvojnásobek.
+
+Udělám $2n$ vrcholů, kde $Δ=n$, dosypu vrcholy, vrznu kliky na polovičky.
+
+Pokud mám graf který je disjunktní sjednocení $l$ párování, tak ho můžu obarvit
+pomocí $2^l$ barev.
+
+To se dokáže indukcí.
+
+\begin{Statement}[Alon]
+$∃c;sχ(d)≤c·d$.
+\end{Statement}
+
+\begin{Proof}
+Dokážeme pro $c=2^{20001}$.
+
+Budeme dělit na poloviny indukcí, ale tak, aby stupeň klesal na polovinu.
+Vybereme náhodné rozdělení.
+
+\begin{Lemma}
+Máme graf $G$, $Δ(G)≤D,V=V₁∪…V_k$ takové, že $\len{V_i} = \len{V_j} =2k$. Potom
+indukované podgrafy rozpůlení každé množiny mají maximální stupeň
+$\frac{Δ}{2}+2\sqrt{D\log D}$.
+\end{Lemma}
+
+\begin{Proof}
+Použiju Lovásovo lokální lemma (mám špatné jevy, pravděpodobnost každého jevu je
+nejvýše nějaké $P$ a každý jev závisí nejvýše na $d$ jiných jevech, potom
+pravděpodobnost, že nenastane žádný z těch špatných jevů je nenulový). Za špatný
+jev dáme, že máme moc velký stupeň. Rozdělíme vrcholy do dvojic, rozhodíme z
+každé dvojice náhodně jeden do jedné skupiny, druhý do druhé.
+\end{Proof}
+
+Budeme používat tento odhad tak dlouho, dokud nedojdeme k nějakým malým grafům,
+poté použijeme původní exponenciální odhad (tam už je chyba moc veliká).
+\end{Proof}
