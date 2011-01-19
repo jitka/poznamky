@@ -45,13 +45,16 @@ $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtx
 %.dep: %
 	touch $@
 
-clean: clean-rtx clean-depfiles clean-mp
+clean: clean-rtx clean-depfiles clean-mp clean-xoj
 
 clean-mp:
 	rm *-mp-*.* */*-mp-*.* -f
 
 clean-rtx:
 	rm -f $(RTXDVIS) $(RTXPDFS) $(patsubst %.rtx,%.tex,$(RTXS)) $(patsubst %.rtd,%.tex,$(RTDS)) $(patsubst %.rtd,%.log,$(RTDS)) $(patsubst %.rtd,%.aux,$(RTDS)) $(patsubst %,%.dep,$(RTXS) $(RTDS)) $(patsubst %.rtx,%._test.*,$(RTXS)) $(patsubst %.rtx,%.log,$(RTXS)) $(patsubst %.rtd,%.out,$(RTDS)) $(patsubst %.rtd,%.toc,$(RTDS))
+
+clean-xoj:
+	rm -f $(patsubst %.xoj,%.eps,$(wildcard *.xoj))
 
 distclean: clean
 
@@ -73,4 +76,4 @@ $(patsubst %.rtx,%._test.rtx,$(RTXS)): %._test.rtx: %.rtx
 $(patsubst %,print-%,$(RTDS)): print-%.rtd: %.dvi
 	cd $(shell echo $< | sed -e 's/\(.*\/\|\)[^/]*/\1/') . && dvips $(shell echo $< | sed -e 's/.*\///')
 
-.PHONY: all distclean clean-depfiles clean clean-rtx $(patsubst %.rtx,%._test.rtx,$(RTXS)) $(patsubst %,print-%,$(RTDS)) clean-mp
+.PHONY: all distclean clean-depfiles clean clean-rtx $(patsubst %.rtx,%._test.rtx,$(RTXS)) $(patsubst %,print-%,$(RTDS)) clean-mp clean-xoj

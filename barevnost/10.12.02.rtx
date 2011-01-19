@@ -97,6 +97,7 @@ obarvit a pak je vrátit.
 
 \begin{Proof}
 Viz obrázek. Opět to půjde dobarvit.
+\svgilust{10.12.02-1}
 \end{Proof}
 
 \begin{Lemma}
@@ -105,6 +106,7 @@ Viz obrázek. Opět to půjde dobarvit.
 
 \begin{Proof}
 Opět obrázek.
+\svgilust{10.12.02-2}
 \end{Proof}
 
 \begin{Lemma}
@@ -113,6 +115,7 @@ Opět obrázek.
 
 \begin{Proof}
 Zase obrázek.
+\svgilust{10.12.02-3}
 \end{Proof}
 
 Každému vrcholu přiřadíme $d-6$ jednotek náboje, kde $d$ je jeho stupeň. Každé
