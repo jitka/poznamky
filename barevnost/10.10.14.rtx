@@ -1,31 +1,5 @@
-\begin{Statement}
-Nechť $G$ je graf se seznamy velké dle stupně a nejde obarvit. Potom je to
-galleiův strom a každý blok má přiřazen seznam, které jsou disjunktní, pokud
-sdílejí vrchol. Vrcholy potom mají seznamy sjednocené ze všech bloků, kde se
-vyskytují.
-\end{Statement}
-
-\begin{Proof}
-Je vidět, že gallaiův strom se seznamy výše uvedeného typu nejde obarvit. To jde
-indukcí podle počtu bloků. Vezmu listovitý blok. Ten užere všechny barvy a jednu
-musím dát tomu sdílenému. Utrhnu blok, zbydou jen barvy z toho seznamu z tamtoho
-bloku, dle indukce nejde, nejde to spojit.
-
-Tak nyní věta. Opět indukcí podle počtu bloků. Kdyby měl jen jeden blok, tak je
-to vidět.
-
-Jinak se podíváme na koncový blok. Podíváme se, co je koncový blok. Buď obsahuje
-jen jednu hranu, nebo je to něco většího.
-
-Pokud je to jen jeden vrchol, pak má jen jednu barvu. Pokud tato barva není u
-jeho souseda, pak jsme vyhráli a jde obarvit. Tedy má stejnou, tu mu můžu
-sebrat, dále dle indukce.
-
-Máme tedy něco většího, předbarvím vrchol. Pokud to nejde rozšířit do zbytku,
-tak je to ten gallaiův strom. Ale exustuje určitě spoustu barev (kolik barev je
-do toho menšího), kdy to obarvit vpravo jde. Proto to ale musí být barvy, co
-vadí do malého, ale ty vynutí, aby to byla buď kružnička nebo úplňák.
-\end{Proof}
+Graf $G$ je \name{$k$-kritický}, pokud $χ(G)=k$, ale pro každý jeho vlastní
+podgraf je barevnost už nejvýše $k-1$.
 
 \begin{Statement}[Gallai]
 Nechť $G$ je $k$-kritický graf. Potom podgraf $G$ indukovaný vrcholy stupně
@@ -73,8 +47,11 @@ alespoň dostatek, s jedničkou alespoň jednou a s $3/2$ alespoň $3/2$.
 
 \begin{Proof}
 Indukcí podle počtu bloků.
+
 \end{Proof}
 
+\TODO{Tohle vypadá celkem neúplně. Co s tím? Jak se použije to lemma? A co je
+tím myšleno?}
 \end{Proof}
 
 

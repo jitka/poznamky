@@ -117,6 +117,10 @@ obarvit, potom je to gallaiův strom a seznam je dle tvrzení.
 Pokud pro každou podmnožinu $L_v$ o $d$ prvcích ($d$ je stupeň $v$ v tom
 zbytku) existuje obarvení, potom mám dostatek barev na doobarvení (zbyde mi
 alespoň jednu navíc, protože to nějak přečísluji).
+
+Opačně, pokud nejde obarvit, nasekám na bloky a indukcí. Kdyby list šel obarvit,
+pak jde celé, proto je to gallaiův list. A nemohou sdílet stejnou barvu (ty
+seznamy), jinak by to zase šlo.
 \end{Proof}
 
 \begin{Follows}
