@@ -46,6 +46,7 @@ Nechť $G$ je souvislý graf. $G$ $d$-vybíraví $←→$ $G$ není gallaiův st
 Nechť $G$ je $2$-souvislý graf, který není kružnice (ani sudá) a není úplný graf.
 Potom $∃v∈V(G);∃v',v''∈N_G(v)$ takové, že $(v',v'')∉E(G)$ a $G\backslash v',
 v''$ je souvislý.
+\svgilust{10.10.07-1}
 \end{Lemma}
 
 \begin{Proof}
