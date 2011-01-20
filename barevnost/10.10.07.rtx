@@ -79,7 +79,7 @@ místo $v_H'$ vezmu $v'$ a zase v pohodě.
 \end{Proof}
 
 \begin{Lemma}\label{neobarv_2sou}
-Nechť $G$ je $d$-neobarvitelný $2$-souvislý graf. Potom je to buď úplňák nebo
+Nechť $G$ je $d$-neobarvitelný $2$-souvislý graf. To nastává právě když je to buď úplňák nebo
 lichá kružnice a nelze obarvit pouze pro všechny seznamy stejné.
 \end{Lemma}
 
@@ -122,34 +122,6 @@ Opačně, pokud nejde obarvit, nasekám na bloky a indukcí. Kdyby list šel oba
 pak jde celé, proto je to gallaiův list. A nemohou sdílet stejnou barvu (ty
 seznamy), jinak by to zase šlo.
 \end{Proof}
-
-\begin{Follows}
-Nechť $G$ je $2$-souvislý graf, který není ani lichá kružnice ani úplný. $G$ je
-potom stupňově vybíravý.
-\end{Follows}
-
-\begin{Proof}
-Předpokládejme, že existují dva vrcholy, jejichž seznamy jsou různé. Vezmu cestu
-mezi nimi a podívám se na seznamy na této cestě, musím tam najít dva sousedy,
-kteří se takto liší.
-
-Uděláme trik s kostrou. Jeden ze seznamů musí mít barvu navíc oproti druhému.
-Odstraním tento vrchol, najdu kostru, zakořením v druhém, přidám ho zpět jako
-souseda kořene. Obarvím napřed odstraněný vrchol. Když barvím kořen, tak má sice
-tolik barev, kolik sousedů, ale jedna není jeho, tak mu ji nesebere.
-
-Pokud mají tedy všechny stejné seznamy, tak mají stejný stupeň. Uvážím, když
-graf je sudá kružnice, ale ta má barevnost $2$ a stupeň taky.
-
-Lze tedy použít lemma \ref{souvis-nek-nec-lemma}. Uvážíme kostru grafu
-$G\backslash v',v''$, má kostru, zakořeníme ve $v$, tyto dva vrcholy přilepíme
-pod kořen, ty dostanou stejnou barvu, pak už pokračuji v pohodě.
-\end{Proof}
-
-\begin{Note}
-Toto dokazuje víc ‒ pokud tam jsou dva s různými seznamy, tak nevadí lichá
-kružnice ani úplný, to obarvím také.
-\end{Note}
 
 \begin{Statement}[Brooksova pro vybíravost]
 Nechť $G$ je souvislý graf, který není lichá kružnice nebo úplný graf. Pak

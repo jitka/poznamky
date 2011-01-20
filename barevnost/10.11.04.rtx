@@ -23,8 +23,8 @@ Pravděpodobnost, že $v$ není dobrý je nejvýše
 $\combnum{t⁴}{t}@(1-\inv{\combnum{t⁴}{t}}@)^\frac{d}{4}$.
 Máme $t$-prvkovou množinu, která se nevyskytuje na žádném.
 
-Protože $@(1-x@)≤e^{-x}$, tak odhaje je $<\combnum{t⁴}{t}·e^-{\log_e
-2@\combnum{t⁴}{t}} = 0.5$.
+Protože $@(1-x@)≤e^{-x}$, tak odhaje je $<\combnum{t⁴}{t}·e^{-\log_e
+2\combnum{t⁴}{t}} = 0.5$.
 
 Tedy, ve střední hodnotě máme alespoň polovinu dobrých vrcholů. Existuje tedy
 takové přiřazení, že alespoň polovina jich je dobrých, ty si zafixujme.
@@ -46,6 +46,8 @@ Pravděpodobnost, že lze rozšířit s danou $γ$ je $\inv{t²}^{\len{A}\over
 Pravděpodobnost, že existuje $γ$, které lze rozšířit je
 $<t^{\len{B}}·\inv{t^{A}}≤1$. Tedy, existuje šance, ze pro nějaké seznamy to
 nejde, takže vyberu tyto.
+
+\TODO{Co sakra znamená, že je vrchol dobrý?}
 \end{Proof}
 
 \section{Cirkulární barevnost}

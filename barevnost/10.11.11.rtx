@@ -4,7 +4,7 @@ splňovat, že kdykoliv mám hranu, potom $1≤φ(v)-φ(u)≤β-1$. Tuto osu lze
 namotat na kružnici.
 
 Nechť $φ:V(G)→ℝ$ je funkce taková, že platí $0≤φ(v)-φ(u)≤β-1$ minimalizuje
-$\Σ\max@{0,1-(φ(v)-φ(u)@}$. Nějaké takové $φ$ existuje (konstantní). Toto je
+$\Σ\max@{0,1-(φ(v)-φ(u))@}$. Nějaké takové $φ$ existuje (konstantní). Toto je
 kompaktní množina, minimum nabývám. Pokud to je $0$, tak je to hotovo.
 
 Tedy existuje hrana s malým rozdílem. Snažím se ji zvětšit o $ε$. Tím můžu kazit
@@ -22,8 +22,9 @@ Máme kubický graf bez mostů.
 
 \begin{Lemma}
 Nechť $G$ je kubický graf bez mostů a obsahuje čtvereček. Potom můžu čtvereček
-rozstřihnout a zkontrahovat (buď svisle nebo vodorovně) tak, aby byl tak bez
+rozstřihnout a zkontrahovat (buď svisle nebo vodorovně) tak, aby byl také bez
 mostů (alespoň jeden z nich nemá most).
+\svgilust{10.11.11-1}
 \end{Lemma}
 
 \begin{Proof}
@@ -49,3 +50,4 @@ BÚNO nemá trojúhelníky, čtyřcykly, paralelní hrany. Paralelní hrany lze 
 za jednu hranu (protože to, co venku z těch vrcholů vedou stejné barvy). Obdobně
 lze zkontrahovat trojúhelník. Čtyřcyklus lze nahradit buď za dvě hrany nahoře a
 dole, nebo dva vlevo a vpravo. Při obarvení jsou buď blízko u sebe, nebo daleko.
+\svgilust{10.11.11-2}
