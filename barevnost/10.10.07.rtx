@@ -51,16 +51,16 @@ v''$ je souvislý.
 
 \begin{Proof}
 Předpokládejme na chvíli, že $G$ je $3$-souvislý. Existují v něm dva nesousední
-vrcholy a nejkratší cestu mezi nimi. Tedy, ta cesta je indukovaná. Pak vezmu
+vrcholy a nejkratší cesta mezi nimi. Pak vezmu
 jeden z nich jako $v'$, další na cestě $v$ a třetí jako $v''$. Graf zůstane
-souvislý po jejich odebrání.
+souvislý po jejich odebrání (protože je $3$-souvislý).
 
 Nechť tedy obsahuje $2$-řez $x,y$ takový, že nejmenší komponenta po jeho
 odebrání je co nejmenší. Na chvíli předpokládejme, že $(x,y)∈E(G)$. Mám alespoň
 $2$ komponenty, $x$ bude $v$ a vezmu dva sousedy z různých komponent. Je třeba
 ověřit, že po odebrání to zůstane souvislé. Vezmu libovolné $z$ v jedné komponentě
-a vedou z něj alespoň $2$ vrcholově disjunktní cesty do řezu, tedy je to
-souvislé.
+a vedou z něj alespoň $2$ vrcholově disjunktní cesty do řezu (kvůli
+$2$-souvislosti), tedy je to souvislé.
 
 Zbývá tedy, když hranou spojeny nejsou. Opět zvolím $2$ sousedy $x$. Každý
 vrchol ale má cestu alespoň do $x$ nebo do $y$. Rozdělím je do dvou množin,
@@ -78,6 +78,27 @@ jsou. Pokud ano, pak jediný případ je tak, že jeden je $v_H$ a jeden $v_H'$,
 místo $v_H'$ vezmu $v'$ a zase v pohodě.
 \end{Proof}
 
+\begin{Lemma}\label{neobarv_2sou}
+Nechť $G$ je $d$-neobarvitelný $2$-souvislý graf. Potom je to buď úplňák nebo
+lichá kružnice a nelze obarvit pouze pro všechny seznamy stejné.
+\end{Lemma}
+
+\begin{Proof}
+Nechť máme $2$ sousední vrcholy a $x$ má v seznamu barvu, která se nevyskytuje
+u $y$. Potom $x$ utrhneme, uděláme kostru, zakořeníme v $y$, přidáme $x$ jako
+list a obarvíme tou barvou, kterou nemá $y$ v seznamu. Potom barvíme normálně
+odspodu, až dojdeme k $y$, tak jedna barva určitě není spotřebovaná, $x$ nic
+nesebralo. Tedy, všechny seznamy musí být stejné, aby to nešlo obarvit.
+
+Nechť to je takový graf, abychom mohli aplikovat lemma
+\ref{souvis-nek-nec-lemma}. Potom utrhneme ty dva vrcholy, uděláme kostru,
+přidáme je jako listy a obarvíme je stejně (můžeme, není mezi nimi hrana). Potom
+u kořene (to je ten původní $v$) máme alespoň jednu volnou barvu.
+
+Zbývá nám zabít ještě sudé kružnice, ale když mají stejné seznamy, všechny
+dvouprvkové, tak se to dá nastřídačku.
+\end{Proof}
+
 \begin{Proof}
 Od té věty: Dokážeme něco trochu silnějšího ‒ pokud to nejde obarvit, pak $G$ je
 gallaiův strom a v každém bloku $B$ lze přiřadit seznam $L_B$ takový, že:
@@ -88,7 +109,7 @@ gallaiův strom a v každém bloku $B$ lze přiřadit seznam $L_B$ takový, že:
 
 To dokážeme indukcí podle počtu bloků. Při jednom bloku je to buď lichá kružnice
 nebo úplňák a všechny vrcholy mají stejný seznam, podle Lemma
-\ref{souvis-nek-nec-lemma}.
+\ref{neobarv_2sou}.
 
 Jinak se podívám na libovolný koncový blok. Dle indukce, pokud zbytek nelze
 obarvit, potom je to gallaiův strom a seznam je dle tvrzení.
