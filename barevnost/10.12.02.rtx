@@ -24,14 +24,15 @@ $Δ^*+1$.
 Dokážeme, že nechť $G$ je rovinný graf a $D≥6$. Pokud $Δ^*≤D$, potom barevnost
 je nejvýše $D+1$.
 
-Budeme mít graf minimální v počtu vrcholů, z nich minimální počet hran.
+Budeme mít protipříklad minimální v počtu vrcholů, z nich minimální počet hran.
 
 \begin{Lemma}
 Minimální protipříklad je $2$-souvislý.
 \end{Lemma}
 
 \begin{Proof}
-Pokud ne, tak můžu v klidu roztrhnout, obarvit a spojit, jen s přebarvením.
+Pokud ne, tak můžu v klidu roztrhnout, obarvit a spojit, jen s přebarvením. Pro
+tu stěnu, na které se to potkává (vnější stěny budou sdílet) je dostatek barev.
 \end{Proof}
 
 To znamená, že počet vrcholů a hran na stěně je stejný.
@@ -40,14 +41,18 @@ To znamená, že počet vrcholů a hran na stěně je stejný.
 Minimální protipříklad nemá paralelní hrany.
 \end{Lemma}
 
-To je jednoduché.
+\begin{Proof}
+Vytáhnu vnitřek, ten obarvím zvlášť, vytáhnu vnějšek, ten zvlášť, oboje je
+menší, obarvím, slepím (a přebarvím, aby ty dva vrcholy kolem paralelních hran
+odpovídaly).
+\end{Proof}
 
 \begin{Lemma}
 Minimální protipříklad nemá separující trojúhelník.
 \end{Lemma}
 
 \begin{Proof}
-Roztrhnu, obarvím, slepím a zase hotovo.
+Roztrhnu, obarvím, slepím a zase hotovo (podobně jako paralelní hrany).
 \end{Proof}
 
 \begin{Lemma}
@@ -55,7 +60,7 @@ V minimálním protipříkladu, $δ≥3$.
 \end{Lemma}
 
 \begin{Proof}
-Jedna stěna, se kterou sousedí je trojúhelník. Můžu vrchol odebrat, tím neudělám
+Jedna stěna, se kterou sousedí je trojúhelník (plyne přímo z předpokladu). Můžu vrchol odebrat, tím neudělám
 dvě velké stěny vedle sebe. Můžou vzniknout dvě paralelný hrany, to můžu
 splácnout, mám jinak obarvím, mám alespoň dvě zbylé barvy pro vrácení.
 \end{Proof}

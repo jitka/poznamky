@@ -53,7 +53,7 @@ Graf je $d$ vybíravý, pokud pro každé seznamy takové, že délka seznamu vr
 $v$ je $d(v)$, potom si umí vybrat.
 
 \begin{Statement}[Alon-Tarsi]
-Nechť $d(v) ≥ \deg_\in(v)+1$. Potom, když počet sudých eulerovských podgrafů je
+Nechť $d(v) ≥ \deg_{in}(v)+1$. Potom, když počet sudých eulerovských podgrafů je
 různý od počtu lichých eulerovských podgrafů, tak je $d$-vybíravý (liché a sudé
 podle počtu hran).
 \end{Statement}
