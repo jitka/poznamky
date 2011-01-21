@@ -61,8 +61,9 @@ V minimálním protipříkladu, $δ≥3$.
 
 \begin{Proof}
 Jedna stěna, se kterou sousedí je trojúhelník (plyne přímo z předpokladu). Můžu vrchol odebrat, tím neudělám
-dvě velké stěny vedle sebe. Můžou vzniknout dvě paralelný hrany, to můžu
+dvě velké stěny vedle sebe. Můžou vzniknout dvě paralelní hrany, to můžu
 splácnout, mám jinak obarvím, mám alespoň dvě zbylé barvy pro vrácení.
+\svgilust{10.12.02-4}
 \end{Proof}
 
 \begin{Lemma}
@@ -70,13 +71,18 @@ Každý vrchol stupně $3,4$ nebo $5$ leží na stěně velikosti alespoň $5$.
 \end{Lemma}
 
 \begin{Proof}
-Kdyby
-ne, tak to můžu vyndat, ztriangulovat, obarvit a vrátit.
+Kdyby ne, tak to můžu vyndat, ztriangulovat, obarvit a vrátit.
+\svgilust{10.12.02-5}
 \end{Proof}
 
+\begin{Lemma}
+Minimální stupeň je $4$.
+\end{Lemma}
+
 \begin{Proof}
-Minimální stupeň je $4$. Kdyby měl stupeň $3$, tak má jednu velkou stěnu,
+Kdyby měl stupeň $3$, tak má jednu velkou stěnu,
 vyměním za hranu, pak vrátím.
+\svgilust{10.12.02-6}
 \end{Proof}
 
 \begin{Lemma}
@@ -84,7 +90,8 @@ Každý vrchol stupně $4$ leží na stěně velikosti alespoň $6$.
 \end{Lemma}
 
 \begin{Proof}
-Použiju separující trojúhelník, podobně jako u $5$.
+Vyndám, ztrianguluji (jako u minulého lemmatu). Až to budu vracet, tak mám max.
+6 zakázaných barev, mám k dispozici alespoň 7.
 \end{Proof}
 
 \begin{Lemma}
@@ -94,6 +101,12 @@ Použiju separující trojúhelník, podobně jako u $5$.
 \begin{Proof}
 Ta stěna má alespoň velikost $6$. Vyndám je a uvolněné místo vytrianguluji. Lze
 obarvit a pak je vrátit.
+\svgilust{10.12.02-7}
+
+Po vrácení jednu barvu měl přidaný vrchol. Buď lze druhému dát barvu z
+protějšího vrcholu (žlutá kolečka), nebo to vypadá tak, že oba „protější“ jsou i
+uvnitř velké stěny, potom ale zbývá dostatek barev, protože okolo je jen 5
+(jedna volná, jedna uvolněná sebráním našeho vrcholu).
 \end{Proof}
 
 \begin{Lemma}
