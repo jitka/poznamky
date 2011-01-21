@@ -128,7 +128,7 @@ Opět obrázek.
 \end{Proof}
 
 \begin{Lemma}
-Žádná věta velikosti $5$ neobsahuje dva vrcholy stupně $5$ za sebou.
+Žádná stěna velikosti $5$ neobsahuje dva vrcholy stupně $5$ za sebou.
 \end{Lemma}
 
 \begin{Proof}

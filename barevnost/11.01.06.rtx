@@ -35,7 +35,13 @@ Udělám $2n$ vrcholů, kde $Δ=n$, dosypu vrcholy, vrznu kliky na polovičky.
 Pokud mám graf který je disjunktní sjednocení $l$ párování, tak ho můžu obarvit
 pomocí $2^l$ barev.
 
-To se dokáže indukcí.
+To se dokáže indukcí. Pokud je to $0$ párování, pak jsou to jen izolované
+vrcholy a jedna barva vesele stačí. Nyní, vezmeme v indukci poslední přidané
+párování. Odebereme ho, rozpůlíme všechny množinky libovolně na poloviny a
+obarvíme. Nyní si vezmeme pomocný graf. Hrana bude tam, kde je původní párování
+a také tam, kde jsou dvě stejné barvy ve stejné (velké) skupince. Toto, pokud má
+cykly, tak jedině sudé (tedy je to bipartitní graf), takže to jde obarvit dvěma
+barvama. Barvy z indukce a tyto barvy se pronásobí mezi sebou a je hotovo.
 
 \begin{Statement}[Alon]
 $∃c;sχ(d)≤c·d$.
