@@ -37,21 +37,34 @@ $7$-kritických grafů je na libovolné ploše konečně mnoho.
 \end{Tvrz}
 
 \begin{Proof}
-Definujme deficit pro grafy s max. stupněm $6$, a to $d(G):=\Σ6-deg v$.
+Definujme deficit pro grafy s max. stupněm $6$, a to $d(G):=\Σ6-\deg v$.
 
 \begin{Lemma}
 Pokud mám Gallaiův strom se stupněm max. $6$, co není $K₇$, pak
-$d(H)≥\frac{\len{V(H)}}{2}$. Nalezneme očíslování vrcholů čísly $0,1$ a $3/2$. Součet bude
-alespoň dostatek, s jedničkou alespoň jednou a s $3/2$ alespoň $3/2$.
+$d(H)≥\frac{\len{V(H)}}{2}$.
 \end{Lemma}
 
 \begin{Proof}
-Indukcí podle počtu bloků.
+Najdeme očíslování vrcholů tak, že vrchol stupně $5$ a menší má alespoň $1$,
+vrchol stupně $1$ má alespoň $\frac{3}{2}$. Tvrdím, že součet tohoto je alespoň
+ta polovina, co potřebuji a je to nejvýše tolik hran, kolik jim chybí do $6$.
 
+U $K{≤5}$ a $C_?$ je to vidět, všechny přispívají alespoň $1$.
+
+U složitějších indukcí podle bloků. Vezmu si list. Pokud je to jen hrana, tak
+mám vrchol, ten má stupeň $1$, když utrhnu, tak si může v klidu polovinu přispět
+a jedničku dát té artikulaci, od které trhám (v tom případě to zvednu alespoň o
+tolik, kolik je potřeba, když se mu sníží stupeň).
+
+Když je to nějaké $C_?$, tak mají stupeň $2$, jsou tam alespoň $2$, každý si
+nechá půlku pro sebe a jedničku pro artikulaci už nastřádají. Když je to $K_?$,
+tak také, protože každý může ušetřit alespoň polovinu.
 \end{Proof}
 
-\TODO{Tohle vypadá celkem neúplně. Co s tím? Jak se použije to lemma? A co je
-tím myšleno?}
+Vrcholů stupně $7$ a více může být jen omezeně, protože eulerova formule
+(podobně jako u $8$-kritických). Ale protože alespoň tolik hran, kolik je
+deficit musí koukat z toho gallaiova stromu do těch $7$ a víc, a ty mají jen
+omezeně mnoho hran, tak je i velikost toho gallaiova stromu omezená.
 \end{Proof}
 
 
