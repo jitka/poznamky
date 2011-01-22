@@ -46,7 +46,16 @@ Pokud $p(x₁,…,x_n)=0∀(x₁,…,x_n)∈y₁\times…\times y_n$, potom je i
 \begin{Proof}
 Indukcí. Pro jednu proměnnou je vidět.
 
-Při vyšším to budu skládat dohromady.
+Platí mi pro $n-1$, přidávám $n$-tou proměnnou. Takže si polynom roznásobím na
+$$\Σx_n^i · q_i$$
+
+Ty $q_i$ jsou polynomy v $n-1$ proměnných, pro ně to platí. Pokud tedy po
+dosazení do nich jsou vždy nulové (všechny), tak jednoduše platí, protože ony
+jsou identicky nulové a ono se to unulí.
+
+Pokud je tam alespoň jeden někdy nenulový, tak si zafixuji jeho vstup. V tom
+případě je to konstanta a mám polynom v jedné proměnné ($x_n$), pro tu to platí,
+tedy je identicky nulový a hotovo.
 \end{Proof}
 
 Graf je $d$ vybíravý, pokud pro každé seznamy takové, že délka seznamu vrcholu
@@ -57,6 +66,42 @@ Nechť $d(v) ≥ \deg_{in}(v)+1$. Potom, když počet sudých eulerovských podg
 různý od počtu lichých eulerovských podgrafů, tak je $d$-vybíravý (liché a sudé
 podle počtu hran).
 \end{Statement}
+
+\begin{Proof}
+Uděláme polynom $P_G(x₁,…,x_n)=Π_{v_j,v_i∈\vec{E}} (x_i-x_j)$. Pokud někdy není
+nulový, tak máme obarvení. Předpokládejme, že je nulový pro každou $n$-tici
+barev. To by bylo pěkné pro lemma, ale má velké stupně.
+
+Pro každý vrchol si udělám výraz: $\Π_{z∈L(v_i)}x_i - z$. Taková věc je nula pro
+všechny vstupy, které se do něj kdy dávají (mohou dát). Můžu to přepsat jako
+$x_i^{d(v_i)}-q_i(x_i)=0$ (prostě ten samotný člen maximálního stupně a ten
+zbytek).
+
+V $P_G$ roznásobíme na monomy. Pokud existuje monom s vysokým stupněm, tak
+$x_i^{α_i}$ nahradím za $x_i^{α_i-d(v_i)}·q_i(x_i)$ (dle předchozího výrazu se
+$x_i^{d(v_i}=q_i(x_i)$ ve všech zajímavých bodech. Toto opakuji, dokud nějaké
+monomy s vysokým stupněm mám, jednou musím skončit.
+
+Ten už má malé stupně, aplikuji lemma. Ten je identicky nulový.
+
+Nyní ukážeme, že koeficient v členu $Πx_i^{d(v_i)-1}$ je stejný v původním i
+upraveném a nenulový. Na ten nikdy při nahrazování nesáhnu, proto zůstane stejný
+v původním i v upraveném. Také se do něj nikdy nic nepřidá (\TODO{Proč?}).
+Ukážeme, že má nenulový koeficient.
+
+Všimneme si, že součet exponentů v každém monomu je $m$ ($m$ je počet hran).
+
+Počet různých možných monomů je $2^m$. Stejně tak je i různých orientací grafu.
+Takže každému monomu přiřadíme jednu orientaci. To takovou, kdy exponent
+odpovídá vstupnímu stupni vrcholu (určitě pro každou orientaci existuje takový
+monom, je jich stejně).
+
+Nyní budu brát jednotlivé orientace. Některé přidají $1$, některé $-1$. Když to
+vyxoruju s tou, co mám, tak mi vyjde buď sudý nebo lichý eulerovský podgraf.
+Tedy, když se jejich počet liší, tak má nenulový koeficient.
+
+Protože má nenulový koeficient, nemůže být identicky nulový.
+\end{Proof}
 
 \begin{Follows}
 Každý rovinný bipartitní graf je $3$-vybíravý.
@@ -72,33 +117,6 @@ Uděláme si pomocný graf. Každý vrchol tam bude dvakrát, vrcholy budou i za
 hrany, každou hranu spojím s jejími koncovými body. Hranu zorientuje do
 spárovaného vrcholu. Najdu párování pokrývající hrany. Tady už stačí jen ověřit
 hallovu podmínku.
-
-
-Uděláme polynom $P_G(x₁,…,x_n)=Π_{v_j,v_i∈\vec{E}} (x_i-x_i)$. Předpokládejme,
-že je nulový pro každou $n$-tici barev. To by bylo pěkné pro lemma, ale má velké
-stupně.
-
-Vezmu pro vrchol $v_i$ polynom $Π_{z∈L(V_i)} x_i-z=0∀x_i∈L(v_i)$. To jde přepsat
-jako $x_i^{d(v_i)}-q_i(x_i)=0$.
-
-$P_G$ roznásobíme na monomy. Pokud existuje monom $x_i^{α_i}, α_i≥d_i$, tak jej
-nahradím za $x_i^{α_i-d(v_i)}·q_i(x_i)$. Hodnoty tohoto polynomu jsou stejné pro
-barvy. Toto se bude opakovat, dokud jde. Podle lemmatu je celý polynom nulový.
-
-Nyní ukážeme, že koeficient v členu $Πx_i^{d(v_i)-1}$ je stejný v původním i
-upraveném a nenulový.
-
-Po roznásobení polynomu $P_G$ je součet exponentů počet hran, což součet
-vstupních stupňů. Substitucemi stupně zmenšují. Nikdy nevznikne monom se stupněm
-počtu hran, tedy do něj ani nešáhnu, ani nepoodčítám.
-
-Mám $2$ na počet členů v roznásobení. Každý můžu asociovat s orientací grafu
-$G$. Zajímají mě orientace se vstupním stupněm $d(v_i)-1$. Sudá kružnice je tam
-s $+$, lichá s $-$.
-
-Vezmeme hrany, které mají různou orientaci v původní a u toho členu. To vezmu
-jako podgraf. Ten bude eulerovský. Protože sudých a lichých je různý počet,
-proto je nenulový člen. Nemáme identicky nulový člen.
 \end{Proof}
 
 Cirkulární barevnost lze definovat jako nejmenší $\frac{p}{q}$ takové, že
@@ -107,21 +125,23 @@ $;q≤c(u)-c(v)≤p-q$.
 \subsection{Cirkulární vybíravost}
 
 \name{Cirkulární vybíravost} je $\inf α$ takové, že pro
-$∀p,q∀L:V(G)→L∈@{0,…,p-1@}$.
-každý vrchol a jeho
-seznam $α·q$ existuje obarvení, že pro všechny hrany $q≤\len{c(u)-c(v)}≤p-q$.
+$∀p,q∀L:V(G)→L∈@{0,…,p-1@}$, kde $\len{L}=α·q$ najdeme obarvení takové, že
+$q≤\len{c(u)-c(v)}≤p-q$.
 
 \begin{Statement}
 $χ_{c,l}(C_{2k}) = 2$.
 \end{Statement}
 
 \begin{Proof}
-Podobně jako předchozí, udělám si polynom nad komplexními čísly, zařídím, aby
-když je to špatné obarvení, tak je $0$, jinak ne. Pracuji nad equi-distantními
-body.
+Hran máme stejně jako vrcholů.
 
-Chceme koeficient, co je nenulový.
+Podobně jako v předchozím si uděláme polynom. Každou hranu vezmu v $2q-1$
+kopiích a polynom bude vypadat $\Π(x_j+x_{j+1})·e^{\frac{2π·k·i}{p}}$. V
+podstatě si vezmu body na jednotkovém kruhu v komplexních číslech pro každou
+hranu.
 
-Každou hranu zmnožím na $2q-1$ kopií (tolik jako činitelů v původním). Všechny
-zorientuji třeba po směru hodinových ručiček.
+Obdobně jako u Alon-Tarsiho si vezmu člen $\Π x_j^{2q-1}$.
+
+Zorientuji třeba po směru hodinových ručiček. Sudá kružnice zcela očividně má
+různý počet lichých a sudých eulerovských podgrafů.
 \end{Proof}

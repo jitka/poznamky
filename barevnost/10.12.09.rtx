@@ -119,8 +119,9 @@ Každý rovinný graf bez trojúhelníků je $3$-barevný.
 \begin{Proof}
 Stačí dokázat, že tříbarevný je graf s obvodem alespoň $5$. Díky Thomasenově
 větě bude minimální protipříklad $2$-souvislý, se min. stupněm alespoň $3$. Z
-toho vyjde, že má stěnu $≤5$ (třeba přes discharging, nebo přes eulerovu
-formuli), tu prohlásíme za vnější.
+toho vyjde, že má stěnu $≤5$ (třeba přes discharging, pár drobných lemmat jako
+že nemám malé vrcholy, náboj bude $2d-6$ pro vrchol, $d-6$ pro stěnu, žádná
+pravidla ‒ musím mít malou stěnu, aby vyšlo záporně), tu prohlásíme za vnější.
 
 Když dostanu čtyřúhelník (stěnový), tak vezmu dva protější vrcholy a sjednotím
 je. To můžu udělat buď jedním, nebo druhým způsobem, když alespoň jedním

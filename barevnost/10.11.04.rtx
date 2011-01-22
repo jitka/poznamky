@@ -32,6 +32,9 @@ Tedy, šance, že není dobrý je $$<\combnum{t⁴}{t}·e^{-\log_e
 Tedy, ve střední hodnotě máme alespoň polovinu dobrých vrcholů. Existuje tedy
 takové přiřazení, že alespoň polovina jich je dobrých, ty si zafixujme.
 
+Nyní se pokusíme vybrat seznamy $A$ tak, aby se pro libovolnou barvu v $B$
+vyskytl alespoň jeden, který to kazí.
+
 Každému vrcholu v $A$ náhodně vybereme $t$-prvkovou podmnožinu z z množiny $K$.
 Zafixujme nějaké obarvení $γ$ vrcholů v $B$ z jejich seznamů. Zkoumejme
 pravděpodobnost, že $γ$ lze rozšířit na $A$ pro náhodnou volbu seznamů. Vezmu
@@ -49,8 +52,6 @@ Pravděpodobnost, že lze rozšířit s danou $γ$ je $\inv{t²}^{\len{A}\over
 Pravděpodobnost, že existuje $γ$, které lze rozšířit je
 $<t^{\len{B}}·\inv{t^{A}}≤1$. Tedy, existuje šance, ze pro nějaké seznamy to
 nejde, takže vyberu tyto.
-
-\TODO{Co sakra znamená, že je vrchol dobrý?}
 \end{Proof}
 
 \section{Cirkulární barevnost}
