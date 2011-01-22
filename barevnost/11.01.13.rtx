@@ -1,0 +1,71 @@
+\section{Zlomková barevnost}
+
+Máme parametry $p,q$. $p$ je počet barev, $q$ je, kolika barvami obarvíme každý
+vrchol (takže graf je obarvitelný, pokud si každý vrchol může vybrat $q$ z $p$
+barev tak, že žádní dva sousedi nesdílejí žádnou ze svých barev). Ona barevnost
+je poté $p/q$.
+
+Zcela očividně $χ≤χ_f$, $q$ může být $1$.
+
+Obdobně, $χ_c≤χ_f$. Ta $p$ a $q$ v cirkulární barevnost určují podobný zlomek,
+ta čísla jdou přímo použít, jen to není dokola.
+
+Lze vyjádřit jako lineární program:
+
+Máme proměnné $x_j$, kde $j$ jsou nezávislé množiny grafu a $X_j$ udává počet
+barevnostních tříd v této množině dělený $q$. Tato $X_j$ musí být nezáporná. A
+pro každý vrchol součet všech $X_j$, kde se nachází, musí být alespoň $1$.
+Chceme minimalizovat součet $X_j$.
+
+\begin{Statement}[Hatami, Zhu]
+$$
+∀ε∈ℝ^+∃g∈ℕ∀G\hbox{ kubické bez mostů o obvodu }≥g;χ_f(G)≤\frac{8}{3}+ε
+$$
+\end{Statement}
+
+\begin{Proof}
+Půjdeme na to pravděpodobnostně. Napřed z grafu odebereme perfektní párování,
+zbudou nám kružnice. Pro každou kružnici náhodně vyberu první vrchol, poté každý
+$\frac{g}{2}$-tý vrchol vyhodím. Zbyly cestičky. Na každé cestičce obarvím každý
+vrchol červeně (náhodně zvolím, kde začnu).
+
+Nyní vrátíme párování. Mohlo se nám stát, že spojuji dva červené vrcholy, v tom
+případě jeden z nich odbarvím. Červené vrcholy představují nezávislou množinu,
+spočítáme, jak velká je:
+
+$$
+@(1-\frac{2}{g}@)·\inv{2}·\frac{3}{4}=\frac{3}{8}·@(1+ε@)
+$$
+
+\begin{Lemma}
+Graf má zlomkovou barevnost $k←→$ má pravděpodobnostní distribuci takovou, že
+náhodná nezávislá množina bude mít střední velikost $≥\inv{k}$.
+\end{Lemma}
+
+\begin{Proof}
+Na jednu stranu, mám barevnost, zvolím množinu $j$ s pravděpodobností
+$\frac{x_j}{k}$.
+
+Naopak, máme pravděpodobnosti množin a pravděpodobnosti, že vrchol leží v té
+množině a máme $x_j$. Z toho už to upočítáme.
+\end{Proof}
+\end{Proof}
+
+\begin{Statement}
+Kubické grafy bez mostů jsou hranově $3$-vybíravé.
+\end{Statement}
+
+\begin{Proof}
+Použijeme Alon-Tarsiho. První co, najdeme orientaci takovou, aby vstupní stupeň
+byl $2$. Stačí každý trojúhelníček, který vznikl kolem původního vrcholu
+zorientovat dokola, každý nový vrchol leží na dvou trojúhelníčku.
+
+Nyní budu xorovat orientace s tou mojí. Pokud otočím právě jeden trojúhelníček,
+získám tím kamaráda, tedy takových je stejně. Obdobně, liché kružnice.
+
+U sudých se to převádí sudý eulerovský na sudý eulerovský a naopak. Tam nám
+nějaké zbudou.
+
+\TODO{Tohle vypadá nedořešeně. Bylo tam něco o trojúhelníčku s nejnižším
+číslem vrcholu a podobně}.
+\end{Proof}
