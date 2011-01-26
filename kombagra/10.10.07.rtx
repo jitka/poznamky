@@ -26,7 +26,7 @@ Pro $k=4$ to můžeme dokázat obměnou implikace.
 
 \begin{Lemma}
 Nechť $G$ je hranově maximální graf bez minoru $K₄$ na alespoň $3$ vrcholech.
-Pak $G$ lze vytvořit z trojúhelníků lepením za hrany (eg. je to $3$-strom).
+Pak $G$ lze vytvořit z trojúhelníků lepením za hrany (eg. je to $2$-strom).
 \end{Lemma}
 
 \begin{Proof}
