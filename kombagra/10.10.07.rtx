@@ -34,6 +34,7 @@ Předpokládejme, že je $3$-souvislý. Mám dva vrcholy, mezi nimi musí vézt
 alespoň $3$ vrcholově disjunktní cesty, alespoň $2$ z toho tedy mají vrcholy. Ty
 původní vrcholy můžu zahodit a stále to je souvislé. Potom ale musí obsahovat
 minor $K₄$.
+\svgilust{10.10.07-1}
 
 Kdyby nebyl souvislý, tak mezi komponenty můžu přidat hranu a tím určitě nemůžu
 vytvořit minor $K₄$.
@@ -45,8 +46,13 @@ mezi ně přidat hranu. Ale to to taky nemůže vytvořit $K₄$.
 Obsahuje tedy $2$-řez. Když jsou spojeny hranou, tak ho rozložím na dva, který
 jsou hranově maximální bez minoru $K₄$. Hurá, indukce.
 
-Když tedy nejsou spojeny, tak tam přidám hranu. Musel mi vzniknout minor $K₄$,
-ale to opět nejde.
+Když tedy nejsou spojeny, tak tam přidám hranu. Vznikl mi minor (musí, jsem
+hranově maximální), tak to vypadá takto:
+\svgilust{10.10.07-2}
+
+V tom případě tam ale byla ještě jedna komponenta, neboť šedivý kus je souvislý,
+nebyl by to $2$-řez. Ta další komponenta musí být připojena na oba modré
+vrcholy, proto místo zelené přidané hrany můžu projít tamtudy.
 \end{Proof}
 
 Přidám-li hrany, můžu to získat lepením trojúhelníků (přidávání hran barevnost
