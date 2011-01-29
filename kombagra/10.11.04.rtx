@@ -4,7 +4,7 @@ grafu $K_n$.
 \end{Statement}
 
 \begin{Proof}
-Uděláme silnější tvrzení. Nechť $H$ je ouvislý s $m$ hranami a $G$ je graf s
+Uděláme silnější tvrzení. Nechť $H$ je souvislý s $m$ hranami a $G$ je graf s
 minimálním stupněm $2^m$, pak $G$ obsahuje podrozdělení $H$.
 
 Indukcí. Začneme $H$ je strom. Potom $2^m≥n$. Najdu dokonce jako podgraf,
@@ -12,10 +12,11 @@ vždycky mám ještě dostatek sousedů, ze kterých brát, můžu prostě hlado
 
 Dále máme $H$ souvislý, není strom. Tedy $∃e$ takové, že $H:=H\backslash E$ je
 stále souvislý. Dále BÚNO $G$ je souvislý. Uvažme největší množinu vrcholů $W$
-takovou, že $G@[W2@]$ je souvislý a $\len{E(G/ W)}≥2^{2-1}·\len{V(G/W)}$. Můžu
+takovou, že $G@[W@]$ je souvislý a $\len{E(G/W)}≥2^{2-m}·\len{V(G/W)}$. Můžu
 si za $W$ zvolit jeden vrchol, proto takové $W$ určitě existuje. Nechť $G'$ je
 podgraf $G$ indukovaný vrcholy $w$ takovými, že $w∉W$ a $w$ má sousedy v $W$
 (okolí množiny $W$). Tvrdíme, že minimální stupeň $G'$ je alespoň $2^{m-1}$.
+
 
 Takové $W'$ obsahuje dle indukce $H'$, ale chybí tam jedna hrana. Tu nahradím
 cestou skrz v $W$, to je podrozdělení této hrany.

@@ -7,11 +7,6 @@ hrana mezi nějakými vrcholy $V₁$ a nějakým z $V₂$
 Alternativní definice je taková, že $H$ jde získat posloupností vynecháváním
 hran, izolovaných vrcholů a kontrakcemi hran.
 
-\begin{Priklad}
-Nechť $\mathcal{G}$ je třída grafů uzavřená na minory (tzn. pokud $G∈\mathcal{G}$,
-potom i jeho minor $G'∈\mathcal{G}$. Například minory.
-\end{Priklad}
-
 \begin{Statement}[Kuratovského s minory]
 Kuratovského věta platí i s minory, nejen s podrozděleními.
 \end{Statement}
@@ -55,9 +50,11 @@ nebyl by to $2$-řez. Ta další komponenta musí být připojena na oba modré
 vrcholy, proto místo zelené přidané hrany můžu projít tamtudy.
 \end{Proof}
 
-Přidám-li hrany, můžu to získat lepením trojúhelníků (přidávání hran barevnost
-nesnižuje, to je OK). A to lepení už mi tu $3$-barevnost zaručí (trojúhelník je
-$3$-barevný, při lepení jen přejmenovávám barvy).
+Nyní, předpokládejme, že graf neobsahuje $K₄$ jako minor ale je alespoň $4$
+barevný. Uděláme ho hranově maximální (přidávání hran barevnost nesnižuje).
+Protože ale jde ulepit z trojúhelníků, tak to jde obarvit $3$ barvami (kdykoliv
+přilepím nový trojúhelník, tak má nový vrchol jen $2$ sousedy, tedy má volnou
+barvu).
 
 Pro pětku to plyne z věty o 4 barvách, šestka už je slavný výsledek.
 

@@ -1,3 +1,8 @@
+\begin{Statement}
+Nechť $\mathcal{G}$ je vlastní třída grafů uzavřená na minory. Pak existuje $c$
+takové, že $∀G∈\mathcal{G}$, $\len{E(G)}≤c·\len{V(G)}$.
+\end{Statement}
+
 \begin{Statement}[Cornellova]
 Nechť $P$ je problém popsatelný pomocí monadické lokigy druhého řádu a nechť
 $\mathcal{G}$ je třída grafů omezené stromové šířky. Potom existuje lineární
@@ -5,37 +10,40 @@ algoritmus, který rozhoduje problém $P$ na této třídě.
 \end{Statement}
 
 \begin{Proof}
-Máme formuli s $x₁,…,x_k$ a $X₁,…,X_l$.
+Máme MSOL formuli s $x₁,…,x_k$ a $X₁,…,X_l$. Máme rovnosti, nerovnosti,
+provšechnítka, existítka, inkluzítka. Hrany reprezentujeme jako dvojici.
 
-Procházíme graf tak, že máme hranici o velikosti maximálně $w$, tam se dějou ty
-zajímavé věci, řeším případy, jestli je to uvnitř, nebo venku, rozeberu ty
-případy.
-
-Budeme to dělit, co je uvnitř, venku, lepit.
-
-Poté dokazujeme indukcí dle složitosti formule. Rozborem připadů. Napřed se
-vyberou hodnoty pro jednotlivé kousíčky, to se rozšiřuje.
-
-Upravím stromovou dekompozici tak, aby:
+Na každém uzlu si pamatujeme u formule:
 →•
- • Každý vrchol má stupeň max. $3$.
- • Zařídím, aby každý stupně $3$ měl jen stejné sousedy.
- • Dva se liší nejvýše o jeden vrchol.
- • Všechny jsou stejně velké (můžu přisypat od sousedů).
+ • U proměnné že buď byla, že teprve bude a nebo pokud je, tak jaká.
+ • U množiny její průnik s aktuálním uzlem.
 ←•
 
-Každý vrchol rozkladu bude říznutí v předchozím, tam už to půjde. Tím se každý
-vrchol rozkladu dostane do jedné z třídy ekvivalencí (včetně přípojek zezdola).
-Tedy, list patří do nějaké třídy ekvivalence, při spojování u potomků se něco
-stane, u vrcholu s jedním potomkem také.
+Toto je konstantně omezené. Jde to updatovat v konstantním čase při přidání
+vrcholu, při odebrání, při slití stromečků.
+
+Uděláme hezký stromový rozklad, vrcholy jen druhu (z algograph, drobně se liší
+oproti tomu přednášenému):
+→•
+ • Listy jsou jednoprvkové.
+ • Jeden vrchol přibývá, má jednoho syna.
+ • Jeden vrchol ubývá, má jednoho syna.
+ • Vrcholy jsou stejné, má právě dva syny.
+←•
+
+Procházíme odspodu. Na každém máme množinu všech přiřazení, co ještě připadají v
+úvahu.
+
+Při odebrání vrcholu jen přechází do „už bylo“ (některé se tím mohou sloučit),
+při přidání se zkusí přidat do proměnných „teprve bude“ ten nový vrchol, tím se
+nagenerují nové, zkusí se, jestli ještě mohou platit, pokud ano, nechají se. U
+slévání musíme křížit přiřazení. Z dvojice přežije, pokud max. v jednom synovi
+je „už byl“, v druhém „bude“ (nebo oba teprve „budou“), nebo se přiřazení rovná.
+
+V kořeni musí být něco, co platí a už nemá žádné „bude“.
 
 Je potřeba najít lineárně velkou dekompozici, to ale jde v lineárním čase.
 \end{Proof}
-
-\begin{Statement}
-Nechť $\mathcal{G}$ je vlastní třída grafů uzavřená na minory. Pak existuje $c$
-takové, že $∀G∈\mathcal{G}$, $\len{E(G)}≤c·\len{V(G)}$.
-\end{Statement}
 
 \begin{Observation}
 Třída grafů stromové šířky $≤k$ je vlastní třída uzavřená na minory.
