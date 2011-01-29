@@ -17,6 +17,7 @@ si za $W$ zvolit jeden vrchol, proto takové $W$ určitě existuje. Nechť $G'$ 
 podgraf $G$ indukovaný vrcholy $w$ takovými, že $w∉W$ a $w$ má sousedy v $W$
 (okolí množiny $W$). Tvrdíme, že minimální stupeň $G'$ je alespoň $2^{m-1}$.
 
+\svgilust{10.11.04-1}
 
 Takové $W'$ obsahuje dle indukce $H'$, ale chybí tam jedna hrana. Tu nahradím
 cestou skrz v $W$, to je podrozdělení této hrany.
