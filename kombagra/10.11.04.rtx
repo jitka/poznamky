@@ -53,22 +53,31 @@ $∀k∃l$ takové, že každý $l$-souvislý graf je $k$-spojovaný.
 \end{Statement}
 
 \begin{Proof}
-Vezmu $l:=δ+2k=2^{\combnum{3k}{2}+2k}$. Odstraním vrcholy $u_i,v_i$. Ten bytek
-obsahuje podrozdělení $K_{3k}$, je $2k$-souvislý. Vezmu takové cesty, aby počet
-hran mimo to podrozdělení byl nejmenší možný.
+Vezmu $l:=δ+2k=2^{\combnum{3k}{2}+2k}$. Odstraním všech $2k$ vrcholů $u_i,v_i$. Ten bytek
+obsahuje podrozdělení $K_{3k}$, je $2k$-souvislý. Z toho lze odvodit, že
+existuje $2k$ disjunktních cest z každého odebraného vrcholu do toho $K_{3k}$.
+
+Vezmu takové, aby mimo to podrozdělení bylo co nejméně hran. Musím najít
+disjunktní cesty ze všech $2k$ vrcholů do tohoto $K_{3k}$ a to tak, aby se jich
+moc nepotkalo na jedné podrozdělené hraně.
+
+Vezmu takové cesty, co mají co nejméně hran mimo to podrozdělení.
+\TODO{Uspořit nějak to, že nemají nic společného}.
 \end{Proof}
 
 Číslo $t(n,l)$ je počet hran úplného balancovaného $l$-partitního grafu na $n$
 vrcholech.
 
 \begin{Statement}[Turanova]
-Pokud $G$ je grafna $n$ vrcholech s alespoň $t(n,2)+1$ hranami, pak $G$ obsahuje
+Pokud $G$ je graf na $n$ vrcholech s alespoň $t(n,l)+1$ hranami, pak $G$ obsahuje
 $K_{l+1}$ jako podgraf.
 \end{Statement}
 
 \begin{Proof}
 Indukce podle $n$. Pokud je $n≤l$, to má $\combnum{n}{2}$ hran, to obsahuje
-úplňák. Nechť $n≥l+1$, $G$ má alespoň $t(n,l)+1$ a neobsahuje $K_{l+1}$. BÚNO
-přidání libovolné hrany vytvoří $K_{l+1}$, tedy obsahuje $K_l$. Ale dopočítáme,
-že je tam moc velká klika (protože musí tam být ještě něco připojeného ke všem).
+úplňák (každý vrchol musí být samostatná partita).
+
+Nechť $n≥l+1$, $G$ má alespoň $t(n,l)+1$ a neobsahuje $K_{l+1}$. BÚNO
+přidání libovolné hrany vytvoří $K_{l+1}$, tedy obsahuje $K_l$. Utrhneme toto
+$K_l$, ale vyjde nám, že má alespoň $t(n-l,l)+1$ hran. To se uindukuje.
 \end{Proof}

@@ -3,7 +3,7 @@
 Mám bipartirtitní graf $H$ s partitami $A, B, \len{A} = \len{B}$. Potom je
 \name{$ε$-regulární} pokud platí, že $∀A'@⊂A;B'@⊂B, \len{A'}≥e·\len{A},
 \len{B'}≥e·\len{B}$. Potom
-$\frac{\len{e(A',B')}}{\len{A'}\len{B'}}-\frac{A,B}{\len{A}\len{B}}≤ε$. To $e$ je počet
+$\len{\frac{e(A',B')}{\len{A'}\len{B'}}-\frac{e(A,B)}{\len{A}\len{B}}}≤ε$. To $e$ je počet
 hran mezi dvěma množinami.
 
 \begin{Statement}[Szeméredi regularity lemma]\label{regularity-lemma}
@@ -34,7 +34,7 @@ obsahuje alespoň $(1-ε)·\len{A}$ vrcholů stupně alespoň $(d-e)·\len{B}$.
 
 \begin{Proof}
 Sporem, předpokládejme, že máme hodně takových malých vrcholů. Zvolím $B':=B,
-\len{A'}≥ε·\len{A}$.
+\len{A'}≥ε·\len{A}$ ($A'$ jsou ty malé vrcholy).
 \end{Proof}
 
 \begin{Proof}
@@ -58,7 +58,14 @@ neregulární dvojice. Těch málo hustých je $≤n²ρ\frac{n}{m}²≤\frac{ρ
 je dostatečně málo.
 
 Pokud $H$ má trojúhelník, zafixujme si ho. Každá dvojice je $ε$-regulární a
-počet hran mezi nimi je alepsoň $ρ·V_i·V_j$. Vyjde že máme alespoň
+počet hran mezi nimi je alepsoň $ρ·V_i·V_j$.
+
+Vezmeme podmnožinu $W@⊂V_i$ takovou, že každý vrchol má alespoň $ρ·\len{V_j}$
+sousedů ve $V_j$ a taktéž s $V_k$. $\len{W}≥(1-2ε)·\len{V_i}$. Upočítá se, že ty
+kousky ve $V_j,V_k$ jsou alespoň $ε·\len{V_j}$ a $ε·\len{V_k}$, toto jsou
+podmnožiny $ε$-regulární dvojice, najde se tam dostatek hran.
+
+Vyjde že máme alespoň
 $(1-2ε)ε³\len{V_i}\len{V_j}\len{V_k}$. Odhadneme velikosti $V$ a dosadíme do
 $x$.
 \end{Proof}
