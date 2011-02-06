@@ -92,5 +92,5 @@ Pořadí vynechávání a kontrahování lze libovolně prohazovat.
 
 $ \mathcal{N}$ je minor $\mathcal{M} ←→ \mathcal{N}^*$ je minor $\mathcal{M}^*$.
 
-Duál k $K₅$ a k $K_{3,3}$ není grafový (minor dle definice existuje, ale nejde
+Duál k $K₅$ a k $K_{3,3}$ není grafový (matroid dle definice existuje, ale nejde
 nakreslit jako graf).

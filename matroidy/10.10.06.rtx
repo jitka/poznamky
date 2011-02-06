@@ -1,6 +1,6 @@
 \section*{Pojmy}
 
-\name{Matroid} je uspořádaná dvojice $\mathcal{m} = @(E, \I@)$, kde $E$ je
+\name{Matroid} je uspořádaná dvojice $\M = @(E, \I@)$, kde $E$ je
 neprázdná nosná množina matroidu a $I@⊂2^E$ je množina nezávislých množin
 splňující:
 →•
@@ -15,12 +15,12 @@ nezávislé na nezávislé).
 Minimální závislé množiny (co do inkluze) jsou \name{kružnice}.
 
 \begin{Lemma}\label{circles-lemma}
-Máme matroid $\M=@(E, \I@)$ a $\mathcal{C}$ je množina závislých podmnožin v
+Máme matroid $\M=@(E, \I@)$ a $\mathcal{C}$ je množina kružnic v
 $\M$. Potom platí:
 →•
  • $∅∉\mathcal{C}$
  • $(C₁, C₂∈\mathcal{C}∧C₁@⊂C₂)→→(C₁=C₂)$
- • $(C₁, C₂∈\mathcal{C},C₁≠C₂,e∈C₁∩C₂)→→(∃C₂∈\mathcal{C};C₃∈(C₁∪C₂)-e$
+ • $(C₁, C₂∈\mathcal{C},C₁≠C₂,e∈C₁∩C₂)→→(∃C₃∈\mathcal{C};C₃@⊂(C₁∪C₂)-e$
 ←•
 \end{Lemma}
 
