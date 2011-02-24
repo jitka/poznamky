@@ -1,0 +1,29 @@
+\section{Nowhere dense graph classes and algorithms}
+
+Problém podgrafu ‒ zjišťujeme, jestli $H$ je podgraf $G$.
+
+Rozdělíme na málo kousků, každý z nich má jednoduchou strukturu, takže i nějaké
+konstantní množství má jednoduchou strukturu.
+
+Například to jde udělat s rovinnými ‒ obarvíme si to jako terč, můžu vzít
+některé prstence, doprostředka dát vrchol a propojit.
+
+Testování podgrafů je tedy FPT.
+
+
+Budeme brát acyklické barvení ‒ sjednocení každých dvou barev je les, nemáme
+žádné dvoubarevné cykly.
+
+Hvězdové barvení je takové, že sjednocení dvou obsahuje jen hvězdičky, nejsou
+žádné dvoubarevné $P₄$. Potřebuje maximálně kvadratické množství barev, než u
+acyklického.
+
+Stromová hloubka je délka nejdelší cesta z kořene. Uzávěr bude vytvořen tak, že
+každý vrchol připojím ke všem předkům. Graf má omezenou hloubku, pokud je
+podgrafem uzávěru nějakého takto hlubokého grafu.
+
+Jde si všimnout, že je to někde mezi logaritmem a kvadrátem nejdelší cesty.
+
+Nikde hustý je takový, že žádných graf na $f(s)$ vrcholech neobsahuje
+topologický minor něčeho v $\mathcal{C}$ s maximálně $s$ podrozděleními na každé
+hraně.

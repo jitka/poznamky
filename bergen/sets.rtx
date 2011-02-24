@@ -1,0 +1,14 @@
+\section{Množinové systémy}
+
+A vlastnosti.
+
+Chceme mít systém množin a váhy na podmnožiny, chceme přiřadit váhy prvkům tak,
+aby jich co nejméně bylo nenulových (a všechny nezáporné), tak aby to co nejlépe
+aproximovalo.
+
+Discrepacy ‒ Každému $X$ chceme dát $\pm 1$, tak maximum z součtů je tohle (něco
+jako „nevyváženost“).
+
+Dědičná je i přes všechny podmnožiny těch množinek.
+
+Jde to udělat samplováním.
