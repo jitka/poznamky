@@ -1,0 +1,12 @@
+\section{Algoritmy pro multijádro}
+
+Lokální jádra komunikují asi 10* rychleji, než vzdálená.
+
+Problém s pamětí, může i zpomalovat (i když se nezamyká).
+
+Cache ‒ urychlují, ale musí se synchronizovat.
+
+Čím dále, tím větší, pomalejší a tenčí linka. Sdílení mezi procesory je ještě
+horší (~300 taktů).
+
+Vypnutí prefetchů.

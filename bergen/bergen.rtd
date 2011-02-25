@@ -10,4 +10,5 @@
 \input{sage.rtx}
 \input{graphs.rtx}
 \input{sets.rtx}
+\input{multicore.rtx}
 \end{document}
