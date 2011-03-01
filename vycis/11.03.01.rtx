@@ -1,0 +1,32 @@
+\section{Relativní vyčíslitelnost}
+
+Máme turingův stroj s orákulem, říká jestli něco je v množině $B$ ‒ vždy se
+zeptá, dostane odpověď.
+
+Také jde říct tak, že se smí zeptat uživatele na ano/ne.
+
+Lze definovat jako přidání další funkce $C_B$, což bude charakteristická funkce
+množiny $B$.
+
+$B$-obecně rekurzivní funkce a tak podobně, jsou definované obvyklým způsobem.
+
+Jsou ekvivalentní. Funkce jdou simulevat pomocí orákula na TS.
+
+Opačně, máme pevně daný program, uděláme výpočtový strom, podle odpovědí. To
+může mít konečné i nekonečné větve. Zajímají nás končící výpočty. Budeme to
+prohlížet do šířky, kdykoliv bude konečná větev, tak ji vygeneruji.
+
+V těch konečných se může zeptat jen na konečně mnoho věcí (to je kompaktnost
+výpočtů). Těch, kterých končí, je rekurzivně spočetně.
+
+\subsection{Částečně rekurzivní funkcionál}
+
+Je rekurzivně spočetná $Φ$ množina trojic typu $@<σ,x,y@>$ taková, že
+$@<σ,x,y@>$ a $@<σⁱ,x,y²@>$ (kde $σ$ je začátek $σⁱ$), potom $y=yⁱ$.
+
+$σ$ je kus orákula potřebný pro výpočet, $x$ je vstup, $y$ je výstup. Když už se
+to rozhodlo, tak to nesmí měnit názor.
+
+Definujeme, že $Φ(σ)(x)\cong y←→@<σ,x,y@>∈Φ$.
+
+Můžu $Φ$ aplikovat na množinu, získám funkci ($Φ(B)$ je funkce).
