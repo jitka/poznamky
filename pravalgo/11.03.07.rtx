@@ -1,0 +1,53 @@
+\section{Počítání průměrného platu}
+
+Zvolíme nějaké hodně, počítáme modulo hodně, začneme na náhodném čísle, potom
+každý přičte. To má problémy s aliancemi.
+
+\section{Výběr nejmenšího řezu}
+
+Umí se v něčem jako $O(n³)$, ale náhodně umíme rychleji.
+
+Pojmenujeme si hrany.
+
+Pokud $G$ má alespoň $3$ vrcholy, vybereme náhodnou hranu. $G'$ bude po
+zkontrahování hranou (a všech paralelních). Zavoláme na $G'$.
+
+Pokud mám přesně dva vrcholy, tak mám řez.
+
+Tohle jde udělat zhruba v $O(n²)$.
+
+\begin{Statement}
+Nechť $C$ je množina hran v minimálním řezu. Potom pravděpodobnost, že vypadne
+$C$ je $≥\frac{2}{n·(n-1)}$
+\end{Statement}
+
+\begin{Proof}
+Když zkontrahuje hranu z $C$, tak prohrál. Když nezkontrahoval nikdy, tak v
+pohodě.
+
+Graf $G$ má $n$ vrcholů a minimální řez s velikostí $k$. Potom $G$ má alespoň
+$\frac{k·n}{2}$ hran.
+
+Algoritmus nezkontrahuje v jednom kroku hranu z $C$ s pravděpodobností
+$≥1-\frac{2}{n}$. Postupně ubývá $n$. Součet lze zapsat i jako
+$\frac{n-2}{n}·\frac{n-3}{n-1}·\frac{n-4}{n-2}$.
+\end{Proof}
+
+\begin{Follows}
+Každý graf má $≤\frac{n·(n-1)}{2}$.
+\end{Follows}
+
+Můžeme to pustit vícekrát a vyplivnout nejmenší řez. Potom šance, že odpoví
+špatně je $(1-p)^t$ (budeme používat nezávislé náhody). Kdy je to pod $0.5$?
+
+\section{Isomorfizmus grafů}
+
+Když jsou isomorfní, tak pohoda. Když není, tak je problém to dokázat.
+
+Nechť máme dokazovatele a ověřovatele. Ověřovatel vždycky vybere jeden graf a
+přečísluje mu vrcholy. A ptáme se, kterému je isomorfní. Pokud nejsou isomorfní,
+tak musí vždy vrátit to, které jsme zvolili.
+
+\section{Quicksort}
+
+

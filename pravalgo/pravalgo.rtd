@@ -1,0 +1,11 @@
+\documentclass[a4paper,11pt]{article}
+\input{../stdhead.rtx}
+\input{../defs.rtx}
+
+\begin{document}
+\title{Pravděpodobnostní algoritmy}
+\maketitle
+\tableofcontents
+\newpage
+\input{11.03.07.rtx}
+\end{document}
