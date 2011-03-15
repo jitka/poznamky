@@ -8,3 +8,4 @@ funkcionál, potom $W_z=W{ρ(z)}$.
 Existují primitivně rekurzivní funkce $\overline{S_m}$ takové, že
 $Φ_z(B)(x₁,…,x_m,y₁…y_m)\cong Φ_{\overline{z,x₁,…,x_m}}(B)(y₁,…,y_m)$. Tedy, je
 to zacházení s programy bez závislosti na vstupu.
+\end{Statement}
