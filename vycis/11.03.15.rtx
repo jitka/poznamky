@@ -1,0 +1,11 @@
+Operace skoku = relativizovaný halting problem. Dá se to udělat úplně stejně,
+jako halting problem. Lze to iterovat.
+
+Vlastnosti:
+→•
+ • $A'$ je $A$-rekurzivně spočetná.
+ • $A'$ není $A$-rekurzivní.
+ • $B≤_1A'←→B$ je $A$-rekurzivně spočetná.
+ • $A$ je $B$-rekurzivně spočetná a $B≤_tC$, potom $A$ je $C$-rekurzivně
+ spočetná.
+←•
