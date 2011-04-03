@@ -48,7 +48,8 @@ Počet slov bude velikost jádra.
 \end{Proof}
 
 \begin{Statement}
-$∃(q,n,t)$-perfektní kód a $q=p^r$ (mocnina prvočísla). Potom $\Σ_{i=0}^t\combnum{n}{i}@(q-1@)^i=q^k$.
+$∃(q,n,t)$-perfektní kód a $q=p^r$ (mocnina prvočísla). Potom\\
+$\Σ_{i=0}^t\combnum{n}{i}@(q-1@)^i=q^k$.
 \end{Statement}
 
 \begin{Proof}
@@ -70,12 +71,13 @@ $t=3$. Na mocninách prvočísla žádná jiná nejsou.
 Ve složených se ví, že neexistují, kromě $t=1,2$, kde se neví.
 
 \begin{Statement}[Podmínka pakování koulí]
-$∃(q,n,t)$-perfektní kód. Potom $\Σ_{i=0}^t\combnum{n}{i}@(q-1@)^i|q^n$ pro
+$∃(q,n,t)$-perfektní kód. Potom\\
+$\Σ_{i=0}^t\combnum{n}{i}@(q-1@)^i|q^n$ pro
 složená $q$ a $q^k$ pro $q=p^r$.
 \end{Statement}
 
 \begin{Statement}
-Pokud $∃(q,n,t)$-perfektní kód, potom
+Pokud $∃(q,n,t)$-perfektní kód, potom \\
 $L_t(x)=\Σ_{j=0}^t@(-1@)^j@(q-1@)^{t-1}\combnum{x-1}{q}\combnum{n-x}{t-j}$ má
 $t$ různých celočíselných kořenů mezi $1$ a $n$.
 \end{Statement}
