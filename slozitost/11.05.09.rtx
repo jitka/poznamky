@@ -1,0 +1,37 @@
+\section{PSpace-úplnost}
+
+Budeme používat polynomiální převoditelnost. Problém $A$ je tedy
+\name{PSpace-úplný}, pokud každý PSpace problém na něj lze převést a sám je také
+PSpace.
+
+Polynomiální hierarchie je podmnožina PSpace.
+
+Ukázkou takového problému jsou kvantifikované booleovské formule.
+To má v sobě proměnné, spojky a kvantifikátory. Díky výrokové logice lze
+požadovat, aby byly v prenexním tvaru ‒ mají kvantifikátory vepředu (trik je, že
+neomezujeme, kolik je kvantifikátorů). V polynomiálním prostoru můžeme vyzkoušet
+všechna ohodnocení těch formulí (projdeme všechny možnosti, rozepsat formuli
+nemůžeme, to by bylo moc dlouhé).
+
+Nyní chceme kvantifikovanou formuli pro každý turingův stroj s polynomiálně
+omezenou pamětí. Budeme tvrdit, že existuje cesta z počáteční do koncové
+konfigurace.
+
+Uděláme si graf konfigurací. Bude tam $2^{O(S(n))}$ vrcholů. Počet hran bude
+něco podobného. Ověření, že mezi dvěma vrcholy existuje hrana je v pohodě, to
+jde popsat jednou formulí. Chceme ověřit, že existuje cesta z počáteční do
+přijímající konfigurace. Uděláme trik. Budeme konstruovat formuli, že se odněkud
+někam dá dostat pomocí max $2^k$ kroků. To je totéž, jako že existuje nějaký
+vrchol, do kterého se dá dostat za max $2^{k-1}$ a z něj také. To, bohužel,
+nefunguje, je to moc dlouhé, proto to nejde rychle vygenerovat.
+
+Přepíšeme dvě poloviny tak, že použijeme nějaké provšechnítko a implikaci (když
+to je dosazení prvním způsobem nebo druhým způsobem, tak zkontroluj formuli).
+Tohle narůstá jen lineárně s počtem kroků do logaritmické hloubky, tedy budeme
+mít polynomiálně dlouhou formuli.
+
+Podobně to vypadá při hledání vítězné strategie v nějaké hře s otevřenou
+informací.
+
+Kdyby nebyl rozdíl mezi PSpace a Polynomiální hyerarchií, tak ta na některé
+úrovni kolabuje.
