@@ -100,3 +100,13 @@ $w$ je zakázané, aby nebyl problém při substituci, $z$ dělá problémy jako
 $a,b$ jsou množiny.
 \name{Kartézský součin} $a\times b$ množin $a, b$ je množina $a\times b := @{@<u,v@>|u∈a\land v∈b@}$.
 Existence se dokáže postupným \uv{poskládáním} třeba z řádků.
+
+\proof
+Zvolme (zafixujme) $y∈b$. Definujme $ψ(x,v) ←→ v=@<x,y@>$. 
+Potom $ψ$ splňuje podmínku axiomu nahrazení.
+($ ψ(x,v) \land ψ(x,w) →→ v=@<x,y@> \land w=@<x,y@> →→ v=w$)
+Použijeme $ψ$ na množinu $a$ a zjístíme, že $@{@<x,y@>|x∈a@}$ je množina $h_y$.
+Teď již pro obecné $y$ definujeme $ψ'(y,h_y))$. Opět splňuje podmínku axiomu
+nahrazení a tak ji použijeme na $b$. Dostaneme, že $\bigcup @{h_y|y∈b @}$ 
+je množina a značíme ji $@{@<u,v@>|u∈a\land v∈b@}$. 
+Teď ještě formálně dokázat, že $@<x,y@>$ je prvkem $a\times b$ a nic jiného není…
