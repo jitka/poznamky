@@ -47,7 +47,7 @@ Formule, kde jsou všechny výskyty všech proměnných vázané se nazývá uza
 \section{Axiomy teorie množin}
 →•
 • Axiom existence: $(∃x)(x=x)$ -- existuje alespoň jedna množina.
-• Axiom extensibility: $(∀u)((u∈x)←→(u∈y)) →→ x = y$ -- množiny, které mají stejné prvky, jsou stejné.
+• Axiom extensionality: $(∀u)((u∈x)←→(u∈y)) →→ x = y$ -- množiny, které mají stejné prvky, jsou stejné.
 • Schéma axiomů vydělení: Je-li $φ(x)$ formule, která neobsahuje volnou proměnnou $z$, potom formule
 $(∀a)(∃z)(∀x)((x∈z)←→((x∈a)\land φ(x)))$ -- je axiom teorie množin, který nazýváme axiomem vydělení pro $φ$.
 (Filtrování)
