@@ -1,7 +1,7 @@
 
 Pro ordinál $α$ je \name{ordinální následník} ordinál $S(α) = α\cup@{α@}$.
 
-\lemma{}
+\lemma{5}
 →•
  • Je-li $α$ ordinál, pak $S(α)$ je ordinál.
  • $α<S(α)$
@@ -10,7 +10,7 @@ Pro ordinál $α$ je \name{ordinální následník} ordinál $S(α) = α\cup@{α
 
 Ordinál $α$ se nazývá \name{izolovaný}, pokud $∃β$, že $α=S(β)$ nebo $α=\emptyset$.
 
-Pokud $α$ není izolovaný, pak se nazývá \name{limitní}.
+Pokud $α≠0$ není izolovaný, pak se nazývá \name{limitní}.
 
 Ordinál $α$ je \name{přirozené číslo}, jestliže $(∀β)(β≤α→→β\hbox{ je izolovaný})$.
 

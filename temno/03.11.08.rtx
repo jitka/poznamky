@@ -110,8 +110,8 @@ Pokud $X\neq \emptyset$, označme \name{min} $ X = \bigcap X$.
 
 2) $\bigcup X$ je množina. Z axiomu sumy.
 
-$\bigcup X$ je tranzitivní množina. Je-li $x∈ \bigcup X$ a $y∈x$, pak ze summy $∃t∈X$, že $x∈t$ a $t$ je ordinál.
-Díky tranzitivitě $y∈t$ a opět díky summě $y∈ \bigcup X$.
+$\bigcup X$ je tranzitivní množina. Je-li $x∈ \bigcup X$ a $y∈x$, pak ze sumy $∃t∈X$, že $x∈t$ a $t$ je ordinál.
+Díky tranzitivitě $y∈t$ a opět díky sumě $y∈ \bigcup X$.
 
 $\bigcup X$ je ordinál díky lemma 3.
 
@@ -120,7 +120,7 @@ je buď $t = \bigcup X \lor t ∈ \bigcup X$ což chceme nebo $\bigcup X ∈ t$,
 $\bigcup X ∈ t \land t ∈ X$ a z axiomu summy $\bigcup X ∈ \bigcup X$, což je spor s tím, že $\bigcup X$ je ordinál.
 
 $\bigcup X$ je nejmenší horní mez. Nechť $t∈\bigcup X$ je libovolné, ukážeme, že $t$ není horní mez. 
-Podle axiomu sumy $∃y∈X, žé t∈y$. Tedy toto $y$ je svědek, že $t$ není horní mezí.
+Podle axiomu sumy $∃y∈X$, žé $t∈y$. Tedy toto $y$ je svědek, že $t$ není horní mezí.
 
 3) $\bigcap X$ je množina. Z axiomu vydělení.
 
@@ -131,7 +131,7 @@ $\bigcap X$ je menší než všechny prvky z $X$. Z definice $\bigcap$.
 
 $\bigcap X ∈ X$. $X$ je neprázná množina ordinálu. Podle věty o ordinálech 5) má nejmenší prvek $y$. Podle stejné věty 3)
 je buď $y=\bigcap X$ což chceme nebo $y ∈ \bigcap X$ což ve sporu s tím že $\bigcap X$ je menší než všechny $y$ nebo
-$\bigcap X ∈ y$ TODO{tady bude asi spor}
+$\bigcap X ∈ y$ \TODO{tady bude asi spor}
 
 
 
