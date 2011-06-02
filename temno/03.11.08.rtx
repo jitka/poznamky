@@ -1,24 +1,25 @@
 \section{Ordinály}
-Množina $x$ se nazývá \name{tranzitivní}, jestliže platí $(∀y)(y∈x→→ y@⊂x)$.
+Množina $x$ se nazývá \name{tranzitivní}, jestliže platí $(∀y)(y∈x→→ y@⊂x)$,
+nebo ekvivalntně $(∀y)(∀z)((y∈x \land z∈y)→→ z∈x)$.
 
 Množina $x$ se nazývá \name{ordinál}, je-li tranzitivní a dobře uspořádaná pomocí $∈$.
 
 \statement{O ordinálech}
 →•
- • Je-li $x$ ordinál a je-li $y∈x$, pak $y$ je ordinál a $y=@<@(←,y@),∈@>$.
- • Jsou-li $x, y$ ordinály a $x\cong y$, pak $x=y$
- • Jsou-li $x, y$ ordinály, pak platí právě jedna z následujících možností:
+ •1) Je-li $x$ ordinál a je-li $y∈x$, pak $y$ je ordinál a $y=@<@(←,y@),∈@>$.
+ •2) Jsou-li $x, y$ ordinály a $x\cong y$, pak $x=y$
+ •3) Jsou-li $x, y$ ordinály, pak platí právě jedna z následujících možností:
  →•
   • $x∈y$
   • $y∈x$
   • $x = y$
  ←•
- • Jsou-li $x,y,z$ ordinály, $x∈y\land y∈z→→ x∈z$
- • Je-li $C\neq \emptyset$ množina ordinálů, pak $(∃x∈C)(∀y∈C)(x∈y\lor x = y)$.
+ •4) Jsou-li $x,y,z$ ordinály, $x∈y\land y∈z→→ x∈z$
+ •5) Je-li $C\neq \emptyset$ množina ordinálů, pak $(∃x∈C)(∀y∈C)(x∈y\lor x = y)$.
 ←•
 
 \proof
-$x$ je ordinál, dokážeme, že $y$ je tranzitivní. Zvolme libovolně $t∈y,z∈t$, víme, že $x$ je tranzitivní.
+1) $x$ je ordinál, dokážeme, že $y$ je tranzitivní. Zvolme libovolně $t∈y,z∈t$, víme, že $x$ je tranzitivní.
 $t∈y\land y∈x$. Protože $x$ je tranzitivní, $t∈x$. $x$ je tranzitivní, proto $z∈x$.
 
 Tedy $y,z,t∈x, t∈y,z∈t$. $∈$ je uspořádání na $x$, tedy $z∈y$.
@@ -32,8 +33,8 @@ $y∈x$, $(∀t∈C)(t∈y)$, $x$ tranzitivní, $C@⊂x, C\neq \emptyset\land @<
 
 $x$ ordinál, $y∈x$. $t∈@<@(←,y@),∈@>←→t∈y$.
 
-Nechť $x,y$ ordinály a existuje izomorfizmus $h$ mezi nimi.
-Kdybychom měli, že $x=@{z|z∈y@}$, pak to jen znamená, že $x=y$.
+2) Nechť $x,y$ ordinály a existuje izomorfizmus $h$ mezi nimi.
+Kdybychom měli, že $y=@{z|z∈x@}$, pak to jen znamená, že $x=y$.
 
 Ale $y=@{h(z)|z∈x@}$.
 Vezměme si $m=@{z|z∈x∧h(z)\neq z@}$.
@@ -44,12 +45,12 @@ Kdykoliv $z∈t$, pak $h(z)=z$.
 $h(t) = @{h(z);z∈t@}$. Tedy, neliší se v žádné své podmnožině.
 Spor s tím, že se liší.
 
-Mějme $x,y$ dva ordinály.
+3) Mějme $x,y$ dva ordinály.
 Podle věty o dobře uspořádaných množinách buď $x\cong y→→x=y$. Nebo je izomorfní s počátečním úsekem (buď jedním nebo druhým směrem), tedy se s ním opět rovná.
 
-$z$ je ordinál, tedy tranzitivní množina, $y∈z$ a $x∈y$, tedy $x∈z$.
+4) $z$ je ordinál, tedy tranzitivní množina, $y∈z$ a $x∈y$, tedy $x∈z$.
 
-Mějme $C\neq\emptyset$ množinu ordinálů.
+5) Mějme $C\neq\emptyset$ množinu ordinálů.
 Existuje $t∈C$, vybereme libovolně.
 Pokud platí, že $(∀y∈C)(y=t\lor t∈y)$. Potom je $t$ nejmenší prvek množiny $t$.
 Pokud platí, že $(∃y)(y∈C\land y∈t)$. Pak vezmu $m=@{y∈C;y∈t@}\neq \emptyset$.
@@ -64,11 +65,12 @@ Tedy, neexistuje množina všech ordinálů.
 Sporem. Kdyby existovalo, tak $z$ je tranzitivní, dobře uspořádaná, tedy $z$ je ordinál a tedy obsahuje sám sebe.
 Pro žádný ordinál neplatí, že $x∈x$.
 
-\lemma{}
+\lemma{3}
 Je-li $a$ množina ordinálů a platí-li $(∀x∈a)(∀y∈x)(y∈a)$, pak $a$ je ordinál.
 
 \proof
-$a$ je tranzitivní. Každé dva ordinály lze porovnat dle věty o ordinálech.
+$a$ je tranzitivní. Každé dva ordinály lze porovnat dle věty o ordinálech. Antireflexivita 3), tranzitivita 4)
+existence nejmenšího prvku 5).
 
 \statement{}
 Věta o izomorfizmu dobře uspořádané množiny a ordinálu.
@@ -76,28 +78,60 @@ Věta o izomorfizmu dobře uspořádané množiny a ordinálu.
 Je-li $@<a,r@>$ jakákoliv dobře uspořádaná množina, pak existuje právě jeden ordinál $c$ tak, že $@<a,r@>\cong @<c,∈@>$.
 
 \proof
-Buď $c,d$ ordinály, předpokládejme, že $@<a,r@> \cong @<c,∈@>\land @<a,r@>\cong @<d,∈@>$. Složíme a dostáváme, že $@<c,∈@>\cong @<d,∈@>$. Podle věty o ordinálech jsou si rovny.
+Jednoznačnost: Buď $c,d$ ordinály, předpokládejme, že $@<a,r@> \cong @<c,∈@>\land @<a,r@>\cong @<d,∈@>$. Složíme a dostáváme, že $@<c,∈@>\cong @<d,∈@>$. Podle věty o ordinálech jsou si rovny.
 
-Položme $b=@{e|e∈a∧(∃x)(x\hbox{ je ordinál }\land @<x,∈@>\cong @<@(←,c@),r@>)@}$.
+Existence: Položme $b=@{e|e∈a∧(∃x)(x\hbox{ je ordinál }\land @<x,∈@>\cong @<@(←,e@),r@>)@}$.
 
-Nechť $f$ je funkce definovaná izomorfizmem s počátečními úseky.
+Definujme $f(a) = x$, $x$ je ordinál a $@<@(←,a@),r)@> \cong x$. Je-li $φ$ formule $@<(←,a),r)@> \cong x$, pak z 
+axiomu nahrazení pro $φ$ je $c=rng(f)$ množina. Tedy f je izomormfizmus $b→c$ a $c$ je ordinál díky lemma 3.
 
-\TODO{WTF??}
+Pokud $b=a$ máme hodotovo. Pokud $a \setminus b$ je neprázná množina, pak má díky dobrému uspořádání $@<a,r@>$
+nejmenší prvek $b_1$. Platí $@<@(←,b_1@),r@>) \cong @<b,r@>) \cong @<c,∈@>)$, tedy $f(b_1)=c$ podle definice $b$,
+tedy $b_1∈b$ spor.
 
 Je-li $@<a,r@>$ dobře uspořádaná množina, \name{typ} $@<a,r@>$ je jediný ordinál $c$, že $@<a,r@>\cong c$.
 
 Ordinály budeme značit malými řeckými písmeny.
 $$α<β ←→ α∈β, α≤β ←→ (α∈β\lor α=β)$$.
 
-Je-li $X$ množina ordinálů, označme $\sup X = \bigcup X$.
-Pokud $X\neq \emptyset$, označme $\min X = \bigcap X$.
+Je-li $X$ množina ordinálů, označme \name{sup} $ X = \bigcup X$.
+Pokud $X\neq \emptyset$, označme \name{min} $ X = \bigcap X$.
 
-\lemma{}
+\lemma{4}
 →•
- • Pro ordinály $α,β, α≤β←→ α@⊂β$.
- • Je-li $X$ množina ordinálů, pak $\sup X$ je nejmenší ordinál, který větší nebo roven všem prvkům množiny $X$.
- • Je-li $X$ neprázdná množina ordinálů, pak $\min X$ je nejmenší prvek množiny $X$.
+ •1) Pro ordinály $α,β, α≤β←→ α@⊂β$.
+ •2) Je-li $X$ množina ordinálů, pak $\sup X$ je nejmenší ordinál, který větší nebo roven všem prvkům množiny $X$.
+ •3) Je-li $X$ neprázdná množina ordinálů, pak $\min X$ je nejmenší prvek množiny $X$.
 ←•
+
+\proof
+
+1) triviální.
+
+2) $\bigcup X$ je množina. Z axiomu sumy.
+
+$\bigcup X$ je tranzitivní množina. Je-li $x∈ \bigcup X$ a $y∈x$, pak ze summy $∃t∈X$, že $x∈t$ a $t$ je ordinál.
+Díky tranzitivitě $y∈t$ a opět díky summě $y∈ \bigcup X$.
+
+$\bigcup X$ je ordinál díky lemma 3.
+
+$\bigcup X$ je větší než všechny ordinály z množiny $X$. Zvolme libovolně $t∈X$. Podle věty o ordinálech 3)
+je buď $t = \bigcup X \lor t ∈ \bigcup X$ což chceme nebo $\bigcup X ∈ t$, ale v tom případě 
+$\bigcup X ∈ t \land t ∈ X$ a z axiomu summy $\bigcup X ∈ \bigcup X$, což je spor s tím, že $\bigcup X$ je ordinál.
+
+$\bigcup X$ je nejmenší horní mez. Nechť $t∈\bigcup X$ je libovolné, ukážeme, že $t$ není horní mez. 
+Podle axiomu sumy $∃y∈X, žé t∈y$. Tedy toto $y$ je svědek, že $t$ není horní mezí.
+
+3) $\bigcap X$ je množina. Z axiomu vydělení.
+
+$\bigcap X$ je ordinál. Je-li $t∈\bigcap X$ pro libovolné $x∈\bigcap X$, pak $t$ je ordinál a $t∈x$, proto díky lemma 3
+je $\bigcap X$ ordinál.
+
+$\bigcap X$ je menší než všechny prvky z $X$. Z definice $\bigcap$.
+
+$\bigcap X ∈ X$. $X$ je neprázná množina ordinálu. Podle věty o ordinálech 5) má nejmenší prvek $y$. Podle stejné věty 3)
+je buď $y=\bigcap X$ což chceme nebo $y ∈ \bigcap X$ což ve sporu s tím že $\bigcap X$ je menší než všechny $y$ nebo
+$\bigcap X ∈ y$ TODO{tady bude asi spor}
 
 
 
