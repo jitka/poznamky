@@ -5,18 +5,18 @@ nebo ekvivalntně $(∀y)(∀z)((y∈x \land z∈y)→→ z∈x)$.
 Množina $x$ se nazývá \name{ordinál}, je-li tranzitivní a dobře uspořádaná pomocí $∈$.
 
 \statement{O ordinálech}
-→•
- •1) Je-li $x$ ordinál a je-li $y∈x$, pak $y$ je ordinál a $y=@<@(←,y@),∈@>$.
- •2) Jsou-li $x, y$ ordinály a $x\cong y$, pak $x=y$
- •3) Jsou-li $x, y$ ordinály, pak platí právě jedna z následujících možností:
+↑•
+ • Je-li $x$ ordinál a je-li $y∈x$, pak $y$ je ordinál a $y=@<@(←,y@),∈@>$.
+ • Jsou-li $x, y$ ordinály a $x\cong y$, pak $x=y$
+ • Jsou-li $x, y$ ordinály, pak platí právě jedna z následujících možností:
  →•
   • $x∈y$
   • $y∈x$
   • $x = y$
  ←•
- •4) Jsou-li $x,y,z$ ordinály, $x∈y\land y∈z→→ x∈z$
- •5) Je-li $C\neq \emptyset$ množina ordinálů, pak $(∃x∈C)(∀y∈C)(x∈y\lor x = y)$.
-←•
+ • Jsou-li $x,y,z$ ordinály, $x∈y\land y∈z→→ x∈z$
+ • Je-li $C\neq \emptyset$ množina ordinálů, pak $(∃x∈C)(∀y∈C)(x∈y\lor x = y)$.
+↓•
 
 \proof
 1) $x$ je ordinál, dokážeme, že $y$ je tranzitivní. Zvolme libovolně $t∈y,z∈t$, víme, že $x$ je tranzitivní.
@@ -98,11 +98,11 @@ Je-li $X$ množina ordinálů, označme \name{sup} $ X = \bigcup X$.
 Pokud $X\neq \emptyset$, označme \name{min} $ X = \bigcap X$.
 
 \lemma{4}
-→•
- •1) Pro ordinály $α,β, α≤β←→ α@⊂β$.
- •2) Je-li $X$ množina ordinálů, pak $\sup X$ je nejmenší ordinál, který větší nebo roven všem prvkům množiny $X$.
- •3) Je-li $X$ neprázdná množina ordinálů, pak $\min X$ je nejmenší prvek množiny $X$.
-←•
+↑•
+ • Pro ordinály $α,β, α≤β←→ α@⊂β$.
+ • Je-li $X$ množina ordinálů, pak $\sup X$ je nejmenší ordinál, který větší nebo roven všem prvkům množiny $X$.
+ • Je-li $X$ neprázdná množina ordinálů, pak $\min X$ je nejmenší prvek množiny $X$.
+↓•
 
 \proof
 
@@ -129,9 +129,8 @@ je $\bigcap X$ ordinál.
 
 $\bigcap X$ je menší než všechny prvky z $X$. Z definice $\bigcap$.
 
-$\bigcap X ∈ X$. $X$ je neprázná množina ordinálu. Podle věty o ordinálech 5) má nejmenší prvek $y$. Podle stejné věty 3)
-je buď $y=\bigcap X$ což chceme nebo $y ∈ \bigcap X$ což ve sporu s tím že $\bigcap X$ je menší než všechny $y$ nebo
-$\bigcap X ∈ y$ \TODO{tady bude asi spor}
-
+$\bigcap X ∈ X$. $X$ je neprázná množina ordinálu. Podle věty o ordinálech 5) má nejmenší prvek $y$. Dokáži, že
+$y = \bigcap X$. $y$ je nejmenší prvek $X$, tudíž pro $z∈X, z≠y$ je $y∈x$. Pro každý $y_0∈y$ tedy z tranzitivity
+$y_0∈z$ tedy $y_0 ∈ \bigcap X$. Proto $y\subset \bigcap x$, opačná inkluze je zjevná tedy $\bigcap X = y$.
 
 
