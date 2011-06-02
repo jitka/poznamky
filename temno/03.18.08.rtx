@@ -70,7 +70,7 @@ Nemusí obecně platit, že je sčítání komutativní. př $1+ω≠ω+1$ proto
 
 Buď $α,β$ ordinály. \name{Ordinální součin} $α·β=@<β\times α,<_{LEX}@>$.
 
-\lemma{}
+\lemma{7}
 Pro libovolné ordinály $α,β,γ$ platí:
 →•
  • $α·(β·γ) = (α·β)·γ$
@@ -79,10 +79,10 @@ Pro libovolné ordinály $α,β,γ$ platí:
  • $α·S(β) = α·β+α$
  • Je-li $β$ limitní ordinál, pak $α·β=\sup@{α·ξ;ξ<β@}$
  • $α·S(β) = α·β+α$
- • $α·S(β) = α·β+α$TODO
+ • $α·(β+γ) = α·β + α·γ$
 ←•
 
-Není obecně komutativní.
+Není obecně komutativní. př. $ω·2=ω+ω$ a $ω·2=ω$
 
 \subsection{Kardinály}
 Buďte $a,b$ množiny.
@@ -103,6 +103,13 @@ $a\approx b$.
  • $(x\preccurlyeq y \land y\preccurlyeq z)→→x\preccurlyeq z$
 ↓•
 
+\proof
+1., 4. za zobrazení zvolíme identitu
+
+2. 3. inverze a složení bijekcí je bijecke
+
+5. napojení zobrazení
+
 \statement{Cantor-Bernstein}
 $$(a\preccurlyeq b \land b\preccurlyeq a) →→ a\approx b$$
 
@@ -112,6 +119,20 @@ $f$ je prosté $a→b$, $g$ je prosté $b→a$.
 Pokud je jedno z nich na, tak je hotovo.
 Tedy předpokládejme, že tomu tak není.
 
-Udělám inverzní zobrazení pro co jde a ziteruji pro zbytek „v menším“, iteruji donekonečna.
-\TODO{Tady je to dost neúplné}
+\TODO{Tady schází obrázek}
+
+Definuji $a_0 = a$, $b_0 = b$, $a_{n+1} = g[b_n]$, $b_{n+1} = f[a_n]$, $a_ω = \bigcap@{a_n|n∈ω@}$, $b_ω = \bigcap@{b_n|n∈ω@}$.
+
+Všimnu si, že $f()$ je na $a_{2k}$, prostá a $g()$ je prostá na $b_{2k}$.
+
+Definuji $h: a→b$ takto: 
+
+→•
+ • $h(x)=f(x)$ pro $x∈ a_ω \cup \bigcup a_{2n} \setminus a_{2n+1}$
+ • $h(x)=t$ pro to jediné $t$ takové, že $g(t)=x$ pro  $x∈ \bigcup a_{2n-1} \setminus a_{2n}$
+←•
+
+$dom(f)=a$. Mějme $x≠y$ rozliším případy podle do jakého $a_k$ padnou a pak je to triviální.
+
+$f()$ je bijekce. Zvlášť v lichých a sudých $a_k$. V $a_ω$ je na, protože jinak by to bylo spor s definicí $a_ω$
 
