@@ -27,14 +27,31 @@ Formálně není žádný rozdíl mezi formulí, rozdíl je jen v neformálním 
 Je-li $C@⊂O_n$, $C\neq 0$, pak $C$ má nejmenší prvek.
 Lze použít pro tvorbu indukce ‒ pokud by někdy neplatilo, pak to, co neplatí má nejmenší prvek a na něm se dá utvořit spor.
 
+Použití:
+Dokazujeme větu typu $(∀α) α$je ordinál$→→ φ(α)$. Dokážeme $φ(\emptyset)$ a $(∀β)((β<α→→ψ(β))→→ψ(α))$.
+Kdyby existovalo $α∈O_n$ takové, že $\lnot ψ(α)$, pak si vezmeme množinu protipříkladů a ta má nejmenší
+prvek a spor s tím co jsme dokázali.
+
 \statement{O transfinitní rekurzi}
 Je-li $F:V→V$, jestli existuje jediné $G:O_n→V$, pak $(∀α)(G(α)=F(G\upharpoonright α)$.
 
-\proof
-Nechť $G_1, G_2$ obě splňují tvrzení věty.
-Pak dokážeme, že $G_1(α)=G_2(α)$.
+Lidsky: Ukážu na aplikaci uvedené níže. Mějme takovéto $F$:
+$F$ dostane funkci $f$ z nějakého ordinálu $α$ do množin. Dostane-li $F$ jinou množinu vrátí
+naprosto cokoliv třeba identitu. Zpátky k zajímavému vstupu. 
+$F$ zná funkční hodnoty $f$ ve všech ordinálech $β<α$. Je-li $α$ následník, $F$ vrátí $f(α-1)^+$,
+je-li $α$ limitní ordinál $F$ vrátí suprémum z $f(β)$. Funkce $F$ teď definuje jakousi rekurzi.
+Věta říká, že tato rekurze má jediné řešení a to funkci $G$. 
 
-\TODO{Tady něco chybí ‒ včetně pochopení}
+\proof
+Unicita: Nechť $G_1, G_2$ obě splňují tvrzení věty.
+Pak transfinitní indukcí dokážeme, že $(∀α) G_1(α)=G_2(α)$.
+$G_1(\emptyset)=F(\emptyset)=G_2(\emptyset)$. Můžeme předpokládat, že $(∀β) β<α →→ G_1(β)=G_2(β)$,
+t.j. $G_1\upharpoonright α = G_2\upharpoonright α$, tedy  
+$G_1(α)=F(G_1\upharpoonright α )= F(G_2\upharpoonright α)=G_2(α)$ ať už je $α$ následovník či limitní.
+
+Existence: Pro každý ordinál $δ$ nadefinujeme funkci $g_δ: δ→V$ takto $(∀α)(α<δ→→g_δ(α)=F(g_δ\upharpoonright α))$,
+že taková fce existuje (je definovaná všude, kde má být) dokážeme snadno indukcí. Nyní můžeme definovat
+$G$ takto $G(α)=g_{α+1}(α)$. $G$ zjevně splňuje požadavek věty.
 
 Pro ordinály $α$ je formule $\aleph_α (=ω_α)$ definováno transfinitní rekurzí takto:
 $\aleph_0=ω_0=ω, \aleph_{α+1}=ω_{α+1}=(ω_α)^+$. Pro $γ∈O_n$ je limitní, $\aleph_γ=ω_γ=\sup@{ω_β|β<γ@}$.
@@ -47,3 +64,29 @@ $\aleph_0=ω_0=ω, \aleph_{α+1}=ω_{α+1}=(ω_α)^+$. Pro $γ∈O_n$ je limitn�
  • $ω_α$ je limitní kardinál $←→α$ je limitní ordinál.
  • $ω_α$ je kardinální následník $←→α$ je ordinální následník.
 ↓•
+
+\proof
+
+1. Opět použijeme transfinitní indukci. $ω_0$ je kardinál, dokázáno dávno. Předpoklad: 
+$(∀β)(β<α→→ω_β$je kardinál$)$. Pokud $α=β+1$ potom $ω_α=(ω_β)^+$ a to je kardinál z definice,
+jinak je $α$. A podle jiné definice kordinálu stačí dokázat, že všechny menší ordidináli mají menší mohutnost.
+Zvlovne $δ<ω_α$. Ze supréma v definici $ω_α$ platí, že $(∃β<α) δ<ω_β<ω_{β+1}=(ω_β)^+<ω_α$. 
+Tudíž $|δ|≤|ω_β|<|ω_{β+1}|≤|ω_α|→→|δ|<|ω_α|$. Tedy $ω_α$ je tedy kardinál.
+
+2. Buď $κ$ nekoneční kardinál, $κ>ω$, jinak triv. Definujme $M=@{β|β\textrm{je ordinál}\land ω_β < κ@}$.
+$M≠\emptyset$ jelikož $\emptyset ∈ M$. Položme $γ=supM$. 
+
+$γ∈M$, pak $κ<ω_γ$ a $κ≤ω_{γ+1}$. Jelikož $κ$ je taky ordinál je $κ=ω_{γ+1}$
+
+$γ∉M$, pak $γ$ je limitní ordinál. ($ω_γ = sup@{ω_β|β<γ@}$ a $κ>ω_β$ pro $β<γ) →→ κ≥ω_γ$. Zároveň $\lnot (κ>ω_γ)$,
+protože pak by $γ∈M$. Tedy $ω_γ=κ$.
+
+3. $α<β→→ω_α<ω_{α+1}≤ω_β→→ω_α<ω_β$.
+
+5. "$←←$" $α=β+1$ tedy $ω_α=(ω_β)^+$ tedy $ω_α$ je kardinální následník.
+
+"$→→$"  $(∃β$ordinál$) ω_α=β^+$. $β$ dobře uspořádaná $→→ (∃κ)$ kardinál, že $ω_α=κ^+$. Podle 2. $(∃γ)κ=ω_γ$.
+Tedy $ω_{γ+1}=(ω_γ)^+=κ^+=ω_α$. Podle 3. $γ+1=α$ a tedy $α$ je ordinální následník.
+
+4. Komplement 5.
+

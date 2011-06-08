@@ -8,7 +8,7 @@ Množina $r$ je \name{rozkladem} množiny $x$, jestliže $x=\bigcup r, \emptyset
 \notehead{Princip výběru}{Pro každý rozklad $r$ množiny $x$ existuje množina $y@⊂x$, pro které platí $(∀u∈r)(∃t∈x)(y\cap u = @{t@})$.
 Tedy z každé množiny rozkladu lze vybrat prvek a složit z nich množinu.}
 
-Funkce $f$ definovaná na množině $x$, která splňuje $(y∈x\land y\neq \emptyset ) →→ f(y)∈y$, se nazývá \name{selektor} na množině $x$.
+Funkce $f:x→\bigcup x$ definovaná na množině $x$, která splňuje $(y∈x\land y\neq \emptyset ) →→ f(y)∈y$, se nazývá \name{selektor} na množině $x$.
 
 \notehead{Axiom výběru}{Na každé neprázdné množině existuje selektor.}
 
@@ -18,7 +18,7 @@ Následující tvrzení jsou exvivalentní:
  • Axiom výběru
  • Princip výběru
  • Pro každou relaci $s$ existuje funkce $f$ taková, že $f@⊂s\land dom(f) = dom(s)$.
- • Je-li $x\neq \emptyset$ a pro některé $t∈x$ je $y_t\neq 0$, pak $\Π_{t∈x}y_t \neq \emptyset$
+ • Je-li $x\neq \emptyset$ a pro všechna $t∈x$ je $y_t\neq \emptyset$, pak $\Π_{t∈x}y_t \neq \emptyset$
 ↓•
 
 \proof
@@ -27,7 +27,7 @@ Z toho se dá odvodit výběrová množina rozkladu $r$.
 
 $2.→3.$: Mějme relaci $s$ a předpokládejme, že je neprázdná.
 Položme $r=@{@{@<u,v@>|@<u,v@>∈s@}|u∈dom(s)@}$. Zřejmě platí, že $r$ je rozkladem množiny $s$.
-Dle principu výběru existuje výběrová množina. Kdykoliv je $u$ v definičním oboru $s$, pak $y\cup @{@<u,v@>|@<u,v@>∈s@}$ v jediném bodě, $f$ je tedy funkce, $f@⊂s$, $dom(s)=dom(f)$.
+Dle principu výběru existuje výběrová množina. Kdykoliv je $u$ v definičním oboru $s$, pak $y\cap @{@<u,v@>|@<u,v@>∈s@}$ v jediném bodě, $f$ je tedy funkce, $f@⊂s$, $dom(s)=dom(f)$.
 
 $3.→4.$: Mějme kartézský součin. Nechť $x\neq \emptyset$ a nechť $(∀t∈x)$ je $y\neq \emptyset$.
 $\bigcup @{y_t|t∈x@}$
