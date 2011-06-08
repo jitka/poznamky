@@ -4,7 +4,7 @@ Ordinál $α$ se nazývá \name{kardinál}, pokud $α = \len{α}$.
 
 Ordinál $α$ je kardinál $←→@(∀β@)@(β<α→→β\not\approx α@)$.
 
-\lemma{}
+\lemma{8}
 Buďte $α,β$ ordinály. Je-li $\len{α}≤β≤α→→\len{β}=\len{α}$.
 
 \proof
@@ -12,7 +12,7 @@ $β@⊂α→→β\preccurlyeq α$.
 
 Ale $α\approx \len{α}$ a $\len{α}@⊂β$, tedy $α\preccurlyeq β$. Už jen použijeme Cantor-Bernstein.
 
-\lemma{}
+\lemma{9}
 Je-li $n∈ω$, pak
 ↑•
  • $n\not \approx n+1$ ‒ důkaz indukcí.
@@ -26,6 +26,14 @@ Množina $A$ je \name{konečná}, pokud $\len{A}<ω$.
 Množina $A$ je \name{spočetná}, pokud $\len{A}≤ω$.
 Pokud $A$ není spočetná, pak je \name{nespočetná}.
 
+\lemma{}
+Každý nekonečný kardinál je limitní ordinál.
+
+\proof{}
+Nechť $κ$ je nekonečný kardinál a pro spor předpokládejme, že $κ=α+1$. Protože $α$ je nekonečný ordinál, pak $α+1=α$.
+$\len{κ}=\len{α+1}=\len{1+α}=\len{α}$. Kdyby $κ=\len{κ}=\len{α}$. Spor, $α<κ$.
+
+
 \subsubsection{Sčítání a násobení kardinálů}
 Jsou-li $κ,λ$ kardinály, pak
 $$κ\oplus λ= \len{κ\times@{0@} \cup λ\times @{1@}}$$
@@ -33,20 +41,15 @@ $$κ\otimes λ=\len{κ\times λ}$$
 
 $\oplus,\otimes$ jsou komutativní.
 
-\lemma{}
-Pro přirozená čísla to funguje stejně, jako ordinální sčítání a násobení.
+\lemma{10}
+Pro $n,m∈ω$:
+$$n\oplus n = n+m < ω $$
+$$m\otimes m = n \cdot m $$
 
 \proof{}
-Stačí si uvědomit, že $n\oplus m<ω, n\otimes w<ω$, $\len{n}\neq \len{n+1}$.
+Stačí dokázat indukcí, že $n\oplus m<ω, n\otimes w<ω$. Zbytek plyne z lemma 9.
 
 Obdobně $n·0=0<ω$, $n·1= n<ω$, $n·S(m)$, $n·m + m<ω$.
-
-\lemma{}
-Každý nekonečný kardinál je limitní ordinál.
-
-\proof{}
-Nechť $κ$ je nekonečný kardinál a pro spor předpokládejme, že $κ=α+1$. Protože $α$ je nekonečný ordinál, pak $α+1=α$.
-$\len{κ}=\len{α+1}=\len{1+α}=\len{α}$. Kdyby $κ=\len{κ}$. Spor, $α<κ$.
 
 \statement{}
 Je-li $κ$ nekonečný kardinál, pak $κ\otimes κ=κ$.
@@ -56,7 +59,7 @@ Nechť $κ=ω$. Zobrazení $f:ω\times ω→ω$ definované předpisem $f@(@<n,k
 Toto zobrazení je prosté ale i na, takže je to bijekce.
 
 Nechť $κ>ω$.
-Předpokládejme, že $ω≤λ<κ→→\len{λ\times λ}<κ$.
+Předpokládejme, že $ω≤λ<κ→→\len{λ\times λ}=λ$.
 Zobrazení $g:κ→κ\times κ$ definované předpisem $g(α)=@<α,0@>$ je prosté, tedy $κ\preccurlyeq κ\times κ$.
 
 Množinu $κ\times κ$ uspořádáme \name{maximo-lexikograficky}:
@@ -66,14 +69,12 @@ $@<α,β@><@<γ,δ@>$ jestliže $\max@{α,β@} < \max@{γ,δ@}$ nebo $\max@{α,�
 Na množině $κ\times κ$ je dobré uspořádání.
 Typ takové množiny je $≤κ$. Důkaz sporem.
 Předpokládejme, že je větší. Tedy typ je $α>κ$.
-Pak musí být nějaký počáteční úsek určený $κ$ a tedy dvojicí $@<γ,δ@>$.
+Pak musí být nějaký počáteční úsek určený dvojicí $@<γ,δ@>$ izomorfní s $κ$, ale ten je díky předpokladu izomorfní s $max(γ,δ)$. Spor.
 
-\TODO{uff?}
-
-Ještě důkaz předpokladu. Sporem, tedy $@(∃λ@)@(ω≤λ<κ∧\len{λ\times λ}≥κ@)$. Z první části je jasné, že $λ\neq ω$.
+Ještě důkaz předpokladu. Sporem, tedy $@(∃λ@)@(ω≤λ<κ∧\len{λ\times λ}≠λ@)$. Z první části je jasné, že $λ\neq ω$.
 Tedy mějme nejmenší $λ_0$ pro které toto platí.
 
-Dle důkazu věty ale $\len{λ_0\times λ_0}=\len{λ_0}$, což je spor.
+Pro $λ_0$, ale platí předpoklad a tedy můžeme tedy provést stejný důkaz a dostaneme $λ_0\times λ_0=λ_0$ což je spor s volbou $λ_0$.
 
 \follows{}
 Buď $κ,λ$ nekonečné kardinály. Pak $κ\oplus λ=κ\otimes λ = \max @{κ,λ@}$.
@@ -92,8 +93,13 @@ $x\preccurlyeq \mathcal{P}(x)$ ‒ zobrazení na potenční množinu je zjevně 
 
 Že není bijekce ‒ diagonalizací.
 
+Buď $g: x→\mathcal{P}(x)$ libovolné. Ukážeme, že není na. Položme $y=@{t|t∈x\land t∉ \mathcal{P}(x) @}$.
+
+$y$ je množina z axiomu vydělení. $y∈\mathcal{P}(x)$ avšak $y∉rng(g)$ (jednoduše sporem), proto $g$ není na.
+
+
 \statement{}
-$$(∀α)(α \hbox{ je ordinál }→→(∃κ)(κ\hbox{ kardinál }\land κ>α))$$
+$$(∀@<α,∈@>)(@<α,∈@> \hbox{ je ordinál }→→(∃κ)(κ\hbox{ kardinál }\land κ>α))$$
 
 \proof
 $α<ω$, položíme $κ:=ω$.
@@ -102,9 +108,9 @@ Je-li $α≥ω:W:=@{R|R@⊂α\times α∧@<α,R@>\hbox{ je dobře uspořádaná 
 
 Položme $S:=@{\hbox{ typ }@<α,R@>|R∈W@}$.
 
-$S$ je množina ordinálů, $\sup S$ je ordinál. $γ=\sup S + 1$. Kdyby $κ=\len{\sup S}≤α$, pak $\len{γ}=\len{α}$.
+$S$ je množina ordinálů. Předpokládejme, že $\len{\sup S}≤\len{α}$. 
+Nemůže tam být <. $\sup S + 1 $ má stejnou mohutnoust jako $α$. 
+Tedy $\sup S + 1∈ S$ spor. 
 
-Tedy existuje bijekce $b:α→γ+1$.
+Tudíž $\len{\sup S}>\len{α}→→\sup S>α$ položme tedy $κ=\sup S$.
 
-Pro toto $R$ je $R$ dobré uspořádání množiny $α$ a typ $@<α,R@>∈S$, což je ale ve sporu.
-Tedy, $κ$ je kardinál a je větší.
