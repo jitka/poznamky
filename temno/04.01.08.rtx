@@ -23,8 +23,12 @@ Máme např. tyto třídy:
 Třídové termy lze z formulí vždy eliminovat.
 Formálně není žádný rozdíl mezi formulí, rozdíl je jen v neformálním vyjadřování.
 
-\statement{Transfinitní indukce na třídě $O_n$}
-Je-li $C@⊂O_n$, $C\neq 0$, pak $C$ má nejmenší prvek.
+\statement{Metavěta: Transfinitní indukce na třídě $O_n$}
+Je-li $C@⊂O_n$, $C\neq \emptyset$, pak $C$ má nejmenší prvek.
+
+\proof
+Jako ve větě o orginálech jen místo množiny říkat třídu.
+
 Lze použít pro tvorbu indukce ‒ pokud by někdy neplatilo, pak to, co neplatí má nejmenší prvek a na něm se dá utvořit spor.
 
 Použití:
@@ -33,7 +37,7 @@ Kdyby existovalo $α∈O_n$ takové, že $\lnot ψ(α)$, pak si vezmeme množinu
 prvek a spor s tím co jsme dokázali.
 
 \statement{O transfinitní rekurzi}
-Je-li $F:V→V$, jestli existuje jediné $G:O_n→V$, pak $(∀α)(G(α)=F(G\upharpoonright α)$.
+Je-li $F:V→V$, pak existuje jediné $G:O_n→V$, že $(∀α)(G(α)=F(G\upharpoonright α)$.
 
 Lidsky: Ukážu na aplikaci uvedené níže. Mějme takovéto $F$:
 $F$ dostane funkci $f$ z nějakého ordinálu $α$ do množin. Dostane-li $F$ jinou množinu vrátí
@@ -53,15 +57,17 @@ Existence: Pro každý ordinál $δ$ nadefinujeme funkci $g_δ: δ→V$ takto $(
 že taková fce existuje (je definovaná všude, kde má být) dokážeme snadno indukcí. Nyní můžeme definovat
 $G$ takto $G(α)=g_{α+1}(α)$. $G$ zjevně splňuje požadavek věty.
 
+Aplikace: definece funkce aleph.
+
 Pro ordinály $α$ je formule $\aleph_α (=ω_α)$ definováno transfinitní rekurzí takto:
 $\aleph_0=ω_0=ω, \aleph_{α+1}=ω_{α+1}=(ω_α)^+$. Pro $γ∈O_n$ je limitní, $\aleph_γ=ω_γ=\sup@{ω_β|β<γ@}$.
 
-\lemma{}
+\lemma{12}
 ↑•
- • Každý $ω_α$ je kardinál.
+ • Každý $ω_α$ je kardinál. $∀α∈O_n$
  • Každý nekonečný kardinál je roven nějakému $ω_α$.
  • Pro $α<β$ je $ω_α<ω_b$.
- • $ω_α$ je limitní kardinál $←→α$ je limitní ordinál.
+ • $ω_α$ je limitní kardinál $←→$ ($α$ je limitní ordinál $\lor α=\emptyset$).
  • $ω_α$ je kardinální následník $←→α$ je ordinální následník.
 ↓•
 
@@ -89,4 +95,3 @@ protože pak by $γ∈M$. Tedy $ω_γ=κ$.
 Tedy $ω_{γ+1}=(ω_γ)^+=κ^+=ω_α$. Podle 3. $γ+1=α$ a tedy $α$ je ordinální následník.
 
 4. Komplement 5.
-
